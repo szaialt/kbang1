@@ -1,0 +1,6 @@
+I have continued work of MacJariel 
+SZEKÉR Anna, in English Anna Szekér
+kordely@gmail.com
+
+I probed refractor the VoidAI classes (VoidAI, VoidAI2, VoidAI3),
+but it didn't work.
