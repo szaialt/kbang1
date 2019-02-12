@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'newserverdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -95,8 +95,8 @@ public:
 
     void retranslateUi(QDialog *NewServerDialog)
     {
-        label->setText(QApplication::translate("NewServerDialog", "Server &Host:", 0));
-        label_2->setText(QApplication::translate("NewServerDialog", "Server &Port:", 0));
+        label->setText(QApplication::translate("NewServerDialog", "Server &Host:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("NewServerDialog", "Server &Port:", Q_NULLPTR));
         Q_UNUSED(NewServerDialog);
     } // retranslateUi
 

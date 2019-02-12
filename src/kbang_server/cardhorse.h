@@ -11,7 +11,8 @@ Q_OBJECT;
 public:
     enum HorseType {
         Mustang,
-        Appaloosa
+        Appaloosa,
+        PackingMule
     };
 
     CardHorse(Game *game, int id, HorseType, CardSuit, CardRank);

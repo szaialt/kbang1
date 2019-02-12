@@ -73,6 +73,27 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "sniper")         return CHARACTER_SNIPER;
     if (s == "soldier")        return CHARACTER_SOLDIER;
     if (s == "spy")            return CHARACTER_SPY;
+    
+    //Director's Cuts
+    if (s == "coronel mortimer") return CHARACTER_CORONEL_MORTIMER;
+    if (s == "django")         return CHARACTER_DJANGO;
+    if (s == "emma")           return CHARACTER_EMMA;
+    if (s == "hermanos elder") return CHARACTER_HERMANOS_ELDER;
+    if (s == "howard hawks")   return CHARACTER_HOWARD_HAWKS;
+    if (s == "joe")            return CHARACTER_JOE;
+    if (s == "john ford")      return CHARACTER_JOHN_FORD;
+    if (s == "llanero solitario") return CHARACTER_LLANERO_SOLITARIO;
+    if (s == "loco")           return CHARACTER_LOCO;
+    if (s == "max sand")       return CHARACTER_MAX_SAND;
+    if (s == "pat garrett")    return CHARACTER_PAT_GARRETT;
+    if (s == "rev jonathan rudd") return CHARACTER_REV_JONATHAN_RUDD;
+    if (s == "rooster cogburn") return CHARACTER_ROOSTER_COGBURN;
+    if (s == "sartana")        return CHARACTER_SARTANA;
+    if (s == "sergio leone")   return CHARACTER_SERGIO_LEONE;
+    if (s == "tuco el feo")    return CHARACTER_TUCO_EL_FEO;
+    if (s == "viejo sikes")    return CHARACTER_VIEJO_SIKES;
+    if (s == "vienna")         return CHARACTER_VIENNA;
+    if (s == "wyatt earp")     return CHARACTER_WYATT_EARP;
     return CHARACTER_UNKNOWN;
 }
 
@@ -107,6 +128,26 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_SNIPER:           return "sniper";
     case CHARACTER_SOLDIER:          return "soldier";
     case CHARACTER_SPY:              return "spy";
+    //Director's Cuts
+    case CHARACTER_CORONEL_MORTIMER: return "coronel mortimer";
+    case CHARACTER_DJANGO:          return "django";
+    case CHARACTER_EMMA:            return "emma";
+    case CHARACTER_HERMANOS_ELDER:  return "hermanos elder";
+    case CHARACTER_HOWARD_HAWKS:    return "howard hawks";
+    case CHARACTER_JOE:             return "joe";
+    case CHARACTER_JOHN_FORD:       return "john ford";
+    case CHARACTER_LLANERO_SOLITARIO:  return "llanero solitario";
+    case CHARACTER_LOCO:            return "loco";
+    case CHARACTER_MAX_SAND:        return "max sand";
+    case CHARACTER_PAT_GARRETT:     return "pat garrett";
+    case CHARACTER_REV_JONATHAN_RUDD:  return "rev jonathan rudd";
+    case CHARACTER_ROOSTER_COGBURN:  return "rooster cogburn";
+    case CHARACTER_SARTANA:         return "sartana";
+    case CHARACTER_SERGIO_LEONE:    return "sergio leone";
+    case CHARACTER_TUCO_EL_FEO:     return "tuco el feo";
+    case CHARACTER_VIEJO_SIKES:     return "viejo sikes";
+    case CHARACTER_VIENNA:          return "vienna";
+    case CHARACTER_WYATT_EARP:      return "wyatt earp";
     }
     return "unknown";
 }
@@ -239,6 +280,29 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "heavy-bang")       return CARD_HEAVY_BANG;
     if (s == "heavy bang")       return CARD_HEAVY_BANG;
     if (s == "heavy_bang")       return CARD_HEAVY_BANG;
+    
+    //Director's Cuts
+     if (s == "ace_up_your_sleeve") return CARD_ACE_UP_YOUR_SLEEVE;
+     if (s == "ace up your sleeve") return CARD_ACE_UP_YOUR_SLEEVE;
+     if (s == "ace-up-your-sleeve") return CARD_ACE_UP_YOUR_SLEEVE;
+     if (s == "deflection")         return CARD_DEFLECTION;
+     if (s == "union_pacific")      return CARD_UNION_PACIFIC;
+     if (s == "union pacific")      return CARD_UNION_PACIFIC;
+     if (s == "union-pacific")      return CARD_UNION_PACIFIC;
+     if (s == "hidden_weapon")      return CARD_HIDDEN_WEAPON;
+     if (s == "hidden weapon")      return CARD_HIDDEN_WEAPON;
+     if (s == "hidden-weapon")      return CARD_HIDDEN_WEAPON;
+     if (s == "memento")            return CARD_MEMENTO;
+     if (s == "packing_mule")       return CARD_PACKING_MULE;
+     if (s == "packing mule")       return CARD_PACKING_MULE;
+     if (s == "packing-mule")       return CARD_PACKING_MULE;
+     if (s == "peace_pipe")         return CARD_PEACE_PIPE;
+     if (s == "peace pipe")         return CARD_PEACE_PIPE;
+     if (s == "peace-pipe")         return CARD_PEACE_PIPE;
+     if (s == "shotgun")            return CARD_SHOTGUN;
+     if (s == "sun_glare")          return CARD_SUN_GLARE;
+     if (s == "sun glare")          return CARD_SUN_GLARE;
+     if (s == "sun-glare")          return CARD_SUN_GLARE;
     return CARD_UNKNOWN;
 } 
 
@@ -285,6 +349,17 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_JARATE:          return "jarate";
         case CARD_DOUBLE_BANG:     return "double bang";
         case CARD_HEAVY_BANG:      return "heavy bang";
+        //Director's Cuts
+        case CARD_ACE_UP_YOUR_SLEEVE: return "ace up your sleeve";
+        case CARD_DEFLECTION:      return "deflection";
+        case CARD_UNION_PACIFIC:   return "union pacific";
+        case CARD_HIDDEN_WEAPON:   return "hidden weapon";
+        case CARD_MEMENTO:         return "memento";
+        case CARD_PACKING_MULE:    return "packing mule";
+        case CARD_PEACE_PIPE:      return "peace pipe";
+        case CARD_SHOTGUN:         return "shotgun";
+        case CARD_SUN_GLARE:       return "sun glare";
+    
         //Unknown
         case CARD_UNKNOWN:        return "";
     }

@@ -23,6 +23,16 @@
 #include "charactersniper.h" 
 #include "charactersoldier.h" 
 
+#include "charactercoronelmortimer.h" 
+#include "characterdjango.h" 
+#include "characteremma.h" 
+#include "characterjohnford.h" 
+#include "characterloco.h" 
+//#include "characterpatgarrett.h"
+#include "charactersartana.h"
+#include "charactervienna.h"
+#include "characterwyattearp.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -56,7 +66,7 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
     case CHARACTER_JOURDONNAIS:
         return new CharacterJourdonnais(parent);
     case CHARACTER_KIT_CARLSON:
-        return new CharacterKitCarlson(parent);
+        return new CharacterKitCarlson(parent, CharacterKitCarlson::KitCarlson);
     case CHARACTER_LUCKY_DUKE:
         return new CharacterLuckyDuke(parent);
     case CHARACTER_PAUL_REGRET:
@@ -94,7 +104,31 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
     case CHARACTER_SNIPER: 
         return new CharacterSniper(parent);
     case CHARACTER_SOLDIER: 
-        return new CharacterSoldier(parent);
+        return new CharacterSoldier(parent, CharacterSoldier::Soldier);
+    case CHARACTER_CORONEL_MORTIMER: 
+        return new CharacterCoronelMortimer(parent);
+    case CHARACTER_DJANGO: 
+        return new CharacterDjango(parent); 
+    case CHARACTER_EMMA: 
+        return new CharacterEmma(parent);
+    case CHARACTER_JOHN_FORD: 
+        return new CharacterJohnFord(parent);
+    case CHARACTER_LLANERO_SOLITARIO: 
+        return new CharacterSoldier(parent, CharacterSoldier::LlaneroSolitario);
+    case CHARACTER_LOCO: 
+        return new CharacterLoco(parent);
+    case CHARACTER_REV_JONATHAN_RUDD:
+        return new CharacterKitCarlson(parent, CharacterKitCarlson::RevJonathanRudd);
+    case CHARACTER_ROOSTER_COGBURN: 
+        return new CharacterPropertyChange(parent, CharacterPropertyChange::RoosterCogburn);
+    case CHARACTER_SARTANA: 
+        return new CharacterSartana(parent);
+    case CHARACTER_VIEJO_SIKES:
+        return new CharacterCassidyGringo(parent, CharacterCassidyGringo::ViejoSikes);
+    case CHARACTER_VIENNA: 
+        return new CharacterVienna(parent);
+    case CHARACTER_WYATT_EARP: 
+        return new CharacterWyattEarp(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -121,27 +155,27 @@ void CharacterList::initCharacterTypes(Game* game)
     sm_characterTypes.append(CHARACTER_SUZY_LAFAYETTE);
     sm_characterTypes.append(CHARACTER_VULTURE_SAM);
     sm_characterTypes.append(CHARACTER_WILLY_THE_KID);
-    
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
-//      sm_characterTypes.append(CHARACTER_HEAVY);
+    /*
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);
+      sm_characterTypes.append(CHARACTER_DEMOMAN);*/
     //sm_characterTypes.append(CHARACTER_COWBOY);
     
     if (game->gameInfo().teamFortressCharactersFlag()){
@@ -156,6 +190,49 @@ void CharacterList::initCharacterTypes(Game* game)
     }
     else {
         qDebug() << "No teamFortressCharactersFlag.";
+    }
+    if (game->gameInfo().directorsCutsCharactersFlag()){
+        qDebug() << "directorsCutsCharactersFlag.";
+        
+        sm_characterTypes.append(CHARACTER_CORONEL_MORTIMER);
+        sm_characterTypes.append(CHARACTER_EMMA);
+        sm_characterTypes.append(CHARACTER_JOHN_FORD);
+        sm_characterTypes.append(CHARACTER_LLANERO_SOLITARIO);
+        sm_characterTypes.append(CHARACTER_LOCO);
+        sm_characterTypes.append(CHARACTER_ROOSTER_COGBURN);
+        sm_characterTypes.append(CHARACTER_SARTANA);
+        sm_characterTypes.append(CHARACTER_VIEJO_SIKES);
+        sm_characterTypes.append(CHARACTER_VIENNA);
+        sm_characterTypes.append(CHARACTER_WYATT_EARP);
+
+        //sm_characterTypes.append(CHARACTER_DJANGO);
+        
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+        
+    }
+    else {
+        qDebug() << "No directorsCutsCharactersFlag.";
     }
 
 }

@@ -19,6 +19,14 @@ CardDrawCards::CardDrawCards(Game* game, int id, CardDrawCards::Type type, CardS
         setType(CARD_SUPPLY_CRATE);
         m_cardCount = 3;
         break;
+    case AceUpYourSleeve:
+        setType(CARD_ACE_UP_YOUR_SLEEVE);
+        m_cardCount = 1;
+        break;
+    case UnionPacific:
+        setType(CARD_UNION_PACIFIC);
+        m_cardCount = 4;
+        break;
     }
 }
 
@@ -41,8 +49,15 @@ void CardDrawCards::play()
       assertInHand();
       Player* player = owner();
       gameCycle()->setCardEffect(1);
+      //You need get the card played before CARD_ACE_UP_YOUR_SLEEVE
+      if (type() == CARD_ACE_UP_YOUR_SLEEVE){
+          gameTable()->playerDrawFromGraveyard(player);    
+      }
       gameTable()->playerPlayCard(this);
-      gameTable()->playerDrawFromDeck(player, m_cardCount);
+      //Otherwise, you draw from the deck, so you can play the card before
+      if (type() != CARD_ACE_UP_YOUR_SLEEVE) {
+          gameTable()->playerDrawFromDeck(player, m_cardCount);
+      }
       gameCycle()->setCardEffect(0); 
     }
 }

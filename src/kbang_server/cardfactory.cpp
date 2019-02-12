@@ -91,9 +91,9 @@ struct CardFactory::CardFactoryImp
         list.append(new CardGeneralStore(game, id(), SUIT_SPADES, 12));
         list.append(new CardGeneralStore(game, id(), SUIT_CLUBS, 9));
 
-        list.append(new CardJail(game, id(), SUIT_SPADES, 10, 10));
-        list.append(new CardJail(game, id(), SUIT_SPADES, 11, 11));
-        list.append(new CardJail(game, id(), SUIT_HEARTS, 4, 12));
+        list.append(new CardJail(game, id(), CardJail::Jail, SUIT_SPADES, 10, 10));
+        list.append(new CardJail(game, id(), CardJail::Jail, SUIT_SPADES, 11, 11));
+        list.append(new CardJail(game, id(), CardJail::Jail, SUIT_HEARTS, 4, 12));
 
         list.append(new CardDynamite(game, id(), SUIT_HEARTS, 2, 20));
 
@@ -109,7 +109,8 @@ struct CardFactory::CardFactoryImp
 
         list.append(new CardBarrel(game, id(), SUIT_SPADES, 12));
         list.append(new CardBarrel(game, id(), SUIT_SPADES, 13));
-
+        
+        
         if (game->gameInfo().dodgeCityFlag()) {
             list.append(new CardDynamite(game, id(), SUIT_CLUBS, 10, 21));
             
@@ -179,8 +180,29 @@ struct CardFactory::CardFactoryImp
              list.append(new CardMissed(game, id(), CardMissed::Missed,  SUIT_DIAMONDS, 2));
              
              list.append(new CardMissed(game, id(), CardMissed::Missed, SUIT_DIAMONDS, 3));
+             
+             
         }
-     
+        if (game->gameInfo().directorsCutsFlag()){
+            list.append(new CardDrawCards(game, id(), CardDrawCards::AceUpYourSleeve, SUIT_CLUBS,  7));
+        
+            list.append(new CardDrawCards(game, id(), CardDrawCards::UnionPacific, SUIT_HEARTS,  6));
+        
+            list.append(new CardPeacePipe(game, id(), SUIT_DIAMONDS,  7));
+        
+            list.append(new WeaponCard(game, id(), WeaponCard::Shotgun, SUIT_CLUBS,  7));
+        
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_SPADES, 4, 9));
+        
+            list.append(new CardHorse(game, id(), CardHorse::PackingMule, SUIT_SPADES, 7));
+        
+            list.append(new CardMemento(game, id(), SUIT_HEARTS, 5));
+
+            list.append(new CardHiddenWeapon(game, id(), SUIT_SPADES, 5));
+        
+            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
+           
+        }
         
         foreach(PlayingCard* card, list) {
             res[card->id()] = card;

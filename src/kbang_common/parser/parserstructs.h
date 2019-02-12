@@ -69,6 +69,8 @@ struct GameInfoData
      bool ourFlag;
      bool stackingDynamiteFlag;
      bool teamFortressCharactersFlag;
+     bool directorsCutsFlag;
+     bool directorsCutsCharactersFlag;
      int aiLevel;
 
 };
@@ -103,6 +105,8 @@ struct CreateGameData
       bool teamFortressFlag;
       bool stackingDynamiteFlag;
       bool teamFortressCharactersFlag;
+      bool directorsCutsFlag;
+      bool directorsCutsCharactersFlag;
     void read(XmlNode*);
     void write(QXmlStreamWriter*) const;
     static QString elementName; 

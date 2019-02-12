@@ -49,6 +49,7 @@ bool PlayingCard::isWeapon(){
     if (m_type == CARD_HALF_ZATOCHI) return true;
     if (m_type == CARD_MEDI_GUN) return true;
     if (m_type == CARD_SANDMAN) return true;
+    if (m_type == CARD_SHOTGUN) return true;
     return false;
 }
 

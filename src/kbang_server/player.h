@@ -217,8 +217,8 @@ public:
 
     void setPayedBandidos(bool b);
     bool payedBandidos();
-    
-    
+    int getWeaponNumber();
+    void setWeaponNumber(int n);
     /**
      * This method needs to be called after the Bang! card was played.
      * This is necessary to implement the one-bang-per-turn rule.
@@ -289,6 +289,8 @@ private:
     QList<PublicPlayerView*>   m_adversaries;
     
     volatile bool              m_payed_bandidos;
+    mutable int                m_weaponNumber;
+    mutable int                m_banged;
 };
 
 #endif

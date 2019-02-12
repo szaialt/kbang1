@@ -215,6 +215,25 @@ void GameTable::drawIntoSelection(int count, Player* selectionOwner)
     }
 }
 
+void GameTable::drawHandIntoSelection(Player* selectionOwner)
+{
+    Q_ASSERT(selectionOwner != 0);
+    QList<const PlayingCard*> drawedCards;
+    QList<PlayingCard*> hand = selectionOwner->hand();
+    foreach (PlayingCard* card, hand)
+    {
+        Q_ASSERT(!card->isVirtual());
+        selectionOwner->removeCardFromHand(card);
+        m_selection.append(card);
+        card->setOwner(selectionOwner);
+        card->setPocket(POCKET_SELECTION);
+        drawedCards.append(card);
+    }
+    
+    mp_game->gameEventManager().onDrawIntoSelection(selectionOwner, drawedCards);
+    
+}
+
 void GameTable::drawIntoSelection(int count)
 {
     Q_ASSERT(m_selection.isEmpty());

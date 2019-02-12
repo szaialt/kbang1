@@ -157,6 +157,16 @@ void Card::loadDefaultRuleset()
     new Card("Persuasion", CARD_PERSUASION,    "gfx/cards/teamfortress/persuasion.png" );
     new Card("Jarate",    CARD_JARATE,        "gfx/cards/teamfortress/jarate.png" );
     new Card("Healing bang", CARD_HEALING_BANG,"gfx/cards/teamfortress/healing-bang.png" );
+    //Cards from Director's Cuts
+    new Card("Ace up your sleeve", CARD_ACE_UP_YOUR_SLEEVE,        "gfx/cards/directorscuts/ace-up-your-sleeve.jpg" );
+    new Card("Deflection",    CARD_DEFLECTION,    "gfx/cards/directorscuts/deflection.jpg" );
+    new Card("Union pacific", CARD_UNION_PACIFIC, "gfx/cards/directorscuts/union-pacific.jpg" );
+    new Card("Hidden weapon", CARD_HIDDEN_WEAPON, "gfx/cards/directorscuts/hidden-weapon.jpg" );
+    new Card("Memento",       CARD_MEMENTO,         "gfx/cards/directorscuts/memento.jpg" );
+    new Card("Packing mule", CARD_PACKING_MULE,   "gfx/cards/directorscuts/packing-mule.jpg" );
+    new Card("Peace pipe",   CARD_PEACE_PIPE,     "gfx/cards/directorscuts/peace-pipe.jpg" );
+    new Card("Shotgun",      CARD_SHOTGUN,         "gfx/cards/directorscuts/shotgun.jpg" );
+    new Card("Sun glare",    CARD_SUN_GLARE,       "gfx/cards/directorscuts/sun-glare.jpg" );
     //Unknown card 
     new Card("",            CARD_UNKNOWN,    "gfx/cards/back-playing.png");
 
@@ -187,6 +197,30 @@ void Card::loadDefaultRuleset()
     new Card("Sniper",          CHARACTER_SNIPER,        "gfx/characters/teamfortress/sniper.png");
     new Card("Soldier",         CHARACTER_SOLDIER,       "gfx/characters/teamfortress/soldier.png");
     new Card("Spy",             CHARACTER_SPY,           "gfx/characters/teamfortress/spy.png");
+    
+    //Directory Cuts
+    new Card("Coronel Mortimer", CHARACTER_CORONEL_MORTIMER, "gfx/characters/directorscuts/coronel-mortimer.jpg");
+    new Card("Django",           CHARACTER_DJANGO,           "gfx/characters/directorscuts/django.jpg");
+    new Card("Emma",             CHARACTER_EMMA,             "gfx/characters/directorscuts/emma.jpg");
+    new Card("Hermanos Elder",   CHARACTER_HERMANOS_ELDER,   "gfx/characters/directorscuts/hermanos-elder.jpg");
+    new Card("Howard Hawks",     CHARACTER_HOWARD_HAWKS,     "gfx/characters/directorscuts/howard-hawks.jpg");
+    new Card("Joe",              CHARACTER_JOE,              "gfx/characters/directorscuts/joe.jpg");
+    new Card("John Ford",        CHARACTER_JOHN_FORD,        "gfx/characters/directorscuts/john-ford.jpg");
+    new Card("Llanero Solitario", CHARACTER_LLANERO_SOLITARIO, "gfx/characters/directorscuts/llanero-solitario.jpg");
+    new Card("Loco",            CHARACTER_LOCO,             "gfx/characters/directorscuts/loco.jpg");
+    new Card("Max Sand",        CHARACTER_MAX_SAND,         "gfx/characters/directorscuts/max-sand.jpg");
+    new Card("Pat Garrett",     CHARACTER_PAT_GARRETT,      "gfx/characters/directorscuts/pat-garrett.jpg");
+    new Card("Rev Jonathan Rudd", CHARACTER_REV_JONATHAN_RUDD, "gfx/characters/directorscuts/rev-jonathan-rudd.jpg");
+    new Card("Rooster Cogburn", CHARACTER_ROOSTER_COGBURN,  "gfx/characters/directorscuts/rooster-cogburn.jpg");
+    new Card("Sartana",        CHARACTER_SARTANA,           "gfx/characters/directorscuts/sartana.jpg");
+    new Card("Sergio Leone",   CHARACTER_SERGIO_LEONE,      "gfx/characters/directorscuts/sergio-leone.jpg");
+    new Card("Tuco El Feo",    CHARACTER_TUCO_EL_FEO,       "gfx/characters/directorscuts/tuco-el-feo.jpg");
+    new Card("Viejo Sikes",    CHARACTER_VIEJO_SIKES,       "gfx/characters/directorscuts/viejo-sikes.jpg");
+    new Card("Vienna",         CHARACTER_VIENNA,            "gfx/characters/directorscuts/vienna.jpg");
+    new Card("Wyatt Earp",     CHARACTER_WYATT_EARP,        "gfx/characters/directorscuts/wyatt-earp.jpg");
+    
+    
+    
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");
     new Card("Five Life Point Back", CHARACTER_UNKNOWN5,          "gfx/cards/back-character.png");
     new Card("Cowboy",          CHARACTER_COWBOY,           "gfx/characters/cowboy.png");

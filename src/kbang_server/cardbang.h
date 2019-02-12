@@ -38,7 +38,8 @@ public:
         DirectHit,
         HealingBang,
         DoubleBang,
-        Heavy
+        Heavy,
+        Deflection
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

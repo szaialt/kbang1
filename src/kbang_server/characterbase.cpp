@@ -1,6 +1,7 @@
 #include "characterbase.h"
 
 #include "playingcard.h"
+#include "cardbang.h"
 #include "player.h"
 #include "reactioncard.h"
 #include "game.h"
@@ -88,8 +89,19 @@ void CharacterBase::checkDeck(PlayingCard* causedBy,
                               bool (*checkFunc)(PlayingCard*), CheckDeckResultHandler* resultHandler)
 {
     PlayingCard* checkedCard = gameTable().checkDeck();
-    bool checkResult = (*checkFunc)(checkedCard);
-    mp_player->game()->gameEventManager().onPlayerCheckDeck(mp_player, checkedCard, causedBy, checkResult);
+    PlayingCard* checkedCard1 = checkedCard;
+    
+    QList<PlayingCard*> table = mp_player->table();
+        foreach (PlayingCard* card, table){
+            if (card->type() == CARD_MEMENTO){
+                if (checkedCard1->suit() == SUIT_CLUBS){
+                    checkedCard1 = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_HEARTS, 5);
+                    checkedCard1->setVirtual(checkedCard);
+                }
+            }
+        }
+    bool checkResult = (*checkFunc)(checkedCard1);
+    mp_player->game()->gameEventManager().onPlayerCheckDeck(mp_player, checkedCard1, causedBy, checkResult);
     resultHandler->checkResult(checkResult);
 }
 

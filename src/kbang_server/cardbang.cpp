@@ -25,6 +25,7 @@
 #include "game.h"
 #include "cardbarrel.h"
 #include "gameeventmanager.h"
+#include "util.h"
 
 #include <iostream>
 
@@ -42,6 +43,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Heavy:
         setType(CARD_HEAVY_BANG);
         break;
+    case Deflection:
+        setType(CARD_DEFLECTION);
+        break;
     default:
             NOT_REACHED();
     }
@@ -54,8 +58,14 @@ CardBang::~CardBang()
 
 void CardBang::play(Player *targetPlayer)
 {
+    if (type() == CARD_DEFLECTION){
+        controlTarget(targetPlayer);
+        shot(targetPlayer);
+    }
     controlCard();
-    controlTarget(targetPlayer);
+    if (!((owner()->characterType() == CHARACTER_CORONEL_MORTIMER) && (suit() == SUIT_DIAMONDS) && (type() == CARD_BANG))){
+        controlTarget(targetPlayer);
+    }
     shot(targetPlayer);
 }
 
@@ -82,10 +92,14 @@ void CardBang::play(Player *targetPlayer)
         if (game()->getDistance(owner(), targetPlayer) > owner()->weaponRange()){
             throw PlayerOutOfRangeException();
         }
+        if (type() == CARD_DEFLECTION){
+            if (game()->getDistance(owner(), targetPlayer) > 1)
+                throw PlayerOutOfRangeException();
         }
+    }
     
 void CardBang::shot(Player *targetPlayer){
-        if ((type() == CARD_BANG) || (type() == CARD_HEALING_BANG)){
+        if ((type() == CARD_BANG) || (type() == CARD_HEALING_BANG) || (type() == CARD_DOUBLE_BANG)){
             owner()->onBangPlayed(true);
         }
         mp_attackingPlayer = owner();
@@ -97,6 +111,12 @@ void CardBang::shot(Player *targetPlayer){
         QList<PlayingCard*> table = mp_attackedPlayer->table();
         foreach (PlayingCard* card, table){
             if (card->type() == CARD_JARATE){
+                m_missedLeft = 2;
+            }
+        }
+        QList<PlayingCard*> table2 = mp_attackingPlayer->table();
+        foreach (PlayingCard* card, table2){
+            if (card->type() == CARD_SHOTGUN){
                 m_missedLeft = 2;
             }
         }
@@ -148,12 +168,19 @@ void CardBang::respondCard(PlayingCard* targetCard)
         qDebug() << "CardBang::respondCard(PlayingCard* targetCard) mp_attackingPlayer is NULL";
         return;
     }
+    if (mp_attackingPlayer->characterType() == CHARACTER_SARTANA) {
+        if ((type() == CARD_BANG) && (targetCard->type() == CARD_MISSED)
+            && (rank() >= targetCard->rank()))
+                throw BadCardException();
+    }
     switch(targetCard->type()) {
     case CARD_MISSED: 
         targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
     case CARD_BARREL: {
         if (m_usedBarrels.contains(targetCard)){ 
@@ -163,6 +190,8 @@ void CardBang::respondCard(PlayingCard* targetCard)
         m_usedBarrels.append(targetCard);
         CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
         barrel->check(this);
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
         }
     case CARD_DEAD_RINGER:
@@ -171,21 +200,45 @@ void CardBang::respondCard(PlayingCard* targetCard)
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         game()->gameCycle().setNeedsFinishTurn(true);
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
+    case CARD_DEFLECTION: {
+        targetCard->assertInHand();
+        game()->gameCycle().unsetResponseMode(); 
+        game()->gameCycle().deflectionPlayed(); 
+        missed();
+        QList<Player*> players = game()->playerList();
+        shuffleList(players);
+        foreach(Player* p, players) {
+            if (p == player) {
+                continue;
+            }
+            if (game()->getDistance(player, p) == 1){
+                targetCard->play(p);
+            }
+            break;
+        }
+        if (targetCard->pocket() == POCKET_GRAVEYARD){
+            targetCard->setPocket(POCKET_HAND);
+            targetCard->setOwner(player);
+        }
+        gameTable()->playerRespondWithCard(targetCard);
+        if (targetCard->pocket() != POCKET_GRAVEYARD){ 
+            gameTable()->moveCardToGraveyard(targetCard);
+        }
+        player->checkEmptyHand();
+        game()->gameEventManager().onPlayerUpdated(player);
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
+        return;
+        break;
+    }
     default:
         break;
     }
     throw BadCardException();
-//     }
-//     catch (BadPlayerException ex){
-//         if (type() == CARD_BACKFIRE){
-//             qDebug() << "CARD_BACKFIRE: BadPlayerException caught.";
-//         }
-//         else {
-//             qDebug() << "BadPlayerException.";
-//             throw ex;
-//         }
-//     }
+
 }
 
 void CardBang::checkResult(bool result)

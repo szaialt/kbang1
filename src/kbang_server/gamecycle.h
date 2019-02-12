@@ -87,6 +87,8 @@ public:
 
     void setNeedsFinishTurn(bool b);
     void setDuplicateTurn(bool b);
+    
+    void deflectionPlayed();
 signals:
     void cardEffectOver();
 
@@ -106,10 +108,12 @@ private:
     bool    m_isCardEffect;
     bool    m_needsFinishTurn;
     bool    m_duplicateTurn;
+    bool    m_deflectionFlag;
 private:
     void    sendRequest();
     void    checkPlayerAndState(Player* player, GamePlayState state);
     void    startTurn(Player* player);
+    void    resetAbility(Player* player);
     int     needDiscard(Player* player);
     void    announceContextChange();
 };

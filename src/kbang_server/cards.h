@@ -40,5 +40,7 @@
 #include "cardjarate.h"
 #include "cardteleport.h"
 #include "cardpersuasion.h"
-
+#include "cardpeacepipe.h"
+#include "cardmemento.h"
+#include "cardhiddenweapon.h"
 #endif

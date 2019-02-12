@@ -10,8 +10,14 @@ class CharacterSoldier : public CharacterBase
 {
 Q_OBJECT
 public: 
-    CharacterSoldier(QObject* parent);
+    enum Type {
+        Soldier,
+        LlaneroSolitario
+    };
+    CharacterSoldier(QObject* parent, Type type);
     virtual void respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard);
+private:
+    Type m_type;
 };
 
 #endif // CHARACTERSOLDIER_H

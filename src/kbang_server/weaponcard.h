@@ -35,7 +35,7 @@ public:
      * the range
      * parameter:
      *  * 0 - Guitar
-     *  * 1 - Volcanic, HalfZatochi
+     *  * 1 - Volcanic, HalfZatochi, Shotgun
      *  * 2 - Schofield, MediGun
      *  * 3 - Remington
      *  * 4 - Carabine
@@ -44,6 +44,7 @@ public:
     enum WeaponType {
         Guitar,
         HalfZatochi,
+        Shotgun,
         Volcanic,
         Schofield,
         MediGun,

@@ -41,7 +41,18 @@ void CardMultiShoot::respondPass()
 {
     gameCycle()->unsetResponseMode();
     gameTable()->playerPass(mp_requestedPlayer);
-    mp_requestedPlayer->modifyLifePoints(-1, mp_shootingPlayer);
+    bool injure = true;
+    if (type() == CARD_INDIANS){
+        QList<PlayingCard*> table = mp_requestedPlayer->table();
+        foreach (PlayingCard* card, table){
+            if (card->type() == CARD_PEACE_PIPE){
+                injure = false;
+            }
+        }
+    }
+    if (injure){
+        mp_requestedPlayer->modifyLifePoints(-1, mp_shootingPlayer);
+    }
     if (m_playedNextDirection){
         requestNext();
     }
@@ -54,7 +65,22 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
 {
     Player* player = targetCard->owner();
 
-         switch(targetCard->type()) {
+    if (type() == CARD_INDIANS){
+        QList<PlayingCard*> table = mp_requestedPlayer->table();
+        foreach (PlayingCard* card, table){
+            if (card->type() == CARD_PEACE_PIPE){
+                game()->gameCycle().unsetResponseMode();
+                if (m_playedNextDirection){
+                     requestNext();
+                }
+                else {
+                    requestPrevious();
+               }
+             return;
+            }
+        }
+    }
+    switch(targetCard->type()) {
         case CARD_BANG:
              if ((type() != CARD_INDIANS) && (type() != CARD_MANN_VS_MACHINE))
                  break;
@@ -106,6 +132,14 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 requestPrevious();
             }
             return;
+        case CARD_DEFLECTION:
+            if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE))
+                break;
+            targetCard->assertInHand();
+            respondWith(targetCard);
+            //targetCard->play(owner());
+            return;
+            break;
         default:
             break;
         }

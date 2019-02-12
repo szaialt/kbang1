@@ -16,6 +16,9 @@ CardHorse::CardHorse(Game *game, int id, CardHorse::HorseType horseType, CardSui
     case Appaloosa:
         setType(CARD_APPALOSSA);
         break;
+    case PackingMule:
+        setType(CARD_PACKING_MULE);
+        break;
     }
 }
 
@@ -25,6 +28,34 @@ CardHorse::~CardHorse()
 
 void CardHorse::play()
 {
+    if (type() == CARD_PACKING_MULE){
+        foreach(PlayingCard* card, owner()->table()) {
+            CardHorse* equine = qobject_cast<CardHorse*>(card);
+            if (equine == 0)
+               continue;
+            else {
+                if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+                    throw TwoSameOnTableException();
+                }
+                else {
+                    gameTable()->playerDiscardCard(card);
+                }
+            }
+        }
+    }
+    else {
+       foreach(PlayingCard* card, owner()->table()) {
+           if (card->type() == CARD_PACKING_MULE){
+               if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+                    throw TwoSameOnTableException();
+                }
+                else {
+                    gameTable()->playerDiscardCard(card);
+                }
+           }
+       }
+       
+    }
     playAsBlueCard();
 }
 
@@ -41,6 +72,8 @@ void CardHorse::registerPlayer(Player* player)
     case Appaloosa:
         player->modifyDistanceOut(1);
         break;
+    default:
+        break;
     }
 }
 
@@ -52,6 +85,8 @@ void CardHorse::unregisterPlayer(Player* player)
         break;
     case Appaloosa:
         player->modifyDistanceOut(-1);
+        break;
+    default:
         break;
     }
 }

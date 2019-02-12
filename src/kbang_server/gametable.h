@@ -73,6 +73,8 @@ public:
 
     void drawIntoSelection(int count);
     
+    void drawHandIntoSelection(Player* selectionOwner);
+    
     /**
      * The player picks a card from selection.
      */

@@ -1,6 +1,8 @@
 #include "charactercassidygringo.h"
 #include "gametable.h"
 #include "player.h"
+#include "playingcard.h"
+#include "cardbeer.h"
 
 CharacterCassidyGringo::CharacterCassidyGringo(QObject* parent, Type type):
     CharacterBase(parent, CHARACTER_UNKNOWN),
@@ -10,6 +12,8 @@ CharacterCassidyGringo::CharacterCassidyGringo(QObject* parent, Type type):
         setCharacterType(CHARACTER_BART_CASSIDY);
     else if (type == ElGringo)
         setCharacterType(CHARACTER_EL_GRINGO);
+    else if (type == ViejoSikes)
+        setCharacterType(CHARACTER_VIEJO_SIKES);
 }
 
 void CharacterCassidyGringo::setPlayer(Player* player)
@@ -44,6 +48,11 @@ void CharacterCassidyGringo::onHit(int lifePoints, Player* causedBy)
         }
         return;
     }
+    if (m_type == ViejoSikes) {
+        notifyAbilityUse();
+        mp_player->modifyDistanceIn(1);
+        return;
+    }
 }
 
 void CharacterCassidyGringo::onHit(int lifePoints)
@@ -53,6 +62,28 @@ void CharacterCassidyGringo::onHit(int lifePoints)
         notifyAbilityUse();
         gameTable().playerDrawFromDeck(mp_player, lifePoints, 0);
         return;
+    }
+    if (m_type == ViejoSikes) {
+        notifyAbilityUse();
+        mp_player->modifyDistanceIn(1);
+        return;
+    }
+}
+
+void CharacterCassidyGringo::playCard(PlayingCard* card)
+{
+    if (m_type == ViejoSikes) {
+        CardBeer* beer = qobject_cast<CardBeer*>(card);
+         if (beer == 0)
+            ;
+         else {
+             if (mp_player->lifePoints() != mp_player->maxLifePoints())
+                 mp_player->modifyDistanceIn(-1);
+         }
+         card->play();
+    }
+    else {
+        card->play();
     }
 }
 

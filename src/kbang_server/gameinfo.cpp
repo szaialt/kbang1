@@ -20,6 +20,8 @@ GameInfo::GameInfo(const CreateGameData& createGameData):
       m_teamFortressFlag(createGameData.teamFortressFlag),
       m_stackingDynamiteFlag(createGameData.stackingDynamiteFlag),
       m_teamFortressCharactersFlag(createGameData.teamFortressCharactersFlag),
+      m_directorsCutsFlag(createGameData.directorsCutsFlag),
+      m_directorsCutsCharactersFlag(createGameData.directorsCutsCharactersFlag),
       m_aiLevel(createGameData.aiLevel)
 {
     

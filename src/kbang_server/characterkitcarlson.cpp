@@ -3,10 +3,20 @@
 #include "gamecycle.h"
 #include "playingcard.h"
 #include "gameexceptions.h"
+#include "gameeventmanager.h"
 
-CharacterKitCarlson::CharacterKitCarlson(QObject *parent):
-        CharacterBase(parent, CHARACTER_KIT_CARLSON)
+CharacterKitCarlson::CharacterKitCarlson(QObject *parent, Type type):
+        CharacterBase(parent, CHARACTER_UNKNOWN),
+        m_type(type)
 {
+        switch(type) {
+        case KitCarlson:
+            setCharacterType(CHARACTER_KIT_CARLSON);
+            break;
+        case RevJonathanRudd:
+            setCharacterType(CHARACTER_REV_JONATHAN_RUDD);
+            break;
+        }
 }
 
 
@@ -22,6 +32,9 @@ void CharacterKitCarlson::draw(bool specialDraw)
         notifyAbilityUse();
         gameTable().drawIntoSelection(3, mp_player);
         Q_ASSERT(gameTable().selection().size() == 3);
+        if (characterType() == CHARACTER_REV_JONATHAN_RUDD){
+           gameTable().drawHandIntoSelection(mp_player); 
+        }
         gameCycle().setResponseMode(this, mp_player);
     } else {
         CharacterBase::draw(0);

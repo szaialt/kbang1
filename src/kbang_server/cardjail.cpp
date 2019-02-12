@@ -5,10 +5,20 @@
 #include "gametable.h"
 #include "gamecycle.h"
 
-CardJail::CardJail(Game *game, int id, CardSuit suit, CardRank rank, int PredrawCheck):
+CardJail::CardJail(Game *game, int id, JailType type, CardSuit suit, CardRank rank, int PredrawCheck):
         PlayingCard(game, id, CARD_JAIL, suit, rank)
 {
     m_PredrawCheck = PredrawCheck;
+    m_jailType = type;
+    m_distanceModified = false;
+    switch(m_jailType) {
+    case Jail:
+        setType(CARD_JAIL);
+        break;
+    case Sunglare:
+        setType(CARD_SUN_GLARE);
+        break;
+    }
 }
 
 CardJail::~CardJail()
@@ -47,7 +57,13 @@ void CardJail::checkResult(bool result)
 {       
     gameTable()->playerDiscardCard(this);
     if (!result) {
-        gameCycle()->skipPlayersTurn();
+        if (type() == CARD_JAIL){
+            gameCycle()->skipPlayersTurn();
+        }
+        else {
+            gameCycle()->currentPlayer()->modifyDistanceOut(-1);
+            m_distanceModified = true;
+        }
     }
 }
 
@@ -60,6 +76,10 @@ void CardJail::registerPlayer(Player* player)
 void CardJail::unregisterPlayer(Player* player)
 {
     player->unregisterPredrawCheck(m_PredrawCheck);
+    if (m_distanceModified){
+        player->modifyDistanceOut(1);
+        m_distanceModified = false;
+    }
 }
 
 bool CardJail::checkJail(PlayingCard* card)

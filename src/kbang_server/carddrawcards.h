@@ -12,7 +12,9 @@ public:
     enum Type {
         Diligenza,
         WellsFargo, 
-        SupplyCrate
+        SupplyCrate,
+        AceUpYourSleeve,
+        UnionPacific
     };
     CardDrawCards(Game* game, int id, Type, CardSuit, CardRank);
     ~CardDrawCards();

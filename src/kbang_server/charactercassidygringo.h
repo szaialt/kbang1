@@ -9,12 +9,14 @@ Q_OBJECT
 public:
     enum Type {
         BartCassidy,
-        ElGringo
+        ElGringo,
+        ViejoSikes
     };
 
     CharacterCassidyGringo(QObject* parent, Type); 
     virtual void setPlayer(Player* player);
     virtual int maxLifePoints() const;
+    virtual void playCard(PlayingCard* card);
 
 public slots:
     void onHit(int lifePoints, Player* causedBy);

@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_DISABLE_DEPRECATED_BEFORE=0x000000 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_CORE_LIB
 CFLAGS        = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I../kbang_common -Ilib -I. -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/../common -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtXml -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imocs/server -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
+INCPATH       = -I. -I../kbang_common -Ilib -I. -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/../common -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtXml -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imocs/server -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -33,10 +33,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = kbang-server1.0.0
-DISTDIR = /media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/obj/server/kbang-server1.0.0
+DISTDIR = /media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/obj/server/kbang-server1.0.0
 LINK          = g++
 LFLAGS        = -m64 -Wl,-O1
-LIBS          = $(SUBLIBS) -Llib -L/usr/X11R6/lib64 -L//media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -lkbang_common -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Xml -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -Llib -L/usr/X11R6/lib64 -L//media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -lkbang_common -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Xml -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -91,6 +91,9 @@ SOURCES       = main.cpp \
 		carddynamite.cpp \
 		cardtaker.cpp \
 		cardbarrel.cpp \
+		cardpeacepipe.cpp \
+		cardmemento.cpp \
+		cardhiddenweapon.cpp \
 		gameeventmanager.cpp \
 		gamelogger.cpp \
 		characterbase.cpp \
@@ -115,7 +118,15 @@ SOURCES       = main.cpp \
 		charactermedic.cpp \
 		characterscout.cpp \
 		charactersniper.cpp \
-		charactersoldier.cpp mocs/server/moc_player.cpp \
+		charactersoldier.cpp \
+		charactercoronelmortimer.cpp \
+		characterdjango.cpp \
+		characteremma.cpp \
+		characterjohnford.cpp \
+		characterloco.cpp \
+		charactersartana.cpp \
+		charactervienna.cpp \
+		characterwyattearp.cpp mocs/server/moc_player.cpp \
 		mocs/server/moc_gameserver.cpp \
 		mocs/server/moc_game.cpp \
 		mocs/server/moc_console.cpp \
@@ -139,6 +150,8 @@ SOURCES       = main.cpp \
 		mocs/server/moc_cardmultishoot.cpp \
 		mocs/server/moc_cardduel.cpp \
 		mocs/server/moc_cardbarrel.cpp \
+		mocs/server/moc_cardmemento.cpp \
+		mocs/server/moc_cardhiddenweapon.cpp \
 		mocs/server/moc_charactercalamityjanet.cpp \
 		mocs/server/moc_characterblackjack.cpp \
 		mocs/server/moc_charactercassidygringo.cpp \
@@ -158,7 +171,15 @@ SOURCES       = main.cpp \
 		mocs/server/moc_charactermedic.cpp \
 		mocs/server/moc_characterscout.cpp \
 		mocs/server/moc_charactersniper.cpp \
-		mocs/server/moc_charactersoldier.cpp
+		mocs/server/moc_charactersoldier.cpp \
+		mocs/server/moc_charactercoronelmortimer.cpp \
+		mocs/server/moc_characterdjango.cpp \
+		mocs/server/moc_characteremma.cpp \
+		mocs/server/moc_characterjohnford.cpp \
+		mocs/server/moc_characterloco.cpp \
+		mocs/server/moc_charactersartana.cpp \
+		mocs/server/moc_charactervienna.cpp \
+		mocs/server/moc_characterwyattearp.cpp
 OBJECTS       = obj/server/main.o \
 		obj/server/player.o \
 		obj/server/gameserver.o \
@@ -202,6 +223,9 @@ OBJECTS       = obj/server/main.o \
 		obj/server/carddynamite.o \
 		obj/server/cardtaker.o \
 		obj/server/cardbarrel.o \
+		obj/server/cardpeacepipe.o \
+		obj/server/cardmemento.o \
+		obj/server/cardhiddenweapon.o \
 		obj/server/gameeventmanager.o \
 		obj/server/gamelogger.o \
 		obj/server/characterbase.o \
@@ -227,6 +251,14 @@ OBJECTS       = obj/server/main.o \
 		obj/server/characterscout.o \
 		obj/server/charactersniper.o \
 		obj/server/charactersoldier.o \
+		obj/server/charactercoronelmortimer.o \
+		obj/server/characterdjango.o \
+		obj/server/characteremma.o \
+		obj/server/characterjohnford.o \
+		obj/server/characterloco.o \
+		obj/server/charactersartana.o \
+		obj/server/charactervienna.o \
+		obj/server/characterwyattearp.o \
 		obj/server/moc_player.o \
 		obj/server/moc_gameserver.o \
 		obj/server/moc_game.o \
@@ -251,6 +283,8 @@ OBJECTS       = obj/server/main.o \
 		obj/server/moc_cardmultishoot.o \
 		obj/server/moc_cardduel.o \
 		obj/server/moc_cardbarrel.o \
+		obj/server/moc_cardmemento.o \
+		obj/server/moc_cardhiddenweapon.o \
 		obj/server/moc_charactercalamityjanet.o \
 		obj/server/moc_characterblackjack.o \
 		obj/server/moc_charactercassidygringo.o \
@@ -270,7 +304,15 @@ OBJECTS       = obj/server/main.o \
 		obj/server/moc_charactermedic.o \
 		obj/server/moc_characterscout.o \
 		obj/server/moc_charactersniper.o \
-		obj/server/moc_charactersoldier.o
+		obj/server/moc_charactersoldier.o \
+		obj/server/moc_charactercoronelmortimer.o \
+		obj/server/moc_characterdjango.o \
+		obj/server/moc_characteremma.o \
+		obj/server/moc_characterjohnford.o \
+		obj/server/moc_characterloco.o \
+		obj/server/moc_charactersartana.o \
+		obj/server/moc_charactervienna.o \
+		obj/server/moc_characterwyattearp.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -380,6 +422,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		carddynamite.h \
 		cardtaker.h \
 		cardbarrel.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		gameeventmanager.h \
 		gamelogger.h \
 		characterbase.h \
@@ -405,7 +450,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		charactermedic.h \
 		characterscout.h \
 		charactersniper.h \
-		charactersoldier.h main.cpp \
+		charactersoldier.h \
+		charactercoronelmortimer.h \
+		characterdjango.h \
+		characteremma.h \
+		characterjohnford.h \
+		characterloco.h \
+		charactersartana.h \
+		charactervienna.h \
+		characterwyattearp.h main.cpp \
 		player.cpp \
 		gameserver.cpp \
 		game.cpp \
@@ -448,6 +501,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		carddynamite.cpp \
 		cardtaker.cpp \
 		cardbarrel.cpp \
+		cardpeacepipe.cpp \
+		cardmemento.cpp \
+		cardhiddenweapon.cpp \
 		gameeventmanager.cpp \
 		gamelogger.cpp \
 		characterbase.cpp \
@@ -472,7 +528,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		charactermedic.cpp \
 		characterscout.cpp \
 		charactersniper.cpp \
-		charactersoldier.cpp
+		charactersoldier.cpp \
+		charactercoronelmortimer.cpp \
+		characterdjango.cpp \
+		characteremma.cpp \
+		characterjohnford.cpp \
+		characterloco.cpp \
+		charactersartana.cpp \
+		charactervienna.cpp \
+		characterwyattearp.cpp
 QMAKE_TARGET  = kbang-server
 DESTDIR       = 
 TARGET        = kbang-server
@@ -641,8 +705,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterscout.h charactersniper.h charactersoldier.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h cardpeacepipe.h cardmemento.h cardhiddenweapon.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterscout.h charactersniper.h charactersoldier.h charactercoronelmortimer.h characterdjango.h characteremma.h characterjohnford.h characterloco.h charactersartana.h charactervienna.h characterwyattearp.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp cardpeacepipe.cpp cardmemento.cpp cardhiddenweapon.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp charactercoronelmortimer.cpp characterdjango.cpp characteremma.cpp characterjohnford.cpp characterloco.cpp charactersartana.cpp charactervienna.cpp characterwyattearp.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -668,9 +732,9 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp
+compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp
+	-$(DEL_FILE) mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp
 mocs/server/moc_player.cpp: publicplayerview.h \
 		../kbang_common/common.h \
 		../kbang_common/parser/parserstructs.h \
@@ -681,7 +745,7 @@ mocs/server/moc_player.cpp: publicplayerview.h \
 		characterbase.h \
 		player.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include player.h -o mocs/server/moc_player.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include player.h -o mocs/server/moc_player.cpp
 
 mocs/server/moc_gameserver.cpp: ../kbang_common/parser/parser.h \
 		../kbang_common/parser/parserstructs.h \
@@ -692,7 +756,7 @@ mocs/server/moc_gameserver.cpp: ../kbang_common/parser/parser.h \
 		../kbang_common/common.h \
 		gameserver.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include gameserver.h -o mocs/server/moc_gameserver.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include gameserver.h -o mocs/server/moc_gameserver.cpp
 
 mocs/server/moc_game.cpp: publicgameview.h \
 		../kbang_common/common.h \
@@ -700,11 +764,11 @@ mocs/server/moc_game.cpp: publicgameview.h \
 		../kbang_common/gameenums.h \
 		game.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include game.h -o mocs/server/moc_game.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include game.h -o mocs/server/moc_game.cpp
 
 mocs/server/moc_console.cpp: console.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include console.h -o mocs/server/moc_console.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include console.h -o mocs/server/moc_console.cpp
 
 mocs/server/moc_client.cpp: ../kbang_common/parser/parser.h \
 		../kbang_common/parser/parserstructs.h \
@@ -716,11 +780,11 @@ mocs/server/moc_client.cpp: ../kbang_common/parser/parser.h \
 		gameeventlistener.h \
 		client.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include client.h -o mocs/server/moc_client.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include client.h -o mocs/server/moc_client.cpp
 
 mocs/server/moc_tcpserver.cpp: tcpserver.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include tcpserver.h -o mocs/server/moc_tcpserver.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include tcpserver.h -o mocs/server/moc_tcpserver.cpp
 
 mocs/server/moc_playingcard.cpp: game.h \
 		publicgameview.h \
@@ -738,7 +802,7 @@ mocs/server/moc_playingcard.cpp: game.h \
 		characterbase.h \
 		playingcard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include playingcard.h -o mocs/server/moc_playingcard.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include playingcard.h -o mocs/server/moc_playingcard.cpp
 
 mocs/server/moc_reactioncard.cpp: playingcard.h \
 		game.h \
@@ -757,7 +821,7 @@ mocs/server/moc_reactioncard.cpp: playingcard.h \
 		reactionhandler.h \
 		reactioncard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include reactioncard.h -o mocs/server/moc_reactioncard.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include reactioncard.h -o mocs/server/moc_reactioncard.cpp
 
 mocs/server/moc_weaponcard.cpp: playingcard.h \
 		game.h \
@@ -775,7 +839,7 @@ mocs/server/moc_weaponcard.cpp: playingcard.h \
 		characterbase.h \
 		weaponcard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include weaponcard.h -o mocs/server/moc_weaponcard.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include weaponcard.h -o mocs/server/moc_weaponcard.cpp
 
 mocs/server/moc_cardbang.cpp: reactioncard.h \
 		playingcard.h \
@@ -796,7 +860,7 @@ mocs/server/moc_cardbang.cpp: reactioncard.h \
 		checkdeckresulthandler.h \
 		cardbang.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbang.h -o mocs/server/moc_cardbang.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbang.h -o mocs/server/moc_cardbang.cpp
 
 mocs/server/moc_cardmissed.cpp: playingcard.h \
 		game.h \
@@ -814,7 +878,7 @@ mocs/server/moc_cardmissed.cpp: playingcard.h \
 		characterbase.h \
 		cardmissed.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmissed.h -o mocs/server/moc_cardmissed.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmissed.h -o mocs/server/moc_cardmissed.cpp
 
 mocs/server/moc_gamecycle.cpp: ../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
@@ -832,21 +896,21 @@ mocs/server/moc_gamecycle.cpp: ../kbang_common/parser/parserstructs.h \
 		characterbase.h \
 		gamecycle.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include gamecycle.h -o mocs/server/moc_gamecycle.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include gamecycle.h -o mocs/server/moc_gamecycle.cpp
 
 mocs/server/moc_playerctrl.cpp: gameexceptions.h \
 		../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
 		playerctrl.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include playerctrl.h -o mocs/server/moc_playerctrl.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include playerctrl.h -o mocs/server/moc_playerctrl.cpp
 
 mocs/server/moc_voidai.cpp: gameeventlistener.h \
 		../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
 		voidai.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai.h -o mocs/server/moc_voidai.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai.h -o mocs/server/moc_voidai.cpp
 
 mocs/server/moc_voidai2level.cpp: gameeventlistener.h \
 		../kbang_common/parser/parserstructs.h \
@@ -854,7 +918,7 @@ mocs/server/moc_voidai2level.cpp: gameeventlistener.h \
 		voidai.h \
 		voidai2level.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai2level.h -o mocs/server/moc_voidai2level.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai2level.h -o mocs/server/moc_voidai2level.cpp
 
 mocs/server/moc_voidai3level.cpp: gameeventlistener.h \
 		../kbang_common/parser/parserstructs.h \
@@ -863,7 +927,7 @@ mocs/server/moc_voidai3level.cpp: gameeventlistener.h \
 		voidai2level.h \
 		voidai3level.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai3level.h -o mocs/server/moc_voidai3level.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include voidai3level.h -o mocs/server/moc_voidai3level.cpp
 
 mocs/server/moc_cardbeer.cpp: playingcard.h \
 		game.h \
@@ -882,7 +946,7 @@ mocs/server/moc_cardbeer.cpp: playingcard.h \
 		reactionhandler.h \
 		cardbeer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbeer.h -o mocs/server/moc_cardbeer.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbeer.h -o mocs/server/moc_cardbeer.cpp
 
 mocs/server/moc_cardexpansionbeer.cpp: cardbeer.h \
 		playingcard.h \
@@ -902,7 +966,7 @@ mocs/server/moc_cardexpansionbeer.cpp: cardbeer.h \
 		reactionhandler.h \
 		cardexpansionbeer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardexpansionbeer.h -o mocs/server/moc_cardexpansionbeer.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardexpansionbeer.h -o mocs/server/moc_cardexpansionbeer.cpp
 
 mocs/server/moc_cardhorse.cpp: playingcard.h \
 		game.h \
@@ -920,7 +984,7 @@ mocs/server/moc_cardhorse.cpp: playingcard.h \
 		characterbase.h \
 		cardhorse.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardhorse.h -o mocs/server/moc_cardhorse.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardhorse.h -o mocs/server/moc_cardhorse.cpp
 
 mocs/server/moc_cardpersuasion.cpp: playingcard.h \
 		game.h \
@@ -938,7 +1002,7 @@ mocs/server/moc_cardpersuasion.cpp: playingcard.h \
 		characterbase.h \
 		cardpersuasion.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardpersuasion.h -o mocs/server/moc_cardpersuasion.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardpersuasion.h -o mocs/server/moc_cardpersuasion.cpp
 
 mocs/server/moc_carddrawcards.cpp: playingcard.h \
 		game.h \
@@ -956,7 +1020,7 @@ mocs/server/moc_carddrawcards.cpp: playingcard.h \
 		characterbase.h \
 		carddrawcards.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include carddrawcards.h -o mocs/server/moc_carddrawcards.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include carddrawcards.h -o mocs/server/moc_carddrawcards.cpp
 
 mocs/server/moc_cardmultishoot.cpp: reactioncard.h \
 		playingcard.h \
@@ -977,7 +1041,7 @@ mocs/server/moc_cardmultishoot.cpp: reactioncard.h \
 		checkdeckresulthandler.h \
 		cardmultishoot.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmultishoot.h -o mocs/server/moc_cardmultishoot.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmultishoot.h -o mocs/server/moc_cardmultishoot.cpp
 
 mocs/server/moc_cardduel.cpp: reactioncard.h \
 		playingcard.h \
@@ -997,7 +1061,7 @@ mocs/server/moc_cardduel.cpp: reactioncard.h \
 		reactionhandler.h \
 		cardduel.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardduel.h -o mocs/server/moc_cardduel.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardduel.h -o mocs/server/moc_cardduel.cpp
 
 mocs/server/moc_cardbarrel.cpp: playingcard.h \
 		game.h \
@@ -1015,7 +1079,43 @@ mocs/server/moc_cardbarrel.cpp: playingcard.h \
 		characterbase.h \
 		cardbarrel.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbarrel.h -o mocs/server/moc_cardbarrel.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbarrel.h -o mocs/server/moc_cardbarrel.cpp
+
+mocs/server/moc_cardmemento.cpp: playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		cardmemento.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmemento.h -o mocs/server/moc_cardmemento.cpp
+
+mocs/server/moc_cardhiddenweapon.cpp: playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		cardhiddenweapon.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardhiddenweapon.h -o mocs/server/moc_cardhiddenweapon.cpp
 
 mocs/server/moc_charactercalamityjanet.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1024,7 +1124,7 @@ mocs/server/moc_charactercalamityjanet.cpp: characterbase.h \
 		../kbang_common/common.h \
 		charactercalamityjanet.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercalamityjanet.h -o mocs/server/moc_charactercalamityjanet.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercalamityjanet.h -o mocs/server/moc_charactercalamityjanet.cpp
 
 mocs/server/moc_characterblackjack.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1033,7 +1133,7 @@ mocs/server/moc_characterblackjack.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterblackjack.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterblackjack.h -o mocs/server/moc_characterblackjack.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterblackjack.h -o mocs/server/moc_characterblackjack.cpp
 
 mocs/server/moc_charactercassidygringo.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1042,7 +1142,7 @@ mocs/server/moc_charactercassidygringo.cpp: characterbase.h \
 		../kbang_common/common.h \
 		charactercassidygringo.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercassidygringo.h -o mocs/server/moc_charactercassidygringo.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercassidygringo.h -o mocs/server/moc_charactercassidygringo.cpp
 
 mocs/server/moc_charactersuzylafayette.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1051,7 +1151,7 @@ mocs/server/moc_charactersuzylafayette.cpp: characterbase.h \
 		../kbang_common/common.h \
 		charactersuzylafayette.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersuzylafayette.h -o mocs/server/moc_charactersuzylafayette.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersuzylafayette.h -o mocs/server/moc_charactersuzylafayette.cpp
 
 mocs/server/moc_characterpropertychange.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1060,7 +1160,7 @@ mocs/server/moc_characterpropertychange.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterpropertychange.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterpropertychange.h -o mocs/server/moc_characterpropertychange.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterpropertychange.h -o mocs/server/moc_characterpropertychange.cpp
 
 mocs/server/moc_characterjourdonnais.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1069,7 +1169,7 @@ mocs/server/moc_characterjourdonnais.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterjourdonnais.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjourdonnais.h -o mocs/server/moc_characterjourdonnais.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjourdonnais.h -o mocs/server/moc_characterjourdonnais.cpp
 
 mocs/server/moc_characterpedroramirez.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1078,7 +1178,7 @@ mocs/server/moc_characterpedroramirez.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterpedroramirez.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterpedroramirez.h -o mocs/server/moc_characterpedroramirez.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterpedroramirez.h -o mocs/server/moc_characterpedroramirez.cpp
 
 mocs/server/moc_characterjessejones.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1087,7 +1187,7 @@ mocs/server/moc_characterjessejones.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterjessejones.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjessejones.h -o mocs/server/moc_characterjessejones.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjessejones.h -o mocs/server/moc_characterjessejones.cpp
 
 mocs/server/moc_charactersidketchum.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1096,7 +1196,7 @@ mocs/server/moc_charactersidketchum.cpp: characterbase.h \
 		../kbang_common/common.h \
 		charactersidketchum.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersidketchum.h -o mocs/server/moc_charactersidketchum.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersidketchum.h -o mocs/server/moc_charactersidketchum.cpp
 
 mocs/server/moc_characterkitcarlson.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1106,7 +1206,7 @@ mocs/server/moc_characterkitcarlson.cpp: characterbase.h \
 		reactionhandler.h \
 		characterkitcarlson.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterkitcarlson.h -o mocs/server/moc_characterkitcarlson.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterkitcarlson.h -o mocs/server/moc_characterkitcarlson.cpp
 
 mocs/server/moc_charactervulturesam.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1116,7 +1216,7 @@ mocs/server/moc_charactervulturesam.cpp: characterbase.h \
 		playerreaper.h \
 		charactervulturesam.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactervulturesam.h -o mocs/server/moc_charactervulturesam.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactervulturesam.h -o mocs/server/moc_charactervulturesam.cpp
 
 mocs/server/moc_characterluckyduke.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1126,7 +1226,7 @@ mocs/server/moc_characterluckyduke.cpp: characterbase.h \
 		reactionhandler.h \
 		characterluckyduke.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterluckyduke.h -o mocs/server/moc_characterluckyduke.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterluckyduke.h -o mocs/server/moc_characterluckyduke.cpp
 
 mocs/server/moc_charactercowboy.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1140,7 +1240,7 @@ mocs/server/moc_charactercowboy.cpp: characterbase.h \
 		gameexceptions.h \
 		charactercowboy.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercowboy.h -o mocs/server/moc_charactercowboy.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercowboy.h -o mocs/server/moc_charactercowboy.cpp
 
 mocs/server/moc_characterdemoman.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1154,7 +1254,7 @@ mocs/server/moc_characterdemoman.cpp: characterbase.h \
 		gameexceptions.h \
 		characterdemoman.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdemoman.h -o mocs/server/moc_characterdemoman.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdemoman.h -o mocs/server/moc_characterdemoman.cpp
 
 mocs/server/moc_characterengineer.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1163,7 +1263,7 @@ mocs/server/moc_characterengineer.cpp: characterbase.h \
 		../kbang_common/common.h \
 		characterengineer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterengineer.h -o mocs/server/moc_characterengineer.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterengineer.h -o mocs/server/moc_characterengineer.cpp
 
 mocs/server/moc_characterheavy.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1182,7 +1282,7 @@ mocs/server/moc_characterheavy.cpp: characterbase.h \
 		gamecycle.h \
 		characterheavy.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterheavy.h -o mocs/server/moc_characterheavy.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterheavy.h -o mocs/server/moc_characterheavy.cpp
 
 mocs/server/moc_charactermedic.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1191,7 +1291,7 @@ mocs/server/moc_charactermedic.cpp: characterbase.h \
 		../kbang_common/common.h \
 		charactermedic.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactermedic.h -o mocs/server/moc_charactermedic.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactermedic.h -o mocs/server/moc_charactermedic.cpp
 
 mocs/server/moc_characterscout.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1206,7 +1306,7 @@ mocs/server/moc_characterscout.cpp: characterbase.h \
 		reactionhandler.h \
 		characterscout.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterscout.h -o mocs/server/moc_characterscout.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterscout.h -o mocs/server/moc_characterscout.cpp
 
 mocs/server/moc_charactersniper.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1220,7 +1320,7 @@ mocs/server/moc_charactersniper.cpp: characterbase.h \
 		gameexceptions.h \
 		charactersniper.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersniper.h -o mocs/server/moc_charactersniper.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersniper.h -o mocs/server/moc_charactersniper.cpp
 
 mocs/server/moc_charactersoldier.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -1235,7 +1335,89 @@ mocs/server/moc_charactersoldier.cpp: characterbase.h \
 		reactionhandler.h \
 		charactersoldier.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersoldier.h -o mocs/server/moc_charactersoldier.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersoldier.h -o mocs/server/moc_charactersoldier.cpp
+
+mocs/server/moc_charactercoronelmortimer.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		charactercoronelmortimer.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercoronelmortimer.h -o mocs/server/moc_charactercoronelmortimer.cpp
+
+mocs/server/moc_characterdjango.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterdjango.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdjango.h -o mocs/server/moc_characterdjango.cpp
+
+mocs/server/moc_characteremma.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characteremma.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characteremma.h -o mocs/server/moc_characteremma.cpp
+
+mocs/server/moc_characterjohnford.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterjohnford.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjohnford.h -o mocs/server/moc_characterjohnford.cpp
+
+mocs/server/moc_characterloco.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterloco.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterloco.h -o mocs/server/moc_characterloco.cpp
+
+mocs/server/moc_charactersartana.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		charactersartana.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersartana.h -o mocs/server/moc_charactersartana.cpp
+
+mocs/server/moc_charactervienna.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		charactervienna.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactervienna.h -o mocs/server/moc_charactervienna.cpp
+
+mocs/server/moc_characterwyattearp.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterwyattearp.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5DiC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterwyattearp.h -o mocs/server/moc_characterwyattearp.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1305,6 +1487,9 @@ obj/server/player.o: player.cpp player.h \
 		cardjarate.h \
 		cardteleport.h \
 		cardpersuasion.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		gameeventmanager.h \
 		charactercassidygringo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/player.o player.cpp
@@ -1568,7 +1753,8 @@ obj/server/cardbang.o: cardbang.cpp cardbang.h \
 		gametable.h \
 		cardbarrel.h \
 		gameeventmanager.h \
-		gameeventlistener.h
+		gameeventlistener.h \
+		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardbang.o cardbang.cpp
 
 obj/server/cardteamfortressbang.o: cardteamfortressbang.cpp cardteamfortressbang.h \
@@ -1630,7 +1816,9 @@ obj/server/gamecycle.o: gamecycle.cpp gamecycle.h \
 		gameeventmanager.h \
 		reactioncard.h \
 		reactionhandler.h \
-		cardpersuasion.h
+		cardpersuasion.h \
+		characterdjango.h \
+		charactervienna.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/gamecycle.o gamecycle.cpp
 
 obj/server/gameinfo.o: gameinfo.cpp gameinfo.h \
@@ -1722,6 +1910,9 @@ obj/server/voidai.o: voidai.cpp voidai.h \
 		cardjarate.h \
 		cardteleport.h \
 		cardpersuasion.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai.o voidai.cpp
 
@@ -1765,6 +1956,9 @@ obj/server/voidai2level.o: voidai2level.cpp voidai2level.h \
 		cardjarate.h \
 		cardteleport.h \
 		cardpersuasion.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		../kbang_common/util.h \
 		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai2level.o voidai2level.cpp
@@ -1810,6 +2004,9 @@ obj/server/voidai3level.o: voidai3level.cpp voidai3level.h \
 		cardjarate.h \
 		cardteleport.h \
 		cardpersuasion.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		../kbang_common/util.h \
 		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai3level.o voidai3level.cpp
@@ -1933,6 +2130,9 @@ obj/server/cardfactory.o: cardfactory.cpp cardfactory.h \
 		cardjarate.h \
 		cardteleport.h \
 		cardpersuasion.h \
+		cardpeacepipe.h \
+		cardmemento.h \
+		cardhiddenweapon.h \
 		../kbang_common/gameenums.cpp \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardfactory.o cardfactory.cpp
@@ -2156,6 +2356,60 @@ obj/server/cardbarrel.o: cardbarrel.cpp cardbarrel.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardbarrel.o cardbarrel.cpp
 
+obj/server/cardpeacepipe.o: cardpeacepipe.cpp cardpeacepipe.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardpeacepipe.o cardpeacepipe.cpp
+
+obj/server/cardmemento.o: cardmemento.cpp cardmemento.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardmemento.o cardmemento.cpp
+
+obj/server/cardhiddenweapon.o: cardhiddenweapon.cpp cardhiddenweapon.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardhiddenweapon.o cardhiddenweapon.cpp
+
 obj/server/gameeventmanager.o: gameeventmanager.cpp gameeventmanager.h \
 		../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
@@ -2206,12 +2460,13 @@ obj/server/characterbase.o: characterbase.cpp characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
+		checkdeckresulthandler.h \
 		gametable.h \
 		gameeventmanager.h \
-		gameeventlistener.h \
-		checkdeckresulthandler.h
+		gameeventlistener.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterbase.o characterbase.cpp
 
 obj/server/charactercalamityjanet.o: charactercalamityjanet.cpp charactercalamityjanet.h \
@@ -2292,6 +2547,14 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		characterscout.h \
 		charactersniper.h \
 		charactersoldier.h \
+		charactercoronelmortimer.h \
+		characterdjango.h \
+		characteremma.h \
+		characterjohnford.h \
+		characterloco.h \
+		charactersartana.h \
+		charactervienna.h \
+		characterwyattearp.h \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterlist.o characterlist.cpp
 
@@ -2305,7 +2568,14 @@ obj/server/charactercassidygringo.o: charactercassidygringo.cpp charactercassidy
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		cardbeer.h \
+		reactionhandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercassidygringo.o charactercassidygringo.cpp
 
 obj/server/charactersuzylafayette.o: charactersuzylafayette.cpp charactersuzylafayette.h \
@@ -2427,7 +2697,9 @@ obj/server/characterkitcarlson.o: characterkitcarlson.cpp characterkitcarlson.h 
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		gameeventmanager.h \
+		gameeventlistener.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterkitcarlson.o characterkitcarlson.cpp
 
 obj/server/playerreaper.o: playerreaper.cpp playerreaper.h \
@@ -2484,9 +2756,11 @@ obj/server/characterluckyduke.o: characterluckyduke.cpp characterluckyduke.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		checkdeckresulthandler.h \
 		gameeventmanager.h \
-		gameeventlistener.h \
-		checkdeckresulthandler.h
+		gameeventlistener.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterluckyduke.o characterluckyduke.cpp
 
 obj/server/charactercowboy.o: charactercowboy.cpp charactercowboy.h \
@@ -2651,6 +2925,178 @@ obj/server/charactersoldier.o: charactersoldier.cpp charactersoldier.h \
 		cardmissed.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactersoldier.o charactersoldier.cpp
 
+obj/server/charactercoronelmortimer.o: charactercoronelmortimer.cpp charactercoronelmortimer.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercoronelmortimer.o charactercoronelmortimer.cpp
+
+obj/server/characterdjango.o: characterdjango.cpp characterdjango.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardmultishoot.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterdjango.o characterdjango.cpp
+
+obj/server/characteremma.o: characteremma.cpp characteremma.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characteremma.o characteremma.cpp
+
+obj/server/characterjohnford.o: characterjohnford.cpp characterjohnford.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		cardbang.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		characterlist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjohnford.o characterjohnford.cpp
+
+obj/server/characterloco.o: characterloco.cpp characterloco.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterloco.o characterloco.cpp
+
+obj/server/charactersartana.o: charactersartana.cpp charactersartana.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactersartana.o charactersartana.cpp
+
+obj/server/charactervienna.o: charactervienna.cpp charactervienna.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardduel.h \
+		reactioncard.h \
+		reactionhandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactervienna.o charactervienna.cpp
+
+obj/server/characterwyattearp.o: characterwyattearp.cpp characterwyattearp.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		cardtaker.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterwyattearp.o characterwyattearp.cpp
+
 obj/server/moc_player.o: mocs/server/moc_player.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_player.o mocs/server/moc_player.cpp
 
@@ -2723,6 +3169,12 @@ obj/server/moc_cardduel.o: mocs/server/moc_cardduel.cpp
 obj/server/moc_cardbarrel.o: mocs/server/moc_cardbarrel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_cardbarrel.o mocs/server/moc_cardbarrel.cpp
 
+obj/server/moc_cardmemento.o: mocs/server/moc_cardmemento.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_cardmemento.o mocs/server/moc_cardmemento.cpp
+
+obj/server/moc_cardhiddenweapon.o: mocs/server/moc_cardhiddenweapon.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_cardhiddenweapon.o mocs/server/moc_cardhiddenweapon.cpp
+
 obj/server/moc_charactercalamityjanet.o: mocs/server/moc_charactercalamityjanet.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercalamityjanet.o mocs/server/moc_charactercalamityjanet.cpp
 
@@ -2782,6 +3234,30 @@ obj/server/moc_charactersniper.o: mocs/server/moc_charactersniper.cpp
 
 obj/server/moc_charactersoldier.o: mocs/server/moc_charactersoldier.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactersoldier.o mocs/server/moc_charactersoldier.cpp
+
+obj/server/moc_charactercoronelmortimer.o: mocs/server/moc_charactercoronelmortimer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercoronelmortimer.o mocs/server/moc_charactercoronelmortimer.cpp
+
+obj/server/moc_characterdjango.o: mocs/server/moc_characterdjango.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterdjango.o mocs/server/moc_characterdjango.cpp
+
+obj/server/moc_characteremma.o: mocs/server/moc_characteremma.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characteremma.o mocs/server/moc_characteremma.cpp
+
+obj/server/moc_characterjohnford.o: mocs/server/moc_characterjohnford.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterjohnford.o mocs/server/moc_characterjohnford.cpp
+
+obj/server/moc_characterloco.o: mocs/server/moc_characterloco.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterloco.o mocs/server/moc_characterloco.cpp
+
+obj/server/moc_charactersartana.o: mocs/server/moc_charactersartana.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactersartana.o mocs/server/moc_charactersartana.cpp
+
+obj/server/moc_charactervienna.o: mocs/server/moc_charactervienna.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactervienna.o mocs/server/moc_charactervienna.cpp
+
+obj/server/moc_characterwyattearp.o: mocs/server/moc_characterwyattearp.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterwyattearp.o mocs/server/moc_characterwyattearp.cpp
 
 ####### Install
 

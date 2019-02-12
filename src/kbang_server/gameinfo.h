@@ -41,6 +41,10 @@ public:
     inline bool      teamFortressFlag()            const { return m_teamFortressFlag; }
     inline bool      stackingDynamiteFlag()            const { return m_stackingDynamiteFlag; }
     inline bool      teamFortressCharactersFlag()            const { return m_teamFortressCharactersFlag; }
+    
+    inline bool      directorsCutsFlag()            const { return m_directorsCutsFlag; }
+    inline bool      directorsCutsCharactersFlag()            const { return m_directorsCutsCharactersFlag; }
+    
     inline int      aiLevel()             const { return m_aiLevel; }
     
 //     inline bool     hasPlayerPassword()     const { return !m_playerPassword.isNull(); }
@@ -82,6 +86,8 @@ private:
      bool m_teamFortressFlag;
      bool m_stackingDynamiteFlag;
      bool m_teamFortressCharactersFlag;
+     bool m_directorsCutsFlag;
+     bool m_directorsCutsCharactersFlag;
      int m_aiLevel;
 
 };

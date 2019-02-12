@@ -61,6 +61,9 @@ HEADERS += \
     carddynamite.h \
     cardtaker.h \
     cardbarrel.h \
+    cardpeacepipe.h \
+    cardmemento.h \
+    cardhiddenweapon.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -86,7 +89,16 @@ HEADERS += \
     charactermedic.h \
     characterscout.h \
     charactersniper.h \
-    charactersoldier.h
+    charactersoldier.h \
+    charactercoronelmortimer.h \
+    characterdjango.h \
+    characteremma.h \
+    characterjohnford.h \
+    characterloco.h \
+    charactersartana.h \
+    charactervienna.h \
+    characterwyattearp.h
+#    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
 #     common/util.h 
@@ -135,6 +147,9 @@ SOURCES += \
     carddynamite.cpp \
     cardtaker.cpp \
     cardbarrel.cpp \
+    cardpeacepipe.cpp \
+    cardmemento.cpp \
+    cardhiddenweapon.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
@@ -159,7 +174,16 @@ SOURCES += \
     charactermedic.cpp \
     characterscout.cpp \
     charactersniper.cpp \
-    charactersoldier.cpp
+    charactersoldier.cpp \
+    charactercoronelmortimer.cpp \
+    characterdjango.cpp \
+    characteremma.cpp \
+    characterjohnford.cpp \
+    characterloco.cpp \
+    charactersartana.cpp \
+    charactervienna.cpp \
+    characterwyattearp.cpp
+#    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \
 #     common/util.cpp 

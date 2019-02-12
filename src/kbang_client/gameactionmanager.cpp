@@ -97,6 +97,7 @@ bool GameActionManager::isCombined(CardWidget* cardWidget){
     if (cardWidget->cardData().type == CARD_JAIL) return false;
     if (cardWidget->cardData().type == CARD_DYNAMITE) return false;
     if (cardWidget->cardData().type == CARD_TELEPORT) return false;
+    if (cardWidget->cardData().type == CARD_SUN_GLARE) return false;
     return ((((cardWidget->pocketType() == POCKET_TABLE) && ((cardWidget->cardData().isAct)))) 
             && (cardWidget->ownerId() == mp_game->playerId()));
 }
@@ -150,6 +151,7 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_GUITAR:
         case CARD_TELEPORT:
         case CARD_JARATE:
+        case CARD_SUN_GLARE:
                 selectPlayer(cardWidget);
                 break; 
         //Play it to table or choose two cards (blue)
@@ -167,6 +169,9 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_CATBALOU:
         case CARD_SUPPLY_CRATE:
                 selectCards(cardWidget, 1);
+                break;
+        case CARD_ARSON:
+                selectCards(cardWidget, 2);
                 break;
         default:
             if (cardWidget->cardData().type == CARD_MISSED &&
@@ -191,6 +196,11 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_ENGINEER:
     case CHARACTER_HEAVY:
     case CHARACTER_MEDIC:
+    case CHARACTER_DJANGO:
+    case CHARACTER_JOHN_FORD:
+    case CHARACTER_PAT_GARRETT:
+    case CHARACTER_VIENNA:
+    case CHARACTER_WYATT_EARP:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:
@@ -271,7 +281,11 @@ void GameActionManager::useAbilityWithCards()
              break;
          }
          case CHARACTER_ENGINEER:
-         case CHARACTER_MEDIC:{
+         case CHARACTER_MEDIC:
+         case CHARACTER_JOHN_FORD:
+         case CHARACTER_PAT_GARRETT:
+         case CHARACTER_VIENNA:
+         case CHARACTER_WYATT_EARP: {
              CardWidget* card = m_cardSelection.at(0); 
              int cardId = card->cardData().id;
              qDebug() << "Client: cardId" << cardId;
@@ -314,7 +328,7 @@ void GameActionManager::playWithCards()
         }
     } 
     else if (m_cardSelection.size() == 2) {
-        if (mp_activeCard->type() == CARD_ARSON){
+        if (mp_activeCard->cardData().type == CARD_ARSON){
             //Cards that need two target players
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];
@@ -355,6 +369,7 @@ bool GameActionManager::needsTarget(const CardData card){
     case CARD_GUITAR:
     case CARD_TELEPORT:
     case CARD_JARATE:
+    case CARD_SUN_GLARE:
         return true;
     default:
         return false;

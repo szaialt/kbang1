@@ -99,6 +99,9 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.teamFortressFlag = checkTeamFortress->isChecked();
      createGameData.stackingDynamiteFlag = checkStackingDynamite->isChecked();
      createGameData.teamFortressCharactersFlag = checkTeamFortressCharacters->isChecked();
+     createGameData.directorsCutsFlag = checkDirectorsCuts->isChecked();
+     createGameData.directorsCutsCharactersFlag = checkDirectorsCutsCharacters->isChecked();
+     
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
     qDebug() << "Level " << createGameData.aiLevel;
@@ -170,6 +173,18 @@ void CreateGameDialog::loadConfigValues()
          checkTeamFortressCharacters->setChecked(1);
      else
          checkTeamFortressCharacters->setChecked(0);
+     
+     bool directorsCutsFlag  = cfg.readInt(grp, "directorsCutsFlag");
+     if (directorsCutsFlag)
+         checkDirectorsCuts->setChecked(1);
+     else
+         checkDirectorsCuts->setChecked(0);
+     bool directorsCutsCharactersFlag  = cfg.readInt(grp, "directorsCutsCharactersFlag");
+     if (directorsCutsCharactersFlag)
+         checkDirectorsCutsCharacters->setChecked(1);
+     else
+         checkDirectorsCutsCharacters->setChecked(0);
+     
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));
     selectPlayerIconWidget->setImageFileName(cfg.readString("player", "image"));

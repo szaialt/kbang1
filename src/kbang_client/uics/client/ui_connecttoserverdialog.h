@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'connecttoserverdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -103,7 +103,6 @@ public:
         pushButtonConnect = new QPushButton(ConnectToServerDialog);
         pushButtonConnect->setObjectName(QStringLiteral("pushButtonConnect"));
         pushButtonConnect->setEnabled(false);
-        pushButtonConnect->setDefault(true);
 
         horizontalLayout_2->addWidget(pushButtonConnect);
 
@@ -124,28 +123,31 @@ public:
         retranslateUi(ConnectToServerDialog);
         QObject::connect(pushButtonCancel, SIGNAL(clicked()), ConnectToServerDialog, SLOT(close()));
 
+        pushButtonConnect->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(ConnectToServerDialog);
     } // setupUi
 
     void retranslateUi(QDialog *ConnectToServerDialog)
     {
-        ConnectToServerDialog->setWindowTitle(QApplication::translate("ConnectToServerDialog", "Connect to Server", 0));
+        ConnectToServerDialog->setWindowTitle(QApplication::translate("ConnectToServerDialog", "Connect to Server", Q_NULLPTR));
         QTreeWidgetItem *___qtreewidgetitem = serverList->headerItem();
-        ___qtreewidgetitem->setText(1, QApplication::translate("ConnectToServerDialog", "Port", 0));
-        ___qtreewidgetitem->setText(0, QApplication::translate("ConnectToServerDialog", "Server Address", 0));
+        ___qtreewidgetitem->setText(1, QApplication::translate("ConnectToServerDialog", "Port", Q_NULLPTR));
+        ___qtreewidgetitem->setText(0, QApplication::translate("ConnectToServerDialog", "Server Address", Q_NULLPTR));
 
         const bool __sortingEnabled = serverList->isSortingEnabled();
         serverList->setSortingEnabled(false);
         QTreeWidgetItem *___qtreewidgetitem1 = serverList->topLevelItem(0);
-        ___qtreewidgetitem1->setText(1, QApplication::translate("ConnectToServerDialog", "6543", 0));
-        ___qtreewidgetitem1->setText(0, QApplication::translate("ConnectToServerDialog", "localhost", 0));
+        ___qtreewidgetitem1->setText(1, QApplication::translate("ConnectToServerDialog", "6543", Q_NULLPTR));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("ConnectToServerDialog", "localhost", Q_NULLPTR));
         serverList->setSortingEnabled(__sortingEnabled);
 
-        pushButtonAddServer->setText(QApplication::translate("ConnectToServerDialog", "Add Server", 0));
-        pushButtonEditServer->setText(QApplication::translate("ConnectToServerDialog", "Edit Server", 0));
-        pushButtonDeleteServer->setText(QApplication::translate("ConnectToServerDialog", "Delete Server", 0));
-        pushButtonConnect->setText(QApplication::translate("ConnectToServerDialog", "&Connect", 0));
-        pushButtonCancel->setText(QApplication::translate("ConnectToServerDialog", "C&ancel", 0));
+        pushButtonAddServer->setText(QApplication::translate("ConnectToServerDialog", "Add Server", Q_NULLPTR));
+        pushButtonEditServer->setText(QApplication::translate("ConnectToServerDialog", "Edit Server", Q_NULLPTR));
+        pushButtonDeleteServer->setText(QApplication::translate("ConnectToServerDialog", "Delete Server", Q_NULLPTR));
+        pushButtonConnect->setText(QApplication::translate("ConnectToServerDialog", "&Connect", Q_NULLPTR));
+        pushButtonCancel->setText(QApplication::translate("ConnectToServerDialog", "C&ancel", Q_NULLPTR));
     } // retranslateUi
 
 };

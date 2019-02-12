@@ -4,9 +4,17 @@
 #include "cardteamfortressbang.h"
 #include "cardmissed.h"
 
-CharacterSoldier::CharacterSoldier(QObject* parent):
-    CharacterBase(parent, CHARACTER_UNKNOWN){
-  setCharacterType(CHARACTER_SOLDIER);
+CharacterSoldier::CharacterSoldier(QObject* parent, Type type):
+    CharacterBase(parent, CHARACTER_UNKNOWN),
+    m_type(type){
+        switch(type) {
+        case Soldier:
+            setCharacterType(CHARACTER_SOLDIER);
+            break;
+        case LlaneroSolitario:
+            setCharacterType(CHARACTER_LLANERO_SOLITARIO);
+            break;
+        }
 }
 
 void CharacterSoldier::respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard){

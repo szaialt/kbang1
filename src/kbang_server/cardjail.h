@@ -7,7 +7,13 @@
 class CardJail : public PlayingCard, public CheckDeckResultHandler
 {
 public:
-    CardJail(Game *game, int id, CardSuit suit, CardRank rank, int PredrawCheck);
+    
+    enum JailType {
+        Jail,
+        Sunglare
+    };
+    
+    CardJail(Game *game, int id, JailType type, CardSuit suit, CardRank rank, int PredrawCheck);
     ~CardJail();
 
     virtual CardColor color() const;
@@ -20,6 +26,9 @@ public:
     virtual void unregisterPlayer(Player* player);
 
     static bool checkJail(PlayingCard*);
+private:
+    JailType m_jailType;
+    bool m_distanceModified;
 
 };
 

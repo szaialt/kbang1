@@ -8,6 +8,8 @@
 #include "reactioncard.h"
 #include "characterbase.h"
 #include "cardpersuasion.h"
+#include "characterdjango.h"
+#include "charactervienna.h"
 
 #include <QDebug>
 
@@ -19,7 +21,8 @@ GameCycle::GameCycle(Game* game):
         mp_requestedPlayer(0),
         m_isCardEffect(0),
         m_needsFinishTurn(false),
-        m_duplicateTurn(false)
+        m_duplicateTurn(false),
+        m_deflectionFlag(false)
 {
 }
 
@@ -106,6 +109,7 @@ void GameCycle::start()
 void GameCycle::startTurn(Player* player)
 {
     m_contextDirty = 1;
+    resetAbility(player);
     Player::CardList table = player->table();
     foreach(PlayingCard* c, table){
          if (c->color() == COLOR_GREEN){
@@ -333,13 +337,28 @@ void GameCycle::pass(Player* player)
 //     if (reactionHandler()->reactionType() == REACTION_BANDIDOS){
 //         mp_requestedPlayer = player;
 //     }
-    if (player != mp_requestedPlayer){
+    if ((!m_deflectionFlag) && (player != mp_requestedPlayer)){
+        qDebug() << "void GameCycle::pass(Player* player) ";
+        if ((player != 0) && (mp_requestedPlayer != 0)){
+            qDebug() << player->name() << " would pass.";
+            qDebug() << "Could pass " << mp_requestedPlayer->name();
+        }
         throw BadPlayerException(mp_currentPlayer->id());
     }
     if (m_state != GAMEPLAYSTATE_RESPONSE){
         throw BadGameStateException();
     }
-    player->character()->respondPass(m_reactionHandlers.head());
+    try {
+        player->character()->respondPass(m_reactionHandlers.head());
+        m_deflectionFlag = false;
+    }
+    catch (TooManyCardsInHandException ex){
+        if (m_needsFinishTurn) {
+            qDebug() << "void GameCycle::pass(Player* player) ";
+            qDebug() << "TooManyCardsInHandException caught because of CARD_DEAD_RINGER";
+        }
+        else throw ex;
+    }
     sendRequest();
 }
 
@@ -500,10 +519,28 @@ void GameCycle::checkPlayerAndState(Player* player, GamePlayState state)
         throw BadGameStateException();
 }
 
+void GameCycle::resetAbility(Player* player){
+    if (player->characterType() == CHARACTER_DJANGO){
+        CharacterDjango* dj =  qobject_cast<CharacterDjango*>(player->character());
+        dj->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_VIENNA){
+        CharacterVienna* vienna =  qobject_cast<CharacterVienna*>(player->character());
+        vienna->resetAbility();
+    }
+}
+
+
 int GameCycle::needDiscard(Player* player)
 {
     int lifePoints = player->lifePoints();
     int handSize = player->handSize();
+    int muleSize = 4;
+    foreach (PlayingCard* card, player->table()){
+        if (card->type() == CARD_PACKING_MULE){
+            lifePoints = lifePoints + muleSize;
+        }
+    }
     if (lifePoints > handSize) {
         return 0;
     }
@@ -516,4 +553,8 @@ int GameCycle::needDiscard(Player* player)
 void GameCycle::announceContextChange()
 {
     mp_game->gameEventManager().onGameContextChange(gameContextData());
+}
+
+void GameCycle::deflectionPlayed(){
+    m_deflectionFlag = true;
 }

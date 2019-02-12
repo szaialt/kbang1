@@ -52,7 +52,9 @@ Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
         m_bangPower(1),
         m_publicPlayerView(this),
         m_privatePlayerView(this),
-        m_payed_bandidos(false)
+        m_payed_bandidos(false),
+        m_weaponNumber(1),
+        m_banged(0)
 {
 
     mp_playerCtrl = new PlayerCtrl(this);
@@ -109,7 +111,17 @@ bool Player::hasIdenticalCardOnTable(PlayingCard* card) const
 
 bool Player::canPlayBang() const
 {
-    return (m_unlimitedBangs > 0 || m_lastBangTurn != mp_game->gameCycle().turnNumber());
+    if (m_unlimitedBangs > 0) return true;
+    if (m_lastBangTurn != mp_game->gameCycle().turnNumber())
+    {
+        m_banged = 1; 
+        return true;
+    }
+    if (m_banged < m_weaponNumber) {
+        m_banged++; 
+        return true;
+    }
+    return false;
 }
 
 void Player::modifyLifePoints(int x, Player* causedBy)
@@ -316,6 +328,14 @@ void Player::setPayedBandidos(bool b){
 
 bool Player::payedBandidos(){
     return m_payed_bandidos;
+}
+
+int Player::getWeaponNumber(){
+    return m_weaponNumber;
+}
+
+void Player::setWeaponNumber(int n){
+    m_weaponNumber = n;
 }
 
 void Player::onBangPlayed(bool b)

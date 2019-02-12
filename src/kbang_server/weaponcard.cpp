@@ -66,6 +66,10 @@ WeaponCard::WeaponCard(Game *game, int id, WeaponType type, CardSuit suit, CardR
         setType(CARD_SANDMAN);
         m_range = 2;
         break;
+    case Shotgun:
+        setType(CARD_SHOTGUN);
+        m_range = 1;
+        break;
     }
 }
 
@@ -84,6 +88,8 @@ void WeaponCard::play()
     throw BadUsageException();
     }
     
+    int weaponNumber = owner()->getWeaponNumber();
+    int ownedWeapons = 0;
     if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
       foreach(PlayingCard* card, owner()->table()) {
          if (card == 0)
@@ -94,11 +100,14 @@ void WeaponCard::play()
          WeaponCard* weaponCard = qobject_cast<WeaponCard*>(card);
          if (weaponCard == 0)
             continue;
+         ownedWeapons++;
          if (weaponCard->type() == type()){
             throw TwoSameOnTableException();
          }
          else {
-          gameTable()->playerDiscardCard(weaponCard);
+              if (ownedWeapons >= weaponNumber){
+                gameTable()->playerDiscardCard(weaponCard);
+             }
           } 
        }
      gameTable()->playerPlayCardOnTable(this);
@@ -110,7 +119,10 @@ void WeaponCard::play()
          if (card == 0)
             continue;
          if (card->isWeapon()){
-            gameTable()->playerDiscardCard(card);
+            ownedWeapons++;
+            if (ownedWeapons >= weaponNumber){
+                gameTable()->playerDiscardCard(card);
+            }
           }
           if (card->type() == CARD_GUITAR){
             gameTable()->playerDiscardCard(card);
@@ -175,15 +187,15 @@ void WeaponCard::registerPlayer(Player* player)
         if (type() == CARD_VOLCANIC) {
           bool canPlayBang = owner()->canPlayBang();
           if (!canPlayBang) {
-            player->modifyUnlimitedBangs(-1);
+            player->modifyUnlimitedBangs(-1); // unlimitedBangs = -1
           }
           else {
-            player->modifyUnlimitedBangs(1);
+            player->modifyUnlimitedBangs(1); // unlimitedBangs = 1
           }
         }
     }
     if (type() == CARD_VOLCANIC) {
-        player->modifyUnlimitedBangs(1);
+        player->modifyUnlimitedBangs(1); // unlimitedBangs = 1
     }
 }
 
@@ -191,7 +203,7 @@ void WeaponCard::unregisterPlayer(Player* player)
 {
     player->setWeaponRange(1);
     if (type() == CARD_VOLCANIC) {
-        player->modifyUnlimitedBangs(-1);
+        player->modifyUnlimitedBangs(-1); // unlimitedBangs = 0
     }
 }
 

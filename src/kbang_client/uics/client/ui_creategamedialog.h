@@ -57,7 +57,6 @@ public:
     QLabel *label_9;
     client::SelectPlayerIconWidget *selectPlayerIconWidget;
     QLineEdit *lineEditPlayerPassword;
-    QFrame *line_2;
     QLabel *label_11;
     QLineEdit *lineEditGamePasswordSpectators;
     QSpinBox *spinBoxMaxSpectators;
@@ -75,6 +74,10 @@ public:
     QLabel *labelTeamFortress;
     QCheckBox *checkTeamFortressCharacters;
     QLabel *labelTeamFortressCharacters;
+    QCheckBox *checkDirectorsCuts;
+    QLabel *labelDirectorsCuts;
+    QCheckBox *checkDirectorsCutsCharacters;
+    QLabel *labelDirectorsCutsCharacters;
     QCheckBox *checkStackingDynamite;
     QLabel *labelStackingDynamite;
     QSpinBox *spinBoxAiLevel;
@@ -181,12 +184,12 @@ public:
         pushButtonCreate = new QPushButton(CreateGameDialog);
         pushButtonCreate->setObjectName(QStringLiteral("pushButtonCreate"));
 
-        gridLayout->addWidget(pushButtonCreate, 27, 3, 1, 1);
+        gridLayout->addWidget(pushButtonCreate, 29, 3, 1, 1);
 
         pushButtonCancel = new QPushButton(CreateGameDialog);
         pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
 
-        gridLayout->addWidget(pushButtonCancel, 27, 4, 1, 2);
+        gridLayout->addWidget(pushButtonCancel, 29, 4, 1, 2);
 
         label_8 = new QLabel(CreateGameDialog);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -224,13 +227,6 @@ public:
         lineEditPlayerPassword->setObjectName(QStringLiteral("lineEditPlayerPassword"));
 
         gridLayout->addWidget(lineEditPlayerPassword, 16, 1, 1, 4);
-
-        line_2 = new QFrame(CreateGameDialog);
-        line_2->setObjectName(QStringLiteral("line_2"));
-        line_2->setFrameShape(QFrame::HLine);
-        line_2->setFrameShadow(QFrame::Sunken);
-
-        gridLayout->addWidget(line_2, 24, 0, 1, 4);
 
         label_11 = new QLabel(CreateGameDialog);
         label_11->setObjectName(QStringLiteral("label_11"));
@@ -323,25 +319,45 @@ public:
 
         gridLayout->addWidget(labelTeamFortressCharacters, 22, 0, 1, 2);
 
+        checkDirectorsCuts = new QCheckBox(CreateGameDialog);
+        checkDirectorsCuts->setObjectName(QStringLiteral("checkDirectorsCuts"));
+
+        gridLayout->addWidget(checkDirectorsCuts, 23, 2, 1, 2);
+
+        labelDirectorsCuts = new QLabel(CreateGameDialog);
+        labelDirectorsCuts->setObjectName(QStringLiteral("labelDirectorsCuts"));
+
+        gridLayout->addWidget(labelDirectorsCuts, 23, 0, 1, 2);
+
+        checkDirectorsCutsCharacters = new QCheckBox(CreateGameDialog);
+        checkDirectorsCutsCharacters->setObjectName(QStringLiteral("checkDirectorsCutsCharacters"));
+
+        gridLayout->addWidget(checkDirectorsCutsCharacters, 24, 2, 1, 2);
+
+        labelDirectorsCutsCharacters = new QLabel(CreateGameDialog);
+        labelDirectorsCutsCharacters->setObjectName(QStringLiteral("labelDirectorsCutsCharacters"));
+
+        gridLayout->addWidget(labelDirectorsCutsCharacters, 24, 0, 1, 2);
+
         checkStackingDynamite = new QCheckBox(CreateGameDialog);
         checkStackingDynamite->setObjectName(QStringLiteral("checkStackingDynamite"));
 
-        gridLayout->addWidget(checkStackingDynamite, 23, 2, 1, 2);
+        gridLayout->addWidget(checkStackingDynamite, 25, 2, 1, 2);
 
         labelStackingDynamite = new QLabel(CreateGameDialog);
         labelStackingDynamite->setObjectName(QStringLiteral("labelStackingDynamite"));
 
-        gridLayout->addWidget(labelStackingDynamite, 23, 0, 1, 2);
+        gridLayout->addWidget(labelStackingDynamite, 25, 0, 1, 2);
 
         spinBoxAiLevel = new QSpinBox(CreateGameDialog);
         spinBoxAiLevel->setObjectName(QStringLiteral("spinBoxAiLevel"));
 
-        gridLayout->addWidget(spinBoxAiLevel, 26, 2, 1, 2);
+        gridLayout->addWidget(spinBoxAiLevel, 28, 2, 1, 2);
 
         labelAiLevel = new QLabel(CreateGameDialog);
         labelAiLevel->setObjectName(QStringLiteral("labelAiLevel"));
 
-        gridLayout->addWidget(labelAiLevel, 26, 0, 1, 2);
+        gridLayout->addWidget(labelAiLevel, 28, 0, 1, 2);
 
 #ifndef QT_NO_SHORTCUT
         label_4->setBuddy(spinBoxMaxPlayers);
@@ -360,6 +376,8 @@ public:
         labelDodgeCity->setBuddy(checkDodgeCity);
         labelTeamFortress->setBuddy(checkTeamFortress);
         labelTeamFortressCharacters->setBuddy(checkTeamFortressCharacters);
+        labelDirectorsCuts->setBuddy(checkDirectorsCuts);
+        labelDirectorsCutsCharacters->setBuddy(checkDirectorsCutsCharacters);
         labelStackingDynamite->setBuddy(checkStackingDynamite);
         labelAiLevel->setBuddy(spinBoxAiLevel);
 #endif // QT_NO_SHORTCUT
@@ -379,7 +397,9 @@ public:
         QWidget::setTabOrder(checkBoxOurFlag, checkDodgeCity);
         QWidget::setTabOrder(checkDodgeCity, checkTeamFortress);
         QWidget::setTabOrder(checkTeamFortress, checkTeamFortressCharacters);
-        QWidget::setTabOrder(checkTeamFortressCharacters, checkStackingDynamite);
+        QWidget::setTabOrder(checkTeamFortressCharacters, checkDirectorsCuts);
+        QWidget::setTabOrder(checkDirectorsCuts, checkDirectorsCutsCharacters);
+        QWidget::setTabOrder(checkDirectorsCutsCharacters, checkStackingDynamite);
         QWidget::setTabOrder(checkStackingDynamite, pushButtonCreate);
         QWidget::setTabOrder(pushButtonCreate, pushButtonCancel);
 
@@ -430,6 +450,8 @@ public:
         labelDodgeCity->setText(QApplication::translate("CreateGameDialog", "Dodge City", Q_NULLPTR));
         labelTeamFortress->setText(QApplication::translate("CreateGameDialog", "Team Fortress", Q_NULLPTR));
         labelTeamFortressCharacters->setText(QApplication::translate("CreateGameDialog", "Team Fortress characters", Q_NULLPTR));
+        labelDirectorsCuts->setText(QApplication::translate("CreateGameDialog", "Directors Cuts", Q_NULLPTR));
+        labelDirectorsCutsCharacters->setText(QApplication::translate("CreateGameDialog", "Directors Cuts characters", Q_NULLPTR));
         labelStackingDynamite->setText(QApplication::translate("CreateGameDialog", "Stacking dynamite", Q_NULLPTR));
         labelAiLevel->setText(QApplication::translate("CreateGameDialog", "Ai level", Q_NULLPTR));
     } // retranslateUi

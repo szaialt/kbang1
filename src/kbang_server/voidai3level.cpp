@@ -81,6 +81,13 @@ void VoidAI3Level::requestWithAction()
                         case CARD_MEDI_GUN:
                         case CARD_SANDMAN:
                         case CARD_PERSUASION:
+                        case CARD_ACE_UP_YOUR_SLEEVE:
+                        case CARD_UNION_PACIFIC:
+                        case CARD_HIDDEN_WEAPON:
+                        case CARD_MEMENTO:
+                        case CARD_PACKING_MULE:
+                        case CARD_PEACE_PIPE:
+                        case CARD_SHOTGUN:
                         {
                             mp_playerCtrl->playCard(card);
                             return;
@@ -202,6 +209,7 @@ void VoidAI3Level::requestWithAction()
                          case CARD_DIRECT_HIT:
                          case CARD_GUITAR:
                          case CARD_JARATE:
+                         case CARD_SUN_GLARE:
                          {
                              qDebug() << "Choosing target player";
                              QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
