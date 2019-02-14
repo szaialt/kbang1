@@ -199,6 +199,7 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_JOHN_FORD);
         sm_characterTypes.append(CHARACTER_LLANERO_SOLITARIO);
         sm_characterTypes.append(CHARACTER_LOCO);
+        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
         sm_characterTypes.append(CHARACTER_ROOSTER_COGBURN);
         sm_characterTypes.append(CHARACTER_SARTANA);
         sm_characterTypes.append(CHARACTER_VIEJO_SIKES);
@@ -207,28 +208,27 @@ void CharacterList::initCharacterTypes(Game* game)
 
         //sm_characterTypes.append(CHARACTER_DJANGO);
         
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
+//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
         
     }
     else {

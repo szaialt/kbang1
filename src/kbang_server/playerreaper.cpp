@@ -26,7 +26,9 @@ void PlayerReaper::cleanUpCards(Player* corpse)
         mp_game->gameTable().cancelCard(card);
       }
       foreach(PlayingCard* card, corpse->table()){
-        mp_game->gameTable().cancelCard(card);
+          if (card != 0){
+              mp_game->gameTable().cancelCard(card);
+          }
       }
     }
     else if (m_vultures.size() == 1){
@@ -60,6 +62,7 @@ void PlayerReaper::cleanUpCards(Player* corpse)
             mp_game->gameEventManager().onPlayerUpdated(vulture->player());
         }
     }
+    
 }
 
  void PlayerReaper::registerVulture(CharacterBase* vulture) {
