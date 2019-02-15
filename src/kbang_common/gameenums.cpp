@@ -94,6 +94,25 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "viejo sikes")    return CHARACTER_VIEJO_SIKES;
     if (s == "vienna")         return CHARACTER_VIENNA;
     if (s == "wyatt earp")     return CHARACTER_WYATT_EARP;
+    
+    //Martin City
+    if (s == "ernest saliven") return CHARACTER_ERNEST_SALIVEN;
+    if (s == "emil docaine")   return CHARACTER_EMIL_DOCAINE;
+    if (s == "lady burboun")   return CHARACTER_LADY_BURBOUN;
+    if (s == "sam scalphunter") return CHARACTER_SAM_SCALPHUNTER;
+    if (s == "crazy bear")     return CHARACTER_CRAZY_BEAR;
+    if (s == "tomy lee ghost") return CHARACTER_TOMY_LEE_GHOST;
+    if (s == "white wolf")     return CHARACTER_WHITE_WOLF;
+    if (s == "jude isachias")  return CHARACTER_JUDE_ISACHIAS;
+    if (s == "samuel mcgreggor") return CHARACTER_SAMUEL_MCGREGGOR;
+    if (s == "matthew hell")   return CHARACTER_MATTHEW_HELL;
+    if (s == "sergeant o reilly") return CHARACTER_SERGEANT_O_REILLY;
+    if (s == "billy longlife") return CHARACTER_BILLY_LONGLIFE;
+    if (s == "antony carma")   return CHARACTER_ANTONY_CARMA;
+    if (s == "dan quake")      return CHARACTER_DAN_QUAKE;
+    if (s == "ron robber")     return CHARACTER_RON_ROBBER;
+    if (s == "samuel diehard") return CHARACTER_SAMUEL_DIEHARD;
+    
     return CHARACTER_UNKNOWN;
 }
 
@@ -148,6 +167,23 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_VIEJO_SIKES:     return "viejo sikes";
     case CHARACTER_VIENNA:          return "vienna";
     case CHARACTER_WYATT_EARP:      return "wyatt earp";
+    //Martin City
+    case CHARACTER_ERNEST_SALIVEN:  return  "ernest saliven";
+    case CHARACTER_EMIL_DOCAINE:    return "emil docaine";
+    case CHARACTER_LADY_BURBOUN:    return "lady burboun";
+    case CHARACTER_SAM_SCALPHUNTER: return "sam scalphunter";
+    case CHARACTER_CRAZY_BEAR:      return "crazy bear";
+    case CHARACTER_TOMY_LEE_GHOST:  return "tomy lee ghost";
+    case CHARACTER_WHITE_WOLF:      return "white wolf";
+    case CHARACTER_JUDE_ISACHIAS:   return "jude isachias";
+    case CHARACTER_SAMUEL_MCGREGGOR: return "samuel mcgreggor";
+    case CHARACTER_MATTHEW_HELL:    return "matthew hell";
+    case CHARACTER_SERGEANT_O_REILLY: return "sergeant o reilly";
+    case CHARACTER_BILLY_LONGLIFE:  return "billy longlife";
+    case CHARACTER_ANTONY_CARMA:    return "antony carma";
+    case CHARACTER_DAN_QUAKE:       return "dan quake";
+    case CHARACTER_RON_ROBBER:      return "ron robber";
+    case CHARACTER_SAMUEL_DIEHARD:  return "samuel diehard";
     }
     return "unknown";
 }
@@ -303,6 +339,50 @@ PlayingCardType stringToPlayingCardType(const QString& s)
      if (s == "sun_glare")          return CARD_SUN_GLARE;
      if (s == "sun glare")          return CARD_SUN_GLARE;
      if (s == "sun-glare")          return CARD_SUN_GLARE;
+     
+     //Martin City
+    if (s == "elixir")              return CARD_ELIXIR;
+    if (s == "explosion")           return CARD_EXPLOSION;
+    if (s == "pristahovalci")       return CARD_PRISTAHOVALCI;
+    if (s == "first_aid_kit")       return CARD_FIRST_AID_KIT;
+    if (s == "first aid kit")       return CARD_FIRST_AID_KIT;
+    if (s == "first-aid-kit")       return CARD_FIRST_AID_KIT;
+    if (s == "rana_jistoty")        return CARD_RANA_JISTOTY;
+    if (s == "rana jistoty")        return CARD_RANA_JISTOTY;
+    if (s == "rana-jistoty")        return CARD_RANA_JISTOTY;
+    if (s == "kombo")               return CARD_KOMBO;
+    if (s == "dirty_work")          return CARD_DIRTY_WORK;
+    if (s == "dirty work")          return CARD_DIRTY_WORK;
+    if (s == "dirty-work")          return CARD_DIRTY_WORK;
+    if (s == "zabijak")             return CARD_ZABIJAK;
+    if (s == "golden_brown")        return CARD_GOLDEN_BROWN;
+    if (s == "golden brown")        return CARD_GOLDEN_BROWN;
+    if (s == "golden-brown")        return CARD_GOLDEN_BROWN;
+    if (s == "thunder")             return CARD_THUNDER;
+    if (s == "vest")                return CARD_VEST;
+    if (s == "stunning")            return CARD_STUNNING;
+    if (s == "cowboy_pocket")       return CARD_COWBOY_POCKET;
+    if (s == "cowboy pocket")       return CARD_COWBOY_POCKET;
+    if (s == "cowboy-pocket")       return CARD_COWBOY_POCKET;
+    if (s == "gold_watch")          return CARD_GOLD_WATCH;
+    if (s == "gold watch")          return CARD_GOLD_WATCH;
+    if (s == "gold-watch")          return CARD_GOLD_WATCH;
+    if (s == "inflammatory_bottle") return CARD_INFLAMMATORY_BOTTLE;
+    if (s == "inflammatory bottle") return CARD_INFLAMMATORY_BOTTLE;
+    if (s == "inflammatory-bottle") return CARD_INFLAMMATORY_BOTTLE;
+    if (s == "prayer")              return CARD_PRAYER;
+    if (s == "bleeding_injury")     return CARD_BLEEDING_INJURY;
+    if (s == "bleeding injury")     return CARD_BLEEDING_INJURY;
+    if (s == "bleeding-injury")     return CARD_BLEEDING_INJURY;
+    if (s == "adrenaline")          return CARD_ADRENALINE;
+    if (s == "medicines")           return CARD_MEDICINES;
+    if (s == "steroid")             return CARD_STEROID;
+    if (s == "drugs")               return CARD_DRUGS;
+    if (s == "headache")            return CARD_HEADACHE;
+    if (s == "morphine")            return CARD_MORPHINE;
+    if (s == "shock")               return CARD_SHOCK;
+    if (s == "weakness")            return CARD_WEAKNESS;
+    
     return CARD_UNKNOWN;
 } 
 
@@ -360,6 +440,32 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_SHOTGUN:         return "shotgun";
         case CARD_SUN_GLARE:       return "sun glare";
     
+        //Martin City
+        case CARD_ELIXIR:          return "elixir";
+        case CARD_EXPLOSION:       return "explosion";
+        case CARD_PRISTAHOVALCI:   return "pristahovalci";
+        case CARD_FIRST_AID_KIT:   return "first aid kit";
+        case CARD_RANA_JISTOTY:    return "rana jistoty";
+        case CARD_KOMBO:           return "kombo";
+        case CARD_DIRTY_WORK:      return "dirty work";
+        case CARD_ZABIJAK:         return "zabijak";
+        case CARD_GOLDEN_BROWN:    return "golden brown";
+        case CARD_THUNDER:         return "thunder";
+        case CARD_VEST:            return "vest";
+        case CARD_STUNNING:        return "stunning";
+        case CARD_COWBOY_POCKET:   return "cowboy pocket";
+        case CARD_GOLD_WATCH:      return "gold_watch";
+        case CARD_INFLAMMATORY_BOTTLE: return "inflammatory bottle";
+        case CARD_PRAYER:          return "prayer";
+        case CARD_BLEEDING_INJURY: return "bleeding injury";
+        case CARD_ADRENALINE:      return "adrenaline";
+        case CARD_MEDICINES:       return "medicines";
+        case CARD_STEROID:         return "steroid";
+        case CARD_DRUGS:           return "drugs";
+        case CARD_HEADACHE:        return "headache";
+        case CARD_MORPHINE:        return "morphine";
+        case CARD_SHOCK:           return "shock";
+        case CARD_WEAKNESS:        return "weakness";
         //Unknown
         case CARD_UNKNOWN:        return "";
     }

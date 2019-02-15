@@ -179,8 +179,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
-            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
     case CARD_BARREL: {
         if (m_usedBarrels.contains(targetCard)){ 
@@ -190,8 +188,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         m_usedBarrels.append(targetCard);
         CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
         barrel->check(this);
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
-            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
         }
     case CARD_DEAD_RINGER:
@@ -200,8 +196,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         game()->gameCycle().setNeedsFinishTurn(true);
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
-            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
     case CARD_DEFLECTION: {
         targetCard->assertInHand();
@@ -229,12 +223,12 @@ void CardBang::respondCard(PlayingCard* targetCard)
         }
         player->checkEmptyHand();
         game()->gameEventManager().onPlayerUpdated(player);
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
-            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         return;
         break;
     }
     default:
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
         break;
     }
     throw BadCardException();

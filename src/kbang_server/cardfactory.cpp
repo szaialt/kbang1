@@ -193,6 +193,12 @@ struct CardFactory::CardFactoryImp
             list.append(new WeaponCard(game, id(), WeaponCard::Shotgun, SUIT_CLUBS,  7));
         
             list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_SPADES, 4, 9));
+            
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_HEARTS, 4, 9));
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_HEARTS, 4, 9));
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_HEARTS, 4, 9));
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_HEARTS, 4, 9));
+            list.append(new CardJail(game, id(), CardJail::Sunglare, SUIT_HEARTS, 4, 9));
         
             list.append(new CardHorse(game, id(), CardHorse::PackingMule, SUIT_SPADES, 7));
         
