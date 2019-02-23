@@ -21,6 +21,7 @@ void CharacterVienna::useAbility(QList<PlayingCard*> cards, Player* targetPlayer
             duel->setVirtual(targetCard);
             duel->play(targetPlayer);
             notifyAbilityUse();
+            m_canUseAbility = false;
         }
         else throw BadUsageException();
         

@@ -22,6 +22,8 @@ GameInfo::GameInfo(const CreateGameData& createGameData):
       m_teamFortressCharactersFlag(createGameData.teamFortressCharactersFlag),
       m_directorsCutsFlag(createGameData.directorsCutsFlag),
       m_directorsCutsCharactersFlag(createGameData.directorsCutsCharactersFlag),
+      m_martinCityFlag(createGameData.martinCityFlag),
+      m_martinCityCharactersFlag(createGameData.martinCityCharactersFlag),
       m_aiLevel(createGameData.aiLevel)
 {
     

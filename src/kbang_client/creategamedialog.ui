@@ -403,6 +403,34 @@ p, li { white-space: pre-wrap; }
      </property>
     </widget>
    </item>
+   <item row="21" column="5" colspan="2">
+    <widget class="QCheckBox" name="checkMartinCity">
+    </widget>
+   </item>
+   <item row="21" column="3" colspan="2">
+    <widget class="QLabel" name="labelMartinCity">
+     <property name="text">
+      <string>Martin City</string>
+     </property>
+     <property name="buddy">
+      <cstring>checkMartinCity</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="5" colspan="2">
+    <widget class="QCheckBox" name="checkMartinCityCharacters">
+    </widget>
+   </item>
+   <item row="22" column="3" colspan="2">
+    <widget class="QLabel" name="labelMartinCityCharacters">
+     <property name="text">
+      <string>Martin City characters</string>
+     </property>
+     <property name="buddy">
+      <cstring>checkMartinCityCharacters</cstring>
+     </property>
+    </widget>
+   </item>
    <item row="23" column="2" colspan="2">
     <widget class="QCheckBox" name="checkDirectorsCuts">
     </widget>
@@ -487,9 +515,11 @@ p, li { white-space: pre-wrap; }
   <tabstop>lineEditPlayerPassword</tabstop>
   <tabstop>checkBoxLifePointsMaxFlag</tabstop>
   <tabstop>checkBoxOurFlag</tabstop>
-  <tabstop>checkDodgeCity</tabstop>
+  <tabstop>checkDodgeCity</tabstop> 
   <tabstop>checkTeamFortress</tabstop>
   <tabstop>checkTeamFortressCharacters</tabstop>
+  <tabstop>checkMartinCity</tabstop>
+  <tabstop>checkMartinCityCharacters</tabstop>
   <tabstop>checkDirectorsCuts</tabstop>
   <tabstop>checkDirectorsCutsCharacters</tabstop>
   <tabstop>checkStackingDynamite</tabstop>

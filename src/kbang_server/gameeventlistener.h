@@ -83,7 +83,7 @@ public:
      * This method is called when a player draws a card. If the controlled player draws a card, the
      * card attribute points to that card, otherwise card is null.
      */
-    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList<const PlayingCard*> cards, bool revealCards) = 0;
+    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList<PlayingCard*> cards, bool revealCards) = 0;
 
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* nextCard) = 0;
 

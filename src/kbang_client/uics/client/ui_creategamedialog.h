@@ -74,6 +74,10 @@ public:
     QLabel *labelTeamFortress;
     QCheckBox *checkTeamFortressCharacters;
     QLabel *labelTeamFortressCharacters;
+    QCheckBox *checkMartinCity;
+    QLabel *labelMartinCity;
+    QCheckBox *checkMartinCityCharacters;
+    QLabel *labelMartinCityCharacters;
     QCheckBox *checkDirectorsCuts;
     QLabel *labelDirectorsCuts;
     QCheckBox *checkDirectorsCutsCharacters;
@@ -319,6 +323,26 @@ public:
 
         gridLayout->addWidget(labelTeamFortressCharacters, 22, 0, 1, 2);
 
+        checkMartinCity = new QCheckBox(CreateGameDialog);
+        checkMartinCity->setObjectName(QStringLiteral("checkMartinCity"));
+
+        gridLayout->addWidget(checkMartinCity, 21, 5, 1, 2);
+
+        labelMartinCity = new QLabel(CreateGameDialog);
+        labelMartinCity->setObjectName(QStringLiteral("labelMartinCity"));
+
+        gridLayout->addWidget(labelMartinCity, 21, 3, 1, 2);
+
+        checkMartinCityCharacters = new QCheckBox(CreateGameDialog);
+        checkMartinCityCharacters->setObjectName(QStringLiteral("checkMartinCityCharacters"));
+
+        gridLayout->addWidget(checkMartinCityCharacters, 22, 5, 1, 2);
+
+        labelMartinCityCharacters = new QLabel(CreateGameDialog);
+        labelMartinCityCharacters->setObjectName(QStringLiteral("labelMartinCityCharacters"));
+
+        gridLayout->addWidget(labelMartinCityCharacters, 22, 3, 1, 2);
+
         checkDirectorsCuts = new QCheckBox(CreateGameDialog);
         checkDirectorsCuts->setObjectName(QStringLiteral("checkDirectorsCuts"));
 
@@ -376,6 +400,8 @@ public:
         labelDodgeCity->setBuddy(checkDodgeCity);
         labelTeamFortress->setBuddy(checkTeamFortress);
         labelTeamFortressCharacters->setBuddy(checkTeamFortressCharacters);
+        labelMartinCity->setBuddy(checkMartinCity);
+        labelMartinCityCharacters->setBuddy(checkMartinCityCharacters);
         labelDirectorsCuts->setBuddy(checkDirectorsCuts);
         labelDirectorsCutsCharacters->setBuddy(checkDirectorsCutsCharacters);
         labelStackingDynamite->setBuddy(checkStackingDynamite);
@@ -397,7 +423,9 @@ public:
         QWidget::setTabOrder(checkBoxOurFlag, checkDodgeCity);
         QWidget::setTabOrder(checkDodgeCity, checkTeamFortress);
         QWidget::setTabOrder(checkTeamFortress, checkTeamFortressCharacters);
-        QWidget::setTabOrder(checkTeamFortressCharacters, checkDirectorsCuts);
+        QWidget::setTabOrder(checkTeamFortressCharacters, checkMartinCity);
+        QWidget::setTabOrder(checkMartinCity, checkMartinCityCharacters);
+        QWidget::setTabOrder(checkMartinCityCharacters, checkDirectorsCuts);
         QWidget::setTabOrder(checkDirectorsCuts, checkDirectorsCutsCharacters);
         QWidget::setTabOrder(checkDirectorsCutsCharacters, checkStackingDynamite);
         QWidget::setTabOrder(checkStackingDynamite, pushButtonCreate);
@@ -450,6 +478,8 @@ public:
         labelDodgeCity->setText(QApplication::translate("CreateGameDialog", "Dodge City", Q_NULLPTR));
         labelTeamFortress->setText(QApplication::translate("CreateGameDialog", "Team Fortress", Q_NULLPTR));
         labelTeamFortressCharacters->setText(QApplication::translate("CreateGameDialog", "Team Fortress characters", Q_NULLPTR));
+        labelMartinCity->setText(QApplication::translate("CreateGameDialog", "Martin City", Q_NULLPTR));
+        labelMartinCityCharacters->setText(QApplication::translate("CreateGameDialog", "Martin City characters", Q_NULLPTR));
         labelDirectorsCuts->setText(QApplication::translate("CreateGameDialog", "Directors Cuts", Q_NULLPTR));
         labelDirectorsCutsCharacters->setText(QApplication::translate("CreateGameDialog", "Directors Cuts characters", Q_NULLPTR));
         labelStackingDynamite->setText(QApplication::translate("CreateGameDialog", "Stacking dynamite", Q_NULLPTR));

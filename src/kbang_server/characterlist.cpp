@@ -33,6 +33,9 @@
 #include "charactervienna.h"
 #include "characterwyattearp.h"
 
+#include "characterernestsaliven.h"
+#include "charactercrazybear.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -128,7 +131,15 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
     case CHARACTER_VIENNA: 
         return new CharacterVienna(parent);
     case CHARACTER_WYATT_EARP: 
-        return new CharacterWyattEarp(parent);
+        return new CharacterWyattEarp(parent, CharacterWyattEarp::WyattEarp);
+    case CHARACTER_ERNEST_SALIVEN: 
+        return new CharacterErnestSaliven(parent);
+    case CHARACTER_SERGEANT_O_REILLY: 
+        return new CharacterSoldier(parent, CharacterSoldier::SergeantOReilly);
+    case CHARACTER_RON_ROBBER: 
+        return new CharacterWyattEarp(parent, CharacterWyattEarp::RonRobber);
+    case CHARACTER_CRAZY_BEAR: 
+        return new CharacterCrazyBear(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -155,27 +166,7 @@ void CharacterList::initCharacterTypes(Game* game)
     sm_characterTypes.append(CHARACTER_SUZY_LAFAYETTE);
     sm_characterTypes.append(CHARACTER_VULTURE_SAM);
     sm_characterTypes.append(CHARACTER_WILLY_THE_KID);
-    /*
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);
-      sm_characterTypes.append(CHARACTER_DEMOMAN);*/
+        
     //sm_characterTypes.append(CHARACTER_COWBOY);
     
     if (game->gameInfo().teamFortressCharactersFlag()){
@@ -207,32 +198,46 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_WYATT_EARP);
 
         //sm_characterTypes.append(CHARACTER_DJANGO);
-        
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-//         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
-        
+
     }
     else {
         qDebug() << "No directorsCutsCharactersFlag.";
+    }
+    
+    if (game->gameInfo().martinCityCharactersFlag()){
+        qDebug() << "martinCityCharactersFlag.";
+        
+        sm_characterTypes.append(CHARACTER_ERNEST_SALIVEN);
+        sm_characterTypes.append(CHARACTER_SERGEANT_O_REILLY);
+        sm_characterTypes.append(CHARACTER_RON_ROBBER);
+        
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        
+        
+
+    }
+    else {
+        qDebug() << "No martinCityCharactersFlag.";
     }
 
 }

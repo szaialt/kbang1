@@ -14,6 +14,9 @@ CharacterSoldier::CharacterSoldier(QObject* parent, Type type):
         case LlaneroSolitario:
             setCharacterType(CHARACTER_LLANERO_SOLITARIO);
             break;
+        case SergeantOReilly:
+            setCharacterType(CHARACTER_SERGEANT_O_REILLY);
+            break;
         }
 }
 

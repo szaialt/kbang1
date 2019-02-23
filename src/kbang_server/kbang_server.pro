@@ -97,7 +97,9 @@ HEADERS += \
     characterloco.h \
     charactersartana.h \
     charactervienna.h \
-    characterwyattearp.h
+    characterwyattearp.h \
+    characterernestsaliven.h \
+    charactercrazybear.h 
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -182,7 +184,9 @@ SOURCES += \
     characterloco.cpp \
     charactersartana.cpp \
     charactervienna.cpp \
-    characterwyattearp.cpp
+    characterwyattearp.cpp \
+    characterernestsaliven.cpp \
+    charactercrazybear.cpp
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \

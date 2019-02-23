@@ -33,7 +33,7 @@ public:
     virtual void onPlayerDied(PublicPlayerView&);
     virtual void onGameStarted() {}
     virtual void onGameFinished() {}
-    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList<const PlayingCard*>, bool) {}
+    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList< PlayingCard*>, bool) {}
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard*, const PlayingCard*) {}
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard*, PocketType) {}
     virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*) {}

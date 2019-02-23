@@ -103,6 +103,7 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "crazy bear")     return CHARACTER_CRAZY_BEAR;
     if (s == "tomy lee ghost") return CHARACTER_TOMY_LEE_GHOST;
     if (s == "white wolf")     return CHARACTER_WHITE_WOLF;
+    if (s ==  "charles boggen") return CHARACTER_CHARLES_BOGGEN;
     if (s == "jude isachias")  return CHARACTER_JUDE_ISACHIAS;
     if (s == "samuel mcgreggor") return CHARACTER_SAMUEL_MCGREGGOR;
     if (s == "matthew hell")   return CHARACTER_MATTHEW_HELL;
@@ -175,6 +176,7 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_CRAZY_BEAR:      return "crazy bear";
     case CHARACTER_TOMY_LEE_GHOST:  return "tomy lee ghost";
     case CHARACTER_WHITE_WOLF:      return "white wolf";
+    case CHARACTER_CHARLES_BOGGEN:  return "charles boggen";
     case CHARACTER_JUDE_ISACHIAS:   return "jude isachias";
     case CHARACTER_SAMUEL_MCGREGGOR: return "samuel mcgreggor";
     case CHARACTER_MATTHEW_HELL:    return "matthew hell";
@@ -382,8 +384,13 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "morphine")            return CARD_MORPHINE;
     if (s == "shock")               return CARD_SHOCK;
     if (s == "weakness")            return CARD_WEAKNESS;
-    
-    return CARD_UNKNOWN;
+    if (s == "triple-bang")         return CARD_TRIPLE_BANG;
+    if (s == "triple bang")         return CARD_TRIPLE_BANG;
+    if (s == "triple_bang")         return CARD_TRIPLE_BANG;
+    if (s == "quad-bang")           return CARD_QUAD_BANG;
+    if (s == "quad bang")           return CARD_QUAD_BANG;
+    if (s == "quad_bang")           return CARD_QUAD_BANG;
+    return CARD_UNKNOWN; 
 } 
 
 QString playingCardTypeToString(const PlayingCardType& c)
@@ -454,7 +461,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_VEST:            return "vest";
         case CARD_STUNNING:        return "stunning";
         case CARD_COWBOY_POCKET:   return "cowboy pocket";
-        case CARD_GOLD_WATCH:      return "gold_watch";
+        case CARD_GOLD_WATCH:      return "gold watch";
         case CARD_INFLAMMATORY_BOTTLE: return "inflammatory bottle";
         case CARD_PRAYER:          return "prayer";
         case CARD_BLEEDING_INJURY: return "bleeding injury";
@@ -466,6 +473,9 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_MORPHINE:        return "morphine";
         case CARD_SHOCK:           return "shock";
         case CARD_WEAKNESS:        return "weakness";
+        case CARD_TRIPLE_BANG:     return "triple bang";
+        case CARD_QUAD_BANG:       return "quad bang";
+    
         //Unknown
         case CARD_UNKNOWN:        return "";
     }

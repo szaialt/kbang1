@@ -167,6 +167,33 @@ void Card::loadDefaultRuleset()
     new Card("Peace pipe",   CARD_PEACE_PIPE,     "gfx/cards/directorscuts/peace-pipe.jpg" );
     new Card("Shotgun",      CARD_SHOTGUN,         "gfx/cards/directorscuts/shotgun.jpg" );
     new Card("Sun glare",    CARD_SUN_GLARE,       "gfx/cards/directorscuts/sun-glare.jpg" );
+    //Cards from Martin City
+    new Card("Elixir",       CARD_ELIXIR,         "gfx/cards/martincity/elixir.png" );
+    new Card("Explosion",    CARD_EXPLOSION,      "gfx/cards/martincity/explosion.png" );
+    new Card("Pristahovalci", CARD_PRISTAHOVALCI, "gfx/cards/martincity/pristahovalci.png" );
+    new Card("First aid kit", CARD_FIRST_AID_KIT, "gfx/cards/martincity/first-aid-kit.png" );
+    new Card("Rana jistoty", CARD_RANA_JISTOTY,   "gfx/cards/martincity/rana-jistoty.png" );
+    new Card("Kombo",        CARD_KOMBO,          "gfx/cards/martincity/kombo.png" );
+    new Card("Dirty work",   CARD_DIRTY_WORK,     "gfx/cards/martincity/dirty-work.png" );
+    new Card("Zabijak",      CARD_ZABIJAK,        "gfx/cards/martincity/zabijak.png" );
+    new Card("Golden brown", CARD_GOLDEN_BROWN,   "gfx/cards/martincity/golden-brown.png" );
+    new Card("Thunder",      CARD_THUNDER,        "gfx/cards/martincity/thunder.png" );
+    new Card("Vest",         CARD_VEST,           "gfx/cards/martincity/vest.png" );
+    new Card("Stunning",     CARD_STUNNING,       "gfx/cards/martincity/stunning.png" );
+    new Card("Cowboy pocket", CARD_COWBOY_POCKET, "gfx/cards/martincity/cowboy-pocket.png" );
+    new Card("Gold watch",   CARD_GOLD_WATCH,     "gfx/cards/martincity/goldwatch.png" );
+    new Card("Inflammatory bottle", CARD_INFLAMMATORY_BOTTLE, "gfx/cards/martincity/inflammatory-bottle.png" );
+    new Card("Prayer",      CARD_PRAYER,          "gfx/cards/martincity/prayer.png" );
+    new Card("Bleeding injury", CARD_BLEEDING_INJURY, "gfx/cards/martincity/bleeding-injury.png" );
+    new Card("Adrenaline",  CARD_ADRENALINE,       "gfx/cards/martincity/adrenaline.png" );
+    new Card("Medicines",   CARD_MEDICINES,        "gfx/cards/martincity/medicines.png" );
+    new Card("Steroid",     CARD_STEROID,          "gfx/cards/martincity/steroid.png" );
+    new Card("Drugs",       CARD_DRUGS,            "gfx/cards/martincity/drugs.png" );
+    new Card("Headache",    CARD_HEADACHE,         "gfx/cards/martincity/headache.png" );
+    new Card("Morphine",    CARD_MORPHINE,         "gfx/cards/martincity/morphine.png" );
+    new Card("Shock",       CARD_SHOCK,            "gfx/cards/martincity/shock.png" );
+    new Card("Weakness",    CARD_WEAKNESS,         "gfx/cards/martincity/weakness.png" );
+    
     //Unknown card 
     new Card("",            CARD_UNKNOWN,    "gfx/cards/back-playing.png");
 
@@ -219,6 +246,25 @@ void Card::loadDefaultRuleset()
     new Card("Vienna",         CHARACTER_VIENNA,            "gfx/characters/directorscuts/vienna.jpg");
     new Card("Wyatt Earp",     CHARACTER_WYATT_EARP,        "gfx/characters/directorscuts/wyatt-earp.jpg");
     
+    //Martin City
+    new Card("Ernest Saliven", CHARACTER_ERNEST_SALIVEN,    "gfx/characters/martincity/ernest-saliven.png");
+    new Card("Emil Docaine",   CHARACTER_EMIL_DOCAINE,      "gfx/characters/martincity/emil-docaine.png");
+    new Card("Lady Burboun",   CHARACTER_LADY_BURBOUN,      "gfx/characters/martincity/lady-burboun.png");
+    new Card("Sam Scalphunter", CHARACTER_SAM_SCALPHUNTER,  "gfx/characters/martincity/sam-scalphunter.png");
+    new Card("Crazy Bear",     CHARACTER_CRAZY_BEAR,        "gfx/characters/martincity/crazy-bear.png");
+    new Card("Tomy Lee Ghost", CHARACTER_TOMY_LEE_GHOST,    "gfx/characters/martincity/tomy-lee-ghost.png");
+    new Card("White Wolf",     CHARACTER_WHITE_WOLF,        "gfx/characters/martincity/white-wolf.png");
+    new Card("Charles Boggen",     CHARACTER_CHARLES_BOGGEN,        "gfx/characters/martincity/charles-boggen.png");
+    new Card("Jude Isachias",  CHARACTER_JUDE_ISACHIAS,     "gfx/characters/martincity/jude-isachias.png");
+    new Card("Samuel Mcgreggor", CHARACTER_SAMUEL_MCGREGGOR, "gfx/characters/martincity/samuel-mcgreggor.png");
+    new Card("Matthew Hell",   CHARACTER_MATTHEW_HELL,      "gfx/characters/martincity/matthew-hell.png");
+    new Card("Sergeant O Reilly", CHARACTER_SERGEANT_O_REILLY, "gfx/characters/martincity/sergeant-o-reilly.png");
+    new Card("Billy Longlife", CHARACTER_BILLY_LONGLIFE,    "gfx/characters/martincity/billy-longlife.png");
+    new Card("Antony Carma",   CHARACTER_ANTONY_CARMA,      "gfx/characters/martincity/antony-carma.png");
+    new Card("Dan Quake",      CHARACTER_DAN_QUAKE,         "gfx/characters/martincity/dan-quake.png");
+    new Card("Ron Robber",     CHARACTER_RON_ROBBER,        "gfx/characters/martincity/ron-robber.png");
+    new Card("Samuel Diehard", CHARACTER_SAMUEL_DIEHARD,    "gfx/characters/martincity/samuel-diehard.png");
+   
     
     
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");

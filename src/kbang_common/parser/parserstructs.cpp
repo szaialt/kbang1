@@ -147,6 +147,12 @@ void GameInfoData::read(XmlNode* node)
      directorsCutsFlag      = (node->attribute("directorsCutsFlag")) == "true";
      directorsCutsCharactersFlag = false;
      directorsCutsCharactersFlag      = (node->attribute("directorsCutsCharactersFlag")) == "true";
+     
+     martinCityFlag = false;
+     martinCityFlag      = (node->attribute("martinCityFlag")) == "true";
+     martinCityCharactersFlag = false;
+     martinCityCharactersFlag      = (node->attribute("martinCityCharactersFlag")) == "true";
+     
     players.clear();
     foreach(XmlNode* child, node->getChildren()) {
         PlayerInfoData playerInfo;
@@ -182,6 +188,10 @@ void GameInfoData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("teamFortressCharactersFlag",        teamFortressCharactersFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsFlag",        directorsCutsFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsCharactersFlag",        directorsCutsCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("martinCityFlag",        martinCityFlag ? "true" : "false");
+      writer->writeAttribute("martinCityCharactersFlag",        martinCityCharactersFlag ? "true" : "false");
+      
     writer->writeAttribute("state",                 gameStateToString(state));
     writer->writeAttribute("aiLevel", QString::number(aiLevel));
     foreach(const PlayerInfoData& playerInfo, players) {
@@ -263,6 +273,10 @@ void CreateGameData::read(XmlNode* node)
      directorsCutsFlag      = (node->attribute("directorsCutsFlag")) == "true";
      directorsCutsCharactersFlag = false;
      directorsCutsCharactersFlag      = (node->attribute("directorsCutsCharactersFlag")) == "true";
+     martinCityFlag = false;
+     martinCityFlag      = (node->attribute("martinCityFlag")) == "true";
+     martinCityCharactersFlag = false;
+     martinCityCharactersFlag      = (node->attribute("martinCityCharactersFlag")) == "true";
      aiLevel   = node->attribute("aiLevel").toInt();
      playerPassword      = node->attribute("playerPassword");
      spectatorPassword   = node->attribute("spectatorPassword");
@@ -289,6 +303,8 @@ void CreateGameData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("teamFortressCharactersFlag",        teamFortressCharactersFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsFlag",        directorsCutsFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsCharactersFlag",        directorsCutsCharactersFlag ? "true" : "false");
+      writer->writeAttribute("martinCityFlag",        martinCityFlag ? "true" : "false");
+      writer->writeAttribute("martinCityCharactersFlag",        martinCityCharactersFlag ? "true" : "false");
       writer->writeAttribute("aiLevel", QString::number(aiLevel));
      if (!playerPassword.isNull())
          writer->writeAttribute("playerPassword",        playerPassword);

@@ -637,14 +637,14 @@ void Client::onGameFinished()
     onGameSync();
 }
 
-void Client::onPlayerDrawFromDeck(PublicPlayerView& player, QList<const PlayingCard*> cards, bool revealCards)
+void Client::onPlayerDrawFromDeck(PublicPlayerView& player, QList< PlayingCard*> cards, bool revealCards)
 {
     if (mp_parser == 0) return;
     Q_UNUSED(revealCards);
     GameMessage message = GameMessage();
     message.type = GAMEMESSAGE_PLAYERDRAWFROMDECK;
     message.player = player.id();
-    foreach(const PlayingCard* card, cards) {
+    foreach( PlayingCard* card, cards) {
         if (card != 0) {
           message.cards.append(card->cardData()); //segfault
         }
@@ -652,7 +652,7 @@ void Client::onPlayerDrawFromDeck(PublicPlayerView& player, QList<const PlayingC
     mp_parser->eventGameMessage(message);
 
 
-    foreach (const PlayingCard* card, cards) {
+    foreach ( PlayingCard* card, cards) { 
         CardMovementData x;
         x.pocketTypeFrom = POCKET_DECK;
         x.pocketTypeTo   = POCKET_HAND;

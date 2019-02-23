@@ -41,7 +41,7 @@ public:
 
 
 
-    void onPlayerDrawFromDeck(Player*, QList<const PlayingCard*>, bool revealCards);
+    void onPlayerDrawFromDeck(Player*, QList<PlayingCard*>, bool revealCards);
 
     void onPlayerDrawFromGraveyard(Player*, const PlayingCard*, const PlayingCard*);
 

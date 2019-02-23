@@ -73,7 +73,7 @@ void GameLogger::onPlayerDied(PublicPlayerView& p)
     m_logFile << msg.toStdString() << endl;
 }
 
-void GameLogger::onPlayerDrawFromDeck(PublicPlayerView& p, QList<const PlayingCard*> l, bool)
+void GameLogger::onPlayerDrawFromDeck(PublicPlayerView& p, QList< PlayingCard*> l, bool)
 {
     QString msg = QString("onPlayerDrawFromDeck(player=%1, cards=%2)").
                   arg(p.id()).
@@ -252,6 +252,19 @@ QString GameLogger::cardListToString(QList<const PlayingCard*> l)
 {
     QString res = "[";
     QListIterator<const PlayingCard*> it(l);
+    while(it.hasNext()) {
+        res += cardToString(it.next());
+        if (it.hasNext())
+            res += ",";
+    }
+    res += "]";
+    return res;
+}
+
+QString GameLogger::cardListToString(QList<PlayingCard*> l)
+{
+    QString res = "[";
+    QListIterator<PlayingCard*> it(l);
     while(it.hasNext()) {
         res += cardToString(it.next());
         if (it.hasNext())

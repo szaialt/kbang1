@@ -109,10 +109,10 @@ public: /* The GameEventListener interface */
     virtual void onPlayerUpdated(PublicPlayerView&);
     virtual void onPlayerDied(PublicPlayerView&, PublicPlayerView* causedBy);
     virtual void onPlayerDied(PublicPlayerView& player);
-    virtual void onGameStarted();
+    virtual void onGameStarted(); 
     virtual void onGameFinished();
 
-    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList<const PlayingCard*> cards, bool revealCards);
+    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList< PlayingCard*> cards, bool revealCards);
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* nextCard);
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard* card, PocketType pocket);
     virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card);

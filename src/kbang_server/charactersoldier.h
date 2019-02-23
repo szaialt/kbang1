@@ -12,7 +12,8 @@ Q_OBJECT
 public: 
     enum Type {
         Soldier,
-        LlaneroSolitario
+        LlaneroSolitario,
+        SergeantOReilly
     };
     CharacterSoldier(QObject* parent, Type type);
     virtual void respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard);

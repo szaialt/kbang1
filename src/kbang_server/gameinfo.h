@@ -41,9 +41,10 @@ public:
     inline bool      teamFortressFlag()            const { return m_teamFortressFlag; }
     inline bool      stackingDynamiteFlag()            const { return m_stackingDynamiteFlag; }
     inline bool      teamFortressCharactersFlag()            const { return m_teamFortressCharactersFlag; }
-    
     inline bool      directorsCutsFlag()            const { return m_directorsCutsFlag; }
     inline bool      directorsCutsCharactersFlag()            const { return m_directorsCutsCharactersFlag; }
+    inline bool      martinCityFlag()            const { return m_martinCityFlag; }
+    inline bool      martinCityCharactersFlag()            const { return m_martinCityCharactersFlag; }
     
     inline int      aiLevel()             const { return m_aiLevel; }
     
@@ -88,6 +89,8 @@ private:
      bool m_teamFortressCharactersFlag;
      bool m_directorsCutsFlag;
      bool m_directorsCutsCharactersFlag;
+     bool m_martinCityFlag;
+     bool m_martinCityCharactersFlag;
      int m_aiLevel;
 
 };

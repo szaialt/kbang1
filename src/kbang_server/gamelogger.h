@@ -27,7 +27,7 @@ public:
     virtual void onPlayerDied(PublicPlayerView&);
     virtual void onGameStarted();
     virtual void onGameFinished();
-    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList<const PlayingCard*>, bool);
+    virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList< PlayingCard*>, bool);
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard*, const PlayingCard*);
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard*, PocketType);
     virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*);
@@ -56,6 +56,7 @@ private:
 
     QString cardToString(const PlayingCard*);
     QString cardListToString(QList<const PlayingCard*>);
+    QString cardListToString(QList<PlayingCard*>);
 
     const PublicGameView* mp_publicGameView;
     std::ofstream m_logFile;

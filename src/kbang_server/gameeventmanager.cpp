@@ -5,8 +5,15 @@
 #include "game.h"
 #include <iostream>
 
-QList<const PlayingCard*> voidCardList(int s) {
+QList<const PlayingCard*> constVoidCardList(int s) {
     QList<const PlayingCard*> l;
+    for(int i = 0; i < s; ++i)
+        l.append(0);
+    return l;
+}
+
+QList< PlayingCard*> voidCardList(int s) {
+    QList< PlayingCard*> l;
     for(int i = 0; i < s; ++i)
         l.append(0);
     return l;
@@ -112,7 +119,7 @@ void GameEventManager::onGameFinished()
     }
 }
 
-void GameEventManager::onPlayerDrawFromDeck(Player* p, QList<const PlayingCard*> cards, bool revealCards)
+void GameEventManager::onPlayerDrawFromDeck(Player* p, QList<PlayingCard*> cards, bool revealCards)
 {
     foreach(Handler* h, m_handlers) {
         if (h->player == p || revealCards || h->isSupervisor){
@@ -212,7 +219,7 @@ void GameEventManager::onDrawIntoSelection(Player* selectionOwner, QList<const P
         if (selectionOwner == 0 || h->player == selectionOwner || h->isSupervisor)
             h->handler->onDrawIntoSelection(cards);
         else
-            h->handler->onDrawIntoSelection(voidCardList(cards.size()));
+            h->handler->onDrawIntoSelection(constVoidCardList(cards.size()));
     }
 }
 

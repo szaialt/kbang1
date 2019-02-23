@@ -22,7 +22,7 @@ public:
      * Player draws specified amount of cards to his hands. If revealCards
      * is set, the other players can see the cards.
      */
-    QList<const PlayingCard*> playerDrawFromDeck(Player*, int count = 1, bool revealCards = 0);
+    QList<PlayingCard*> playerDrawFromDeck(Player*, int count = 1, bool revealCards = 0);
 
     void playerDrawFromGraveyard(Player*);
 
@@ -81,7 +81,10 @@ public:
     void playerPickFromSelection(Player*, PlayingCard*);
 
     void undrawFromSelection(PlayingCard* card);
-
+    /**
+     * The player adds a card to the deck.
+     */
+    void undrawCard(PlayingCard* card);
     /**
      * The player checks the deck and returns the result.
      */
@@ -110,7 +113,9 @@ public:
 
     QList<PlayingCard*> selection();
     void moveCardToGraveyard(PlayingCard*);
-
+    
+    //PlayingCard* popCardFromDeck();
+    //void putCardToDeck(PlayingCard*);
 private:
     void generateCards(CardFactory*);
     void shuffleDeck();
@@ -118,9 +123,8 @@ private:
     void regenerateDeck();
     
     inline PlayingCard* popCardFromDeck();
-    inline void putCardToDeck(PlayingCard*);
     inline void putCardToGraveyard(PlayingCard*);
-
+    inline void putCardToDeck(PlayingCard*);
 protected:
    /**
     * Prepares the game.

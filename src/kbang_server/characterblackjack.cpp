@@ -10,8 +10,8 @@ CharacterBlackJack::CharacterBlackJack(QObject* parent):
 void CharacterBlackJack::draw(bool)
 {
     gameTable().playerDrawFromDeck(mp_player, 1, 0);
-    QList<const PlayingCard*> cards = gameTable().playerDrawFromDeck(mp_player, 1, 1);
-    const PlayingCard* card = cards[0];
+    QList<PlayingCard*> cards = gameTable().playerDrawFromDeck(mp_player, 1, 1);
+    PlayingCard* card = cards[0];
     Q_ASSERT(card != 0);
     if (card->suit() == SUIT_HEARTS || card->suit() == SUIT_DIAMONDS) {
         notifyAbilityUse();

@@ -101,6 +101,8 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.teamFortressCharactersFlag = checkTeamFortressCharacters->isChecked();
      createGameData.directorsCutsFlag = checkDirectorsCuts->isChecked();
      createGameData.directorsCutsCharactersFlag = checkDirectorsCutsCharacters->isChecked();
+     createGameData.martinCityFlag = checkMartinCity->isChecked();
+     createGameData.martinCityCharactersFlag = checkMartinCityCharacters->isChecked();
      
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
@@ -184,6 +186,17 @@ void CreateGameDialog::loadConfigValues()
          checkDirectorsCutsCharacters->setChecked(1);
      else
          checkDirectorsCutsCharacters->setChecked(0);
+     
+    bool martinCityFlag  = cfg.readInt(grp, "martinCityFlag");
+     if (martinCityFlag)
+         checkMartinCity->setChecked(1);
+     else
+         checkMartinCity->setChecked(0);
+     bool martinCityCharactersFlag  = cfg.readInt(grp, "martinCityCharactersFlag");
+     if (martinCityCharactersFlag)
+         checkMartinCityCharacters->setChecked(1);
+     else
+         checkMartinCityCharacters->setChecked(0);
      
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));

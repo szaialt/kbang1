@@ -39,7 +39,9 @@ public:
         HealingBang,
         DoubleBang,
         Heavy,
-        Deflection
+        Deflection,
+        TripleBang,
+        QuadBang,
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

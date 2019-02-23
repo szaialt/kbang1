@@ -26,6 +26,7 @@
 #include "cardbarrel.h"
 #include "gameeventmanager.h"
 #include "util.h"
+#include "charactercrazybear.h"
 
 #include <iostream>
 
@@ -45,6 +46,12 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
         break;
     case Deflection:
         setType(CARD_DEFLECTION);
+        break;
+    case TripleBang:
+        setType(CARD_TRIPLE_BANG);
+        break;
+    case QuadBang:
+        setType(CARD_QUAD_BANG);
         break;
     default:
             NOT_REACHED();
@@ -99,7 +106,7 @@ void CardBang::play(Player *targetPlayer)
     }
     
 void CardBang::shot(Player *targetPlayer){
-        if ((type() == CARD_BANG) || (type() == CARD_HEALING_BANG) || (type() == CARD_DOUBLE_BANG)){
+        if ((type() == CARD_BANG) || (type() == CARD_HEALING_BANG) || (type() == CARD_DOUBLE_BANG) || (type() == CARD_TRIPLE_BANG) || (type() == CARD_QUAD_BANG)){
             owner()->onBangPlayed(true);
         }
         mp_attackingPlayer = owner();
@@ -107,6 +114,13 @@ void CardBang::shot(Player *targetPlayer){
         m_usedBarrels.clear();
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = mp_attackingPlayer->bangPower();
+        if (mp_attackingPlayer->characterType() == CHARACTER_CRAZY_BEAR){
+            CharacterCrazyBear* bear = qobject_cast<CharacterCrazyBear*>(mp_attackingPlayer);
+            if (bear != 0) {
+                 int injury = bear->injury();
+                 if (injury > 1) m_missedLeft = injury;
+            }
+        }
         if (type() == CARD_HEAVY_BANG) m_missedLeft = 2;
         QList<PlayingCard*> table = mp_attackedPlayer->table();
         foreach (PlayingCard* card, table){
@@ -149,6 +163,12 @@ void CardBang::respondPass()
     if (injure){
         if (type() == CARD_DOUBLE_BANG){
              mp_attackedPlayer->modifyLifePoints(-2, mp_attackingPlayer);
+        }
+        else if (type() == CARD_TRIPLE_BANG){
+             mp_attackedPlayer->modifyLifePoints(-3, mp_attackingPlayer);
+        }
+        else if (type() == CARD_QUAD_BANG){
+             mp_attackedPlayer->modifyLifePoints(-4, mp_attackingPlayer);
         }
         else {
            mp_attackedPlayer->modifyLifePoints(-1, mp_attackingPlayer);

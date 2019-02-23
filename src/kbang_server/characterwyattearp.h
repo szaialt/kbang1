@@ -9,8 +9,14 @@ class CharacterWyattEarp : public CharacterBase
 {
 Q_OBJECT
 public:
-    CharacterWyattEarp(QObject* parent);
+    enum Type {
+        WyattEarp,
+        RonRobber
+    };
+    CharacterWyattEarp(QObject* parent, Type type);
     virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);
+private:
+    Type m_type;
 };
 
 #endif // CHARACTERWYATTEARP_H

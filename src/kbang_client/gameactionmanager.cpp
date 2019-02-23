@@ -190,8 +190,9 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_JESSE_JONES:
         selectPlayer(cardWidget);
         break;
-//         selectCards(cardWidget, 1);
-//         break;
+    case CHARACTER_ERNEST_SALIVEN:
+         selectCards(cardWidget, 1);
+         break;
     case CHARACTER_SID_KETCHUM:
     case CHARACTER_ENGINEER:
     case CHARACTER_HEAVY:
@@ -201,9 +202,13 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_PAT_GARRETT:
     case CHARACTER_VIENNA:
     case CHARACTER_WYATT_EARP:
+    case CHARACTER_WHITE_WOLF:
+    case CHARACTER_JUDE_ISACHIAS:
+    case CHARACTER_RON_ROBBER:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:
+    case CHARACTER_LADY_BURBOUN:
         selectCards(cardWidget, 3);
         break;
     default:
@@ -285,7 +290,11 @@ void GameActionManager::useAbilityWithCards()
          case CHARACTER_JOHN_FORD:
          case CHARACTER_PAT_GARRETT:
          case CHARACTER_VIENNA:
-         case CHARACTER_WYATT_EARP: {
+         case CHARACTER_WYATT_EARP:
+         case CHARACTER_LADY_BURBOUN:
+         case CHARACTER_WHITE_WOLF:
+         case CHARACTER_RON_ROBBER:
+         {
              CardWidget* card = m_cardSelection.at(0); 
              int cardId = card->cardData().id;
              qDebug() << "Client: cardId" << cardId;

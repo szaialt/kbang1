@@ -83,6 +83,10 @@ GameInfoData PublicGameView::gameInfoData() const
     res.teamFortressCharactersFlag  = mp_game->gameInfo().teamFortressCharactersFlag();
     res.directorsCutsFlag  = mp_game->gameInfo().directorsCutsFlag();
     res.directorsCutsCharactersFlag  = mp_game->gameInfo().directorsCutsCharactersFlag();
+    
+    res.martinCityFlag  = mp_game->gameInfo().martinCityFlag();
+    res.martinCityCharactersFlag  = mp_game->gameInfo().martinCityCharactersFlag();
+    
     //res.AIPlayersCnt    todo
 //     res.hasPlayerPassword = mp_game->gameInfo().hasPlayerPassword();
 //     res.hasSpectatorPassword = mp_game->gameInfo().hasSpectatorPassword();

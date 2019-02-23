@@ -24,9 +24,9 @@ void GameTable::prepareGame(CardFactory* cardFactory) {
 
 
 
-QList<const PlayingCard*> GameTable::playerDrawFromDeck(Player* player, int count, bool revealCards)
+QList<PlayingCard*> GameTable::playerDrawFromDeck(Player* player, int count, bool revealCards)
 {
-    QList<const PlayingCard*> drawedCards;
+    QList<PlayingCard*> drawedCards;
     for(int i = 0; i < count; ++i)
     {
         PlayingCard* card = popCardFromDeck();
@@ -276,6 +276,19 @@ void GameTable::undrawFromSelection(PlayingCard* card)
     card->setOwner(0);
     card->setPocket(POCKET_DECK);
     mp_game->gameEventManager().onUndrawFromSelection(card, owner);
+}
+
+void GameTable::undrawCard(PlayingCard* card)
+{
+    Q_ASSERT(card->pocket() == POCKET_HAND);
+    Player* owner = card->owner();
+    owner->removeCardFromHand(card);
+    putCardToDeck(card);
+    card->setOwner(0);
+    card->setPocket(POCKET_DECK);
+    mp_game->gameEventManager().onUndrawFromSelection(card, owner);
+    owner->checkEmptyHand();
+    mp_game->gameEventManager().onPlayerUpdated(owner);
 }
 
 /*

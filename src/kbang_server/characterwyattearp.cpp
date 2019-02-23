@@ -2,8 +2,18 @@
 #include "playingcard.h"
 #include "cardtaker.h"
 
-CharacterWyattEarp::CharacterWyattEarp(QObject* parent):
-    CharacterBase(parent, CHARACTER_UNKNOWN){
+CharacterWyattEarp::CharacterWyattEarp(QObject* parent, Type type):
+    CharacterBase(parent, CHARACTER_UNKNOWN), m_type(type){
+        
+        switch(type) {
+        case WyattEarp:
+            setCharacterType(CHARACTER_WYATT_EARP);
+            break;
+        case RonRobber:
+            setCharacterType(CHARACTER_RON_ROBBER);
+            break;
+        }
+        
   setCharacterType(CHARACTER_WYATT_EARP);
 }
 

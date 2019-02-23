@@ -10,6 +10,7 @@
 #include "cardpersuasion.h"
 #include "characterdjango.h"
 #include "charactervienna.h"
+#include "characterernestsaliven.h"
 
 #include <QDebug>
 
@@ -527,6 +528,10 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_VIENNA){
         CharacterVienna* vienna =  qobject_cast<CharacterVienna*>(player->character());
         vienna->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_ERNEST_SALIVEN){
+        CharacterErnestSaliven* ernest =  qobject_cast<CharacterErnestSaliven*>(player->character());
+        ernest->resetAbility();
     }
 }
 
