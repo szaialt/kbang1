@@ -52,9 +52,10 @@ Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
         m_bangPower(1),
         m_publicPlayerView(this),
         m_privatePlayerView(this),
-        m_payed_bandidos(false),
         m_weaponNumber(1),
-        m_banged(0)
+        m_banged(0),
+        m_is_HexxZombie(false),
+        m_elixirPlayed(false)
 {
 
     mp_playerCtrl = new PlayerCtrl(this);
@@ -130,8 +131,13 @@ void Player::modifyLifePoints(int x, Player* causedBy)
     // modify lifePoints member
     int oldLifePoints = m_lifePoints;
     m_lifePoints += x;
-    if (m_lifePoints > m_maxLifePoints){
-        m_lifePoints = m_maxLifePoints;
+    if ((m_lifePoints > m_maxLifePoints) && (characterType() != CHARACTER_BILLY_LONGLIFE) && (characterType() != CHARACTER_DAN_QUAKE)){
+        if (!m_elixirPlayed){
+            m_lifePoints = m_maxLifePoints;
+        }
+        else {
+            setElixirPlayed(false);
+        }
     }
         //Don't go into negative 
      if (game()->gameInfo().ourFlag()){
@@ -322,14 +328,6 @@ void Player::update(const CreatePlayerData& createPlayerData)
     m_avatar = createPlayerData.avatar;
 }
 
-void Player::setPayedBandidos(bool b){
-    m_payed_bandidos = b;
-}
-
-bool Player::payedBandidos(){
-    return m_payed_bandidos;
-}
-
 int Player::getWeaponNumber(){
     return m_weaponNumber;
 }
@@ -388,4 +386,20 @@ void Player::checkEmptyHand()
 
 void Player::addAdversary(PublicPlayerView* p){
     m_adversaries.append(p);
+}
+
+void Player::charm(){
+    mp_playerCtrl->charm();
+}
+
+void Player::unCharm(){
+    mp_playerCtrl->unCharm();
+}
+
+void Player::setHexxZombie(bool b){
+    m_is_HexxZombie = b;
+}
+
+void Player::setElixirPlayed(bool b){
+    m_elixirPlayed = b;
 }

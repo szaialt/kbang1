@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_PlayerCtrl_t {
-    QByteArrayData data[26];
-    char stringdata0[286];
+    QByteArrayData data[27];
+    char stringdata0[304];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,27 +45,28 @@ QT_MOC_LITERAL(11, 114, 12), // "targetPlayer"
 QT_MOC_LITERAL(12, 127, 19), // "QList<PlayingCard*>"
 QT_MOC_LITERAL(13, 147, 5), // "cards"
 QT_MOC_LITERAL(14, 153, 8), // "playCard"
-QT_MOC_LITERAL(15, 162, 6), // "player"
-QT_MOC_LITERAL(16, 169, 10), // "targetCard"
-QT_MOC_LITERAL(17, 180, 11), // "targetCards"
-QT_MOC_LITERAL(18, 192, 24), // "QList<PublicPlayerView*>"
-QT_MOC_LITERAL(19, 217, 7), // "players"
-QT_MOC_LITERAL(20, 225, 4), // "pass"
-QT_MOC_LITERAL(21, 230, 4), // "role"
-QT_MOC_LITERAL(22, 235, 10), // "PlayerRole"
-QT_MOC_LITERAL(23, 246, 9), // "character"
-QT_MOC_LITERAL(24, 256, 13), // "CharacterType"
-QT_MOC_LITERAL(25, 270, 15) // "sendChatMessage"
+QT_MOC_LITERAL(15, 162, 17), // "PublicPlayerView*"
+QT_MOC_LITERAL(16, 180, 6), // "player"
+QT_MOC_LITERAL(17, 187, 10), // "targetCard"
+QT_MOC_LITERAL(18, 198, 11), // "targetCards"
+QT_MOC_LITERAL(19, 210, 24), // "QList<PublicPlayerView*>"
+QT_MOC_LITERAL(20, 235, 7), // "players"
+QT_MOC_LITERAL(21, 243, 4), // "pass"
+QT_MOC_LITERAL(22, 248, 4), // "role"
+QT_MOC_LITERAL(23, 253, 10), // "PlayerRole"
+QT_MOC_LITERAL(24, 264, 9), // "character"
+QT_MOC_LITERAL(25, 274, 13), // "CharacterType"
+QT_MOC_LITERAL(26, 288, 15) // "sendChatMessage"
 
     },
     "PlayerCtrl\0disconnect\0\0startGame\0draw\0"
     "finishTurn\0discardCard\0PlayingCard*\0"
     "card\0useAbility\0const PublicPlayerView*\0"
     "targetPlayer\0QList<PlayingCard*>\0cards\0"
-    "playCard\0player\0targetCard\0targetCards\0"
-    "QList<PublicPlayerView*>\0players\0pass\0"
-    "role\0PlayerRole\0character\0CharacterType\0"
-    "sendChatMessage"
+    "playCard\0PublicPlayerView*\0player\0"
+    "targetCard\0targetCards\0QList<PublicPlayerView*>\0"
+    "players\0pass\0role\0PlayerRole\0character\0"
+    "CharacterType\0sendChatMessage"
 };
 #undef QT_MOC_LITERAL
 
@@ -98,10 +99,10 @@ static const uint qt_meta_data_PlayerCtrl[] = {
       14,    3,  141,    2, 0x0a /* Public */,
       14,    2,  148,    2, 0x0a /* Public */,
       14,    2,  153,    2, 0x0a /* Public */,
-      20,    0,  158,    2, 0x0a /* Public */,
-      21,    0,  159,    2, 0x0a /* Public */,
-      23,    0,  160,    2, 0x0a /* Public */,
-      25,    1,  161,    2, 0x0a /* Public */,
+      21,    0,  158,    2, 0x0a /* Public */,
+      22,    0,  159,    2, 0x0a /* Public */,
+      24,    0,  160,    2, 0x0a /* Public */,
+      26,    1,  161,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -114,14 +115,14 @@ static const uint qt_meta_data_PlayerCtrl[] = {
     QMetaType::Void, 0x80000000 | 12,   13,
     QMetaType::Void, 0x80000000 | 12, 0x80000000 | 10,   13,   11,
     QMetaType::Void, 0x80000000 | 7,    8,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 10,    8,   15,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 7,    8,   16,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 7, 0x80000000 | 10,    8,   16,   11,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 12,    8,   17,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 18,    8,   19,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 15,    8,   16,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 7,    8,   17,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 7, 0x80000000 | 15,    8,   17,   11,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 12,    8,   18,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 19,    8,   20,
     QMetaType::Void,
-    0x80000000 | 22,
-    0x80000000 | 24,
+    0x80000000 | 23,
+    0x80000000 | 25,
     QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
@@ -143,9 +144,9 @@ void PlayerCtrl::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->useAbility((*reinterpret_cast< QList<PlayingCard*>(*)>(_a[1]))); break;
         case 8: _t->useAbility((*reinterpret_cast< QList<PlayingCard*>(*)>(_a[1])),(*reinterpret_cast< const PublicPlayerView*(*)>(_a[2]))); break;
         case 9: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1]))); break;
-        case 10: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< const PublicPlayerView*(*)>(_a[2]))); break;
+        case 10: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< PublicPlayerView*(*)>(_a[2]))); break;
         case 11: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< PlayingCard*(*)>(_a[2]))); break;
-        case 12: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< PlayingCard*(*)>(_a[2])),(*reinterpret_cast< const PublicPlayerView*(*)>(_a[3]))); break;
+        case 12: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< PlayingCard*(*)>(_a[2])),(*reinterpret_cast< PublicPlayerView*(*)>(_a[3]))); break;
         case 13: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< QList<PlayingCard*>(*)>(_a[2]))); break;
         case 14: _t->playCard((*reinterpret_cast< PlayingCard*(*)>(_a[1])),(*reinterpret_cast< QList<PublicPlayerView*>(*)>(_a[2]))); break;
         case 15: _t->pass(); break;

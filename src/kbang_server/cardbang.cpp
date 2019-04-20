@@ -53,6 +53,12 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case QuadBang:
         setType(CARD_QUAD_BANG);
         break;
+    case IndianBang:
+        setType(CARD_INDIAN_BANG);
+        break;
+    case Undefensable:
+        setType(CARD_UNDEFENSABLE);
+        break;
     default:
             NOT_REACHED();
     }
@@ -106,7 +112,7 @@ void CardBang::play(Player *targetPlayer)
     }
     
 void CardBang::shot(Player *targetPlayer){
-        if ((type() == CARD_BANG) || (type() == CARD_HEALING_BANG) || (type() == CARD_DOUBLE_BANG) || (type() == CARD_TRIPLE_BANG) || (type() == CARD_QUAD_BANG)){
+        if (oneTimeBang()){
             owner()->onBangPlayed(true);
         }
         mp_attackingPlayer = owner();
@@ -193,14 +199,34 @@ void CardBang::respondCard(PlayingCard* targetCard)
             && (rank() >= targetCard->rank()))
                 throw BadCardException();
     }
+    if (type() == CARD_UNDEFENSABLE){
+        throw BadCardException();
+    }
     switch(targetCard->type()) {
+        case CARD_BANG:
+            if (type() == CARD_INDIAN_BANG){
+                targetCard->assertInHand();
+                game()->gameCycle().unsetResponseMode();
+                gameTable()->playerRespondWithCard(targetCard);
+                missed();
+                return;  
+            }
+            else {
+                throw BadCardException();
+            }
     case CARD_MISSED: 
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
         targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         return;
     case CARD_BARREL: {
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
         if (m_usedBarrels.contains(targetCard)){ 
             break;
         }
@@ -211,6 +237,9 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
         }
     case CARD_DEAD_RINGER:
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
         targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
@@ -218,6 +247,9 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameCycle().setNeedsFinishTurn(true);
         return;
     case CARD_DEFLECTION: {
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
         targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode(); 
         game()->gameCycle().deflectionPlayed(); 
@@ -253,6 +285,21 @@ void CardBang::respondCard(PlayingCard* targetCard)
     }
     throw BadCardException();
 
+}
+
+bool CardBang::oneTimeBang(){
+    switch(type()){
+        case CARD_BANG:
+        case CARD_HEALING_BANG:
+        case CARD_DOUBLE_BANG:
+        case CARD_TRIPLE_BANG:
+        case CARD_QUAD_BANG:
+        case CARD_INDIAN_BANG:
+        case CARD_UNDEFENSABLE:
+            return true;
+        default:
+            return false;
+    }
 }
 
 void CardBang::checkResult(bool result)

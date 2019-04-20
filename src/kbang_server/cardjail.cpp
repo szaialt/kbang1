@@ -4,6 +4,7 @@
 #include "player.h"
 #include "gametable.h"
 #include "gamecycle.h"
+#include "charactertomyleeghost.h"
 
 CardJail::CardJail(Game *game, int id, JailType type, CardSuit suit, CardRank rank, int PredrawCheck):
         PlayingCard(game, id, CARD_JAIL, suit, rank)
@@ -46,7 +47,12 @@ void CardJail::play(Player* targetPlayer)
     if (targetPlayer->role() == ROLE_SHERIFF){
         throw BadTargetPlayerException();
     }
-
+    if (targetPlayer->characterType() == CHARACTER_TOMY_LEE_GHOST){
+            CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(targetPlayer->character());
+            if (ghost->isAlive() && ghost->isAtFirstDead()){
+                throw BadTargetPlayerException();
+            }
+        }
     if (targetPlayer->hasIdenticalCardOnTable(this)) {
         throw TwoSameOnTableException();
     }

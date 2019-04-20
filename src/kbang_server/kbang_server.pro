@@ -51,6 +51,7 @@ HEADERS += \
     cardfactory.h \
     carddrawcards.h \
     cardmultishoot.h \
+    cardexplosion.h \
     cardarson.h \
     cardduel.h \
     cardgeneralstore.h \
@@ -64,6 +65,7 @@ HEADERS += \
     cardpeacepipe.h \
     cardmemento.h \
     cardhiddenweapon.h \
+    cardcharm.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -99,7 +101,18 @@ HEADERS += \
     charactervienna.h \
     characterwyattearp.h \
     characterernestsaliven.h \
-    charactercrazybear.h 
+    characterernestsaliven2.h \
+    charactercrazybear.h \
+    charactertomyleeghost.h \
+    characterwhitewolf.h \
+    charactercharlesboggen.h \
+    characterjonathhexx.h \
+    characterantonycarma.h \
+    charactermatthewhell.h \
+    characterabilitythief.h \
+    charactercardkeeper.h \
+    characterdanquake.h \
+    charactersamueldiehard.h
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -139,6 +152,7 @@ SOURCES += \
     cardfactory.cpp \
     carddrawcards.cpp \
     cardmultishoot.cpp \
+    cardexplosion.cpp \
     cardarson.cpp \
     cardduel.cpp \
     cardgeneralstore.cpp \
@@ -152,6 +166,7 @@ SOURCES += \
     cardpeacepipe.cpp \
     cardmemento.cpp \
     cardhiddenweapon.cpp \
+    cardcharm.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
@@ -186,7 +201,18 @@ SOURCES += \
     charactervienna.cpp \
     characterwyattearp.cpp \
     characterernestsaliven.cpp \
-    charactercrazybear.cpp
+    characterernestsaliven2.cpp \
+    charactercrazybear.cpp \
+    charactertomyleeghost.cpp \
+    characterwhitewolf.cpp \
+    charactercharlesboggen.cpp \
+    characterjonathhexx.cpp \
+    characterantonycarma.cpp \
+    charactermatthewhell.cpp \
+    characterabilitythief.cpp \
+    charactercardkeeper.cpp \
+    characterdanquake.cpp \
+    charactersamueldiehard.cpp
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \

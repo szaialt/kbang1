@@ -81,6 +81,7 @@ SOURCES       = main.cpp \
 		cardfactory.cpp \
 		carddrawcards.cpp \
 		cardmultishoot.cpp \
+		cardexplosion.cpp \
 		cardarson.cpp \
 		cardduel.cpp \
 		cardgeneralstore.cpp \
@@ -94,6 +95,7 @@ SOURCES       = main.cpp \
 		cardpeacepipe.cpp \
 		cardmemento.cpp \
 		cardhiddenweapon.cpp \
+		cardcharm.cpp \
 		gameeventmanager.cpp \
 		gamelogger.cpp \
 		characterbase.cpp \
@@ -128,7 +130,18 @@ SOURCES       = main.cpp \
 		charactervienna.cpp \
 		characterwyattearp.cpp \
 		characterernestsaliven.cpp \
-		charactercrazybear.cpp mocs/server/moc_player.cpp \
+		characterernestsaliven2.cpp \
+		charactercrazybear.cpp \
+		charactertomyleeghost.cpp \
+		characterwhitewolf.cpp \
+		charactercharlesboggen.cpp \
+		characterjonathhexx.cpp \
+		characterantonycarma.cpp \
+		charactermatthewhell.cpp \
+		characterabilitythief.cpp \
+		charactercardkeeper.cpp \
+		characterdanquake.cpp \
+		charactersamueldiehard.cpp mocs/server/moc_player.cpp \
 		mocs/server/moc_gameserver.cpp \
 		mocs/server/moc_game.cpp \
 		mocs/server/moc_console.cpp \
@@ -183,7 +196,18 @@ SOURCES       = main.cpp \
 		mocs/server/moc_charactervienna.cpp \
 		mocs/server/moc_characterwyattearp.cpp \
 		mocs/server/moc_characterernestsaliven.cpp \
-		mocs/server/moc_charactercrazybear.cpp
+		mocs/server/moc_characterernestsaliven2.cpp \
+		mocs/server/moc_charactercrazybear.cpp \
+		mocs/server/moc_charactertomyleeghost.cpp \
+		mocs/server/moc_characterwhitewolf.cpp \
+		mocs/server/moc_charactercharlesboggen.cpp \
+		mocs/server/moc_characterjonathhexx.cpp \
+		mocs/server/moc_characterantonycarma.cpp \
+		mocs/server/moc_charactermatthewhell.cpp \
+		mocs/server/moc_characterabilitythief.cpp \
+		mocs/server/moc_charactercardkeeper.cpp \
+		mocs/server/moc_characterdanquake.cpp \
+		mocs/server/moc_charactersamueldiehard.cpp
 OBJECTS       = obj/server/main.o \
 		obj/server/player.o \
 		obj/server/gameserver.o \
@@ -217,6 +241,7 @@ OBJECTS       = obj/server/main.o \
 		obj/server/cardfactory.o \
 		obj/server/carddrawcards.o \
 		obj/server/cardmultishoot.o \
+		obj/server/cardexplosion.o \
 		obj/server/cardarson.o \
 		obj/server/cardduel.o \
 		obj/server/cardgeneralstore.o \
@@ -230,6 +255,7 @@ OBJECTS       = obj/server/main.o \
 		obj/server/cardpeacepipe.o \
 		obj/server/cardmemento.o \
 		obj/server/cardhiddenweapon.o \
+		obj/server/cardcharm.o \
 		obj/server/gameeventmanager.o \
 		obj/server/gamelogger.o \
 		obj/server/characterbase.o \
@@ -264,7 +290,18 @@ OBJECTS       = obj/server/main.o \
 		obj/server/charactervienna.o \
 		obj/server/characterwyattearp.o \
 		obj/server/characterernestsaliven.o \
+		obj/server/characterernestsaliven2.o \
 		obj/server/charactercrazybear.o \
+		obj/server/charactertomyleeghost.o \
+		obj/server/characterwhitewolf.o \
+		obj/server/charactercharlesboggen.o \
+		obj/server/characterjonathhexx.o \
+		obj/server/characterantonycarma.o \
+		obj/server/charactermatthewhell.o \
+		obj/server/characterabilitythief.o \
+		obj/server/charactercardkeeper.o \
+		obj/server/characterdanquake.o \
+		obj/server/charactersamueldiehard.o \
 		obj/server/moc_player.o \
 		obj/server/moc_gameserver.o \
 		obj/server/moc_game.o \
@@ -320,7 +357,18 @@ OBJECTS       = obj/server/main.o \
 		obj/server/moc_charactervienna.o \
 		obj/server/moc_characterwyattearp.o \
 		obj/server/moc_characterernestsaliven.o \
-		obj/server/moc_charactercrazybear.o
+		obj/server/moc_characterernestsaliven2.o \
+		obj/server/moc_charactercrazybear.o \
+		obj/server/moc_charactertomyleeghost.o \
+		obj/server/moc_characterwhitewolf.o \
+		obj/server/moc_charactercharlesboggen.o \
+		obj/server/moc_characterjonathhexx.o \
+		obj/server/moc_characterantonycarma.o \
+		obj/server/moc_charactermatthewhell.o \
+		obj/server/moc_characterabilitythief.o \
+		obj/server/moc_charactercardkeeper.o \
+		obj/server/moc_characterdanquake.o \
+		obj/server/moc_charactersamueldiehard.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -420,6 +468,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		cardfactory.h \
 		carddrawcards.h \
 		cardmultishoot.h \
+		cardexplosion.h \
 		cardarson.h \
 		cardduel.h \
 		cardgeneralstore.h \
@@ -433,6 +482,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardcharm.h \
 		gameeventmanager.h \
 		gamelogger.h \
 		characterbase.h \
@@ -468,7 +518,18 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		charactervienna.h \
 		characterwyattearp.h \
 		characterernestsaliven.h \
-		charactercrazybear.h main.cpp \
+		characterernestsaliven2.h \
+		charactercrazybear.h \
+		charactertomyleeghost.h \
+		characterwhitewolf.h \
+		charactercharlesboggen.h \
+		characterjonathhexx.h \
+		characterantonycarma.h \
+		charactermatthewhell.h \
+		characterabilitythief.h \
+		charactercardkeeper.h \
+		characterdanquake.h \
+		charactersamueldiehard.h main.cpp \
 		player.cpp \
 		gameserver.cpp \
 		game.cpp \
@@ -501,6 +562,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		cardfactory.cpp \
 		carddrawcards.cpp \
 		cardmultishoot.cpp \
+		cardexplosion.cpp \
 		cardarson.cpp \
 		cardduel.cpp \
 		cardgeneralstore.cpp \
@@ -514,6 +576,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		cardpeacepipe.cpp \
 		cardmemento.cpp \
 		cardhiddenweapon.cpp \
+		cardcharm.cpp \
 		gameeventmanager.cpp \
 		gamelogger.cpp \
 		characterbase.cpp \
@@ -548,7 +611,18 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		charactervienna.cpp \
 		characterwyattearp.cpp \
 		characterernestsaliven.cpp \
-		charactercrazybear.cpp
+		characterernestsaliven2.cpp \
+		charactercrazybear.cpp \
+		charactertomyleeghost.cpp \
+		characterwhitewolf.cpp \
+		charactercharlesboggen.cpp \
+		characterjonathhexx.cpp \
+		characterantonycarma.cpp \
+		charactermatthewhell.cpp \
+		characterabilitythief.cpp \
+		charactercardkeeper.cpp \
+		characterdanquake.cpp \
+		charactersamueldiehard.cpp
 QMAKE_TARGET  = kbang-server
 DESTDIR       = 
 TARGET        = kbang-server
@@ -717,8 +791,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h cardpeacepipe.h cardmemento.h cardhiddenweapon.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterscout.h charactersniper.h charactersoldier.h charactercoronelmortimer.h characterdjango.h characteremma.h characterjohnford.h characterloco.h charactersartana.h charactervienna.h characterwyattearp.h characterernestsaliven.h charactercrazybear.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp cardpeacepipe.cpp cardmemento.cpp cardhiddenweapon.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp charactercoronelmortimer.cpp characterdjango.cpp characteremma.cpp characterjohnford.cpp characterloco.cpp charactersartana.cpp charactervienna.cpp characterwyattearp.cpp characterernestsaliven.cpp charactercrazybear.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardexplosion.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h cardpeacepipe.h cardmemento.h cardhiddenweapon.h cardcharm.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterscout.h charactersniper.h charactersoldier.h charactercoronelmortimer.h characterdjango.h characteremma.h characterjohnford.h characterloco.h charactersartana.h charactervienna.h characterwyattearp.h characterernestsaliven.h characterernestsaliven2.h charactercrazybear.h charactertomyleeghost.h characterwhitewolf.h charactercharlesboggen.h characterjonathhexx.h characterantonycarma.h charactermatthewhell.h characterabilitythief.h charactercardkeeper.h characterdanquake.h charactersamueldiehard.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardexplosion.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp cardpeacepipe.cpp cardmemento.cpp cardhiddenweapon.cpp cardcharm.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp charactercoronelmortimer.cpp characterdjango.cpp characteremma.cpp characterjohnford.cpp characterloco.cpp charactersartana.cpp charactervienna.cpp characterwyattearp.cpp characterernestsaliven.cpp characterernestsaliven2.cpp charactercrazybear.cpp charactertomyleeghost.cpp characterwhitewolf.cpp charactercharlesboggen.cpp characterjonathhexx.cpp characterantonycarma.cpp charactermatthewhell.cpp characterabilitythief.cpp charactercardkeeper.cpp characterdanquake.cpp charactersamueldiehard.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -744,9 +818,10 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_charactercrazybear.cpp
+compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_characterabilitythief.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_charactercrazybear.cpp
+	-$(DEL_FILE) mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp
+	-$(DEL_FILE) mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_characterabilitythief.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp
 mocs/server/moc_player.cpp: publicplayerview.h \
 		../kbang_common/common.h \
 		../kbang_common/parser/parserstructs.h \
@@ -755,6 +830,7 @@ mocs/server/moc_player.cpp: publicplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		player.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include player.h -o mocs/server/moc_player.cpp
@@ -812,6 +888,7 @@ mocs/server/moc_playingcard.cpp: game.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include playingcard.h -o mocs/server/moc_playingcard.cpp
@@ -830,6 +907,7 @@ mocs/server/moc_reactioncard.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		reactioncard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -849,6 +927,7 @@ mocs/server/moc_weaponcard.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		weaponcard.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include weaponcard.h -o mocs/server/moc_weaponcard.cpp
@@ -868,6 +947,7 @@ mocs/server/moc_cardbang.cpp: reactioncard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		cardbang.h \
@@ -888,6 +968,7 @@ mocs/server/moc_cardmissed.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardmissed.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmissed.h -o mocs/server/moc_cardmissed.cpp
@@ -906,6 +987,7 @@ mocs/server/moc_gamecycle.cpp: ../kbang_common/parser/parserstructs.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include gamecycle.h -o mocs/server/moc_gamecycle.cpp
@@ -955,6 +1037,7 @@ mocs/server/moc_cardbeer.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		cardbeer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -975,6 +1058,7 @@ mocs/server/moc_cardexpansionbeer.cpp: cardbeer.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		cardexpansionbeer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -994,6 +1078,7 @@ mocs/server/moc_cardhorse.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardhorse.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardhorse.h -o mocs/server/moc_cardhorse.cpp
@@ -1012,6 +1097,7 @@ mocs/server/moc_cardpersuasion.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardpersuasion.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardpersuasion.h -o mocs/server/moc_cardpersuasion.cpp
@@ -1030,6 +1116,7 @@ mocs/server/moc_carddrawcards.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		carddrawcards.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include carddrawcards.h -o mocs/server/moc_carddrawcards.cpp
@@ -1049,6 +1136,7 @@ mocs/server/moc_cardmultishoot.cpp: reactioncard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		cardmultishoot.h \
@@ -1070,6 +1158,7 @@ mocs/server/moc_cardduel.cpp: reactioncard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		cardduel.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -1089,6 +1178,7 @@ mocs/server/moc_cardbarrel.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbarrel.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardbarrel.h -o mocs/server/moc_cardbarrel.cpp
@@ -1107,6 +1197,7 @@ mocs/server/moc_cardmemento.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardmemento.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardmemento.h -o mocs/server/moc_cardmemento.cpp
@@ -1125,6 +1216,7 @@ mocs/server/moc_cardhiddenweapon.cpp: playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardhiddenweapon.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cardhiddenweapon.h -o mocs/server/moc_cardhiddenweapon.cpp
@@ -1250,6 +1342,7 @@ mocs/server/moc_charactercowboy.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		charactercowboy.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercowboy.h -o mocs/server/moc_charactercowboy.cpp
@@ -1264,6 +1357,7 @@ mocs/server/moc_characterdemoman.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		characterdemoman.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdemoman.h -o mocs/server/moc_characterdemoman.cpp
@@ -1287,6 +1381,7 @@ mocs/server/moc_characterheavy.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -1315,6 +1410,7 @@ mocs/server/moc_characterscout.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		characterscout.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -1330,6 +1426,7 @@ mocs/server/moc_charactersniper.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		charactersniper.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersniper.h -o mocs/server/moc_charactersniper.cpp
@@ -1344,6 +1441,7 @@ mocs/server/moc_charactersoldier.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		charactersoldier.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -1386,6 +1484,7 @@ mocs/server/moc_characterjohnford.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		characterjohnford.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjohnford.h -o mocs/server/moc_characterjohnford.cpp
@@ -1427,6 +1526,7 @@ mocs/server/moc_characterwyattearp.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		characterwyattearp.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterwyattearp.h -o mocs/server/moc_characterwyattearp.cpp
@@ -1440,6 +1540,15 @@ mocs/server/moc_characterernestsaliven.cpp: characterbase.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterernestsaliven.h -o mocs/server/moc_characterernestsaliven.cpp
 
+mocs/server/moc_characterernestsaliven2.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterernestsaliven2.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterernestsaliven2.h -o mocs/server/moc_characterernestsaliven2.cpp
+
 mocs/server/moc_charactercrazybear.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
@@ -1450,9 +1559,127 @@ mocs/server/moc_charactercrazybear.cpp: characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		charactercrazybear.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercrazybear.h -o mocs/server/moc_charactercrazybear.cpp
+
+mocs/server/moc_charactertomyleeghost.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		charactertomyleeghost.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactertomyleeghost.h -o mocs/server/moc_charactertomyleeghost.cpp
+
+mocs/server/moc_characterwhitewolf.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterwhitewolf.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterwhitewolf.h -o mocs/server/moc_characterwhitewolf.cpp
+
+mocs/server/moc_charactercharlesboggen.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		reactionhandler.h \
+		charactercharlesboggen.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercharlesboggen.h -o mocs/server/moc_charactercharlesboggen.cpp
+
+mocs/server/moc_characterjonathhexx.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterjonathhexx.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjonathhexx.h -o mocs/server/moc_characterjonathhexx.cpp
+
+mocs/server/moc_characterantonycarma.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		reactionhandler.h \
+		characterantonycarma.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterantonycarma.h -o mocs/server/moc_characterantonycarma.cpp
+
+mocs/server/moc_charactermatthewhell.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		reactionhandler.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		charactermatthewhell.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactermatthewhell.h -o mocs/server/moc_charactermatthewhell.cpp
+
+mocs/server/moc_characterabilitythief.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterabilitythief.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterabilitythief.h -o mocs/server/moc_characterabilitythief.cpp
+
+mocs/server/moc_charactercardkeeper.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		charactercardkeeper.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercardkeeper.h -o mocs/server/moc_charactercardkeeper.cpp
+
+mocs/server/moc_characterdanquake.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		characterdanquake.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdanquake.h -o mocs/server/moc_characterdanquake.cpp
+
+mocs/server/moc_charactersamueldiehard.cpp: characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		charactersamueldiehard.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_common -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server/lib -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/kbang_server -I/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5MC/src/common -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactersamueldiehard.h -o mocs/server/moc_charactersamueldiehard.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1489,6 +1716,7 @@ obj/server/player.o: player.cpp player.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		game.h \
 		publicgameview.h \
 		client.h \
@@ -1525,6 +1753,7 @@ obj/server/player.o: player.cpp player.h \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardexplosion.h \
 		gameeventmanager.h \
 		charactercassidygringo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/player.o player.cpp
@@ -1567,6 +1796,7 @@ obj/server/game.o: game.cpp game.h \
 		publicplayerview.h \
 		privateplayerview.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbeer.h \
 		playingcard.h \
 		gameinfo.h \
@@ -1614,6 +1844,7 @@ obj/server/consolecommand.o: consolecommand.cpp consolecommand.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		client.h \
 		gameeventlistener.h \
 		voidai.h
@@ -1638,6 +1869,7 @@ obj/server/client.o: client.cpp client.h \
 		gamecycle.h \
 		player.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gameeventmanager.h \
 		voidai.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/client.o client.cpp
@@ -1669,6 +1901,7 @@ obj/server/publicgameview.o: publicgameview.cpp publicgameview.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		gametable.h \
@@ -1685,6 +1918,7 @@ obj/server/publicplayerview.o: publicplayerview.cpp publicplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -1701,6 +1935,7 @@ obj/server/privateplayerview.o: privateplayerview.cpp privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -1723,6 +1958,7 @@ obj/server/playingcard.o: playingcard.cpp playingcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/playingcard.o playingcard.cpp
 
@@ -1741,6 +1977,7 @@ obj/server/reactioncard.o: reactioncard.cpp reactioncard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/reactioncard.o reactioncard.cpp
 
@@ -1759,6 +1996,7 @@ obj/server/weaponcard.o: weaponcard.cpp weaponcard.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h \
 		cardbang.h \
 		reactioncard.h \
@@ -1783,13 +2021,15 @@ obj/server/cardbang.o: cardbang.cpp cardbang.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		gametable.h \
 		cardbarrel.h \
 		gameeventmanager.h \
 		gameeventlistener.h \
-		../kbang_common/util.h
+		../kbang_common/util.h \
+		charactercrazybear.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardbang.o cardbang.cpp
 
 obj/server/cardteamfortressbang.o: cardteamfortressbang.cpp cardteamfortressbang.h \
@@ -1809,6 +2049,7 @@ obj/server/cardteamfortressbang.o: cardteamfortressbang.cpp cardteamfortressbang
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		gametable.h
@@ -1829,6 +2070,7 @@ obj/server/cardmissed.o: cardmissed.cpp cardmissed.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardmissed.o cardmissed.cpp
 
@@ -1846,6 +2088,7 @@ obj/server/gamecycle.o: gamecycle.cpp gamecycle.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h \
 		gameeventlistener.h \
 		gameeventmanager.h \
@@ -1854,7 +2097,9 @@ obj/server/gamecycle.o: gamecycle.cpp gamecycle.h \
 		cardpersuasion.h \
 		characterdjango.h \
 		charactervienna.h \
-		characterernestsaliven.h
+		characterernestsaliven.h \
+		characterernestsaliven2.h \
+		charactercardkeeper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/gamecycle.o gamecycle.cpp
 
 obj/server/gameinfo.o: gameinfo.cpp gameinfo.h \
@@ -1872,6 +2117,7 @@ obj/server/gametable.o: gametable.cpp gametable.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		../kbang_common/util.h \
 		gameeventmanager.h \
 		gameeventlistener.h \
@@ -1903,6 +2149,7 @@ obj/server/playerctrl.o: playerctrl.cpp gameserver.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gameeventlistener.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/playerctrl.o playerctrl.cpp
@@ -1925,6 +2172,7 @@ obj/server/voidai.o: voidai.cpp voidai.h \
 		gamecycle.h \
 		player.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -1949,6 +2197,7 @@ obj/server/voidai.o: voidai.cpp voidai.h \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardexplosion.h \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai.o voidai.cpp
 
@@ -1971,6 +2220,7 @@ obj/server/voidai2level.o: voidai2level.cpp voidai2level.h \
 		gamecycle.h \
 		player.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -1995,6 +2245,7 @@ obj/server/voidai2level.o: voidai2level.cpp voidai2level.h \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardexplosion.h \
 		../kbang_common/util.h \
 		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai2level.o voidai2level.cpp
@@ -2019,6 +2270,7 @@ obj/server/voidai3level.o: voidai3level.cpp voidai3level.h \
 		gamecycle.h \
 		player.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -2043,6 +2295,7 @@ obj/server/voidai3level.o: voidai3level.cpp voidai3level.h \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardexplosion.h \
 		../kbang_common/util.h \
 		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai3level.o voidai3level.cpp
@@ -2067,6 +2320,7 @@ obj/server/cardbeer.o: cardbeer.cpp cardbeer.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		gametable.h \
 		charactercassidygringo.h
@@ -2088,6 +2342,7 @@ obj/server/cardexpansionbeer.o: cardexpansionbeer.cpp cardexpansionbeer.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardexpansionbeer.o cardexpansionbeer.cpp
@@ -2107,6 +2362,7 @@ obj/server/cardhorse.o: cardhorse.cpp cardhorse.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardhorse.o cardhorse.cpp
 
@@ -2125,6 +2381,7 @@ obj/server/cardpersuasion.o: cardpersuasion.cpp cardpersuasion.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardpersuasion.o cardpersuasion.cpp
 
@@ -2145,6 +2402,7 @@ obj/server/cardfactory.o: cardfactory.cpp cardfactory.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -2169,6 +2427,7 @@ obj/server/cardfactory.o: cardfactory.cpp cardfactory.h \
 		cardpeacepipe.h \
 		cardmemento.h \
 		cardhiddenweapon.h \
+		cardexplosion.h \
 		../kbang_common/gameenums.cpp \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardfactory.o cardfactory.cpp
@@ -2188,6 +2447,7 @@ obj/server/carddrawcards.o: carddrawcards.cpp carddrawcards.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/carddrawcards.o carddrawcards.cpp
 
@@ -2207,11 +2467,35 @@ obj/server/cardmultishoot.o: cardmultishoot.cpp cardmultishoot.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		gametable.h \
 		cardbarrel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardmultishoot.o cardmultishoot.cpp
+
+obj/server/cardexplosion.o: cardexplosion.cpp cardexplosion.h \
+		cardmultishoot.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		charactertomyleeghost.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardexplosion.o cardexplosion.cpp
 
 obj/server/cardarson.o: cardarson.cpp cardarson.h \
 		cardmultishoot.h \
@@ -2230,6 +2514,7 @@ obj/server/cardarson.o: cardarson.cpp cardarson.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		gametable.h
@@ -2251,6 +2536,7 @@ obj/server/cardduel.o: cardduel.cpp cardduel.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardduel.o cardduel.cpp
@@ -2271,6 +2557,7 @@ obj/server/cardgeneralstore.o: cardgeneralstore.cpp cardgeneralstore.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardgeneralstore.o cardgeneralstore.cpp
@@ -2290,6 +2577,7 @@ obj/server/cardjail.o: cardjail.cpp cardjail.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		checkdeckresulthandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardjail.o cardjail.cpp
@@ -2309,6 +2597,7 @@ obj/server/cardteleport.o: cardteleport.cpp cardteleport.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		checkdeckresulthandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardteleport.o cardteleport.cpp
@@ -2328,7 +2617,8 @@ obj/server/cardjarate.o: cardjarate.cpp gametable.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
-		characterbase.h
+		characterbase.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardjarate.o cardjarate.cpp
 
 obj/server/reactionhandler.o: reactionhandler.cpp reactionhandler.h \
@@ -2352,6 +2642,7 @@ obj/server/carddynamite.o: carddynamite.cpp carddynamite.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		checkdeckresulthandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/carddynamite.o carddynamite.cpp
@@ -2371,6 +2662,7 @@ obj/server/cardtaker.o: cardtaker.cpp cardtaker.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardtaker.o cardtaker.cpp
 
@@ -2389,6 +2681,7 @@ obj/server/cardbarrel.o: cardbarrel.cpp cardbarrel.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardbarrel.o cardbarrel.cpp
 
@@ -2407,6 +2700,7 @@ obj/server/cardpeacepipe.o: cardpeacepipe.cpp cardpeacepipe.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardpeacepipe.o cardpeacepipe.cpp
 
@@ -2425,6 +2719,7 @@ obj/server/cardmemento.o: cardmemento.cpp cardmemento.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardmemento.o cardmemento.cpp
 
@@ -2443,8 +2738,28 @@ obj/server/cardhiddenweapon.o: cardhiddenweapon.cpp cardhiddenweapon.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardhiddenweapon.o cardhiddenweapon.cpp
+
+obj/server/cardcharm.o: cardcharm.cpp cardcharm.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		../kbang_common/common.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		gameinfo.h \
+		gamecycle.h \
+		player.h \
+		publicplayerview.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		characterbase.h \
+		charactertomyleeghost.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardcharm.o cardcharm.cpp
 
 obj/server/gameeventmanager.o: gameeventmanager.cpp gameeventmanager.h \
 		../kbang_common/parser/parserstructs.h \
@@ -2459,6 +2774,7 @@ obj/server/gameeventmanager.o: gameeventmanager.cpp gameeventmanager.h \
 		playerctrl.h \
 		gameexceptions.h \
 		characterbase.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		gameinfo.h \
 		gamecycle.h
@@ -2479,7 +2795,8 @@ obj/server/gamelogger.o: gamelogger.cpp gamelogger.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
-		characterbase.h
+		characterbase.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/gamelogger.o gamelogger.cpp
 
 obj/server/characterbase.o: characterbase.cpp characterbase.h \
@@ -2496,6 +2813,7 @@ obj/server/characterbase.o: characterbase.cpp characterbase.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -2515,6 +2833,7 @@ obj/server/charactercalamityjanet.o: charactercalamityjanet.cpp charactercalamit
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -2542,7 +2861,8 @@ obj/server/characterblackjack.o: characterblackjack.cpp characterblackjack.h \
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterblackjack.o characterblackjack.cpp
 
 obj/server/characterlist.o: characterlist.cpp characterlist.h \
@@ -2573,6 +2893,7 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		characterdemoman.h \
 		characterengineer.h \
 		characterheavy.h \
@@ -2592,7 +2913,17 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		charactervienna.h \
 		characterwyattearp.h \
 		characterernestsaliven.h \
+		characterernestsaliven2.h \
 		charactercrazybear.h \
+		characterwhitewolf.h \
+		charactercharlesboggen.h \
+		characterjonathhexx.h \
+		charactercardkeeper.h \
+		charactermatthewhell.h \
+		characterabilitythief.h \
+		characterdanquake.h \
+		charactersamueldiehard.h \
+		characterantonycarma.h \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterlist.o characterlist.cpp
 
@@ -2607,6 +2938,7 @@ obj/server/charactercassidygringo.o: charactercassidygringo.cpp charactercassidy
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -2627,6 +2959,7 @@ obj/server/charactersuzylafayette.o: charactersuzylafayette.cpp charactersuzylaf
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		game.h \
@@ -2643,7 +2976,8 @@ obj/server/characterpropertychange.o: characterpropertychange.cpp characterprope
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterpropertychange.o characterpropertychange.cpp
 
 obj/server/characterjourdonnais.o: characterjourdonnais.cpp characterjourdonnais.h \
@@ -2661,7 +2995,8 @@ obj/server/characterjourdonnais.o: characterjourdonnais.cpp characterjourdonnais
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjourdonnais.o characterjourdonnais.cpp
 
 obj/server/characterpedroramirez.o: characterpedroramirez.cpp characterpedroramirez.h \
@@ -2679,6 +3014,7 @@ obj/server/characterpedroramirez.o: characterpedroramirez.cpp characterpedrorami
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterpedroramirez.o characterpedroramirez.cpp
 
@@ -2697,7 +3033,8 @@ obj/server/characterjessejones.o: characterjessejones.cpp characterjessejones.h 
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjessejones.o characterjessejones.cpp
 
 obj/server/charactersidketchum.o: charactersidketchum.cpp charactersidketchum.h \
@@ -2715,6 +3052,7 @@ obj/server/charactersidketchum.o: charactersidketchum.cpp charactersidketchum.h 
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gametable.h \
 		reactionhandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactersidketchum.o charactersidketchum.cpp
@@ -2736,6 +3074,7 @@ obj/server/characterkitcarlson.o: characterkitcarlson.cpp characterkitcarlson.h 
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gameeventmanager.h \
 		gameeventlistener.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterkitcarlson.o characterkitcarlson.cpp
@@ -2750,6 +3089,7 @@ obj/server/playerreaper.o: playerreaper.cpp playerreaper.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		game.h \
 		publicgameview.h \
 		gametable.h \
@@ -2772,6 +3112,7 @@ obj/server/charactervulturesam.o: charactervulturesam.cpp charactervulturesam.h 
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		game.h \
 		publicgameview.h \
 		gametable.h
@@ -2794,6 +3135,7 @@ obj/server/characterluckyduke.o: characterluckyduke.cpp characterluckyduke.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		checkdeckresulthandler.h \
@@ -2811,7 +3153,8 @@ obj/server/charactercowboy.o: charactercowboy.cpp charactercowboy.h \
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercowboy.o charactercowboy.cpp
 
 obj/server/characterdemoman.o: characterdemoman.cpp characterdemoman.h \
@@ -2825,6 +3168,7 @@ obj/server/characterdemoman.o: characterdemoman.cpp characterdemoman.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -2846,6 +3190,7 @@ obj/server/characterengineer.o: characterengineer.cpp characterengineer.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		game.h \
@@ -2869,6 +3214,7 @@ obj/server/characterheavy.o: characterheavy.cpp characterheavy.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -2890,6 +3236,7 @@ obj/server/charactermedic.o: charactermedic.cpp charactermedic.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		game.h \
@@ -2913,6 +3260,7 @@ obj/server/characterscout.o: characterscout.cpp characterscout.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		playingcard.h \
 		game.h \
@@ -2936,7 +3284,8 @@ obj/server/charactersniper.o: charactersniper.cpp charactersniper.h \
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
-		gameexceptions.h
+		gameexceptions.h \
+		charactertomyleeghost.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactersniper.o charactersniper.cpp
 
 obj/server/charactersoldier.o: charactersoldier.cpp charactersoldier.h \
@@ -2950,6 +3299,7 @@ obj/server/charactersoldier.o: charactersoldier.cpp charactersoldier.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		reactionhandler.h \
 		playingcard.h \
 		game.h \
@@ -2974,6 +3324,7 @@ obj/server/charactercoronelmortimer.o: charactercoronelmortimer.cpp charactercor
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		playingcard.h \
@@ -3001,6 +3352,7 @@ obj/server/characterdjango.o: characterdjango.cpp characterdjango.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardmultishoot.h \
 		reactioncard.h \
 		reactionhandler.h \
@@ -3018,6 +3370,7 @@ obj/server/characteremma.o: characteremma.cpp characteremma.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		playingcard.h \
@@ -3040,6 +3393,7 @@ obj/server/characterjohnford.o: characterjohnford.cpp characterjohnford.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -3063,6 +3417,7 @@ obj/server/characterloco.o: characterloco.cpp characterloco.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		playingcard.h \
@@ -3085,6 +3440,7 @@ obj/server/charactersartana.o: charactersartana.cpp charactersartana.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		cardbang.h \
 		reactioncard.h \
 		playingcard.h \
@@ -3106,6 +3462,7 @@ obj/server/charactervienna.o: charactervienna.cpp charactervienna.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		game.h \
@@ -3127,6 +3484,7 @@ obj/server/characterwyattearp.o: characterwyattearp.cpp characterwyattearp.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -3146,12 +3504,33 @@ obj/server/characterernestsaliven.o: characterernestsaliven.cpp characterernests
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		gamecycle.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
 		gameinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterernestsaliven.o characterernestsaliven.cpp
+
+obj/server/characterernestsaliven2.o: characterernestsaliven2.cpp characterernestsaliven2.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		carddrawcards.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterernestsaliven2.o characterernestsaliven2.cpp
 
 obj/server/charactercrazybear.o: charactercrazybear.cpp charactercrazybear.h \
 		characterbase.h \
@@ -3164,6 +3543,7 @@ obj/server/charactercrazybear.o: charactercrazybear.cpp charactercrazybear.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
+		charactertomyleeghost.h \
 		playingcard.h \
 		game.h \
 		publicgameview.h \
@@ -3174,6 +3554,219 @@ obj/server/charactercrazybear.o: charactercrazybear.cpp charactercrazybear.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercrazybear.o charactercrazybear.cpp
+
+obj/server/charactertomyleeghost.o: charactertomyleeghost.cpp charactertomyleeghost.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		cardbang.h \
+		reactioncard.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactertomyleeghost.o charactertomyleeghost.cpp
+
+obj/server/characterwhitewolf.o: characterwhitewolf.cpp characterwhitewolf.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardbang.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		cardmissed.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterwhitewolf.o characterwhitewolf.cpp
+
+obj/server/charactercharlesboggen.o: charactercharlesboggen.cpp charactercharlesboggen.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		reactionhandler.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactioncard.h \
+		cardteamfortressbang.h \
+		cardbang.h \
+		checkdeckresulthandler.h \
+		cardmissed.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercharlesboggen.o charactercharlesboggen.cpp
+
+obj/server/characterjonathhexx.o: characterjonathhexx.cpp characterjonathhexx.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjonathhexx.o characterjonathhexx.cpp
+
+obj/server/characterantonycarma.o: characterantonycarma.cpp characterantonycarma.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		reactionhandler.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		gamecycle.h \
+		reactioncard.h \
+		cardteamfortressbang.h \
+		cardbang.h \
+		checkdeckresulthandler.h \
+		cardmissed.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterantonycarma.o characterantonycarma.cpp
+
+obj/server/charactermatthewhell.o: charactermatthewhell.cpp charactermatthewhell.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		reactionhandler.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		game.h \
+		publicgameview.h \
+		playingcard.h \
+		gameinfo.h \
+		gamecycle.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactermatthewhell.o charactermatthewhell.cpp
+
+obj/server/characterabilitythief.o: characterabilitythief.cpp characterabilitythief.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardcharm.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterabilitythief.o characterabilitythief.cpp
+
+obj/server/charactercardkeeper.o: charactercardkeeper.cpp charactercardkeeper.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		gametable.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercardkeeper.o charactercardkeeper.cpp
+
+obj/server/characterdanquake.o: characterdanquake.cpp characterdanquake.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardbang.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterdanquake.o characterdanquake.cpp
+
+obj/server/charactersamueldiehard.o: charactersamueldiehard.cpp charactersamueldiehard.h \
+		characterbase.h \
+		../kbang_common/parser/parserstructs.h \
+		../kbang_common/gameenums.h \
+		publicplayerview.h \
+		../kbang_common/common.h \
+		player.h \
+		privateplayerview.h \
+		playerctrl.h \
+		gameexceptions.h \
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardbang.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		gametable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactersamueldiehard.o charactersamueldiehard.cpp
 
 obj/server/moc_player.o: mocs/server/moc_player.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_player.o mocs/server/moc_player.cpp
@@ -3340,8 +3933,41 @@ obj/server/moc_characterwyattearp.o: mocs/server/moc_characterwyattearp.cpp
 obj/server/moc_characterernestsaliven.o: mocs/server/moc_characterernestsaliven.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterernestsaliven.o mocs/server/moc_characterernestsaliven.cpp
 
+obj/server/moc_characterernestsaliven2.o: mocs/server/moc_characterernestsaliven2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterernestsaliven2.o mocs/server/moc_characterernestsaliven2.cpp
+
 obj/server/moc_charactercrazybear.o: mocs/server/moc_charactercrazybear.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercrazybear.o mocs/server/moc_charactercrazybear.cpp
+
+obj/server/moc_charactertomyleeghost.o: mocs/server/moc_charactertomyleeghost.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactertomyleeghost.o mocs/server/moc_charactertomyleeghost.cpp
+
+obj/server/moc_characterwhitewolf.o: mocs/server/moc_characterwhitewolf.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterwhitewolf.o mocs/server/moc_characterwhitewolf.cpp
+
+obj/server/moc_charactercharlesboggen.o: mocs/server/moc_charactercharlesboggen.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercharlesboggen.o mocs/server/moc_charactercharlesboggen.cpp
+
+obj/server/moc_characterjonathhexx.o: mocs/server/moc_characterjonathhexx.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterjonathhexx.o mocs/server/moc_characterjonathhexx.cpp
+
+obj/server/moc_characterantonycarma.o: mocs/server/moc_characterantonycarma.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterantonycarma.o mocs/server/moc_characterantonycarma.cpp
+
+obj/server/moc_charactermatthewhell.o: mocs/server/moc_charactermatthewhell.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactermatthewhell.o mocs/server/moc_charactermatthewhell.cpp
+
+obj/server/moc_characterabilitythief.o: mocs/server/moc_characterabilitythief.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterabilitythief.o mocs/server/moc_characterabilitythief.cpp
+
+obj/server/moc_charactercardkeeper.o: mocs/server/moc_charactercardkeeper.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercardkeeper.o mocs/server/moc_charactercardkeeper.cpp
+
+obj/server/moc_characterdanquake.o: mocs/server/moc_characterdanquake.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterdanquake.o mocs/server/moc_characterdanquake.cpp
+
+obj/server/moc_charactersamueldiehard.o: mocs/server/moc_charactersamueldiehard.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactersamueldiehard.o mocs/server/moc_charactersamueldiehard.cpp
 
 ####### Install
 

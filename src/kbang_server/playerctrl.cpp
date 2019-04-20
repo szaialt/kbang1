@@ -14,7 +14,8 @@
 
 PlayerCtrl::PlayerCtrl(Player* player):
         QObject(player),
-        mp_player(player)/*,
+        mp_player(player),
+        m_charmed(false)/*,
         charactersToDeal(1)*/
 {
 
@@ -47,63 +48,120 @@ void PlayerCtrl::discardCard(PlayingCard* card)
 
 void PlayerCtrl::useAbility()
 {
-    mp_player->game()->gameCycle().useAbility(mp_player);
+    if (m_charmed){
+        throw BadUsageException();
+    }
+    else {
+        mp_player->game()->gameCycle().useAbility(mp_player);
+    }
 }
 
 void PlayerCtrl::useAbility(const PublicPlayerView* targetPlayer)
 {
-    mp_player->game()->gameCycle().useAbility(mp_player, Player::player(targetPlayer));
+    if (m_charmed){
+        throw BadUsageException();
+    }
+    else {
+        mp_player->game()->gameCycle().useAbility(mp_player, Player::player(targetPlayer));
+    }
 }
 
 void PlayerCtrl::useAbility(QList<PlayingCard*> cards)
 {
-    mp_player->game()->gameCycle().useAbility(mp_player, cards);
+    if (m_charmed){
+        throw BadUsageException();
+    }
+    else {
+        mp_player->game()->gameCycle().useAbility(mp_player, cards);
+    }
 }
 
 void PlayerCtrl::useAbility(QList<PlayingCard*> cards, const PublicPlayerView* targetPlayer)
 {
-    mp_player->game()->gameCycle().useAbility(mp_player, cards, Player::player(targetPlayer));
+    if (m_charmed){
+        throw BadUsageException();
+    }
+    else {
+        mp_player->game()->gameCycle().useAbility(mp_player, cards, Player::player(targetPlayer));
+    }
 }
 
 
 void PlayerCtrl::playCard(PlayingCard* card)
 {
-    mp_player->game()->gameCycle().playCard(mp_player, card);
+    if (m_charmed){
+        card->play();
+    }
+    else {
+        mp_player->game()->gameCycle().playCard(mp_player, card);
+    }
 }
 
-void PlayerCtrl::playCard(PlayingCard* card, const PublicPlayerView* targetPlayer)
+void PlayerCtrl::playCard(PlayingCard* card, PublicPlayerView* targetPlayer)
 {
-    mp_player->game()->gameCycle().playCard(mp_player,
+    if (m_charmed){
+        Player* p = targetPlayer->player();
+        card->play(p);
+    }
+    else {
+        mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             Player::player(targetPlayer));
+    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, PlayingCard* targetCard)
 {
-    mp_player->game()->gameCycle().playCard(mp_player,
+    if (m_charmed){
+        card->play(targetCard);
+    }
+    else {
+        mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCard);
+    }
 }
 
-void PlayerCtrl::playCard(PlayingCard* card, PlayingCard* targetCard, const PublicPlayerView* targetPlayer)
+void PlayerCtrl::playCard(PlayingCard* card, PlayingCard* targetCard,  PublicPlayerView* targetPlayer)
 {
+    if (m_charmed){
+        Player* p = targetPlayer->player();
+        card->play(targetCard, p);
+    }
+    else {
     mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCard,
                                             Player::player(targetPlayer));
+    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, QList<PlayingCard*> targetCards)
 {
-    mp_player->game()->gameCycle().playCard(mp_player,
+    if (m_charmed){
+        card->play(targetCards);
+    }
+    else {
+        mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCards);
+    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, QList<PublicPlayerView*> players){
+    if (m_charmed){
+        QList<Player*> players2 = QList<Player*>();
+        foreach (PublicPlayerView* targetPlayer, players){
+            players2.push_back(targetPlayer->player());
+        }
+
+        card->play(players2);
+    }
+    else {
     mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             players);
+    }
 }
 
 void PlayerCtrl::pass()
@@ -242,4 +300,12 @@ PlayingCard* PlayerCtrl::getRandomCardFromHand(){
 
 Player* PlayerCtrl::theSheriff(){
     return mp_player->game()->gameCycle().theSheriff();
+}
+
+void PlayerCtrl::charm(){
+    m_charmed = true;
+}
+
+void PlayerCtrl::unCharm(){
+    m_charmed = false;
 }

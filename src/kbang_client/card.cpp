@@ -150,12 +150,12 @@ void Card::loadDefaultRuleset()
     new Card("Mad milk",    CARD_MAD_MILK,        "gfx/cards/teamfortress/mad_milk.png" );
     new Card("Mann vs machine", CARD_MANN_VS_MACHINE, "gfx/cards/teamfortress/mann_vs_machine.png" );
     new Card("Half zatochi", CARD_HALF_ZATOCHI,"gfx/cards/teamfortress/half_zatoichi.png" );
-    new Card("Medi gun",  CARD_MEDI_GUN,       "gfx/cards/teamfortress/medi_gun.png" );
-    new Card("Sandman",   CARD_SANDMAN,        "gfx/cards/teamfortress/sandman.png" );
-    new Card("Guitar",    CARD_GUITAR,         "gfx/cards/teamfortress/guitar.png" );
-    new Card("Teleport",  CARD_TELEPORT,       "gfx/cards/teamfortress/teleport.png" );
+    new Card("Medi gun",   CARD_MEDI_GUN,       "gfx/cards/teamfortress/medi_gun.png" );
+    new Card("Sandman",    CARD_SANDMAN,        "gfx/cards/teamfortress/sandman.png" );
+    new Card("Guitar",     CARD_GUITAR,         "gfx/cards/teamfortress/guitar.png" );
+    new Card("Teleport",   CARD_TELEPORT,       "gfx/cards/teamfortress/teleport.png" );
     new Card("Persuasion", CARD_PERSUASION,    "gfx/cards/teamfortress/persuasion.png" );
-    new Card("Jarate",    CARD_JARATE,        "gfx/cards/teamfortress/jarate.png" );
+    new Card("Jarate",     CARD_JARATE,        "gfx/cards/teamfortress/jarate.png" );
     new Card("Healing bang", CARD_HEALING_BANG,"gfx/cards/teamfortress/healing-bang.png" );
     //Cards from Director's Cuts
     new Card("Ace up your sleeve", CARD_ACE_UP_YOUR_SLEEVE,        "gfx/cards/directorscuts/ace-up-your-sleeve.jpg" );
@@ -175,7 +175,7 @@ void Card::loadDefaultRuleset()
     new Card("Rana jistoty", CARD_RANA_JISTOTY,   "gfx/cards/martincity/rana-jistoty.png" );
     new Card("Kombo",        CARD_KOMBO,          "gfx/cards/martincity/kombo.png" );
     new Card("Dirty work",   CARD_DIRTY_WORK,     "gfx/cards/martincity/dirty-work.png" );
-    new Card("Zabijak",      CARD_ZABIJAK,        "gfx/cards/martincity/zabijak.png" );
+    new Card("Killer",       CARD_KILLER,         "gfx/cards/martincity/killer.png" );
     new Card("Golden brown", CARD_GOLDEN_BROWN,   "gfx/cards/martincity/golden-brown.png" );
     new Card("Thunder",      CARD_THUNDER,        "gfx/cards/martincity/thunder.png" );
     new Card("Vest",         CARD_VEST,           "gfx/cards/martincity/vest.png" );
@@ -193,7 +193,8 @@ void Card::loadDefaultRuleset()
     new Card("Morphine",    CARD_MORPHINE,         "gfx/cards/martincity/morphine.png" );
     new Card("Shock",       CARD_SHOCK,            "gfx/cards/martincity/shock.png" );
     new Card("Weakness",    CARD_WEAKNESS,         "gfx/cards/martincity/weakness.png" );
-    
+    new Card("Indian bang", CARD_INDIAN_BANG,         "gfx/cards/martincity/hitman.png" );
+    new Card("Undefensible bang", CARD_UNDEFENSABLE,         "gfx/cards/martincity/finishing-hit.png" );
     //Unknown card 
     new Card("",            CARD_UNKNOWN,    "gfx/cards/back-playing.png");
 
@@ -248,6 +249,7 @@ void Card::loadDefaultRuleset()
     
     //Martin City
     new Card("Ernest Saliven", CHARACTER_ERNEST_SALIVEN,    "gfx/characters/martincity/ernest-saliven.png");
+    new Card("Ernest Saliven2", CHARACTER_ERNEST_SALIVEN2,   "gfx/characters/martincity/ernest-saliven.png");
     new Card("Emil Docaine",   CHARACTER_EMIL_DOCAINE,      "gfx/characters/martincity/emil-docaine.png");
     new Card("Lady Burboun",   CHARACTER_LADY_BURBOUN,      "gfx/characters/martincity/lady-burboun.png");
     new Card("Sam Scalphunter", CHARACTER_SAM_SCALPHUNTER,  "gfx/characters/martincity/sam-scalphunter.png");
@@ -255,10 +257,11 @@ void Card::loadDefaultRuleset()
     new Card("Tomy Lee Ghost", CHARACTER_TOMY_LEE_GHOST,    "gfx/characters/martincity/tomy-lee-ghost.png");
     new Card("White Wolf",     CHARACTER_WHITE_WOLF,        "gfx/characters/martincity/white-wolf.png");
     new Card("Charles Boggen",     CHARACTER_CHARLES_BOGGEN,        "gfx/characters/martincity/charles-boggen.png");
-    new Card("Jude Isachias",  CHARACTER_JUDE_ISACHIAS,     "gfx/characters/martincity/jude-isachias.png");
+    new Card("Jonath Hexx",  CHARACTER_JONATH_HEXX,     "gfx/characters/martincity/jonath-hexx.png");
     new Card("Samuel Mcgreggor", CHARACTER_SAMUEL_MCGREGGOR, "gfx/characters/martincity/samuel-mcgreggor.png");
     new Card("Matthew Hell",   CHARACTER_MATTHEW_HELL,      "gfx/characters/martincity/matthew-hell.png");
     new Card("Sergeant O Reilly", CHARACTER_SERGEANT_O_REILLY, "gfx/characters/martincity/sergeant-o-reilly.png");
+    new Card("Jim Scarecrow",   CHARACTER_JIM_SCARECROW,      "gfx/characters/martincity/jim-scarecrow.png");
     new Card("Billy Longlife", CHARACTER_BILLY_LONGLIFE,    "gfx/characters/martincity/billy-longlife.png");
     new Card("Antony Carma",   CHARACTER_ANTONY_CARMA,      "gfx/characters/martincity/antony-carma.png");
     new Card("Dan Quake",      CHARACTER_DAN_QUAKE,         "gfx/characters/martincity/dan-quake.png");

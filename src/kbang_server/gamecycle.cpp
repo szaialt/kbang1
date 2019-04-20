@@ -11,6 +11,9 @@
 #include "characterdjango.h"
 #include "charactervienna.h"
 #include "characterernestsaliven.h"
+#include "characterernestsaliven2.h"
+#include "charactercardkeeper.h"
+#include "charactertomyleeghost.h"
 
 #include <QDebug>
 
@@ -179,6 +182,13 @@ void GameCycle::finishTurn(Player* player)
              c->setAct(true);             
         }
      }
+     player->unCharm();
+     if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+            CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
+            ghost->decrementRounds();
+            ghost->setDead();
+        }
+    player->setHexxZombie(false);
     if (m_duplicateTurn){
         m_duplicateTurn = false;
         startTurn(mp_currentPlayer);
@@ -533,25 +543,40 @@ void GameCycle::resetAbility(Player* player){
         CharacterErnestSaliven* ernest =  qobject_cast<CharacterErnestSaliven*>(player->character());
         ernest->resetAbility();
     }
+    else if (player->characterType() == CHARACTER_ERNEST_SALIVEN2){
+        CharacterErnestSaliven2* ernest =  qobject_cast<CharacterErnestSaliven2*>(player->character());
+        ernest->resetAbility();
+    }
 }
 
 
 int GameCycle::needDiscard(Player* player)
 {
-    int lifePoints = player->lifePoints();
-    int handSize = player->handSize();
-    int muleSize = 4;
-    foreach (PlayingCard* card, player->table()){
-        if (card->type() == CARD_PACKING_MULE){
-            lifePoints = lifePoints + muleSize;
+    if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+        CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
+        if (ghost->isAtFirstDead())
+            if (player->lifePoints() < 0){
+                player->modifyLifePoints(-(player->lifePoints()), 0);
         }
     }
-    if (lifePoints > handSize) {
+    int limit = player->lifePoints();
+    int handSize = player->handSize();
+    int muleSize = 4;
+    if (player->characterType() == CHARACTER_BILLY_LONGLIFE){
+        CharacterCardKeeper* billy =  qobject_cast<CharacterCardKeeper*>(player->character());
+        limit = billy->cardKeeping();
+    }
+    foreach (PlayingCard* card, player->table()){
+        if (card->type() == CARD_PACKING_MULE){
+            limit = limit + muleSize;
+        }
+    }
+    if (limit > handSize) {
         return 0;
     }
     else {
-        qDebug() << "Needs discard " << handSize - lifePoints << " cards.";
-        return handSize - lifePoints;
+        qDebug() << "Needs discard " << handSize - limit << " cards.";
+        return handSize - limit;
     }
 }
 

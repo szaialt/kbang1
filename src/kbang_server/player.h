@@ -28,6 +28,7 @@
 #include "parser/parserstructs.h"
 #include "playerctrl.h"
 #include "characterbase.h"
+#include "charactertomyleeghost.h"
 
 class PlayingCard;
 class CharacterCard;
@@ -98,7 +99,16 @@ public:
     inline PlayerRole           role()             const { return m_role;              }
     inline CharacterBase*       character()        const { return mp_character;        }
     CharacterType               characterType()    const;
-    inline bool                 isAlive()          const { return m_isAlive;           }
+    inline bool                 isAlive()          const { 
+        if (m_is_HexxZombie) return true;
+        if (characterType() == CHARACTER_TOMY_LEE_GHOST){
+            CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(character());
+            return ghost->isAlive();
+        }
+        else {
+            return m_isAlive;
+            
+        }           }
     inline bool                 isWinner()         const { return m_isWinner;          }
     inline int                  weaponRange()      const { return m_weaponRange;       }
     inline bool                 hasController()    const { return mp_gameEventListener != 0; }
@@ -215,8 +225,6 @@ public:
 
     void update(const CreatePlayerData&);
 
-    void setPayedBandidos(bool b);
-    bool payedBandidos();
     int getWeaponNumber();
     void setWeaponNumber(int n);
     /**
@@ -233,7 +241,10 @@ public:
 
     /*Adds adversary fired at*/
     void addAdversary(PublicPlayerView* p); 
-    
+    void charm();
+    void unCharm();
+    void setHexxZombie(bool b);
+    void setElixirPlayed(bool b);
 public slots:
     void checkEmptyHand();
 
@@ -254,7 +265,7 @@ public:
         return publicPlayerView->mp_player;
     }
 
-private:
+private: 
     int                       m_id;
     int                       m_lifePoints;
     int                       m_maxLifePoints;
@@ -288,9 +299,10 @@ private:
     
     QList<PublicPlayerView*>   m_adversaries;
     
-    volatile bool              m_payed_bandidos;
     mutable int                m_weaponNumber;
     mutable int                m_banged;
+    bool                       m_is_HexxZombie;
+    bool                       m_elixirPlayed;
 };
 
 #endif

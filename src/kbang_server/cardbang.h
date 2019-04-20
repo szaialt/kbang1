@@ -42,6 +42,8 @@ public:
         Deflection,
         TripleBang,
         QuadBang,
+        IndianBang,
+        Undefensable
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 
@@ -60,6 +62,7 @@ protected:
     virtual void controlTarget(Player *targetPlayer);
     virtual void shot(Player *targetPlayer);
     virtual void missed();
+    bool oneTimeBang();
 
     Player* mp_attackingPlayer;
     Player* mp_attackedPlayer;

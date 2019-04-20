@@ -107,7 +107,7 @@ void VoidAI3Level::requestWithAction()
                                      deputyNumber = 0;
                                  if (mp_playerCtrl->publicGameView().publicPlayerList().count() > 6)
                                      deputyNumber = 2;
-                                 foreach(const PublicPlayerView* p, players) {
+                                 foreach(PublicPlayerView* p, players) {
                                      if ((p->role() == ROLE_DEPUTY) && (!(p->isAlive()))){
                                          calculator++;
                                     }
@@ -224,7 +224,7 @@ void VoidAI3Level::requestWithAction()
                                      deputyNumber = 0;
                                  if (mp_playerCtrl->publicGameView().publicPlayerList().count() > 6)
                                      deputyNumber = 2;
-                                 foreach(const PublicPlayerView* p, players) {
+                                 foreach(PublicPlayerView* p, players) {
                                      if ((p->role() == ROLE_DEPUTY) && (!(p->isAlive()))){
                                          calculator++;
                                     }
@@ -234,7 +234,7 @@ void VoidAI3Level::requestWithAction()
                                 if (calculator < deputyNumber){
                                  shoot = false;
                               }
-                              foreach(const PublicPlayerView* p, players) {
+                              foreach(PublicPlayerView* p, players) {
                                     if (p->lifePoints() < 2){
                                         shoot2 = false;
                                     }
@@ -267,7 +267,7 @@ void VoidAI3Level::requestWithAction()
                                  
                                         if (mp_playerCtrl->publicGameView().publicPlayerList().count() >= 6)
                                         outlawNumber = 3;
-                                        foreach(const PublicPlayerView* pt, players) {
+                                        foreach(PublicPlayerView* pt, players) {
                                           if ((pt->role() == ROLE_OUTLAW) && (!(pt->isAlive()))){
                                              calculator++;
                                            qDebug() << "Calculated ROLE_OUTLAW.";

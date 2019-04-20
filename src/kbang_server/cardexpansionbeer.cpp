@@ -15,6 +15,9 @@ CardExpansionBeer::CardExpansionBeer(Game* game, int id, BeerType type, CardSuit
     case MadMilk:
         setType(CARD_MAD_MILK);
         break;
+    case Elixir:
+        setType(CARD_ELIXIR);
+        break;
     default:
         NOT_REACHED();
     }
@@ -29,5 +32,7 @@ void CardExpansionBeer::play(){
     }
     gameTable()->playerPlayCard(this);
     player->modifyLifePoints(1, 0);
-    
+    if (type() == CARD_ELIXIR){
+        player->setElixirPlayed(true);
+    }
 }

@@ -206,7 +206,7 @@ void Client::onActionPlayCard(const ActionPlayCardData& actionPlayCardData)
                                      actionPlayCardData.targetPlayerId :
                                      actionPlayCardData.targetHandId;
 
-                const PublicPlayerView* targetPlayer =
+                PublicPlayerView* targetPlayer =
                         mp_publicGameView->publicPlayerView(targetPlayerId);
 
                         qDebug() << "PLAYCARD_CARD targetPlayerId: " << targetPlayerId;
@@ -242,7 +242,7 @@ void Client::onActionPlayCard(const ActionPlayCardData& actionPlayCardData)
             }
             int targetPlayerId2 = actionPlayCardData.targetPlayerId;
 
-            const PublicPlayerView* targetPlayer2 =
+            PublicPlayerView* targetPlayer2 =
             mp_publicGameView->publicPlayerView(targetPlayerId2);
 
             if (targetPlayer2 == 0) {

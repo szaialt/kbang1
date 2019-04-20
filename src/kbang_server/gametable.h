@@ -75,6 +75,7 @@ public:
     
     void drawHandIntoSelection(Player* selectionOwner);
     
+    void drawGraveyardIntoSelection(Player* selectionOwner);
     /**
      * The player picks a card from selection.
      */
@@ -116,9 +117,10 @@ public:
     
     //PlayingCard* popCardFromDeck();
     //void putCardToDeck(PlayingCard*);
+    void shuffleDeck();
 private:
     void generateCards(CardFactory*);
-    void shuffleDeck();
+    
     void dealCards();
     void regenerateDeck();
     

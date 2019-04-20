@@ -43,6 +43,7 @@
 #include "voidai.h"
 #include "voidai2level.h"
 #include "voidai3level.h"
+#include "charactertomyleeghost.h"
 
 #include <stdexcept>
 
@@ -289,6 +290,15 @@ void Game::buryPlayer(Player* player, Player* causedBy)
 {
     Q_ASSERT(player->lifePoints() <= 0);
     Q_ASSERT(player->isAlive());
+    
+    if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+            CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
+            if (!ghost->isAtFirstDead()){
+                ghost->setAtFirstDead();
+                return;
+            }
+        }
+    
     QList<PlayingCard*> table = player->table();
  
         player->setAlive(0);

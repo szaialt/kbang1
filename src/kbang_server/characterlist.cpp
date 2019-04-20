@@ -34,7 +34,18 @@
 #include "characterwyattearp.h"
 
 #include "characterernestsaliven.h"
+#include "characterernestsaliven2.h"
 #include "charactercrazybear.h"
+#include "characterwhitewolf.h"
+#include "charactercharlesboggen.h"
+#include "characterjonathhexx.h"
+#include "charactercardkeeper.h"
+#include "charactermatthewhell.h"
+#include "characterabilitythief.h"
+#include "characterdanquake.h"
+#include "charactersamueldiehard.h"
+#include "charactertomyleeghost.h"
+#include "characterantonycarma.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -134,12 +145,36 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterWyattEarp(parent, CharacterWyattEarp::WyattEarp);
     case CHARACTER_ERNEST_SALIVEN: 
         return new CharacterErnestSaliven(parent);
+    case CHARACTER_ERNEST_SALIVEN2: 
+        return new CharacterErnestSaliven2(parent);
+    case CHARACTER_LADY_BURBOUN: 
+        return new CharacterAbilityThief(parent, CharacterAbilityThief::LadyBourbon);
     case CHARACTER_SERGEANT_O_REILLY: 
         return new CharacterSoldier(parent, CharacterSoldier::SergeantOReilly);
     case CHARACTER_RON_ROBBER: 
         return new CharacterWyattEarp(parent, CharacterWyattEarp::RonRobber);
     case CHARACTER_CRAZY_BEAR: 
         return new CharacterCrazyBear(parent);
+    case CHARACTER_TOMY_LEE_GHOST: 
+        return new CharacterTomyLeeGhost(parent);
+    case CHARACTER_WHITE_WOLF: 
+        return new CharacterWhiteWolf(parent);
+    case CHARACTER_CHARLES_BOGGEN: 
+        return new CharacterCharlesBoggen(parent);
+    case CHARACTER_JONATH_HEXX: 
+        return new CharacterJonathHexx(parent);
+    case CHARACTER_ANTONY_CARMA: 
+        return new CharacterAntonyCarma(parent);
+    case CHARACTER_JIM_SCARECROW: 
+        return new CharacterAbilityThief(parent, CharacterAbilityThief::JimScarecrow);
+    case CHARACTER_BILLY_LONGLIFE:
+        return new CharacterCardKeeper(parent, CharacterCardKeeper::BillyLonglife);
+    case CHARACTER_MATTHEW_HELL: 
+        return new CharacterMatthewHell(parent);
+    case CHARACTER_DAN_QUAKE: 
+        return new CharacterDanQuake(parent);
+    case CHARACTER_SAMUEL_DIEHARD: 
+        return new CharacterSamuelDiehard(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -210,28 +245,20 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_ERNEST_SALIVEN);
         sm_characterTypes.append(CHARACTER_SERGEANT_O_REILLY);
         sm_characterTypes.append(CHARACTER_RON_ROBBER);
+        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
+        sm_characterTypes.append(CHARACTER_WHITE_WOLF);
+        sm_characterTypes.append(CHARACTER_CHARLES_BOGGEN);
+        sm_characterTypes.append(CHARACTER_BILLY_LONGLIFE);
+        sm_characterTypes.append(CHARACTER_DAN_QUAKE);
+        sm_characterTypes.append(CHARACTER_SAMUEL_DIEHARD);
+        sm_characterTypes.append(CHARACTER_ERNEST_SALIVEN2);
+        sm_characterTypes.append(CHARACTER_MATTHEW_HELL);
+        sm_characterTypes.append(CHARACTER_JIM_SCARECROW);
+        sm_characterTypes.append(CHARACTER_LADY_BURBOUN); 
+        sm_characterTypes.append(CHARACTER_TOMY_LEE_GHOST);
+        sm_characterTypes.append(CHARACTER_ANTONY_CARMA);
+        sm_characterTypes.append(CHARACTER_JONATH_HEXX);
         
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
-        sm_characterTypes.append(CHARACTER_CRAZY_BEAR);
         
         
 

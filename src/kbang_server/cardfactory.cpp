@@ -204,7 +204,18 @@ struct CardFactory::CardFactoryImp
            
         }
         
+        
         if (game->gameInfo().martinCityFlag()){
+            
+            list.append(new CardBang(game, id(), CardBang::IndianBang, SUIT_DIAMONDS, 7));
+            
+            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 6));
+            
+            list.append(new CardExplosion(game, id(), SUIT_SPADES, 12));
+            
+            list.append(new CardExpansionBeer(game, id(), CardBeer::Elixir, SUIT_HEARTS, 7));
+            
+            
             
         }
         foreach(PlayingCard* card, list) {

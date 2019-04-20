@@ -14,7 +14,8 @@ public:
         Beer,
         Saloon,
         Sandvich,
-        MadMilk
+        MadMilk,
+        Elixir
     }; 
     
     CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRank cardRank);

@@ -80,9 +80,9 @@ public slots:
      * Plays a card.
      */
     void playCard(PlayingCard* card);
-    void playCard(PlayingCard* card, const PublicPlayerView* player);
+    void playCard(PlayingCard* card, PublicPlayerView* player);
     void playCard(PlayingCard* card, PlayingCard* targetCard);
-    void playCard(PlayingCard* card, PlayingCard* targetCard, const PublicPlayerView* targetPlayer);
+    void playCard(PlayingCard* card, PlayingCard* targetCard, PublicPlayerView* targetPlayer);
     void playCard(PlayingCard* card, QList<PlayingCard*> targetCards);
     void playCard(PlayingCard* card, QList<PublicPlayerView*> players);
     void pass();
@@ -143,6 +143,8 @@ public:
     PlayingCard* getRandomCardFromHand();
 
     Player* theSheriff();
+    void charm();
+    void unCharm();
 private:
     int charactersToDeal;
     
@@ -151,6 +153,7 @@ private:
     PlayerCtrl& operator=(const PlayerCtrl&) { return *this; }
 
     Player*                     mp_player;
+    bool                        m_charmed;
 
 };
 

@@ -152,6 +152,11 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_TELEPORT:
         case CARD_JARATE:
         case CARD_SUN_GLARE:
+        case CARD_INDIAN_BANG:
+        case CARD_UNDEFENSABLE:
+        case CARD_DOUBLE_BANG:
+        case CARD_TRIPLE_BANG:
+        case CARD_QUAD_BANG:
                 selectPlayer(cardWidget);
                 break; 
         //Play it to table or choose two cards (blue)
@@ -191,6 +196,8 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
         selectPlayer(cardWidget);
         break;
     case CHARACTER_ERNEST_SALIVEN:
+    case CHARACTER_ERNEST_SALIVEN2:
+    case CHARACTER_MATTHEW_HELL:
          selectCards(cardWidget, 1);
          break;
     case CHARACTER_SID_KETCHUM:
@@ -203,12 +210,13 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_VIENNA:
     case CHARACTER_WYATT_EARP:
     case CHARACTER_WHITE_WOLF:
-    case CHARACTER_JUDE_ISACHIAS:
     case CHARACTER_RON_ROBBER:
+    case CHARACTER_JIM_SCARECROW:
+    case CHARACTER_LADY_BURBOUN:
+    case CHARACTER_JONATH_HEXX:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:
-    case CHARACTER_LADY_BURBOUN:
         selectCards(cardWidget, 3);
         break;
     default:
@@ -291,9 +299,11 @@ void GameActionManager::useAbilityWithCards()
          case CHARACTER_PAT_GARRETT:
          case CHARACTER_VIENNA:
          case CHARACTER_WYATT_EARP:
-         case CHARACTER_LADY_BURBOUN:
          case CHARACTER_WHITE_WOLF:
          case CHARACTER_RON_ROBBER:
+         case CHARACTER_JIM_SCARECROW:
+         case CHARACTER_LADY_BURBOUN:
+         case CHARACTER_JONATH_HEXX:
          {
              CardWidget* card = m_cardSelection.at(0); 
              int cardId = card->cardData().id;
@@ -337,7 +347,7 @@ void GameActionManager::playWithCards()
         }
     } 
     else if (m_cardSelection.size() == 2) {
-        if (mp_activeCard->cardData().type == CARD_ARSON){
+        if ((mp_activeCard->cardData().type == CARD_ARSON)){
             //Cards that need two target players
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];
@@ -379,6 +389,11 @@ bool GameActionManager::needsTarget(const CardData card){
     case CARD_TELEPORT:
     case CARD_JARATE:
     case CARD_SUN_GLARE:
+    case CARD_INDIAN_BANG:
+    case CARD_UNDEFENSABLE:
+    case CARD_DOUBLE_BANG:
+    case CARD_TRIPLE_BANG:
+    case CARD_QUAD_BANG:
         return true;
     default:
         return false;

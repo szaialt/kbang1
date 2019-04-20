@@ -5,7 +5,7 @@
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
+//  *   (at your option) any later version.                                  *
  *                                                                         *
  *   This program is distributed in the hope that it will be useful,       *
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
@@ -97,6 +97,7 @@ CharacterType stringToCharacterType(const QString& s)
     
     //Martin City
     if (s == "ernest saliven") return CHARACTER_ERNEST_SALIVEN;
+    if (s == "ernest saliven2") return CHARACTER_ERNEST_SALIVEN2;
     if (s == "emil docaine")   return CHARACTER_EMIL_DOCAINE;
     if (s == "lady burboun")   return CHARACTER_LADY_BURBOUN;
     if (s == "sam scalphunter") return CHARACTER_SAM_SCALPHUNTER;
@@ -104,10 +105,11 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "tomy lee ghost") return CHARACTER_TOMY_LEE_GHOST;
     if (s == "white wolf")     return CHARACTER_WHITE_WOLF;
     if (s ==  "charles boggen") return CHARACTER_CHARLES_BOGGEN;
-    if (s == "jude isachias")  return CHARACTER_JUDE_ISACHIAS;
+    if (s == "jonath hexx")     return CHARACTER_JONATH_HEXX;
     if (s == "samuel mcgreggor") return CHARACTER_SAMUEL_MCGREGGOR;
     if (s == "matthew hell")   return CHARACTER_MATTHEW_HELL;
     if (s == "sergeant o reilly") return CHARACTER_SERGEANT_O_REILLY;
+    if (s == "jim scarecrow")  return CHARACTER_JIM_SCARECROW;
     if (s == "billy longlife") return CHARACTER_BILLY_LONGLIFE;
     if (s == "antony carma")   return CHARACTER_ANTONY_CARMA;
     if (s == "dan quake")      return CHARACTER_DAN_QUAKE;
@@ -169,7 +171,8 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_VIENNA:          return "vienna";
     case CHARACTER_WYATT_EARP:      return "wyatt earp";
     //Martin City
-    case CHARACTER_ERNEST_SALIVEN:  return  "ernest saliven";
+    case CHARACTER_ERNEST_SALIVEN:  return "ernest saliven";
+    case CHARACTER_ERNEST_SALIVEN2: return "ernest saliven2";
     case CHARACTER_EMIL_DOCAINE:    return "emil docaine";
     case CHARACTER_LADY_BURBOUN:    return "lady burboun";
     case CHARACTER_SAM_SCALPHUNTER: return "sam scalphunter";
@@ -177,10 +180,11 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_TOMY_LEE_GHOST:  return "tomy lee ghost";
     case CHARACTER_WHITE_WOLF:      return "white wolf";
     case CHARACTER_CHARLES_BOGGEN:  return "charles boggen";
-    case CHARACTER_JUDE_ISACHIAS:   return "jude isachias";
+    case CHARACTER_JONATH_HEXX:     return "jonath hexx";
     case CHARACTER_SAMUEL_MCGREGGOR: return "samuel mcgreggor";
     case CHARACTER_MATTHEW_HELL:    return "matthew hell";
     case CHARACTER_SERGEANT_O_REILLY: return "sergeant o reilly";
+    case CHARACTER_JIM_SCARECROW:   return "jim scarecrow";
     case CHARACTER_BILLY_LONGLIFE:  return "billy longlife";
     case CHARACTER_ANTONY_CARMA:    return "antony carma";
     case CHARACTER_DAN_QUAKE:       return "dan quake";
@@ -356,7 +360,7 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "dirty_work")          return CARD_DIRTY_WORK;
     if (s == "dirty work")          return CARD_DIRTY_WORK;
     if (s == "dirty-work")          return CARD_DIRTY_WORK;
-    if (s == "zabijak")             return CARD_ZABIJAK;
+    if (s == "killer")              return CARD_KILLER;
     if (s == "golden_brown")        return CARD_GOLDEN_BROWN;
     if (s == "golden brown")        return CARD_GOLDEN_BROWN;
     if (s == "golden-brown")        return CARD_GOLDEN_BROWN;
@@ -390,6 +394,15 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "quad-bang")           return CARD_QUAD_BANG;
     if (s == "quad bang")           return CARD_QUAD_BANG;
     if (s == "quad_bang")           return CARD_QUAD_BANG;
+    if (s == "indian-bang")         return CARD_INDIAN_BANG;
+    if (s == "indian bang")         return CARD_INDIAN_BANG;
+    if (s == "indian_bang")         return CARD_INDIAN_BANG;
+    if (s == "charm")               return CARD_CHARM;
+    if (s == "undefensible-bang")   return CARD_UNDEFENSABLE;
+    if (s == "undefensible bang")   return CARD_UNDEFENSABLE;
+    if (s == "undefensible_bang")   return CARD_UNDEFENSABLE;
+    
+
     return CARD_UNKNOWN; 
 } 
 
@@ -455,7 +468,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_RANA_JISTOTY:    return "rana jistoty";
         case CARD_KOMBO:           return "kombo";
         case CARD_DIRTY_WORK:      return "dirty work";
-        case CARD_ZABIJAK:         return "zabijak";
+        case CARD_KILLER:          return "killer";
         case CARD_GOLDEN_BROWN:    return "golden brown";
         case CARD_THUNDER:         return "thunder";
         case CARD_VEST:            return "vest";
@@ -475,6 +488,10 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_WEAKNESS:        return "weakness";
         case CARD_TRIPLE_BANG:     return "triple bang";
         case CARD_QUAD_BANG:       return "quad bang";
+        case CARD_INDIAN_BANG:     return "indian bang";
+        case CARD_CHARM:           return "charm";
+        case CARD_UNDEFENSABLE:    return "undefensible bang";
+
     
         //Unknown
         case CARD_UNKNOWN:        return "";

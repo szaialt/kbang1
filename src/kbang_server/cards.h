@@ -43,4 +43,5 @@
 #include "cardpeacepipe.h"
 #include "cardmemento.h"
 #include "cardhiddenweapon.h"
+#include "cardexplosion.h"
 #endif

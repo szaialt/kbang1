@@ -8,4 +8,3 @@ CharacterLoco::CharacterLoco(QObject* parent):
         CharacterBase(parent, CHARACTER_LOCO)
 {
 }
-

@@ -215,6 +215,21 @@ void GameTable::drawIntoSelection(int count, Player* selectionOwner)
     }
 }
 
+void GameTable::drawIntoSelection(int count)
+{
+    Q_ASSERT(m_selection.isEmpty());
+    QList<const PlayingCard*> drawedCards;
+    for(int i = 0; i < count; ++i)
+    {
+        PlayingCard* card = popCardFromDeck();
+        Q_ASSERT(!card->isVirtual());
+        m_selection.append(card);
+        card->setPocket(POCKET_SELECTION);
+        drawedCards.append(card);
+    }
+    mp_game->gameEventManager().onDrawIntoSelection(drawedCards);
+}
+
 void GameTable::drawHandIntoSelection(Player* selectionOwner)
 {
     Q_ASSERT(selectionOwner != 0);
@@ -234,19 +249,26 @@ void GameTable::drawHandIntoSelection(Player* selectionOwner)
     
 }
 
-void GameTable::drawIntoSelection(int count)
+void GameTable::drawGraveyardIntoSelection(Player* selectionOwner)
 {
     Q_ASSERT(m_selection.isEmpty());
     QList<const PlayingCard*> drawedCards;
-    for(int i = 0; i < count; ++i)
+    if (m_graveyard.size() == 0)
+        throw BadGameStateException();
+    foreach (PlayingCard* card, m_graveyard)
     {
-        PlayingCard* card = popCardFromDeck();
         Q_ASSERT(!card->isVirtual());
         m_selection.append(card);
+        card->setOwner(selectionOwner);
         card->setPocket(POCKET_SELECTION);
         drawedCards.append(card);
     }
-    mp_game->gameEventManager().onDrawIntoSelection(drawedCards);
+    if (selectionOwner == 0){
+        mp_game->gameEventManager().onDrawIntoSelection(drawedCards);
+    }
+    else {
+        mp_game->gameEventManager().onDrawIntoSelection(selectionOwner, drawedCards);
+    }
 }
 
 void GameTable::playerPickFromSelection(Player* player, PlayingCard* card)
