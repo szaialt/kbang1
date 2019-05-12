@@ -124,7 +124,7 @@ void PlayingCard::playAsBlueCard()
     
     //We allow replaceing for everyone except of Suzy Lafayette
     //to stop her
-    if (!(game()->gameInfo().ourFlag()) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+    if (!(game()->gameInfo().ourFlag()) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE))){
        if (owner()->hasIdenticalCardOnTable(this)){
          throw TwoSameOnTableException();
        }

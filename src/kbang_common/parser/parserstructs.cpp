@@ -592,14 +592,14 @@ void ActionPlayCardData::read(XmlNode* node)
     } 
     else if (typeString == "PLAYCARD_CARDS") {
         type = PLAYCARD_CARDS;
-        targetCardId = node->attribute("target-card-id").toInt();
+        //targetPlayerId = node->attribute("target-card-id").toInt();
         foreach (XmlNode* cardNode, node->getChildren()) {
             targetCardsId.append(cardNode->attribute("id").toInt());
         }
     } 
     else if (typeString == "PLAYCARD_PLAYERS") {
         type = PLAYCARD_PLAYERS;
-        targetCardId = node->attribute("target-player-id").toInt();
+        //targetCardId = node->attribute("target-player-id").toInt();
         foreach (XmlNode* playerNode, node->getChildren()) {
             targetPlayersId.append(playerNode->attribute("id").toInt());
         }

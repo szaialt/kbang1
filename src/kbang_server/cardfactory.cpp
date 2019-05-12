@@ -209,11 +209,73 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardBang(game, id(), CardBang::IndianBang, SUIT_DIAMONDS, 7));
             
-            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 6));
+            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 1));
             
             list.append(new CardExplosion(game, id(), SUIT_SPADES, 12));
             
             list.append(new CardExpansionBeer(game, id(), CardBeer::Elixir, SUIT_HEARTS, 7));
+            
+            list.append(new CardExpansionBeer(game, id(), CardBeer::FirstAidKit, SUIT_DIAMONDS, 3));
+            
+            list.append(new CardDirtyJob(game, id(), SUIT_CLUBS, 2));
+            
+            list.append(new CardCowboyPocket(game, id(), SUIT_CLUBS, 4));
+            
+            list.append(new CardBleedingInjury(game, id(), SUIT_DIAMONDS, 6));
+            
+            list.append(new CardFlameBottle(game, id(), SUIT_SPADES, 6));
+            
+            list.append(new CardMultiShoot(game, id(), CardMultiShoot::ManVsMachine, SUIT_CLUBS,  3));
+            
+            list.append(new CardThunder(game, id(), SUIT_DIAMONDS, 4));
+            
+            list.append(new CardStunning(game, id(), SUIT_DIAMONDS, 5));   
+            
+            list.append(new CardMissed(game, id(), CardMissed::Vest, SUIT_SPADES, 4));
+            
+            list.append(new CardThief(game, id(), SUIT_HEARTS, 6));
+            
+            list.append(new CardDrawCards(game, id(), CardDrawCards::Adrenaline,  SUIT_HEARTS,  12));
+            
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            
+            
+            
+            
             
             
             

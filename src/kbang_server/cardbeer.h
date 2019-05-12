@@ -15,14 +15,17 @@ public:
         Saloon,
         Sandvich,
         MadMilk,
-        Elixir
+        Elixir,
+        FirstAidKit,
+        Medicines
     }; 
     
     CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRank cardRank);
     ~CardBeer();
 
+    CardColor color();
     virtual void play();
-    
+    void takeGreenCardEffect();
 protected:
     BeerType m_type;
 };

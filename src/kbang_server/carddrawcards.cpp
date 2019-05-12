@@ -27,6 +27,10 @@ CardDrawCards::CardDrawCards(Game* game, int id, CardDrawCards::Type type, CardS
         setType(CARD_UNION_PACIFIC);
         m_cardCount = 4;
         break;
+    case Adrenaline:
+        setType(CARD_ADRENALINE);
+        m_cardCount = 2;
+        break;
     }
 }
 
@@ -36,13 +40,17 @@ CardDrawCards::~CardDrawCards()
 }
 
 CardColor CardDrawCards::color() const {
+    if (type() == CARD_ADRENALINE) return COLOR_POSITIVE_GREY;
     return COLOR_BROWN;
 }
 
 void CardDrawCards::play()
 {
     gameCycle()->assertTurn();
-    if (type() == CARD_SUPPLY_CRATE){
+    if (type() == CARD_ADRENALINE){
+        playAsGreenCard();
+    }
+    else if (type() == CARD_SUPPLY_CRATE){
         throw BadUsageException();
     }
     else {
@@ -80,4 +88,9 @@ void CardDrawCards::play(PlayingCard* targetCard){
     else throw BadUsageException();
 }
 
-
+void CardDrawCards::takeGreenCardEffect(){
+    Player* player = owner();
+    gameCycle()->setCardEffect(1);
+    gameTable()->playerDrawFromDeck(player, m_cardCount);
+    gameCycle()->setCardEffect(0); 
+}

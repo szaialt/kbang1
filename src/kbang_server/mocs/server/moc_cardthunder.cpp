@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'characterjimscarecrow.h'
+** Meta object code from reading C++ file 'cardthunder.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../characterjimscarecrow.h"
+#include "../../cardthunder.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'characterjimscarecrow.h' doesn't include <QObject>."
+#error "The header file 'cardthunder.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_CharacterJimScarecrow_t {
+struct qt_meta_stringdata_CardThunder_t {
     QByteArrayData data[1];
-    char stringdata0[22];
+    char stringdata0[12];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CharacterJimScarecrow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_CardThunder_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_CharacterJimScarecrow_t qt_meta_stringdata_CharacterJimScarecrow = {
+static const qt_meta_stringdata_CardThunder_t qt_meta_stringdata_CardThunder = {
     {
-QT_MOC_LITERAL(0, 0, 21) // "CharacterJimScarecrow"
+QT_MOC_LITERAL(0, 0, 11) // "CardThunder"
 
     },
-    "CharacterJimScarecrow"
+    "CardThunder"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_CharacterJimScarecrow[] = {
+static const uint qt_meta_data_CardThunder[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_CharacterJimScarecrow[] = {
        0        // eod
 };
 
-void CharacterJimScarecrow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void CardThunder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,28 +60,28 @@ void CharacterJimScarecrow::qt_static_metacall(QObject *_o, QMetaObject::Call _c
     Q_UNUSED(_a);
 }
 
-const QMetaObject CharacterJimScarecrow::staticMetaObject = {
-    { &CharacterBase::staticMetaObject, qt_meta_stringdata_CharacterJimScarecrow.data,
-      qt_meta_data_CharacterJimScarecrow,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject CardThunder::staticMetaObject = {
+    { &PlayingCard::staticMetaObject, qt_meta_stringdata_CardThunder.data,
+      qt_meta_data_CardThunder,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *CharacterJimScarecrow::metaObject() const
+const QMetaObject *CardThunder::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *CharacterJimScarecrow::qt_metacast(const char *_clname)
+void *CardThunder::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_CharacterJimScarecrow.stringdata0))
-        return static_cast<void*>(const_cast< CharacterJimScarecrow*>(this));
-    return CharacterBase::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_CardThunder.stringdata0))
+        return static_cast<void*>(const_cast< CardThunder*>(this));
+    return PlayingCard::qt_metacast(_clname);
 }
 
-int CharacterJimScarecrow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int CardThunder::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = CharacterBase::qt_metacall(_c, _id, _a);
+    _id = PlayingCard::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

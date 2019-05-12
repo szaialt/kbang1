@@ -191,6 +191,7 @@ public:
      * Sends a chat message by name of player.
      */
     void sendChatMessage(Player* player, const QString& message);
+    void installNewRenegade();
 
 private:
     void checkStartable();

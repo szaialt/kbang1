@@ -234,7 +234,8 @@ CardColor stringToCardColor(const QString& s){
     if (s == "yellow")    return COLOR_YELLOW;
     if (s == "orange")    return COLOR_ORANGE;
     if (s == "violet")    return COLOR_VIOLET;
-    if (s == "grey")      return COLOR_GREY;
+    if (s == "negative grey") return COLOR_NEGATIVE_GREY;
+    if (s == "positive grey") return COLOR_POSITIVE_GREY;
     if (s == "dynamite")  return COLOR_DYNAMITE;
     return COLOR_UNKNOWN;
     
@@ -253,7 +254,8 @@ QString cardColorToString(const CardColor& c){
         case COLOR_YELLOW:          return "yellow";
         case COLOR_ORANGE:          return "orange";
         case COLOR_VIOLET:          return "violet";
-        case COLOR_GREY:            return "grey";
+        case COLOR_NEGATIVE_GREY:   return "negative grey";
+        case COLOR_POSITIVE_GREY:   return "positive grey";
         case COLOR_DYNAMITE:        return "dynamite";
         case COLOR_UNKNOWN:         return "";
     }
@@ -349,17 +351,13 @@ PlayingCardType stringToPlayingCardType(const QString& s)
      //Martin City
     if (s == "elixir")              return CARD_ELIXIR;
     if (s == "explosion")           return CARD_EXPLOSION;
-    if (s == "pristahovalci")       return CARD_PRISTAHOVALCI;
     if (s == "first_aid_kit")       return CARD_FIRST_AID_KIT;
     if (s == "first aid kit")       return CARD_FIRST_AID_KIT;
     if (s == "first-aid-kit")       return CARD_FIRST_AID_KIT;
-    if (s == "rana_jistoty")        return CARD_RANA_JISTOTY;
-    if (s == "rana jistoty")        return CARD_RANA_JISTOTY;
-    if (s == "rana-jistoty")        return CARD_RANA_JISTOTY;
     if (s == "kombo")               return CARD_KOMBO;
-    if (s == "dirty_work")          return CARD_DIRTY_WORK;
-    if (s == "dirty work")          return CARD_DIRTY_WORK;
-    if (s == "dirty-work")          return CARD_DIRTY_WORK;
+    if (s == "dirty_job")           return CARD_DIRTY_JOB;
+    if (s == "dirty job")           return CARD_DIRTY_JOB;
+    if (s == "dirty-job")           return CARD_DIRTY_JOB;
     if (s == "killer")              return CARD_KILLER;
     if (s == "golden_brown")        return CARD_GOLDEN_BROWN;
     if (s == "golden brown")        return CARD_GOLDEN_BROWN;
@@ -401,8 +399,10 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "undefensible-bang")   return CARD_UNDEFENSABLE;
     if (s == "undefensible bang")   return CARD_UNDEFENSABLE;
     if (s == "undefensible_bang")   return CARD_UNDEFENSABLE;
-    
-
+    if (s == "thief")               return CARD_THIEF;
+    if (s == "stunning-bang")   return CARD_STUNNING_BANG;
+    if (s == "stunning bang")   return CARD_STUNNING_BANG;
+    if (s == "stunning_bang")   return CARD_STUNNING_BANG;
     return CARD_UNKNOWN; 
 } 
 
@@ -463,11 +463,9 @@ QString playingCardTypeToString(const PlayingCardType& c)
         //Martin City
         case CARD_ELIXIR:          return "elixir";
         case CARD_EXPLOSION:       return "explosion";
-        case CARD_PRISTAHOVALCI:   return "pristahovalci";
         case CARD_FIRST_AID_KIT:   return "first aid kit";
-        case CARD_RANA_JISTOTY:    return "rana jistoty";
         case CARD_KOMBO:           return "kombo";
-        case CARD_DIRTY_WORK:      return "dirty work";
+        case CARD_DIRTY_JOB:      return "dirty work";
         case CARD_KILLER:          return "killer";
         case CARD_GOLDEN_BROWN:    return "golden brown";
         case CARD_THUNDER:         return "thunder";
@@ -491,8 +489,9 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_INDIAN_BANG:     return "indian bang";
         case CARD_CHARM:           return "charm";
         case CARD_UNDEFENSABLE:    return "undefensible bang";
+        case CARD_THIEF:           return "thief";
+        case CARD_STUNNING_BANG:   return "stunning bang";
 
-    
         //Unknown
         case CARD_UNKNOWN:        return "";
     }

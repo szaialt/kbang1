@@ -44,4 +44,12 @@
 #include "cardmemento.h"
 #include "cardhiddenweapon.h"
 #include "cardexplosion.h"
+#include "cardthief.h"
+#include "carddirtyjob.h"
+#include "cardcowboypocket.h"
+#include "cardbleedinginjury.h"
+#include "cardflamebottle.h"
+#include "cardthunder.h"
+#include "cardstunning.h"
+
 #endif

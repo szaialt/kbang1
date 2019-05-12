@@ -14,14 +14,15 @@ public:
         WellsFargo, 
         SupplyCrate,
         AceUpYourSleeve,
-        UnionPacific
+        UnionPacific,
+        Adrenaline
     };
     CardDrawCards(Game* game, int id, Type, CardSuit, CardRank);
     ~CardDrawCards();
     virtual CardColor color() const;
     virtual void play();
     virtual void play(PlayingCard* targetCard);
-
+    virtual void takeGreenCardEffect();
 private:
     Type m_type;
     int  m_cardCount;

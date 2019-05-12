@@ -28,6 +28,7 @@
 
 #include "gameinfo.h"
 #include "gamecycle.h"
+#include "gametable.h"
 #include <stdexcept>
  
 Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
@@ -127,10 +128,18 @@ bool Player::canPlayBang() const
 
 void Player::modifyLifePoints(int x, Player* causedBy)
 {
-    
+    int modification = x;
+    if ((x > 0) && (lifePoints() == maxLifePoints() - 1)){
+        foreach (PlayingCard* card, table()){
+            if (card->type() == CARD_BLEEDING_INJURY){
+                modification--;
+                mp_game->gameTable().playerDiscardCard(card);
+            }
+        }
+    }
     // modify lifePoints member
     int oldLifePoints = m_lifePoints;
-    m_lifePoints += x;
+    m_lifePoints += modification;
     if ((m_lifePoints > m_maxLifePoints) && (characterType() != CHARACTER_BILLY_LONGLIFE) && (characterType() != CHARACTER_DAN_QUAKE)){
         if (!m_elixirPlayed){
             m_lifePoints = m_maxLifePoints;
@@ -387,6 +396,11 @@ void Player::checkEmptyHand()
 void Player::addAdversary(PublicPlayerView* p){
     m_adversaries.append(p);
 }
+
+bool Player::isCharmed(){
+    return mp_playerCtrl->isCharmed();
+}
+
 
 void Player::charm(){
     mp_playerCtrl->charm();

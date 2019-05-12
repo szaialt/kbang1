@@ -66,6 +66,13 @@ HEADERS += \
     cardmemento.h \
     cardhiddenweapon.h \
     cardcharm.h \
+    cardthief.h \
+    carddirtyjob.h \
+    cardcowboypocket.h \
+    cardbleedinginjury.h \
+    cardflamebottle.h \
+    cardthunder.h \
+    cardstunning.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -167,6 +174,13 @@ SOURCES += \
     cardmemento.cpp \
     cardhiddenweapon.cpp \
     cardcharm.cpp \
+    cardthief.cpp \
+    carddirtyjob.cpp \
+    cardcowboypocket.cpp \
+    cardbleedinginjury.cpp \
+    cardflamebottle.cpp \
+    cardthunder.cpp \
+    cardstunning.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \

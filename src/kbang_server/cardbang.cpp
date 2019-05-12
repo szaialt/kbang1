@@ -59,6 +59,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Undefensable:
         setType(CARD_UNDEFENSABLE);
         break;
+    case Stunning:
+        setType(CARD_STUNNING_BANG);
+        break;
     default:
             NOT_REACHED();
     }
@@ -77,6 +80,9 @@ void CardBang::play(Player *targetPlayer)
     }
     controlCard();
     if (!((owner()->characterType() == CHARACTER_CORONEL_MORTIMER) && (suit() == SUIT_DIAMONDS) && (type() == CARD_BANG))){
+        controlTarget(targetPlayer);
+    }
+    if ((owner()->isCharmed())){
         controlTarget(targetPlayer);
     }
     shot(targetPlayer);
@@ -149,6 +155,10 @@ void CardBang::respondPass()
     gameCycle()->unsetResponseMode();
     gameTable()->playerPass(mp_attackedPlayer);
     bool injure = true;
+    if (type() == CARD_STUNNING_BANG){
+        injure = false;
+        mp_attackedPlayer->charm();
+    }
     if (injure){
         if (type() == CARD_BANG){
             QList<PlayingCard*> table2 = mp_attackingPlayer->table();
@@ -278,6 +288,16 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
         break;
     }
+    case CARD_VEST: {
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
+        targetCard->assertOnTable();
+        game()->gameCycle().unsetResponseMode();
+        gameTable()->playerRespondWithCard(targetCard);
+        missed();
+        return;
+        }
     default:
         if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
             gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);

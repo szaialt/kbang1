@@ -27,17 +27,20 @@
  */
 class CardMissed : public PlayingCard 
 {
-Q_OBJECT
+Q_OBJECT 
 public:
     enum MissedType { 
         Missed,
         //Team Fortress
-        DeadRinger
+        DeadRinger,
+        //Martin City
+        Vest
         
     };
     
     CardMissed(Game *game, int id, MissedType type, CardSuit, CardRank);
     ~CardMissed();
+    CardColor color() const;
     virtual void play();
 }; 
 

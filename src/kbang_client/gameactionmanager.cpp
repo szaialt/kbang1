@@ -93,11 +93,17 @@ bool GameActionManager::onCardClicked(CardWidget* cardWidget)
 bool GameActionManager::isCombined(CardWidget* cardWidget){
     if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_MEDI_GUN)) return true;
     if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_PERSUASION)) return true;
+    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_STUNNING)) return true;
     if (cardWidget->pocketType() == POCKET_HAND) return true;
     if (cardWidget->cardData().type == CARD_JAIL) return false;
     if (cardWidget->cardData().type == CARD_DYNAMITE) return false;
     if (cardWidget->cardData().type == CARD_TELEPORT) return false;
     if (cardWidget->cardData().type == CARD_SUN_GLARE) return false;
+    if (cardWidget->cardData().type == CARD_BLEEDING_INJURY) return false;
+    if (cardWidget->cardData().type == CARD_INFLAMMATORY_BOTTLE) return false;
+    //if (cardWidget->cardData().type == ) return false;
+    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_ADRENALINE)) return false;
+    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_MEDICINES)) return false;
     return ((((cardWidget->pocketType() == POCKET_TABLE) && ((cardWidget->cardData().isAct)))) 
             && (cardWidget->ownerId() == mp_game->playerId()));
 }
@@ -157,11 +163,16 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_DOUBLE_BANG:
         case CARD_TRIPLE_BANG:
         case CARD_QUAD_BANG:
+        case CARD_DIRTY_JOB:
+        case CARD_BLEEDING_INJURY:
+        case CARD_INFLAMMATORY_BOTTLE:
+        case CARD_ELIXIR:
                 selectPlayer(cardWidget);
                 break; 
         //Play it to table or choose two cards (blue)
         case CARD_PERSUASION:
         case CARD_MEDI_GUN:
+        case CARD_STUNNING:
             if (cardWidget->cardData().pocket == POCKET_TABLE){
                  selectCards(cardWidget, 2);
              }
@@ -176,6 +187,8 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
                 selectCards(cardWidget, 1);
                 break;
         case CARD_ARSON:
+        case CARD_THIEF:
+        case CARD_THUNDER:
                 selectCards(cardWidget, 2);
                 break;
         default:
@@ -358,6 +371,17 @@ void GameActionManager::playWithCards()
             playerIds.push_back(targetId2);
             mp_game->serverConnection()->playCardWithPlayers(mp_activeCard->cardData().id, playerIds);
         }
+        else if ((mp_activeCard->cardData().type == CARD_THIEF)){
+            //Cards that need two target cards
+            CardWidget* card = m_cardSelection[0];
+            CardWidget* card2 = m_cardSelection[1];
+            int targetId1 = card->cardData().id;
+            int targetId2 = card2->cardData().id;
+            QList<int> cardIds;
+            cardIds.push_back(targetId1);
+            cardIds.push_back(targetId2);
+            mp_game->serverConnection()->playCardWithCards(mp_activeCard->cardData().id, cardIds);
+        }
         else {
         //Cards that need both an another card and a target player
             CardWidget* card = m_cardSelection[0];
@@ -394,6 +418,9 @@ bool GameActionManager::needsTarget(const CardData card){
     case CARD_DOUBLE_BANG:
     case CARD_TRIPLE_BANG:
     case CARD_QUAD_BANG:
+    case CARD_BLEEDING_INJURY:
+    case CARD_INFLAMMATORY_BOTTLE:
+    case CARD_ELIXIR:
         return true;
     default:
         return false;

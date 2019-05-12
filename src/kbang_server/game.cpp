@@ -291,7 +291,7 @@ void Game::buryPlayer(Player* player, Player* causedBy)
     Q_ASSERT(player->lifePoints() <= 0);
     Q_ASSERT(player->isAlive());
     
-    if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+    if (!(player->isCharmed()) && (player->characterType() == CHARACTER_TOMY_LEE_GHOST)){
             CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
             if (!ghost->isAtFirstDead()){
                 ghost->setAtFirstDead();
@@ -328,7 +328,7 @@ void Game::buryPlayer(Player* player, Player* causedBy)
             }
         } else if (m_outlawsCount == 0 && m_renegadesCount == 0) {
             winningSituation(ROLE_SHERIFF);
-        } else if ((player->role() == ROLE_OUTLAW && causedBy != 0 && causedBy != 0 && causedBy != player) || (causedBy != 0 && causedBy->characterType() == CHARACTER_LOCO)) {
+        } else if ((player->role() == ROLE_OUTLAW && causedBy != 0 && causedBy != 0 && causedBy != player) || (causedBy != 0 && !(causedBy->isCharmed()) && causedBy->characterType() == CHARACTER_LOCO)) {
             /// killer draws 3 cards for killing an outlaw
             mp_gameTable->playerDrawFromDeck(causedBy, 3);
          } else if (player->role() == ROLE_DEPUTY && causedBy != 0 && causedBy->role() == ROLE_SHERIFF) {
@@ -477,4 +477,8 @@ QList<PlayerRole> Game::getRoleList()
         ++i;
     }
     return res;
+}
+
+void Game::installNewRenegade(){
+    m_renegadesCount++;
 }

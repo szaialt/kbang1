@@ -18,6 +18,9 @@ CardBeer::CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRan
     case Saloon:
         setType(CARD_SALOON);
         break;
+    case Medicines:
+         setType(CARD_MEDICINES);
+         break;
     default:
         NOT_REACHED();
     }
@@ -28,15 +31,23 @@ CardBeer::~CardBeer()
 {
 }
 
+CardColor CardBeer::color(){
+    if (type() == CARD_MEDICINES) return COLOR_POSITIVE_GREY;
+    return COLOR_BROWN;
+}
+
 void CardBeer::play()
 {
       qDebug() << "CardBeer: pocket " << pocketTypeToString(pocket());
       qDebug() << "CardBeer: type " << playingCardTypeToString(type());
       gameCycle()->assertTurn();
       
-//       if (m_type != Canteen){
+      if (type() != CARD_MEDICINES){
          assertInHand();
-//       }
+      }
+      else {
+           playAsGreenCard();
+      }
       Player* player = owner();
       //gameTable()->playerPlayCard(this);
       if (m_type == Beer) {
@@ -77,6 +88,17 @@ bool CardBeer::ghostControll(){
     return isGhost;
 }*/
 
+
+void CardBeer::takeGreenCardEffect(){
+    if (owner()->lifePoints() == 0){
+          throw BadUsageException();
+    }
+    if (type() == CARD_MEDICINES){
+        owner()->modifyLifePoints(2, 0);
+    }
+}
+
+
 BeerRescue::BeerRescue(Game* game):
         QObject(game),
         mp_game(game)
@@ -87,7 +109,7 @@ void BeerRescue::respondPass()
 {
     bool last_saved = false;
     //Our operette
-    if ((mp_game->gameInfo().ourFlag()) && ((mp_target->character()->characterType() == CHARACTER_BART_CASSIDY) || (mp_target->character()->characterType() == CHARACTER_EL_GRINGO)) ){
+    if ((mp_game->gameInfo().ourFlag()) && !(mp_target->isCharmed()) && ((mp_target->character()->characterType() == CHARACTER_BART_CASSIDY) || (mp_target->character()->characterType() == CHARACTER_EL_GRINGO)) ){
         if (m_lifePointsToSave > 0){
           CharacterCassidyGringo* operetteCharacter = qobject_cast<CharacterCassidyGringo*>(mp_target->character());
         

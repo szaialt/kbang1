@@ -8,6 +8,7 @@
 #include "playingcard.h"
 #include "characterbase.h"
 #include "gameinfo.h"
+#include "reactionhandler.h"
 
 //This needs a setter window to customize the game
 //e. g. how many characters must be given to a player to chooese his or her charachter(s).
@@ -32,8 +33,8 @@ void PlayerCtrl::startGame()
 }
 
 void PlayerCtrl::draw()
-{
-    mp_player->game()->gameCycle().draw(mp_player);
+{   
+    mp_player->game()->gameCycle().draw(mp_player);    
 }
 
 void PlayerCtrl::finishTurn()
@@ -48,7 +49,9 @@ void PlayerCtrl::discardCard(PlayingCard* card)
 
 void PlayerCtrl::useAbility()
 {
+    qDebug() << m_charmed << "1\n";
     if (m_charmed){
+        
         throw BadUsageException();
     }
     else {
@@ -58,7 +61,9 @@ void PlayerCtrl::useAbility()
 
 void PlayerCtrl::useAbility(const PublicPlayerView* targetPlayer)
 {
+    qDebug() << m_charmed << "2\n";
     if (m_charmed){
+        
         throw BadUsageException();
     }
     else {
@@ -68,6 +73,7 @@ void PlayerCtrl::useAbility(const PublicPlayerView* targetPlayer)
 
 void PlayerCtrl::useAbility(QList<PlayingCard*> cards)
 {
+    qDebug() << m_charmed << "3\n";
     if (m_charmed){
         throw BadUsageException();
     }
@@ -78,6 +84,7 @@ void PlayerCtrl::useAbility(QList<PlayingCard*> cards)
 
 void PlayerCtrl::useAbility(QList<PlayingCard*> cards, const PublicPlayerView* targetPlayer)
 {
+    qDebug() << m_charmed << "4\n";
     if (m_charmed){
         throw BadUsageException();
     }
@@ -89,79 +96,50 @@ void PlayerCtrl::useAbility(QList<PlayingCard*> cards, const PublicPlayerView* t
 
 void PlayerCtrl::playCard(PlayingCard* card)
 {
-    if (m_charmed){
-        card->play();
-    }
-    else {
+    qDebug() << m_charmed << "5\n";
         mp_player->game()->gameCycle().playCard(mp_player, card);
-    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, PublicPlayerView* targetPlayer)
 {
-    if (m_charmed){
-        Player* p = targetPlayer->player();
-        card->play(p);
-    }
-    else {
+    qDebug() << m_charmed << "6\n";
         mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             Player::player(targetPlayer));
-    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, PlayingCard* targetCard)
 {
-    if (m_charmed){
-        card->play(targetCard);
-    }
-    else {
+    qDebug() << m_charmed << "7\n";
         mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCard);
-    }
+    
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, PlayingCard* targetCard,  PublicPlayerView* targetPlayer)
 {
-    if (m_charmed){
-        Player* p = targetPlayer->player();
-        card->play(targetCard, p);
-    }
-    else {
+    qDebug() << m_charmed << "8\n";
+    
     mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCard,
                                             Player::player(targetPlayer));
-    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, QList<PlayingCard*> targetCards)
 {
-    if (m_charmed){
-        card->play(targetCards);
-    }
-    else {
+    qDebug() << m_charmed << "9\n";
         mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             targetCards);
-    }
 }
 
 void PlayerCtrl::playCard(PlayingCard* card, QList<PublicPlayerView*> players){
-    if (m_charmed){
-        QList<Player*> players2 = QList<Player*>();
-        foreach (PublicPlayerView* targetPlayer, players){
-            players2.push_back(targetPlayer->player());
-        }
-
-        card->play(players2);
-    }
-    else {
-    mp_player->game()->gameCycle().playCard(mp_player,
+    qDebug() << m_charmed << "10\n";
+        mp_player->game()->gameCycle().playCard(mp_player,
                                             card,
                                             players);
-    }
 }
 
 void PlayerCtrl::pass()
@@ -300,6 +278,10 @@ PlayingCard* PlayerCtrl::getRandomCardFromHand(){
 
 Player* PlayerCtrl::theSheriff(){
     return mp_player->game()->gameCycle().theSheriff();
+}
+
+bool PlayerCtrl::isCharmed(){
+    return m_charmed;
 }
 
 void PlayerCtrl::charm(){

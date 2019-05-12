@@ -723,7 +723,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card)
     x.playerFrom     = player.id();
     x.card           = card->cardData();
     
-    if (card->color() == COLOR_GREEN){ 
+    if (card->color() != COLOR_BROWN){ 
        if (card->pocket() == POCKET_GRAVEYARD){
          x.pocketTypeFrom = POCKET_TABLE;
        }
@@ -762,7 +762,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, Play
     y.playerFrom     = player.id();
     y.card           = card2->cardData();
     
-    if (card1->color() == COLOR_GREEN){
+    if (card1->color() != COLOR_BROWN){
        if (card1->pocket() == POCKET_GRAVEYARD){
          x.pocketTypeFrom = POCKET_TABLE;
        }
@@ -771,7 +771,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, Play
       }
     }
     
-     if (card2->color() == COLOR_GREEN){
+     if (card2->color() != COLOR_BROWN){
        QList<PlayingCard*> table = mp_playerCtrl->privatePlayerView().table();
        if (card2->pocket() == POCKET_GRAVEYARD){
          y.pocketTypeFrom = POCKET_TABLE;
@@ -809,7 +809,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card,
     x.playerFrom     = player.id();
     x.card           = card->cardData();
     
-    if (card->color() == COLOR_GREEN){
+    if (card->color() != COLOR_BROWN){
        if (card->pocket() == POCKET_GRAVEYARD){
          x.pocketTypeFrom = POCKET_TABLE;
        }
@@ -847,7 +847,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card,
     x.playerFrom     = player.id();
     x.card           = card->cardData();
     
-    if (card->color() == COLOR_GREEN){
+    if (card->color() != COLOR_BROWN){
        if (card->pocket() == POCKET_GRAVEYARD){
          x.pocketTypeFrom = POCKET_TABLE;
        }
@@ -913,7 +913,7 @@ void Client::onPlayerRespondWithCard(PublicPlayerView& player, const PlayingCard
     x.pocketTypeTo   = POCKET_GRAVEYARD;
     x.playerFrom     = player.id(); 
     x.card           = card->cardData();
-    if (card->color() == COLOR_GREEN){
+    if (card->color() != COLOR_BROWN){
       if (card->pocket() == POCKET_GRAVEYARD){
          x.pocketTypeFrom = POCKET_TABLE;
        }

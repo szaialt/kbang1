@@ -143,6 +143,7 @@ public:
     PlayingCard* getRandomCardFromHand();
 
     Player* theSheriff();
+    bool isCharmed();
     void charm();
     void unCharm();
 private:

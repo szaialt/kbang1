@@ -241,6 +241,7 @@ public:
 
     /*Adds adversary fired at*/
     void addAdversary(PublicPlayerView* p); 
+    bool isCharmed();
     void charm();
     void unCharm();
     void setHexxZombie(bool b);

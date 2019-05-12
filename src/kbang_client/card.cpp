@@ -170,11 +170,9 @@ void Card::loadDefaultRuleset()
     //Cards from Martin City
     new Card("Elixir",       CARD_ELIXIR,         "gfx/cards/martincity/elixir.png" );
     new Card("Explosion",    CARD_EXPLOSION,      "gfx/cards/martincity/explosion.png" );
-    new Card("Pristahovalci", CARD_PRISTAHOVALCI, "gfx/cards/martincity/pristahovalci.png" );
     new Card("First aid kit", CARD_FIRST_AID_KIT, "gfx/cards/martincity/first-aid-kit.png" );
-    new Card("Rana jistoty", CARD_RANA_JISTOTY,   "gfx/cards/martincity/rana-jistoty.png" );
     new Card("Kombo",        CARD_KOMBO,          "gfx/cards/martincity/kombo.png" );
-    new Card("Dirty work",   CARD_DIRTY_WORK,     "gfx/cards/martincity/dirty-work.png" );
+    new Card("Dirty job",   CARD_DIRTY_JOB,     "gfx/cards/martincity/dirty-work.png" );
     new Card("Killer",       CARD_KILLER,         "gfx/cards/martincity/killer.png" );
     new Card("Golden brown", CARD_GOLDEN_BROWN,   "gfx/cards/martincity/golden-brown.png" );
     new Card("Thunder",      CARD_THUNDER,        "gfx/cards/martincity/thunder.png" );
@@ -193,10 +191,11 @@ void Card::loadDefaultRuleset()
     new Card("Morphine",    CARD_MORPHINE,         "gfx/cards/martincity/morphine.png" );
     new Card("Shock",       CARD_SHOCK,            "gfx/cards/martincity/shock.png" );
     new Card("Weakness",    CARD_WEAKNESS,         "gfx/cards/martincity/weakness.png" );
-    new Card("Indian bang", CARD_INDIAN_BANG,         "gfx/cards/martincity/hitman.png" );
-    new Card("Undefensible bang", CARD_UNDEFENSABLE,         "gfx/cards/martincity/finishing-hit.png" );
+    new Card("Indian bang", CARD_INDIAN_BANG,       "gfx/cards/martincity/hitman.png" );
+    new Card("Undefensible bang", CARD_UNDEFENSABLE, "gfx/cards/martincity/finishing-hit.png" );
+    new Card("Thief",       CARD_THIEF,            "gfx/cards/martincity/thief.png" );
     //Unknown card 
-    new Card("",            CARD_UNKNOWN,    "gfx/cards/back-playing.png");
+    new Card("",            CARD_UNKNOWN,          "gfx/cards/back-playing.png");
 
     //Characters
     new Card("Bart Cassidy",    CHARACTER_BART_CASSIDY,     "gfx/characters/bart-cassidy.png");

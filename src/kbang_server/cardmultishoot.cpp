@@ -137,9 +137,22 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 break;
             targetCard->assertInHand();
             respondWith(targetCard);
-            //targetCard->play(owner());
             return;
             break;
+        case CARD_VEST:
+            if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE))
+                 break;
+             targetCard->assertOnTable();
+             respondWith(targetCard);
+             return;
+             break;
+            if (m_playedNextDirection){
+                requestNext();
+            }
+            else {
+                requestPrevious();
+            }
+            return;
         default:
             break;
         }

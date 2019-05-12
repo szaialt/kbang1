@@ -29,6 +29,8 @@ CardMissed::CardMissed(Game* game, int id, MissedType type, CardSuit cardSuit, C
         break;
     case DeadRinger:
         setType(CARD_DEAD_RINGER);
+    case Vest:
+        setType(CARD_VEST); 
         break; 
     default:
             NOT_REACHED();
@@ -39,11 +41,24 @@ CardMissed::~CardMissed()
 {
 }
 
+CardColor CardMissed::color() const {
+    if (type() == CARD_VEST)
+    return COLOR_BLUE;
+    return COLOR_BROWN;
+}
+
 void CardMissed::play()
 {
     gameCycle()->assertTurn();
     if ((color() == COLOR_GREEN) && (pocket() == POCKET_HAND)) {
         playAsGreenCard();
+    }
+    if ((color() == COLOR_BLUE) && (pocket() == POCKET_HAND)) {
+        playAsBlueCard();
+//         if (pocket() == POCKET_HAND){
+//             owner()->removeCardFromHand(this);
+//             setPocket(POCKET_TABLE);
+//         }
     }
     else {
         throw BadUsageException();

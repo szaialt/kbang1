@@ -70,7 +70,8 @@ enum CardColor {
     COLOR_YELLOW,
     COLOR_ORANGE,
     COLOR_VIOLET,
-    COLOR_GREY,
+    COLOR_NEGATIVE_GREY, //Martin City negative grey
+    COLOR_POSITIVE_GREY, //Martin City positive grey
     COLOR_DYNAMITE,
     COLOR_UNKNOWN
 };
@@ -130,11 +131,9 @@ enum PlayingCardType {
     //Martin City
     CARD_ELIXIR,
     CARD_EXPLOSION,
-    CARD_PRISTAHOVALCI,
     CARD_FIRST_AID_KIT,
-    CARD_RANA_JISTOTY,
     CARD_KOMBO,
-    CARD_DIRTY_WORK,
+    CARD_DIRTY_JOB,
     CARD_KILLER,
     CARD_GOLDEN_BROWN,
     CARD_THUNDER,
@@ -157,7 +156,9 @@ enum PlayingCardType {
     CARD_QUAD_BANG,
     CARD_INDIAN_BANG,
     CARD_CHARM,
-    CARD_UNDEFENSABLE
+    CARD_UNDEFENSABLE,
+    CARD_THIEF,
+    CARD_STUNNING_BANG
 };
 
 enum CharacterType {

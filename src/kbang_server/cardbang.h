@@ -43,7 +43,8 @@ public:
         TripleBang,
         QuadBang,
         IndianBang,
-        Undefensable
+        Undefensable,
+        Stunning
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

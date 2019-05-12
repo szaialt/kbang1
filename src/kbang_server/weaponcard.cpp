@@ -90,7 +90,7 @@ void WeaponCard::play()
     
     int weaponNumber = owner()->getWeaponNumber();
     int ownedWeapons = 0;
-    if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+    if ((!(game()->gameInfo().ourFlag())) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE))){
       foreach(PlayingCard* card, owner()->table()) {
          if (card == 0)
             continue;
@@ -179,11 +179,11 @@ void WeaponCard::registerPlayer(Player* player)
     player->setWeaponRange(m_range);
     int infinityDistance = 99;
     player->setWeaponRange(m_range);
-    if (owner()->character()->characterType() == CHARACTER_SNIPER){
+    if (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SNIPER)){
         player->setWeaponRange(infinityDistance);
     }
     //We let Suzy to fire only one weapon in a turn
-    if ((game()->gameInfo().ourFlag()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+    if ((game()->gameInfo().ourFlag()) && !(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
         if (type() == CARD_VOLCANIC) {
           bool canPlayBang = owner()->canPlayBang();
           if (!canPlayBang) {

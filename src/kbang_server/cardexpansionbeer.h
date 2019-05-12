@@ -10,6 +10,7 @@ public:
     CardExpansionBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRank cardRank);
     ~CardExpansionBeer();
 
+    void play(Player* targetPlayer);
     virtual void play();
 
 };

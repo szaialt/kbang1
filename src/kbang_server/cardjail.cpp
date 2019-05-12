@@ -47,7 +47,7 @@ void CardJail::play(Player* targetPlayer)
     if (targetPlayer->role() == ROLE_SHERIFF){
         throw BadTargetPlayerException();
     }
-    if (targetPlayer->characterType() == CHARACTER_TOMY_LEE_GHOST){
+    if (!(targetPlayer->isCharmed()) && (targetPlayer->characterType() == CHARACTER_TOMY_LEE_GHOST)){
             CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(targetPlayer->character());
             if (ghost->isAlive() && ghost->isAtFirstDead()){
                 throw BadTargetPlayerException();

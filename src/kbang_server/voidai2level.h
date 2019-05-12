@@ -23,6 +23,7 @@ class VoidAI2Level : public VoidAI {
     bool isTheSheriffWounded();
     int calculateMisseds();
     void playCardForDefense(QList<PlayingCard*> list, bool defense);
+
 };
 
 #endif // VOIDAI2LEVEL_H

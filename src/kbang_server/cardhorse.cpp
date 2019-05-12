@@ -34,7 +34,7 @@ void CardHorse::play()
             if (equine == 0)
                continue;
             else {
-                if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+                if ((!(game()->gameInfo().ourFlag())) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE))){
                     throw TwoSameOnTableException();
                 }
                 else {
@@ -46,7 +46,7 @@ void CardHorse::play()
     else {
        foreach(PlayingCard* card, owner()->table()) {
            if (card->type() == CARD_PACKING_MULE){
-               if ((!(game()->gameInfo().ourFlag())) || (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE)){
+               if ((!(game()->gameInfo().ourFlag())) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE) )){
                     throw TwoSameOnTableException();
                 }
                 else {

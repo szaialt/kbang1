@@ -139,7 +139,12 @@ void GameCycle::draw(Player* player, bool specialDraw)
     checkPlayerAndState(player, GAMEPLAYSTATE_DRAW);
     player->predrawCheck(0);
     m_state = GAMEPLAYSTATE_TURN;
-    player->character()->draw(specialDraw);
+    if (player->isCharmed()){
+        player->game()->gameTable().playerDrawFromDeck(player, 2, 0);
+    }
+    else {
+        player->character()->draw(specialDraw);
+    }
     m_contextDirty = 1;
     sendRequest();
 }
@@ -180,10 +185,27 @@ void GameCycle::finishTurn(Player* player)
      foreach(PlayingCard* c, table){
          if (c->color() == COLOR_GREEN){
              c->setAct(true);             
+         }
+         if (c->color() == COLOR_POSITIVE_GREY){
+             if (!c->isAct()){
+                 c->setAct(true); 
+             }
+             else {
+                 mp_game->gameTable().playerDiscardCard(c);
+            }
+         }
+         if (c->color() == COLOR_NEGATIVE_GREY){
+             mp_game->gameTable().playerDiscardCard(c);
         }
+         if (c->type() == CARD_INFLAMMATORY_BOTTLE){
+             player->modifyLifePoints(-1, 0);
+             if (player->lifePoints() <= 0){
+                 mp_game->buryPlayer(player, 0);
+            }
+         }
      }
      player->unCharm();
-     if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+     if (!(player->isCharmed()) && (player->characterType() == CHARACTER_TOMY_LEE_GHOST)){
             CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
             ghost->decrementRounds();
             ghost->setDead();
@@ -241,7 +263,12 @@ void GameCycle::playCard(Player* player, PlayingCard* card)
             qDebug() << "Cannot play card owned by nobody.";
             throw BadCardException();
         }
-        player->character()->playCard(card);
+        if (player->isCharmed()){
+            card->play();
+        }
+        else{
+            player->character()->playCard(card);
+        }
     }
     sendRequest();
 }
@@ -257,14 +284,19 @@ void GameCycle::playCard(Player* player, PlayingCard* card, Player* targetPlayer
         throw BadCardException();
     }
 
-    if (!targetPlayer->isAlive()){
+    if ((!targetPlayer->isAlive()) && (card->type() != CARD_DIRTY_JOB)){
         throw BadTargetPlayerException();
     }
 
     if (isResponse()){
         throw BadGameStateException();
     }
-    player->character()->playCard(card, targetPlayer);
+    if (player->isCharmed()){
+        card->play(targetPlayer);
+    }
+    else {
+        player->character()->playCard(card, targetPlayer);
+    }
     sendRequest();
 }
 
@@ -281,7 +313,12 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
     if (isResponse()){
         throw BadGameStateException();
     }
-    player->character()->playCard(card, targetCard);
+    if (player->isCharmed()){
+        card->play(targetCard);
+    }
+    else {
+        player->character()->playCard(card, targetCard);
+    }
     sendRequest();
 }
 
@@ -296,14 +333,19 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
         throw BadCardException();
     }
 
-    if (!targetPlayer->isAlive()){
+    if ((!targetPlayer->isAlive())){
         throw BadTargetPlayerException();
     }
 
     if (isResponse()){
         throw BadGameStateException();
     }
-    player->character()->playCard(card, targetCard, targetPlayer);
+    if (player->isCharmed()){
+        card->play(targetCard, targetPlayer);
+    }
+    else {
+        player->character()->playCard(card, targetCard, targetPlayer);
+    }
     sendRequest();
 }
 
@@ -319,6 +361,9 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PlayingCard*> 
 
     if (isResponse()){
         throw BadGameStateException();
+    }
+    if (player->isCharmed()){
+        card->play(targetCards);
     }
     player->character()->playCard(card, targetCards);
     sendRequest();
@@ -336,6 +381,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PublicPlayerVi
     }
     if (isResponse()){
         throw BadGameStateException();
+    }
+    if (player->isCharmed()){
+        QList<Player*> players = QList<Player*>();
+        foreach (PublicPlayerView* targetPlayer, targetPlayers){
+            players.push_back(targetPlayer->player());
+        }
+        card->play(players);
     }
     player->character()->playCard(card, targetPlayers);
     sendRequest();
@@ -552,7 +604,7 @@ void GameCycle::resetAbility(Player* player){
 
 int GameCycle::needDiscard(Player* player)
 {
-    if (player->characterType() == CHARACTER_TOMY_LEE_GHOST){
+    if (!(player->isCharmed()) && (player->characterType() == CHARACTER_TOMY_LEE_GHOST)){
         CharacterTomyLeeGhost* ghost =  qobject_cast<CharacterTomyLeeGhost*>(player->character());
         if (ghost->isAtFirstDead())
             if (player->lifePoints() < 0){
@@ -562,6 +614,7 @@ int GameCycle::needDiscard(Player* player)
     int limit = player->lifePoints();
     int handSize = player->handSize();
     int muleSize = 4;
+    int pocketSize = 2;
     if (player->characterType() == CHARACTER_BILLY_LONGLIFE){
         CharacterCardKeeper* billy =  qobject_cast<CharacterCardKeeper*>(player->character());
         limit = billy->cardKeeping();
@@ -569,6 +622,9 @@ int GameCycle::needDiscard(Player* player)
     foreach (PlayingCard* card, player->table()){
         if (card->type() == CARD_PACKING_MULE){
             limit = limit + muleSize;
+        }
+        if (card->type() == CARD_COWBOY_POCKET){
+            limit = limit + pocketSize;
         }
     }
     if (limit > handSize) {
