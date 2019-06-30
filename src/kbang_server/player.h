@@ -83,7 +83,7 @@ public:
      * Returns the id of the player. Zero value is reserved and interpreted
      * as an invalid player.
      */
-    inline int                  id()               const { return this ? m_id : 0;     }
+    inline int                  id()               const { return m_id;     }
     inline PlayerCtrl*          playerCtrl()       const { return mp_playerCtrl;       }
     inline QString              name()             const { return m_name;              }
     inline QString              password()         const { return m_password;          }

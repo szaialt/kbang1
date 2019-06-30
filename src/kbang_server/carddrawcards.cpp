@@ -31,6 +31,11 @@ CardDrawCards::CardDrawCards(Game* game, int id, CardDrawCards::Type type, CardS
         setType(CARD_ADRENALINE);
         m_cardCount = 2;
         break;
+    case GoldWatch:
+        setType(CARD_GOLD_WATCH);
+        m_cardCount = 1;
+        break;
+    m_used = false;
     }
 }
 
@@ -41,6 +46,7 @@ CardDrawCards::~CardDrawCards()
 
 CardColor CardDrawCards::color() const {
     if (type() == CARD_ADRENALINE) return COLOR_POSITIVE_GREY;
+    if (type() == CARD_GOLD_WATCH) return COLOR_BLUE;
     return COLOR_BROWN;
 }
 
@@ -49,6 +55,18 @@ void CardDrawCards::play()
     gameCycle()->assertTurn();
     if (type() == CARD_ADRENALINE){
         playAsGreenCard();
+    }
+    else if (type() == CARD_GOLD_WATCH){
+        if (pocket() == POCKET_HAND){
+            playAsBlueCard();
+        }
+        else if ((pocket() == POCKET_TABLE) && !m_used){
+            Player* player = owner();
+            gameCycle()->setCardEffect(1);
+            gameTable()->playerDrawFromDeck(player, m_cardCount);
+            gameCycle()->setCardEffect(0);
+            m_used = true;
+        }
     }
     else if (type() == CARD_SUPPLY_CRATE){
         throw BadUsageException();
@@ -93,4 +111,8 @@ void CardDrawCards::takeGreenCardEffect(){
     gameCycle()->setCardEffect(1);
     gameTable()->playerDrawFromDeck(player, m_cardCount);
     gameCycle()->setCardEffect(0); 
+}
+
+void CardDrawCards::reset(){
+    m_used = false;
 }

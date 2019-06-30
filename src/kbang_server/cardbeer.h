@@ -21,11 +21,11 @@ public:
     }; 
     
     CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRank cardRank);
-    ~CardBeer();
+    virtual ~CardBeer();
 
-    CardColor color();
+    virtual CardColor color();
     virtual void play();
-    void takeGreenCardEffect();
+    virtual void takeGreenCardEffect();
 protected:
     BeerType m_type;
 };

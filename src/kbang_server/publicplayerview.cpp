@@ -34,7 +34,7 @@ PublicPlayerView::~ PublicPlayerView()
 
 int PublicPlayerView::id() const
 {
-    return this ? mp_player->id() : 0;
+    return mp_player ? mp_player->id() : 0;
 }
 
 QString PublicPlayerView::name() const

@@ -37,7 +37,7 @@ struct CardFactory::CardFactoryImp
         }
         for (int i = 10; i <= 14; ++i) {
             list.append(new CardMissed(game, id(), CardMissed::Missed, SUIT_CLUBS, i));
-        }
+        } 
 
         ///////////////////
        // BEER + SALOON //
@@ -239,41 +239,19 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
             
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
-            list.append(new CardBeer(game, id(), CardBeer::Medicines, SUIT_HEARTS, 11));
+            list.append(new CardSteroid(game, id(), SUIT_HEARTS, 10));
             
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5));  
+            list.append(new CardDrugs(game, id(), SUIT_HEARTS, 9));
+            
+            list.append(new CardMorphine(game, id(), SUIT_HEARTS, 8));
+            
+            list.append(new CardShock(game, id(), SUIT_CLUBS, 13));
+           
+            list.append(new CardWeakness(game, id(), SUIT_DIAMONDS, 14));
+            
             list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
             
-            
+            list.append(new CardDrawCards(game, id(), CardDrawCards::GoldWatch,  SUIT_SPADES,  7));
             
             
             

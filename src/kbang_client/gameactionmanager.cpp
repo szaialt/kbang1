@@ -91,10 +91,11 @@ bool GameActionManager::onCardClicked(CardWidget* cardWidget)
 } 
 
 bool GameActionManager::isCombined(CardWidget* cardWidget){
-    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_MEDI_GUN)) return true;
-    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_PERSUASION)) return true;
-    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_STUNNING)) return true;
     if (cardWidget->pocketType() == POCKET_HAND) return true;
+    //The owner can use it on table with another card
+    if (cardWidget->cardData().type == CARD_MEDI_GUN) return true;
+    if (cardWidget->cardData().type == CARD_PERSUASION) return true;
+    if (cardWidget->cardData().type == CARD_STUNNING) return true;
     if (cardWidget->cardData().type == CARD_JAIL) return false;
     if (cardWidget->cardData().type == CARD_DYNAMITE) return false;
     if (cardWidget->cardData().type == CARD_TELEPORT) return false;
@@ -102,8 +103,10 @@ bool GameActionManager::isCombined(CardWidget* cardWidget){
     if (cardWidget->cardData().type == CARD_BLEEDING_INJURY) return false;
     if (cardWidget->cardData().type == CARD_INFLAMMATORY_BOTTLE) return false;
     //if (cardWidget->cardData().type == ) return false;
-    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_ADRENALINE)) return false;
-    if ((cardWidget->pocketType() == POCKET_TABLE) && (cardWidget->cardData().type == CARD_MEDICINES)) return false;
+    if (cardWidget->cardData().type == CARD_ADRENALINE) return false;
+    if (cardWidget->cardData().type == CARD_MEDICINES) return false;
+    if (cardWidget->cardData().type == CARD_SHOCK) return false;
+    if (cardWidget->cardData().type == CARD_WEAKNESS) return false;
     return ((((cardWidget->pocketType() == POCKET_TABLE) && ((cardWidget->cardData().isAct)))) 
             && (cardWidget->ownerId() == mp_game->playerId()));
 }
@@ -167,6 +170,8 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_BLEEDING_INJURY:
         case CARD_INFLAMMATORY_BOTTLE:
         case CARD_ELIXIR:
+        case CARD_SHOCK:
+        case CARD_WEAKNESS:
                 selectPlayer(cardWidget);
                 break; 
         //Play it to table or choose two cards (blue)
@@ -402,28 +407,30 @@ void GameActionManager::debug(const QString& msg)
 
 bool GameActionManager::needsTarget(const CardData card){
     switch(card.type) {
-    case CARD_BANG:
-    case CARD_DUEL:
-    case CARD_JAIL:
-    case CARD_PANIC:
-    case CARD_CATBALOU:
-    case CARD_DIRECT_HIT:
-    case CARD_HEALING_BANG:
-    case CARD_GUITAR:
-    case CARD_TELEPORT:
-    case CARD_JARATE:
-    case CARD_SUN_GLARE:
-    case CARD_INDIAN_BANG:
-    case CARD_UNDEFENSABLE:
-    case CARD_DOUBLE_BANG:
-    case CARD_TRIPLE_BANG:
-    case CARD_QUAD_BANG:
-    case CARD_BLEEDING_INJURY:
-    case CARD_INFLAMMATORY_BOTTLE:
-    case CARD_ELIXIR:
-        return true;
-    default:
-        return false;
+        case CARD_BANG:
+        case CARD_DUEL:
+        case CARD_JAIL:
+        case CARD_PANIC:
+        case CARD_CATBALOU:
+        case CARD_DIRECT_HIT:
+        case CARD_HEALING_BANG:
+        case CARD_GUITAR:
+        case CARD_TELEPORT:
+        case CARD_JARATE:
+        case CARD_SUN_GLARE:
+        case CARD_INDIAN_BANG:
+        case CARD_UNDEFENSABLE:
+        case CARD_DOUBLE_BANG:
+        case CARD_TRIPLE_BANG:
+        case CARD_QUAD_BANG:
+        case CARD_BLEEDING_INJURY:
+        case CARD_INFLAMMATORY_BOTTLE:
+        case CARD_ELIXIR:
+        case CARD_SHOCK:
+        case CARD_WEAKNESS:
+            return true;
+        default:
+            return false;
     }
 }
 

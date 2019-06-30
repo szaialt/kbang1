@@ -121,7 +121,9 @@ void PlayingCard::playAsBlueCard()
 {
     gameCycle()->assertTurn();
     assertInHand();
-    
+    foreach(PlayingCard* card, owner()->table()) {
+        if (card->type() == CARD_SHOCK) throw BadUsageException();
+    }
     //We allow replaceing for everyone except of Suzy Lafayette
     //to stop her
     if (!(game()->gameInfo().ourFlag()) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE))){

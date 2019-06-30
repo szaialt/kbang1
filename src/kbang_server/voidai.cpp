@@ -122,6 +122,18 @@ void VoidAI::requestWithAction()
                         case CARD_PACKING_MULE:
                         case CARD_PEACE_PIPE:
                         case CARD_SHOTGUN:
+                        case CARD_ADRENALINE:
+                        case CARD_MEDICINES:
+                        case CARD_STEROID:
+                        case CARD_DRUGS:
+                        case CARD_MORPHINE:
+                        case CARD_VEST:
+                        case CARD_STUNNING:
+                        case CARD_COWBOY_POCKET:
+                        case CARD_GOLD_WATCH:
+                        case CARD_PRAYER:
+                        case CARD_KILLER:
+                            
                         {
                             mp_playerCtrl->playCard(card);
                             return;
@@ -129,6 +141,7 @@ void VoidAI::requestWithAction()
                         case CARD_BEER:
                         case CARD_MAD_MILK:
                         case CARD_SANDVICH: 
+                        case CARD_FIRST_AID_KIT:
                         { 
                             if (mp_playerCtrl->privatePlayerView().lifePoints() <
                                     mp_playerCtrl->privatePlayerView().maxLifePoints()) {
@@ -148,6 +161,35 @@ void VoidAI::requestWithAction()
                     e.debug();
                 }
             }
+            foreach (PlayingCard* card, table) { 
+              if (/*(card->color() == COLOR_GREEN) && */card->isAct()){
+                  try {
+                    switch(card->type()) {
+                      case CARD_MEDICINES:{ 
+                        if (mp_playerCtrl->privatePlayerView().lifePoints() <
+                           mp_playerCtrl->privatePlayerView().maxLifePoints()) {
+                            mp_playerCtrl->playCard(card);
+                            return;
+                        }
+                      }
+                      break;
+                      case CARD_ADRENALINE:
+                      case CARD_GOLD_WATCH:
+                      {
+                        mp_playerCtrl->playCard(card);
+                        return;
+                        break;
+                      }
+                      default:
+                      break;
+                } 
+              }
+              catch (GameException& e)  {
+                    qDebug() << "VoidAI: (checkpoint #0)";
+                    e.debug();
+                }
+              } 
+            }
              foreach (PlayingCard* card, hand) {
                  try {
                      switch(card->type()) {
@@ -160,6 +202,14 @@ void VoidAI::requestWithAction()
                          case CARD_GUITAR:
                          case CARD_JARATE:
                          case CARD_SUN_GLARE:
+                         case CARD_HEADACHE:
+                         case CARD_SHOCK:
+                         case CARD_WEAKNESS:
+                         case CARD_INFLAMMATORY_BOTTLE:
+                         case CARD_BLEEDING_INJURY:
+                         case CARD_DIRTY_JOB:
+                         case CARD_THUNDER:
+                         case CARD_ELIXIR:
                          {
                              QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
                              shuffleList(players);
@@ -168,7 +218,7 @@ void VoidAI::requestWithAction()
                                      continue;
                                  }
                                  try {
-                                     mp_playerCtrl->playCard(card, p);
+                                    mp_playerCtrl->playCard(card, p);
                                      return;
                                  } catch (BadTargetPlayerException e) {
                                      qDebug() << "VoidAI: BadTargetPlayerException!";
@@ -196,15 +246,12 @@ void VoidAI::requestWithAction()
                                         mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
                                         return;
                                  } catch (BadUsageException e) {
-                                    
                                     qDebug() << "VoidAI: BadUsageException!";
                                  } catch (BadTargetPlayerException e) {
                                      qDebug() << "VoidAI: BadTargetPlayerException!";
                                  } 
                                  catch (BadCardException e) {
                                      qDebug() << "VoidAI: BadCardException!";
-                                 } catch (BadUsageException e) {
-                                     qDebug() << "VoidAI: BadUsageException!";
                                  } catch (OneBangPerTurnException e) {
                                      qDebug() << "VoidAI: One bang per turn!";
                                  } catch(GameException& e) {
@@ -280,34 +327,24 @@ void VoidAI::requestWithAction()
             }
             qDebug() << QString("VoidAI (%1): REQUEST_RESPOND").arg(m_id);
             QList<PlayingCard*> table = mp_playerCtrl->privatePlayerView().table();
-            foreach (PlayingCard* card, table) {
-              if ((card->color() == COLOR_GREEN) && card->isAct() || (card->color() == COLOR_BLUE)){
-                  qDebug() << "Trying to play: " << playingCardTypeToString(card->type());
-                  try {
-                    switch(card->type()) {
-                      case CARD_BARREL:
-                      {
-                        mp_playerCtrl->playCard(card);
-                        return;
-                        break;
-                      }
-                      default:
-                      break;
-                   }
-                }
-                catch (GameException& e)  {
-                    qDebug() << "VoidAI: (checkpoint #0)";
+            foreach (PlayingCard* c, table) {
+                try {
+                    qDebug() << "Trying to play: " << playingCardTypeToString(c->type());
+                    mp_playerCtrl->playCard(c);
+                } catch (BadCardException e) {
+                    qDebug() << QString("VoidAI (%1): Respond: BadCardException").arg(m_id);
+                } catch (BadPlayerException e) {
+                    qDebug() << QString("VoidAI (%1): Respond: BadPlayerException").arg(m_id);
+                } catch (GameException& e) {
+                    qDebug("VoidAI");
                     e.debug();
                 }
-              }
             }
-            
             QList<PlayingCard*> cards = mp_playerCtrl->privatePlayerView().hand();
             foreach (PlayingCard* c, cards) {
                 try {
                     qDebug() << "Trying to play: " << playingCardTypeToString(c->type());
                     mp_playerCtrl->playCard(c);
-                    return;
                 } catch (BadCardException e) {
                     qDebug() << QString("VoidAI (%1): Respond: BadCardException").arg(m_id);
                 } catch (BadPlayerException e) {

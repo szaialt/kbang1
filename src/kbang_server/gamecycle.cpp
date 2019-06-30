@@ -14,6 +14,8 @@
 #include "characterernestsaliven2.h"
 #include "charactercardkeeper.h"
 #include "charactertomyleeghost.h"
+#include "cardweakness.h"
+#include "carddrawcards.h"
 
 #include <QDebug>
 
@@ -116,12 +118,14 @@ void GameCycle::startTurn(Player* player)
     resetAbility(player);
     Player::CardList table = player->table();
     foreach(PlayingCard* c, table){
-         if (c->color() == COLOR_GREEN){
-             c->setAct(true);             
-        }
+        c->setAct(true); 
         if (c->type() == CARD_PERSUASION){
             CardPersuasion* card = qobject_cast<CardPersuasion*>(c);
             card->resetTimes();
+        }
+        if (c->type() == CARD_GOLD_WATCH){
+            CardDrawCards* card = qobject_cast<CardDrawCards*>(c);
+            card->reset();
         }
      }
     if (player->role() == ROLE_SHERIFF)
@@ -159,7 +163,7 @@ void GameCycle::skipPlayersTurn()
     }
     Player::CardList table = player->table();
      foreach(PlayingCard* c, table){
-         if (c->color() == COLOR_GREEN){
+         if (c->color() != COLOR_BROWN){
              c->setAct(true);             
         }
      }
@@ -194,6 +198,10 @@ void GameCycle::finishTurn(Player* player)
                  mp_game->gameTable().playerDiscardCard(c);
             }
          }
+         if (c->type() == CARD_WEAKNESS){
+             CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+             card->vulnerate();
+         }
          if (c->color() == COLOR_NEGATIVE_GREY){
              mp_game->gameTable().playerDiscardCard(c);
         }
@@ -202,7 +210,11 @@ void GameCycle::finishTurn(Player* player)
              if (player->lifePoints() <= 0){
                  mp_game->buryPlayer(player, 0);
             }
-         }
+         }/*
+         if (player->lifePoints() <= 0){
+            mp_game->buryPlayer(player, 0);
+         }*/
+         
      }
      player->unCharm();
      if (!(player->isCharmed()) && (player->characterType() == CHARACTER_TOMY_LEE_GHOST)){
@@ -263,6 +275,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card)
             qDebug() << "Cannot play card owned by nobody.";
             throw BadCardException();
         }
+        Player::CardList table = player->table();
+        foreach(PlayingCard* c, table){
+            if (c->type() == CARD_WEAKNESS){
+                CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+                card->increasePlayedCards();
+            }
+        }
         if (player->isCharmed()){
             card->play();
         }
@@ -291,6 +310,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, Player* targetPlayer
     if (isResponse()){
         throw BadGameStateException();
     }
+    Player::CardList table = player->table();
+    foreach(PlayingCard* c, table){
+        if (c->type() == CARD_WEAKNESS){
+            CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+            card->increasePlayedCards();
+        }
+    }
     if (player->isCharmed()){
         card->play(targetPlayer);
     }
@@ -312,6 +338,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
 
     if (isResponse()){
         throw BadGameStateException();
+    }
+    Player::CardList table = player->table();
+    foreach(PlayingCard* c, table){
+        if (c->type() == CARD_WEAKNESS){
+            CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+            card->increasePlayedCards();
+        }
     }
     if (player->isCharmed()){
         card->play(targetCard);
@@ -340,6 +373,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
     if (isResponse()){
         throw BadGameStateException();
     }
+    Player::CardList table = player->table();
+    foreach(PlayingCard* c, table){
+        if (c->type() == CARD_WEAKNESS){
+            CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+            card->increasePlayedCards();
+        }
+    }
     if (player->isCharmed()){
         card->play(targetCard, targetPlayer);
     }
@@ -362,10 +402,19 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PlayingCard*> 
     if (isResponse()){
         throw BadGameStateException();
     }
+    Player::CardList table = player->table();
+    foreach(PlayingCard* c, table){
+        if (c->type() == CARD_WEAKNESS){
+            CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+            card->increasePlayedCards();
+        }
+    }
     if (player->isCharmed()){
         card->play(targetCards);
     }
-    player->character()->playCard(card, targetCards);
+    else {
+        player->character()->playCard(card, targetCards);
+    }
     sendRequest();
 }
 
@@ -382,6 +431,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PublicPlayerVi
     if (isResponse()){
         throw BadGameStateException();
     }
+    Player::CardList table = player->table();
+    foreach(PlayingCard* c, table){
+        if (c->type() == CARD_WEAKNESS){
+            CardWeakness* card =  qobject_cast<CardWeakness*>(c);
+            card->increasePlayedCards();
+        }
+    }
     if (player->isCharmed()){
         QList<Player*> players = QList<Player*>();
         foreach (PublicPlayerView* targetPlayer, targetPlayers){
@@ -389,7 +445,9 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PublicPlayerVi
         }
         card->play(players);
     }
-    player->character()->playCard(card, targetPlayers);
+    else {
+        player->character()->playCard(card, targetPlayers);
+    }
     sendRequest();
 }
 

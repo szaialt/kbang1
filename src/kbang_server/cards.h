@@ -51,5 +51,11 @@
 #include "cardflamebottle.h"
 #include "cardthunder.h"
 #include "cardstunning.h"
+#include "cardsteroid.h"
+#include "carddrugs.h"
+#include "cardmorphine.h"
+#include "cardheadache.h"
+#include "cardshock.h"
+#include "cardweakness.h"
 
 #endif

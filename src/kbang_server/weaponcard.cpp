@@ -87,7 +87,9 @@ void WeaponCard::play()
     if (type() == CARD_GUITAR){
     throw BadUsageException();
     }
-    
+    foreach(PlayingCard* card, owner()->table()) {
+        if (card->type() == CARD_SHOCK) throw BadUsageException();
+    }
     int weaponNumber = owner()->getWeaponNumber();
     int ownedWeapons = 0;
     if ((!(game()->gameInfo().ourFlag())) || (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SUZY_LAFAYETTE))){

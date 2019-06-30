@@ -87,6 +87,16 @@ void VoidAI2Level::requestWithAction()
                         case CARD_PACKING_MULE:
                         case CARD_PEACE_PIPE:
                         case CARD_SHOTGUN:
+                        case CARD_ADRENALINE:
+                        case CARD_MEDICINES:
+                        case CARD_STEROID:
+                        case CARD_DRUGS:
+                        case CARD_MORPHINE:
+                        case CARD_VEST:
+                        case CARD_STUNNING:
+                        case CARD_COWBOY_POCKET:
+                        case CARD_GOLD_WATCH:
+                        case CARD_PRAYER:
                         {
                             mp_playerCtrl->playCard(card);
                             return;
@@ -94,6 +104,7 @@ void VoidAI2Level::requestWithAction()
                         case CARD_INDIANS:
                         case CARD_GATLING:
                         case CARD_MANN_VS_MACHINE:
+                        case CARD_KILLER:
                         //case CARD_BANDIDOS:
                         {
                             try {
@@ -174,6 +185,7 @@ void VoidAI2Level::requestWithAction()
                         case CARD_BEER:
                         case CARD_MAD_MILK:
                         case CARD_SANDVICH: 
+                        case CARD_FIRST_AID_KIT:
                         { 
                             if (amIWounded()) {
                                 mp_playerCtrl->playCard(card);
@@ -192,6 +204,35 @@ void VoidAI2Level::requestWithAction()
                     e.debug();
                 }
             }
+            foreach (PlayingCard* card, table) { 
+              if (/*(card->color() == COLOR_GREEN) && */card->isAct()){
+                  try {
+                    switch(card->type()) {
+                      case CARD_MEDICINES:{ 
+                        if (mp_playerCtrl->privatePlayerView().lifePoints() <
+                           mp_playerCtrl->privatePlayerView().maxLifePoints()) {
+                            mp_playerCtrl->playCard(card);
+                            return;
+                        }
+                      }
+                      break;
+                      case CARD_ADRENALINE:
+                      case CARD_GOLD_WATCH:
+                      {
+                        mp_playerCtrl->playCard(card);
+                        return;
+                        break;
+                      }
+                      default:
+                      break;
+                } 
+              }
+              catch (GameException& e)  {
+                    qDebug() << "VoidAI: (checkpoint #0)";
+                    e.debug();
+                }
+              } 
+            }
              foreach (PlayingCard* card, hand) {
                  try {
                      switch(card->type()) {
@@ -204,6 +245,13 @@ void VoidAI2Level::requestWithAction()
                          case CARD_GUITAR:
                          case CARD_JARATE:
                          case CARD_SUN_GLARE:
+                         case CARD_HEADACHE:
+                         case CARD_SHOCK:
+                         case CARD_WEAKNESS:
+                         case CARD_INFLAMMATORY_BOTTLE:
+                         case CARD_BLEEDING_INJURY:
+                         case CARD_DIRTY_JOB:
+                         case CARD_THUNDER:
                          {
                              qDebug() << "Choosing target player";
                              QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();

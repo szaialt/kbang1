@@ -15,7 +15,8 @@ public:
         SupplyCrate,
         AceUpYourSleeve,
         UnionPacific,
-        Adrenaline
+        Adrenaline,
+        GoldWatch
     };
     CardDrawCards(Game* game, int id, Type, CardSuit, CardRank);
     ~CardDrawCards();
@@ -23,9 +24,11 @@ public:
     virtual void play();
     virtual void play(PlayingCard* targetCard);
     virtual void takeGreenCardEffect();
+    void reset();
 private:
     Type m_type;
     int  m_cardCount;
+    bool m_used;
 };
 
 #endif // CARDDRAWCARDS_H

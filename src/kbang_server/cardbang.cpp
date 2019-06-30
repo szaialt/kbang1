@@ -298,13 +298,30 @@ void CardBang::respondCard(PlayingCard* targetCard)
         missed();
         return;
         }
-    default:
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA)
+    default:{
+        if (type() == CARD_INDIAN_BANG){
+            throw BadCardException();
+        }
+        QList<PlayingCard*> table = mp_attackedPlayer->table();
+        foreach (PlayingCard* card, table){
+            if (card->type() == CARD_STEROID){
+                targetCard->assertInHand();
+                game()->gameCycle().unsetResponseMode();
+                gameTable()->playerRespondWithCard(targetCard);
+                missed();
+                return;
+            }
+        }
+        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA){
             gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
-        break;
+        }
+        throw BadCardException();
     }
-    throw BadCardException();
+    
+    break;
+    
 
+}
 }
 
 bool CardBang::oneTimeBang(){

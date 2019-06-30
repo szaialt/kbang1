@@ -19,8 +19,8 @@ CardBeer::CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRan
         setType(CARD_SALOON);
         break;
     case Medicines:
-         setType(CARD_MEDICINES);
-         break;
+        setType(CARD_MEDICINES);
+        break;
     default:
         NOT_REACHED();
     }
@@ -32,8 +32,9 @@ CardBeer::~CardBeer()
 }
 
 CardColor CardBeer::color(){
+    //Why does it belive that CARD_MEDICINES is brown?
     if (type() == CARD_MEDICINES) return COLOR_POSITIVE_GREY;
-    return COLOR_BROWN;
+    else return COLOR_BROWN;
 }
 
 void CardBeer::play()
@@ -45,15 +46,9 @@ void CardBeer::play()
       if (type() != CARD_MEDICINES){
          assertInHand();
       }
-      else {
-           playAsGreenCard();
-      }
+      
       Player* player = owner();
-      //gameTable()->playerPlayCard(this);
-      if (m_type == Beer) {
-          //if (owner()->lifePoints() == 0){
-           // throw BadUsageException();
-          //}
+      if (type() == CARD_BEER) {
           Player* player = owner();
               gameTable()->playerPlayCard(this);
               if (game()->alivePlayersCount() > 2){
@@ -61,7 +56,7 @@ void CardBeer::play()
               }
           
       } 
-      else if (m_type == Saloon) {
+      else if (type() == CARD_SALOON) {
         gameTable()->playerPlayCard(this);
         if (player->lifePoints() > 0){
             player->modifyLifePoints(1, 0);
@@ -74,28 +69,20 @@ void CardBeer::play()
             }
         }
       }
+      else if (type() == CARD_MEDICINES) {
+           playAsGreenCard();
+      }
       
 }
-/*
-bool CardBeer::ghostControll(){
-    Player* player = owner();
-    bool isGhost = false;
-    foreach (PlayingCard* card, player->table()){
-        if (card->type() == CARD_GHOST){
-            isGhost = true;
-        }
-    }
-    return isGhost;
-}*/
-
 
 void CardBeer::takeGreenCardEffect(){
-    if (owner()->lifePoints() == 0){
+    /*if (owner()->lifePoints() == 0){
           throw BadUsageException();
-    }
+    }*/
     if (type() == CARD_MEDICINES){
         owner()->modifyLifePoints(2, 0);
     }
+    else throw BadUsageException();
 }
 
 

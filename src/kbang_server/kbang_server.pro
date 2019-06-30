@@ -73,6 +73,12 @@ HEADERS += \
     cardflamebottle.h \
     cardthunder.h \
     cardstunning.h \
+    cardsteroid.h \
+    carddrugs.h \
+    cardheadache.h \
+    cardmorphine.h \
+    cardweakness.h \
+    cardshock.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -181,6 +187,12 @@ SOURCES += \
     cardflamebottle.cpp \
     cardthunder.cpp \
     cardstunning.cpp \
+    cardsteroid.cpp \
+    carddrugs.cpp \
+    cardmorphine.cpp \
+    cardheadache.cpp \
+    cardweakness.cpp \
+    cardshock.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
