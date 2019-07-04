@@ -172,7 +172,7 @@ void Card::loadDefaultRuleset()
     new Card("Explosion",    CARD_EXPLOSION,      "gfx/cards/martincity/explosion.png" );
     new Card("First aid kit", CARD_FIRST_AID_KIT, "gfx/cards/martincity/first-aid-kit.png" );
     new Card("Kombo",        CARD_KOMBO,          "gfx/cards/martincity/kombo.png" );
-    new Card("Dirty job",   CARD_DIRTY_JOB,     "gfx/cards/martincity/dirty-work.png" );
+    new Card("Dirty job",   CARD_DIRTY_JOB,       "gfx/cards/martincity/dirty-job.png" );
     new Card("Killer",       CARD_KILLER,         "gfx/cards/martincity/killer.png" );
     new Card("Golden brown", CARD_GOLDEN_BROWN,   "gfx/cards/martincity/golden-brown.png" );
     new Card("Thunder",      CARD_THUNDER,        "gfx/cards/martincity/thunder.png" );

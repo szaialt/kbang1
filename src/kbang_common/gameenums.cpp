@@ -465,7 +465,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_EXPLOSION:       return "explosion";
         case CARD_FIRST_AID_KIT:   return "first aid kit";
         case CARD_KOMBO:           return "kombo";
-        case CARD_DIRTY_JOB:      return "dirty work";
+        case CARD_DIRTY_JOB:       return "dirty job";
         case CARD_KILLER:          return "killer";
         case CARD_GOLDEN_BROWN:    return "golden brown";
         case CARD_THUNDER:         return "thunder";

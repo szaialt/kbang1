@@ -220,7 +220,6 @@ void VoidAI2Level::requestWithAction()
                       case CARD_GOLD_WATCH:
                       {
                         mp_playerCtrl->playCard(card);
-                        return;
                         break;
                       }
                       default:

@@ -207,17 +207,17 @@ struct CardFactory::CardFactoryImp
         
         if (game->gameInfo().martinCityFlag()){
             
-            list.append(new CardBang(game, id(), CardBang::IndianBang, SUIT_DIAMONDS, 7));
+            list.append(new CardBang(game, id(), CardBang::IndianBang, SUIT_DIAMONDS, 7)); 
             
-            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 1));
+            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 1)); 
             
-            list.append(new CardExplosion(game, id(), SUIT_SPADES, 12));
+            list.append(new CardExplosion(game, id(), SUIT_SPADES, 12)); 
             
             list.append(new CardExpansionBeer(game, id(), CardBeer::Elixir, SUIT_HEARTS, 7));
             
             list.append(new CardExpansionBeer(game, id(), CardBeer::FirstAidKit, SUIT_DIAMONDS, 3));
             
-            list.append(new CardDirtyJob(game, id(), SUIT_CLUBS, 2));
+            list.append(new CardDirtyJob(game, id(), SUIT_CLUBS, 2)); //
             
             list.append(new CardCowboyPocket(game, id(), SUIT_CLUBS, 4));
             
@@ -252,9 +252,6 @@ struct CardFactory::CardFactoryImp
             list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
             
             list.append(new CardDrawCards(game, id(), CardDrawCards::GoldWatch,  SUIT_SPADES,  7));
-            
-            
-            
             
             
         }
