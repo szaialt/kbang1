@@ -194,6 +194,30 @@ void Card::loadDefaultRuleset()
     new Card("Indian bang", CARD_INDIAN_BANG,       "gfx/cards/martincity/hitman.png" );
     new Card("Undefensible bang", CARD_UNDEFENSABLE, "gfx/cards/martincity/finishing-hit.png" );
     new Card("Thief",       CARD_THIEF,            "gfx/cards/martincity/thief.png" );
+    //Cusp of Carabelli
+    new Card("Green fur  trade", CARD_GREEN_FUR_TRADE, "gfx/cards/cuspofcarabelli/green-fur-trade.jpg");
+    new Card("War party",   CARD_WAR_PARTY,     "gfx/cards/cuspofcarabelli/war-party.jpg");
+    new Card("Plunder",     CARD_PLUNDER,       "gfx/cards/cuspofcarabelli/plunder.jpg");
+    new Card("Bar fight",   CARD_BAR_FIGHT,     "gfx/cards/cuspofcarabelli/bar-fight.jpg");
+    new Card("Pilfer",      CARD_PILFER,        "gfx/cards/cuspofcarabelli/pilfer.jpg");
+    new Card("Roulette",    CARD_ROULETTE,      "gfx/cards/cuspofcarabelli/roulette.jpg");
+    new Card("Green on the house", CARD_GREEN_ON_THE_HOUSE,"gfx/cards/cuspofcarabelli/green-on-the-house.jpg");
+    new Card("Brown molotov cocktail", CARD_BROWN_MOLOTOV_COCKTAIL,       "gfx/cards/cuspofcarabelli/brown-molotov-cocktail.jpg");
+    new Card("Brown investment", CARD_BROWN_INVESTMENT, "gfx/cards/cuspofcarabelli/brown-investment.jpg");
+    new Card("Brown loan",  CARD_BROWN_LOAN,    "gfx/cards/cuspofcarabelli/brown-loan.jpg");
+    new Card("Rob grave",   CARD_ROB_GRAVE,     "gfx/cards/cuspofcarabelli/rob-grave.jpg");
+    new Card("Blood pact",  CARD_BLOOD_PACT,    "gfx/cards/cuspofcarabelli/blood-pact.jpg");
+    new Card("Brown show time", CARD_BROWN_SHOW_TIME, "gfx/cards/cuspofcarabelli/brown-show-time.jpg");
+    new Card("Brown moonshine", CARD_BROWN_MOONSHINE, "gfx/cards/cuspofcarabelli/brown-moonshine.jpg");
+    new Card("Showndown",   CARD_SHOWNDOWN,     "gfx/cards/cuspofcarabelli/showdown.jpg");
+    new Card("Hatchet",     CARD_HATCHET,       "gfx/cards/cuspofcarabelli/hatchet.jpg");
+    new Card("Reward",      CARD_REWARD,        "gfx/cards/cuspofcarabelli/reward.jpg");
+    new Card("Gamble",      CARD_GAMBLE,        "gfx/cards/cuspofcarabelli/gamble.jpg"); 
+    new Card("Walker",      CARD_WALKER,        "gfx/cards/cuspofcarabelli/walker.jpg");
+    new Card("Pack mule",   CARD_PACK_MULE,     "gfx/cards/cuspofcarabelli/pack-mule.jpg");
+    new Card("Bulldog 1",   CARD_BULLDOG_1,     "gfx/cards/cuspofcarabelli/bulldog-1.jpg");
+    new Card("Ricochet",    CARD_RICOCHET,      "gfx/cards/cuspofcarabelli/ricochet.jpg");
+    new Card("Hill top",    CARD_HILL_TOP,      "gfx/cards/cuspofcarabelli/hill-top.jpg");
     //Unknown card 
     new Card("",            CARD_UNKNOWN,          "gfx/cards/back-playing.png");
 

@@ -82,6 +82,14 @@ public:
     QLabel *labelDirectorsCuts;
     QCheckBox *checkDirectorsCutsCharacters;
     QLabel *labelDirectorsCutsCharacters;
+    QCheckBox *checkRobberRoost;
+    QLabel *labelRobberRoost;
+    QCheckBox *checkRobberRoostCharacters;
+    QLabel *labelRobberRoostCharacters;
+    QCheckBox *checkCuspOfCarabelli;
+    QLabel *labelCuspOfCarabelli;
+    QCheckBox *checkCuspOfCarabelliCharacters;
+    QLabel *labelCuspOfCarabelliCharacters;
     QCheckBox *checkStackingDynamite;
     QLabel *labelStackingDynamite;
     QSpinBox *spinBoxAiLevel;
@@ -188,12 +196,12 @@ public:
         pushButtonCreate = new QPushButton(CreateGameDialog);
         pushButtonCreate->setObjectName(QStringLiteral("pushButtonCreate"));
 
-        gridLayout->addWidget(pushButtonCreate, 29, 3, 1, 1);
+        gridLayout->addWidget(pushButtonCreate, 33, 3, 1, 1);
 
         pushButtonCancel = new QPushButton(CreateGameDialog);
         pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
 
-        gridLayout->addWidget(pushButtonCancel, 29, 4, 1, 2);
+        gridLayout->addWidget(pushButtonCancel, 33, 4, 1, 2);
 
         label_8 = new QLabel(CreateGameDialog);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -363,25 +371,65 @@ public:
 
         gridLayout->addWidget(labelDirectorsCutsCharacters, 24, 0, 1, 2);
 
+        checkRobberRoost = new QCheckBox(CreateGameDialog);
+        checkRobberRoost->setObjectName(QStringLiteral("checkRobberRoost"));
+
+        gridLayout->addWidget(checkRobberRoost, 19, 5, 1, 2);
+
+        labelRobberRoost = new QLabel(CreateGameDialog);
+        labelRobberRoost->setObjectName(QStringLiteral("labelRobberRoost"));
+
+        gridLayout->addWidget(labelRobberRoost, 19, 3, 1, 2);
+
+        checkRobberRoostCharacters = new QCheckBox(CreateGameDialog);
+        checkRobberRoostCharacters->setObjectName(QStringLiteral("checkRobberRoostCharacters"));
+
+        gridLayout->addWidget(checkRobberRoostCharacters, 20, 5, 1, 2);
+
+        labelRobberRoostCharacters = new QLabel(CreateGameDialog);
+        labelRobberRoostCharacters->setObjectName(QStringLiteral("labelRobberRoostCharacters"));
+
+        gridLayout->addWidget(labelRobberRoostCharacters, 20, 3, 1, 2);
+
+        checkCuspOfCarabelli = new QCheckBox(CreateGameDialog);
+        checkCuspOfCarabelli->setObjectName(QStringLiteral("checkCuspOfCarabelli"));
+
+        gridLayout->addWidget(checkCuspOfCarabelli, 23, 5, 1, 2);
+
+        labelCuspOfCarabelli = new QLabel(CreateGameDialog);
+        labelCuspOfCarabelli->setObjectName(QStringLiteral("labelCuspOfCarabelli"));
+
+        gridLayout->addWidget(labelCuspOfCarabelli, 23, 3, 1, 2);
+
+        checkCuspOfCarabelliCharacters = new QCheckBox(CreateGameDialog);
+        checkCuspOfCarabelliCharacters->setObjectName(QStringLiteral("checkCuspOfCarabelliCharacters"));
+
+        gridLayout->addWidget(checkCuspOfCarabelliCharacters, 24, 5, 1, 2);
+
+        labelCuspOfCarabelliCharacters = new QLabel(CreateGameDialog);
+        labelCuspOfCarabelliCharacters->setObjectName(QStringLiteral("labelCuspOfCarabelliCharacters"));
+
+        gridLayout->addWidget(labelCuspOfCarabelliCharacters, 24, 3, 1, 2);
+
         checkStackingDynamite = new QCheckBox(CreateGameDialog);
         checkStackingDynamite->setObjectName(QStringLiteral("checkStackingDynamite"));
 
-        gridLayout->addWidget(checkStackingDynamite, 25, 2, 1, 2);
+        gridLayout->addWidget(checkStackingDynamite, 29, 2, 1, 2);
 
         labelStackingDynamite = new QLabel(CreateGameDialog);
         labelStackingDynamite->setObjectName(QStringLiteral("labelStackingDynamite"));
 
-        gridLayout->addWidget(labelStackingDynamite, 25, 0, 1, 2);
+        gridLayout->addWidget(labelStackingDynamite, 29, 0, 1, 2);
 
         spinBoxAiLevel = new QSpinBox(CreateGameDialog);
         spinBoxAiLevel->setObjectName(QStringLiteral("spinBoxAiLevel"));
 
-        gridLayout->addWidget(spinBoxAiLevel, 28, 2, 1, 2);
+        gridLayout->addWidget(spinBoxAiLevel, 32, 2, 1, 2);
 
         labelAiLevel = new QLabel(CreateGameDialog);
         labelAiLevel->setObjectName(QStringLiteral("labelAiLevel"));
 
-        gridLayout->addWidget(labelAiLevel, 28, 0, 1, 2);
+        gridLayout->addWidget(labelAiLevel, 32, 0, 1, 2);
 
 #ifndef QT_NO_SHORTCUT
         label_4->setBuddy(spinBoxMaxPlayers);
@@ -404,6 +452,10 @@ public:
         labelMartinCityCharacters->setBuddy(checkMartinCityCharacters);
         labelDirectorsCuts->setBuddy(checkDirectorsCuts);
         labelDirectorsCutsCharacters->setBuddy(checkDirectorsCutsCharacters);
+        labelRobberRoost->setBuddy(checkRobberRoost);
+        labelRobberRoostCharacters->setBuddy(checkRobberRoostCharacters);
+        labelCuspOfCarabelli->setBuddy(checkCuspOfCarabelli);
+        labelCuspOfCarabelliCharacters->setBuddy(checkCuspOfCarabelliCharacters);
         labelStackingDynamite->setBuddy(checkStackingDynamite);
         labelAiLevel->setBuddy(spinBoxAiLevel);
 #endif // QT_NO_SHORTCUT
@@ -427,7 +479,11 @@ public:
         QWidget::setTabOrder(checkMartinCity, checkMartinCityCharacters);
         QWidget::setTabOrder(checkMartinCityCharacters, checkDirectorsCuts);
         QWidget::setTabOrder(checkDirectorsCuts, checkDirectorsCutsCharacters);
-        QWidget::setTabOrder(checkDirectorsCutsCharacters, checkStackingDynamite);
+        QWidget::setTabOrder(checkDirectorsCutsCharacters, checkCuspOfCarabelli);
+        QWidget::setTabOrder(checkCuspOfCarabelli, checkCuspOfCarabelliCharacters);
+        QWidget::setTabOrder(checkCuspOfCarabelliCharacters, checkRobberRoost);
+        QWidget::setTabOrder(checkRobberRoost, checkRobberRoostCharacters);
+        QWidget::setTabOrder(checkRobberRoostCharacters, checkStackingDynamite);
         QWidget::setTabOrder(checkStackingDynamite, pushButtonCreate);
         QWidget::setTabOrder(pushButtonCreate, pushButtonCancel);
 
@@ -482,6 +538,10 @@ public:
         labelMartinCityCharacters->setText(QApplication::translate("CreateGameDialog", "Martin City characters", Q_NULLPTR));
         labelDirectorsCuts->setText(QApplication::translate("CreateGameDialog", "Directors Cuts", Q_NULLPTR));
         labelDirectorsCutsCharacters->setText(QApplication::translate("CreateGameDialog", "Directors Cuts characters", Q_NULLPTR));
+        labelRobberRoost->setText(QApplication::translate("CreateGameDialog", "Robber Roost", Q_NULLPTR));
+        labelRobberRoostCharacters->setText(QApplication::translate("CreateGameDialog", "Robber Roost characters", Q_NULLPTR));
+        labelCuspOfCarabelli->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", Q_NULLPTR));
+        labelCuspOfCarabelliCharacters->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", Q_NULLPTR));
         labelStackingDynamite->setText(QApplication::translate("CreateGameDialog", "Stacking dynamite", Q_NULLPTR));
         labelAiLevel->setText(QApplication::translate("CreateGameDialog", "Ai level", Q_NULLPTR));
     } // retranslateUi

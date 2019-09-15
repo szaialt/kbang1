@@ -400,9 +400,62 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "undefensible bang")   return CARD_UNDEFENSABLE;
     if (s == "undefensible_bang")   return CARD_UNDEFENSABLE;
     if (s == "thief")               return CARD_THIEF;
-    if (s == "stunning-bang")   return CARD_STUNNING_BANG;
-    if (s == "stunning bang")   return CARD_STUNNING_BANG;
-    if (s == "stunning_bang")   return CARD_STUNNING_BANG;
+    if (s == "stunning-bang")       return CARD_STUNNING_BANG;
+    if (s == "stunning bang")       return CARD_STUNNING_BANG;
+    if (s == "stunning_bang")       return CARD_STUNNING_BANG;
+    //Cusp of carabelli
+    if (s == "green_fur_trade")     return CARD_GREEN_FUR_TRADE;
+    if (s == "green fur trade")     return CARD_GREEN_FUR_TRADE;
+    if (s == "green-fur-trade")     return CARD_GREEN_FUR_TRADE;
+    if (s == "war_party")           return CARD_WAR_PARTY;
+    if (s == "war party")           return CARD_WAR_PARTY;
+    if (s == "war-party")           return CARD_WAR_PARTY;
+    if (s == "plunder")             return CARD_PLUNDER;
+    if (s == "bar-fight")           return CARD_BAR_FIGHT;
+    if (s == "bar fight")           return CARD_BAR_FIGHT;
+    if (s == "bar_fight")           return CARD_BAR_FIGHT;
+    if (s == "pilfer")              return CARD_PILFER;
+    if (s == "roulette")            return CARD_ROULETTE;
+    if (s == "green_on_the_house")  return CARD_GREEN_ON_THE_HOUSE;
+    if (s == "green on the house")  return CARD_GREEN_ON_THE_HOUSE;
+    if (s == "green-on-the-house")  return CARD_GREEN_ON_THE_HOUSE;
+    if (s == "brown-molotov-cocktail") return CARD_BROWN_MOLOTOV_COCKTAIL;
+    if (s == "brown molotov cocktail") return CARD_BROWN_MOLOTOV_COCKTAIL;
+    if (s == "brown_molotov_cocktail") return CARD_BROWN_MOLOTOV_COCKTAIL;
+    if (s == "brown_investment")    return CARD_BROWN_INVESTMENT;
+    if (s == "brown investment")    return CARD_BROWN_INVESTMENT;
+    if (s == "brown-investment")    return CARD_BROWN_INVESTMENT;
+    if (s == "brown-loan")          return CARD_BROWN_LOAN;
+    if (s == "brown loan")          return CARD_BROWN_LOAN;
+    if (s == "brown_loan")          return CARD_BROWN_LOAN;
+    if (s == "rob-grave")           return CARD_ROB_GRAVE;
+    if (s == "rob grave")           return CARD_ROB_GRAVE;
+    if (s == "rob_grave")           return CARD_ROB_GRAVE;
+    if (s == "blood-pact")          return CARD_BLOOD_PACT;
+    if (s == "blood pact")          return CARD_BLOOD_PACT;
+    if (s == "blood_pact")          return CARD_BLOOD_PACT;
+    if (s == "brown-show-time")     return CARD_BROWN_SHOW_TIME;
+    if (s == "brown show time")     return CARD_BROWN_SHOW_TIME;
+    if (s == "brown_show_time")     return CARD_BROWN_SHOW_TIME;
+    if (s == "brown-moonshine")     return CARD_BROWN_MOONSHINE;
+    if (s == "brown moonshine")     return CARD_BROWN_MOONSHINE;
+    if (s == "brown_moonshine")     return CARD_BROWN_MOONSHINE;
+    if (s == "showdown")            return CARD_SHOWNDOWN;
+    if (s == "hatchet")             return CARD_HATCHET;
+    if (s == "reward")              return CARD_REWARD;
+    if (s == "gamble")              return CARD_GAMBLE;
+    if (s == "walker")              return CARD_WALKER;
+    if (s == "pack-mule")           return CARD_PACK_MULE;
+    if (s == "pack_mule")           return CARD_PACK_MULE;
+    if (s == "pack mule")           return CARD_PACK_MULE;
+    if (s == "bulldog-1")           return CARD_BULLDOG_1;
+    if (s == "bulldog 1")           return CARD_BULLDOG_1;
+    if (s == "bulldog_1")           return CARD_BULLDOG_1;
+    if (s == "ricochet")            return CARD_RICOCHET;
+    if (s == "hill-top")            return CARD_HILL_TOP;
+    if (s == "hill top")            return CARD_HILL_TOP;
+    if (s == "hill_top")            return CARD_HILL_TOP;
+     
     return CARD_UNKNOWN; 
 } 
 
@@ -491,6 +544,30 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_UNDEFENSABLE:    return "undefensible bang";
         case CARD_THIEF:           return "thief";
         case CARD_STUNNING_BANG:   return "stunning bang";
+        //Cusp of carabelli
+        case CARD_GREEN_FUR_TRADE: return "green fur trade";
+        case CARD_WAR_PARTY:       return "war party";
+        case CARD_PLUNDER:         return "plunder";
+        case CARD_BAR_FIGHT:       return "bar fight";
+        case CARD_PILFER:          return "pilfer";
+        case CARD_ROULETTE:        return "roulette";
+        case CARD_GREEN_ON_THE_HOUSE: return "green on the house";
+        case CARD_BROWN_MOLOTOV_COCKTAIL: return "brown molotov cocktail";
+        case CARD_BROWN_INVESTMENT:return "brown investment";
+        case CARD_BROWN_LOAN:      return "brown loan";
+        case CARD_ROB_GRAVE:       return "rob grave";
+        case CARD_BLOOD_PACT:      return "blood pact";
+        case CARD_BROWN_SHOW_TIME: return "brown show time";
+        case CARD_BROWN_MOONSHINE: return "brown moonshine";
+        case CARD_SHOWNDOWN:       return "showdown";
+        case CARD_HATCHET:         return "hatchet";
+        case CARD_REWARD:          return "reward";
+        case CARD_GAMBLE:          return "gamble";
+        case CARD_WALKER:          return "walker";
+        case CARD_PACK_MULE:       return "pack mule";
+        case CARD_BULLDOG_1:       return "bulldog 1";
+        case CARD_RICOCHET:        return "ricochet";
+        case CARD_HILL_TOP:        return "hill top";
 
         //Unknown
         case CARD_UNKNOWN:        return "";

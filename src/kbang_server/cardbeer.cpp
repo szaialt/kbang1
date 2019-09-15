@@ -22,10 +22,10 @@ CardBeer::CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRan
         setType(CARD_MEDICINES);
         break;
     default:
-        NOT_REACHED();
+        setType(CARD_UNKNOWN);
+        break;
     }
 }
-
 
 CardBeer::~CardBeer()
 {
@@ -34,6 +34,7 @@ CardBeer::~CardBeer()
 CardColor CardBeer::color(){
     //Why does it belive that CARD_MEDICINES is brown?
     if (type() == CARD_MEDICINES) return COLOR_POSITIVE_GREY;
+    if (type() == CARD_GREEN_ON_THE_HOUSE) return COLOR_GREEN;
     else return COLOR_BROWN;
 }
 
@@ -42,7 +43,6 @@ void CardBeer::play()
       qDebug() << "CardBeer: pocket " << pocketTypeToString(pocket());
       qDebug() << "CardBeer: type " << playingCardTypeToString(type());
       gameCycle()->assertTurn();
-      
       if (type() != CARD_MEDICINES){
          assertInHand();
       }
@@ -72,7 +72,7 @@ void CardBeer::play()
       else if (type() == CARD_MEDICINES) {
            playAsGreenCard();
       }
-      
+    
 }
 
 void CardBeer::takeGreenCardEffect(){

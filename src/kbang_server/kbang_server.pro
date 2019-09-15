@@ -79,6 +79,9 @@ HEADERS += \
     cardmorphine.h \
     cardweakness.h \
     cardshock.h \
+    cardreward.h \
+    cardpackmule.h \
+    cardgamble.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -193,6 +196,9 @@ SOURCES += \
     cardheadache.cpp \
     cardweakness.cpp \
     cardshock.cpp \
+    cardreward.cpp \
+    cardpackmule.cpp \
+    cardgamble.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \

@@ -41,7 +41,6 @@ public:
     Player* theSheriff();
     void start();
 
-
     /* Methods accessible from DRAW phase */
 
     /** The current player will <emph>draw</emph> cards. By default
@@ -55,6 +54,7 @@ public:
      */
     void draw(Player* player, bool specialDraw = 0);
 
+    void noDraw();
     void skipPlayersTurn();
 
     void finishTurn(Player* player);
@@ -109,6 +109,7 @@ private:
     bool    m_needsFinishTurn;
     bool    m_duplicateTurn;
     bool    m_deflectionFlag;
+    bool    m_draw;
 private:
     void    sendRequest();
     void    checkPlayerAndState(Player* player, GamePlayState state);

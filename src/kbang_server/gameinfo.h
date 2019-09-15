@@ -45,6 +45,11 @@ public:
     inline bool      directorsCutsCharactersFlag()            const { return m_directorsCutsCharactersFlag; }
     inline bool      martinCityFlag()            const { return m_martinCityFlag; }
     inline bool      martinCityCharactersFlag()            const { return m_martinCityCharactersFlag; }
+    inline bool      cuspOfCarabelliFlag()            const { return m_cuspOfCarabelliFlag; }
+    inline bool      cuspOfCarabelliCharactersFlag()            const { return m_cuspOfCarabelliCharactersFlag; }
+    
+    inline bool      robberRoostFlag()            const { return m_robberRoostFlag; }
+    inline bool      robberRoostCharactersFlag()            const { return m_robberRoostCharactersFlag; }
     
     inline int      aiLevel()             const { return m_aiLevel; }
     
@@ -91,6 +96,10 @@ private:
      bool m_directorsCutsCharactersFlag;
      bool m_martinCityFlag;
      bool m_martinCityCharactersFlag;
+     bool m_cuspOfCarabelliFlag;
+     bool m_cuspOfCarabelliCharactersFlag;
+     bool m_robberRoostFlag;
+     bool m_robberRoostCharactersFlag;
      int m_aiLevel;
 
 };

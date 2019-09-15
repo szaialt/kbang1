@@ -24,6 +24,10 @@ GameInfo::GameInfo(const CreateGameData& createGameData):
       m_directorsCutsCharactersFlag(createGameData.directorsCutsCharactersFlag),
       m_martinCityFlag(createGameData.martinCityFlag),
       m_martinCityCharactersFlag(createGameData.martinCityCharactersFlag),
+      m_cuspOfCarabelliFlag(createGameData.cuspOfCarabelliFlag),
+      m_cuspOfCarabelliCharactersFlag(createGameData.cuspOfCarabelliCharactersFlag),
+      m_robberRoostFlag(createGameData.robberRoostFlag),
+      m_robberRoostCharactersFlag(createGameData.robberRoostCharactersFlag),
       m_aiLevel(createGameData.aiLevel)
 {
     

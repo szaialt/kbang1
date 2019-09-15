@@ -259,12 +259,23 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_ANTONY_CARMA);
         sm_characterTypes.append(CHARACTER_JONATH_HEXX);
         
-        
-        
-
     }
     else {
         qDebug() << "No martinCityCharactersFlag.";
+    }
+
+    if (game->gameInfo().cuspOfCarabelliCharactersFlag()){
+        qDebug() << "cuspOfCarabelliCharactersFlag.";
+    }
+    else {
+        qDebug() << "No cuspOfCarabelliCharactersFlag.";
+    }
+    
+    if (game->gameInfo().cuspOfCarabelliCharactersFlag()){
+        qDebug() << "robberRoostCharactersFlag.";
+    }
+    else {
+        qDebug() << "No robberRoostCharactersFlag.";
     }
 
 }

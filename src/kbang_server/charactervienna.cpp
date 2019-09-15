@@ -17,7 +17,7 @@ void CharacterVienna::useAbility(QList<PlayingCard*> cards, Player* targetPlayer
     else {
         PlayingCard* targetCard = cards.at(0);
         if (targetCard->color() == COLOR_BROWN){
-            CardDuel* duel = new CardDuel(mp_player->game(), 0, targetCard->suit(), targetCard->rank());
+            CardDuel* duel = new CardDuel(mp_player->game(), 0, CardDuel::Duel, targetCard->suit(), targetCard->rank());
             duel->setVirtual(targetCard);
             duel->play(targetPlayer);
             notifyAbilityUse();

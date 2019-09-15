@@ -17,7 +17,11 @@ public:
         MadMilk,
         Elixir,
         FirstAidKit,
-        Medicines
+        Medicines,
+        BrownMolotovCocktail,
+        BloodPackt,
+        BrownMoonshine,
+        CardGreenOntheHouse
     }; 
     
     CardBeer(Game* game, int id, BeerType type, CardSuit cardSuit, CardRank cardRank);

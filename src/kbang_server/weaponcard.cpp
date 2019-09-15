@@ -25,6 +25,7 @@
 #include "characterbase.h"
 #include "cardbang.h"
 #include "cardteamfortressbang.h"
+#include "cardmultishoot.h"
 
 WeaponCard::WeaponCard(Game *game, int id, WeaponType type, CardSuit suit, CardRank rank):
         PlayingCard(game, id, CARD_UNKNOWN, suit, rank)
@@ -68,6 +69,14 @@ WeaponCard::WeaponCard(Game *game, int id, WeaponType type, CardSuit suit, CardR
         break;
     case Shotgun:
         setType(CARD_SHOTGUN);
+        m_range = 1;
+        break;
+     case Walker:
+        setType(CARD_WALKER);
+        m_range = 1;
+        break;
+    case Bulldog1:
+        setType(CARD_BULLDOG_1);
         m_range = 1;
         break;
     }
@@ -166,6 +175,14 @@ void WeaponCard::play(PlayingCard* targetCard, Player* targetPlayer){
             CardBang* healing = new CardTeamFortressBang(owner()->game(), 0, CardBang::HealingBang, targetCard->suit(), targetCard->rank());
             healing->setVirtual(targetCard);
             healing->play(targetPlayer);
+        }
+        else throw BadUsageException();
+    }
+    else if (type () == CARD_BULLDOG_1){
+        if (targetCard->type() == CARD_BANG){
+            CardMultiShoot* gatling = new CardMultiShoot(owner()->game(), 0, CardMultiShoot::Gatling, targetCard->suit(), targetCard->rank());
+            gatling->setVirtual(targetCard);
+            gatling->play();
         }
         else throw BadUsageException();
     }

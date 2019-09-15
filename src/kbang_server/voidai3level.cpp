@@ -5,6 +5,7 @@
 #include "cards.h"
 #include "util.h"
 #include "characterjourdonnais.h"
+#include "gametable.h"
 
 #include <QDebug>
 #include <QTimer>
@@ -68,6 +69,8 @@ void VoidAI3Level::requestWithAction()
                         case CARD_APPALOSSA:
                         case CARD_MUSTANG:
                         case CARD_VOLCANIC:
+                        case CARD_BULLDOG_1:
+                        case CARD_WALKER:
                         case CARD_SCHOFIELD:
                         case CARD_REMINGTON:
                         case CARD_CARABINE:
@@ -98,6 +101,10 @@ void VoidAI3Level::requestWithAction()
                         case CARD_COWBOY_POCKET:
                         case CARD_GOLD_WATCH:
                         case CARD_PRAYER:
+                        case CARD_HILL_TOP:
+                        case CARD_PACK_MULE:
+                        case CARD_ROB_GRAVE:
+
                         {
                             mp_playerCtrl->playCard(card);
                             return;
@@ -106,6 +113,7 @@ void VoidAI3Level::requestWithAction()
                         case CARD_GATLING:
                         case CARD_MANN_VS_MACHINE:
                         case CARD_KILLER:
+                        case CARD_BROWN_SHOW_TIME:
                         { 
                             try {
                              QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
@@ -250,13 +258,15 @@ void VoidAI3Level::requestWithAction()
                          case CARD_GUITAR:
                          case CARD_JARATE:
                          case CARD_SUN_GLARE:
-                         case CARD_HEADACHE:
+                         case CARD_HEADACHE: 
                          case CARD_SHOCK:
                          case CARD_WEAKNESS:
                          case CARD_INFLAMMATORY_BOTTLE:
                          case CARD_BLEEDING_INJURY:
                          case CARD_DIRTY_JOB:
                          case CARD_THUNDER:
+                         case CARD_SHOWNDOWN:
+                         case CARD_BROWN_MOLOTOV_COCKTAIL:
                          {
                              qDebug() << "Choosing target player";
                              QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
@@ -425,6 +435,7 @@ void VoidAI3Level::requestWithAction()
                       }
                              break;
                          case CARD_SUPPLY_CRATE:
+                         case CARD_BROWN_INVESTMENT:
                             {
                             try { 
                                 mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
@@ -485,9 +496,9 @@ void VoidAI3Level::requestWithAction()
                 qDebug() << "reactionHandler is NULL";
                 return;
             }
-            if (reactionHandler->reactionType() == REACTION_HEALING_BANG){
+            else if (reactionHandler->reactionType() == REACTION_HEALING_BANG){
                 qDebug() << "reactionHandler is REACTION_HEALING_BANG";
-                try {
+                try { 
                     mp_playerCtrl->pass();
                     return;
                    } catch (BadPlayerException e) {
@@ -498,7 +509,31 @@ void VoidAI3Level::requestWithAction()
                     }
                 return;
             }
-            if (mp_playerCtrl->publicGameView().selection().size() > 0) {
+            else if (reactionHandler->reactionType() == REACTION_GENERALSTORE)  {
+                QList<PlayingCard*> cards = mp_playerCtrl->publicGameView().selection();
+                if (cards.size() == 0) {
+                    try {
+                        mp_playerCtrl->pass();
+                        return;
+                    } catch (GameException& e) {
+                        qDebug("Pass exception:");
+                        e.debug();
+                        return;
+                    }
+                }
+                else {
+                    int index = rand() % cards.size();
+                    try {
+                        mp_playerCtrl->playCard(cards[index]);
+                        return;
+                    } catch(GameException& e) {
+                        qDebug() << QString("VoidAI (%1): Respond - selection: GameException").arg(m_id);
+                        e.debug();
+                        return;
+                    }
+                }
+            }
+            else if (mp_playerCtrl->publicGameView().selection().size() > 0) {
                 QList<PlayingCard*> cards = mp_playerCtrl->publicGameView().selection();
                 int index = rand() % cards.size();
                 try {

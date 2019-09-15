@@ -153,6 +153,16 @@ void GameInfoData::read(XmlNode* node)
      martinCityCharactersFlag = false;
      martinCityCharactersFlag      = (node->attribute("martinCityCharactersFlag")) == "true";
      
+     cuspOfCarabelliFlag = false;
+     cuspOfCarabelliFlag      = (node->attribute("cuspOfCarabelliFlag")) == "true";
+     cuspOfCarabelliCharactersFlag = false;
+     cuspOfCarabelliCharactersFlag      = (node->attribute("cuspOfCarabelliCharactersFlag")) == "true";
+     
+     robberRoostFlag = false;
+     robberRoostFlag      = (node->attribute("robberRoostFlag")) == "true";
+     robberRoostCharactersFlag = false;
+     robberRoostCharactersFlag      = (node->attribute("robberRoostCharactersFlag")) == "true";
+     
     players.clear();
     foreach(XmlNode* child, node->getChildren()) {
         PlayerInfoData playerInfo;
@@ -186,14 +196,21 @@ void GameInfoData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("ourFlag",              ourFlag ? "true" : "false");
       writer->writeAttribute("stackingDynamiteFlag",        stackingDynamiteFlag ? "true" : "false");
       writer->writeAttribute("teamFortressCharactersFlag",        teamFortressCharactersFlag ? "true" : "false");
+      writer->writeAttribute("aiLevel", QString::number(aiLevel));
       writer->writeAttribute("directorsCutsFlag",        directorsCutsFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsCharactersFlag",        directorsCutsCharactersFlag ? "true" : "false");
       
       writer->writeAttribute("martinCityFlag",        martinCityFlag ? "true" : "false");
       writer->writeAttribute("martinCityCharactersFlag",        martinCityCharactersFlag ? "true" : "false");
       
+      writer->writeAttribute("cuspOfCarabelliFlag",        cuspOfCarabelliFlag ? "true" : "false");
+      writer->writeAttribute("cuspOfCarabelliCharactersFlag",        cuspOfCarabelliCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("robberRoostFlag",        robberRoostFlag ? "true" : "false");
+      writer->writeAttribute("robberRoostCharactersFlag",        robberRoostCharactersFlag ? "true" : "false");
+      
     writer->writeAttribute("state",                 gameStateToString(state));
-    writer->writeAttribute("aiLevel", QString::number(aiLevel));
+    
     foreach(const PlayerInfoData& playerInfo, players) {
         playerInfo.write(writer);
     }
@@ -269,6 +286,7 @@ void CreateGameData::read(XmlNode* node)
      stackingDynamiteFlag = (node->attribute("stackingDynamiteFlag")) == "true";
      teamFortressCharactersFlag = false;
      teamFortressCharactersFlag      = (node->attribute("teamFortressCharactersFlag")) == "true";
+     aiLevel   = node->attribute("aiLevel").toInt();
      directorsCutsFlag = false;
      directorsCutsFlag      = (node->attribute("directorsCutsFlag")) == "true";
      directorsCutsCharactersFlag = false;
@@ -277,7 +295,19 @@ void CreateGameData::read(XmlNode* node)
      martinCityFlag      = (node->attribute("martinCityFlag")) == "true";
      martinCityCharactersFlag = false;
      martinCityCharactersFlag      = (node->attribute("martinCityCharactersFlag")) == "true";
-     aiLevel   = node->attribute("aiLevel").toInt();
+     
+     cuspOfCarabelliFlag = false;
+     cuspOfCarabelliFlag      = (node->attribute("cuspOfCarabelliFlag")) == "true";
+     cuspOfCarabelliCharactersFlag = false;
+     cuspOfCarabelliCharactersFlag      = (node->attribute("cuspOfCarabelliCharactersFlag")) == "true";
+     
+     robberRoostFlag = false;
+     robberRoostFlag      = (node->attribute("robberRoostFlag")) == "true";
+     robberRoostCharactersFlag = false;
+     robberRoostCharactersFlag      = (node->attribute("robberRoostCharactersFlag")) == "true";
+     
+     
+     
      playerPassword      = node->attribute("playerPassword");
      spectatorPassword   = node->attribute("spectatorPassword");
 }
@@ -301,11 +331,19 @@ void CreateGameData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("ourFlag",              ourFlag ? "true" : "false");
       writer->writeAttribute("stackingDynamiteFlag",        stackingDynamiteFlag ? "true" : "false");
       writer->writeAttribute("teamFortressCharactersFlag",        teamFortressCharactersFlag ? "true" : "false");
+      writer->writeAttribute("aiLevel", QString::number(aiLevel));
+      
       writer->writeAttribute("directorsCutsFlag",        directorsCutsFlag ? "true" : "false");
       writer->writeAttribute("directorsCutsCharactersFlag",        directorsCutsCharactersFlag ? "true" : "false");
       writer->writeAttribute("martinCityFlag",        martinCityFlag ? "true" : "false");
       writer->writeAttribute("martinCityCharactersFlag",        martinCityCharactersFlag ? "true" : "false");
-      writer->writeAttribute("aiLevel", QString::number(aiLevel));
+      
+       writer->writeAttribute("cuspOfCarabelliFlag",        cuspOfCarabelliFlag ? "true" : "false");
+      writer->writeAttribute("cuspOfCarabelliCharactersFlag",        cuspOfCarabelliCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("robberRoostFlag",        robberRoostFlag ? "true" : "false");
+      writer->writeAttribute("robberRoostCharactersFlag",        robberRoostCharactersFlag ? "true" : "false");
+      
      if (!playerPassword.isNull())
          writer->writeAttribute("playerPassword",        playerPassword);
      if (!spectatorPassword.isNull())

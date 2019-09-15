@@ -50,6 +50,8 @@ bool PlayingCard::isWeapon(){
     if (m_type == CARD_MEDI_GUN) return true;
     if (m_type == CARD_SANDMAN) return true;
     if (m_type == CARD_SHOTGUN) return true;
+    if (m_type == CARD_WALKER) return true;
+    if (m_type == CARD_BULLDOG_1) return true;
     return false;
 }
 

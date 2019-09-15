@@ -57,5 +57,7 @@
 #include "cardheadache.h"
 #include "cardshock.h"
 #include "cardweakness.h"
-
+#include "cardreward.h"
+#include "cardpackmule.h"
+#include "cardgamble.h"
 #endif

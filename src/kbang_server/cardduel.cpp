@@ -6,9 +6,17 @@
 #include "gameexceptions.h"
 #include <iostream>
 
-CardDuel::CardDuel(Game* game, int id, CardSuit cardSuit, CardRank cardRank):
+CardDuel::CardDuel(Game* game, int id, Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_DUEL, cardSuit, cardRank)
 {
+    switch(type) {
+    case Duel:
+        setType(CARD_DUEL);
+        break;
+    case Showdown:
+        setType(CARD_SHOWNDOWN);
+        break;
+    }
 }
 
 CardDuel::~CardDuel()
@@ -40,7 +48,12 @@ void CardDuel::respondPass()
 {
     game()->gameCycle().unsetResponseMode();
     gameTable()->playerPass(mp_requestedPlayer);
-    mp_requestedPlayer->modifyLifePoints(-1, mp_initialPlayer);
+    if (type() == CARD_DUEL){
+        mp_requestedPlayer->modifyLifePoints(-1, mp_initialPlayer);
+    }
+    else {
+        mp_requestedPlayer->modifyLifePoints(-2, mp_initialPlayer);
+    }
     gameCycle()->setCardEffect(0);
 }
 

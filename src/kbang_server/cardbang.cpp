@@ -142,7 +142,7 @@ void CardBang::shot(Player *targetPlayer){
         }
         QList<PlayingCard*> table2 = mp_attackingPlayer->table();
         foreach (PlayingCard* card, table2){
-            if (card->type() == CARD_SHOTGUN){
+            if ((card->type() == CARD_SHOTGUN) || (card->type() == CARD_WALKER)){
                 m_missedLeft = 2;
             }
         }

@@ -76,6 +76,7 @@ public:
     void drawHandIntoSelection(Player* selectionOwner);
     
     void drawGraveyardIntoSelection(Player* selectionOwner);
+    void drawGraveyardIntoSelection(int count);
     /**
      * The player picks a card from selection.
      */

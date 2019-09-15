@@ -12,7 +12,8 @@ public:
     enum HorseType {
         Mustang,
         Appaloosa,
-        PackingMule
+        PackingMule,
+        HillTop
     };
 
     CardHorse(Game *game, int id, HorseType, CardSuit, CardRank);

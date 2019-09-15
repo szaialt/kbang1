@@ -103,6 +103,10 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.directorsCutsCharactersFlag = checkDirectorsCutsCharacters->isChecked();
      createGameData.martinCityFlag = checkMartinCity->isChecked();
      createGameData.martinCityCharactersFlag = checkMartinCityCharacters->isChecked();
+     createGameData.cuspOfCarabelliFlag = checkCuspOfCarabelli->isChecked();
+     createGameData.cuspOfCarabelliCharactersFlag = checkCuspOfCarabelliCharacters->isChecked();
+     createGameData.robberRoostFlag = checkRobberRoost->isChecked();
+     createGameData.robberRoostCharactersFlag = checkRobberRoostCharacters->isChecked();
      
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
@@ -198,6 +202,28 @@ void CreateGameDialog::loadConfigValues()
      else
          checkMartinCityCharacters->setChecked(0);
      
+     bool cuspOfCarabelliFlag  = cfg.readInt(grp, "cuspOfCarabelliFlag");
+     if (cuspOfCarabelliFlag)
+         checkCuspOfCarabelli->setChecked(1);
+     else
+         checkCuspOfCarabelli->setChecked(0);
+     bool cuspOfCarabelliCharactersFlag  = cfg.readInt(grp, "cuspOfCarabelliCharactersFlag");
+     if (cuspOfCarabelliCharactersFlag)
+         checkCuspOfCarabelliCharacters->setChecked(1);
+     else
+         checkCuspOfCarabelliCharacters->setChecked(0);
+     
+     bool robberRoostFlag  = cfg.readInt(grp, "robberRoostFlag");
+     if (robberRoostFlag)
+         checkRobberRoost->setChecked(1);
+     else
+         checkRobberRoost->setChecked(0);
+     bool robberRoostCharactersFlag  = cfg.readInt(grp, "robberRoostCharactersFlag");
+     if (robberRoostCharactersFlag)
+         checkRobberRoostCharacters->setChecked(1);
+     else
+         checkRobberRoostCharacters->setChecked(0);
+     
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));
     selectPlayerIconWidget->setImageFileName(cfg.readString("player", "image"));
@@ -222,8 +248,18 @@ void CreateGameDialog::saveConfigValues(const CreateGameData& game)
      cfg.writeInt(grp, "ourFlag", game.ourFlag); 
      cfg.writeInt(grp, "dodgeCityFlag", game.dodgeCityFlag);
      cfg.writeInt(grp, "teamFortressFlag", game.teamFortressFlag); 
-     cfg.writeInt(grp, "stackingDynamiteFlag", game.stackingDynamiteFlag);
     cfg.writeInt(grp, "teamFortressCharactersFlag", game.teamFortressCharactersFlag); 
+
+    cfg.writeInt(grp, "martinCityFlag", game.martinCityFlag); 
+    cfg.writeInt(grp, "martinCityCharactersFlag", game.martinCityCharactersFlag); 
+    
+    cfg.writeInt(grp, "cuspOfCarabelliFlag", game.cuspOfCarabelliFlag); 
+    cfg.writeInt(grp, "cuspOfCarabelliCharactersFlag", game.cuspOfCarabelliCharactersFlag); 
+    
+    cfg.writeInt(grp, "robberRoostFlag", game.robberRoostFlag); 
+    cfg.writeInt(grp, "robberRoostharactersFlag", game.robberRoostCharactersFlag); 
+    
+    cfg.writeInt(grp, "stackingDynamiteFlag", game.stackingDynamiteFlag);
     cfg.writeString("player", "name", lineEditPlayerName->text());
     cfg.writeString("player", "password", lineEditPlayerPassword->text());
     cfg.writeString("player", "image", selectPlayerIconWidget->imageFileName());

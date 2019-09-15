@@ -9,7 +9,8 @@ class CardDuel : public ReactionCard
 {
 Q_OBJECT;
 public:
-    CardDuel(Game* game, int id, CardSuit, CardRank);
+    enum Type {Duel, Showdown};
+    CardDuel(Game* game, int id, Type type, CardSuit, CardRank);
     ~CardDuel();
     virtual void play(Player* targetPlayer);
 
@@ -24,6 +25,8 @@ private:
     Player* mp_initialPlayer;
     Player* mp_shootingPlayer;
     Player* mp_requestedPlayer;
+    
+    Type m_type;
 };
 
 

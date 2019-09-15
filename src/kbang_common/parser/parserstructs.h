@@ -73,6 +73,10 @@ struct GameInfoData
      bool directorsCutsCharactersFlag;
      bool martinCityFlag;
      bool martinCityCharactersFlag;
+     bool cuspOfCarabelliFlag;
+     bool cuspOfCarabelliCharactersFlag;
+     bool robberRoostFlag;
+     bool robberRoostCharactersFlag;
      int aiLevel;
 
 };
@@ -111,6 +115,10 @@ struct CreateGameData
       bool directorsCutsCharactersFlag;
       bool martinCityFlag;
       bool martinCityCharactersFlag;
+      bool cuspOfCarabelliFlag;
+      bool cuspOfCarabelliCharactersFlag;
+      bool robberRoostFlag;
+      bool robberRoostCharactersFlag;
     void read(XmlNode*);
     void write(QXmlStreamWriter*) const;
     static QString elementName; 

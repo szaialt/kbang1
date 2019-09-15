@@ -19,6 +19,9 @@ CardHorse::CardHorse(Game *game, int id, CardHorse::HorseType horseType, CardSui
     case PackingMule:
         setType(CARD_PACKING_MULE);
         break;
+    case HillTop:
+        setType(CARD_HILL_TOP);
+        break;
     }
 }
 
@@ -72,6 +75,9 @@ void CardHorse::registerPlayer(Player* player)
     case Appaloosa:
         player->modifyDistanceOut(1);
         break;
+    case HillTop:
+        player->modifyDistanceIn(2);
+        break;
     default:
         break;
     }
@@ -85,6 +91,9 @@ void CardHorse::unregisterPlayer(Player* player)
         break;
     case Appaloosa:
         player->modifyDistanceOut(-1);
+        break;
+    case HillTop:
+        player->modifyDistanceIn(-2);
         break;
     default:
         break;

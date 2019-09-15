@@ -102,7 +102,7 @@ bool GameActionManager::isCombined(CardWidget* cardWidget){
     if (cardWidget->cardData().type == CARD_SUN_GLARE) return false;
     if (cardWidget->cardData().type == CARD_BLEEDING_INJURY) return false;
     if (cardWidget->cardData().type == CARD_INFLAMMATORY_BOTTLE) return false;
-    //if (cardWidget->cardData().type == ) return false;
+    if (cardWidget->cardData().type == CARD_GAMBLE) return false;
     if (cardWidget->cardData().type == CARD_ADRENALINE) return false;
     if (cardWidget->cardData().type == CARD_MEDICINES) return false;
     if (cardWidget->cardData().type == CARD_SHOCK) return false;
@@ -172,12 +172,28 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_ELIXIR:
         case CARD_SHOCK:
         case CARD_WEAKNESS:
+        case CARD_REWARD:
+        case CARD_BLOOD_PACT:
+        case CARD_SHOWNDOWN:
                 selectPlayer(cardWidget);
                 break; 
+        //Play it to table or choose a card (green)
+        case CARD_PILFER:
+        case CARD_GREEN_FUR_TRADE:
+        case CARD_GREEN_ON_THE_HOUSE:
+             if ((cardWidget->cardData().isAct) && (cardWidget->cardData().pocket == POCKET_TABLE)){
+                 selectCards(cardWidget, 1);
+             
+             }
+             else if (cardWidget->cardData().pocket == POCKET_HAND){
+                mp_game->serverConnection()->playCard(cardWidget->cardData().id);
+             }
+             break;
         //Play it to table or choose two cards (blue)
         case CARD_PERSUASION:
         case CARD_MEDI_GUN:
         case CARD_STUNNING:
+        case CARD_BULLDOG_1:
             if (cardWidget->cardData().pocket == POCKET_TABLE){
                  selectCards(cardWidget, 2);
              }
@@ -189,6 +205,8 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_PANIC:
         case CARD_CATBALOU:
         case CARD_SUPPLY_CRATE:
+        case CARD_BROWN_INVESTMENT:
+        case CARD_BROWN_MOONSHINE:
                 selectCards(cardWidget, 1);
                 break;
         case CARD_ARSON:
@@ -196,6 +214,16 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_THUNDER:
                 selectCards(cardWidget, 2);
                 break;
+        case CARD_PLUNDER:
+        case CARD_BAR_FIGHT:
+             if ((cardWidget->cardData().isAct) && (cardWidget->cardData().pocket == POCKET_TABLE)){
+                 selectCards(cardWidget, 2);
+             
+             }
+             else if (cardWidget->cardData().pocket == POCKET_HAND){
+                mp_game->serverConnection()->playCard(cardWidget->cardData().id);
+             }
+             break;
         default:
             if (cardWidget->cardData().type == CARD_MISSED &&
                 mp_game->character() == CHARACTER_CALAMITY_JANET) {
@@ -345,7 +373,10 @@ void GameActionManager::playWithCards()
         if ((mp_activeCard->pocketType() == POCKET_HAND) && (needsAnotherCardToUse(mp_activeCard->cardData()))){
             //Needs to be played from hand with an another card
             mp_game->serverConnection()->playCardWithCard(mp_activeCard->cardData().id, card->cardData().id);
-            
+        }
+        else if ((mp_activeCard->pocketType() == POCKET_TABLE) && (needsAnotherCardToUse(mp_activeCard->cardData())) && (mp_activeCard->cardData().isAct)){
+            //Needs to be played from table with an another card
+            mp_game->serverConnection()->playCardWithCard(mp_activeCard->cardData().id, card->cardData().id);
         }
         else if ((card->pocketType() == POCKET_TABLE) && (needsTarget(mp_activeCard->cardData()) && (mp_activeCard->cardData().isAct))) {
              //Needs to be played from table with an another card
@@ -428,6 +459,9 @@ bool GameActionManager::needsTarget(const CardData card){
         case CARD_ELIXIR:
         case CARD_SHOCK:
         case CARD_WEAKNESS:
+        case CARD_BLOOD_PACT:
+        case CARD_PILFER:
+        case CARD_GREEN_FUR_TRADE:
             return true;
         default:
             return false;
@@ -437,6 +471,9 @@ bool GameActionManager::needsTarget(const CardData card){
 bool GameActionManager::needsAnotherCardToUse(const CardData card){
     switch(card.type) {
     case CARD_SUPPLY_CRATE:
+    case CARD_BROWN_INVESTMENT:
+    case CARD_BROWN_MOONSHINE:
+    case CARD_GREEN_ON_THE_HOUSE:    
         return true;
     default:
         return false;

@@ -6,18 +6,24 @@
 class CardGeneralStore : public ReactionCard
 {
 public:
-    CardGeneralStore(Game* game, int id, CardSuit, CardRank);
+    enum Type {
+        GeneralStore,
+        RobGrave
+    };
+    CardGeneralStore(Game* game, int id, Type type, CardSuit, CardRank);
     ~CardGeneralStore();
     virtual void play();
+    virtual void respondPass();
     virtual void respondCard(PlayingCard* targetCard);
     virtual ReactionType reactionType() const { return REACTION_GENERALSTORE; }
     virtual Player* causedBy() const { return mp_firstPlayer; }
-
-private:
     void requestNext();
 
+private:
+    
     Player* mp_firstPlayer;
     Player* mp_currentPlayer;
+    Type m_type;
 
 };
 

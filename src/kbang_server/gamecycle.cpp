@@ -28,7 +28,8 @@ GameCycle::GameCycle(Game* game):
         m_isCardEffect(0),
         m_needsFinishTurn(false),
         m_duplicateTurn(false),
-        m_deflectionFlag(false)
+        m_deflectionFlag(false),
+        m_draw(true)
 {
 }
 
@@ -143,16 +144,24 @@ void GameCycle::draw(Player* player, bool specialDraw)
     checkPlayerAndState(player, GAMEPLAYSTATE_DRAW);
     player->predrawCheck(0);
     m_state = GAMEPLAYSTATE_TURN;
-    if (player->isCharmed()){
-        player->game()->gameTable().playerDrawFromDeck(player, 2, 0);
+    if (m_draw){
+        if (player->isCharmed()){
+            player->game()->gameTable().playerDrawFromDeck(player, 2, 0);
+        }
+        else {
+            player->character()->draw(specialDraw);
+        }
     }
     else {
-        player->character()->draw(specialDraw);
+        m_draw = true;
     }
     m_contextDirty = 1;
     sendRequest();
 }
 
+void GameCycle::noDraw(){
+    m_draw = false;
+}
 
 void GameCycle::skipPlayersTurn()
 {
@@ -671,6 +680,7 @@ int GameCycle::needDiscard(Player* player)
     }
     int limit = player->lifePoints();
     int handSize = player->handSize();
+    int muleLimit = 6;
     int muleSize = 4;
     int pocketSize = 2;
     if (player->characterType() == CHARACTER_BILLY_LONGLIFE){
@@ -678,6 +688,9 @@ int GameCycle::needDiscard(Player* player)
         limit = billy->cardKeeping();
     }
     foreach (PlayingCard* card, player->table()){
+        if (card->type() == CARD_PACK_MULE){
+            limit = muleLimit;
+        }
         if (card->type() == CARD_PACKING_MULE){
             limit = limit + muleSize;
         }

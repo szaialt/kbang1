@@ -16,7 +16,9 @@ public:
         AceUpYourSleeve,
         UnionPacific,
         Adrenaline,
-        GoldWatch
+        GoldWatch,
+        BrownInvestment,
+        BrownLoan
     };
     CardDrawCards(Game* game, int id, Type, CardSuit, CardRank);
     ~CardDrawCards();

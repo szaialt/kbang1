@@ -35,6 +35,14 @@ CardDrawCards::CardDrawCards(Game* game, int id, CardDrawCards::Type type, CardS
         setType(CARD_GOLD_WATCH);
         m_cardCount = 1;
         break;
+    case BrownInvestment:
+        setType(CARD_BROWN_INVESTMENT);
+        m_cardCount = 3;
+        break;
+    case BrownLoan:
+        setType(CARD_BROWN_LOAN);
+        m_cardCount = 2;
+        break;
     m_used = false;
     }
 }
@@ -68,7 +76,7 @@ void CardDrawCards::play()
             m_used = true;
         }
     }
-    else if (type() == CARD_SUPPLY_CRATE){
+    else if ((type() == CARD_SUPPLY_CRATE) || (type() == CARD_BROWN_INVESTMENT)) {
         throw BadUsageException();
     }
     else {
@@ -78,6 +86,9 @@ void CardDrawCards::play()
       //You need get the card played before CARD_ACE_UP_YOUR_SLEEVE
       if (type() == CARD_ACE_UP_YOUR_SLEEVE){
           gameTable()->playerDrawFromGraveyard(player);    
+      }
+      if (type() == CARD_BROWN_LOAN){
+          player->modifyLifePoints(-1, 0); 
       }
       gameTable()->playerPlayCard(this);
       //Otherwise, you draw from the deck, so you can play the card before
@@ -89,7 +100,7 @@ void CardDrawCards::play()
 }
 
 void CardDrawCards::play(PlayingCard* targetCard){
-    if (type() == CARD_SUPPLY_CRATE){
+    if ((type() == CARD_SUPPLY_CRATE) || (type() == CARD_BROWN_INVESTMENT)){
       if (targetCard->owner() != owner())
             throw BadUsageException();  
         if (targetCard->pocket() != POCKET_HAND)

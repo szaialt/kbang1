@@ -21,11 +21,14 @@ public:
         Poker,
         //Team Fortress
         ManVsMachine,
-        Arson
+        Arson,
+        BrownShowTime,
+        WarParty
     };
     CardMultiShoot(Game* game, int id, Type type, CardSuit, CardRank);
     virtual ~CardMultiShoot(){}
 
+    virtual CardColor color() const;
     virtual void play();
 
     virtual void respondPass();
