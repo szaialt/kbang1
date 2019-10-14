@@ -25,6 +25,10 @@ CardMultiShoot::CardMultiShoot(Game* game, int id, CardMultiShoot::Type type, Ca
     case WarParty:
         setType(CARD_WAR_PARTY);
         break;
+    case Roulette:
+        setType(CARD_ROULETTE);
+        break;
+        
     default:
         NOT_REACHED();
     }
@@ -34,13 +38,15 @@ CardMultiShoot::CardMultiShoot(Game* game, int id, CardMultiShoot::Type type, Ca
 CardColor CardMultiShoot::color() const{
     if (type() == CARD_WAR_PARTY)
         return COLOR_GREEN;
+    if (type() == CARD_ROULETTE)
+        return COLOR_GREEN;
     return COLOR_BROWN;
 }
 
 void CardMultiShoot::play()
 {
     gameCycle()->assertTurn();
-      if ((type() == CARD_WAR_PARTY) && (pocket() == POCKET_HAND)){
+      if ((color() == COLOR_GREEN) && (pocket() == POCKET_HAND)){
           playAsBlueCard();
           return;
       }
@@ -73,6 +79,7 @@ void CardMultiShoot::respondPass()
     }
     if (injure){
         mp_requestedPlayer->modifyLifePoints(-1, mp_shootingPlayer);
+        if (type() == CARD_ROULETTE) return;
     }
     if (m_playedNextDirection){
         requestNext();
@@ -92,6 +99,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             if (card->type() == CARD_PEACE_PIPE){
                 qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_PEACE_PIPE" << endl;
                 game()->gameCycle().unsetResponseMode();
+                
                 if (m_playedNextDirection){
                      requestNext();
                 }
@@ -292,14 +300,13 @@ ReactionType CardMultiShoot::reactionType() const
         return REACTION_INDIANS;
     if (type() == CARD_MANN_VS_MACHINE)
         return REACTION_INDIANS;
-    //else if (type() == CARD_GATLING) 
     return REACTION_GATLING;
 }
 
 void CardMultiShoot::requestNext()
 {
     mp_requestedPlayer = game()->nextPlayer(mp_requestedPlayer);
-    if (mp_requestedPlayer == mp_shootingPlayer) return;
+    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
     game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
 }
 
@@ -307,6 +314,6 @@ void CardMultiShoot::requestPrevious()
 {
     qDebug() << game()->previousPlayer(mp_requestedPlayer)->name();
     mp_requestedPlayer = game()->previousPlayer(mp_requestedPlayer);
-    if (mp_requestedPlayer == mp_shootingPlayer) return;
+    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
     game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
 }

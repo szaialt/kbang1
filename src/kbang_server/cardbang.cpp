@@ -62,6 +62,12 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Stunning:
         setType(CARD_STUNNING_BANG);
         break;
+    case Hatchet:
+        setType(CARD_HATCHET);
+        break;
+    case Ricochet:
+        setType(CARD_RICOCHET);
+        break;
     default:
             NOT_REACHED();
     }
@@ -72,29 +78,54 @@ CardBang::~CardBang()
 { 
 }
 
+CardColor CardBang::color() const{
+    if (type() == CARD_HATCHET) return COLOR_GREEN;
+    if (type() == CARD_RICOCHET) return COLOR_GREEN;
+    return COLOR_BROWN;
+}
+
+void CardBang::play(){
+    if ((color() == COLOR_GREEN) && (pocket() == POCKET_HAND)){
+        playAsBlueCard();
+    }
+    else {
+        throw BadUsageException();
+    } 
+
+}
+
 void CardBang::play(Player *targetPlayer)
 {
-    if (type() == CARD_DEFLECTION){
+    if ((type() == CARD_DEFLECTION) || (type() == CARD_RICOCHET)){
         controlTarget(targetPlayer);
         shot(targetPlayer);
+        return;
     }
     controlCard();
-    if (!((owner()->characterType() == CHARACTER_CORONEL_MORTIMER) && (suit() == SUIT_DIAMONDS) && (type() == CARD_BANG))){
-        controlTarget(targetPlayer);
-    }
-    if ((owner()->isCharmed())){
-        controlTarget(targetPlayer);
-    }
+    if ((color() == COLOR_BROWN) || ((pocket() == POCKET_TABLE) && isAct())){
+        if (!((owner()->characterType() == CHARACTER_CORONEL_MORTIMER) && (suit() == SUIT_DIAMONDS) && (type() == CARD_BANG))){
+            controlTarget(targetPlayer);
+        }
+        if ((owner()->isCharmed())){
+            controlTarget(targetPlayer);
+        }
     shot(targetPlayer);
+    }
 }
 
     void CardBang::controlCard(){
-            gameCycle()->assertTurn();
+        gameCycle()->assertTurn();
+        if (color() == COLOR_BROWN){
             assertInHand();
-
+        }
+        else {
+            assertOnTable();
+        }
         /* one-bang-per-turn check */
-        if ((!owner()->canPlayBang())){
-            throw OneBangPerTurnException();
+        if (color() == COLOR_BROWN){
+            if ((!owner()->canPlayBang())){
+                throw OneBangPerTurnException();
+            }
         }
     }
     
@@ -108,13 +139,20 @@ void CardBang::play(Player *targetPlayer)
             throw BadTargetPlayerException();
         }
         /* distance check */
-        if (game()->getDistance(owner(), targetPlayer) > owner()->weaponRange()){
-            throw PlayerOutOfRangeException();
-        }
         if (type() == CARD_DEFLECTION){
-            if (game()->getDistance(owner(), targetPlayer) > 1)
+            int deflectionDistance = 1;
+            if (game()->getDistance(owner(), targetPlayer) > deflectionDistance)
                 throw PlayerOutOfRangeException();
         }
+        else if (type() == CARD_HATCHET){
+            int hatchetDistance = 2;
+            if (game()->getDistance(owner(), targetPlayer) > hatchetDistance)
+                throw PlayerOutOfRangeException();
+        }
+        else if (game()->getDistance(owner(), targetPlayer) > owner()->weaponRange()){
+            throw PlayerOutOfRangeException();
+        }
+        
     }
     
 void CardBang::shot(Player *targetPlayer){
@@ -256,11 +294,17 @@ void CardBang::respondCard(PlayingCard* targetCard)
         missed();
         game()->gameCycle().setNeedsFinishTurn(true);
         return;
+    case CARD_RICOCHET:
     case CARD_DEFLECTION: {
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
         }
-        targetCard->assertInHand();
+        if (color() == COLOR_BROWN){
+            targetCard->assertInHand();
+        }
+        else {
+            targetCard->assertOnTable();
+        }
         game()->gameCycle().unsetResponseMode(); 
         game()->gameCycle().deflectionPlayed(); 
         missed();
@@ -270,10 +314,18 @@ void CardBang::respondCard(PlayingCard* targetCard)
             if (p == player) {
                 continue;
             }
-            if (game()->getDistance(player, p) == 1){
-                targetCard->play(p);
+            if (type() == CARD_DEFLECTION){
+                if (game()->getDistance(player, p) == 1){
+                    targetCard->play(p);
+                }
+                break;
             }
-            break;
+            else {
+                if (game()->getDistance(player, p) <= player->weaponRange()){
+                    targetCard->play(p);
+                }
+                break;
+            }
         }
         if (targetCard->pocket() == POCKET_GRAVEYARD){
             targetCard->setPocket(POCKET_HAND);

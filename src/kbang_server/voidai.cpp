@@ -141,6 +141,14 @@ void VoidAI::requestWithAction()
                         case CARD_GAMBLE:
                         case CARD_BROWN_SHOW_TIME:
                         case CARD_ROB_GRAVE:
+                        case CARD_GREEN_FUR_TRADE:
+                        case CARD_WAR_PARTY:
+                        case CARD_PLUNDER:
+                        case CARD_BAR_FIGHT:
+                        case CARD_PILFER:
+                        case CARD_GREEN_ON_THE_HOUSE:
+                        case CARD_HATCHET:
+                        case CARD_RICOCHET:
                         {
                             mp_playerCtrl->playCard(card);
                             return;
@@ -169,7 +177,7 @@ void VoidAI::requestWithAction()
                 }
             }
             foreach (PlayingCard* card, table) { 
-              if (/*(card->color() == COLOR_GREEN) && */card->isAct()){
+              if (card->isAct()){
                   try {
                     switch(card->type()) {
                       case CARD_MEDICINES:{ 
@@ -182,10 +190,86 @@ void VoidAI::requestWithAction()
                       break;
                       case CARD_ADRENALINE:
                       case CARD_GOLD_WATCH:
+                      case CARD_WAR_PARTY:
+                      case CARD_ROULETTE:
                       {
                         mp_playerCtrl->playCard(card);
                         break;
                       }
+                     case CARD_PLUNDER:
+                          {
+                        QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                        shuffleList(players);
+                        foreach(const PublicPlayerView* p, players) {
+                          if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                              continue;
+                          }
+                          QList<PlayingCard*> table3 = p->table();
+                          shuffleList(table3);
+                          try {
+                              foreach (PlayingCard* card3, p->table()) {
+                                 QList<PlayingCard*> cards;
+                                 cards.append(mp_playerCtrl->getRandomCardFromHand());
+                                 cards.append(card3);
+                                 mp_playerCtrl->playCard(card, cards);
+                                 return;
+                              }
+                          } catch (BadTargetPlayerException e) {
+                          qDebug() << "VoidAI: BadTargetPlayerException!";
+                          } catch (OneBangPerTurnException e) {
+                            qDebug() << "VoidAI: One bang per turn!";
+                          } catch(GameException& e) {
+                            qDebug() << "VoidAI: GameException";
+                          }
+                        }
+                      }
+                      break;
+                      case CARD_PILFER:
+                      case CARD_GREEN_FUR_TRADE: {
+                        QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                        shuffleList(players);
+                        foreach(const PublicPlayerView* p, players) {
+                          if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                              continue;
+                          }
+                          QList<PlayingCard*> table2 = p->table();
+                          shuffleList(table2);
+                          try {
+                              foreach (PlayingCard* card2, table2) {
+                                 mp_playerCtrl->playCard(card, card2);
+                                 return;
+                              }
+                          } catch (BadTargetPlayerException e) {
+                          qDebug() << "VoidAI: BadTargetPlayerException!";
+                          } catch (OneBangPerTurnException e) {
+                            qDebug() << "VoidAI: One bang per turn!";
+                          } catch(GameException& e) {
+                            qDebug() << "VoidAI: GameException";
+                          }
+                        }
+                      }
+                      break;
+                      case CARD_GREEN_ON_THE_HOUSE:
+                          {
+                            if (mp_playerCtrl->privatePlayerView().lifePoints() <
+                                    mp_playerCtrl->privatePlayerView().maxLifePoints()) {
+                                mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
+                                return;
+                                }
+                        }
+                          break;
+                      case CARD_HATCHET:
+                      case CARD_BAR_FIGHT:
+                          {
+                            QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                            foreach (PublicPlayerView* player, players){
+                                if (player->id() == mp_playerCtrl->privatePlayerView().id()){
+                                     mp_playerCtrl->playCard(card, player);
+                                     break;
+                                     }
+                                }
+                            }
+                            break;
                       default:
                       break;
                 } 
@@ -289,6 +373,7 @@ void VoidAI::requestWithAction()
                      e.debug();
                  }
              }
+             
             // Finish turn or discard random card
             try {
                 mp_playerCtrl->finishTurn();

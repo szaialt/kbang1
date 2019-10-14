@@ -23,7 +23,8 @@ public:
         ManVsMachine,
         Arson,
         BrownShowTime,
-        WarParty
+        WarParty,
+        Roulette
     };
     CardMultiShoot(Game* game, int id, Type type, CardSuit, CardRank);
     virtual ~CardMultiShoot(){}

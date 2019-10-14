@@ -209,7 +209,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardBang(game, id(), CardBang::IndianBang, SUIT_DIAMONDS, 7)); 
             
-            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 1)); 
+            list.append(new CardBang(game, id(), CardBang::Undefensable, SUIT_CLUBS, 14)); 
             
             list.append(new CardExplosion(game, id(), SUIT_SPADES, 12)); 
             
@@ -255,6 +255,7 @@ struct CardFactory::CardFactoryImp
         }
         
         if (game->gameInfo().cuspOfCarabelliFlag()){
+            
             list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_CLUBS, 11 ));
             
             list.append(new CardBeer(game, id(), CardBeer::Beer, SUIT_SPADES, 6));
@@ -283,9 +284,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new WeaponCard(game, id(), WeaponCard::Bulldog1, SUIT_SPADES,  9));
             
-            //list.append(new CardGamble(game, id(), SUIT_CLUBS, 12, 5));
+            list.append(new CardGamble(game, id(), SUIT_CLUBS, 12, 5));
             
-            //list.append(new CardGamble(game, id(), SUIT_CLUBS, 8, 4));
+            list.append(new CardGamble(game, id(), SUIT_CLUBS, 8, 4));
             
             list.append(new CardDuel(game, id(), CardDuel::Showdown, SUIT_DIAMONDS,    14));
             
@@ -302,7 +303,7 @@ struct CardFactory::CardFactoryImp
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::BrownShowTime, SUIT_SPADES,  11));
             
             list.append(new CardGeneralStore(game, id(), CardGeneralStore::RobGrave, SUIT_DIAMONDS, 10));
-            
+                        
             list.append(new CardTaker(game, id(), CardTaker::Pilfer, SUIT_HEARTS, 8 ));
             
             list.append(new CardTaker(game, id(), CardTaker::Pilfer, SUIT_DIAMONDS, 7 ));
@@ -317,24 +318,20 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
             
+            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
+            
+            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
+            
+            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_DIAMONDS, 12));
+            
+            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_HEARTS, 6));
+            
+            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_DIAMONDS, 13));
+            
+            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_HEARTS, 14));
             
             
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
-            list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
+            
         }
         
         if (game->gameInfo().robberRoostFlag()){

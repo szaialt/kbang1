@@ -177,10 +177,20 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_SHOWNDOWN:
                 selectPlayer(cardWidget);
                 break; 
+        //Play it to table or choose a player
+        case CARD_HATCHET:
+             if ((cardWidget->cardData().isAct) && (cardWidget->cardData().pocket == POCKET_TABLE)){
+                 selectPlayer(cardWidget);    
+            }
+            else if (cardWidget->cardData().pocket == POCKET_HAND){
+                mp_game->serverConnection()->playCard(cardWidget->cardData().id);
+             }
+             break;
         //Play it to table or choose a card (green)
         case CARD_PILFER:
         case CARD_GREEN_FUR_TRADE:
         case CARD_GREEN_ON_THE_HOUSE:
+        //case CARD_HATCHET:
              if ((cardWidget->cardData().isAct) && (cardWidget->cardData().pocket == POCKET_TABLE)){
                  selectCards(cardWidget, 1);
              
@@ -462,6 +472,7 @@ bool GameActionManager::needsTarget(const CardData card){
         case CARD_BLOOD_PACT:
         case CARD_PILFER:
         case CARD_GREEN_FUR_TRADE:
+        case CARD_HATCHET:
             return true;
         default:
             return false;

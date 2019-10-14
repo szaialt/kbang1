@@ -61,7 +61,35 @@ void VoidAI3Level::requestWithAction()
             break;
         case REQUEST_PLAY: {
             qDebug() << QString("VoidAI (%1): REQUEST_PLAY").arg(m_id);
+            // Try to use green cards:
             QList<PlayingCard*> table = mp_playerCtrl->privatePlayerView().table();
+            foreach (PlayingCard* card, table) {/*
+              if ((card->color() == COLOR_GREEN) && card->isAct()){
+                  try {
+                    switch(card->type()) {
+                      case CARD_GREEN_FUR_TRADE:
+                      case CARD_WAR_PARTY:
+                      case CARD_PLUNDER:
+                      case CARD_BAR_FIGHT:
+                      case CARD_PILFER:
+                      case CARD_GREEN_ON_THE_HOUSE:
+                      case CARD_HATCHET:
+                      case CARD_RICOCHET:
+                      {
+                        mp_playerCtrl->playCard(card);
+                        return;
+                        break;
+                      }
+                      default:
+                      break;
+                   }
+                }
+                catch (GameException& e)  {
+                    qDebug() << "VoidAI: (checkpoint #0)";
+                    e.debug();
+                }
+              }*/
+            }
             // Try to use blue cards:
             foreach (PlayingCard* card, hand) {
                 try {
@@ -104,6 +132,14 @@ void VoidAI3Level::requestWithAction()
                         case CARD_HILL_TOP:
                         case CARD_PACK_MULE:
                         case CARD_ROB_GRAVE:
+                        case CARD_GREEN_FUR_TRADE:
+                        case CARD_WAR_PARTY:
+                        case CARD_PLUNDER:
+                        case CARD_BAR_FIGHT:
+                        case CARD_PILFER:
+                        case CARD_GREEN_ON_THE_HOUSE:
+                        case CARD_HATCHET:
+                        case CARD_RICOCHET:
 
                         {
                             mp_playerCtrl->playCard(card);
@@ -238,10 +274,215 @@ void VoidAI3Level::requestWithAction()
                         mp_playerCtrl->playCard(card);
                         break;
                       }
+                      case CARD_WAR_PARTY:
+                      case CARD_ROULETTE:
+                      {
+                        try {
+                             QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                             
+                            if ((mp_playerCtrl->role() == ROLE_SHERIFF) && !inEndGame()){
+                                 qDebug() << "ROLE_SHERIFF";
+                                if (isDeputyLiving()){
+                                 continue;
+                                }
+                            }
+                            if (mp_playerCtrl->role() == ROLE_DEPUTY){
+                                if (sheriffOnMoreThanTwoLifePoints()){
+                                    PlayingCard* persuasion = 0;
+                                    foreach (persuasion, table){
+                                        if (persuasion->type() == CARD_PERSUASION)
+                                            break;
+                                    }
+                                    if (persuasion != 0){
+                                        foreach (PlayingCard* card2, hand){
+                                            if (card2->type() == CARD_BEER){
+                                                persuasion->play(card2, sheriff);
+                                                break;
+                                            }
+                                            if (card->type() == CARD_GATLING){
+                                                if (card2->type() == CARD_MISSED){
+                                                    persuasion->play( card2, sheriff);
+                                                    break;
+                                                }
+                                            }
+                                            else {
+                                                if (card2->type() == CARD_BANG){
+                                                    persuasion->play( card2, sheriff);
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    mp_playerCtrl->playCard(card);
+                                }
+                                else {
+                                    continue;
+                                }
+                            }
+                            if (mp_playerCtrl->role() == ROLE_RENEGADE)
+                            {
+                                if (!inEndGame()){
+                                  if (sheriffOnMoreThanTwoLifePoints()){
+                                    mp_playerCtrl->playCard(card);
+                                  }
+                                  else {
+                                    continue;
+                                  }
+                                }
+                                else {
+                                    mp_playerCtrl->playCard(card);
+                                }
+                            }
+                            else {
+                              mp_playerCtrl->playCard(card);
+                            }
+                            return; 
+                        }
+                        
+                        catch (BadPlayerException e) {
+                            qDebug() << "VoidAI: BadPlayerException!";
+                            return;
+                        } 
+                        catch (BadCardException e) {
+                            qDebug() << "VoidAI: BadCardException!";
+                        } 
+                        catch (BadUsageException e) {
+                            qDebug() << "VoidAI: BadUsageException!";
+                            continue;
+                        }
+                        break;
+                      }
+                     case CARD_PLUNDER:
+                          {
+                        QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                        shuffleList(players);
+                        foreach(const PublicPlayerView* p, players) {
+                          if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                              continue;
+                          }
+                          QList<PlayingCard*> table3 = p->table();
+                          shuffleList(table3);
+                          try {
+                              foreach (PlayingCard* card3, p->table()) {
+                                 QList<PlayingCard*> cards;
+                                 cards.append(mp_playerCtrl->getRandomCardFromHand());
+                                 cards.append(card3);
+                                 mp_playerCtrl->playCard(card, cards);
+                                 return;
+                              }
+                          } catch (BadTargetPlayerException e) {
+                          qDebug() << "VoidAI: BadTargetPlayerException!";
+                          } catch (OneBangPerTurnException e) {
+                            qDebug() << "VoidAI: One bang per turn!";
+                          } catch(GameException& e) {
+                            qDebug() << "VoidAI: GameException";
+                          }
+                        }
+                      }
+                      break;
+                      case CARD_PILFER:
+                      case CARD_GREEN_FUR_TRADE: {
+                        QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                        shuffleList(players);
+                        foreach(const PublicPlayerView* p, players) {
+                          if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                              continue;
+                          }
+                          QList<PlayingCard*> table2 = p->table();
+                          shuffleList(table2);
+                          try {
+                              foreach (PlayingCard* card2, table2) {
+                                 mp_playerCtrl->playCard(card, card2);
+                                 return;
+                              }
+                          } catch (BadTargetPlayerException e) {
+                          qDebug() << "VoidAI: BadTargetPlayerException!";
+                          } catch (OneBangPerTurnException e) {
+                            qDebug() << "VoidAI: One bang per turn!";
+                          } catch(GameException& e) {
+                            qDebug() << "VoidAI: GameException";
+                          }
+                        }
+                      }
+                      break;
+                      case CARD_GREEN_ON_THE_HOUSE:
+                          {
+                            if (mp_playerCtrl->privatePlayerView().lifePoints() <
+                                    mp_playerCtrl->privatePlayerView().maxLifePoints()) {
+                                mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
+                                return;
+                                }
+                        }
+                          break;
+                      case CARD_HATCHET:
+                      case CARD_BAR_FIGHT:
+                          {
+                             qDebug() << "Choosing target player";
+                             QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
+                             shuffleList(players);
+                             bool shoot = true;
+                             if ((mp_playerCtrl->role() == ROLE_SHERIFF) && !inEndGame()){
+                                 qDebug() << "ROLE_SHERIFF";
+                                if (isDeputyLiving()){
+                                 shoot = false;
+                                 continue;
+                                }
+                            }
+                             PublicPlayerView* p = 0;
+                             foreach(p, players) {
+                                 if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                                     continue;
+                                 }
+                                if (mp_playerCtrl->role() == ROLE_DEPUTY){
+                                    qDebug() << "ROLE_DEPUTY";
+                                    if (p != 0 && !(sheriff->publicView().id() == p->id()) && !(mp_playerCtrl->privatePlayerView().id() == p->id()) ){
+                                        break; 
+                                    }
+                                }
+                                if (mp_playerCtrl->role() == ROLE_RENEGADE){
+                                    qDebug() << "ROLE_RENEGADE";
+                                    if (p != 0 && !(sheriff->publicView().id() == p->id()) && !(mp_playerCtrl->privatePlayerView().id() == p->id())  && !inEndGame()){
+                                        break; 
+                                    }
+                                }
+                             }
+                             if (mp_playerCtrl->role() == ROLE_OUTLAW){
+                                 qDebug() << "ROLE_OUTLAW";
+                                 p = &sheriff->publicView();
+                            }
+                            try { 
+                                     if (!((mp_playerCtrl->role() == ROLE_SHERIFF) && (!shoot))){
+                                         if (p == 0){
+                                            continue;
+                                         }
+                                         if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
+                                            continue;
+                                         }
+                                         if (!p->isAlive()){
+                                           continue;
+                                         }
+                                       mp_playerCtrl->playCard(card, p);
+                                     return;
+                                     }
+                                 } catch (BadTargetPlayerException e) {
+                                     qDebug() << "VoidAI: BadTargetPlayerException!";
+                                 } catch (BadPlayerException e) {
+                                     qDebug() << "VoidAI: BadPlayerException!";
+                                 } catch (BadCardException e) {
+                                     qDebug() << "VoidAI: BadCardException!";
+                                 } catch (BadUsageException e) {
+                                     qDebug() << "VoidAI: BadUsageException!";
+                                 }   catch (OneBangPerTurnException e) {
+                                     qDebug() << "VoidAI: One bang per turn!";
+                                 } catch(GameException& e) {
+                                     qDebug() << "VoidAI: GameException";
+                                 }
+                             break;
+                         }
                       default:
                       break;
                 } 
-              }
+              } 
               catch (GameException& e)  {
                     qDebug() << "VoidAI: (checkpoint #0)";
                     e.debug();
