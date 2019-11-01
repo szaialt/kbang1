@@ -96,6 +96,8 @@ bool GameActionManager::isCombined(CardWidget* cardWidget){
     if (cardWidget->cardData().type == CARD_MEDI_GUN) return true;
     if (cardWidget->cardData().type == CARD_PERSUASION) return true;
     if (cardWidget->cardData().type == CARD_STUNNING) return true;
+    if (cardWidget->cardData().type == CARD_BULLDOG_2) return true;
+    if (cardWidget->cardData().type == CARD_JAMES_DOUGALL) return true;
     if (cardWidget->cardData().type == CARD_JAIL) return false;
     if (cardWidget->cardData().type == CARD_DYNAMITE) return false;
     if (cardWidget->cardData().type == CARD_TELEPORT) return false;
@@ -204,8 +206,17 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_MEDI_GUN:
         case CARD_STUNNING:
         case CARD_BULLDOG_1:
+        case CARD_BULLDOG_2:
             if (cardWidget->cardData().pocket == POCKET_TABLE){
                  selectCards(cardWidget, 2);
+             }
+             else if (cardWidget->cardData().pocket == POCKET_HAND){
+                mp_game->serverConnection()->playCard(cardWidget->cardData().id);
+             }
+             break;
+        case CARD_JAMES_DOUGALL:
+            if (cardWidget->cardData().pocket == POCKET_TABLE){
+                 selectCards(cardWidget, 3);
              }
              else if (cardWidget->cardData().pocket == POCKET_HAND){
                 mp_game->serverConnection()->playCard(cardWidget->cardData().id);
@@ -406,7 +417,7 @@ void GameActionManager::playWithCards()
         }
     } 
     else if (m_cardSelection.size() == 2) {
-        if ((mp_activeCard->cardData().type == CARD_ARSON)){
+        if (mp_activeCard->cardData().type == CARD_ARSON){
             //Cards that need two target players
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];
@@ -417,7 +428,7 @@ void GameActionManager::playWithCards()
             playerIds.push_back(targetId2);
             mp_game->serverConnection()->playCardWithPlayers(mp_activeCard->cardData().id, playerIds);
         }
-        else if ((mp_activeCard->cardData().type == CARD_THIEF)){
+        else if ((mp_activeCard->cardData().type == CARD_THIEF) || (mp_activeCard->cardData().type == CARD_BULLDOG_2)){
             //Cards that need two target cards
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];
@@ -434,6 +445,21 @@ void GameActionManager::playWithCards()
             CardWidget* card2 = m_cardSelection[1];
             mp_game->serverConnection()->playCardWithCardAndPlayer(mp_activeCard->cardData().id, card->cardData().id, card2->ownerId());
         }
+    }
+    else if (m_cardSelection.size() == 3) {
+        //CARD_JAMES_DOUGALL
+        //Cards that need three target cards
+        CardWidget* card = m_cardSelection[0];
+        CardWidget* card2 = m_cardSelection[1];
+        CardWidget* card3 = m_cardSelection[2];
+        int targetId1 = card->cardData().id;
+        int targetId2 = card2->cardData().id;
+        int targetId3 = card3->cardData().id;
+        QList<int> cardIds;
+        cardIds.push_back(targetId1);
+        cardIds.push_back(targetId2);
+        cardIds.push_back(targetId3);
+        mp_game->serverConnection()->playCardWithCards(mp_activeCard->cardData().id, cardIds);
     }
     else {
         NOT_REACHED();

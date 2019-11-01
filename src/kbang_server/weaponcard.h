@@ -53,7 +53,9 @@ public:
         Sandman,
         Remington,
         Carabine,
-        Winchester
+        Winchester,
+        Bulldog2,
+        JamesDougall
     }; 
     
     WeaponCard(Game *game, int id, WeaponType type, CardSuit, CardRank);
@@ -62,6 +64,7 @@ public:
     virtual void play();
     virtual void play(Player* targetPlayer);
     virtual void play(PlayingCard* targetCard, Player* targetPlayer); 
+    virtual void play(QList<PlayingCard*> targetCards);
     virtual CardColor color() const;
     virtual void registerPlayer(Player* player);
     virtual void unregisterPlayer(Player* player);

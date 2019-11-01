@@ -79,6 +79,14 @@ WeaponCard::WeaponCard(Game *game, int id, WeaponType type, CardSuit suit, CardR
         setType(CARD_BULLDOG_1);
         m_range = 1;
         break;
+    case Bulldog2:
+        setType(CARD_BULLDOG_2);
+        m_range = 2;
+        break;
+    case JamesDougall:
+        setType(CARD_JAMES_DOUGALL);
+        m_range = 2;
+        break;
     }
 }
 
@@ -185,6 +193,32 @@ void WeaponCard::play(PlayingCard* targetCard, Player* targetPlayer){
             gatling->play();
         }
         else throw BadUsageException();
+    }
+    else throw BadUsageException();
+}
+
+void WeaponCard::play(QList<PlayingCard*> targetCards){
+    if (targetCards.size() < 2) throw BadUsageException();
+    if (targetCards.at(0)->owner() != owner()) throw BadUsageException();
+    if (targetCards.at(0)->type() != CARD_BANG) throw BadUsageException();
+    if (targetCards.at(1)->owner() != owner()) throw BadUsageException();
+    if (type () == CARD_BULLDOG_2){
+        PlayingCard* targetCard = targetCards.at(0);
+        CardMultiShoot* gatling = new CardMultiShoot(owner()->game(), 0, CardMultiShoot::Gatling, targetCard->suit(), targetCard->rank());
+        gatling->setVirtual(targetCard);
+        gatling->play();
+       gameTable()->playerDiscardCard(targetCards.at(1));
+    }
+    else if (type () == CARD_JAMES_DOUGALL){
+         qDebug() << "CARD_JAMES_DOUGALL played";
+        if (targetCards.size() < 3) throw BadUsageException();
+        if (targetCards.at(2)->owner() == owner()) throw BadUsageException();
+        PlayingCard* targetCard = targetCards.at(0);
+        CardBang* heavy = new CardBang(owner()->game(), 0, CardBang::Heavy, targetCard->suit(), targetCard->rank());
+        heavy->setVirtual(targetCard);
+        heavy->play();
+        gameTable()->playerDiscardCard(targetCards.at(1));
+
     }
     else throw BadUsageException();
 }

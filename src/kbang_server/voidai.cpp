@@ -103,6 +103,8 @@ void VoidAI::requestWithAction()
                         case CARD_BULLDOG_1:
                         case CARD_WALKER:
                         case CARD_SCHOFIELD:
+                        case CARD_BULLDOG_2:
+                        case CARD_JAMES_DOUGALL:
                         case CARD_REMINGTON:
                         case CARD_CARABINE:
                         case CARD_WINCHESTER:

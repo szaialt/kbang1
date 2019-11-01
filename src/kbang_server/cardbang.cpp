@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************/
+ ***************************************************************************/ 
 #include "cardbang.h"
 #include "player.h"
 #include "gamecycle.h"
@@ -68,6 +68,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Ricochet:
         setType(CARD_RICOCHET);
         break;
+    //case DoublePower:
+      //  setType(CARD_DOUBLE_POWER_BANG);
+       // break;
     default:
             NOT_REACHED();
     }

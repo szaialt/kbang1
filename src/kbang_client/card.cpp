@@ -218,6 +218,40 @@ void Card::loadDefaultRuleset()
     new Card("Bulldog 1",   CARD_BULLDOG_1,     "gfx/cards/cuspofcarabelli/bulldog-1.jpg");
     new Card("Ricochet",    CARD_RICOCHET,      "gfx/cards/cuspofcarabelli/ricochet.jpg");
     new Card("Hill top",    CARD_HILL_TOP,      "gfx/cards/cuspofcarabelli/hill-top.jpg");
+    //Robber's Roost
+    new Card("Cannon",      CARD_CANNON,        "gfx/cards/robbersroost/cannon.jpg");
+    new Card("Artillery",   CARD_ARTILLERY,     "gfx/cards/robbersroost/artillery.jpg");
+    new Card("Bulldog 2",   CARD_BULLDOG_2,     "gfx/cards/robbersroost/bulldog.jpg");
+    new Card("James dougall", CARD_JAMES_DOUGALL,   "gfx/cards/robbersroost/james-dougall.jpg");
+    new Card("Taunt",       CARD_TAUNT,         "gfx/cards/robbersroost/taunt.jpg");
+    new Card("Stand off",   CARD_STAND_OFF,     "gfx/cards/robbersroost/stand-off.jpg");
+    new Card("Ambush",      CARD_AMBUSH,        "gfx/cards/robbersroost/ambush.jpg");
+    new Card("Back up",     CARD_BACK_UP,       "gfx/cards/robbersroost/back-up.jpg");
+    new Card("Card toss",   CARD_TOSS,          "gfx/cards/robbersroost/toss.jpg");
+    new Card("Card confiscate", CARD_CONFISCATE, "gfx/cards/robbersroost/confiscate.jpg");
+    new Card("Track down",  CARD_TRACK_DOWN,    "gfx/cards/robbersroost/trackdown.jpg");
+    new Card("Caping wound", CARD_CAPING_WOUND, "gfx/cards/robbersroost/caping-wound.jpg");
+    new Card("Hit me",      CARD_HIT_ME,        "gfx/cards/robbersroost/hit-me.jpg");
+    new Card("Bronco",      CARD_BRONCO,        "gfx/cards/robbersroost/bronco.jpg");
+    new Card("Rob",         CARD_ROB,           "gfx/cards/robbersroost/rob.jpg");
+    new Card("Dive",        CARD_DIVE,          "gfx/cards/robbersroost/dive.jpg");
+    new Card("Push",        CARD_PUSH,          "gfx/cards/robbersroost/push.jpg");
+    new Card("Bandage",     CARD_BANDAGE,       "gfx/cards/robbersroost/bandage.jpg");
+    new Card("Join arms",   CARD_JOIN_ARMS,     "gfx/cards/robbersroost/join-arms.jpg");
+    new Card("Purple_fur_trade", CARD_PURPLE_FUR_TRADE, "gfx/cards/robbersroost/fur-trade.jpg");
+    new Card("Purple warpath", CARD_PURPLE_WARPATH, "gfx/cards/robbersroost/warpatch.jpg");
+    new Card("Purple loan", CARD_PURPLE_LOAN,    "gfx/cards/robbersroost/loan.jpg");
+    new Card("Purple investment", CARD_PURPLE_INVESTMENT, "gfx/cards/robbersroost/investment.jpg");
+    new Card("Purple tomahawk", CARD_PURPLE_TOMAHAWK, "gfx/cards/robbersroost/tomahawk.jpg");
+    new Card("Purple molotov_cocktail", CARD_PURPLE_MOLOTOV_COCKTAIL,     "gfx/cards/robbersroost/molotov-cocktail.jpg");
+    new Card("Purple showtime",   CARD_PURPLE_SHOWTIME, "gfx/cards/robbersroost/show-time.jpg");
+    new Card("Q and a",      CARD_Q_AND_A,     "gfx/cards/robbersroost/q-and-a.jpg");
+    new Card("Disarm",       CARD_DISARM,      "gfx/cards/robbersroost/disarm.jpg");
+    new Card("Pay day",      CARD_PAY_DAY,     "gfx/cards/robbersroost/pay-day.jpg");
+    new Card("Purple on the house",   CARD_PURPLE_ON_THE_HOUSE, "gfx/cards/robbersroost/on-the-house.jpg");
+    new Card("Purple moonshine",   CARD_PURPLE_MOONSHINE, "gfx/cards/robbersroost/moonshine.jpg");
+
+    
     //Unknown card 
     new Card("",            CARD_UNKNOWN,          "gfx/cards/back-playing.png");
 

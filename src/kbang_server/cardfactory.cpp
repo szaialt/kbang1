@@ -284,9 +284,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new WeaponCard(game, id(), WeaponCard::Bulldog1, SUIT_SPADES,  9));
             
-            list.append(new CardGamble(game, id(), SUIT_CLUBS, 12, 5));
+            //list.append(new CardGamble(game, id(), SUIT_CLUBS, 12, 5));
             
-            list.append(new CardGamble(game, id(), SUIT_CLUBS, 8, 4));
+            //list.append(new CardGamble(game, id(), SUIT_CLUBS, 8, 4));
             
             list.append(new CardDuel(game, id(), CardDuel::Showdown, SUIT_DIAMONDS,    14));
             
@@ -336,6 +336,55 @@ struct CardFactory::CardFactoryImp
         
         if (game->gameInfo().robberRoostFlag()){
             qDebug() << "robberRoostFlag";
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_DIAMONDS, 6));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_DIAMONDS, 7));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_CLUBS, 4));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_CLUBS, 5));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_HEARTS, 3));
+            
+            list.append(new CardTaker(game, id(), CardTaker::Panic, SUIT_HEARTS, 10 ));
+            
+            list.append(new WeaponCard(game, id(), WeaponCard::Bulldog2, SUIT_CLUBS, 10));
+            
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_SPADES,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+                        
+            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+            
         }
         else {
             qDebug() << "No robberRoostFlag";

@@ -33,7 +33,7 @@ class CardBang: public ReactionCard, public CheckDeckResultHandler
 {
 Q_OBJECT
 public:
-    enum BangType { 
+    enum BangType {
         Bang,
         DirectHit,
         HealingBang,
@@ -46,7 +46,8 @@ public:
         Undefensable,
         Stunning,
         Hatchet,
-        Ricochet
+        Ricochet,
+        //DoublePower
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 
