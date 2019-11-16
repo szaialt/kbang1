@@ -429,7 +429,7 @@ void GameCycle::playCard(Player* player, PlayingCard* card, QList<PlayingCard*> 
 
 void GameCycle::playCard(Player* player, PlayingCard* card, QList<PublicPlayerView*> targetPlayers)
 {
-    qDebug() << "void GameCycle::playCard(Player* player, PlayingCard* card, QList<PublicPlayerView*> targetPlayers) 1";
+
     m_contextDirty = 0;
     if (player != mp_requestedPlayer){
         throw BadPlayerException(mp_currentPlayer->id());

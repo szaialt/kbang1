@@ -28,7 +28,6 @@ CardMultiShoot::CardMultiShoot(Game* game, int id, CardMultiShoot::Type type, Ca
     case Roulette:
         setType(CARD_ROULETTE);
         break;
-        
     default:
         NOT_REACHED();
     }
@@ -299,6 +298,8 @@ ReactionType CardMultiShoot::reactionType() const
     if (type() == CARD_INDIANS)
         return REACTION_INDIANS;
     if (type() == CARD_MANN_VS_MACHINE)
+        return REACTION_INDIANS;
+    if (type() == CARD_WAR_PARTY)
         return REACTION_INDIANS;
     return REACTION_GATLING;
 }

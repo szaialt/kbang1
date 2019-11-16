@@ -2036,6 +2036,7 @@ obj/server/client.o: client.cpp client.h \
 		characterbase.h \
 		charactertomyleeghost.h \
 		gameeventmanager.h \
+		weaponcard.h \
 		voidai.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/client.o client.cpp
 

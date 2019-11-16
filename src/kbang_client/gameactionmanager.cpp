@@ -237,6 +237,7 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
                 break;
         case CARD_PLUNDER:
         case CARD_BAR_FIGHT:
+        case CARD_ARTILLERY:
              if ((cardWidget->cardData().isAct) && (cardWidget->cardData().pocket == POCKET_TABLE)){
                  selectCards(cardWidget, 2);
              
@@ -417,7 +418,7 @@ void GameActionManager::playWithCards()
         }
     } 
     else if (m_cardSelection.size() == 2) {
-        if (mp_activeCard->cardData().type == CARD_ARSON){
+        if ((mp_activeCard->cardData().type == CARD_ARSON) || (mp_activeCard->cardData().type == CARD_ARTILLERY)){
             //Cards that need two target players
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];

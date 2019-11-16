@@ -24,7 +24,8 @@ public:
         Arson,
         BrownShowTime,
         WarParty,
-        Roulette
+        Roulette,
+        Artillery
     };
     CardMultiShoot(Game* game, int id, Type type, CardSuit, CardRank);
     virtual ~CardMultiShoot(){}

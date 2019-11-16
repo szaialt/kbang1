@@ -322,16 +322,6 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
             
-            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_DIAMONDS, 12));
-            
-            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_HEARTS, 6));
-            
-            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_DIAMONDS, 13));
-            
-            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_HEARTS, 14));
-            
-            
-            
         }
         
         if (game->gameInfo().robberRoostFlag()){
@@ -353,37 +343,63 @@ struct CardFactory::CardFactoryImp
             
             list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_SPADES,  6));
                         
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
-                        
-            list.append(new WeaponCard(game, id(), WeaponCard::JamesDougall, SUIT_HEARTS,  6));
+            list.append(new WeaponCard(game, id(), WeaponCard::Volcanic, SUIT_SPADES, 10));
+            
+            list.append(new WeaponCard(game, id(), WeaponCard::Remington, SUIT_CLUBS,  10));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_CLUBS, 6));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_CLUBS, 7));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_DIAMONDS, 4));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_DIAMONDS, 5));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_HEARTS, 8));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_HEARTS, 9));
+            
+            list.append(new CardBang(game, id(), CardBang::Bang, SUIT_SPADES, 3));
+            
+            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_DIAMONDS, 12));
+            
+            list.append(new CardBang(game, id(), CardBang::Hatchet, SUIT_HEARTS, 6));
+            
+            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_DIAMONDS, 13));
+            
+            list.append(new CardBang(game, id(), CardBang::Ricochet, SUIT_HEARTS, 14));
+            
+            list.append(new CardMissed(game, id(), CardMissed::Missed,  SUIT_SPADES, 9));
+             
+            list.append(new CardMissed(game, id(), CardMissed::Missed, SUIT_CLUBS, 8));
+            
+            list.append(new CardTaker(game, id(), CardTaker::Panic, SUIT_HEARTS, 13));
+            
+            list.append(new CardHorse(game, id(), CardHorse::Mustang,   SUIT_HEARTS, 10));
+            
+            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_DIAMONDS, 10));
+            
+            list.append(new CardJail(game, id(), CardJail::Jail, SUIT_SPADES, 12, 13));
+            
+            list.append(new CardBarrel(game, id(), SUIT_SPADES, 14));
+            
+            list.append(new CardDuel(game, id(), CardDuel::Duel, SUIT_CLUBS,    13));
+            
+            list.append(new CardDuel(game, id(), CardDuel::Duel, SUIT_HEARTS,   12));
+            
+            list.append(new CardBeer(game, id(), CardBeer::Beer, SUIT_HEARTS, 6));
+            
+            list.append(new CardBeer(game, id(), CardBeer::Beer, SUIT_HEARTS, 7));
+            
+            list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_DIAMONDS, 13));
+            
+            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  12));
+            
+            list.append(new CardArson(game, id(), CardMultiShoot::Arson, SUIT_CLUBS,  9));
+            
+            list.append(new CardArson(game, id(), CardMultiShoot::Artillery, SUIT_CLUBS,    9));
+            
+          
             
         }
         else {

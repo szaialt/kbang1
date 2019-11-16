@@ -10,6 +10,8 @@ public:
 
     virtual ~CardArson(){}
 
+    virtual CardColor color() const;
+    
     virtual void play();
     
     virtual void play(QList<Player*> targetPlayers);

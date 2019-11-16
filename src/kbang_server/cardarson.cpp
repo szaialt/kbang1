@@ -9,20 +9,39 @@ CardArson::CardArson(Game* game, int id, CardMultiShoot::Type type, CardSuit car
     case Arson:   
         setType(CARD_ARSON);  
         break; 
+    case Artillery:   
+        setType(CARD_ARTILLERY);  
+        break; 
     default:
         NOT_REACHED();
     }
 }
 
+CardColor CardArson::color() const {
+    if (type() == CARD_ARTILLERY)
+        return COLOR_GREEN;
+    return COLOR_BROWN;
+}
+
 void CardArson::play(){
+    if ((color() == COLOR_GREEN) && (pocket() == POCKET_HAND)){
+          playAsBlueCard();
+          return;
+    }
     throw BadUsageException();
+    
 }
     
 void CardArson::play(QList<Player*> targetPlayers){
     gameCycle()->assertTurn();
-    assertInHand();
-    if ((!owner()->canPlayBang())){
-        throw OneBangPerTurnException();
+    if (color() == COLOR_BROWN){
+        assertInHand();
+        if ((!owner()->canPlayBang())){
+            throw OneBangPerTurnException();
+        }
+    }
+    else {
+        assertOnTable();
     }
     if (targetPlayers.size() != 2) throw BadUsageException();
     if (!targetPlayers.at(0)->isAlive()) throw BadUsageException();

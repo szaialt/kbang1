@@ -27,6 +27,7 @@
 #include "playingcard.h"
 #include "parser/parserstructs.h"
 #include "gameeventmanager.h"
+#include "weaponcard.h"
 
 #include "voidai.h"
 
@@ -257,6 +258,10 @@ void Client::onActionPlayCard(const ActionPlayCardData& actionPlayCardData)
             qDebug("PLAYCARD_CARDS");
             QList<int> targetCardsId = actionPlayCardData.targetCardsId;
             QList<PlayingCard*> cards = QList<PlayingCard*>();
+            qDebug() << " Target card ids: ";
+            foreach(int cardId, targetCardsId) {
+               qDebug() << cardId << " "; 
+            }
             foreach(int cardId, targetCardsId) {
                 PlayingCard* card = mp_playerCtrl->card(cardId); 
                 if (card == 0) {
@@ -295,10 +300,14 @@ void Client::onActionPlayCard(const ActionPlayCardData& actionPlayCardData)
 //                      }
 //                 }
 //             }
-//             if (playedCard->type() == CARD_RAG_TIME){
-//                 if (cards.size() < 2) return;
+//             if (playedCard->type() == CARD_JAMES_DOUGALL){
+//                 Player* player2 = cards.at(2)->owner();
+//                 WeaponCard* weaponCard = qobject_cast<WeaponCard*>(playedCard);
+//                 weaponCard->play(cards, player2);
 //             }
+//             else {
             mp_playerCtrl->playCard(playedCard, cards);
+//            }
             break;
         }
         case ActionPlayCardData::PLAYCARD_PLAYERS:{
@@ -1125,6 +1134,10 @@ PlayingCard* Client::getCard(int cardId)
     if (card == 0) {
         qDebug(qPrintable(QString("[CLIENT]   Target card '%1' not exist!").arg(cardId)));
     }
+    if ((card->owner() != getPlayer(playerId())->player())){
+        qDebug(qPrintable(QString("[CLIENT]   Target card '%1' isn't yours!").arg(cardId)));
+        //return 0;
+    }
     return card;
 }
 
@@ -1133,7 +1146,7 @@ QList<PlayingCard*> Client::getCards(QList<int> cardIds)
     QList<PlayingCard*> res;
     foreach(int cardId, cardIds) {
         PlayingCard* card = getCard(cardId);
-        if (card != 0)
+        if ((card != 0) && (card->owner() == getPlayer(playerId())->player()))
             res.append(card);
     }
     return res;

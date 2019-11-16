@@ -179,8 +179,7 @@ PlayingCard* PlayerCtrl::card(int cardId) const
         (c->owner() == 0 || c->owner() == mp_player))
         return c;
 
-    if (c->pocket() == POCKET_HAND &&
-        c->owner() == mp_player)
+    if (c->pocket() == POCKET_HAND)
         return c;
     return 0;
 }

@@ -225,7 +225,10 @@ void ServerConnection::playCardWithCards(int cardId, QList<int> cardIds)
     ActionPlayCardData actionPlayCardData;
     actionPlayCardData.playedCardId = cardId;
     actionPlayCardData.type = ActionPlayCardData::PLAYCARD_CARDS;
-    actionPlayCardData.targetCardsId = cardIds;
+    actionPlayCardData.targetCardsId.clear();
+    foreach (int id, cardIds){
+        actionPlayCardData.targetCardsId.append(id);
+    }
     mp_parser->actionPlayCard(actionPlayCardData);
 }
 
@@ -235,7 +238,10 @@ void ServerConnection::playCardWithPlayers(int cardId, QList<int> playerIds){
     ActionPlayCardData actionPlayCardData;
     actionPlayCardData.playedCardId = cardId;
     actionPlayCardData.type = ActionPlayCardData::PLAYCARD_PLAYERS;
-    actionPlayCardData.targetPlayersId = playerIds;
+    actionPlayCardData.targetPlayersId.clear();
+    foreach (int id, playerIds){
+        actionPlayCardData.targetPlayersId.append(id);
+    }
     mp_parser->actionPlayCard(actionPlayCardData);
 }
 
@@ -264,7 +270,11 @@ void ServerConnection::useAbility(QList<int> cards)
         return;
     ActionUseAbilityData actionUseAbilityData;
     actionUseAbilityData.type = ActionUseAbilityData::TypeCards;
-    actionUseAbilityData.targetCardsId = cards;
+    //actionUseAbilityData.targetCardsId = cards;
+    actionUseAbilityData.targetCardsId.clear();
+    foreach (int id, cards){
+        actionUseAbilityData.targetCardsId.append(id);
+    }
     mp_parser->actionUseAbility(actionUseAbilityData);
 }
 
@@ -273,7 +283,11 @@ void ServerConnection::useAbility(QList<int> cards, int playerId){
         return;
     ActionUseAbilityData actionUseAbilityData;
     actionUseAbilityData.type = ActionUseAbilityData::TypeCardsAndPLayer;
-    actionUseAbilityData.targetCardsId = cards;
+    //actionUseAbilityData.targetCardsId = cards;
+    actionUseAbilityData.targetCardsId.clear();
+    foreach (int id, cards){
+        actionUseAbilityData.targetCardsId.append(id);
+    }
     actionUseAbilityData.targetPlayerId = playerId;
     mp_parser->actionUseAbility(actionUseAbilityData);
 }
