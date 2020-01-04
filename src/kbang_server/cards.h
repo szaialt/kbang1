@@ -60,4 +60,5 @@
 #include "cardreward.h"
 #include "cardpackmule.h"
 #include "cardgamble.h"
+#include "cardtakerbang.h"
 #endif

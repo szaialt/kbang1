@@ -14,6 +14,8 @@
 #include "characterernestsaliven2.h"
 #include "charactercardkeeper.h"
 #include "charactertomyleeghost.h"
+#include "charactergordonchristensen.h"
+#include "charactercaptwcaroll.h"
 #include "cardweakness.h"
 #include "carddrawcards.h"
 
@@ -665,6 +667,14 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_ERNEST_SALIVEN2){
         CharacterErnestSaliven2* ernest =  qobject_cast<CharacterErnestSaliven2*>(player->character());
         ernest->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_GORDON_CHRISTENSEN){
+        CharacterGordonChristensen* christ =  qobject_cast<CharacterGordonChristensen*>(player->character());
+        christ->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_CAPT_W_CAROLL){
+        CharacterGordonChristensen* christ =  qobject_cast<CharacterGordonChristensen*>(player->character());
+        christ->resetAbility();
     }
 }
 

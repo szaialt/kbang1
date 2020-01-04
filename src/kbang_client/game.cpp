@@ -138,6 +138,9 @@ void Game::setGameContext(const GameContextData& gameContextData)
         case REACTION_BANG:
             message = tr("<i>%1</i> played Bang! on you!").arg(causedByName);
             break;
+        case REACTION_TAKER_BANG:
+            message = tr("<i>%1</i> played Bang! on your card!").arg(causedByName);
+            break;
         case REACTION_DUEL:
             message = tr("You are in duel with <i>%1</i>.").arg(causedByName);
             break;

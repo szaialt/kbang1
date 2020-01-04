@@ -708,6 +708,7 @@ void VoidAI2Level::requestWithAction()
                 if (player->payedBandidos()) return;
             }*/
             if (reactionHandler->reactionType() == REACTION_BANG){
+                qDebug() << "REACTION_BANG";
                 Player* attacker = reactionHandler->causedBy();
                 CharacterBase* character = attacker->character();
                 CardBang* bang = (CardBang*)(reactionHandler);
@@ -728,7 +729,7 @@ void VoidAI2Level::requestWithAction()
                 playCardForDefense(hand, defense);
             }
             
-            qDebug() << QString("VoidAI (%1): REQUEST_RESPOND").arg(m_id);
+            qDebug() << QString("VoidAI (%1): REQUEST_RESPOND 2").arg(m_id);
             if (mp_playerCtrl->character() == CHARACTER_JOURDONNAIS){
                 Player* player = mp_playerCtrl->mp_player;
                 CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(player->character());

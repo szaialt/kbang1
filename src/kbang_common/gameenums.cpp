@@ -115,6 +115,37 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "dan quake")      return CHARACTER_DAN_QUAKE;
     if (s == "ron robber")     return CHARACTER_RON_ROBBER;
     if (s == "samuel diehard") return CHARACTER_SAMUEL_DIEHARD;
+    //Cusp of Carabelli 
+    if (s == "james donahoo")  return CHARACTER_JAMES_DONAHOO;
+    if (s == "gordon christensen") return CHARACTER_GORDON_CHRISTENSEN;
+    if (s == "joel janis")     return CHARACTER_JOEL_JANIS;
+    if (s == "capt w caroll")  return CHARACTER_CAPT_W_CAROLL;
+    if (s == "edward angle")   return CHARACTER_EDWARD_ANGLE;
+    if (s == "auntie angelici") return CHARACTER_AUNTIE_ANGELICI;
+    if (s == "g v black")      return CHARACTER_G_V_BLACK;
+    if (s == "bushido bill")   return CHARACTER_BUSHIDO_BILL;
+    if (s == "crazy skull")    return CHARACTER_CRAZY_SKULL;
+    if (s == "william harman") return CHARACTER_WILLIAM_HARMAN;
+    if (s == "clockwork")      return CHARACTER_CLOCKWORK;
+    if (s == "el fantasma")    return CHARACTER_EL_FANTASMA;
+    if (s == "adam mc cormick") return CHARACTER_ADAM_MC_CORMICK;
+    //Robbers Roost
+    if (s == "crazy wolf")     return CHARACTER_CRAZY_WOLF;
+    if (s == "turd ferguson")  return CHARACTER_TURD_FERGUSON;
+    if (s == "lil sure shot")  return CHARACTER_LIL_SURE_SHOT;
+    if (s == "flint dixon")    return CHARACTER_FLINT_DIXON;
+    if (s == "job mushgrove")  return CHARACTER_JOB_MUSHGROVE;
+    if (s == "porter rockwall") return CHARACTER_PORTER_ROCKWALL;
+    if (s == "pat barrett")    return CHARACTER_PAT_BARRETT;
+    if (s == "johnny pope")    return CHARACTER_JOHNNY_POPE;
+    if (s == "queen anne")     return CHARACTER_QUEEN_ANNE;
+    if (s == "josey basset")   return CHARACTER_JOSEY_BASSET;
+    if (s == "eva place")      return CHARACTER_EVA_PLACE;
+    if (s == "laura billion")  return CHARACTER_LAURA_BILLION;
+    if (s == "maggie mae")     return CHARACTER_MAGGIE_MAE;
+    if (s == "anne rogers")    return CHARACTER_ANNE_ROGERS;
+    if (s == "lela devere")    return CHARACTER_LELA_DEVERE;
+    if (s == "julie bulette")  return CHARACTER_JULIE_BULETTE;
     
     return CHARACTER_UNKNOWN;
 }
@@ -190,6 +221,37 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_DAN_QUAKE:       return "dan quake";
     case CHARACTER_RON_ROBBER:      return "ron robber";
     case CHARACTER_SAMUEL_DIEHARD:  return "samuel diehard";
+    //Cusp of Carabelli
+    case CHARACTER_JAMES_DONAHOO:   return "james donahoo";
+    case CHARACTER_GORDON_CHRISTENSEN: return "gordon christensen";
+    case CHARACTER_JOEL_JANIS:      return "joel janis";
+    case CHARACTER_CAPT_W_CAROLL:   return "capt w caroll";
+    case CHARACTER_EDWARD_ANGLE:    return "edward angle";
+    case CHARACTER_AUNTIE_ANGELICI: return "auntie angelici";
+    case CHARACTER_G_V_BLACK:       return "g v black";
+    case CHARACTER_BUSHIDO_BILL:    return "bushido bill";
+    case CHARACTER_CRAZY_SKULL:     return "crazy skull";
+    case CHARACTER_WILLIAM_HARMAN:  return  "william harman";
+    case CHARACTER_CLOCKWORK:       return "clockwork";
+    case CHARACTER_EL_FANTASMA:     return "el fantasma";
+    case CHARACTER_ADAM_MC_CORMICK: return "adam mc cormick";
+    //Robbers Roost
+    case CHARACTER_CRAZY_WOLF:      return "crazy wolf";
+    case CHARACTER_TURD_FERGUSON:   return "turd ferguson";
+    case CHARACTER_LIL_SURE_SHOT:   return "lil sure shot";
+    case CHARACTER_FLINT_DIXON:     return "flint dixon";
+    case CHARACTER_JOB_MUSHGROVE:   return "job mushgrove";
+    case CHARACTER_PORTER_ROCKWALL: return "porter rockwall";
+    case CHARACTER_PAT_BARRETT:     return "pat barrett";
+    case CHARACTER_JOHNNY_POPE:     return "johnny pope";
+    case CHARACTER_QUEEN_ANNE:      return "queen anne";
+    case CHARACTER_JOSEY_BASSET:    return "josey basset";
+    case CHARACTER_EVA_PLACE:       return "eva place";
+    case CHARACTER_LAURA_BILLION:   return "laura billion";
+    case CHARACTER_MAGGIE_MAE:      return "maggie mae";
+    case CHARACTER_ANNE_ROGERS:     return "anne rogers";
+    case CHARACTER_LELA_DEVERE:     return "lela devere";
+    case CHARACTER_JULIE_BULETTE:   return "julie bulette";
     }
     return "unknown";
 }
@@ -455,6 +517,9 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "hill-top")            return CARD_HILL_TOP;
     if (s == "hill top")            return CARD_HILL_TOP;
     if (s == "hill_top")            return CARD_HILL_TOP;
+    if (s == "card-taker-bang")     return CARD_TAKER_BANG;
+    if (s == "card taker bang")     return CARD_TAKER_BANG;
+    if (s == "card_taker_bang")     return CARD_TAKER_BANG;
     //Roober's roost
     if (s == "bulldog-2")           return CARD_BULLDOG_2;
     if (s == "bulldog 2")           return CARD_BULLDOG_2;
@@ -464,70 +529,9 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "james_dougall")       return CARD_JAMES_DOUGALL;
     if (s == "cannon")              return CARD_CANNON;
     if (s == "artillery")           return CARD_ARTILLERY;
-    if (s == "purple-fur-trade")    return CARD_PURPLE_FUR_TRADE;
-    if (s == "purple_fur_trade")    return CARD_PURPLE_FUR_TRADE;
-    if (s == "purple fur trade")    return CARD_PURPLE_FUR_TRADE;
     if (s == "purple-warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple_warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple warpath")      return CARD_PURPLE_WARPATH;
-    if (s == "purple-loan")         return CARD_PURPLE_LOAN;
-    if (s == "purple_loan")         return CARD_PURPLE_LOAN;
-    if (s == "purple loan")         return CARD_PURPLE_LOAN;
-    if (s == "purple-investment")   return CARD_PURPLE_INVESTMENT;
-    if (s == "purple_investment")   return CARD_PURPLE_INVESTMENT;
-    if (s == "purple investment")   return CARD_PURPLE_INVESTMENT;
-    if (s == "purple-tomahawk")     return CARD_PURPLE_TOMAHAWK;
-    if (s == "purple_tomahawk")     return CARD_PURPLE_TOMAHAWK;
-    if (s == "purple tomahawk")     return CARD_PURPLE_TOMAHAWK;
-    if (s == "purple-molotov-cocktail") return CARD_PURPLE_MOLOTOV_COCKTAIL;
-    if (s == "purple molotov cocktail") return CARD_PURPLE_MOLOTOV_COCKTAIL;
-    if (s == "purple_molotov_cocktail") return CARD_PURPLE_MOLOTOV_COCKTAIL;
-    if (s == "purple-showtime")    return CARD_PURPLE_SHOWTIME;
-    if (s == "purple showtime")    return CARD_PURPLE_SHOWTIME;
-    if (s == "purple_showtime")    return CARD_PURPLE_SHOWTIME;
-    if (s == "q-and-a")             return CARD_Q_AND_A;
-    if (s == "q_and_a")             return CARD_Q_AND_A;
-    if (s == "q and a")             return CARD_Q_AND_A;
-    if (s == "disarm")              return CARD_DISARM;
-    if (s == "pay-day")             return CARD_PAY_DAY;
-    if (s == "pay day")             return CARD_PAY_DAY;
-    if (s == "pay_day")             return CARD_PAY_DAY;
-    if (s == "purple_on_the_house") return CARD_PURPLE_ON_THE_HOUSE;
-    if (s == "purple on the house") return CARD_PURPLE_ON_THE_HOUSE;
-    if (s == "purple-on-the-house") return CARD_PURPLE_ON_THE_HOUSE;
-    if (s == "purple-moonshine")    return CARD_PURPLE_MOONSHINE;
-    if (s == "purple moonshine")    return CARD_PURPLE_MOONSHINE;
-    if (s == "purple_moonshine")    return CARD_PURPLE_MOONSHINE;
-    if (s == "taunt")               return CARD_TAUNT;
-    if (s == "stand-off")           return CARD_STAND_OFF;
-    if (s == "stand off")           return CARD_STAND_OFF;
-    if (s == "stand_off")           return CARD_STAND_OFF;
-    if (s == "ambush")              return CARD_AMBUSH;
-    if (s == "back-up")             return CARD_BACK_UP;
-    if (s == "back up")             return CARD_BACK_UP;
-    if (s == "back_up")             return CARD_BACK_UP;
-    if (s == "toss")                return CARD_TOSS;
-    if (s == "confiscate")          return CARD_CONFISCATE;
-    if (s == "track-down")          return CARD_TRACK_DOWN;
-    if (s == "track down")          return CARD_TRACK_DOWN;
-    if (s == "track_down")          return CARD_TRACK_DOWN;
-    if (s == "caping-wound")        return CARD_CAPING_WOUND;
-    if (s == "caping wound")        return CARD_CAPING_WOUND;
-    if (s == "caping_wound")        return CARD_CAPING_WOUND;
-    if (s == "hit-me")              return CARD_HIT_ME;
-    if (s == "hit me")              return CARD_HIT_ME;
-    if (s == "hit_me")              return CARD_HIT_ME;
-    if (s == "bronco")              return CARD_BRONCO;
-    if (s == "rob")                 return CARD_ROB;
-    if (s == "dive")                return CARD_DIVE;
-    if (s == "quick-draw")          return CARD_QUICK_DRAW;
-    if (s == "quick draw")          return CARD_QUICK_DRAW;
-    if (s == "quick_draw")          return CARD_QUICK_DRAW;
-    if (s == "push")                return CARD_PUSH;
-    if (s == "bandage")             return CARD_BANDAGE;
-    if (s == "join-arms")           return CARD_JOIN_ARMS;
-    if (s == "join arms")           return CARD_JOIN_ARMS;
-    if (s == "join_arms")           return CARD_JOIN_ARMS;
     
     return CARD_UNKNOWN; 
 } 
@@ -641,39 +645,13 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_BULLDOG_1:       return "bulldog 1";
         case CARD_RICOCHET:        return "ricochet";
         case CARD_HILL_TOP:        return "hill top";
+        case CARD_TAKER_BANG:      return "card taker bang";
         //Robber's Roost
         case CARD_BULLDOG_2:       return "bulldog 2";
         case CARD_JAMES_DOUGALL:   return "james dougall";
         case CARD_CANNON:          return "cannon";
         case CARD_ARTILLERY:       return "artillery";
-        case CARD_PURPLE_FUR_TRADE: return "purple fur trade";
         case CARD_PURPLE_WARPATH:  return "purple warpath";
-        case CARD_PURPLE_LOAN:     return "purple loan";
-        case CARD_PURPLE_INVESTMENT: return "purple investment";
-        case CARD_PURPLE_TOMAHAWK: return "purple tomahawk";
-        case CARD_PURPLE_MOLOTOV_COCKTAIL: return "purple molotov cocktail";
-        case CARD_PURPLE_SHOWTIME: return "purple showtime";
-        case CARD_Q_AND_A:         return "q and a";
-        case CARD_DISARM:          return "disarm";
-        case CARD_PAY_DAY:         return "pay day";
-        case CARD_PURPLE_ON_THE_HOUSE: return "purple on the house";
-        case CARD_PURPLE_MOONSHINE: return "purple moonshine";
-        case CARD_TAUNT:           return "taunt";
-        case CARD_DIVE:            return "dive";
-        case CARD_STAND_OFF:       return "stand off";
-        case CARD_AMBUSH:          return "ambush";
-        case CARD_BACK_UP:         return "back up";
-        case CARD_TOSS:            return "toss";
-        case CARD_CONFISCATE:      return "confiscate";
-        case CARD_TRACK_DOWN:      return "track down";
-        case CARD_CAPING_WOUND:    return "caping wound";
-        case CARD_HIT_ME:          return "hit me";
-        case CARD_BRONCO:          return "bronco";
-        case CARD_ROB:             return "rob";
-        case CARD_QUICK_DRAW:      return "quick draw";
-        case CARD_PUSH:            return "push";
-        case CARD_BANDAGE:         return "bandage";
-        case CARD_JOIN_ARMS:       return "join arms";
 
         //Unknown
         case CARD_UNKNOWN:        return "";
@@ -735,6 +713,7 @@ ReactionType stringToReactionType(const QString& s)
     if (s == "lucky-duke")      return REACTION_LUCKYDUKE;
     if (s == "kit-carlson")     return REACTION_KITCARLSON;
     if (s == "healing-bang")    return REACTION_HEALING_BANG;
+    if (s == "taker-bang")      return REACTION_TAKER_BANG;
     return REACTION_NONE;
 }
 
@@ -750,6 +729,7 @@ QString reactionTypeToString(const ReactionType& r)
     case REACTION_LUCKYDUKE:    return "lucky-duke";
     case REACTION_KITCARLSON:   return "kit-carlson";
     case REACTION_HEALING_BANG: return "healing-bang";
+    case REACTION_TAKER_BANG:   return "taker-bang";
     case REACTION_NONE:         return "";
     }
     return "";

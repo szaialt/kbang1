@@ -1,0 +1,537 @@
+Xsession: X session started for anna at 2019. dec. 28., szombat, 08:52:25 EET
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/anna/.Xauthority
+localuser:anna being added to access control list
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+dbus-update-activation-environment: setting QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+OpenGL version: 2.
+dbus-update-activation-environment: setting USER=anna
+dbus-update-activation-environment: setting XDG_SESSION_TYPE=x11
+dbus-update-activation-environment: setting HOME=/home/anna
+dbus-update-activation-environment: setting DESKTOP_SESSION=fvwm
+dbus-update-activation-environment: setting XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting LOGNAME=anna
+dbus-update-activation-environment: setting PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting GDM_LANG=hu_HU.utf8
+dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting LANG=hu_HU.UTF-8
+dbus-update-activation-environment: setting XDG_SESSION_DESKTOP=fvwm
+dbus-update-activation-environment: setting XAUTHORITY=/home/anna/.Xauthority
+dbus-update-activation-environment: setting XDG_GREETER_DATA_DIR=/var/lib/lightdm/data/anna
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting GDMSESSION=fvwm
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting PWD=/home/anna
+[fvwm][FlocaleGetFontSet]: (-adobe-times-bold-r-*-*-14-*-*-*-*-*-*-*) Missing font charsets:
+ISO8859-3, ISO8859-4, ISO8859-5, KOI8-R, ISO8859-7, ISO8859-9, ISO8859-13, ISO8859-14, JISX0208.1983-0, KSC5601.1987-0, GB2312.1980-0, JISX0201.1976-0
+[fvwm][__execute_function]: <<ERROR>> No such command 'DecorateTransient'
+charmap_string_to_mask: bad modifier #
+[fvwm][ignore_modifiers]: <<ERROR>> illegal modifier in line 
+
+[fvwm][__execute_function]: <<ERROR>> No such command 'remove'
+[fvwm][__execute_function]: <<ERROR>> No such command 'add'
+[fvwm][ButtonStyle]: <<ERROR>> unknown title button flag Close -- line: 
+[fvwm][ButtonStyle]: <<ERROR>> unknown title button flag FvwmWindowScreenshot -- line: 
+charmap_string_to_mask: bad modifier d
+charmap_string_to_mask: bad modifier e
+charmap_string_to_mask: bad modifier k
+[fvwm][ParseBinding]: <<WARNING>> Illegal modifier in line F9 A Desk 0 0
+charmap_string_to_mask: bad modifier d
+charmap_string_to_mask: bad modifier e
+charmap_string_to_mask: bad modifier k
+[fvwm][ParseBinding]: <<WARNING>> Illegal modifier in line F10 A Desk 1 1
+charmap_string_to_mask: bad modifier d
+charmap_string_to_mask: bad modifier e
+charmap_string_to_mask: bad modifier k
+[fvwm][ParseBinding]: <<WARNING>> Illegal modifier in line F11 A Desk 2 2
+charmap_string_to_mask: bad modifier d
+charmap_string_to_mask: bad modifier e
+charmap_string_to_mask: bad modifier k
+[fvwm][ParseBinding]: <<WARNING>> Illegal modifier in line F12 A Desk 3 3
+[fvwm][FlocaleGetFontSet]: (-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-*) Missing font charsets:
+ISO8859-3, ISO8859-4, ISO8859-5, KOI8-R, ISO8859-7, ISO8859-9, ISO8859-13, ISO8859-14, JISX0208.1983-0, KSC5601.1987-0, GB2312.1980-0, JISX0201.1976-0
+[fvwm][__execute_function]: <<ERROR>> No such command 'FvwmPagerSubPanel:'
+Invalid Args: "Sticky," "NoTitle," "NoHandles," "BorderWidth" "3," "HandleWidth" "3," "WindowListSkip," "+1"
+usage: dclock [-options ...]
+where options include:
+    -help			print this help text
+    -bg color			field background color
+    -fg color			segment foreground color
+    -fn font			font name
+    -geometry geom		size of mailbox
+    -display host:dpy		X server to contact
+    -led_off color		segment background color
+    -date "date format"	show the date in strftime(3) format
+    -[no]dateup 		[don't]	put the date up at the top
+    -[no]seconds 		[don't]	display seconds
+    -[no]miltime 		[don't]	display time in 24 hour format
+    -[no]utc			[don't] display the UTC time instead of local
+    -[no]blink			[don't] blink the colon
+    -[no]scroll 		turn on [off] scrolling of numbers
+    -[no]tails			draw [remove] tails on digits 6 and 9
+    -[no]fade			[don't] fade numbers
+    -[no]bell 			[don't] ring bell each half hour
+    -[no]persist		[don't] leave in reverse video after alarm
+    -bellFile filename		sound file for bell sound
+    -[no]alarm 		turn on/off alarm
+    -alarmTime hh:mm		time alarm goes off
+    -alarmFile filename	sound file for alarm sound
+    -audioPlay	filename	executable to use to play bell and alarm
+    -fadeRate int_val		wait between fade steps (in msec)
+    -slope float_val		set angle of the digits
+    -smallsize float_val	set size ratio of the small to large digits
+    -second_gap float_val	set spacing between minutes and seconds digits
+    -thickness	float_val	set segment thickness as ratio to digit width
+    -spacing float_val		set digit spacing as ratio to digit width
+[FvwmButtons][FlocaleGetFontSet]: (-adobe-helvetica-medium-r-normal--10-100-75-75-p-56-*) Missing font charsets:
+ISO8859-3, ISO8859-4, ISO8859-5, KOI8-R, ISO8859-7, ISO8859-9, ISO8859-13, ISO8859-14, JISX0208.1983-0, KSC5601.1987-0, GB2312.1980-0, JISX0201.1976-0
+[fvwm][FlocaleGetFontSet]: (-adobe-helvetica-bold-r-normal--14-140-75-75-p-82-*) Missing font charsets:
+ISO8859-3, ISO8859-4, ISO8859-5, KOI8-R, ISO8859-7, ISO8859-9, ISO8859-13, ISO8859-14, JISX0208.1983-0, KSC5601.1987-0, GB2312.1980-0, JISX0201.1976-0
+[fvwm][FlocaleGetFontSet]: (-adobe-helvetica-medium-r-normal--10-100-75-75-p-56-*) Missing font charsets:
+ISO8859-3, ISO8859-4, ISO8859-5, KOI8-R, ISO8859-7, ISO8859-9, ISO8859-13, ISO8859-14, JISX0208.1983-0, KSC5601.1987-0, GB2312.1980-0, JISX0201.1976-0
+
+(firefox-esr:2304): Gtk-WARNING **: Theme parsing error: <data>:1:34: Expected ')' in color definition
+
+(firefox-esr:2304): Gtk-WARNING **: Theme parsing error: <data>:1:77: Expected ')' in color definition
+[Parent 2304, Gecko_IOThread] WARNING: pipe error (113): A kapcsolatot bontotta a távoli fél: file /build/firefox-esr-a3uW81/firefox-esr-60.7.2esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 342
+ATTENTION: default value of option force_s3tc_enable overridden by environment.
+WebGL(0x7f6ece632800)::ForceLoseContext
+WebGL(0x7f6ed812c800)::ForceLoseContext
+** Message: x-terminal-emulator has very limited support, consider choose another terminal
+calling convert '/tmp/gsf-thumbnailer-RYUTD0' +matte -thumbnail 128x128 png:'/home/anna/.thumbnails/normal/08490cd1653b9ceeb5795fc272602198.png'
+
+(gsf-office-thumbnailer:3605): GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+
+(terminator:7921): Gtk-WARNING **: Theme parsing error: gtk.css:68:35: The style property GtkButton:child-displacement-x is deprecated and shouldn't be used anymore. It will be removed in a future version
+
+(terminator:7921): Gtk-WARNING **: Theme parsing error: gtk.css:69:35: The style property GtkButton:child-displacement-y is deprecated and shouldn't be used anymore. It will be removed in a future version
+
+(terminator:7921): Gtk-WARNING **: Theme parsing error: gtk.css:73:46: The style property GtkScrolledWindow:scrollbars-within-bevel is deprecated and shouldn't be used anymore. It will be removed in a future version
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/kbang_server.pro' 
+Config timer connecting...
+Setting the name of  0x55cb6c65ece0  to  "org.kde.ActivityManager.ActivityTemplates"
+Setting the name of  0x55cb6c676e20  to  "org.kde.ActivityManager.Resources.Scoring"
+Creating directory:  "/home/anna/.local/share/kactivitymanagerd/resources/"
+KActivities: Database connection:  "kactivities_db_resources_140712232892608_readwrite" 
+    query_only:          QVariant(qlonglong, 0) 
+    journal_mode:        QVariant(QString, "wal") 
+    wal_autocheckpoint:  QVariant(qlonglong, 100) 
+    synchronous:         QVariant(qlonglong, 1)
+Setting the name of  0x55cb6c686640  to  "org.kde.ActivityManager.RunApplication"
+Service started, version: 7.0.0
+Cleaning up...
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/kbang_server.pro"
+Already in database?  true
+      First update :  QDateTime(2019-07-20 18:01:15.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-22 14:32:15.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  212.576
+      First update :  QDateTime(2019-07-20 18:01:15.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-22 14:32:15.000 EET Qt::TimeSpec(LocalTime))
+         New score :  212.576
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/cardpurplewarpath.cpp' 
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/cardpurplewarpath.cpp"
+Already in database?  true
+      First update :  QDateTime(2019-11-24 15:46:40.000 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-27 13:43:23.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  3854.37
+      First update :  QDateTime(2019-11-24 15:46:40.000 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-27 13:43:23.000 EET Qt::TimeSpec(LocalTime))
+Interval length is  5
+         New score :  3854.46
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/cardfactory.cpp' 
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/cardfactory.cpp"
+Already in database?  true
+      First update :  QDateTime(2019-07-07 17:32:21.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-27 13:55:39.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  8373.93
+      First update :  QDateTime(2019-07-07 17:32:21.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-27 13:55:39.000 EET Qt::TimeSpec(LocalTime))
+Interval length is  33
+         New score :  8374.48
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.h' 
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.cpp' 
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x1609ef5)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x160a095)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_client/card.h' 
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_client/card.h"
+Already in database?  false
+      First update :  QDateTime(2019-12-28 13:59:19.000 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-28 13:59:19.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  0
+      First update :  QDateTime(2019-12-28 13:59:19.374 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-28 13:59:19.000 EET Qt::TimeSpec(LocalTime))
+         New score :  0
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_client/card.cpp' 
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_client/card.cpp"
+Already in database?  true
+      First update :  QDateTime(2019-07-20 15:54:06.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-10-23 13:24:09.000 EEST Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  15.8157
+      First update :  QDateTime(2019-07-20 15:54:06.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-10-23 13:24:09.000 EEST Qt::TimeSpec(LocalTime))
+Interval length is  5697802
+Interval length is  1161
+         New score :  94998.5
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.cpp"
+Already in database?  true
+      First update :  QDateTime(2019-07-13 14:28:00.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-10-20 14:21:27.000 EEST Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  21.4606
+      First update :  QDateTime(2019-07-13 14:28:00.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-10-20 14:21:27.000 EEST Qt::TimeSpec(LocalTime))
+Interval length is  2116
+         New score :  56.7273
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.h"
+Already in database?  true
+      First update :  QDateTime(2019-07-13 14:28:00.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-08 15:30:27.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  592.415
+      First update :  QDateTime(2019-07-13 14:28:00.000 EEST Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-08 15:30:27.000 EET Qt::TimeSpec(LocalTime))
+Interval length is  2170
+         New score :  628.582
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x160cd07)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/Makefile' 
+Creating the cache for:  "/media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_server/Makefile"
+Already in database?  false
+      First update :  QDateTime(2019-12-28 14:19:41.000 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-28 14:19:41.000 EET Qt::TimeSpec(LocalTime))
+After the adjustment
+     Current score :  0
+      First update :  QDateTime(2019-12-28 14:19:41.617 EET Qt::TimeSpec(LocalTime))
+       Last update :  QDateTime(2019-12-28 14:19:41.000 EET Qt::TimeSpec(LocalTime))
+         New score :  0
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x160d45a)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 737, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 737, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 881, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 881, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 737, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 737, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 881, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x2200005)
+  "KBang Client" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 213
+  min_width = 1018, min_height = 881, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 10
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+okular 'file:///home/anna/kbangCC/Cusp%20of%20Carabelli%20Characters.pdf'  --icon okular -caption 'Okular'
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kbuildsycoca4 running...
+kbuildsycoca4(10754) KBuildSycoca::checkTimestamps: checking file timestamps
+kbuildsycoca4(10754) KBuildSycoca::checkTimestamps: timestamps check ok
+kbuildsycoca4(10754) kdemain: Emitting notifyDatabaseChanged ()
+okular(10738)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10738)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10738)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10738)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10738)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.h' 
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_common/gameenums.cpp' 
+okular 'file:///home/anna/kbangCC/RobbersRoost/RRchars1.pdf'  --icon okular -caption 'Okular'
+okular(10922)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10922)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10922)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10922)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10922)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular 'file:///home/anna/kbangCC/RobbersRoost/RRchars2.pdf'  --icon okular -caption 'Okular'
+okular(10954)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10954)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10954)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10954)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(10954)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x1611d14)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+[fvwm][GetWindowSizeHints]: <<WARNING>> reason: 2: The hints have been ignored because the window's current size would have become invalid.  The new hints will become active when the window generates the next ConfigureRequest.
+
+[fvwm][GetWindowSizeHints]: <<WARNING>> The application window (id 0x1611eed)
+  "Copying fájlok" has broken size hints (inconsistent with current size).
+    fvwm is ignoring those hints.    hint override = 0, flags = 210
+  min_width = 217, min_height = 228, max_width = 0, max_height = 0
+  width_inc = 0, height_inc = 0
+  min_aspect = 0/0, max_aspect = 0/0
+  base_width = 0, base_height = 0
+  win_gravity = 3
+
+    If you are having a problem with the application, send a bug report
+    with this message included to the application owner.
+    There is no need to notify fvwm-workers@fvwm.org.
+kwrite 'file:///media/anna/01CDF59BCE725DB01/Dokumentumok/jegyzetek/Programozas/Bang/kbang5CC/src/kbang_client/card.cpp' 
+[fvwm][ComplexFunction]: <<ERROR>> Grab failed in function EWMHActivateWindowFunc, unable to execute immediate action
+[fvwm][ComplexFunction]: <<ERROR>> Grab failed in function EWMHActivateWindowFunc, unable to execute immediate action
+
+(gimp:13339): GLib-GObject-WARNING **: g_object_set_valist: object class 'GeglConfig' has no property named 'cache-size'
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF829210 from "gimp:point-layer-mode" to "gimp:dissolve-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF8296E0 from "gimp:point-layer-mode" to "gimp:behind-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82A800 from "gimp:point-layer-mode" to "gimp:multiply-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82AA90 from "gimp:point-layer-mode" to "gimp:screen-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82AE40 from "gimp:point-layer-mode" to "gimp:overlay-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82B2A0 from "gimp:point-layer-mode" to "gimp:difference-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82B640 from "gimp:point-layer-mode" to "gimp:addition-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82BA80 from "gimp:point-layer-mode" to "gimp:subtract-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82BE40 from "gimp:point-layer-mode" to "gimp:darken-only-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82C290 from "gimp:point-layer-mode" to "gimp:lighten-only-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82C630 from "gimp:point-layer-mode" to "gimp:hue-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82C9B0 from "gimp:point-layer-mode" to "gimp:saturation-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82CE20 from "gimp:point-layer-mode" to "gimp:color-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82D280 from "gimp:point-layer-mode" to "gimp:value-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82D600 from "gimp:point-layer-mode" to "gimp:divide-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82E290 from "gimp:point-layer-mode" to "gimp:dodge-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82E600 from "gimp:point-layer-mode" to "gimp:burn-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82EA50 from "gimp:point-layer-mode" to "gimp:hardlight-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82EE60 from "gimp:point-layer-mode" to "gimp:softlight-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82F210 from "gimp:point-layer-mode" to "gimp:grain-extract-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82F600 from "gimp:point-layer-mode" to "gimp:grain-merge-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82FA10 from "gimp:point-layer-mode" to "gimp:color-erase-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF82FE00 from "gimp:point-layer-mode" to "gimp:erase-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF830210 from "gimp:point-layer-mode" to "gimp:replace-mode"
+
+(gimp:13339): GEGL-gegl-operation.c-WARNING **: Cannot change name of operation class 0x5601AF830650 from "gimp:point-layer-mode" to "gimp:anti-erase-mode"
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+okular 'file:///home/anna/kbangCC/Cusp%20of%20Carabelli%20Characters.pdf'  --icon okular -caption 'Okular'
+okular(15966)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(15966)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(15966)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(15966)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(15966)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property
+eom 'file:///home/anna/james-donahoo.png' 
+
+(eom:18636): Gtk-WARNING **: Allocating size to EomStatusbar 0x5564b8b7b6e0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+eom 'file:///home/anna/gordon-christensen.png' 
+
+(eom:18661): Gtk-WARNING **: Allocating size to EomStatusbar 0x55ef5fd856d0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+eom 'file:///home/anna/james-donahoo.png' 
+
+(eom:18749): Gtk-WARNING **: Allocating size to EomStatusbar 0x55ad7a2516d0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+eom 'file:///home/anna/bushido-bill.png' 
+
+(eom:18858): Gtk-WARNING **: Allocating size to EomStatusbar 0x55aab274b6e0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+eom 'file:///home/anna/james-donahoo.png' 
+
+(eom:18858): Gtk-WARNING **: Allocating size to EomStatusbar 0x55aab2985190 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+[fvwm][CreateConditionMask]: <<DEPRECATED>> Use comma instead of whitespace to separate conditions
+ristretto '/home/anna/llewellyn-powell.jpg' 
+error: The metadata does not have a thumbnail property
+error: The metadata does not have a thumbnail property

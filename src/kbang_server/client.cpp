@@ -1146,7 +1146,7 @@ QList<PlayingCard*> Client::getCards(QList<int> cardIds)
     QList<PlayingCard*> res;
     foreach(int cardId, cardIds) {
         PlayingCard* card = getCard(cardId);
-        if ((card != 0) && (card->owner() == getPlayer(playerId())->player()))
+        if ((card != 0) /*&& (card->owner() == getPlayer(playerId())->player())*/)
             res.append(card);
     }
     return res;

@@ -218,39 +218,13 @@ void Card::loadDefaultRuleset()
     new Card("Bulldog 1",   CARD_BULLDOG_1,     "gfx/cards/cuspofcarabelli/bulldog-1.jpg");
     new Card("Ricochet",    CARD_RICOCHET,      "gfx/cards/cuspofcarabelli/ricochet.jpg");
     new Card("Hill top",    CARD_HILL_TOP,      "gfx/cards/cuspofcarabelli/hill-top.jpg");
+    new Card("Taker bang",  CARD_TAKER_BANG,      "gfx/cards/cuspofcarabelli/taker-bang.png");
     //Robber's Roost
     new Card("Cannon",      CARD_CANNON,        "gfx/cards/robbersroost/cannon.jpg");
     new Card("Artillery",   CARD_ARTILLERY,     "gfx/cards/robbersroost/artillery.jpg");
     new Card("Bulldog 2",   CARD_BULLDOG_2,     "gfx/cards/robbersroost/bulldog.jpg");
     new Card("James dougall", CARD_JAMES_DOUGALL,   "gfx/cards/robbersroost/james-dougall.jpg");
-    new Card("Taunt",       CARD_TAUNT,         "gfx/cards/robbersroost/taunt.jpg");
-    new Card("Stand off",   CARD_STAND_OFF,     "gfx/cards/robbersroost/stand-off.jpg");
-    new Card("Ambush",      CARD_AMBUSH,        "gfx/cards/robbersroost/ambush.jpg");
-    new Card("Back up",     CARD_BACK_UP,       "gfx/cards/robbersroost/back-up.jpg");
-    new Card("Card toss",   CARD_TOSS,          "gfx/cards/robbersroost/toss.jpg");
-    new Card("Card confiscate", CARD_CONFISCATE, "gfx/cards/robbersroost/confiscate.jpg");
-    new Card("Track down",  CARD_TRACK_DOWN,    "gfx/cards/robbersroost/trackdown.jpg");
-    new Card("Caping wound", CARD_CAPING_WOUND, "gfx/cards/robbersroost/caping-wound.jpg");
-    new Card("Hit me",      CARD_HIT_ME,        "gfx/cards/robbersroost/hit-me.jpg");
-    new Card("Bronco",      CARD_BRONCO,        "gfx/cards/robbersroost/bronco.jpg");
-    new Card("Rob",         CARD_ROB,           "gfx/cards/robbersroost/rob.jpg");
-    new Card("Dive",        CARD_DIVE,          "gfx/cards/robbersroost/dive.jpg");
-    new Card("Push",        CARD_PUSH,          "gfx/cards/robbersroost/push.jpg");
-    new Card("Bandage",     CARD_BANDAGE,       "gfx/cards/robbersroost/bandage.jpg");
-    new Card("Join arms",   CARD_JOIN_ARMS,     "gfx/cards/robbersroost/join-arms.jpg");
-    new Card("Purple_fur_trade", CARD_PURPLE_FUR_TRADE, "gfx/cards/robbersroost/fur-trade.jpg");
     new Card("Purple warpath", CARD_PURPLE_WARPATH, "gfx/cards/robbersroost/warpatch.jpg");
-    new Card("Purple loan", CARD_PURPLE_LOAN,    "gfx/cards/robbersroost/loan.jpg");
-    new Card("Purple investment", CARD_PURPLE_INVESTMENT, "gfx/cards/robbersroost/investment.jpg");
-    new Card("Purple tomahawk", CARD_PURPLE_TOMAHAWK, "gfx/cards/robbersroost/tomahawk.jpg");
-    new Card("Purple molotov_cocktail", CARD_PURPLE_MOLOTOV_COCKTAIL,     "gfx/cards/robbersroost/molotov-cocktail.jpg");
-    new Card("Purple showtime",   CARD_PURPLE_SHOWTIME, "gfx/cards/robbersroost/show-time.jpg");
-    new Card("Q and a",      CARD_Q_AND_A,     "gfx/cards/robbersroost/q-and-a.jpg");
-    new Card("Disarm",       CARD_DISARM,      "gfx/cards/robbersroost/disarm.jpg");
-    new Card("Pay day",      CARD_PAY_DAY,     "gfx/cards/robbersroost/pay-day.jpg");
-    new Card("Purple on the house",   CARD_PURPLE_ON_THE_HOUSE, "gfx/cards/robbersroost/on-the-house.jpg");
-    new Card("Purple moonshine",   CARD_PURPLE_MOONSHINE, "gfx/cards/robbersroost/moonshine.jpg");
-
     
     //Unknown card 
     new Card("",            CARD_UNKNOWN,          "gfx/cards/back-playing.png");
@@ -324,7 +298,38 @@ void Card::loadDefaultRuleset()
     new Card("Dan Quake",      CHARACTER_DAN_QUAKE,         "gfx/characters/martincity/dan-quake.png");
     new Card("Ron Robber",     CHARACTER_RON_ROBBER,        "gfx/characters/martincity/ron-robber.png");
     new Card("Samuel Diehard", CHARACTER_SAMUEL_DIEHARD,    "gfx/characters/martincity/samuel-diehard.png");
-   
+   //Cusp of Carabelli 
+    new Card("James Donahoo",    CHARACTER_JAMES_DONAHOO,     "gfx/characters/cuspofcarabelli/james-donahoo.png");
+    new Card("Gordon Christensen",      CHARACTER_GORDON_CHRISTENSEN,       "gfx/characters/cuspofcarabelli/gordon-christensen.png");
+    new Card("Joel Janis",  CHARACTER_JOEL_JANIS,   "gfx/characters/cuspofcarabelli/joel-janis.png");
+    new Card("capt W Caroll",       CHARACTER_CAPT_W_CAROLL,        "gfx/characters/cuspofcarabelli/capt-w-caroll.png");
+    new Card("Edward Angle",     CHARACTER_EDWARD_ANGLE,      "gfx/characters/cuspofcarabelli/edward-angle.png");
+    new Card("Auntie Angelici",     CHARACTER_AUNTIE_ANGELICI,      "gfx/characters/cuspofcarabelli/auntie-angelici.png");
+    new Card("G V Black",     CHARACTER_G_V_BLACK,      "gfx/characters/cuspofcarabelli/g-v-black.png");
+    new Card("Bushido Bill",      CHARACTER_BUSHIDO_BILL,       "gfx/characters/cuspofcarabelli/bushido-bill.png");
+    new Card("Crazy Skull",     CHARACTER_CRAZY_SKULL,      "gfx/characters/cuspofcarabelli/crazy-skull.png");
+    new Card("William Harman",   CHARACTER_WILLIAM_HARMAN,    "gfx/characters/cuspofcarabelli/william-harman.png");
+    new Card("Clockwork",     CHARACTER_CLOCKWORK,      "gfx/characters/cuspofcarabelli/clockwork.png");
+    new Card("El Fantasma",     CHARACTER_EL_FANTASMA,      "gfx/characters/cuspofcarabelli/el-fantasma.png");
+    new Card("Adam Mc Cormick", CHARACTER_ADAM_MC_CORMICK,  "gfx/characters/cuspofcarabelli/adam-mc-cormick.png");
+    //Robbers Roost 
+    new Card("Crazy Wolf",  CHARACTER_CRAZY_WOLF,   "gfx/characters/robbersroost/crazy-wolf.png");
+    new Card("Turd Ferguson",     CHARACTER_TURD_FERGUSON,      "gfx/characters/robbersroost/turd-ferguson.png");
+    new Card("Lil Sure Shot",   CHARACTER_LIL_SURE_SHOT,    "gfx/characters/robbersroost/lil-sure-shot.png");
+    new Card("Flint Dixon",    CHARACTER_FLINT_DIXON,     "gfx/characters/robbersroost/flint-dixon.png");
+    new Card("Job Mushgrove",      CHARACTER_JOB_MUSHGROVE,       "gfx/characters/robbersroost/job-mushgrove.png");
+    new Card("Porter Rockwall",  CHARACTER_PORTER_ROCKWALL,   "gfx/characters/robbersroost/porter-rockwall.png");
+    new Card("Pat Barrett",       CHARACTER_PAT_BARRETT,        "gfx/characters/robbersroost/pat-barrett.png");
+    new Card("Johnny Pope",     CHARACTER_JOHNNY_POPE,      "gfx/characters/robbersroost/johnny-pope.png");
+    new Card("Queen Anne",     CHARACTER_QUEEN_ANNE,      "gfx/characters/robbersroost/queen-anne.png");
+    new Card("Josey Basset",     CHARACTER_JOSEY_BASSET,      "gfx/characters/robbersroost/josey-basset.png");
+    new Card("Eva Place",      CHARACTER_EVA_PLACE,       "gfx/characters/robbersroost/eva-place.png");
+    new Card("Laura Billion",     CHARACTER_LAURA_BILLION,      "gfx/characters/robbersroost/laura-billion.png");
+    new Card("Maggie Mae",   CHARACTER_MAGGIE_MAE,    "gfx/characters/robbersroost/maggie-mae.png");
+    new Card("Anne Rogers",     CHARACTER_ANNE_ROGERS,      "gfx/characters/robbersroost/anne-rogers.png");
+    new Card("Lela Devere",     CHARACTER_LELA_DEVERE,      "gfx/characters/robbersroost/lela-devere.png");
+    new Card("Julie Bulette", CHARACTER_JULIE_BULETTE,  "gfx/characters/robbersroost/julie-bulette.png");
+    
     
     
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");

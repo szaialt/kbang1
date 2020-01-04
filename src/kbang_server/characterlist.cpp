@@ -47,6 +47,13 @@
 #include "charactertomyleeghost.h"
 #include "characterantonycarma.h"
 
+#include "charactergordonchristensen.h"
+#include "characterjoeljanis.h"
+#include "charactercaptwcaroll.h"
+#include "characterauntieangelici.h"
+#include "charactergvblack.h"
+#include "characterbushidobill.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -175,6 +182,18 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterDanQuake(parent);
     case CHARACTER_SAMUEL_DIEHARD: 
         return new CharacterSamuelDiehard(parent);
+    case CHARACTER_JOEL_JANIS: 
+        return new CharacterJoelJanis(parent);
+    case CHARACTER_GORDON_CHRISTENSEN: 
+        return new CharacterGordonChristensen(parent);
+    case CHARACTER_CAPT_W_CAROLL: 
+        return new CharacterCaptWCaroll(parent);
+    case CHARACTER_AUNTIE_ANGELICI: 
+        return new CharacterAuntieAngelici(parent);
+    case CHARACTER_G_V_BLACK: 
+        return new CharacterGVBlack(parent);
+    case CHARACTER_BUSHIDO_BILL: 
+        return new CharacterBushidoBill(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -266,6 +285,38 @@ void CharacterList::initCharacterTypes(Game* game)
 
     if (game->gameInfo().cuspOfCarabelliCharactersFlag()){
         qDebug() << "cuspOfCarabelliCharactersFlag.";
+        sm_characterTypes.append(CHARACTER_JOEL_JANIS);
+        sm_characterTypes.append(CHARACTER_GORDON_CHRISTENSEN);
+        sm_characterTypes.append(CHARACTER_AUNTIE_ANGELICI);
+        sm_characterTypes.append(CHARACTER_G_V_BLACK);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL); 
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL); 
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
     }
     else {
         qDebug() << "No cuspOfCarabelliCharactersFlag.";

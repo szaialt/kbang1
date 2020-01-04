@@ -228,6 +228,7 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_SUPPLY_CRATE:
         case CARD_BROWN_INVESTMENT:
         case CARD_BROWN_MOONSHINE:
+        case CARD_TAKER_BANG:
                 selectCards(cardWidget, 1);
                 break;
         case CARD_ARSON:
@@ -266,6 +267,8 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_ERNEST_SALIVEN:
     case CHARACTER_ERNEST_SALIVEN2:
     case CHARACTER_MATTHEW_HELL:
+    case CHARACTER_GORDON_CHRISTENSEN:
+    case CHARACTER_AUNTIE_ANGELICI:
          selectCards(cardWidget, 1);
          break;
     case CHARACTER_SID_KETCHUM:
@@ -282,6 +285,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_JIM_SCARECROW:
     case CHARACTER_LADY_BURBOUN:
     case CHARACTER_JONATH_HEXX:
+    case CHARACTER_G_V_BLACK:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:

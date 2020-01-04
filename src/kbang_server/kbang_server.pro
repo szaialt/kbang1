@@ -82,6 +82,7 @@ HEADERS += \
     cardreward.h \
     cardpackmule.h \
     cardgamble.h \
+    cardtakerbang.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -128,7 +129,13 @@ HEADERS += \
     characterabilitythief.h \
     charactercardkeeper.h \
     characterdanquake.h \
-    charactersamueldiehard.h
+    charactersamueldiehard.h \
+    charactergordonchristensen.h \
+    characterjoeljanis.h \
+    charactercaptwcaroll.h \
+    characterauntieangelici.h \
+    charactergvblack.h \
+    characterbushidobill.h
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -199,6 +206,7 @@ SOURCES += \
     cardreward.cpp \
     cardpackmule.cpp \
     cardgamble.cpp \
+    cardtakerbang.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
@@ -244,7 +252,13 @@ SOURCES += \
     characterabilitythief.cpp \
     charactercardkeeper.cpp \
     characterdanquake.cpp \
-    charactersamueldiehard.cpp
+    charactersamueldiehard.cpp \
+    charactergordonchristensen.cpp \
+    characterjoeljanis.cpp \
+    charactercaptwcaroll.cpp \
+    characterauntieangelici.cpp \
+    charactergvblack.cpp \
+    characterbushidobill.cpp
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \

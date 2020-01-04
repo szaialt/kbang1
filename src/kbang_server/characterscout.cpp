@@ -3,6 +3,7 @@
 #include "reactioncard.h"
 #include "cardteamfortressbang.h"
 #include "cardmissed.h"
+#include "weaponcard.h"
 
 CharacterScout::CharacterScout(QObject* parent):
     CharacterBase(parent, CHARACTER_UNKNOWN){
@@ -29,6 +30,7 @@ void CharacterScout::respondCard(ReactionHandler* reactionHandler, PlayingCard* 
                         case REACTION_LASTSAVE:
                         case REACTION_LUCKYDUKE:
                         case REACTION_KITCARLSON:
+                        case REACTION_TAKER_BANG:
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;
@@ -36,9 +38,16 @@ void CharacterScout::respondCard(ReactionHandler* reactionHandler, PlayingCard* 
                         case REACTION_GATLING:
                         {
                             if ((reactionCard->color() == COLOR_BROWN) && (targetCard->color() == COLOR_BROWN)){
-                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
-                                missed->setVirtual(targetCard);
-                                CharacterBase::respondCard(reactionHandler, missed);
+                                if (reactionCard->type() ==     CARD_BROWN_SHOW_TIME){
+                                    PlayingCard* weapon = new WeaponCard(mp_player->game(), -1, WeaponCard::Walker, SUIT_INVALID, 10);
+                                    weapon->setVirtual(mp_player, POCKET_HAND);
+                                    CharacterBase::respondCard(reactionHandler, weapon); 
+                               }
+                               else {
+                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                    missed->setVirtual(targetCard);
+                                    CharacterBase::respondCard(reactionHandler, missed);
+                              }
                             }
                             else {
                                 CharacterBase::respondCard(reactionHandler, targetCard);

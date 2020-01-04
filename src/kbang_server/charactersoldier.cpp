@@ -3,6 +3,7 @@
 #include "reactioncard.h"
 #include "cardteamfortressbang.h"
 #include "cardmissed.h"
+#include "weaponcard.h"
 
 CharacterSoldier::CharacterSoldier(QObject* parent, Type type):
     CharacterBase(parent, CHARACTER_UNKNOWN),
@@ -37,14 +38,22 @@ void CharacterSoldier::respondCard(ReactionHandler* reactionHandler, PlayingCard
                         case REACTION_KITCARLSON:
                         case REACTION_DUEL:
                         case REACTION_BANG:
+                        case REACTION_TAKER_BANG:
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;
                         case REACTION_GATLING:
                          {
+                             if (reactionCard->type() == CARD_BROWN_SHOW_TIME){
+                                PlayingCard* weapon = new WeaponCard(mp_player->game(), -1, WeaponCard::Walker, SUIT_INVALID, 10);
+                                weapon->setVirtual(mp_player, POCKET_HAND);
+                                CharacterBase::respondCard(reactionHandler, weapon); 
+                             }
+                             else {
                                 PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
                                 missed->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, missed);
+                             }
                          }
                          break;
                          case REACTION_INDIANS:
