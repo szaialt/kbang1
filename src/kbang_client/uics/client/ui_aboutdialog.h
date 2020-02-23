@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +10,10 @@
 #define UI_ABOUTDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -146,13 +143,13 @@ public:
 
     void retranslateUi(QDialog *AboutDialog)
     {
-        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About  KBang Client", Q_NULLPTR));
+        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About  KBang Client", nullptr));
         labelIcon->setText(QString());
-        labelAppName->setText(QApplication::translate("AboutDialog", "AppName", Q_NULLPTR));
-        labelAppVersion->setText(QApplication::translate("AboutDialog", "AppVersion", Q_NULLPTR));
-        labelProtocolVersion->setText(QApplication::translate("AboutDialog", "ProtocolVersion", Q_NULLPTR));
-        labelProjectUrl->setText(QApplication::translate("AboutDialog", "<a href=\"http://code.google.com/p/kbang\">http://code.google.com/p/kbang</a>", Q_NULLPTR));
-        labelCreatorUrl->setText(QApplication::translate("AboutDialog", "<a href=\"http://www.davincigames.com\">http://www.davincigames.com</a>", Q_NULLPTR));
+        labelAppName->setText(QApplication::translate("AboutDialog", "AppName", nullptr));
+        labelAppVersion->setText(QApplication::translate("AboutDialog", "AppVersion", nullptr));
+        labelProtocolVersion->setText(QApplication::translate("AboutDialog", "ProtocolVersion", nullptr));
+        labelProjectUrl->setText(QApplication::translate("AboutDialog", "<a href=\"http://code.google.com/p/kbang\">http://code.google.com/p/kbang</a>", nullptr));
+        labelCreatorUrl->setText(QApplication::translate("AboutDialog", "<a href=\"http://www.davincigames.com\">http://www.davincigames.com</a>", nullptr));
         labelOurRules->setText(QApplication::translate("AboutDialog", "Our rules:\n"
 "\n"
 "Dynamite modification: You cannot take out dynamite by a card taker. \n"
@@ -164,12 +161,12 @@ public:
 "She can fire only a weapon during her turn.\n"
 "\n"
 "You can use life-saving beer even if there are two living players left.\n"
-"", Q_NULLPTR));
+"", nullptr));
         labelLicenceUrl->setText(QApplication::translate("AboutDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\"><span style=\" text-decoration: underline; color:#0000ff;\">GNU General Public License, version 2</span></a></p></body></html>", Q_NULLPTR));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\"><span style=\" text-decoration: underline; color:#0000ff;\">GNU General Public License, version 2</span></a></p></body></html>", nullptr));
     } // retranslateUi
 
 };

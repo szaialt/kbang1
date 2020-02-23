@@ -159,6 +159,7 @@ enum PlayingCardType {
     CARD_UNDEFENSABLE,
     CARD_THIEF,
     CARD_STUNNING_BANG,
+    CARD_GHOST,
     //Cusp of carabelli
     CARD_GREEN_FUR_TRADE,
     CARD_WAR_PARTY,

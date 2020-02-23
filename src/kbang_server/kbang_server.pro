@@ -83,6 +83,7 @@ HEADERS += \
     cardpackmule.h \
     cardgamble.h \
     cardtakerbang.h \
+    cardghost.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -135,7 +136,9 @@ HEADERS += \
     charactercaptwcaroll.h \
     characterauntieangelici.h \
     charactergvblack.h \
-    characterbushidobill.h
+    characterbushidobill.h \
+    charactercheckingblack.h \
+    characterelfantasma.h
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -207,6 +210,7 @@ SOURCES += \
     cardpackmule.cpp \
     cardgamble.cpp \
     cardtakerbang.cpp \
+    cardghost.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
@@ -258,7 +262,9 @@ SOURCES += \
     charactercaptwcaroll.cpp \
     characterauntieangelici.cpp \
     charactergvblack.cpp \
-    characterbushidobill.cpp
+    characterbushidobill.cpp \
+    charactercheckingblack.cpp \
+    characterelfantasma.cpp
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \

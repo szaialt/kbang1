@@ -53,6 +53,8 @@
 #include "characterauntieangelici.h"
 #include "charactergvblack.h"
 #include "characterbushidobill.h"
+#include "charactercheckingblack.h"
+#include "characterelfantasma.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -194,6 +196,12 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterGVBlack(parent);
     case CHARACTER_BUSHIDO_BILL: 
         return new CharacterBushidoBill(parent);
+    case CHARACTER_WILLIAM_HARMAN: 
+        return new CharacterCheckingBlack(parent, CharacterCheckingBlack::WilliamHarman);
+    case CHARACTER_CLOCKWORK: 
+        return new CharacterCheckingBlack(parent, CharacterCheckingBlack::Clockwork);
+    case CHARACTER_EL_FANTASMA: 
+        return new CharacterElFantasma(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -290,33 +298,33 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_AUNTIE_ANGELICI);
         sm_characterTypes.append(CHARACTER_G_V_BLACK);
         sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL); 
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL); 
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
-        sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_EL_FANTASMA);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); 
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); 
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
     }
     else {
         qDebug() << "No cuspOfCarabelliCharactersFlag.";

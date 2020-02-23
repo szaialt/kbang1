@@ -520,6 +520,7 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "card-taker-bang")     return CARD_TAKER_BANG;
     if (s == "card taker bang")     return CARD_TAKER_BANG;
     if (s == "card_taker_bang")     return CARD_TAKER_BANG;
+    if (s == "ghost")               return CARD_GHOST;
     //Roober's roost
     if (s == "bulldog-2")           return CARD_BULLDOG_2;
     if (s == "bulldog 2")           return CARD_BULLDOG_2;
@@ -621,6 +622,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_UNDEFENSABLE:    return "undefensible bang";
         case CARD_THIEF:           return "thief";
         case CARD_STUNNING_BANG:   return "stunning bang";
+        case CARD_GHOST:           return "ghost";
         //Cusp of carabelli
         case CARD_GREEN_FUR_TRADE: return "green fur trade";
         case CARD_WAR_PARTY:       return "war party";

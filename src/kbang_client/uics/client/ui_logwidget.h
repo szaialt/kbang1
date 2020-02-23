@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'logwidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,9 @@
 #define UI_LOGWIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
@@ -179,19 +176,19 @@ public:
 
     void retranslateUi(QWidget *LogWidget)
     {
-        LogWidget->setWindowTitle(QApplication::translate("LogWidget", "Form", Q_NULLPTR));
+        LogWidget->setWindowTitle(QApplication::translate("LogWidget", "Form", nullptr));
         mp_logView->setHtml(QApplication::translate("LogWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"></p></body></html>", Q_NULLPTR));
-        mp_tabWidget->setTabText(mp_tabWidget->indexOf(mp_tabLog), QApplication::translate("LogWidget", "Log", Q_NULLPTR));
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"></p></body></html>", nullptr));
+        mp_tabWidget->setTabText(mp_tabWidget->indexOf(mp_tabLog), QApplication::translate("LogWidget", "Log", nullptr));
         mp_xmlView->setHtml(QApplication::translate("LogWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>", Q_NULLPTR));
-        mp_tabWidget->setTabText(mp_tabWidget->indexOf(mp_tabDebug), QApplication::translate("LogWidget", "Xml", Q_NULLPTR));
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>", nullptr));
+        mp_tabWidget->setTabText(mp_tabWidget->indexOf(mp_tabDebug), QApplication::translate("LogWidget", "Xml", nullptr));
     } // retranslateUi
 
 };

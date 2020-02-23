@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'joingamedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,7 @@
 #define UI_JOINGAMEDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -380,62 +378,62 @@ public:
 
     void retranslateUi(QDialog *JoinGameDialog)
     {
-        JoinGameDialog->setWindowTitle(QApplication::translate("JoinGameDialog", "Join Game", Q_NULLPTR));
+        JoinGameDialog->setWindowTitle(QApplication::translate("JoinGameDialog", "Join Game", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = gameListView->headerItem();
-        ___qtreewidgetitem->setText(2, QApplication::translate("JoinGameDialog", "Players", Q_NULLPTR));
-        ___qtreewidgetitem->setText(1, QApplication::translate("JoinGameDialog", "State", Q_NULLPTR));
-        ___qtreewidgetitem->setText(0, QApplication::translate("JoinGameDialog", "Name", Q_NULLPTR));
-        label_12->setText(QApplication::translate("JoinGameDialog", "Game Info", Q_NULLPTR));
-        label_13->setText(QApplication::translate("JoinGameDialog", "Name:", Q_NULLPTR));
-        labelName->setText(QApplication::translate("JoinGameDialog", "[Name]", Q_NULLPTR));
-        label_14->setText(QApplication::translate("JoinGameDialog", "Description:", Q_NULLPTR));
-        labelDescription->setText(QApplication::translate("JoinGameDialog", "[Description]", Q_NULLPTR));
-        label_15->setText(QApplication::translate("JoinGameDialog", "State:", Q_NULLPTR));
-        labelState->setText(QApplication::translate("JoinGameDialog", "[State]", Q_NULLPTR));
-        label_16->setText(QApplication::translate("JoinGameDialog", "Players:", Q_NULLPTR));
-        labelPlayers->setText(QApplication::translate("JoinGameDialog", "[Players]", Q_NULLPTR));
-        label_18->setText(QApplication::translate("JoinGameDialog", "AI Players:", Q_NULLPTR));
-        labelAIPlayers->setText(QApplication::translate("JoinGameDialog", "[AI Players]", Q_NULLPTR));
-        label_19->setText(QApplication::translate("JoinGameDialog", "Password:", Q_NULLPTR));
-        labelPassword->setText(QApplication::translate("JoinGameDialog", "[Password]", Q_NULLPTR));
-        label_20->setText(QApplication::translate("JoinGameDialog", "Lifepoints in combinations:", Q_NULLPTR));
-        labelLifePoint->setText(QApplication::translate("JoinGameDialog", "[Lifepoints]", Q_NULLPTR));
-        label_21->setText(QApplication::translate("JoinGameDialog", "DodgeCity:", Q_NULLPTR));
-        labelDodgeCity->setText(QApplication::translate("JoinGameDialog", "[DodgeCity]", Q_NULLPTR));
-        label_22->setText(QApplication::translate("JoinGameDialog", "WalleyOfShadows:", Q_NULLPTR));
-        labelWalleyOfShadows->setText(QApplication::translate("JoinGameDialog", "[WalleyOfShadows]", Q_NULLPTR));
-        label_23->setText(QApplication::translate("JoinGameDialog", "TeamFortress:", Q_NULLPTR));
-        labelTeamFortress->setText(QApplication::translate("JoinGameDialog", "[TeamFortress]", Q_NULLPTR));
-        label_24->setText(QApplication::translate("JoinGameDialog", "Our rules:", Q_NULLPTR));
-        labelOurFlag->setText(QApplication::translate("JoinGameDialog", "[Our rules]", Q_NULLPTR));
-        label_25->setText(QApplication::translate("JoinGameDialog", "Stacking dynamite:", Q_NULLPTR));
-        labelStackingDynamite->setText(QApplication::translate("JoinGameDialog", "[Stacking dynamite]", Q_NULLPTR));
+        ___qtreewidgetitem->setText(2, QApplication::translate("JoinGameDialog", "Players", nullptr));
+        ___qtreewidgetitem->setText(1, QApplication::translate("JoinGameDialog", "State", nullptr));
+        ___qtreewidgetitem->setText(0, QApplication::translate("JoinGameDialog", "Name", nullptr));
+        label_12->setText(QApplication::translate("JoinGameDialog", "Game Info", nullptr));
+        label_13->setText(QApplication::translate("JoinGameDialog", "Name:", nullptr));
+        labelName->setText(QApplication::translate("JoinGameDialog", "[Name]", nullptr));
+        label_14->setText(QApplication::translate("JoinGameDialog", "Description:", nullptr));
+        labelDescription->setText(QApplication::translate("JoinGameDialog", "[Description]", nullptr));
+        label_15->setText(QApplication::translate("JoinGameDialog", "State:", nullptr));
+        labelState->setText(QApplication::translate("JoinGameDialog", "[State]", nullptr));
+        label_16->setText(QApplication::translate("JoinGameDialog", "Players:", nullptr));
+        labelPlayers->setText(QApplication::translate("JoinGameDialog", "[Players]", nullptr));
+        label_18->setText(QApplication::translate("JoinGameDialog", "AI Players:", nullptr));
+        labelAIPlayers->setText(QApplication::translate("JoinGameDialog", "[AI Players]", nullptr));
+        label_19->setText(QApplication::translate("JoinGameDialog", "Password:", nullptr));
+        labelPassword->setText(QApplication::translate("JoinGameDialog", "[Password]", nullptr));
+        label_20->setText(QApplication::translate("JoinGameDialog", "Lifepoints in combinations:", nullptr));
+        labelLifePoint->setText(QApplication::translate("JoinGameDialog", "[Lifepoints]", nullptr));
+        label_21->setText(QApplication::translate("JoinGameDialog", "DodgeCity:", nullptr));
+        labelDodgeCity->setText(QApplication::translate("JoinGameDialog", "[DodgeCity]", nullptr));
+        label_22->setText(QApplication::translate("JoinGameDialog", "WalleyOfShadows:", nullptr));
+        labelWalleyOfShadows->setText(QApplication::translate("JoinGameDialog", "[WalleyOfShadows]", nullptr));
+        label_23->setText(QApplication::translate("JoinGameDialog", "TeamFortress:", nullptr));
+        labelTeamFortress->setText(QApplication::translate("JoinGameDialog", "[TeamFortress]", nullptr));
+        label_24->setText(QApplication::translate("JoinGameDialog", "Our rules:", nullptr));
+        labelOurFlag->setText(QApplication::translate("JoinGameDialog", "[Our rules]", nullptr));
+        label_25->setText(QApplication::translate("JoinGameDialog", "Stacking dynamite:", nullptr));
+        labelStackingDynamite->setText(QApplication::translate("JoinGameDialog", "[Stacking dynamite]", nullptr));
         QTreeWidgetItem *___qtreewidgetitem1 = playerListView->headerItem();
-        ___qtreewidgetitem1->setText(3, QApplication::translate("JoinGameDialog", "Z", Q_NULLPTR));
-        ___qtreewidgetitem1->setText(2, QApplication::translate("JoinGameDialog", "Y", Q_NULLPTR));
-        ___qtreewidgetitem1->setText(1, QApplication::translate("JoinGameDialog", "X", Q_NULLPTR));
-        ___qtreewidgetitem1->setText(0, QApplication::translate("JoinGameDialog", "Players", Q_NULLPTR));
+        ___qtreewidgetitem1->setText(3, QApplication::translate("JoinGameDialog", "Z", nullptr));
+        ___qtreewidgetitem1->setText(2, QApplication::translate("JoinGameDialog", "Y", nullptr));
+        ___qtreewidgetitem1->setText(1, QApplication::translate("JoinGameDialog", "X", nullptr));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("JoinGameDialog", "Players", nullptr));
 
         const bool __sortingEnabled = playerListView->isSortingEnabled();
         playerListView->setSortingEnabled(false);
         QTreeWidgetItem *___qtreewidgetitem2 = playerListView->topLevelItem(0);
-        ___qtreewidgetitem2->setText(0, QApplication::translate("JoinGameDialog", "Create new player", Q_NULLPTR));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("JoinGameDialog", "Create new player", nullptr));
         playerListView->setSortingEnabled(__sortingEnabled);
 
-        label_7->setText(QApplication::translate("JoinGameDialog", "Player Name", Q_NULLPTR));
+        label_7->setText(QApplication::translate("JoinGameDialog", "Player Name", nullptr));
         selectPlayerIconWidget->setText(QApplication::translate("JoinGameDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Avatar</span></p></body></html>", Q_NULLPTR));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Avatar</span></p></body></html>", nullptr));
 #ifndef QT_NO_TOOLTIP
-        label_9->setToolTip(QApplication::translate("JoinGameDialog", "You can set your password here. This password will be required to reconnect to your player in case of disconnection.", Q_NULLPTR));
+        label_9->setToolTip(QApplication::translate("JoinGameDialog", "You can set your password here. This password will be required to reconnect to your player in case of disconnection.", nullptr));
 #endif // QT_NO_TOOLTIP
-        label_9->setText(QApplication::translate("JoinGameDialog", "Player Password", Q_NULLPTR));
-        pushButtonRefresh->setText(QApplication::translate("JoinGameDialog", "Refresh", Q_NULLPTR));
-        pushButtonPlay->setText(QApplication::translate("JoinGameDialog", "Play", Q_NULLPTR));
-        pushButtonSpectate->setText(QApplication::translate("JoinGameDialog", "Spectate", Q_NULLPTR));
-        pushButtonCancel->setText(QApplication::translate("JoinGameDialog", "Cancel", Q_NULLPTR));
+        label_9->setText(QApplication::translate("JoinGameDialog", "Player Password", nullptr));
+        pushButtonRefresh->setText(QApplication::translate("JoinGameDialog", "Refresh", nullptr));
+        pushButtonPlay->setText(QApplication::translate("JoinGameDialog", "Play", nullptr));
+        pushButtonSpectate->setText(QApplication::translate("JoinGameDialog", "Spectate", nullptr));
+        pushButtonCancel->setText(QApplication::translate("JoinGameDialog", "Cancel", nullptr));
     } // retranslateUi
 
 };

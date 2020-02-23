@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'creategamedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,15 +10,12 @@
 #define UI_CREATEGAMEDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -495,55 +492,55 @@ public:
 
     void retranslateUi(QDialog *CreateGameDialog)
     {
-        CreateGameDialog->setWindowTitle(QApplication::translate("CreateGameDialog", "Create a game", Q_NULLPTR));
-        label_4->setText(QApplication::translate("CreateGameDialog", "-", Q_NULLPTR));
-        radioButtonOrderChronological->setText(QApplication::translate("CreateGameDialog", "Chronological", Q_NULLPTR));
-        radioButtonOrderRandom->setText(QApplication::translate("CreateGameDialog", "Random", Q_NULLPTR));
+        CreateGameDialog->setWindowTitle(QApplication::translate("CreateGameDialog", "Create a game", nullptr));
+        label_4->setText(QApplication::translate("CreateGameDialog", "-", nullptr));
+        radioButtonOrderChronological->setText(QApplication::translate("CreateGameDialog", "Chronological", nullptr));
+        radioButtonOrderRandom->setText(QApplication::translate("CreateGameDialog", "Random", nullptr));
 #ifndef QT_NO_TOOLTIP
         label->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
-        label->setText(QApplication::translate("CreateGameDialog", "Game Name", Q_NULLPTR));
-        label_2->setText(QApplication::translate("CreateGameDialog", "Game Description", Q_NULLPTR));
-        label_3->setText(QApplication::translate("CreateGameDialog", "Number of Players", Q_NULLPTR));
-        pushButtonCreate->setText(QApplication::translate("CreateGameDialog", "Create", Q_NULLPTR));
-        pushButtonCancel->setText(QApplication::translate("CreateGameDialog", "Cancel", Q_NULLPTR));
-        label_8->setText(QApplication::translate("CreateGameDialog", "Number of AI Players", Q_NULLPTR));
-        label_7->setText(QApplication::translate("CreateGameDialog", "Player Name", Q_NULLPTR));
+        label->setText(QApplication::translate("CreateGameDialog", "Game Name", nullptr));
+        label_2->setText(QApplication::translate("CreateGameDialog", "Game Description", nullptr));
+        label_3->setText(QApplication::translate("CreateGameDialog", "Number of Players", nullptr));
+        pushButtonCreate->setText(QApplication::translate("CreateGameDialog", "Create", nullptr));
+        pushButtonCancel->setText(QApplication::translate("CreateGameDialog", "Cancel", nullptr));
+        label_8->setText(QApplication::translate("CreateGameDialog", "Number of AI Players", nullptr));
+        label_7->setText(QApplication::translate("CreateGameDialog", "Player Name", nullptr));
 #ifndef QT_NO_TOOLTIP
-        label_9->setToolTip(QApplication::translate("CreateGameDialog", "You can set your password here. This password will be required to reconnect to your player in case of disconnection.", Q_NULLPTR));
+        label_9->setToolTip(QApplication::translate("CreateGameDialog", "You can set your password here. This password will be required to reconnect to your player in case of disconnection.", nullptr));
 #endif // QT_NO_TOOLTIP
-        label_9->setText(QApplication::translate("CreateGameDialog", "Player Password", Q_NULLPTR));
+        label_9->setText(QApplication::translate("CreateGameDialog", "Player Password", nullptr));
         selectPlayerIconWidget->setText(QApplication::translate("CreateGameDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Avatar</span></p></body></html>", Q_NULLPTR));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Avatar</span></p></body></html>", nullptr));
 #ifndef QT_NO_TOOLTIP
-        label_11->setToolTip(QApplication::translate("CreateGameDialog", "This is the password that is required to join the game as a spectator.", Q_NULLPTR));
+        label_11->setToolTip(QApplication::translate("CreateGameDialog", "This is the password that is required to join the game as a spectator.", nullptr));
 #endif // QT_NO_TOOLTIP
-        label_11->setText(QApplication::translate("CreateGameDialog", "Password for Spectators", Q_NULLPTR));
-        spinBoxMaxSpectators->setSpecialValueText(QApplication::translate("CreateGameDialog", "Infinity", Q_NULLPTR));
-        label_6->setText(QApplication::translate("CreateGameDialog", "Order of Players", Q_NULLPTR));
-        label_12->setText(QApplication::translate("CreateGameDialog", "Max. Number of Spectators", Q_NULLPTR));
+        label_11->setText(QApplication::translate("CreateGameDialog", "Password for Spectators", nullptr));
+        spinBoxMaxSpectators->setSpecialValueText(QApplication::translate("CreateGameDialog", "Infinity", nullptr));
+        label_6->setText(QApplication::translate("CreateGameDialog", "Order of Players", nullptr));
+        label_12->setText(QApplication::translate("CreateGameDialog", "Max. Number of Spectators", nullptr));
 #ifndef QT_NO_TOOLTIP
-        label_5->setToolTip(QApplication::translate("CreateGameDialog", "This is the password that is required to join the game as a player.", Q_NULLPTR));
+        label_5->setToolTip(QApplication::translate("CreateGameDialog", "This is the password that is required to join the game as a player.", nullptr));
 #endif // QT_NO_TOOLTIP
-        label_5->setText(QApplication::translate("CreateGameDialog", "Password for Players", Q_NULLPTR));
-        labelLifePointsMaxFlag->setText(QApplication::translate("CreateGameDialog", "Use maximal lifepoint in character combinations", Q_NULLPTR));
-        labelCheckBoxOurFlag->setText(QApplication::translate("CreateGameDialog", "Use our rules", Q_NULLPTR));
-        labelDodgeCity->setText(QApplication::translate("CreateGameDialog", "Dodge City", Q_NULLPTR));
-        labelTeamFortress->setText(QApplication::translate("CreateGameDialog", "Team Fortress", Q_NULLPTR));
-        labelTeamFortressCharacters->setText(QApplication::translate("CreateGameDialog", "Team Fortress characters", Q_NULLPTR));
-        labelMartinCity->setText(QApplication::translate("CreateGameDialog", "Martin City", Q_NULLPTR));
-        labelMartinCityCharacters->setText(QApplication::translate("CreateGameDialog", "Martin City characters", Q_NULLPTR));
-        labelDirectorsCuts->setText(QApplication::translate("CreateGameDialog", "Directors Cuts", Q_NULLPTR));
-        labelDirectorsCutsCharacters->setText(QApplication::translate("CreateGameDialog", "Directors Cuts characters", Q_NULLPTR));
-        labelRobberRoost->setText(QApplication::translate("CreateGameDialog", "Robber Roost", Q_NULLPTR));
-        labelRobberRoostCharacters->setText(QApplication::translate("CreateGameDialog", "Robber Roost characters", Q_NULLPTR));
-        labelCuspOfCarabelli->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", Q_NULLPTR));
-        labelCuspOfCarabelliCharacters->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", Q_NULLPTR));
-        labelStackingDynamite->setText(QApplication::translate("CreateGameDialog", "Stacking dynamite", Q_NULLPTR));
-        labelAiLevel->setText(QApplication::translate("CreateGameDialog", "Ai level", Q_NULLPTR));
+        label_5->setText(QApplication::translate("CreateGameDialog", "Password for Players", nullptr));
+        labelLifePointsMaxFlag->setText(QApplication::translate("CreateGameDialog", "Use maximal lifepoint in character combinations", nullptr));
+        labelCheckBoxOurFlag->setText(QApplication::translate("CreateGameDialog", "Use our rules", nullptr));
+        labelDodgeCity->setText(QApplication::translate("CreateGameDialog", "Dodge City", nullptr));
+        labelTeamFortress->setText(QApplication::translate("CreateGameDialog", "Team Fortress", nullptr));
+        labelTeamFortressCharacters->setText(QApplication::translate("CreateGameDialog", "Team Fortress characters", nullptr));
+        labelMartinCity->setText(QApplication::translate("CreateGameDialog", "Martin City", nullptr));
+        labelMartinCityCharacters->setText(QApplication::translate("CreateGameDialog", "Martin City characters", nullptr));
+        labelDirectorsCuts->setText(QApplication::translate("CreateGameDialog", "Directors Cuts", nullptr));
+        labelDirectorsCutsCharacters->setText(QApplication::translate("CreateGameDialog", "Directors Cuts characters", nullptr));
+        labelRobberRoost->setText(QApplication::translate("CreateGameDialog", "Robber Roost", nullptr));
+        labelRobberRoostCharacters->setText(QApplication::translate("CreateGameDialog", "Robber Roost characters", nullptr));
+        labelCuspOfCarabelli->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", nullptr));
+        labelCuspOfCarabelliCharacters->setText(QApplication::translate("CreateGameDialog", "Cusp of Carabelli", nullptr));
+        labelStackingDynamite->setText(QApplication::translate("CreateGameDialog", "Stacking dynamite", nullptr));
+        labelAiLevel->setText(QApplication::translate("CreateGameDialog", "Ai level", nullptr));
     } // retranslateUi
 
 };

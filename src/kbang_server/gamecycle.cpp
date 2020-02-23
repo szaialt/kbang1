@@ -16,6 +16,8 @@
 #include "charactertomyleeghost.h"
 #include "charactergordonchristensen.h"
 #include "charactercaptwcaroll.h"
+#include "characterelfantasma.h"
+#include "charactercheckingblack.h"
 #include "cardweakness.h"
 #include "carddrawcards.h"
 
@@ -119,6 +121,10 @@ void GameCycle::startTurn(Player* player)
 {
     m_contextDirty = 1;
     resetAbility(player);
+//     if (player->characterType() == CHARACTER_EL_FANTASMA){
+//         player->setAlive(true);
+//         player->character()->useAbility();
+//     }
     Player::CardList table = player->table();
     foreach(PlayingCard* c, table){
         c->setAct(true); 
@@ -675,6 +681,14 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_CAPT_W_CAROLL){
         CharacterGordonChristensen* christ =  qobject_cast<CharacterGordonChristensen*>(player->character());
         christ->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_WILLIAM_HARMAN){
+        CharacterCheckingBlack* black =  qobject_cast<CharacterCheckingBlack*>(player->character());
+        black->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_CLOCKWORK){
+        CharacterCheckingBlack* black =  qobject_cast<CharacterCheckingBlack*>(player->character());
+        black->resetAbility();
     }
 }
 
