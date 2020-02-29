@@ -192,7 +192,8 @@ public:
      */
     void sendChatMessage(Player* player, const QString& message);
     void installNewRenegade();
-
+    void reversePlayerList();
+    void swapPlayers(int p1, int p2);
 private:
     void checkStartable();
     void shufflePlayers();

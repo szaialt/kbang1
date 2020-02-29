@@ -12,6 +12,7 @@ public:
         Clockwork
     };
     CharacterCheckingBlack(QObject *parent, Type type);
+    virtual int maxLifePoints() const;
     virtual void useAbility();
     virtual void useAbility(Player* targetPlayer);
     void resetAbility();

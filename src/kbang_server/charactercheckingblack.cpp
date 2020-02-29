@@ -19,13 +19,17 @@ CharacterCheckingBlack::CharacterCheckingBlack(QObject* parent, Type type):
     }
 }
 
+int CharacterCheckingBlack::maxLifePoints() const {
+    if (characterType() == CHARACTER_CLOCKWORK) return 5;
+    return 4;
+}
+
 void CharacterCheckingBlack::useAbility(){
     if ((characterType() == CHARACTER_CLOCKWORK) && (!m_used)){
         PlayingCard* checkedCard = gameTable().checkDeck();
         bool checkResult = check(checkedCard);
         if (checkResult){
-            QList<Player*> list = mp_player->game()->playerList();
-            std::reverse(list.begin(), list.end());
+            mp_player->game()->reversePlayerList();
         }
         m_used = true;
         notifyAbilityUse();

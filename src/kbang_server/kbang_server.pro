@@ -135,6 +135,7 @@ HEADERS += \
     characterjoeljanis.h \
     charactercaptwcaroll.h \
     characterauntieangelici.h \
+    characteredwardangle.h \
     charactergvblack.h \
     characterbushidobill.h \
     charactercheckingblack.h \
@@ -261,6 +262,7 @@ SOURCES += \
     characterjoeljanis.cpp \
     charactercaptwcaroll.cpp \
     characterauntieangelici.cpp \
+    characteredwardangle.cpp \
     charactergvblack.cpp \
     characterbushidobill.cpp \
     charactercheckingblack.cpp \

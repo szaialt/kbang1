@@ -46,6 +46,7 @@
 #include "charactertomyleeghost.h"
 
 #include <stdexcept>
+#include <iostream>
 
 Game::Game(GameServer* parent, int gameId, const CreateGameData& createGameData):
     QObject(parent),
@@ -407,6 +408,22 @@ void Game::sendChatMessage(Player* player, const QString& message)
     gameEventManager().onChatMessage(player, message);
 }
 
+void Game::installNewRenegade(){
+    m_renegadesCount++;
+}
+
+void Game::reversePlayerList(){
+    std::reverse(m_playerList.begin(), m_playerList.end());
+}
+
+void Game::swapPlayers(int p1, int p2){
+    if (p1 < 0) throw BadPlayerException(p1);
+    if (p2 < 0) throw BadPlayerException(p2);
+    if (p1 >= m_playerList.size()) throw BadPlayerException(p1);
+    if (p2 >= m_playerList.size()) throw BadPlayerException(p2);
+    m_playerList.swap(p1, p2);
+}
+
 void Game::checkStartable()
 {
     bool newStartable;
@@ -489,6 +506,4 @@ QList<PlayerRole> Game::getRoleList()
     return res;
 }
 
-void Game::installNewRenegade(){
-    m_renegadesCount++;
-}
+

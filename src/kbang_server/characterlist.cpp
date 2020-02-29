@@ -51,6 +51,7 @@
 #include "characterjoeljanis.h"
 #include "charactercaptwcaroll.h"
 #include "characterauntieangelici.h"
+#include "characteredwardangle.h"
 #include "charactergvblack.h"
 #include "characterbushidobill.h"
 #include "charactercheckingblack.h"
@@ -192,6 +193,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterCaptWCaroll(parent);
     case CHARACTER_AUNTIE_ANGELICI: 
         return new CharacterAuntieAngelici(parent);
+    case CHARACTER_EDWARD_ANGLE: 
+        return new CharacterEdwardAngle(parent);
     case CHARACTER_G_V_BLACK: 
         return new CharacterGVBlack(parent);
     case CHARACTER_BUSHIDO_BILL: 
@@ -296,35 +299,35 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_JOEL_JANIS);
         sm_characterTypes.append(CHARACTER_GORDON_CHRISTENSEN);
         sm_characterTypes.append(CHARACTER_AUNTIE_ANGELICI);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
         sm_characterTypes.append(CHARACTER_G_V_BLACK);
         sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
+        sm_characterTypes.append(CHARACTER_CLOCKWORK);
         sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
         sm_characterTypes.append(CHARACTER_EL_FANTASMA);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); 
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); 
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE); 
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE); 
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
     }
     else {
         qDebug() << "No cuspOfCarabelliCharactersFlag.";
