@@ -21,9 +21,18 @@
 #include "cardtakerbang.h"
 #include "gametable.h"
 
-CardTakerBang::CardTakerBang(Game* game, int id, CardSuit cardSuit, CardRank cardRank):
+CardTakerBang::CardTakerBang(Game* game, int id, Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_TAKER_BANG, cardSuit, cardRank)
 {
+    switch(type) {
+    case Ranic:
+        setType(CARD_TAKER_BANG);
+        break;
+    case Lela:
+        setType(CARD_LELA_BANG);
+    default:
+            NOT_REACHED();
+    }
 
 }
 
@@ -48,7 +57,13 @@ void CardTakerBang::play(PlayingCard* targetCard){
 }
 
 void CardTakerBang::respondPass(){
-    gameTable()->cancelCard(mp_attackedCard, mp_attackingPlayer);
+    if (type() == CARD_TAKER_BANG) {
+         gameTable()->cancelCard(mp_attackedCard, mp_attackingPlayer);
+    }
+    else if (type() == CARD_LELA_BANG) {
+        gameTable()->cancelCard(mp_attackedCard, mp_attackingPlayer);
+        //gameTable()->playerStealCard(mp_attackingPlayer, mp_attackedCard);
+    }
     missed();
 }
 

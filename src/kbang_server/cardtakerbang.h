@@ -28,7 +28,11 @@ class Player;
 class CardTakerBang: public ReactionCard {
 
 public:
-    CardTakerBang(Game *game, int id, CardSuit, CardRank);
+    enum Type { 
+        Ranic,
+        Lela
+    };
+    CardTakerBang(Game *game, int id, Type type, CardSuit, CardRank);
     ~CardTakerBang(); 
 
     virtual void play(PlayingCard* targetCard);

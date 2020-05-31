@@ -32,7 +32,7 @@ void CharacterLelaDevere::useAbility(QList<PlayingCard*> cards){
         canConvert = true; //Needed: to be converted to weakened Rissa
     }
     if (canConvert){
-        PlayingCard* takerBang = new CardTakerBang(mp_player->game(), -1, SUIT_INVALID, 5);
+        PlayingCard* takerBang = new CardTakerBang(mp_player->game(), -1, CardTakerBang::Lela, SUIT_INVALID, 5);
         takerBang->setVirtual(card);
         takerBang->play(card2);
     }
