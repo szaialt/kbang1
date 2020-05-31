@@ -5,10 +5,19 @@
 #include "cardmissed.h"
 #include "reactionhandler.h"
 
-CharacterWhiteWolf::CharacterWhiteWolf(QObject* parent):
-        CharacterBase(parent, CHARACTER_WHITE_WOLF)
+CharacterWhiteWolf::CharacterWhiteWolf(QObject* parent, Type type):
+    CharacterBase(parent, CHARACTER_UNKNOWN),
+    m_type(type)
        
 {
+    switch(type) {
+        case WhiteWolf:
+            setCharacterType(CHARACTER_WHITE_WOLF);
+            break;
+        case FlintDixon:
+            setCharacterType(CHARACTER_FLINT_DIXON);
+            break;
+        }
 }
 
 void CharacterWhiteWolf::useAbility(QList<PlayingCard*> cards, Player* targetPlayer){

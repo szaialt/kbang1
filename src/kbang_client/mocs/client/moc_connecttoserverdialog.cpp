@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'connecttoserverdialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,14 +12,12 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'connecttoserverdialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-QT_WARNING_PUSH
-QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client__ConnectToServerDialog_t {
     QByteArrayData data[12];
     char stringdata0[277];
@@ -111,9 +109,10 @@ void client::ConnectToServerDialog::qt_static_metacall(QObject *_o, QMetaObject:
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
+        void **func = reinterpret_cast<void **>(_a[1]);
         {
-            using _t = void (ConnectToServerDialog::*)(QString , int );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ConnectToServerDialog::connectToServer)) {
+            typedef void (ConnectToServerDialog::*_t)(QString , int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ConnectToServerDialog::connectToServer)) {
                 *result = 0;
                 return;
             }
@@ -121,9 +120,9 @@ void client::ConnectToServerDialog::qt_static_metacall(QObject *_o, QMetaObject:
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject client::ConnectToServerDialog::staticMetaObject = {
+const QMetaObject client::ConnectToServerDialog::staticMetaObject = {
     { &QDialog::staticMetaObject, qt_meta_stringdata_client__ConnectToServerDialog.data,
-      qt_meta_data_client__ConnectToServerDialog,  qt_static_metacall, nullptr, nullptr}
+      qt_meta_data_client__ConnectToServerDialog,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -134,11 +133,11 @@ const QMetaObject *client::ConnectToServerDialog::metaObject() const
 
 void *client::ConnectToServerDialog::qt_metacast(const char *_clname)
 {
-    if (!_clname) return nullptr;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_client__ConnectToServerDialog.stringdata0))
-        return static_cast<void*>(this);
+        return static_cast<void*>(const_cast< ConnectToServerDialog*>(this));
     if (!strcmp(_clname, "Ui::ConnectToServerDialog"))
-        return static_cast< Ui::ConnectToServerDialog*>(this);
+        return static_cast< Ui::ConnectToServerDialog*>(const_cast< ConnectToServerDialog*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
@@ -162,8 +161,7 @@ int client::ConnectToServerDialog::qt_metacall(QMetaObject::Call _c, int _id, vo
 // SIGNAL 0
 void client::ConnectToServerDialog::connectToServer(QString _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
-QT_WARNING_POP
 QT_END_MOC_NAMESPACE

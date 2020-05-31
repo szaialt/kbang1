@@ -34,7 +34,9 @@ public:
         //Team Fortress
         DeadRinger,
         //Martin City
-        Vest
+        Vest,
+        //Robbers Roost
+        Dodge
         
     };
     

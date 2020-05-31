@@ -47,6 +47,7 @@ public:
     virtual void playerDied();
 
     virtual void checkDeck(PlayingCard* causedBy, bool (*checkFunc)(PlayingCard*), CheckDeckResultHandler*);
+    //virtual void resetAbility();
 
 protected:
     void setCharacterType(CharacterType type);

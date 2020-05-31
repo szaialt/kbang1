@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'gameeventqueue.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,14 +12,12 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'gameeventqueue.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-QT_WARNING_PUSH
-QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client__GameEventQueue_t {
     QByteArrayData data[5];
     char stringdata0[68];
@@ -80,9 +78,9 @@ void client::GameEventQueue::qt_static_metacall(QObject *_o, QMetaObject::Call _
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject client::GameEventQueue::staticMetaObject = {
+const QMetaObject client::GameEventQueue::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_client__GameEventQueue.data,
-      qt_meta_data_client__GameEventQueue,  qt_static_metacall, nullptr, nullptr}
+      qt_meta_data_client__GameEventQueue,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -93,9 +91,9 @@ const QMetaObject *client::GameEventQueue::metaObject() const
 
 void *client::GameEventQueue::qt_metacast(const char *_clname)
 {
-    if (!_clname) return nullptr;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_client__GameEventQueue.stringdata0))
-        return static_cast<void*>(this);
+        return static_cast<void*>(const_cast< GameEventQueue*>(this));
     return QObject::qt_metacast(_clname);
 }
 
@@ -115,5 +113,4 @@ int client::GameEventQueue::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     }
     return _id;
 }
-QT_WARNING_POP
 QT_END_MOC_NAMESPACE

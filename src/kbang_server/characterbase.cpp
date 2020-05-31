@@ -144,5 +144,8 @@ GameCycle& CharacterBase::gameCycle()
 {
     return mp_player->game()->gameCycle();
 }
-
- 
+/*
+void resetAbility(){
+    throw BadUsageException();
+}
+*/

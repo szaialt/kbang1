@@ -533,7 +533,20 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "purple-warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple_warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple warpath")      return CARD_PURPLE_WARPATH;
-    
+    if (s == "dodge")      return CARD_DODGE;
+    if (s == "backfire")         return CARD_BACKFIRE;
+    if (s == "extra-bang")      return CARD_EXTRA_BANG;
+    if (s == "extra bang")      return CARD_EXTRA_BANG;
+    if (s == "extra_bang")      return CARD_EXTRA_BANG;
+    if (s == "double-extra-bang")      return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "double extra bang")      return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "double_extra_bang")      return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "lela-bang")      return CARD_LELA_BANG;
+    if (s == "lela bang")      return CARD_LELA_BANG;
+    if (s == "lela_bang")      return CARD_LELA_BANG;
+    if (s == "lela-gatling")      return CARD_LELA_GATLING;
+    if (s == "lela gatling")      return CARD_LELA_GATLING;
+    if (s == "lela_gatling")      return CARD_LELA_GATLING;
     return CARD_UNKNOWN; 
 } 
 
@@ -654,7 +667,12 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_CANNON:          return "cannon";
         case CARD_ARTILLERY:       return "artillery";
         case CARD_PURPLE_WARPATH:  return "purple warpath";
-
+        case CARD_DODGE:         return "dodge";
+        case CARD_BACKFIRE:        return "backfire";
+        case CARD_EXTRA_BANG:       return "extra bang";
+        case CARD_DOUBLE_EXTRA_BANG:     return "double extra bang";
+        case CARD_LELA_BANG:        return "lela bang";
+        case CARD_LELA_GATLING:     return "lela gatling";
         //Unknown
         case CARD_UNKNOWN:        return "";
     }

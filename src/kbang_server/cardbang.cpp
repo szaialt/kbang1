@@ -68,9 +68,15 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Ricochet:
         setType(CARD_RICOCHET);
         break;
-    //case DoublePower:
-      //  setType(CARD_DOUBLE_POWER_BANG);
-       // break;
+    case Backfire:
+        setType(CARD_BACKFIRE);
+        break;
+    case Extra:
+        setType(CARD_EXTRA_BANG);
+        break;
+    case DoubleExtra:
+       setType(CARD_DOUBLE_EXTRA_BANG);
+       break;
     default:
             NOT_REACHED();
     }
@@ -85,6 +91,21 @@ CardColor CardBang::color() const{
     if (type() == CARD_HATCHET) return COLOR_GREEN;
     if (type() == CARD_RICOCHET) return COLOR_GREEN;
     return COLOR_BROWN;
+}
+
+void CardBang::play(QList<Player*> targetPlayers){
+    if (type() == CARD_DOUBLE_EXTRA_BANG){
+        if (targetPlayers.size() < 2) throw BadUsageException();
+        PlayingCard* bang1 = new CardBang(owner()->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                                     bang1->setVirtual(owner(), POCKET_HAND);
+        PlayingCard* bang2 = new CardBang(owner()->game(), -1, CardBang::Extra, SUIT_INVALID, 5);
+                                     bang2->setVirtual(owner(), POCKET_HAND);
+        bang1->play(targetPlayers.at(0));
+        bang2->play(targetPlayers.at(1));
+    }
+    else {
+        throw BadUsageException();
+    } 
 }
 
 void CardBang::play(){
@@ -201,7 +222,7 @@ void CardBang::respondPass()
         mp_attackedPlayer->charm();
     }
     if (injure){
-        if (type() == CARD_BANG){
+        if ((type() == CARD_BANG) || (type() == CARD_EXTRA_BANG)){
             QList<PlayingCard*> table2 = mp_attackingPlayer->table();
             foreach (PlayingCard* card, table2){
                 if (card->type() == CARD_HALF_ZATOCHI){
@@ -274,6 +295,13 @@ void CardBang::respondCard(PlayingCard* targetCard)
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         return;
+    case CARD_DODGE: 
+        targetCard->assertInHand();
+        game()->gameCycle().unsetResponseMode();
+        gameTable()->playerRespondWithCard(targetCard);
+        missed();
+        gameTable()->playerDrawFromDeck(player, 1);
+        return;
     case CARD_BARREL: {
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
@@ -287,6 +315,18 @@ void CardBang::respondCard(PlayingCard* targetCard)
         barrel->check(this);
         return;
         }
+    case CARD_BACKFIRE: 
+        targetCard->assertInHand();
+        game()->gameCycle().unsetResponseMode(); 
+        missed();
+        targetCard->play(mp_attackingPlayer);
+        gameTable()->playerRespondWithCard(targetCard);
+        if (targetCard->pocket() != POCKET_GRAVEYARD){ 
+            gameTable()->moveCardToGraveyard(targetCard);
+        }
+        player->checkEmptyHand();
+        game()->gameEventManager().onPlayerUpdated(player);
+        return;
     case CARD_DEAD_RINGER:
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();

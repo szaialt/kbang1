@@ -287,9 +287,13 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_LADY_BURBOUN:
     case CHARACTER_JONATH_HEXX:
     case CHARACTER_G_V_BLACK:
+    case CHARACTER_MAGGIE_MAE:
+    case CHARACTER_LELA_DEVERE:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:
+    case CHARACTER_LIL_SURE_SHOT:
+    case CHARACTER_QUEEN_ANNE:
         selectCards(cardWidget, 3);
         break;
     default:

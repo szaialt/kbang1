@@ -57,6 +57,16 @@
 #include "charactercheckingblack.h"
 #include "characterelfantasma.h"
 
+#include "charactercrazywolf.h"
+#include "characterturdferguson.h"
+#include "characterlilsureshot.h"
+#include "charactercheckingroyal.h"
+#include "characterqueenanne.h"
+#include "characterjosebasset.h"
+#include "characterannerogers.h"
+#include "charactermaggiemae.h"
+#include "characterleladevere.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -168,7 +178,7 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
     case CHARACTER_TOMY_LEE_GHOST: 
         return new CharacterTomyLeeGhost(parent);
     case CHARACTER_WHITE_WOLF: 
-        return new CharacterWhiteWolf(parent);
+        return new CharacterWhiteWolf(parent, CharacterWhiteWolf::WhiteWolf);
     case CHARACTER_CHARLES_BOGGEN: 
         return new CharacterCharlesBoggen(parent);
     case CHARACTER_JONATH_HEXX: 
@@ -205,6 +215,26 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterCheckingBlack(parent, CharacterCheckingBlack::Clockwork);
     case CHARACTER_EL_FANTASMA: 
         return new CharacterElFantasma(parent);
+    case CHARACTER_CRAZY_WOLF: 
+        return new CharacterCrazyWolf(parent);
+    case CHARACTER_TURD_FERGUSON: 
+        return new CharacterTurdFerguson(parent);
+    case CHARACTER_LIL_SURE_SHOT: 
+        return new CharacterLilSureshot(parent);
+    case CHARACTER_FLINT_DIXON: 
+        return new CharacterWhiteWolf(parent, CharacterWhiteWolf::FlintDixon);
+    case CHARACTER_JOB_MUSHGROVE: 
+        return new CharacterCheckingRoyal(parent);
+    case CHARACTER_QUEEN_ANNE: 
+        return new CharacterQueenAnne(parent);
+    case CHARACTER_JOSEY_BASSET: 
+        return new CharacterJoseBasset(parent);
+    case CHARACTER_ANNE_ROGERS: 
+        return new CharacterAnneRogers(parent);
+    case CHARACTER_MAGGIE_MAE: 
+        return new CharacterMaggieMae(parent);
+    case CHARACTER_LELA_DEVERE: 
+        return new CharacterLelaDevere(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -305,29 +335,7 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_CLOCKWORK);
         sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN);
         sm_characterTypes.append(CHARACTER_EL_FANTASMA);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE); 
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE); 
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
-        sm_characterTypes.append(CHARACTER_EDWARD_ANGLE);
+        
     }
     else {
         qDebug() << "No cuspOfCarabelliCharactersFlag.";
@@ -335,6 +343,48 @@ void CharacterList::initCharacterTypes(Game* game)
     
     if (game->gameInfo().cuspOfCarabelliCharactersFlag()){
         qDebug() << "robberRoostCharactersFlag.";
+        sm_characterTypes.append(CHARACTER_CRAZY_WOLF);
+        sm_characterTypes.append(CHARACTER_TURD_FERGUSON);
+        sm_characterTypes.append(CHARACTER_LIL_SURE_SHOT);
+        sm_characterTypes.append(CHARACTER_FLINT_DIXON); 
+        sm_characterTypes.append(CHARACTER_JOB_MUSHGROVE);
+        sm_characterTypes.append(CHARACTER_QUEEN_ANNE);
+        sm_characterTypes.append(CHARACTER_JOSEY_BASSET);
+        //sm_characterTypes.append(CHARACTER_ANNE_ROGERS);
+        sm_characterTypes.append(CHARACTER_MAGGIE_MAE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE); 
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE); 
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
     }
     else {
         qDebug() << "No robberRoostCharactersFlag.";

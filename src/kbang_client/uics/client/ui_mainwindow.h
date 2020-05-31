@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.3
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,11 +10,12 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -446,23 +447,23 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "KBang Client", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "KBang Client", Q_NULLPTR));
         MainWindow->setStyleSheet(QApplication::translate("MainWindow", "#mp_centralWidget {\n"
 "	background-image: url(\"data/gfx/misc/bang-artwork.png\");\n"
 "	background-position: center center;\n"
 "	background-repeat: no-repeat;\n"
 "\n"
-"}", nullptr));
-        mp_actionConnectToServer->setText(QApplication::translate("MainWindow", "&Connect to Server", nullptr));
-        mp_actionExit->setText(QApplication::translate("MainWindow", "&Exit", nullptr));
-        mp_actionDisconnectFromServer->setText(QApplication::translate("MainWindow", "&Disconnect from Server", nullptr));
-        mp_actionJoinGame->setText(QApplication::translate("MainWindow", "&Join Game", nullptr));
-        mp_actionLeaveGame->setText(QApplication::translate("MainWindow", "&Leave Game", nullptr));
-        actionCreateGame->setText(QApplication::translate("MainWindow", "C&reate Game", nullptr));
-        mp_actionAbout->setText(QApplication::translate("MainWindow", "&About KBang", nullptr));
+"}", Q_NULLPTR));
+        mp_actionConnectToServer->setText(QApplication::translate("MainWindow", "&Connect to Server", Q_NULLPTR));
+        mp_actionExit->setText(QApplication::translate("MainWindow", "&Exit", Q_NULLPTR));
+        mp_actionDisconnectFromServer->setText(QApplication::translate("MainWindow", "&Disconnect from Server", Q_NULLPTR));
+        mp_actionJoinGame->setText(QApplication::translate("MainWindow", "&Join Game", Q_NULLPTR));
+        mp_actionLeaveGame->setText(QApplication::translate("MainWindow", "&Leave Game", Q_NULLPTR));
+        actionCreateGame->setText(QApplication::translate("MainWindow", "C&reate Game", Q_NULLPTR));
+        mp_actionAbout->setText(QApplication::translate("MainWindow", "&About KBang", Q_NULLPTR));
         mp_statusLabel->setText(QString());
-        menuGame->setTitle(QApplication::translate("MainWindow", "&Game", nullptr));
-        menuHelp->setTitle(QApplication::translate("MainWindow", "&Help", nullptr));
+        menuGame->setTitle(QApplication::translate("MainWindow", "&Game", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "&Help", Q_NULLPTR));
     } // retranslateUi
 
 };

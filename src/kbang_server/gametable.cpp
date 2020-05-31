@@ -59,6 +59,7 @@ void GameTable::playerDrawFromGraveyard(Player* player)
 void GameTable::playerDiscardCard(PlayingCard* card)
 {
     Q_ASSERT(!card->isVirtual());
+    if (card == 0) return;
     Player*     owner  = card->owner();
     PocketType  pocket = card->pocket(); 
  
@@ -76,6 +77,7 @@ void GameTable::playerPlayCard(PlayingCard* card)
 {
     if (card->isVirtual())
         card = card->master();
+    if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Player* owner = card->owner();
     moveCardToGraveyard(card);
@@ -89,6 +91,7 @@ void GameTable::playerPlayCard(PlayingCard* card, Player* targetPlayer)
 {
     if (card->isVirtual())
         card = card->master();
+    if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Player* owner = card->owner();
     moveCardToGraveyard(card);
@@ -102,6 +105,7 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard)
 {
     if (card->isVirtual())
         card = card->master();
+    if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Q_ASSERT(!targetCard->isVirtual());
     Player* owner = card->owner();
@@ -117,6 +121,7 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard, Playe
 {
     if (card->isVirtual())
         card = card->master();
+    if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Q_ASSERT(!targetCard->isVirtual());
     Player* owner = card->owner();
@@ -486,6 +491,7 @@ void GameTable::moveCardToGraveyard(PlayingCard* card)
         if (!m_deck.isEmpty() && m_deck.first() == card) {
             popCardFromDeck();
         }
+        break;
     case POCKET_GRAVEYARD:
     default:
         qDebug() << pocketTypeToString(card->pocket());

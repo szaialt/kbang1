@@ -695,6 +695,7 @@ void ActionPlayCardData::write(QXmlStreamWriter* writer) const
 
 void ActionUseAbilityData::read(XmlNode* node)
 {
+    targetCardsId.clear();
     Q_ASSERT(node->name() == elementName);
     QString typeString = node->attribute("type");
     if (typeString == "TypeSimple"){

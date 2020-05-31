@@ -115,9 +115,11 @@ SOURCES += gameloop.cpp \
 #     common/gameenums.cpp \
 #     common/util.cpp 
 unix { 
-    LIB += lib
-    PRE_TARGETDEPS += lib/libkbang_common.a
-    POST_TARGETDEPS += lib/libkbang_common.a
+    #LIB += lib
+    LIBPATH += lib
+    TARGETDEPS += lib/libkbang_common.a
+    #PRE_TARGETDEPS += lib/libkbang_common.a
+    #POST_TARGETDEPS += lib/libkbang_common.a
 }
 win32 { 
     RC_FILE = kbang_client.rc

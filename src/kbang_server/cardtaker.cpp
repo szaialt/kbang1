@@ -60,19 +60,31 @@ void CardTaker::play(Player* targetPlayer)
     gameCycle()->assertTurn();
     
     if (color() == COLOR_BROWN) {
+        qDebug() << "CatBalou play(Player* targetPlayer) 1";
       assertInHand();
+      qDebug() << "CatBalou play(Player* targetPlayer) 2";
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
+          qDebug() << "CatBalou play(Player* targetPlayer) 3";
         throw BadTargetPlayerException();
+        qDebug() << "CatBalou play(Player* targetPlayer) 4";
       }
+      qDebug() << "CatBalou play(Player* targetPlayer) 5";
       PlayingCard* targetCard;
+      qDebug() << "CatBalou play(Player* targetPlayer) 6";
       do {
+          qDebug() << "CatBalou play(Player* targetPlayer) 7";
         targetCard = targetPlayer->getRandomCardFromHand();
-      } while ((targetCard != 0) && (targetCard == this)); // pick other than this card
+        qDebug() << "CatBalou play(Player* targetPlayer) 8";
+      } while ((targetCard == 0) || (targetCard == this)); // pick other than this card
+      qDebug() << "CatBalou play(Player* targetPlayer) 9";
       if (targetCard == 0){
         throw BadTargetPlayerException();
+        qDebug() << "CatBalou play(Player* targetPlayer) 10";
       }
+      qDebug() << "CatBalou play(Player* targetPlayer) 11";
       play(targetCard);
+      qDebug() << "CatBalou play(Player* targetPlayer) 12";
     } 
     else {
       if (pocket() == POCKET_TABLE) {
@@ -105,17 +117,24 @@ void CardTaker::play(PlayingCard* targetCard)
  
     
     if (m_type == CatBalou) {
+        qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
         assertInHand();
+        qDebug() << "CatBalou play(PlayingCard* targetCard) 2";
         gameCycle()->setCardEffect(1);
+        qDebug() << "CatBalou play(PlayingCard* targetCard) 3";
         gameTable()->playerPlayCard(this, targetCard);
+        qDebug() << "CatBalou play(PlayingCard* targetCard) 4";
         //We don't allow to force to discard Dynamite
         if ((targetCard != 0) && (targetCard->color() ==COLOR_DYNAMITE)){
             targetCard->play();
         }
         else {
+            qDebug() << "CatBalou play(PlayingCard* targetCard) 5";
             gameTable()->cancelCard(targetCard, o);
+            qDebug() << "CatBalou play(PlayingCard* targetCard) 6";
         }
-        gameCycle()->setCardEffect(0); 
+        gameCycle()->setCardEffect(0);
+        qDebug() << "CatBalou play(PlayingCard* targetCard) 7";
     }
     else {
         if (m_type == Plunder) throw BadUsageException();

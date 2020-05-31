@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'newserverdialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,14 +12,12 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'newserverdialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-QT_WARNING_PUSH
-QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client__NewServerDialog_t {
     QByteArrayData data[1];
     char stringdata0[24];
@@ -62,9 +60,9 @@ void client::NewServerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call 
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject client::NewServerDialog::staticMetaObject = {
+const QMetaObject client::NewServerDialog::staticMetaObject = {
     { &QDialog::staticMetaObject, qt_meta_stringdata_client__NewServerDialog.data,
-      qt_meta_data_client__NewServerDialog,  qt_static_metacall, nullptr, nullptr}
+      qt_meta_data_client__NewServerDialog,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -75,18 +73,19 @@ const QMetaObject *client::NewServerDialog::metaObject() const
 
 void *client::NewServerDialog::qt_metacast(const char *_clname)
 {
-    if (!_clname) return nullptr;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_client__NewServerDialog.stringdata0))
-        return static_cast<void*>(this);
+        return static_cast<void*>(const_cast< NewServerDialog*>(this));
     if (!strcmp(_clname, "Ui::NewServerDialog"))
-        return static_cast< Ui::NewServerDialog*>(this);
+        return static_cast< Ui::NewServerDialog*>(const_cast< NewServerDialog*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
 int client::NewServerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
     return _id;
 }
-QT_WARNING_POP
 QT_END_MOC_NAMESPACE

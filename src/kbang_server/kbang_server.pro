@@ -139,7 +139,16 @@ HEADERS += \
     charactergvblack.h \
     characterbushidobill.h \
     charactercheckingblack.h \
-    characterelfantasma.h
+    characterelfantasma.h \
+    charactercrazywolf.h \
+    characterturdferguson.h \
+    characterlilsureshot.h \
+    charactercheckingroyal.h \
+    characterqueenanne.h \
+    characterjosebasset.h \
+    characterannerogers.h \
+    charactermaggiemae.h \
+    characterleladevere.h 
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -266,7 +275,16 @@ SOURCES += \
     charactergvblack.cpp \
     characterbushidobill.cpp \
     charactercheckingblack.cpp \
-    characterelfantasma.cpp
+    characterelfantasma.cpp \
+    charactercrazywolf.cpp \
+    characterturdferguson.cpp \
+    characterlilsureshot.cpp \
+    charactercheckingroyal.cpp \
+    characterqueenanne.cpp \
+    characterjosebasset.cpp \
+    characterannerogers.cpp \
+    charactermaggiemae.cpp \
+    characterleladevere.cpp
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \

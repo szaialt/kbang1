@@ -107,7 +107,6 @@
 #define __FLT64_MANT_DIG__ 53
 #define __GNUC__ 8
 #define __GXX_RTTI 1
-#define __pie__ 2
 #define __MMX__ 1
 #define __cpp_delegating_constructors 200604
 #define __FLT_HAS_DENORM__ 1
@@ -162,7 +161,6 @@
 #define __INT_FAST64_TYPE__ long int
 #define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
 #define __DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)
-#define __PIE__ 2
 #define __LP64__ 1
 #define __FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x
 #define __DECIMAL_BID_FORMAT__ 1

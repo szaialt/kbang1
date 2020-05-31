@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'localplayerwidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.3
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,10 +10,12 @@
 #define UI_LOCALPLAYERWIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QToolButton>
@@ -227,19 +229,19 @@ public:
 
     void retranslateUi(QWidget *LocalPlayerWidget)
     {
-        LocalPlayerWidget->setWindowTitle(QApplication::translate("LocalPlayerWidget", "Form", nullptr));
+        LocalPlayerWidget->setWindowTitle(QApplication::translate("LocalPlayerWidget", "Form", Q_NULLPTR));
         mp_labelAvatar->setText(QString());
 #ifndef QT_NO_TOOLTIP
-        mp_buttonEndTurn->setToolTip(QApplication::translate("LocalPlayerWidget", "End of your turn", nullptr));
+        mp_buttonEndTurn->setToolTip(QApplication::translate("LocalPlayerWidget", "End of your turn", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         mp_buttonEndTurn->setStyleSheet(QString());
 #ifndef QT_NO_TOOLTIP
-        mp_buttonPass->setToolTip(QApplication::translate("LocalPlayerWidget", "Do not react - you will lose a life point,", nullptr));
+        mp_buttonPass->setToolTip(QApplication::translate("LocalPlayerWidget", "Do not react - you will lose a life point,", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        mp_buttonDiscard->setToolTip(QApplication::translate("LocalPlayerWidget", "Discard cards before end of your turn.", nullptr));
+        mp_buttonDiscard->setToolTip(QApplication::translate("LocalPlayerWidget", "Discard cards before end of your turn.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        mp_labelPlayerName->setText(QApplication::translate("LocalPlayerWidget", "{PLAYERNAME}", nullptr));
+        mp_labelPlayerName->setText(QApplication::translate("LocalPlayerWidget", "{PLAYERNAME}", Q_NULLPTR));
     } // retranslateUi
 
 };

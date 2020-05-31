@@ -32,6 +32,9 @@ CardMissed::CardMissed(Game* game, int id, MissedType type, CardSuit cardSuit, C
     case Vest:
         setType(CARD_VEST); 
         break; 
+    case Dodge:
+        setType(CARD_DODGE);
+        break; 
     default:
             NOT_REACHED();
     }

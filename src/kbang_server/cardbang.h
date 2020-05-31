@@ -48,12 +48,16 @@ public:
         Hatchet,
         Ricochet,
         //DoublePower
+        Backfire,
+        Extra,
+        DoubleExtra
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 
 
     virtual CardColor color() const;
     virtual void play();
+    virtual void play(QList<Player*> targetPlayers);
     virtual void play(Player* targetPlayer);
     virtual void respondPass();
     virtual void respondCard(PlayingCard* targetCard);
