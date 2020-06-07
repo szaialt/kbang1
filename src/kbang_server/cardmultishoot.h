@@ -25,7 +25,8 @@ public:
         BrownShowTime,
         WarParty,
         Roulette,
-        Artillery
+        Artillery,
+        WeakenedBrawl
     };
     CardMultiShoot(Game* game, int id, Type type, CardSuit, CardRank);
     virtual ~CardMultiShoot(){}

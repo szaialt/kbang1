@@ -66,6 +66,7 @@
 #include "characterannerogers.h"
 #include "charactermaggiemae.h"
 #include "characterleladevere.h"
+#include "characterjuliebulette.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -235,6 +236,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterMaggieMae(parent);
     case CHARACTER_LELA_DEVERE: 
         return new CharacterLelaDevere(parent);
+    case CHARACTER_JULIE_BULETTE: 
+        return new CharacterJulieBulette(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -353,38 +356,7 @@ void CharacterList::initCharacterTypes(Game* game)
         //sm_characterTypes.append(CHARACTER_ANNE_ROGERS);
         sm_characterTypes.append(CHARACTER_MAGGIE_MAE);
         sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE); 
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE); 
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
-        sm_characterTypes.append(CHARACTER_LELA_DEVERE);
+        sm_characterTypes.append(CHARACTER_JULIE_BULETTE);
     }
     else {
         qDebug() << "No robberRoostCharactersFlag.";

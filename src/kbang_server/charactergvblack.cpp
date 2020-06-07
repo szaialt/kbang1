@@ -24,7 +24,7 @@ void CharacterGVBlack::useAbility(QList<PlayingCard*> cards){
         if (card->owner() != mp_player) throw BadCardException();
         if (card->pocket() != POCKET_HAND) throw BadCardException();
         if (card->type() == CARD_BANG) {
-            PlayingCard* taker = new CardTakerBang(mp_player->game(), 0, CardTakerBang::Ranic, SUIT_INVALID,    10);
+            PlayingCard* taker = new CardTakerBang(mp_player->game(), 0, SUIT_INVALID,    10);
             taker->setVirtual(card);
             taker->play(card2);
         }

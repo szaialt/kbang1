@@ -28,6 +28,9 @@ CardMultiShoot::CardMultiShoot(Game* game, int id, CardMultiShoot::Type type, Ca
     case Roulette:
         setType(CARD_ROULETTE);
         break;
+    case WeakenedBrawl:
+        setType(CARD_LELA_GATLING);
+        break;
     default:
         NOT_REACHED();
     }
@@ -109,6 +112,17 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             }
         }
     }
+    if (type() == CARD_LELA_GATLING){
+        gameTable()->playerRespondWithCard(targetCard);
+        game()->gameCycle().unsetResponseMode();
+        if (m_playedNextDirection){
+            requestNext();
+        }
+        else {
+            requestPrevious();
+        }
+        return;
+    }
     switch(targetCard->type()) {
         case CARD_BANG:
              if ((type() != CARD_INDIANS) && (type() != CARD_MANN_VS_MACHINE) && (type() != CARD_WAR_PARTY))
@@ -153,20 +167,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
             barrel->check(this);
             return;
-        }/*
-        case CARD_PEACE_PIPE: {
-            if (type() != CARD_INDIANS) 
-                 break;
-            targetCard->assertOnTable();
-            game()->gameCycle().unsetResponseMode();
-             if (m_playedNextDirection){
-                 requestNext();
-             }
-            else {
-                requestPrevious();
-             }
-            return;
-        }*/
+        }
         case CARD_DEAD_RINGER:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
                  break;

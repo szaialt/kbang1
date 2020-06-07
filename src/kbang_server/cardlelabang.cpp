@@ -18,51 +18,52 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/ 
 
-#include "cardtakerbang.h"
+#include "cardlelabang.h"
 #include "gametable.h"
 
-CardTakerBang::CardTakerBang(Game* game, int id, CardSuit cardSuit, CardRank cardRank):
-        ReactionCard(game, id, CARD_TAKER_BANG, cardSuit, cardRank)
+CardLelaBang::CardLelaBang(Game* game, int id, CardSuit cardSuit, CardRank cardRank):
+        ReactionCard(game, id, CARD_LELA_BANG, cardSuit, cardRank)
 {
 
 }
 
-CardTakerBang::~CardTakerBang()
+CardLelaBang::~CardLelaBang()
 { 
 }
 
-void CardTakerBang::play(PlayingCard* targetCard){
+void CardLelaBang::play(PlayingCard* targetCard){
     if (targetCard == 0) {
-        qDebug() << "CardTakerBang::play(PlayingCard* targetCard) target card is NULL";
+        qDebug() << "CardLelaBang::play(PlayingCard* targetCard) target card is NULL";
         return;
     }
     mp_attackingPlayer = owner();
     mp_attackedCard = targetCard;
     Player* targetPlayer = targetCard->owner();
     if (targetPlayer == 0) {
-        qDebug() << "CardTakerBang::play(PlayingCard* targetCard) target card owner is NULL";
+        qDebug() << "CardLelaBang::play(PlayingCard* targetCard) target card owner is NULL";
         return;
     }
     gameTable()->playerPlayCard(this, targetPlayer);
     game()->gameCycle().setResponseMode(this, targetPlayer);
 }
 
-void CardTakerBang::respondPass(){
-    gameTable()->cancelCard(mp_attackedCard, mp_attackingPlayer);
+void CardLelaBang::respondPass(){
+    gameTable()->playerStealCard(mp_attackingPlayer, mp_attackedCard);
+    missed();
 }
 
-void CardTakerBang::respondCard(PlayingCard* targetCard){
+void CardLelaBang::respondCard(PlayingCard* targetCard){
     if (targetCard == 0) {
-        qDebug() << "CardTakerBang::respondCard(PlayingCard* targetCard) target card is NULL";
+        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) target card is NULL";
         return;
     }
     Player* player = targetCard->owner();
     if (player == 0) {
-        qDebug() << "CardTakerBang::respondCard(PlayingCard* targetCard) target card owner is NULL";
+        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) target card owner is NULL";
         return;
     }
     if (mp_attackingPlayer == 0) {
-        qDebug() << "CardTakerBang::respondCard(PlayingCard* targetCard) mp_attackingPlayer is NULL";
+        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) mp_attackingPlayer is NULL";
         return;
     }
     Player* targetPlayer = targetCard->owner();
@@ -88,6 +89,6 @@ void CardTakerBang::respondCard(PlayingCard* targetCard){
     }
 }
 
-void CardTakerBang::missed(){
+void CardLelaBang::missed(){
     gameCycle()->unsetResponseMode();
 }

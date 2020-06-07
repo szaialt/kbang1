@@ -17,19 +17,19 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#ifndef CARDTAKERBANG_H
-#define CARDTAKERBANG_H
+#ifndef CARDLELABANG_H
+#define CARDLELABANG_H
 
 #include "reactioncard.h"
 #include "checkdeckresulthandler.h"
 
 class Player;
 
-class CardTakerBang: public ReactionCard {
+class CardLelaBang: public ReactionCard {
 
 public:
-    CardTakerBang(Game *game, int id, CardSuit, CardRank);
-    ~CardTakerBang(); 
+    CardLelaBang(Game *game, int id, CardSuit, CardRank);
+    ~CardLelaBang(); 
 
     virtual void play(PlayingCard* targetCard);
     virtual ReactionType reactionType() const { return REACTION_TAKER_BANG; }

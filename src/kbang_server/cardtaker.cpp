@@ -66,7 +66,7 @@ void CardTaker::play(Player* targetPlayer)
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
           qDebug() << "CatBalou play(Player* targetPlayer) 3";
-        throw BadTargetPlayerException();
+        throw BadCardException();
         qDebug() << "CatBalou play(Player* targetPlayer) 4";
       }
       qDebug() << "CatBalou play(Player* targetPlayer) 5";

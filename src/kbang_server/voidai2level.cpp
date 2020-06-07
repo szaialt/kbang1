@@ -210,12 +210,12 @@ void VoidAI2Level::requestWithAction()
                             else {
                               mp_playerCtrl->playCard(card);
                             }
-                            return; 
+                            continue; 
                         }
                         
                         catch (BadPlayerException e) {
                             qDebug() << "VoidAI: BadPlayerException!";
-                            return;
+                            continue;
                         } 
                         catch (BadCardException e) {
                             qDebug() << "VoidAI: BadCardException!";
@@ -233,7 +233,7 @@ void VoidAI2Level::requestWithAction()
                         { 
                             if (amIWounded()) {
                                 mp_playerCtrl->playCard(card);
-                                return;
+                                continue;
                                 }
                         }
                         default:
@@ -256,7 +256,7 @@ void VoidAI2Level::requestWithAction()
                         if (mp_playerCtrl->privatePlayerView().lifePoints() <
                            mp_playerCtrl->privatePlayerView().maxLifePoints()) {
                             mp_playerCtrl->playCard(card);
-                            return;
+                            continue;
                         }
                       }
                       break;
@@ -385,7 +385,7 @@ void VoidAI2Level::requestWithAction()
                           try {
                               foreach (PlayingCard* card2, table2) {
                                  mp_playerCtrl->playCard(card, card2);
-                                 return;
+                                 continue;
                               }
                           } catch (BadTargetPlayerException e) {
                           qDebug() << "VoidAI: BadTargetPlayerException!";
@@ -402,7 +402,7 @@ void VoidAI2Level::requestWithAction()
                             if (mp_playerCtrl->privatePlayerView().lifePoints() <
                                     mp_playerCtrl->privatePlayerView().maxLifePoints()) {
                                 mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
-                                return;
+                                continue;
                                 }
                         }
                           break;
@@ -572,7 +572,7 @@ void VoidAI2Level::requestWithAction()
                              {
                                  try {
                                      mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
-                                        return;
+                                        continue;
                                 }
                             catch (BadTargetPlayerException e) {
                                 qDebug() << "VoidAI: BadTargetPlayerException!";
