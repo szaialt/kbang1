@@ -60,31 +60,31 @@ void CardTaker::play(Player* targetPlayer)
     gameCycle()->assertTurn();
     
     if (color() == COLOR_BROWN) {
-        qDebug() << "CatBalou play(Player* targetPlayer) 1";
+        qDebug() << "CardTaker play(Player* targetPlayer) 1";
       assertInHand();
-      qDebug() << "CatBalou play(Player* targetPlayer) 2";
+      qDebug() << "CardTaker play(Player* targetPlayer) 2";
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
-          qDebug() << "CatBalou play(Player* targetPlayer) 3";
+          qDebug() << "CardTaker play(Player* targetPlayer) 3";
         throw BadCardException();
-        qDebug() << "CatBalou play(Player* targetPlayer) 4";
+        qDebug() << "CardTaker play(Player* targetPlayer) 4";
       }
-      qDebug() << "CatBalou play(Player* targetPlayer) 5";
+      qDebug() << "CardTaker play(Player* targetPlayer) 5";
       PlayingCard* targetCard;
-      qDebug() << "CatBalou play(Player* targetPlayer) 6";
+      qDebug() << "CardTaker play(Player* targetPlayer) 6";
       do {
-          qDebug() << "CatBalou play(Player* targetPlayer) 7";
+          qDebug() << "CardTaker play(Player* targetPlayer) 7";
         targetCard = targetPlayer->getRandomCardFromHand();
-        qDebug() << "CatBalou play(Player* targetPlayer) 8";
+        qDebug() << "CardTaker play(Player* targetPlayer) 8";
       } while ((targetCard == 0) || (targetCard == this)); // pick other than this card
-      qDebug() << "CatBalou play(Player* targetPlayer) 9";
+      qDebug() << "CardTaker play(Player* targetPlayer) 9";
       if (targetCard == 0){
         throw BadTargetPlayerException();
-        qDebug() << "CatBalou play(Player* targetPlayer) 10";
+        qDebug() << "CardTaker play(Player* targetPlayer) 10";
       }
-      qDebug() << "CatBalou play(Player* targetPlayer) 11";
+      qDebug() << "CardTaker play(Player* targetPlayer) 11";
       play(targetCard);
-      qDebug() << "CatBalou play(Player* targetPlayer) 12";
+      qDebug() << "CardTaker play(Player* targetPlayer) 12";
     } 
     else {
       if (pocket() == POCKET_TABLE) {

@@ -76,9 +76,9 @@ struct CardFactory::CardFactoryImp
         ////////////////
        // MULTISHOOT //
       ////////////////
-        list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  13));
+   /*     list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  13));
         list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  14));
-        list.append(new CardMultiShoot(game, id(), CardMultiShoot::Gatling, SUIT_HEARTS,    10));
+        list.append(new CardMultiShoot(game, id(), CardMultiShoot::Gatling, SUIT_HEARTS,    10)); */
 
         //////////
        // DUEL //
@@ -86,11 +86,11 @@ struct CardFactory::CardFactoryImp
         list.append(new CardDuel(game, id(), CardDuel::Duel, SUIT_CLUBS,    8 ));
         list.append(new CardDuel(game, id(), CardDuel::Duel, SUIT_SPADES,   11));
         list.append(new CardDuel(game, id(), CardDuel::Duel, SUIT_DIAMONDS, 12));
-
+/*
 
         list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 12));
         list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 9));
-
+*/
         list.append(new CardJail(game, id(), CardJail::Jail, SUIT_SPADES, 10, 10));
         list.append(new CardJail(game, id(), CardJail::Jail, SUIT_SPADES, 11, 11));
         list.append(new CardJail(game, id(), CardJail::Jail, SUIT_HEARTS, 4, 12));
@@ -132,9 +132,9 @@ struct CardFactory::CardFactoryImp
             list.append(new WeaponCard(game, id(), WeaponCard::Remington, SUIT_DIAMONDS,  6));
             list.append(new WeaponCard(game, id(), WeaponCard::Carabine, SUIT_SPADES,  5));
 
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  5));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  5));
             
-            list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 14));
+            //list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 14));
             
             list.append(new CardTaker(game, id(), CardTaker::Panic, SUIT_HEARTS,   12));
             
@@ -149,16 +149,16 @@ struct CardFactory::CardFactoryImp
              
              list.append(new CardDrawCards(game, id(), CardDrawCards::SupplyCrate,  SUIT_CLUBS,  4));
              
-             list.append(new CardMultiShoot(game, id(), CardMultiShoot::ManVsMachine, SUIT_DIAMONDS,  14));
+             //list.append(new CardMultiShoot(game, id(), CardMultiShoot::ManVsMachine, SUIT_DIAMONDS,  14));
              
-             list.append(new CardArson(game, id(), CardMultiShoot::Arson, SUIT_CLUBS,  2));
+             //list.append(new CardArson(game, id(), CardMultiShoot::Arson, SUIT_CLUBS,  2));
              
-             list.append(new CardMissed(game, id(), CardMissed::DeadRinger, SUIT_SPADES, 4));
+             //list.append(new CardMissed(game, id(), CardMissed::DeadRinger, SUIT_SPADES, 4));
              
              list.append(new CardJarate(game, id(), SUIT_HEARTS, 14));
              
-             list.append(new CardTeleport(game, id(), SUIT_HEARTS, 4, 4));
-            
+             //list.append(new CardTeleport(game, id(), SUIT_HEARTS, 4, 4));
+             
              list.append(new CardPersuasion(game, id(), SUIT_HEARTS, 13));
              
              list.append(new WeaponCard(game, id(), WeaponCard::Guitar, SUIT_SPADES,  14));
@@ -200,7 +200,7 @@ struct CardFactory::CardFactoryImp
 
             list.append(new CardHiddenWeapon(game, id(), SUIT_SPADES, 5));
         
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
+            //list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
            
         }
         
@@ -225,7 +225,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardFlameBottle(game, id(), SUIT_SPADES, 6));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::ManVsMachine, SUIT_CLUBS,  3));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::ManVsMachine, SUIT_CLUBS,  3));
             
             list.append(new CardThunder(game, id(), SUIT_DIAMONDS, 4));
             
@@ -300,9 +300,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardExpansionBeer(game, id(), CardBeer::BrownMoonshine, SUIT_HEARTS, 13));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::BrownShowTime, SUIT_SPADES,  11));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::BrownShowTime, SUIT_SPADES,  11));
             
-            list.append(new CardGeneralStore(game, id(), CardGeneralStore::RobGrave, SUIT_DIAMONDS, 10));
+            //list.append(new CardGeneralStore(game, id(), CardGeneralStore::RobGrave, SUIT_DIAMONDS, 10));
                         
             list.append(new CardTaker(game, id(), CardTaker::Pilfer, SUIT_HEARTS, 8 ));
             
@@ -310,7 +310,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardTaker(game, id(), CardTaker::GreenFurTrade, SUIT_CLUBS, 7 ));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::WarParty, SUIT_DIAMONDS,  11));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::WarParty, SUIT_DIAMONDS,  11));
             
             list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
             
@@ -318,9 +318,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
             
         }
         
@@ -393,11 +393,11 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_DIAMONDS, 13));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  12));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_DIAMONDS,  12));
             
-            list.append(new CardArson(game, id(), CardMultiShoot::Arson, SUIT_CLUBS,  9));
+            //list.append(new CardArson(game, id(), CardMultiShoot::Arson, SUIT_CLUBS,  9));
             
-            list.append(new CardArson(game, id(), CardMultiShoot::Artillery, SUIT_CLUBS,    9));
+            //list.append(new CardArson(game, id(), CardMultiShoot::Artillery, SUIT_CLUBS,    9));
             
           
             
@@ -453,9 +453,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardExpansionBeer(game, id(), CardBeer::BrownMoonshine, SUIT_HEARTS, 13));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::BrownShowTime, SUIT_SPADES,  11));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::BrownShowTime, SUIT_SPADES,  11));
             
-            list.append(new CardGeneralStore(game, id(), CardGeneralStore::RobGrave, SUIT_DIAMONDS, 10));
+            //list.append(new CardGeneralStore(game, id(), CardGeneralStore::RobGrave, SUIT_DIAMONDS, 10));
                         
             list.append(new CardTaker(game, id(), CardTaker::Pilfer, SUIT_HEARTS, 8 ));
             
@@ -463,7 +463,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardTaker(game, id(), CardTaker::GreenFurTrade, SUIT_CLUBS, 7 ));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::WarParty, SUIT_DIAMONDS,  11));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::WarParty, SUIT_DIAMONDS,  11));
             
             list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
             
@@ -471,9 +471,9 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardExpansionBeer(game, id(), CardExpansionBeer::CardGreenOntheHouse, SUIT_HEARTS, 9));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
             
-            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
+            //list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
             
             
             

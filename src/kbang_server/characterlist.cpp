@@ -352,7 +352,7 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_FLINT_DIXON); 
         sm_characterTypes.append(CHARACTER_JOB_MUSHGROVE);
         sm_characterTypes.append(CHARACTER_QUEEN_ANNE);
-        sm_characterTypes.append(CHARACTER_JOSEY_BASSET);
+        //sm_characterTypes.append(CHARACTER_JOSEY_BASSET);
         //sm_characterTypes.append(CHARACTER_ANNE_ROGERS);
         sm_characterTypes.append(CHARACTER_MAGGIE_MAE);
         sm_characterTypes.append(CHARACTER_LELA_DEVERE);

@@ -194,9 +194,11 @@ void GameCycle::finishTurn(Player* player)
 {
     m_contextDirty = 0;
     if (player != mp_requestedPlayer){
+        qDebug() << "Gamecycle::finishTurn: gamePlayState is " << gamePlayStateToString(gamePlayState());
         throw BadPlayerException(mp_currentPlayer->id());
     }
     if ((m_state != GAMEPLAYSTATE_TURN) && (m_state != GAMEPLAYSTATE_DISCARD)){
+        qDebug() << "Gamecycle::finishTurn: gamePlayState is " << gamePlayStateToString(gamePlayState());
         throw BadGameStateException();
     }
     if (needDiscard(player)){

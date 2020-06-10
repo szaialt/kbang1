@@ -142,7 +142,7 @@ void VoidAI2Level::requestWithAction()
                         case CARD_RICOCHET:
                         {
                             mp_playerCtrl->playCard(card);
-                            return;
+                            continue;
                         }
                         case CARD_INDIANS:
                         case CARD_GATLING:
@@ -225,7 +225,7 @@ void VoidAI2Level::requestWithAction()
                             continue;
                         }
                         } 
-                        return;
+                        continue;
                         case CARD_BEER:
                         case CARD_MAD_MILK:
                         case CARD_SANDVICH: 
@@ -328,7 +328,7 @@ void VoidAI2Level::requestWithAction()
                             else {
                               mp_playerCtrl->playCard(card);
                             }
-                            return; 
+                            continue; 
                         }
                         
                         catch (BadPlayerException e) {
@@ -360,7 +360,7 @@ void VoidAI2Level::requestWithAction()
                                  cards.append(mp_playerCtrl->getRandomCardFromHand());
                                  cards.append(card3);
                                  mp_playerCtrl->playCard(card, cards);
-                                 return;
+                                 continue;
                               }
                           } catch (BadTargetPlayerException e) {
                           qDebug() << "VoidAI: BadTargetPlayerException!";
