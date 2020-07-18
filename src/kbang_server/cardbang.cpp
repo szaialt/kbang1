@@ -342,7 +342,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
         }
-        if (color() == COLOR_BROWN){
+        if (targetCard->color() == COLOR_BROWN){
             targetCard->assertInHand();
         }
         else {

@@ -2765,6 +2765,7 @@ obj/server/gamecycle.o: gamecycle.cpp gamecycle.h \
 		characterturdferguson.h \
 		characterjosebasset.h \
 		characterannerogers.h \
+		characterjuliebulette.h \
 		cardweakness.h \
 		carddrawcards.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/gamecycle.o gamecycle.cpp
@@ -4060,6 +4061,7 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		characterannerogers.h \
 		charactermaggiemae.h \
 		characterleladevere.h \
+		characterjuliebulette.h \
 		../kbang_common/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterlist.o characterlist.cpp
 
@@ -5326,7 +5328,8 @@ obj/server/characterjuliebulette.o: characterjuliebulette.cpp characterjuliebule
 		game.h \
 		publicgameview.h \
 		gameinfo.h \
-		gamecycle.h
+		gamecycle.h \
+		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjuliebulette.o characterjuliebulette.cpp
 
 obj/server/moc_player.o: mocs/server/moc_player.cpp 

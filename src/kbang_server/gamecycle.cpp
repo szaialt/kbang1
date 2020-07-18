@@ -366,7 +366,7 @@ void GameCycle::playCard(Player* player, PlayingCard* card, Player* targetPlayer
         throw BadTargetPlayerException();
     }
 
-    if (isResponse()){
+    if (isResponse() && (card->type() != CARD_DEFLECTION) && (card->type() != CARD_RICOCHET)){
         throw BadGameStateException();
     }
     Player::CardList table = player->table();
@@ -516,10 +516,10 @@ void GameCycle::pass(Player* player)
     m_contextDirty = 0; 
 
     if ((!m_deflectionFlag) && (player != mp_requestedPlayer)){
-        qDebug() << "void GameCycle::pass(Player* player) ";
+        //qDebug() << "void GameCycle::pass(Player* player) ";
         if ((player != 0) && (mp_requestedPlayer != 0)){
-            qDebug() << player->name() << " would pass.";
-            qDebug() << "Could pass " << mp_requestedPlayer->name();
+            //qDebug() << player->name() << " would pass.";
+            //qDebug() << "Could pass " << mp_requestedPlayer->name();
         }
         throw BadPlayerException(mp_currentPlayer->id());
     }
@@ -532,8 +532,8 @@ void GameCycle::pass(Player* player)
     }
     catch (TooManyCardsInHandException ex){
         if (m_needsFinishTurn) {
-            qDebug() << "void GameCycle::pass(Player* player) ";
-            qDebug() << "TooManyCardsInHandException caught because of CARD_DEAD_RINGER";
+            //qDebug() << "void GameCycle::pass(Player* player) ";
+            //qDebug() << "TooManyCardsInHandException caught because of CARD_DEAD_RINGER";
         }
         else throw ex;
     }

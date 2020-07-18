@@ -718,6 +718,8 @@ void VoidAI3Level::requestWithAction()
              }
             // Finish turn or discard random card
             try {
+                if (gamecycle->isResponse())
+                    return;
                 mp_playerCtrl->finishTurn();
                 return;
             } catch (TooManyCardsInHandException e) {

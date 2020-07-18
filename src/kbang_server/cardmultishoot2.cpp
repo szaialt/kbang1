@@ -58,10 +58,10 @@ void CardMultiShoot::play()
       else {
           assertOnTable();
       }
-      m_playedNextDirection = true;
       mp_shootingPlayer = owner();
       mp_requestedPlayer = owner();
       m_usedBarrels.clear();
+      setTargetList();
       gameTable()->playerPlayCard(this);
       requestNext();
 }
@@ -69,15 +69,7 @@ void CardMultiShoot::play()
 void CardMultiShoot::respondPass()
 {
     gameCycle()->unsetResponseMode();
-    if (mp_shootingPlayer == mp_requestedPlayer) {
-        gameTable()->playerPass(mp_requestedPlayer);
-    }/*
-    else if (game()->previousPlayer(mp_requestedPlayer) == mp_requestedPlayer) {
-        gameTable()->playerPass(game()->nextPlayer(mp_requestedPlayer));
-    }*/
-    else {
-        gameTable()->playerPass(mp_requestedPlayer);
-    }
+    gameTable()->playerPass(mp_requestedPlayer);
     bool injure = true;
     if (type() == CARD_INDIANS){
         QList<PlayingCard*> table = mp_requestedPlayer->table();
@@ -91,12 +83,8 @@ void CardMultiShoot::respondPass()
         mp_requestedPlayer->modifyLifePoints(-1, mp_shootingPlayer);
         if (type() == CARD_ROULETTE) return;
     }
-    if (m_playedNextDirection){
-        requestNext();
-    }
-    else {
-        requestPrevious();
-    }
+    requestNext();
+    
 }
 
 void CardMultiShoot::respondCard(PlayingCard* targetCard)
@@ -109,13 +97,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             if (card->type() == CARD_PEACE_PIPE){
                 qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_PEACE_PIPE" << endl;
                 game()->gameCycle().unsetResponseMode();
-                
-                if (m_playedNextDirection){
-                     requestNext();
-                }
-                else {
-                    requestPrevious();
-               }
+                requestNext();
              return;
             }
         }
@@ -123,12 +105,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
     if (type() == CARD_LELA_GATLING){
         gameTable()->playerRespondWithCard(targetCard);
         game()->gameCycle().unsetResponseMode();
-        if (m_playedNextDirection){
-            requestNext();
-        }
-        else {
-            requestPrevious();
-        }
+        requestNext();
         return;
     }
     switch(targetCard->type()) {
@@ -139,12 +116,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
              targetCard->assertInHand();
              gameTable()->playerRespondWithCard(targetCard);
              game()->gameCycle().unsetResponseMode();
-             if (m_playedNextDirection){
-                 requestNext();
-             }
-            else {
-                requestPrevious();
-             }
+             requestNext();
              return;
         case CARD_MISSED:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -155,12 +127,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             targetCard->assertInHand();
             gameTable()->playerRespondWithCard(targetCard);
             game()->gameCycle().unsetResponseMode();
-            if (m_playedNextDirection){
-                requestNext();
-            }
-            else {
-                requestPrevious();
-            }
+            requestNext();
             return;
         case CARD_BARREL: {
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -186,12 +153,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             gameTable()->playerRespondWithCard(targetCard);
             game()->gameCycle().unsetResponseMode();
             game()->gameCycle().setNeedsFinishTurn(true);
-            if (m_playedNextDirection){
-                requestNext();
-            }
-            else {
-                requestPrevious();
-            }
+            requestNext();
             return;
         case CARD_DEFLECTION:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -201,12 +163,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_DEFLECTION" << endl;
             targetCard->assertInHand();
             respondWith(targetCard);
-            if (m_playedNextDirection){
-                requestNext();
-            }
-            else {
-                requestPrevious();
-            }
+            requestNext();
             return;*/
         case CARD_VEST:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -216,12 +173,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_VEST" << endl;
              targetCard->assertOnTable();
              respondWith(targetCard);
-            if (m_playedNextDirection){
-                requestNext();
-            }
-            else {
-                requestPrevious();
-            }
+             requestNext();
             return;
             //You neeed enumerate all weapons there.
         case CARD_VOLCANIC:
@@ -240,12 +192,9 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 break;
             gameTable()->playerRespondWithCard(targetCard);
             game()->gameCycle().unsetResponseMode();
-            if (m_playedNextDirection){
-                requestNext();
-            }
-            else {
-                requestPrevious();
-            }
+            requestNext();
+
+
             return;
         default:{
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY)){
@@ -256,14 +205,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_STEROID" << endl;
                 targetCard->assertInHand();
                 respondWith(targetCard);
-                return;
-                break;
-                if (m_playedNextDirection){
-                    requestNext();
-                }
-                else {
-                    requestPrevious();
-                }
+                requestNext();
                 return;
             }
         }
@@ -279,12 +221,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
 void CardMultiShoot::respondWith(PlayingCard* targetCard){
     gameTable()->playerRespondWithCard(targetCard);
     game()->gameCycle().unsetResponseMode();
-    if (m_playedNextDirection){
-         requestNext();
-     }
-    else {
-        requestPrevious();
-    }
+    requestNext();
 }
 
 void CardMultiShoot::checkResult(bool result)
@@ -292,15 +229,30 @@ void CardMultiShoot::checkResult(bool result)
     Q_ASSERT((type() != CARD_INDIANS) && (type() != CARD_MANN_VS_MACHINE));
     if (result) {
         game()->gameCycle().unsetResponseMode();
-        if (m_playedNextDirection){
-            requestNext();
-        }
-        else {
-            requestPrevious();
-        }
+        requestNext();
     }
 }
 
+void CardMultiShoot::setTargetList(){
+    QList<Player*> players = game()->playerList();
+    m_targets.clear();
+    bool add = false;
+    foreach (Player* player, players){
+        if (add) m_targets.append(player);
+        if (player == mp_shootingPlayer) add = true;
+    }
+    add = true;
+    foreach (Player* player, players){
+        if (player == mp_shootingPlayer) add = false;
+        if (add) m_targets.append(player);
+    }
+    if (!m_playedNextDirection){
+        QList<Player*> targets;
+        targets.reserve(m_targets.size());
+        std::reverse_copy(m_targets.begin(), m_targets.end(),  std::back_inserter(targets));
+        m_targets = targets;
+    }
+}
 
 ReactionType CardMultiShoot::reactionType() const
 {
@@ -315,15 +267,8 @@ ReactionType CardMultiShoot::reactionType() const
 
 void CardMultiShoot::requestNext()
 {
-    mp_requestedPlayer = game()->nextPlayer(mp_requestedPlayer);
-    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
-    game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
-}
-
-void CardMultiShoot::requestPrevious()
-{
-    qDebug() << game()->previousPlayer(mp_requestedPlayer)->name();
-    mp_requestedPlayer = game()->previousPlayer(mp_requestedPlayer);
-    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
+    if (m_targets.isEmpty()) return;
+    mp_requestedPlayer = m_targets.takeFirst();
+    m_targets.removeFirst();
     game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
 }

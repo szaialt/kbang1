@@ -333,7 +333,7 @@ void VoidAI2Level::requestWithAction()
                         
                         catch (BadPlayerException e) {
                             qDebug() << "VoidAI: BadPlayerException!";
-                            return;
+                            continue;
                         } 
                         catch (BadCardException e) {
                             qDebug() << "VoidAI: BadCardException!";
@@ -469,9 +469,11 @@ void VoidAI2Level::requestWithAction()
                                  } catch(GameException& e) {
                                      qDebug() << "VoidAI: GameException";
                                  }
+                                 continue;
                              break;
                          }
                       default:
+                          continue;
                       break;
                 } 
               } 
@@ -565,6 +567,7 @@ void VoidAI2Level::requestWithAction()
                                  } catch(GameException& e) {
                                      qDebug() << "VoidAI: GameException";
                                  }
+                                 continue;
                              break;
                          }
                          case CARD_SUPPLY_CRATE:
@@ -586,9 +589,11 @@ void VoidAI2Level::requestWithAction()
                                 qDebug() << "VoidAI: BadUsageException!";
                             } catch(GameException& e) {
                                 qDebug() << "VoidAI: GameException";
-                            }                                 
+                            }   
+                            continue;
                              break;
                          }
+                         continue;
                              break;
                         case CARD_TELEPORT:{
                             QList<PublicPlayerView*> players = mp_playerCtrl->publicGameView().publicPlayerList();
@@ -610,6 +615,9 @@ void VoidAI2Level::requestWithAction()
              }
             // Finish turn or discard random card
             try {
+                GameCycle* gamecycle = &(sheriff->game()->gameCycle());
+                if (gamecycle->isResponse())
+                    return;
                 mp_playerCtrl->finishTurn();
                 return;
             } catch (TooManyCardsInHandException e) {
@@ -735,24 +743,24 @@ void VoidAI2Level::requestWithAction()
                 CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(player->character());
                 try {
                     jourdonnais->useAbility();
-                    //return;
+                    return;
                 }
                 catch (BadCardException e) {
                     qDebug() << QString("VoidAI (%1): Respond: BadCardException").arg(m_id);
-                    //return;
+                    return;
                 }
                 catch (BadPlayerException e) {
                     qDebug() << QString("VoidAI (%1): Respond: BadPlayerException").arg(m_id);
-                    //return;
+                    return;
                 }
                 catch (BadUsageException e) {
                     qDebug() << QString("VoidAI (%1): Respond: BadUsageException").arg(m_id);
-                    //return;
+                    return;
                 }
                 catch (GameException& e) {
                         qDebug("VoidAI");
                         e.debug(); 
-                        //return;
+                        return;
                 }
  
             }

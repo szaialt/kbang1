@@ -62,7 +62,7 @@ public:
     void onPlayerRespondWithCard(Player*, PlayingCard*);
 
     void onPlayerPass(Player*);
-
+    
     void onDrawIntoSelection(Player* selectionOwner, QList<const PlayingCard*>);
 
     void onDrawIntoSelection(QList<const PlayingCard*>);

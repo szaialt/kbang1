@@ -11,7 +11,7 @@ class CardFactory;
 class CheckDeckResultHandler;
 
 
-class GameTable
+class GameTable 
 {
     friend class Game;
 public:
@@ -62,6 +62,7 @@ public:
     void passTableCard(PlayingCard*, Player* targetPlayer);
 
     void playerPass(Player* player);
+    void playerPassFor(Player* player, Player* player2);
 
     void playerRespondWithCard(PlayingCard* card);
 

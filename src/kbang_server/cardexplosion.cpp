@@ -20,7 +20,7 @@ void CardExplosion::play(){
 //Starts at targetPlayers.at(0)
 void CardExplosion::playInNextDirection(Player* player){
     mp_requestedPlayer = player;
-    player->modifyLifePoints(-1, mp_shootingPlayer);
+    player->modifyLifePoints(-1, mp_requestedPlayer);
     mp_requestedPlayer = game()->nextPlayer(mp_requestedPlayer);
     if (mp_requestedPlayer == mp_shootingPlayer) return;
     playInNextDirection(mp_requestedPlayer);
