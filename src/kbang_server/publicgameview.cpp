@@ -91,7 +91,7 @@ GameInfoData PublicGameView::gameInfoData() const
     
     res.robberRoostFlag  = mp_game->gameInfo().robberRoostFlag();
     res.robberRoostCharactersFlag  = mp_game->gameInfo().robberRoostCharactersFlag();
-    
+    res.bootHillCharactersFlag  = mp_game->gameInfo().bootHillCharactersFlag();
     //res.AIPlayersCnt    todo
 //     res.hasPlayerPassword = mp_game->gameInfo().hasPlayerPassword();
 //     res.hasSpectatorPassword = mp_game->gameInfo().hasSpectatorPassword();

@@ -25,6 +25,7 @@ public:
     QList<PlayingCard*> playerDrawFromDeck(Player*, int count = 1, bool revealCards = 0);
 
     void playerDrawFromGraveyard(Player*);
+    void playerDrawDynamiteFromGraveyard(Player* player);
 
     /**
      * Card's owner discards a specified card. The card must be either in

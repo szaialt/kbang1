@@ -28,6 +28,7 @@ GameInfo::GameInfo(const CreateGameData& createGameData):
       m_cuspOfCarabelliCharactersFlag(createGameData.cuspOfCarabelliCharactersFlag),
       m_robberRoostFlag(createGameData.robberRoostFlag),
       m_robberRoostCharactersFlag(createGameData.robberRoostCharactersFlag),
+      m_bootHillCharactersFlag(createGameData.bootHillCharactersFlag),
       m_aiLevel(createGameData.aiLevel)
 {
     

@@ -71,10 +71,7 @@ void CardMultiShoot::respondPass()
     gameCycle()->unsetResponseMode();
     if (mp_shootingPlayer == mp_requestedPlayer) {
         gameTable()->playerPass(mp_requestedPlayer);
-    }/*
-    else if (game()->previousPlayer(mp_requestedPlayer) == mp_requestedPlayer) {
-        gameTable()->playerPass(game()->nextPlayer(mp_requestedPlayer));
-    }*/
+    }
     else {
         gameTable()->playerPass(mp_requestedPlayer);
     }
@@ -175,7 +172,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
             barrel->check(this);
             return;
-        }/*
+        }
         case CARD_DEAD_RINGER:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
                  break;
@@ -207,7 +204,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
-            return;*/
+            return;
         case CARD_VEST:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
                  break;

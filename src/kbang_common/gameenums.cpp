@@ -146,6 +146,18 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "anne rogers")    return CHARACTER_ANNE_ROGERS;
     if (s == "lela devere")    return CHARACTER_LELA_DEVERE;
     if (s == "julie bulette")  return CHARACTER_JULIE_BULETTE;
+    //Boot Hill
+    if (s == "capt barrett")   return CHARACTER_CAPT_BARRETT;
+    if (s == "dalton gang")    return CHARACTER_DALTON_GANG;
+    if (s == "dynamite dick")  return CHARACTER_DYNAMITE_DICK;
+    if (s == "jaremy baile")   return CHARACTER_JAREMY_BAILE;
+    if (s == "juan miranda")   return CHARACTER_JUAN_MIRANDA;
+    if (s == "jugde dread")    return CHARACTER_JUGDE_DREAD;
+    if (s == "july ann winslow") return CHARACTER_JULY_ANN_WINSLOW;
+    if (s == "matthew hazard") return CHARACTER_MATTHEW_HAZARD;
+    if (s == "tharley callum") return CHARACTER_THARLEY_CALLUM;
+    if (s == "will penny")   return CHARACTER_WILL_PENNY;
+    
     
     return CHARACTER_UNKNOWN;
 }
@@ -252,6 +264,18 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_ANNE_ROGERS:     return "anne rogers";
     case CHARACTER_LELA_DEVERE:     return "lela devere";
     case CHARACTER_JULIE_BULETTE:   return "julie bulette";
+    
+    //Boot Hill
+    case CHARACTER_CAPT_BARRETT:    return "capt barrett";
+    case CHARACTER_DALTON_GANG:     return "dalton gang";
+    case CHARACTER_DYNAMITE_DICK:   return "dynamite dick";
+    case CHARACTER_JAREMY_BAILE:    return "jaremy baile";
+    case CHARACTER_JUAN_MIRANDA:    return "juan miranda";
+    case CHARACTER_JUGDE_DREAD:     return "jugde dread";
+    case CHARACTER_JULY_ANN_WINSLOW: return "july ann winslow";
+    case CHARACTER_MATTHEW_HAZARD:  return "matthew hazard";
+    case CHARACTER_THARLEY_CALLUM:  return "tharley callum";
+    case CHARACTER_WILL_PENNY:      return "will penny";
     }
     return "unknown";
 }

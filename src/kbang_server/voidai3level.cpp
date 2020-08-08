@@ -77,7 +77,7 @@ void VoidAI3Level::requestWithAction()
                       case CARD_RICOCHET:
                       {
                         mp_playerCtrl->playCard(card);
-                        return;
+                        continue;
                         break;
                       }
                       default:
@@ -143,7 +143,7 @@ void VoidAI3Level::requestWithAction()
 
                         {
                             mp_playerCtrl->playCard(card);
-                            return;
+                            continue;
                         }
                         case CARD_INDIANS:
                         case CARD_GATLING:
@@ -264,7 +264,7 @@ void VoidAI3Level::requestWithAction()
                         if (mp_playerCtrl->privatePlayerView().lifePoints() <
                            mp_playerCtrl->privatePlayerView().maxLifePoints()) {
                             mp_playerCtrl->playCard(card);
-                            return;
+                            continue;
                         }
                       }
                       break;
@@ -336,20 +336,19 @@ void VoidAI3Level::requestWithAction()
                             else {
                               mp_playerCtrl->playCard(card);
                             }
-                            return; 
+                            continue; 
                         }
                         
                         catch (BadPlayerException e) {
                             qDebug() << "VoidAI: BadPlayerException!";
-                            return;
                         } 
                         catch (BadCardException e) {
                             qDebug() << "VoidAI: BadCardException!";
                         } 
                         catch (BadUsageException e) {
                             qDebug() << "VoidAI: BadUsageException!";
-                            continue;
                         }
+                        continue;
                         break;
                       }
                      case CARD_PLUNDER:
@@ -368,7 +367,7 @@ void VoidAI3Level::requestWithAction()
                                  cards.append(mp_playerCtrl->getRandomCardFromHand());
                                  cards.append(card3);
                                  mp_playerCtrl->playCard(card, cards);
-                                 return;
+                                 continue;
                               }
                           } catch (BadTargetPlayerException e) {
                           qDebug() << "VoidAI: BadTargetPlayerException!";
@@ -393,7 +392,7 @@ void VoidAI3Level::requestWithAction()
                           try {
                               foreach (PlayingCard* card2, table2) {
                                  mp_playerCtrl->playCard(card, card2);
-                                 return;
+                                 continue;
                               }
                           } catch (BadTargetPlayerException e) {
                           qDebug() << "VoidAI: BadTargetPlayerException!";
@@ -410,7 +409,7 @@ void VoidAI3Level::requestWithAction()
                             if (mp_playerCtrl->privatePlayerView().lifePoints() <
                                     mp_playerCtrl->privatePlayerView().maxLifePoints()) {
                                 mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
-                                return;
+                                continue;
                                 }
                         }
                           break;
@@ -646,6 +645,7 @@ void VoidAI3Level::requestWithAction()
                                      qDebug() << "VoidAI: GameException";
                                      e.debug();
                                  }
+                             continue;
                              break;
                          }
                          case CARD_PANIC:
@@ -680,7 +680,7 @@ void VoidAI3Level::requestWithAction()
                             {
                             try { 
                                 mp_playerCtrl->playCard(card, mp_playerCtrl->getRandomCardFromHand());
-                                return;
+                                continue;
                             } catch (BadTargetPlayerException e) {
                                 qDebug() << "VoidAI: BadTargetPlayerException!";
                             } catch (BadPlayerException e) {

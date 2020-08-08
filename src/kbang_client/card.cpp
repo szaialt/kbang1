@@ -330,6 +330,18 @@ void Card::loadDefaultRuleset()
     new Card("Lela Devere",     CHARACTER_LELA_DEVERE,      "gfx/characters/robbersroost/lela-devere.png");
     new Card("Julie Bulette", CHARACTER_JULIE_BULETTE,  "gfx/characters/robbersroost/julie-bulette.png");
     
+     //Boot Hill
+    new Card("Capt Barrett",         CHARACTER_CAPT_BARRETT,         "gfx/characters/boothill/capt-barrett.png");
+    new Card("Dalton Gang",        CHARACTER_DALTON_GANG,        "gfx/characters/boothill/dalton-gang.png");
+    new Card("Dynamite Dick",           CHARACTER_DYNAMITE_DICK,           "gfx/characters/boothill/dynamite-dick.png");
+    new Card("Jaremy Baile",           CHARACTER_JAREMY_BAILE,          "gfx/characters/boothill/jaremy-baile.png");
+    new Card("Juan Miranda",            CHARACTER_JUAN_MIRANDA,           "gfx/characters/boothill/juan-miranda.png");
+    new Card("Jugde Dread",           CHARACTER_JUGDE_DREAD,         "gfx/characters/boothill/jugde-dread.png");
+    new Card("July Ann Winslow",          CHARACTER_JULY_ANN_WINSLOW,        "gfx/characters/boothill/july-ann-winslow.png");
+    new Card("Matthew Hazard",         CHARACTER_MATTHEW_HAZARD,       "gfx/characters/boothill/matthew-hazard.png");
+    new Card("Tharley Callum",             CHARACTER_THARLEY_CALLUM,           "gfx/characters/boothill/tharley-callum.png");
+    new Card("Will Penny",             CHARACTER_WILL_PENNY,           "gfx/characters/boothill/will-penny.png");
+    
     
     
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");

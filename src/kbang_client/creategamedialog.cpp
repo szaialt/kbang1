@@ -107,6 +107,7 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.cuspOfCarabelliCharactersFlag = checkCuspOfCarabelliCharacters->isChecked();
      createGameData.robberRoostFlag = checkRobberRoost->isChecked();
      createGameData.robberRoostCharactersFlag = checkRobberRoostCharacters->isChecked();
+     createGameData.bootHillCharactersFlag = checkBootHillCharacters->isChecked();
      
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
@@ -223,6 +224,12 @@ void CreateGameDialog::loadConfigValues()
          checkRobberRoostCharacters->setChecked(1);
      else
          checkRobberRoostCharacters->setChecked(0);
+     
+     bool bootHillCharactersFlag  = cfg.readInt(grp, "robberRoostCharactersFlag");
+     if (bootHillCharactersFlag)
+         checkBootHillCharacters->setChecked(1);
+     else
+         checkBootHillCharacters->setChecked(0);
      
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));

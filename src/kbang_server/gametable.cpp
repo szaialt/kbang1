@@ -56,6 +56,27 @@ void GameTable::playerDrawFromGraveyard(Player* player)
 
 }
 
+void GameTable::playerDrawDynamiteFromGraveyard(Player* player)
+{
+    if (m_graveyard.size() == 0)
+        throw BadGameStateException();
+    foreach(PlayingCard* card, m_graveyard){
+        if (card->type() == CARD_DYNAMITE){
+        Q_ASSERT(!card->isVirtual());
+           m_graveyard.removeAll(card);
+           player->appendCardToHand(card);
+           card->setOwner(player);
+           card->setPocket(POCKET_HAND);
+           PlayingCard* nextCard = m_graveyard.isEmpty() ? 0 : m_graveyard.first();
+           mp_game->gameEventManager().onPlayerDrawFromGraveyard(player, card, nextCard);
+           mp_game->gameEventManager().onPlayerUpdated(player);
+           return;
+        }
+    }
+    throw BadGameStateException();
+
+}
+
 void GameTable::playerDiscardCard(PlayingCard* card)
 {
     Q_ASSERT(!card->isVirtual());

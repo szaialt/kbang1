@@ -111,7 +111,6 @@ struct CardFactory::CardFactoryImp
         list.append(new CardBarrel(game, id(), SUIT_SPADES, 12));
         list.append(new CardBarrel(game, id(), SUIT_SPADES, 13));
         
-        
         if (game->gameInfo().dodgeCityFlag()) {
             list.append(new CardDynamite(game, id(), SUIT_CLUBS, 10, 21));
             

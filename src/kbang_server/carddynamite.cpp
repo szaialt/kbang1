@@ -69,7 +69,8 @@ void CardDynamite::checkResult(bool result)
         Player* player = owner();
         gameTable()->playerDiscardCard(this);
         qDebug() << "Dynamite goes off";
-        player->modifyLifePoints(-3, 0);
+        if (player->characterType() != CHARACTER_DYNAMITE_DICK)
+            player->modifyLifePoints(-3, 0);
         qDebug() << "Dynamite went off";
     }
 }

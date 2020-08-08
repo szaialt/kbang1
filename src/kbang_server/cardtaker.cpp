@@ -60,31 +60,31 @@ void CardTaker::play(Player* targetPlayer)
     gameCycle()->assertTurn();
     
     if (color() == COLOR_BROWN) {
-        qDebug() << "CardTaker play(Player* targetPlayer) 1";
+        //qDebug() << "CardTaker play(Player* targetPlayer) 1";
       assertInHand();
-      qDebug() << "CardTaker play(Player* targetPlayer) 2";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 2";
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
-          qDebug() << "CardTaker play(Player* targetPlayer) 3";
+          //qDebug() << "CardTaker play(Player* targetPlayer) 3";
         throw BadCardException();
-        qDebug() << "CardTaker play(Player* targetPlayer) 4";
+        //qDebug() << "CardTaker play(Player* targetPlayer) 4";
       }
-      qDebug() << "CardTaker play(Player* targetPlayer) 5";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 5";
       PlayingCard* targetCard;
-      qDebug() << "CardTaker play(Player* targetPlayer) 6";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 6";
       do {
-          qDebug() << "CardTaker play(Player* targetPlayer) 7";
+          //qDebug() << "CardTaker play(Player* targetPlayer) 7";
         targetCard = targetPlayer->getRandomCardFromHand();
-        qDebug() << "CardTaker play(Player* targetPlayer) 8";
+        //qDebug() << "CardTaker play(Player* targetPlayer) 8";
       } while ((targetCard == 0) || (targetCard == this)); // pick other than this card
-      qDebug() << "CardTaker play(Player* targetPlayer) 9";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 9";
       if (targetCard == 0){
         throw BadTargetPlayerException();
-        qDebug() << "CardTaker play(Player* targetPlayer) 10";
+        //qDebug() << "CardTaker play(Player* targetPlayer) 10";
       }
-      qDebug() << "CardTaker play(Player* targetPlayer) 11";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 11";
       play(targetCard);
-      qDebug() << "CardTaker play(Player* targetPlayer) 12";
+      //qDebug() << "CardTaker play(Player* targetPlayer) 12";
     } 
     else {
       if (pocket() == POCKET_TABLE) {
@@ -113,28 +113,28 @@ void CardTaker::play(PlayingCard* targetCard)
     gameCycle()->assertTurn();
     
     Player* o = owner();
-    //Player* targetPlayer = targetCard->owner();
+    Player* targetPlayer = targetCard->owner();
  
     
     if (m_type == CatBalou) {
-        qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
+        //qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
         assertInHand();
-        qDebug() << "CatBalou play(PlayingCard* targetCard) 2";
+        //qDebug() << "CatBalou play(PlayingCard* targetCard) 2";
         gameCycle()->setCardEffect(1);
-        qDebug() << "CatBalou play(PlayingCard* targetCard) 3";
+        //qDebug() << "CatBalou play(PlayingCard* targetCard) 3";
         gameTable()->playerPlayCard(this, targetCard);
-        qDebug() << "CatBalou play(PlayingCard* targetCard) 4";
+        //qDebug() << "CatBalou play(PlayingCard* targetCard) 4";
         //We don't allow to force to discard Dynamite
         if ((targetCard != 0) && (targetCard->color() ==COLOR_DYNAMITE)){
             targetCard->play();
         }
         else {
-            qDebug() << "CatBalou play(PlayingCard* targetCard) 5";
+            //qDebug() << "CatBalou play(PlayingCard* targetCard) 5";
             gameTable()->cancelCard(targetCard, o);
-            qDebug() << "CatBalou play(PlayingCard* targetCard) 6";
+            //qDebug() << "CatBalou play(PlayingCard* targetCard) 6";
         }
         gameCycle()->setCardEffect(0);
-        qDebug() << "CatBalou play(PlayingCard* targetCard) 7";
+        //qDebug() << "CatBalou play(PlayingCard* targetCard) 7";
     }
     else {
         if (m_type == Plunder) throw BadUsageException();
@@ -164,6 +164,9 @@ void CardTaker::play(PlayingCard* targetCard)
         }
         gameCycle()->setCardEffect(0);
         
+        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
     } 
 }
 
@@ -173,6 +176,7 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
         if (targetCard->owner() != owner()) throw BadCardException();
         if (targetPlayer->hand().isEmpty()) throw BadTargetPlayerException();
         Player* o = owner();
+        Player* targetPlayer = targetCard->owner();
         gameCycle()->setCardEffect(1);
         gameTable()->playerPlayCard(this);
         gameTable()->playerDiscardCard(targetCard);
@@ -184,6 +188,9 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
             gameTable()->cancelCard(card, o);
         }
         gameCycle()->setCardEffect(0);
+        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
     }
     else throw BadUsageException();
 }

@@ -68,6 +68,11 @@
 #include "characterleladevere.h"
 #include "characterjuliebulette.h"
 
+#include "charactercaptbarret.h"
+#include "characterdaltongang.h"
+#include "characterdynamitedick.h"
+#include "characterjaremybaile.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -238,6 +243,14 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterLelaDevere(parent);
     case CHARACTER_JULIE_BULETTE: 
         return new CharacterJulieBulette(parent);
+    case CHARACTER_CAPT_BARRETT:
+        return new CharacterCaptBarret(parent);
+    case CHARACTER_DALTON_GANG:
+        return new CharacterDaltonGang(parent);
+    case CHARACTER_DYNAMITE_DICK:
+        return new CharacterDynamiteDick(parent);
+    case CHARACTER_JAREMY_BAILE:
+        return new CharacterJaremyBaile(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -250,7 +263,7 @@ void CharacterList::initCharacterTypes(Game* game)
     Q_ASSERT(sm_characterTypes.size() == 0);
     sm_characterTypes.append(CHARACTER_BART_CASSIDY);
     sm_characterTypes.append(CHARACTER_BLACK_JACK);
-    sm_characterTypes.append(CHARACTER_CALAMITY_JANET);
+    sm_characterTypes.append(CHARACTER_CALAMITY_JANET);//!
     sm_characterTypes.append(CHARACTER_EL_GRINGO);
     sm_characterTypes.append(CHARACTER_JESSE_JONES);
     sm_characterTypes.append(CHARACTER_JOURDONNAIS);
@@ -344,7 +357,7 @@ void CharacterList::initCharacterTypes(Game* game)
         qDebug() << "No cuspOfCarabelliCharactersFlag.";
     }
     
-    if (game->gameInfo().cuspOfCarabelliCharactersFlag()){
+    if (game->gameInfo().robberRoostCharactersFlag()){
         qDebug() << "robberRoostCharactersFlag.";
         sm_characterTypes.append(CHARACTER_CRAZY_WOLF);
         sm_characterTypes.append(CHARACTER_TURD_FERGUSON);
@@ -360,6 +373,74 @@ void CharacterList::initCharacterTypes(Game* game)
     }
     else {
         qDebug() << "No robberRoostCharactersFlag.";
+    }
+    if (game->gameInfo().bootHillCharactersFlag()){
+        qDebug() << "bootHillCharactersFlag.";
+        sm_characterTypes.append(CHARACTER_CAPT_BARRETT);
+        sm_characterTypes.append(CHARACTER_DALTON_GANG);
+        sm_characterTypes.append(CHARACTER_DYNAMITE_DICK);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+    }
+    else {
+        qDebug() << "No bootHillCharactersFlag.";
     }
 
 }

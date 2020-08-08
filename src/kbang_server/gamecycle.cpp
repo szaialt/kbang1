@@ -140,8 +140,14 @@ void GameCycle::startTurn(Player* player)
             card->reset();
         }
      }
-    if (player->role() == ROLE_SHERIFF)
+    if (player->role() == ROLE_SHERIFF){
         m_turnNum++;
+        foreach(Player* p, mp_game->playerList()){
+            if ((p->isAlive()) && (p->characterType() == CHARACTER_CAPT_BARRETT)){
+                player->game()->gameTable().playerDrawFromDeck(p, 2, 0);
+            }
+        }
+    }
     mp_currentPlayer = mp_requestedPlayer = player;
     m_state = GAMEPLAYSTATE_DRAW;
     mp_currentPlayer->onTurnStart();
@@ -767,6 +773,9 @@ int GameCycle::needDiscard(Player* player)
     if (player->characterType() == CHARACTER_BILLY_LONGLIFE){
         CharacterCardKeeper* billy =  qobject_cast<CharacterCardKeeper*>(player->character());
         limit = billy->cardKeeping();
+    }
+    if (player->characterType() == CHARACTER_DALTON_GANG){
+        limit = player->lifePoints() * 2;
     }
     foreach (PlayingCard* card, player->table()){
         if (card->type() == CARD_PACK_MULE){

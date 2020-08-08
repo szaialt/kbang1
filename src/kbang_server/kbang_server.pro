@@ -150,7 +150,12 @@ HEADERS += \
     characterannerogers.h \
     charactermaggiemae.h \
     characterleladevere.h \
-    characterjuliebulette.h
+    characterjuliebulette.h \
+    charactercaptbarret.h \
+    characterdaltongang.h \
+    characterdynamitedick.h \
+    characterjaremybaile.h 
+
 #    characterroostercogburn.h
 #     common/config.h \
 #     common/gameenums.h \
@@ -288,7 +293,12 @@ SOURCES += \
     characterannerogers.cpp \
     charactermaggiemae.cpp \
     characterleladevere.cpp \
-    characterjuliebulette.cpp
+    characterjuliebulette.cpp \
+    charactercaptbarret.cpp \
+    characterdaltongang.cpp \
+    characterdynamitedick.cpp \
+    characterjaremybaile.cpp
+
 #    characterroostercogburn.cpp
 #     common/config.cpp \
 #     common/gameenums.cpp \
