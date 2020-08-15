@@ -10,7 +10,7 @@ class CharacterJuanMiranda : public CharacterBase
 Q_OBJECT
 public:
     CharacterJuanMiranda(QObject* parent);
-    virtual int maxLifePoints() const;
+    virtual void respondPass(ReactionHandler* reactionHandler);
 };
 
 #endif // CHARACTERJUANMIRANDA_H

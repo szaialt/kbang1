@@ -377,7 +377,7 @@ void GameCycle::playCard(Player* player, PlayingCard* card, Player* targetPlayer
         throw BadTargetPlayerException();
     }
 
-    if (isResponse() && (card->type() != CARD_DEFLECTION) && (card->type() != CARD_RICOCHET)){
+    if (isResponse() && (card->type() != CARD_DEFLECTION) && (card->type() != CARD_RICOCHET) && (card->type() != CARD_BACKFIRE)){
         throw BadGameStateException();
     }
     Player::CardList table = player->table();

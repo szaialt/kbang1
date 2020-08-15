@@ -125,6 +125,10 @@ void CardBang::play(Player *targetPlayer)
         shot(targetPlayer);
         return;
     }
+    else if (type() == CARD_BACKFIRE){
+        shot(targetPlayer);
+        return;
+    }
     controlCard();
     if ((color() == COLOR_BROWN) || ((pocket() == POCKET_TABLE) && isAct())){
         if (!((owner()->characterType() == CHARACTER_CORONEL_MORTIMER) && (suit() == SUIT_DIAMONDS) && (type() == CARD_BANG))){
