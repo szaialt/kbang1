@@ -248,6 +248,11 @@ void GameCycle::finishTurn(Player* player)
             ghost->setDead();
         }
     player->setHexxZombie(false);
+ 
+    if ((player->isAlive()) && (player->characterType() == CHARACTER_JUGDE_DREAD)) {
+        if (player->handSize() < 2)
+        player->game()->gameTable().playerDrawFromDeck(player, 1, 0);
+    }
     if (m_duplicateTurn){
         m_duplicateTurn = false;
         startTurn(mp_currentPlayer);

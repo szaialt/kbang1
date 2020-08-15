@@ -4,6 +4,7 @@
 #include "gametable.h"
 #include "gameexceptions.h"
 #include "game.h"
+#include "cardbang.h"
 
 CardTaker::CardTaker(Game* game, int id, CardTaker::Type type, CardSuit cardSuit, CardRank cardRank):
         PlayingCard(game, id, CARD_UNKNOWN, cardSuit, cardRank),
@@ -114,8 +115,9 @@ void CardTaker::play(PlayingCard* targetCard)
     
     Player* o = owner();
     Player* targetPlayer = targetCard->owner();
- 
-    
+    if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
+        o->modifyLifePoints(-1, 0);
+    }
     if (m_type == CatBalou) {
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
         assertInHand();
@@ -162,11 +164,9 @@ void CardTaker::play(PlayingCard* targetCard)
         if (m_type == GreenFurTrade){
             gameTable()->playerDrawFromDeck(o, 2);
         }
+        
         gameCycle()->setCardEffect(0);
         
-        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
-            o->modifyLifePoints(-1, 0);
-        }
     } 
 }
 
@@ -177,6 +177,9 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
         if (targetPlayer->hand().isEmpty()) throw BadTargetPlayerException();
         Player* o = owner();
         Player* targetPlayer = targetCard->owner();
+        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
         gameCycle()->setCardEffect(1);
         gameTable()->playerPlayCard(this);
         gameTable()->playerDiscardCard(targetCard);
@@ -187,10 +190,11 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
         else {
             gameTable()->cancelCard(card, o);
         }
-        gameCycle()->setCardEffect(0);
         if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
             o->modifyLifePoints(-1, 0);
         }
+        gameCycle()->setCardEffect(0);
+        
     }
     else throw BadUsageException();
 }

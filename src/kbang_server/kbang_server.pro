@@ -154,7 +154,10 @@ HEADERS += \
     charactercaptbarret.h \
     characterdaltongang.h \
     characterdynamitedick.h \
-    characterjaremybaile.h 
+    characterjaremybaile.h \
+    characterjuanmiranda.h \
+    characterjudgedread.h \
+    characterjulyannwislow.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -297,7 +300,10 @@ SOURCES += \
     charactercaptbarret.cpp \
     characterdaltongang.cpp \
     characterdynamitedick.cpp \
-    characterjaremybaile.cpp
+    characterjaremybaile.cpp \
+    characterjuanmiranda.cpp \
+    characterjudgedread.cpp \
+    characterjulyannwislow.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

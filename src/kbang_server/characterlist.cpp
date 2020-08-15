@@ -72,6 +72,9 @@
 #include "characterdaltongang.h"
 #include "characterdynamitedick.h"
 #include "characterjaremybaile.h"
+#include "characterjuanmiranda.h"
+#include "characterjudgedread.h"
+#include "characterjulyannwislow.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -251,6 +254,12 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterDynamiteDick(parent);
     case CHARACTER_JAREMY_BAILE:
         return new CharacterJaremyBaile(parent);
+    case CHARACTER_JUAN_MIRANDA:
+        return new CharacterJuanMiranda(parent);
+    case CHARACTER_JUGDE_DREAD:
+        return new CharacterJudgeDread(parent);
+    case CHARACTER_JULY_ANN_WINSLOW:
+        return new CharacterJulyAnnWislow(parent);
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -380,64 +389,64 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_DALTON_GANG);
         sm_characterTypes.append(CHARACTER_DYNAMITE_DICK);
         sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
-        sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
+        sm_characterTypes.append(CHARACTER_JUGDE_DREAD);
+        sm_characterTypes.append(CHARACTER_JULY_ANN_WINSLOW);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
+        sm_characterTypes.append(CHARACTER_JUAN_MIRANDA);
     }
     else {
         qDebug() << "No bootHillCharactersFlag.";
