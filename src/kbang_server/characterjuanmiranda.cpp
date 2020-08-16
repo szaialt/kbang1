@@ -33,9 +33,13 @@ void CharacterJuanMiranda::respondPass(ReactionHandler* reactionHandler){
                         case REACTION_INDIANS:
                         case REACTION_DUEL:
                         {
-                             PlayingCard* backfire = new CardBang(mp_player->game(), -1, CardBang::Backfire, SUIT_INVALID, 5);
-                             backfire->setVirtual(mp_player, POCKET_HAND);
-                             mp_player->game()->gameCycle().playCard(mp_player, backfire, reactionHandler->causedBy());
+                            PlayingCard* checkedCard = gameTable().checkDeck();
+                            bool checkResult = check(checkedCard);
+                            if (checkResult){
+                                 PlayingCard* backfire = new CardBang(mp_player->game(), -1, CardBang::Backfire, SUIT_INVALID, 5);
+                                 backfire->setVirtual(mp_player, POCKET_HAND);
+                                 mp_player->game()->gameCycle().playCard(mp_player, backfire, reactionHandler->causedBy());
+                             }
                              CharacterBase::respondPass(reactionHandler);
                              
                          }                         
@@ -59,3 +63,11 @@ void CharacterJuanMiranda::respondPass(ReactionHandler* reactionHandler){
         }
     }
 }
+
+bool CharacterJuanMiranda::check(PlayingCard* card)
+{
+    if (card->suit() == SUIT_SPADES) return false;
+    if (card->suit() == SUIT_CLUBS) return false;
+    return true;
+}
+

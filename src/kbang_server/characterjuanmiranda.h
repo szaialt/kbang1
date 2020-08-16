@@ -11,6 +11,8 @@ Q_OBJECT
 public:
     CharacterJuanMiranda(QObject* parent);
     virtual void respondPass(ReactionHandler* reactionHandler);
+private:
+    bool check(PlayingCard* card);
 };
 
 #endif // CHARACTERJUANMIRANDA_H
