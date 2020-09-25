@@ -209,6 +209,9 @@ public:
     PlayingCard* getRandomCardFromHand();
     
     PlayingCard* getRandomCardFromTable();
+    
+    PlayingCard* getRandomCard();
+    
     /**
      * Removes the given card from player's table. Returns
      * true if player has this card in his table.

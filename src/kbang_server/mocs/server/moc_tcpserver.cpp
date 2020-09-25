@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tcpserver.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,12 +12,14 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'tcpserver.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.7.1. It"
+#error "This file was generated using the moc from 5.11.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TcpServer_t {
     QByteArrayData data[1];
     char stringdata0[10];
@@ -60,9 +62,9 @@ void TcpServer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     Q_UNUSED(_a);
 }
 
-const QMetaObject TcpServer::staticMetaObject = {
+QT_INIT_METAOBJECT const QMetaObject TcpServer::staticMetaObject = {
     { &QTcpServer::staticMetaObject, qt_meta_stringdata_TcpServer.data,
-      qt_meta_data_TcpServer,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_TcpServer,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -73,17 +75,16 @@ const QMetaObject *TcpServer::metaObject() const
 
 void *TcpServer::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_TcpServer.stringdata0))
-        return static_cast<void*>(const_cast< TcpServer*>(this));
+        return static_cast<void*>(this);
     return QTcpServer::qt_metacast(_clname);
 }
 
 int TcpServer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QTcpServer::qt_metacall(_c, _id, _a);
-    if (_id < 0)
-        return _id;
     return _id;
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -166,6 +166,9 @@ void GameInfoData::read(XmlNode* node)
      bootHillCharactersFlag = false;
      bootHillCharactersFlag      = (node->attribute("bootHillCharactersFlag")) == "true";
      
+     twentyCharactersFlag = false;
+     twentyCharactersFlag      = (node->attribute("twentyCharactersFlag")) == "true";
+     
     players.clear();
     foreach(XmlNode* child, node->getChildren()) {
         PlayerInfoData playerInfo;
@@ -213,6 +216,8 @@ void GameInfoData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("robberRoostCharactersFlag",        robberRoostCharactersFlag ? "true" : "false");
       
       writer->writeAttribute("bootHillCharactersFlag",        bootHillCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("twentyCharactersFlag",        twentyCharactersFlag ? "true" : "false");
       
     writer->writeAttribute("state",                 gameStateToString(state));
     
@@ -314,6 +319,9 @@ void CreateGameData::read(XmlNode* node)
      bootHillCharactersFlag = false;
      bootHillCharactersFlag      = (node->attribute("bootHillCharactersFlag")) == "true";
      
+     twentyCharactersFlag = false;
+     twentyCharactersFlag      = (node->attribute("twentyCharactersFlag")) == "true";
+     
      playerPassword      = node->attribute("playerPassword");
      spectatorPassword   = node->attribute("spectatorPassword");
 }
@@ -351,6 +359,8 @@ void CreateGameData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("robberRoostCharactersFlag",        robberRoostCharactersFlag ? "true" : "false");
       
       writer->writeAttribute("bootHillCharactersFlag",        bootHillCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("twentyCharactersFlag",        twentyCharactersFlag ? "true" : "false");
       
      if (!playerPassword.isNull())
          writer->writeAttribute("playerPassword",        playerPassword);
@@ -741,13 +751,14 @@ void ActionUseAbilityData::write(QXmlStreamWriter* writer) const
         writer->writeAttribute("type", "TypePlayer");
         writer->writeAttribute("target-player-id", QString::number(targetPlayerId));
         break;
-    case TypeCards:
+    case TypeCards: {
         writer->writeAttribute("type", "TypeCards");
         foreach(int cardId, targetCardsId) {
             writer->writeStartElement("card");
             writer->writeAttribute("id", QString::number(cardId));
             writer->writeEndElement();
         }
+    }
         break;
     case TypeCardsAndPLayer: {
         writer->writeAttribute("type", "TypeCardsAndPLayer");

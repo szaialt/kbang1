@@ -297,6 +297,12 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_QUEEN_ANNE:
         selectCards(cardWidget, 3);
         break;
+    case CHARACTER_BUCKSHOT_ROBERTS:
+    case CHARACTER_DROSERA_ALBA:
+        //Esetleg áttenni a döntést szerver oldalra?
+        //A képességben megvalósítani azt, ami a kártya hatása lenne?
+        selectCards(cardWidget, 4);
+        break;
     default:
         mp_game->serverConnection()->useAbility();
         break;
@@ -384,10 +390,8 @@ void GameActionManager::useAbilityWithCards()
          case CHARACTER_JONATH_HEXX:
          {
              CardWidget* card = m_cardSelection.at(0); 
-             int cardId = card->cardData().id;
-             qDebug() << "Client: cardId" << cardId;
-             CardWidget* card2 = m_cardSelection.at(1); 
              cards.append(card->cardData().id);
+             CardWidget* card2 = m_cardSelection.at(1); 
              int id = card2->ownerId();
              mp_game->serverConnection()->useAbility(cards, id);
              break;

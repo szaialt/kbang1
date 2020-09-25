@@ -22,6 +22,10 @@ CardTaker::CardTaker(Game* game, int id, CardTaker::Type type, CardSuit cardSuit
         setType(CARD_PLUNDER);
     else if (m_type == BarFight)
         setType(CARD_BAR_FIGHT);
+    else if (m_type == DoublePanic)
+        setType(CARD_DOUBLE_PANIC);
+    else if (m_type == DoubleCatBalou)
+        setType(CARD_DOUBLE_CATBALOU);
     
 }
 
@@ -59,7 +63,9 @@ void CardTaker::play()
 void CardTaker::play(Player* targetPlayer)
 {
     gameCycle()->assertTurn();
-    
+     if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
+        throw BadUsageException();
+    }
     if (color() == COLOR_BROWN) {
         //qDebug() << "CardTaker play(Player* targetPlayer) 1";
       assertInHand();
@@ -84,8 +90,33 @@ void CardTaker::play(Player* targetPlayer)
         //qDebug() << "CardTaker play(Player* targetPlayer) 10";
       }
       //qDebug() << "CardTaker play(Player* targetPlayer) 11";
-      play(targetCard);
+      
       //qDebug() << "CardTaker play(Player* targetPlayer) 12";
+      if ((type() == CARD_DOUBLE_PANIC) || (type() == CARD_DOUBLE_CATBALOU)){
+          //if (targetPlayer->handSize() <= 1) {
+              throw BadUsageException();
+          //}
+          /*PlayingCard* targetCard2 = targetPlayer->getRandomCardFromHand();
+         do {
+            //qDebug() << "CardTaker play(Player* targetPlayer) 7";
+            targetCard2 = targetPlayer->getRandomCardFromHand();
+            //qDebug() << "CardTaker play(Player* targetPlayer) 8";
+        } while ((targetCard2 == 0) || (targetCard2 == this) || (targetCard2 == targetCard)); // pick other than this card
+        //qDebug() << "CardTaker play(Player* targetPlayer) 9";
+        if (targetCard2 == 0){
+            throw BadTargetPlayerException();
+            //qDebug() << "CardTaker play(Player* targetPlayer) 10";
+       }
+       QList<PlayingCard*> targetCards;
+       targetCards.append(targetCard);
+       targetCards.append(targetCard2);
+       play(targetCards);
+       */
+      }
+      else {
+          play(targetCard);
+    }
+
     } 
     else {
       if (pocket() == POCKET_TABLE) {
@@ -112,7 +143,9 @@ void CardTaker::play(Player* targetPlayer)
 void CardTaker::play(PlayingCard* targetCard)
 {
     gameCycle()->assertTurn();
-    
+    if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
+        throw BadUsageException();
+    }
     Player* o = owner();
     Player* targetPlayer = targetCard->owner();
     if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
@@ -199,3 +232,40 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
     else throw BadUsageException();
 }
     
+void CardTaker::play(QList<PlayingCard*> targetCards){
+    if (targetCards.size() < 2)  throw BadCardException();
+    if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
+    gameCycle()->assertTurn();
+    Player* o = owner();
+    Player* targetPlayer1 = targetCards.at(0)->owner();
+    Player* targetPlayer2 = targetCards.at(1)->owner();
+    PlayingCard* targetCard1 = targetCards.at(0);
+    PlayingCard* targetCard2 = targetCards.at(1);
+    if ((targetPlayer1 != o) && targetCard1->pocket() == POCKET_HAND){
+        throw BadUsageException();
+        //targetCard1 = targetPlayer1->getRandomCardFromHand();
+    }    
+     if ((targetPlayer2 != o) && targetCard2->pocket() == POCKET_HAND){
+         throw BadUsageException();
+        //targetCard2 = targetPlayer2->getRandomCardFromHand();
+    } 
+    gameCycle()->setCardEffect(1);
+    gameTable()->playerPlayCard(this);
+    if (m_type == DoublePanic){
+        gameTable()->playerStealCard(o,targetCard1);
+        gameTable()->playerStealCard(o, targetCard2);
+    }
+    else if (m_type == DoubleCatBalou){
+        gameTable()->playerDiscardCard(targetCard1);
+        gameTable()->playerDiscardCard(targetCard2);
+    }
+    if (targetPlayer1->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
+    if (targetPlayer2->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
+    gameCycle()->setCardEffect(0);
+    }
+    else throw BadUsageException();
+}

@@ -108,6 +108,7 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.robberRoostFlag = checkRobberRoost->isChecked();
      createGameData.robberRoostCharactersFlag = checkRobberRoostCharacters->isChecked();
      createGameData.bootHillCharactersFlag = checkBootHillCharacters->isChecked();
+     createGameData.twentyCharactersFlag = checkBoxTwentyCharacters->isChecked();
      
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
@@ -225,11 +226,16 @@ void CreateGameDialog::loadConfigValues()
      else
          checkRobberRoostCharacters->setChecked(0);
      
-     bool bootHillCharactersFlag  = cfg.readInt(grp, "robberRoostCharactersFlag");
+     bool bootHillCharactersFlag  = cfg.readInt(grp, "bootHillCharactersFlag");
      if (bootHillCharactersFlag)
          checkBootHillCharacters->setChecked(1);
      else
          checkBootHillCharacters->setChecked(0);
+     bool twentyCharactersFlag  = cfg.readInt(grp, "twentyCharactersFlag");
+     if (twentyCharactersFlag)
+         checkBoxTwentyCharacters->setChecked(1);
+     else
+         checkBoxTwentyCharacters->setChecked(0);
      
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));

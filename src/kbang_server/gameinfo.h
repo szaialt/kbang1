@@ -51,6 +51,7 @@ public:
     inline bool      robberRoostFlag()            const { return m_robberRoostFlag; }
     inline bool      robberRoostCharactersFlag()            const { return m_robberRoostCharactersFlag; }
     inline bool      bootHillCharactersFlag()            const { return m_bootHillCharactersFlag; }
+    inline bool      twentyCharactersFlag()            const { return m_twentyCharactersFlag; }
     
     inline int      aiLevel()             const { return m_aiLevel; }
     
@@ -102,6 +103,7 @@ private:
      bool m_robberRoostFlag;
      bool m_robberRoostCharactersFlag;
      bool m_bootHillCharactersFlag;
+     bool m_twentyCharactersFlag;
      int m_aiLevel;
 
 };

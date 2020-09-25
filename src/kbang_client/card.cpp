@@ -341,7 +341,27 @@ void Card::loadDefaultRuleset()
     new Card("Matthew Hazard",         CHARACTER_MATTHEW_HAZARD,       "gfx/characters/boothill/matthew-hazard.png");
     new Card("Tharley Callum",             CHARACTER_THARLEY_CALLUM,           "gfx/characters/boothill/tharley-callum.png");
     new Card("Will Penny",             CHARACTER_WILL_PENNY,           "gfx/characters/boothill/will-penny.png");
-    
+    // 20
+    new Card("Buckshot Roberts",         CHARACTER_BUCKSHOT_ROBERTS,         "gfx/characters/20/buckshot-roberts.jpg");
+    new Card("Chosing Thomas",        CHARACTER_CHOSING_THOMAS,        "gfx/characters/20/chosing-thomas.jpg");
+    new Card("Dafne Star",           CHARACTER_DAFNE_STAR,           "gfx/characters/20/dafne-star.jpg");
+    new Card("Drosera Alba",           CHARACTER_DROSERA_ALBA,          "gfx/characters/20/drosera-alba.jpg");
+    new Card("Fast Franz",            CHARACTER_FAST_FRANZ,           "gfx/characters/20/fast-franz.jpg");
+    new Card("Felipe Delgado",           CHARACTER_FELIPE_DELGADO,         "gfx/characters/20/felipe-delgado.jpg");
+    new Card("Ginger Star",          CHARACTER_GINGER_STAR,        "gfx/characters/20/ginger-star.jpg");
+    new Card("Green Kate Janet",         CHARACTER_GREEN_KATE_JANET,       "gfx/characters/20/green-kate-janet.jpg");
+    new Card("Hurting Bob",             CHARACTER_HURTING_BOB,           "gfx/characters/20/hurting-bob.jpg");
+    new Card("Jack Brown",             CHARACTER_JACK_BROWN,           "gfx/characters/20/jack-brown.jpg");
+    new Card("Johnny Clem",         CHARACTER_JOHNNY_CLEM,         "gfx/characters/20/johnny-clem.jpg");
+    new Card("Linda Vivenda",        CHARACTER_LINDA_VIVENDA,        "gfx/characters/20/linda-vivenda.jpg");
+    new Card("Oscar Rodriguez",           CHARACTER_OSCAR_RODRIGUEZ,           "gfx/characters/20/oscar-rodriguez.jpg");
+    new Card("Pepita Duelita",           CHARACTER_PEPITA_DUELITA,          "gfx/characters/20/pepita-duelita.jpg");
+    new Card("Riding Horse",            CHARACTER_RIDING_HORSE,           "gfx/characters/20/riding-horse.jpg");
+    new Card("Slobodan The Killer",          CHARACTER_SLOBODAN_THE_KILLER,         "gfx/characters/20/slobodan-the-killer");
+    new Card("Steve Hypnotic",          CHARACTER_STEVE_HYPNOTIC,        "gfx/characters/20/steve-hypnotic.jpg");
+    new Card("Stonewall Jackson",         CHARACTER_STONEWALL_JACKSON,       "gfx/characters/20/stonewall-jackson.jpg");
+    new Card("Tony Armed",             CHARACTER_TONY_ARMED,           "gfx/characters/20/tony-armed.jpg");
+    new Card("William Longley",             CHARACTER_WILLIAM_LONGLEY,           "gfx/characters/20/william-longley.jpg");
     
     
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");

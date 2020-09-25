@@ -22,6 +22,12 @@ To use ability of Jesse Jones, you need to clik to a free place on table of the 
 
 You can modify character list by modifying characterlist.cpp. To modify the deck, you need modify cardfactory,cpp. If you would change a card, you need replace the card with a new card with the same name on the right place.
 
+Some characters, like CHARACTER_BUCKSHOT_ROBERTS, can ruin the game by not using their ability correctly. 
+* CHARACTER_BUCKSHOT_ROBERTS can cancel two cards by a Cat Balou, but he can elect only cards he sees.
+* CHARACTER_DROSERA_ALBA can draw two cards by a Panic, but she can elect only cards she sees.
+If they can't see a card, and they would target them, they will cause
+a segmentation fault.
+
 If you would support me, you can contribute to my student loan:
 
 Name: Diákhitel Központ Zrt.

@@ -258,22 +258,20 @@ void Client::onActionPlayCard(const ActionPlayCardData& actionPlayCardData)
             qDebug("PLAYCARD_CARDS");
             QList<int> targetCardsId = actionPlayCardData.targetCardsId;
             QList<PlayingCard*> cards = QList<PlayingCard*>();
-            qDebug() << " Target card ids: ";
-            foreach(int cardId, targetCardsId) {
-               qDebug() << cardId << " "; 
-            }
             foreach(int cardId, targetCardsId) {
                 PlayingCard* card = mp_playerCtrl->card(cardId); 
                 if (card == 0) {
                     qDebug(qPrintable(QString("[CLIENT]   Target card '%1' not exist!").arg(cardId)));
                     // @todo feedback
-                    //getRandomCardFromHand();
-                    //return;
                }
                else {
-                  cards.push_back(card);  
-               } 
-            }
+                    cards.push_back(card);  
+                    qDebug() << " Target card id: ";
+                    qDebug() << cardId << " "; 
+                 }
+            } 
+               
+        
 //               if (playedCard->type() == CARD_BRAWL){
 //                   Game* game = mp_playerCtrl->theSheriff()->game();
 //                   foreach (Player* player, game->playerList()){

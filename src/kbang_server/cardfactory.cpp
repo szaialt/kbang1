@@ -487,8 +487,6 @@ struct CardFactory::CardFactoryImp
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
             
             
-            
-            
 
         
         }

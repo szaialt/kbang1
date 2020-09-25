@@ -78,6 +78,7 @@ struct GameInfoData
      bool robberRoostFlag;
      bool robberRoostCharactersFlag;
      bool bootHillCharactersFlag;
+     bool twentyCharactersFlag;
      int aiLevel;
 
 };
@@ -121,6 +122,7 @@ struct CreateGameData
       bool robberRoostFlag;
       bool robberRoostCharactersFlag;
       bool bootHillCharactersFlag;
+      bool twentyCharactersFlag;
     void read(XmlNode*);
     void write(QXmlStreamWriter*) const;
     static QString elementName; 

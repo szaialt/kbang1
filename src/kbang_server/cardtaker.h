@@ -12,7 +12,9 @@ public:
         Pilfer,
         GreenFurTrade,
         Plunder,
-        BarFight
+        BarFight,
+        DoublePanic,
+        DoubleCatBalou,
     };
 
     CardTaker(Game *game, int id, Type, CardSuit, CardRank);
@@ -23,6 +25,7 @@ public:
     virtual void play(Player* targetPlayer);
     virtual void play(PlayingCard* targetCard);
     virtual void play(PlayingCard* targetCard, Player* targetPlayer);
+    virtual void play(QList<PlayingCard*> targetCards);
 
 private:
     Type m_type;

@@ -168,7 +168,7 @@ PlayingCard* PlayerCtrl::card(int cardId) const
     PlayingCard* c = mp_player->game()->gameTable().card(cardId);
     if (c == 0) {
         qDebug() << "Not found.";
-        return c;
+        return 0;
     }
     qDebug() << "card:" << playingCardTypeToString(c->type());
     qDebug() << "pocket:" << pocketTypeToString(c->pocket());

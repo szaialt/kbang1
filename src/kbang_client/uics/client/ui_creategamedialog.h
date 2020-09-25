@@ -66,6 +66,8 @@ public:
     QLabel *label_5;
     QCheckBox *checkBoxLifePointsMaxFlag;
     QLabel *labelLifePointsMaxFlag;
+    QCheckBox *checkBoxTwentyCharacters;
+    QLabel *labelTwentyCharacters;
     QCheckBox *checkBoxOurFlag;
     QLabel *labelCheckBoxOurFlag;
     QCheckBox *checkDodgeCity;
@@ -293,6 +295,16 @@ public:
 
         gridLayout->addWidget(labelLifePointsMaxFlag, 17, 0, 1, 2);
 
+        checkBoxTwentyCharacters = new QCheckBox(CreateGameDialog);
+        checkBoxTwentyCharacters->setObjectName(QStringLiteral("checkBoxTwentyCharacters"));
+
+        gridLayout->addWidget(checkBoxTwentyCharacters, 17, 5, 1, 2);
+
+        labelTwentyCharacters = new QLabel(CreateGameDialog);
+        labelTwentyCharacters->setObjectName(QStringLiteral("labelTwentyCharacters"));
+
+        gridLayout->addWidget(labelTwentyCharacters, 17, 3, 1, 2);
+
         checkBoxOurFlag = new QCheckBox(CreateGameDialog);
         checkBoxOurFlag->setObjectName(QStringLiteral("checkBoxOurFlag"));
 
@@ -456,6 +468,7 @@ public:
         label_12->setBuddy(spinBoxMaxSpectators);
         label_5->setBuddy(lineEditGamePasswordPlayers);
         labelLifePointsMaxFlag->setBuddy(checkBoxLifePointsMaxFlag);
+        labelTwentyCharacters->setBuddy(checkBoxTwentyCharacters);
         labelCheckBoxOurFlag->setBuddy(checkBoxOurFlag);
         labelDodgeCity->setBuddy(checkDodgeCity);
         labelTeamFortress->setBuddy(checkTeamFortress);
@@ -544,6 +557,7 @@ public:
 #endif // QT_NO_TOOLTIP
         label_5->setText(QApplication::translate("CreateGameDialog", "Password for Players", Q_NULLPTR));
         labelLifePointsMaxFlag->setText(QApplication::translate("CreateGameDialog", "Use maximal lifepoint in character combinations", Q_NULLPTR));
+        labelTwentyCharacters->setText(QApplication::translate("CreateGameDialog", "20 characters from Bang.cz forum", Q_NULLPTR));
         labelCheckBoxOurFlag->setText(QApplication::translate("CreateGameDialog", "Use our rules", Q_NULLPTR));
         labelDodgeCity->setText(QApplication::translate("CreateGameDialog", "Dodge City", Q_NULLPTR));
         labelTeamFortress->setText(QApplication::translate("CreateGameDialog", "Team Fortress", Q_NULLPTR));

@@ -276,6 +276,14 @@ PlayingCard* Player::getRandomCardFromTable()
     return m_table[qrand() % size];
 }
 
+PlayingCard* Player::getRandomCard(){
+    if (m_table.size() == 0) return getRandomCardFromHand();
+    if (m_hand.size() == 0) return getRandomCardFromTable();
+    int fromHand = qrand() % 2;
+    if (fromHand > 0) return getRandomCardFromHand();
+    return getRandomCardFromTable();
+}
+
 bool Player::removeCardFromTable(PlayingCard* card)
 {
     return m_table.removeOne(card);

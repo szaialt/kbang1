@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'serverconnection.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -13,12 +13,14 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'serverconnection.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.7.1. It"
+#error "This file was generated using the moc from 5.11.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client__ServerConnection_t {
     QByteArrayData data[53];
     char stringdata0[678];
@@ -272,66 +274,65 @@ void client::ServerConnection::qt_static_metacall(QObject *_o, QMetaObject::Call
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
-        void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (ServerConnection::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::statusChanged)) {
+            using _t = void (ServerConnection::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::statusChanged)) {
                 *result = 0;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(QString );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::logMessage)) {
+            using _t = void (ServerConnection::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::logMessage)) {
                 *result = 1;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(const QByteArray & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::incomingData)) {
+            using _t = void (ServerConnection::*)(const QByteArray & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::incomingData)) {
                 *result = 2;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(const QByteArray & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::outgoingData)) {
+            using _t = void (ServerConnection::*)(const QByteArray & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::outgoingData)) {
                 *result = 3;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(int , const QString & , const QString & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::incomingChatMessage)) {
+            using _t = void (ServerConnection::*)(int , const QString & , const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::incomingChatMessage)) {
                 *result = 4;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(int , const QString & , const ClientType & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::enterGameMode)) {
+            using _t = void (ServerConnection::*)(int , const QString & , const ClientType & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::enterGameMode)) {
                 *result = 5;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::exitGameMode)) {
+            using _t = void (ServerConnection::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::exitGameMode)) {
                 *result = 6;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::gameCanBeStarted)) {
+            using _t = void (ServerConnection::*)(bool );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::gameCanBeStarted)) {
                 *result = 7;
                 return;
             }
         }
         {
-            typedef void (ServerConnection::*_t)(const CardMovementData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ServerConnection::eventCardMovement)) {
+            using _t = void (ServerConnection::*)(const CardMovementData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ServerConnection::eventCardMovement)) {
                 *result = 8;
                 return;
             }
@@ -339,9 +340,9 @@ void client::ServerConnection::qt_static_metacall(QObject *_o, QMetaObject::Call
     }
 }
 
-const QMetaObject client::ServerConnection::staticMetaObject = {
+QT_INIT_METAOBJECT const QMetaObject client::ServerConnection::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_client__ServerConnection.data,
-      qt_meta_data_client__ServerConnection,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_client__ServerConnection,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -352,9 +353,9 @@ const QMetaObject *client::ServerConnection::metaObject() const
 
 void *client::ServerConnection::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_client__ServerConnection.stringdata0))
-        return static_cast<void*>(const_cast< ServerConnection*>(this));
+        return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
@@ -378,61 +379,62 @@ int client::ServerConnection::qt_metacall(QMetaObject::Call _c, int _id, void **
 // SIGNAL 0
 void client::ServerConnection::statusChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
 void client::ServerConnection::logMessage(QString _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
 void client::ServerConnection::incomingData(const QByteArray & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
 void client::ServerConnection::outgoingData(const QByteArray & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
 void client::ServerConnection::incomingChatMessage(int _t1, const QString & _t2, const QString & _t3)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5
 void client::ServerConnection::enterGameMode(int _t1, const QString & _t2, const ClientType & _t3)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 
 // SIGNAL 6
 void client::ServerConnection::exitGameMode()
 {
-    QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 
 // SIGNAL 7
 void client::ServerConnection::gameCanBeStarted(bool _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 7, _a);
 }
 
 // SIGNAL 8
 void client::ServerConnection::eventCardMovement(const CardMovementData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -156,7 +156,28 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "july ann winslow") return CHARACTER_JULY_ANN_WINSLOW;
     if (s == "matthew hazard") return CHARACTER_MATTHEW_HAZARD;
     if (s == "tharley callum") return CHARACTER_THARLEY_CALLUM;
-    if (s == "will penny")   return CHARACTER_WILL_PENNY;
+    if (s == "will penny")     return CHARACTER_WILL_PENNY;
+    // 20 
+    if (s == "buckshot roberts") return CHARACTER_BUCKSHOT_ROBERTS;
+    if (s == "chosing thomas") return CHARACTER_CHOSING_THOMAS;
+    if (s == "dafne star")     return CHARACTER_DAFNE_STAR;
+    if (s == "drosera alba")   return CHARACTER_DROSERA_ALBA;
+    if (s == "fast franz")     return CHARACTER_FAST_FRANZ;
+    if (s == "felipe delgado") return CHARACTER_FELIPE_DELGADO;
+    if (s == "ginger star")    return CHARACTER_GINGER_STAR;
+    if (s == "green kate janet") return CHARACTER_GREEN_KATE_JANET;
+    if (s == "hurting bob")    return CHARACTER_HURTING_BOB;
+    if (s == "jack brown")     return CHARACTER_JACK_BROWN;
+    if (s == "johnny clem")    return CHARACTER_JOHNNY_CLEM;
+    if (s == "linda vivenda")  return CHARACTER_LINDA_VIVENDA;
+    if (s == "oscar rodriguez") return CHARACTER_OSCAR_RODRIGUEZ;
+    if (s == "pepita duelita") return CHARACTER_PEPITA_DUELITA;
+    if (s == "riding horse")   return CHARACTER_RIDING_HORSE;
+    if (s == "slobodan the killer") return CHARACTER_SLOBODAN_THE_KILLER;
+    if (s == "steve hypnotic") return CHARACTER_STEVE_HYPNOTIC;
+    if (s == "stonewall jackson") return CHARACTER_STONEWALL_JACKSON;
+    if (s == "tony armed")     return CHARACTER_TONY_ARMED;
+    if (s == "william longley") return CHARACTER_WILLIAM_LONGLEY;
     
     
     return CHARACTER_UNKNOWN;
@@ -276,6 +297,28 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_MATTHEW_HAZARD:  return "matthew hazard";
     case CHARACTER_THARLEY_CALLUM:  return "tharley callum";
     case CHARACTER_WILL_PENNY:      return "will penny";
+    
+    // 20 
+    case CHARACTER_BUCKSHOT_ROBERTS: return "buckshot roberts";
+    case CHARACTER_CHOSING_THOMAS:  return "chosing thomas";
+    case CHARACTER_DAFNE_STAR:      return "dafne star";
+    case CHARACTER_DROSERA_ALBA:    return "drosera alba";
+    case CHARACTER_FAST_FRANZ:      return "fast franz";
+    case CHARACTER_FELIPE_DELGADO:  return "felipe delgado";
+    case CHARACTER_GINGER_STAR:     return "ginger star";
+    case CHARACTER_GREEN_KATE_JANET: return "green kate janet";
+    case CHARACTER_HURTING_BOB:     return "hurting bob";
+    case CHARACTER_JACK_BROWN:      return "jack brown";
+    case CHARACTER_JOHNNY_CLEM:     return "johnny clem";
+    case CHARACTER_LINDA_VIVENDA:   return "linda vivenda";
+    case CHARACTER_OSCAR_RODRIGUEZ: return "oscar rodriguez";
+    case CHARACTER_PEPITA_DUELITA:  return "pepita duelita";
+    case CHARACTER_RIDING_HORSE:    return "riding horse";
+    case CHARACTER_SLOBODAN_THE_KILLER: return "slobodan the killer";
+    case CHARACTER_STEVE_HYPNOTIC:  return "steve hypnotic";
+    case CHARACTER_STONEWALL_JACKSON: return "stonewall jackson";
+    case CHARACTER_TONY_ARMED:      return "tony armed";
+    case CHARACTER_WILLIAM_LONGLEY: return "william longley";
     }
     return "unknown";
 }
@@ -557,20 +600,26 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "purple-warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple_warpath")      return CARD_PURPLE_WARPATH;
     if (s == "purple warpath")      return CARD_PURPLE_WARPATH;
-    if (s == "dodge")      return CARD_DODGE;
-    if (s == "backfire")         return CARD_BACKFIRE;
-    if (s == "extra-bang")      return CARD_EXTRA_BANG;
-    if (s == "extra bang")      return CARD_EXTRA_BANG;
-    if (s == "extra_bang")      return CARD_EXTRA_BANG;
-    if (s == "double-extra-bang")      return CARD_DOUBLE_EXTRA_BANG;
-    if (s == "double extra bang")      return CARD_DOUBLE_EXTRA_BANG;
-    if (s == "double_extra_bang")      return CARD_DOUBLE_EXTRA_BANG;
-    if (s == "lela-bang")      return CARD_LELA_BANG;
-    if (s == "lela bang")      return CARD_LELA_BANG;
-    if (s == "lela_bang")      return CARD_LELA_BANG;
-    if (s == "lela-gatling")      return CARD_LELA_GATLING;
-    if (s == "lela gatling")      return CARD_LELA_GATLING;
-    if (s == "lela_gatling")      return CARD_LELA_GATLING;
+    if (s == "dodge")               return CARD_DODGE;
+    if (s == "backfire")            return CARD_BACKFIRE;
+    if (s == "extra-bang")          return CARD_EXTRA_BANG;
+    if (s == "extra bang")          return CARD_EXTRA_BANG;
+    if (s == "extra_bang")          return CARD_EXTRA_BANG;
+    if (s == "double-extra-bang")   return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "double extra bang")   return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "double_extra_bang")   return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "lela-bang")           return CARD_LELA_BANG;
+    if (s == "lela bang")           return CARD_LELA_BANG;
+    if (s == "lela_bang")           return CARD_LELA_BANG;
+    if (s == "lela-gatling")        return CARD_LELA_GATLING;
+    if (s == "lela gatling")        return CARD_LELA_GATLING;
+    if (s == "lela_gatling")        return CARD_LELA_GATLING;
+    if (s == "double-panic")        return CARD_DOUBLE_PANIC;
+    if (s == "double panic")        return CARD_DOUBLE_PANIC;
+    if (s == "double_panic")        return CARD_DOUBLE_PANIC;
+    if (s == "double-catbalou")     return CARD_DOUBLE_CATBALOU;
+    if (s == "double catbalou")     return CARD_DOUBLE_CATBALOU;
+    if (s == "double_catbalou")     return CARD_DOUBLE_CATBALOU;
     return CARD_UNKNOWN; 
 } 
 
@@ -691,12 +740,16 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_CANNON:          return "cannon";
         case CARD_ARTILLERY:       return "artillery";
         case CARD_PURPLE_WARPATH:  return "purple warpath";
-        case CARD_DODGE:         return "dodge";
+        case CARD_DODGE:           return "dodge";
         case CARD_BACKFIRE:        return "backfire";
-        case CARD_EXTRA_BANG:       return "extra bang";
-        case CARD_DOUBLE_EXTRA_BANG:     return "double extra bang";
-        case CARD_LELA_BANG:        return "lela bang";
-        case CARD_LELA_GATLING:     return "lela gatling";
+        case CARD_EXTRA_BANG:      return "extra bang";
+        case CARD_DOUBLE_EXTRA_BANG: return "double extra bang";
+        case CARD_LELA_BANG:       return "lela bang";
+        case CARD_LELA_GATLING:    return "lela gatling";
+        // 20
+        case CARD_DOUBLE_PANIC:    return "double panic";
+        case CARD_DOUBLE_CATBALOU: return "double catbalou";
+      
         //Unknown
         case CARD_UNKNOWN:        return "";
     }
