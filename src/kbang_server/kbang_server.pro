@@ -159,7 +159,8 @@ HEADERS += \
     characterjudgedread.h \
     characterjulyannwislow.h \
     characterbuckshotroberts.h \
-    characterchosingthomas.h
+    characterchosingthomas.h \
+    characterfastfranz.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -307,7 +308,8 @@ SOURCES += \
     characterjudgedread.cpp \
     characterjulyannwislow.cpp \
     characterbuckshotroberts.cpp \
-    characterchosingthomas.cpp
+    characterchosingthomas.cpp \
+    characterfastfranz.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

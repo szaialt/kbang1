@@ -25,6 +25,7 @@
 #include "gameeventmanager.h"
 #include "characterbase.h"
 #include "charactercassidygringo.h"
+#include "characterfastfranz.h"
 
 #include "gameinfo.h"
 #include "gamecycle.h"
@@ -137,6 +138,14 @@ void Player::modifyLifePoints(int x, Player* causedBy)
             }
         }
     }
+    if ((x < 0) && (characterType() == CHARACTER_FAST_FRANZ)){
+        CharacterFastFranz* franz =  qobject_cast<CharacterFastFranz*>(character());
+        PlayingCard* checkedCard = game()->gameTable().checkDeck();
+        bool checkResult = franz->check(checkedCard);
+        if (checkResult){
+            return;
+        }
+    }
     // modify lifePoints member
     int oldLifePoints = m_lifePoints;
     m_lifePoints += modification;
@@ -182,8 +191,17 @@ void Player::lastSaveSuccess(int hitPoints, Player* causedBy)
 void Player::lastSaveFailure(int hitPoints, Player* causedBy)
 {
     Q_UNUSED(hitPoints);
-    
-      mp_game->buryPlayer(this, causedBy);
+    //Teren Kill 
+    if (character()->characterType() == CHARACTER_FAST_FRANZ){
+        CharacterFastFranz* franz =  qobject_cast<CharacterFastFranz*>(character());
+        PlayingCard* checkedCard = game()->gameTable().checkDeck();
+        bool checkResult = franz->check(checkedCard);
+        if (checkResult){
+            m_lifePoints = 1;
+            return;
+        }
+    }
+    mp_game->buryPlayer(this, causedBy);
 }
 
 

@@ -78,6 +78,7 @@
 
 #include "characterbuckshotroberts.h"
 #include "characterchosingthomas.h"
+#include "characterfastfranz.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -269,6 +270,9 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterBuckshotRoberts(parent, CharacterBuckshotRoberts::DroseraAlba);
     case CHARACTER_CHOSING_THOMAS: 
         return new CharacterChosingThomas(parent);
+    case CHARACTER_FAST_FRANZ: 
+        return new CharacterFastFranz(parent);
+        
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -411,58 +415,62 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_BUCKSHOT_ROBERTS);
         sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
         sm_characterTypes.append(CHARACTER_DROSERA_ALBA);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
-        sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
+        sm_characterTypes.append(CHARACTER_FAST_FRANZ);
     }
     else {
         qDebug() << "No twentyCharactersFlag.";
