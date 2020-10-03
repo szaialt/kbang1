@@ -36,7 +36,7 @@ void CharacterBuckshotRoberts::useAbility(QList<PlayingCard*> cards){
     PlayingCard* card1= cards.at(1);
     if (card1->owner() != mp_player) throw BadCardException();
     if (card1->type() != CARD_MISSED) throw BadCardException();
-    gameTable().cancelCard(card1);
+    gameTable().playerDiscardCard(card1);
     QList<PlayingCard*> targetCards;
     targetCards.append(cards.at(2));
     targetCards.append(cards.at(3));

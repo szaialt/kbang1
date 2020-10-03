@@ -24,7 +24,7 @@ private:
     Player* mp_firstPlayer;
     Player* mp_currentPlayer;
     Type m_type;
-
+    int m_remained;
 };
 
 #endif // CARDGENERALSTORE_H

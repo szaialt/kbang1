@@ -487,7 +487,30 @@ struct CardFactory::CardFactoryImp
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
             
             
-
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_SPADES, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_CLUBS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_DIAMONDS, 1));
+        list.append(new CardGeneralStore(game, id(), CardGeneralStore::GeneralStore, SUIT_HEARTS, 1));
         
         }
         else {

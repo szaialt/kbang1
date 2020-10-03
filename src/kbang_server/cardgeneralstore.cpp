@@ -3,10 +3,12 @@
 #include "gamecycle.h"
 #include "game.h"
 #include "gameexceptions.h"
+#include "characterchosingthomas.h"
 
 CardGeneralStore::CardGeneralStore(Game* game, int id, Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_GENERALSTORE, cardSuit, cardRank),
-        m_type(type)
+        m_type(type),
+        m_remained(0)
 {
     switch(m_type) {
     case GeneralStore:
@@ -37,11 +39,20 @@ void CardGeneralStore::play()
      gameTable()->drawGraveyardIntoSelection(game()->alivePlayersCount());
      gameTable()->playerPlayCard(this);
     }
+    m_remained = game()->alivePlayersCount();
     requestNext();
 }
 
 void CardGeneralStore::respondPass(){
     game()->gameCycle().unsetResponseMode();
+    if ((type() == CARD_GENERALSTORE) && (mp_currentPlayer->characterType() == CHARACTER_CHOSING_THOMAS)){
+        CharacterChosingThomas* thomas =  qobject_cast<CharacterChosingThomas*>(mp_currentPlayer->character());
+        if (thomas->canUseAbility()){
+            gameTable()->cancelSelection();
+            gameTable()->drawIntoSelection(m_remained-1);
+            thomas->abilityUsed();
+        }
+    }
     gameTable()->playerPass(mp_currentPlayer);
     requestNext();
 }
@@ -58,17 +69,21 @@ void CardGeneralStore::respondCard(PlayingCard* targetCard)
 
 void CardGeneralStore::requestNext()
 {
+    m_remained--;
+    if (m_remained < 0) m_remained = 0;
     if (mp_currentPlayer == 0) {
         mp_currentPlayer = mp_firstPlayer;
     } else {
         mp_currentPlayer = game()->nextPlayer(mp_currentPlayer);
-        if (game()->nextPlayer(mp_currentPlayer) == mp_firstPlayer) {
+        if ((game()->nextPlayer(mp_currentPlayer) == mp_firstPlayer)
+            ||((m_remained == 1) && (mp_currentPlayer == mp_firstPlayer))
+        ) {
             qDebug() << "Size of the selection is " << gameTable()->selection().size();
             if (gameTable()->selection().size() == 0){
                 gameCycle()->setCardEffect(0);
                 return;
             }
-            Q_ASSERT(gameTable()->selection().size() == 1);
+            //Q_ASSERT(gameTable()->selection().size() == 1);
             PlayingCard* selectionCard = gameTable()->selection()[0];
             gameTable()->playerPickFromSelection(mp_currentPlayer, selectionCard);
             gameCycle()->setCardEffect(0);
