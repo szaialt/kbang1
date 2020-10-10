@@ -80,6 +80,7 @@
 #include "characterchosingthomas.h"
 #include "characterfastfranz.h"
 #include "characterfelipedelgado.h"
+#include "charactergreenkatejanet.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -275,6 +276,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterFastFranz(parent);
      case CHARACTER_FELIPE_DELGADO: 
         return new CharacterFelipeDelgado(parent);   
+    case CHARACTER_GREEN_KATE_JANET: 
+        return new CharacterGreenKateJanet(parent);   
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -419,60 +422,74 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_DROSERA_ALBA);
         sm_characterTypes.append(CHARACTER_FAST_FRANZ);
         sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
-        sm_characterTypes.append(CHARACTER_FELIPE_DELGADO);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+         sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
+        sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
     }
     else {
         qDebug() << "No twentyCharactersFlag.";

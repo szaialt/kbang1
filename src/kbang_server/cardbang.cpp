@@ -143,14 +143,11 @@ void CardBang::play(Player *targetPlayer)
 
     void CardBang::controlCard(){
         gameCycle()->assertTurn();
-        if (color() == COLOR_BROWN){
-            assertInHand();
-        }
-        else {
+        if (color() != COLOR_BROWN){
             assertOnTable();
         }
         /* one-bang-per-turn check */
-        if (color() == COLOR_BROWN){
+        else {
             if ((!owner()->canPlayBang())){
                 throw OneBangPerTurnException();
             }
