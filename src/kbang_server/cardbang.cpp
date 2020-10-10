@@ -229,6 +229,12 @@ void CardBang::respondPass()
                 if (card->type() == CARD_HALF_ZATOCHI){
                     mp_attackingPlayer->modifyLifePoints(1, 0);
                 }
+                 if (mp_attackingPlayer->characterType() == CHARACTER_EMMA){
+                     gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
+                }
+                if (mp_attackingPlayer->characterType() == CHARACTER_HURTING_BOB){
+                     mp_attackingPlayer->modifyLifePoints(1, 0);
+                }
                 if (card->type() == CARD_SANDMAN){
                     injure = false;
                     QList<PlayingCard*> hand = mp_attackedPlayer->hand();
@@ -408,9 +414,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
                 return;
             }
         }
-        if (mp_attackingPlayer->characterType() == CHARACTER_EMMA){
-            gameTable()->playerDrawFromDeck(mp_attackingPlayer, 1, 0);
-        }
+       
         throw BadCardException();
     }
     
