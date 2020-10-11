@@ -83,6 +83,7 @@
 #include "charactergreenkatejanet.h"
 #include "characterhurtingbob.h"
 #include "characterjackbrown.h"
+#include "characterjohnnyclem.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -284,6 +285,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterHurtingBob(parent);   
     case CHARACTER_JACK_BROWN: 
         return new CharacterJackBrown(parent);   
+    case CHARACTER_JOHNNY_CLEM: 
+        return new CharacterJohnnyClem(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -431,71 +434,71 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_GREEN_KATE_JANET);
         sm_characterTypes.append(CHARACTER_HURTING_BOB);
         sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
-        sm_characterTypes.append(CHARACTER_JACK_BROWN);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
     }
     else {
         qDebug() << "No twentyCharactersFlag.";
