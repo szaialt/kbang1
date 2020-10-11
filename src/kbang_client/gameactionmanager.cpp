@@ -273,7 +273,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_JULIE_BULETTE:
     case CHARACTER_FELIPE_DELGADO:
     case CHARACTER_JACK_BROWN:
-    case CHARACTER_JOHNNY_CLEM:
+    
          selectCards(cardWidget, 1);
          break;
     case CHARACTER_SID_KETCHUM:
@@ -303,8 +303,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
         break;
     case CHARACTER_BUCKSHOT_ROBERTS:
     case CHARACTER_DROSERA_ALBA:
-        //Esetleg áttenni a döntést szerver oldalra?
-        //A képességben megvalósítani azt, ami a kártya hatása lenne?
+    case CHARACTER_JOHNNY_CLEM:
         selectCards(cardWidget, 4);
         break;
     default:
