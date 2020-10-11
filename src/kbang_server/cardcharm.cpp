@@ -9,7 +9,6 @@ CardCharm::CardCharm(Game* game, int id, CardSuit cardSuit, CardRank cardRank):
 void CardCharm::play(Player* targetPlayer)
 {
     gameCycle()->assertTurn();
-    assertInHand();
     targetPlayer->charm();
 }
  

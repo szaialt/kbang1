@@ -10,7 +10,6 @@ CardDirtyJob::CardDirtyJob(Game* game, int id, CardSuit cardSuit, CardRank cardR
 void CardDirtyJob::play(Player* targetPlayer)
 {
     gameCycle()->assertTurn();
-    assertInHand();
     if (targetPlayer->isAlive()) throw BadUsageException();
     if (targetPlayer->hasIdenticalCardOnTable(this)) {
         throw TwoSameOnTableException();

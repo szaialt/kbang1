@@ -43,10 +43,6 @@ void CardBeer::play()
       qDebug() << "CardBeer: pocket " << pocketTypeToString(pocket());
       qDebug() << "CardBeer: type " << playingCardTypeToString(type());
       gameCycle()->assertTurn();
-      if (type() != CARD_MEDICINES){
-         assertInHand();
-      }
-      
       Player* player = owner();
       if (type() == CARD_BEER) {
           Player* player = owner();

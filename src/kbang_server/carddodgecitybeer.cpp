@@ -37,9 +37,6 @@ void CardDodgeCityBeer::play()
       if (owner()->lifePoints() == 0){
           throw BadUsageException();
       }
-      if (type() != CARD_CANTEEN){
-        assertInHand();
-      }
       Player* player = owner();
       if (type() == CARD_WHISKEY) {
         throw BadUsageException();

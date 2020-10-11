@@ -60,9 +60,6 @@ void CardDodgeCityBang::play(Player *targetPlayer)
 
     void CardDodgeCityBang::controlCard(){
         gameCycle()->assertTurn();
-        if (color() == COLOR_BROWN){
-            assertInHand();
-        }
     }
     
     void CardDodgeCityBang::controlTarget(Player *targetPlayer){

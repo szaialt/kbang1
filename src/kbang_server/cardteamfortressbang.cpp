@@ -20,7 +20,6 @@ CardTeamFortressBang::~CardTeamFortressBang(){}
 void CardTeamFortressBang::controlCard(){
     if (type() == CARD_DIRECT_HIT){
         gameCycle()->assertTurn();
-        assertInHand();
     }
     else {
         CardBang::controlCard();

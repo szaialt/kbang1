@@ -27,7 +27,6 @@ CardGeneralStore::~CardGeneralStore()
 void CardGeneralStore::play()
 {
     gameCycle()->assertTurn();
-    assertInHand();
     mp_firstPlayer = owner();
     gameCycle()->setCardEffect(1);
     mp_currentPlayer = 0;

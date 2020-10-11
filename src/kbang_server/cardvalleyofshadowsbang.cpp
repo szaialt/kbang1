@@ -64,7 +64,6 @@ void CardValleyOfShadowsBang::play(Player *targetPlayer)
     void CardValleyOfShadowsBang::controlCard(){
         if (type() == CARD_AIM) throw BadUsageException();
         gameCycle()->assertTurn();
-        assertInHand();
 
         /* one-bang-per-turn check */
         if ((type() == CARD_FANNING) && (!owner()->canPlayBang())){

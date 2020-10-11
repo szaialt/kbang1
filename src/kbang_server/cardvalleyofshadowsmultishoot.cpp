@@ -34,7 +34,6 @@ void CardValleyOfShadowMultiShoot::play()
         throw BadUsageException();
     }
     gameCycle()->assertTurn();
-    assertInHand();
     mp_shootingPlayer = owner();
     mp_requestedPlayer = owner();
     m_usedBarrels.clear();
@@ -56,7 +55,6 @@ void CardValleyOfShadowMultiShoot::play(PlayingCard* targetCard)
             throw BadUsageException();
         }
         gameCycle()->assertTurn();
-        assertInHand();
         mp_shootingPlayer = owner();
         mp_requestedPlayer = owner();
         m_usedBarrels.clear();

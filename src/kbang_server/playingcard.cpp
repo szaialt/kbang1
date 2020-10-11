@@ -72,14 +72,13 @@ void PlayingCard::unregisterPlayer(Player*) {}
 CardData PlayingCard::cardData() const
 {
     CardData result;
-    if (this != 0) {
-        result.id = id();
-        result.type = type();
-        result.suit = suit();
-        result.rank = rank();
-        result.isAct = isAct();
-        result.pocket = pocket();
-    }
+    result.id = id();
+    result.type = type();
+    result.suit = suit();
+    result.rank = rank();
+    result.isAct = isAct();
+    result.pocket = pocket();
+    
     return result;
 }
 
@@ -155,6 +154,9 @@ void PlayingCard::playAsBlueCard()
           }
         }
       gameTable()->playerPlayCardOnTable(this);
+    }
+    if (color() == COLOR_BROWN){
+        setAct(true);
     }
 }
 

@@ -27,7 +27,6 @@ void CardDuel::play(Player* targetPlayer)
 {
     
     gameCycle()->assertTurn();
-    assertInHand();
 
     /* don't allow shoot yourself */
     if (owner() == targetPlayer){
@@ -59,7 +58,6 @@ void CardDuel::respondPass()
 
 void CardDuel::respondCard(PlayingCard* targetCard)
 {
-    targetCard->assertInHand();
     switch(targetCard->type()) {
     case CARD_BANG: 
         gameTable()->playerRespondWithCard(targetCard);

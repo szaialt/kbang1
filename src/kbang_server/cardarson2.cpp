@@ -35,7 +35,6 @@ void CardArson::play(){
 void CardArson::play(QList<Player*> targetPlayers){
     gameCycle()->assertTurn();
     if (color() == COLOR_BROWN){
-        assertInHand();
         if ((!owner()->canPlayBang())){
             throw OneBangPerTurnException();
         }

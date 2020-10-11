@@ -33,14 +33,12 @@ CardLelaBang::~CardLelaBang()
 
 void CardLelaBang::play(PlayingCard* targetCard){
     if (targetCard == 0) {
-        qDebug() << "CardLelaBang::play(PlayingCard* targetCard) target card is NULL";
         return;
     }
     mp_attackingPlayer = owner();
     mp_attackedCard = targetCard;
     Player* targetPlayer = targetCard->owner();
     if (targetPlayer == 0) {
-        qDebug() << "CardLelaBang::play(PlayingCard* targetCard) target card owner is NULL";
         return;
     }
     gameTable()->playerPlayCard(this, targetPlayer);
@@ -54,22 +52,18 @@ void CardLelaBang::respondPass(){
 
 void CardLelaBang::respondCard(PlayingCard* targetCard){
     if (targetCard == 0) {
-        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) target card is NULL";
         return;
     }
     Player* player = targetCard->owner();
     if (player == 0) {
-        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) target card owner is NULL";
         return;
     }
     if (mp_attackingPlayer == 0) {
-        qDebug() << "CardLelaBang::respondCard(PlayingCard* targetCard) mp_attackingPlayer is NULL";
         return;
     }
     Player* targetPlayer = targetCard->owner();
     switch(targetCard->type()) {
         case CARD_MISSED: 
-            targetCard->assertInHand();
             game()->gameCycle().unsetResponseMode();
             gameTable()->playerRespondWithCard(targetCard);
             missed();
@@ -78,7 +72,6 @@ void CardLelaBang::respondCard(PlayingCard* targetCard){
             QList<PlayingCard*> table = targetPlayer->table();
             foreach (PlayingCard* card, table){
                 if (card->type() == CARD_STEROID){
-                    targetCard->assertInHand();
                     game()->gameCycle().unsetResponseMode();
                     gameTable()->playerRespondWithCard(targetCard);
                     missed();

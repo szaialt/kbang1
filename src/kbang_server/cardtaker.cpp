@@ -68,7 +68,6 @@ void CardTaker::play(Player* targetPlayer)
     }
     if (color() == COLOR_BROWN) {
         //qDebug() << "CardTaker play(Player* targetPlayer) 1";
-      assertInHand();
       //qDebug() << "CardTaker play(Player* targetPlayer) 2";
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
@@ -153,7 +152,6 @@ void CardTaker::play(PlayingCard* targetCard)
     }
     if (m_type == CatBalou) {
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
-        assertInHand();
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 2";
         gameCycle()->setCardEffect(1);
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 3";
@@ -176,9 +174,6 @@ void CardTaker::play(PlayingCard* targetCard)
         if (m_type == BarFight) throw BadUsageException();
         if ((m_type == Pilfer) || (m_type == GreenFurTrade)){
             assertOnTable();
-        }
-        else if (m_type == Panic){
-            assertInHand();
         }
         if (m_type != GreenFurTrade) {
             /* distance check */ 

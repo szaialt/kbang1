@@ -80,7 +80,6 @@ void CardDrawCards::play()
         throw BadUsageException();
     }
     else {
-      assertInHand();
       Player* player = owner();
       gameCycle()->setCardEffect(1);
       //You need get the card played before CARD_ACE_UP_YOUR_SLEEVE
@@ -105,7 +104,6 @@ void CardDrawCards::play(PlayingCard* targetCard){
             throw BadUsageException();  
         if (targetCard->pocket() != POCKET_HAND)
             throw BadUsageException();
-      assertInHand();
       Player* player = owner();
       gameCycle()->setCardEffect(1);
       gameTable()->playerPlayCard(this);

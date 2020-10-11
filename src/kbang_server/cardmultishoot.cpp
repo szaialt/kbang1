@@ -52,10 +52,7 @@ void CardMultiShoot::play()
           playAsBlueCard();
           return;
       }
-      if (color() == COLOR_BROWN){
-           assertInHand();
-      }
-      else {
+      if (color() != COLOR_BROWN){
           assertOnTable();
       }
       m_playedNextDirection = true;
@@ -98,14 +95,14 @@ void CardMultiShoot::respondPass()
 
 void CardMultiShoot::respondCard(PlayingCard* targetCard)
 {
-    qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard)" << endl;
 
     if (type() == CARD_INDIANS){
         QList<PlayingCard*> table = mp_requestedPlayer->table();
         foreach (PlayingCard* card, table){
             if (card->type() == CARD_PEACE_PIPE){
-                qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_PEACE_PIPE" << endl;
                 game()->gameCycle().unsetResponseMode();
+                requestNext();
+             return;
                 
                 if (m_playedNextDirection){
                      requestNext();
@@ -132,8 +129,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
         case CARD_BANG:
              if ((type() != CARD_INDIANS) && (type() != CARD_MANN_VS_MACHINE) && (type() != CARD_WAR_PARTY))
                  break;
-             qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_BANG" << endl;
-             targetCard->assertInHand();
              gameTable()->playerRespondWithCard(targetCard);
              game()->gameCycle().unsetResponseMode();
              if (m_playedNextDirection){
@@ -148,8 +143,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                  break;
             if (type() == CARD_BROWN_SHOW_TIME)
                 break;
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_MISSED" << endl;
-            targetCard->assertInHand();
             gameTable()->playerRespondWithCard(targetCard);
             game()->gameCycle().unsetResponseMode();
             if (m_playedNextDirection){
@@ -166,7 +159,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 break;
             if (m_usedBarrels.contains(targetCard))
                 break;
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_BARREL" << endl;
             targetCard->assertOnTable();
             m_usedBarrels.append(targetCard);
             CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
@@ -178,8 +170,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                  break;
             if (type() == CARD_BROWN_SHOW_TIME)
                 break;
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_DEAD_RINGER" << endl;
-            targetCard->assertInHand();
             gameTable()->playerRespondWithCard(targetCard);
             game()->gameCycle().unsetResponseMode();
             game()->gameCycle().setNeedsFinishTurn(true);
@@ -195,8 +185,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 break;
             if (type() == CARD_BROWN_SHOW_TIME)
                 break;
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_DEFLECTION" << endl;
-            targetCard->assertInHand();
             respondWith(targetCard);
             if (m_playedNextDirection){
                 requestNext();
@@ -210,7 +198,6 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                  break;
             if (type() == CARD_BROWN_SHOW_TIME)
                 break;
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_VEST" << endl;
              targetCard->assertOnTable();
              respondWith(targetCard);
             if (m_playedNextDirection){
@@ -246,12 +233,9 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             return;
         default:{
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY)){
-            qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) default" << endl;
             QList<PlayingCard*> table = targetCard->owner()->table();
             foreach (PlayingCard* card, table){
             if (card->type() == CARD_STEROID){
-                qDebug() << "CardMultiShoot::respondCard(PlayingCard* targetCard) CARD_STEROID" << endl;
-                targetCard->assertInHand();
                 respondWith(targetCard);
                 return;
                 break;

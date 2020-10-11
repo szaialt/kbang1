@@ -147,11 +147,10 @@ void CardBang::play(Player *targetPlayer)
             assertOnTable();
         }
         /* one-bang-per-turn check */
-        else {
-            if ((!owner()->canPlayBang())){
-                throw OneBangPerTurnException();
-            }
+        if ((!owner()->canPlayBang())){
+            throw OneBangPerTurnException();
         }
+    
     }
     
     void CardBang::controlTarget(Player *targetPlayer){
@@ -266,11 +265,9 @@ void CardBang::respondCard(PlayingCard* targetCard)
     Player* player = targetCard->owner();
     //try{
     if (player == 0) {
-        qDebug() << "CardBang::respondCard(PlayingCard* targetCard) target card owner is NULL";
         return;
     }
     if (mp_attackingPlayer == 0) {
-        qDebug() << "CardBang::respondCard(PlayingCard* targetCard) mp_attackingPlayer is NULL";
         return;
     }
     if (mp_attackingPlayer->characterType() == CHARACTER_SARTANA) {
@@ -284,7 +281,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
     switch(targetCard->type()) {
         case CARD_BANG:
             if (type() == CARD_INDIAN_BANG){
-                targetCard->assertInHand();
                 game()->gameCycle().unsetResponseMode();
                 gameTable()->playerRespondWithCard(targetCard);
                 missed();
@@ -297,13 +293,11 @@ void CardBang::respondCard(PlayingCard* targetCard)
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
         }
-        targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         return;
     case CARD_DODGE: 
-        targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
@@ -323,7 +317,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
         }
     case CARD_BACKFIRE: 
-        targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode(); 
         missed();
         targetCard->play(mp_attackingPlayer);
@@ -338,7 +331,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
         }
-        targetCard->assertInHand();
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
@@ -349,10 +341,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
         }
-        if (targetCard->color() == COLOR_BROWN){
-            targetCard->assertInHand();
-        }
-        else {
+        if (targetCard->color() != COLOR_BROWN){
             targetCard->assertOnTable();
         }
         game()->gameCycle().unsetResponseMode(); 
@@ -407,7 +396,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
         QList<PlayingCard*> table = mp_attackedPlayer->table();
         foreach (PlayingCard* card, table){
             if (card->type() == CARD_STEROID){
-                targetCard->assertInHand();
                 game()->gameCycle().unsetResponseMode();
                 gameTable()->playerRespondWithCard(targetCard);
                 missed();

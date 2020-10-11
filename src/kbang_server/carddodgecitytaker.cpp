@@ -76,7 +76,6 @@ void CardDodgeCityTaker::play(Player* targetPlayer)
     //qDebug() << "Pocket: " << pocketTypeToString(pocket());
     gameCycle()->assertTurn();
     if (color() == COLOR_BROWN) {
-      assertInHand();
       /* allow steel from himself only if has more than one card in hand */
       if (owner() == targetPlayer && owner()->handSize() < 2){
         throw BadTargetPlayerException();
@@ -126,7 +125,6 @@ void CardDodgeCityTaker::play(PlayingCard* targetCard)
         Player* o = owner();
 
         if (type() == CARD_BRAWL) {
-            assertInHand();
             if (targetCard == 0){
                 throw BadUsageException(); 
             }
@@ -194,7 +192,6 @@ void CardDodgeCityTaker::play(QList<PlayingCard*> targetCards)
     targetCards.removeFirst();
     Player* o = owner();
     if (type() == CARD_BRAWL) {
-        assertInHand();
         
         if (targetCard == 0){
           throw BadUsageException(); 
@@ -231,7 +228,6 @@ void CardDodgeCityTaker::play(QList<PlayingCard*> targetCards)
         //qDebug() << "Cardtaker BRAWL played."; 
     }
      else if (type() == CARD_RAG_TIME){
-        assertInHand();
         if (targetCard == 0){
           throw BadUsageException(); 
         }

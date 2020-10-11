@@ -10,7 +10,6 @@ CardExplosion::CardExplosion(Game* game, int id, CardSuit cardSuit, CardRank car
 
 void CardExplosion::play(){
     gameCycle()->assertTurn();
-    assertInHand();
     mp_shootingPlayer = owner();
     mp_requestedPlayer = owner();
     gameTable()->playerPlayCard(this);
