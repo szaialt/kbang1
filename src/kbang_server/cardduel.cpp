@@ -65,7 +65,15 @@ void CardDuel::respondCard(PlayingCard* targetCard)
         requestNext();
         return;
     default:
-        break;
+        if (targetCard->owner()->characterType() == CHARACTER_PEPITA_DUELITA){
+            gameTable()->playerRespondWithCard(targetCard);
+            game()->gameCycle().unsetResponseMode();
+            requestNext();
+        return;
+        }
+        else {
+            break;
+        }
     }
     throw BadCardException();
 }

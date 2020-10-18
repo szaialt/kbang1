@@ -167,7 +167,8 @@ HEADERS += \
     characterjackbrown.h \
     characterjohnnyclem.h \
     characterlindavivenda.h \
-    characteroscarrodriguez.h
+    characteroscarrodriguez.h \
+    characterpepitaduelita.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -323,7 +324,8 @@ SOURCES += \
     characterjackbrown.cpp \
     characterjohnnyclem.cpp \
     characterlindavivenda.cpp \
-    characteroscarrodriguez.cpp
+    characteroscarrodriguez.cpp \
+    characterpepitaduelita.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \
