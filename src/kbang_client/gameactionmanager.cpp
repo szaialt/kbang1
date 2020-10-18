@@ -263,6 +263,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     switch(mp_game->character()) {
     case CHARACTER_JESSE_JONES:
     case CHARACTER_WILLIAM_HARMAN:
+    case CHARACTER_OSCAR_RODRIGUEZ:
         selectPlayer(cardWidget);
         break;
     case CHARACTER_ERNEST_SALIVEN:

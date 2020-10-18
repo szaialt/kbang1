@@ -85,6 +85,7 @@
 #include "characterjackbrown.h"
 #include "characterjohnnyclem.h"
 #include "characterlindavivenda.h"
+#include "characteroscarrodriguez.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -289,7 +290,9 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
     case CHARACTER_JOHNNY_CLEM: 
         return new CharacterJohnnyClem(parent); 
     case CHARACTER_LINDA_VIVENDA: 
-        return new CharacterLindaVivenda(parent); 
+        return new CharacterLindaVivenda(parent);
+    case CHARACTER_OSCAR_RODRIGUEZ: 
+        return new CharacterOscarRodriguez(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -440,70 +443,71 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
         if (!game->gameInfo().ourFlag()){
         sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
         }
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
+        
     }
     else {
         qDebug() << "No twentyCharactersFlag.";
