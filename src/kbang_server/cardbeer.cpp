@@ -135,7 +135,7 @@ void BeerRescue::respondCard(PlayingCard* targetCard)
         return;
     }
     //Our rules allows last save beer even with two players
-    if (mp_game->gameInfo().ourFlag()){
+    if ((mp_game->gameInfo().ourFlag()) || (targetCard->owner()->characterType() == CHARACTER_LINDA_VIVENDA)){
         if ((targetCard->type() == CARD_BEER) && (mp_game->alivePlayersCount()  == 2)){
             if (m_lifePointsToSave > 0){
               mp_game->gameTable().playerPlayCard(targetCard);

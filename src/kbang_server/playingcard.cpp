@@ -122,6 +122,13 @@ CardColor PlayingCard::color() const{
 
 void PlayingCard::playAsBlueCard()
 {
+    if ((color() == COLOR_BLUE)  && (owner()->character()->characterType() == CHARACTER_JACK_BROWN)){
+        bool canBePlayed = false;
+        if (isWeapon()) canBePlayed = true;
+        if (m_type == CARD_DYNAMITE) canBePlayed = true;
+        if (m_type == CARD_JAIL) canBePlayed = true;
+        if (!canBePlayed) throw BadUsageException();
+    }
     gameCycle()->assertTurn();
     assertInHand();
     foreach(PlayingCard* card, owner()->table()) {

@@ -84,6 +84,7 @@
 #include "characterhurtingbob.h"
 #include "characterjackbrown.h"
 #include "characterjohnnyclem.h"
+#include "characterlindavivenda.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -287,6 +288,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterJackBrown(parent);   
     case CHARACTER_JOHNNY_CLEM: 
         return new CharacterJohnnyClem(parent); 
+    case CHARACTER_LINDA_VIVENDA: 
+        return new CharacterLindaVivenda(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -435,70 +438,72 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_HURTING_BOB);
         sm_characterTypes.append(CHARACTER_JACK_BROWN);
         sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
-        sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
+        if (!game->gameInfo().ourFlag()){
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        }
     }
     else {
         qDebug() << "No twentyCharactersFlag.";
