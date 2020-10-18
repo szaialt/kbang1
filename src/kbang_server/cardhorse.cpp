@@ -70,10 +70,20 @@ void CardHorse::registerPlayer(Player* player)
 {
     switch(m_horseType) {
     case Mustang:
-        player->modifyDistanceIn(1);
+        if (player->characterType() == CHARACTER_RIDING_HORSE){
+            player->modifyDistanceIn(2);
+        }
+        else{
+            player->modifyDistanceIn(1);
+        }
         break;
     case Appaloosa:
-        player->modifyDistanceOut(1);
+        if (player->characterType() == CHARACTER_RIDING_HORSE){
+            player->modifyDistanceOut(2);
+        }
+        else {
+            player->modifyDistanceOut(1);
+        }
         break;
     case HillTop:
         player->modifyDistanceIn(2);

@@ -87,6 +87,7 @@
 #include "characterlindavivenda.h"
 #include "characteroscarrodriguez.h"
 #include "characterpepitaduelita.h"
+#include "characterridinghorse.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -296,6 +297,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterOscarRodriguez(parent); 
     case CHARACTER_PEPITA_DUELITA: 
         return new CharacterPepitaDuelita(parent); 
+    case CHARACTER_RIDING_HORSE: 
+        return new CharacterRidingHorse(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -449,67 +452,77 @@ void CharacterList::initCharacterTypes(Game* game)
         }
         sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
         sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
-        sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
+        sm_characterTypes.append(CHARACTER_RIDING_HORSE);
         
     }
     else {

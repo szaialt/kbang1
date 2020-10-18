@@ -47,7 +47,7 @@ void CardBeer::play()
       if (type() == CARD_BEER) {
           Player* player = owner();
               gameTable()->playerPlayCard(this);
-              if (game()->alivePlayersCount() > 2){
+              if ((game()->alivePlayersCount() > 2) || (owner()->characterType() == CHARACTER_LINDA_VIVENDA)){
                   player->modifyLifePoints(1, 0);
               }
           
