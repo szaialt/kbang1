@@ -12,7 +12,8 @@ public:
         PaulRegret,
         WillyTheKid,
         SlabTheKiller,
-        RoosterCogburn
+        RoosterCogburn,
+        SlobodanTheKiller
     };
 
     CharacterPropertyChange(QObject* parent, Type);

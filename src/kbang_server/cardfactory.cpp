@@ -485,22 +485,6 @@ struct CardFactory::CardFactoryImp
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_SPADES,  8));
             
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
-        
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_SPADES, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_SPADES, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_CLUBS, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_CLUBS, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_HEARTS, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_HEARTS, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_DIAMONDS, 1));
-            
-            list.append(new CardHorse(game, id(), CardHorse::Appaloosa, SUIT_DIAMONDS, 1));
             
             
             

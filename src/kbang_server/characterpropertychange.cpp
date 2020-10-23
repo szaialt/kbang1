@@ -20,6 +20,8 @@ CharacterPropertyChange::CharacterPropertyChange(QObject* parent, Type type):
         break;
     case RoosterCogburn:
         setCharacterType(CHARACTER_ROOSTER_COGBURN);
+    case SlobodanTheKiller:
+        setCharacterType(CHARACTER_SLOBODAN_THE_KILLER);
         break;
     }
 }
@@ -51,6 +53,9 @@ void CharacterPropertyChange::setPlayer(Player* player)
         break;
     case RoosterCogburn:
         player->setWeaponNumber(2);
+        break;
+    case SlobodanTheKiller:
+        player->setBangPower(3);
         break;
     }
 }

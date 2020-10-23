@@ -122,7 +122,7 @@ CardColor PlayingCard::color() const{
 
 void PlayingCard::playAsBlueCard()
 {
-    if ((color() == COLOR_BLUE)  && (owner()->character()->characterType() == CHARACTER_JACK_BROWN)){
+    if ((color() == COLOR_BLUE)  && ((owner()->character()->characterType() == CHARACTER_JACK_BROWN) || (owner()->character()->characterType() == CHARACTER_SLOBODAN_THE_KILLER))){
         bool canBePlayed = false;
         if (isWeapon()) canBePlayed = true;
         if (m_type == CARD_DYNAMITE) canBePlayed = true;
