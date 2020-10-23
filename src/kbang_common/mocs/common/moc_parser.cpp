@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'parser.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,12 +12,14 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'parser.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.7.1. It"
+#error "This file was generated using the moc from 5.11.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Parser_t {
     QByteArrayData data[69];
     char stringdata0[1030];
@@ -296,234 +298,233 @@ void Parser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
-        void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::streamInitialized)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::streamInitialized)) {
                 *result = 0;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::terminated)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::terminated)) {
                 *result = 1;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const QByteArray & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::incomingData)) {
+            using _t = void (Parser::*)(const QByteArray & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::incomingData)) {
                 *result = 2;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const QByteArray & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::outgoingData)) {
+            using _t = void (Parser::*)(const QByteArray & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::outgoingData)) {
                 *result = 3;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::pong)) {
+            using _t = void (Parser::*)(int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::pong)) {
                 *result = 4;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , const QString & , ClientType );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventEnterGameMode)) {
+            using _t = void (Parser::*)(int , const QString & , ClientType );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventEnterGameMode)) {
                 *result = 5;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventExitGameMode)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventExitGameMode)) {
                 *result = 6;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const PublicPlayerData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventPlayerJoinedGame)) {
+            using _t = void (Parser::*)(const PublicPlayerData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventPlayerJoinedGame)) {
                 *result = 7;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventPlayerLeavedGame)) {
+            using _t = void (Parser::*)(int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventPlayerLeavedGame)) {
                 *result = 8;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const PublicPlayerData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventPlayerUpdate)) {
+            using _t = void (Parser::*)(const PublicPlayerData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventPlayerUpdate)) {
                 *result = 9;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventGameCanBeStarted)) {
+            using _t = void (Parser::*)(bool );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventGameCanBeStarted)) {
                 *result = 10;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const GameState & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventGameStateChange)) {
+            using _t = void (Parser::*)(const GameState & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventGameStateChange)) {
                 *result = 11;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const GameContextData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventGameContextChange)) {
+            using _t = void (Parser::*)(const GameContextData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventGameContextChange)) {
                 *result = 12;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const GameSyncData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventGameSync)) {
+            using _t = void (Parser::*)(const GameSyncData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventGameSync)) {
                 *result = 13;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventLifePointsChange)) {
+            using _t = void (Parser::*)(int , int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventLifePointsChange)) {
                 *result = 14;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , PlayerRole );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventPlayerDied)) {
+            using _t = void (Parser::*)(int , PlayerRole );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventPlayerDied)) {
                 *result = 15;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const CardMovementData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventCardMovement)) {
+            using _t = void (Parser::*)(const CardMovementData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventCardMovement)) {
                 *result = 16;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , const QString & , const QString & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventChatMessage)) {
+            using _t = void (Parser::*)(int , const QString & , const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventChatMessage)) {
                 *result = 17;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const GameMessage & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigEventGameMessage)) {
+            using _t = void (Parser::*)(const GameMessage & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigEventGameMessage)) {
                 *result = 18;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const QueryResult & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigQueryServerInfo)) {
+            using _t = void (Parser::*)(const QueryResult & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigQueryServerInfo)) {
                 *result = 19;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const QueryResult & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigQueryGameInfoList)) {
+            using _t = void (Parser::*)(const QueryResult & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigQueryGameInfoList)) {
                 *result = 20;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , const QueryResult & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigQueryGameInfo)) {
+            using _t = void (Parser::*)(int , const QueryResult & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigQueryGameInfo)) {
                 *result = 21;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const CreateGameData & , const CreatePlayerData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionCreateGame)) {
+            using _t = void (Parser::*)(const CreateGameData & , const CreatePlayerData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionCreateGame)) {
                 *result = 22;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int , int , const QString & , const CreatePlayerData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionJoinGame)) {
+            using _t = void (Parser::*)(int , int , const QString & , const CreatePlayerData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionJoinGame)) {
                 *result = 23;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionLeaveGame)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionLeaveGame)) {
                 *result = 24;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionStartGame)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionStartGame)) {
                 *result = 25;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const QString & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionChatMessage)) {
+            using _t = void (Parser::*)(const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionChatMessage)) {
                 *result = 26;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionDrawCard)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionDrawCard)) {
                 *result = 27;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const ActionPlayCardData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionPlayCard)) {
+            using _t = void (Parser::*)(const ActionPlayCardData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionPlayCard)) {
                 *result = 28;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(const ActionUseAbilityData & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionUseAbility)) {
+            using _t = void (Parser::*)(const ActionUseAbilityData & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionUseAbility)) {
                 *result = 29;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionEndTurn)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionEndTurn)) {
                 *result = 30;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionPass)) {
+            using _t = void (Parser::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionPass)) {
                 *result = 31;
                 return;
             }
         }
         {
-            typedef void (Parser::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Parser::sigActionDiscard)) {
+            using _t = void (Parser::*)(int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Parser::sigActionDiscard)) {
                 *result = 32;
                 return;
             }
@@ -531,9 +532,9 @@ void Parser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     }
 }
 
-const QMetaObject Parser::staticMetaObject = {
+QT_INIT_METAOBJECT const QMetaObject Parser::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_Parser.data,
-      qt_meta_data_Parser,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_Parser,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -544,9 +545,9 @@ const QMetaObject *Parser::metaObject() const
 
 void *Parser::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_Parser.stringdata0))
-        return static_cast<void*>(const_cast< Parser*>(this));
+        return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
@@ -570,223 +571,224 @@ int Parser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void Parser::streamInitialized()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
 void Parser::terminated()
 {
-    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
 void Parser::incomingData(const QByteArray & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
 void Parser::outgoingData(const QByteArray & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
 void Parser::pong(int _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5
 void Parser::sigEventEnterGameMode(int _t1, const QString & _t2, ClientType _t3)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 
 // SIGNAL 6
 void Parser::sigEventExitGameMode()
 {
-    QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 
 // SIGNAL 7
 void Parser::sigEventPlayerJoinedGame(const PublicPlayerData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 7, _a);
 }
 
 // SIGNAL 8
 void Parser::sigEventPlayerLeavedGame(int _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
 
 // SIGNAL 9
 void Parser::sigEventPlayerUpdate(const PublicPlayerData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 
 // SIGNAL 10
 void Parser::sigEventGameCanBeStarted(bool _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 10, _a);
 }
 
 // SIGNAL 11
 void Parser::sigEventGameStateChange(const GameState & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 11, _a);
 }
 
 // SIGNAL 12
 void Parser::sigEventGameContextChange(const GameContextData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 12, _a);
 }
 
 // SIGNAL 13
 void Parser::sigEventGameSync(const GameSyncData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 13, _a);
 }
 
 // SIGNAL 14
 void Parser::sigEventLifePointsChange(int _t1, int _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 14, _a);
 }
 
 // SIGNAL 15
 void Parser::sigEventPlayerDied(int _t1, PlayerRole _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 15, _a);
 }
 
 // SIGNAL 16
 void Parser::sigEventCardMovement(const CardMovementData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 16, _a);
 }
 
 // SIGNAL 17
 void Parser::sigEventChatMessage(int _t1, const QString & _t2, const QString & _t3)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 17, _a);
 }
 
 // SIGNAL 18
 void Parser::sigEventGameMessage(const GameMessage & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 18, _a);
 }
 
 // SIGNAL 19
 void Parser::sigQueryServerInfo(const QueryResult & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 19, _a);
 }
 
 // SIGNAL 20
 void Parser::sigQueryGameInfoList(const QueryResult & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 20, _a);
 }
 
 // SIGNAL 21
 void Parser::sigQueryGameInfo(int _t1, const QueryResult & _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 21, _a);
 }
 
 // SIGNAL 22
 void Parser::sigActionCreateGame(const CreateGameData & _t1, const CreatePlayerData & _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 22, _a);
 }
 
 // SIGNAL 23
 void Parser::sigActionJoinGame(int _t1, int _t2, const QString & _t3, const CreatePlayerData & _t4)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)) };
     QMetaObject::activate(this, &staticMetaObject, 23, _a);
 }
 
 // SIGNAL 24
 void Parser::sigActionLeaveGame()
 {
-    QMetaObject::activate(this, &staticMetaObject, 24, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 24, nullptr);
 }
 
 // SIGNAL 25
 void Parser::sigActionStartGame()
 {
-    QMetaObject::activate(this, &staticMetaObject, 25, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 25, nullptr);
 }
 
 // SIGNAL 26
 void Parser::sigActionChatMessage(const QString & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 26, _a);
 }
 
 // SIGNAL 27
 void Parser::sigActionDrawCard()
 {
-    QMetaObject::activate(this, &staticMetaObject, 27, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 27, nullptr);
 }
 
 // SIGNAL 28
 void Parser::sigActionPlayCard(const ActionPlayCardData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 28, _a);
 }
 
 // SIGNAL 29
 void Parser::sigActionUseAbility(const ActionUseAbilityData & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 29, _a);
 }
 
 // SIGNAL 30
 void Parser::sigActionEndTurn()
 {
-    QMetaObject::activate(this, &staticMetaObject, 30, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 30, nullptr);
 }
 
 // SIGNAL 31
 void Parser::sigActionPass()
 {
-    QMetaObject::activate(this, &staticMetaObject, 31, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 31, nullptr);
 }
 
 // SIGNAL 32
 void Parser::sigActionDiscard(int _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 32, _a);
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

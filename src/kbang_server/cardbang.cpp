@@ -77,6 +77,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case DoubleExtra:
        setType(CARD_DOUBLE_EXTRA_BANG);
        break;
+     case NoHurtingBang:
+        setType(CARD_NO_HURTING_BANG);
+        break;
     default:
             NOT_REACHED();
     }
@@ -120,6 +123,10 @@ void CardBang::play(){
 
 void CardBang::play(Player *targetPlayer)
 {
+    if (type() == CARD_NO_HURTING_BANG){
+        gameTable()->playerPlayCard(this, targetPlayer);
+        return;
+    }
     if ((type() == CARD_DEFLECTION) || (type() == CARD_RICOCHET)){
         controlTarget(targetPlayer);
         shot(targetPlayer);

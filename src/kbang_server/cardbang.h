@@ -50,7 +50,8 @@ public:
         //DoublePower
         Backfire,
         Extra,
-        DoubleExtra
+        DoubleExtra,
+        NoHurtingBang
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

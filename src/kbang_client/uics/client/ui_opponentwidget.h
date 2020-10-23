@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'opponentwidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,9 @@
 #define UI_OPPONENTWIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -146,9 +143,9 @@ public:
 
     void retranslateUi(QWidget *OpponentWidget)
     {
-        OpponentWidget->setWindowTitle(QApplication::translate("OpponentWidget", "Opponent Widget", Q_NULLPTR));
+        OpponentWidget->setWindowTitle(QApplication::translate("OpponentWidget", "Opponent Widget", nullptr));
         mp_labelAvatar->setText(QString());
-        mp_labelPlayerName->setText(QApplication::translate("OpponentWidget", "{PLAYERNAME}", Q_NULLPTR));
+        mp_labelPlayerName->setText(QApplication::translate("OpponentWidget", "{PLAYERNAME}", nullptr));
     } // retranslateUi
 
 };
