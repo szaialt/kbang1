@@ -171,7 +171,8 @@ HEADERS += \
     characterpepitaduelita.h \
     characterridinghorse.h \
     characterstonewalljackson.h \
-    charactertonyarmed.h
+    charactertonyarmed.h \
+    characterwilliamlongley.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -331,7 +332,8 @@ SOURCES += \
     characterpepitaduelita.cpp \
     characterridinghorse.cpp \
     characterstonewalljackson.cpp \
-    charactertonyarmed.cpp
+    charactertonyarmed.cpp \
+    characterwilliamlongley.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

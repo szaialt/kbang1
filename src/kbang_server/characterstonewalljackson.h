@@ -7,10 +7,6 @@ class CharacterStonewallJackson : public CharacterBase
 {
 Q_OBJECT
 public:
-    enum Type {
-        WilliamHarman,
-        Clockwork
-    };
     CharacterStonewallJackson(QObject *parent);
     virtual void playCard(PlayingCard* card, Player* targetPlayer);
     virtual void respondCard(ReactionHandler*, PlayingCard* targetCard);

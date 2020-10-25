@@ -91,6 +91,7 @@
 #include "characterridinghorse.h"
 #include "characterstonewalljackson.h"
 #include "charactertonyarmed.h"
+#include "characterwilliamlongley.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -308,6 +309,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterStonewallJackson(parent); 
     case CHARACTER_TONY_ARMED: 
         return new CharacterTonyArmed(parent); 
+    case CHARACTER_WILLIAM_LONGLEY: 
+        return new CharacterWilliamLongley(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -465,85 +468,12 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_SLOBODAN_THE_KILLER);
         sm_characterTypes.append(CHARACTER_STONEWALL_JACKSON);
         sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
-        sm_characterTypes.append(CHARACTER_TONY_ARMED);
+        sm_characterTypes.append(CHARACTER_WILLIAM_LONGLEY);
         
     }
     else {
         qDebug() << "No twentyCharactersFlag.";
+        
     }
 
 }
