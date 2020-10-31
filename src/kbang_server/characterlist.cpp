@@ -446,10 +446,10 @@ void CharacterList::initCharacterTypes(Game* game)
         
     }
     else {
-        qDebug() << "No twentyCharactersFlag.";
+        qDebug() << "No bootHillCharactersFlag.";
     }
     if (game->gameInfo().twentyCharactersFlag()){
-        qDebug() << "No twentyCharactersFlag.";
+        qDebug() << "twentyCharactersFlag.";
         sm_characterTypes.append(CHARACTER_BUCKSHOT_ROBERTS);
         sm_characterTypes.append(CHARACTER_CHOSING_THOMAS);
         sm_characterTypes.append(CHARACTER_DROSERA_ALBA);
@@ -474,6 +474,13 @@ void CharacterList::initCharacterTypes(Game* game)
     else {
         qDebug() << "No twentyCharactersFlag.";
         
+    }
+    if (game->gameInfo().thirtythreeCharactersFlag()){
+        qDebug() << "thirtythreeCharactersFlag.";
+
+    }
+    else {
+        qDebug() << "No thirtythreeCharactersFlag.";
     }
 
 }

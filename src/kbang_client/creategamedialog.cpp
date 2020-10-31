@@ -109,6 +109,7 @@ void CreateGameDialog::on_pushButtonCreate_clicked()
      createGameData.robberRoostCharactersFlag = checkRobberRoostCharacters->isChecked();
      createGameData.bootHillCharactersFlag = checkBootHillCharacters->isChecked();
      createGameData.twentyCharactersFlag = checkBoxTwentyCharacters->isChecked();
+     createGameData.thirtythreeCharactersFlag = checkBoxThirtythreeCharacters->isChecked();
      
     createGameData.aiLevel              = spinBoxAiLevel->value();
      
@@ -236,6 +237,13 @@ void CreateGameDialog::loadConfigValues()
          checkBoxTwentyCharacters->setChecked(1);
      else
          checkBoxTwentyCharacters->setChecked(0);
+   
+    bool thirtythreeCharactersFlag  = cfg.readInt(grp, "thirtythreeCharactersFlag");
+     if (thirtythreeCharactersFlag)
+         checkBoxThirtythreeCharacters->setChecked(1);
+     else
+         checkBoxThirtythreeCharacters->setChecked(0);
+     
      
     lineEditPlayerName->setText(cfg.readString("player", "name"));
     lineEditPlayerPassword->setText(cfg.readString("player", "password"));
@@ -263,6 +271,9 @@ void CreateGameDialog::saveConfigValues(const CreateGameData& game)
      cfg.writeInt(grp, "teamFortressFlag", game.teamFortressFlag); 
     cfg.writeInt(grp, "teamFortressCharactersFlag", game.teamFortressCharactersFlag); 
 
+    cfg.writeInt(grp, "directorsCutsFlag", game.robberRoostFlag); 
+    cfg.writeInt(grp, "directorsCutsCharactersFlag", game.robberRoostCharactersFlag); 
+    
     cfg.writeInt(grp, "martinCityFlag", game.martinCityFlag); 
     cfg.writeInt(grp, "martinCityCharactersFlag", game.martinCityCharactersFlag); 
     
@@ -270,8 +281,14 @@ void CreateGameDialog::saveConfigValues(const CreateGameData& game)
     cfg.writeInt(grp, "cuspOfCarabelliCharactersFlag", game.cuspOfCarabelliCharactersFlag); 
     
     cfg.writeInt(grp, "robberRoostFlag", game.robberRoostFlag); 
-    cfg.writeInt(grp, "robberRoostharactersFlag", game.robberRoostCharactersFlag); 
+    cfg.writeInt(grp, "robberRoostCharactersFlag", game.robberRoostCharactersFlag); 
     
+    cfg.writeInt(grp, "bootHillCharactersFlag", game.bootHillCharactersFlag); 
+    
+    cfg.writeInt(grp, "twentyCharactersFlag", game.twentyCharactersFlag); 
+    
+     cfg.writeInt(grp, "thirtythreeCharactersFlag", game.thirtythreeCharactersFlag); 
+
     cfg.writeInt(grp, "stackingDynamiteFlag", game.stackingDynamiteFlag);
     cfg.writeString("player", "name", lineEditPlayerName->text());
     cfg.writeString("player", "password", lineEditPlayerPassword->text());

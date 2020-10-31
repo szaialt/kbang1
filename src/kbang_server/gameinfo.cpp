@@ -30,6 +30,7 @@ GameInfo::GameInfo(const CreateGameData& createGameData):
       m_robberRoostCharactersFlag(createGameData.robberRoostCharactersFlag),
       m_bootHillCharactersFlag(createGameData.bootHillCharactersFlag),
       m_twentyCharactersFlag(createGameData.twentyCharactersFlag),
+      m_thirtythreeCharactersFlag(createGameData.thirtythreeCharactersFlag),
       m_aiLevel(createGameData.aiLevel)
 {
     

@@ -169,6 +169,9 @@ void GameInfoData::read(XmlNode* node)
      twentyCharactersFlag = false;
      twentyCharactersFlag      = (node->attribute("twentyCharactersFlag")) == "true";
      
+     thirtythreeCharactersFlag = false;
+     thirtythreeCharactersFlag      = (node->attribute("thirtythreeCharactersFlag")) == "true";
+     
     players.clear();
     foreach(XmlNode* child, node->getChildren()) {
         PlayerInfoData playerInfo;
@@ -218,6 +221,8 @@ void GameInfoData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("bootHillCharactersFlag",        bootHillCharactersFlag ? "true" : "false");
       
       writer->writeAttribute("twentyCharactersFlag",        twentyCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("thirtythreeCharactersFlag",        thirtythreeCharactersFlag ? "true" : "false");
       
     writer->writeAttribute("state",                 gameStateToString(state));
     
@@ -322,6 +327,9 @@ void CreateGameData::read(XmlNode* node)
      twentyCharactersFlag = false;
      twentyCharactersFlag      = (node->attribute("twentyCharactersFlag")) == "true";
      
+     thirtythreeCharactersFlag = false;
+     thirtythreeCharactersFlag      = (node->attribute("thirtythreeCharactersFlag")) == "true";
+     
      playerPassword      = node->attribute("playerPassword");
      spectatorPassword   = node->attribute("spectatorPassword");
 }
@@ -361,6 +369,8 @@ void CreateGameData::write(QXmlStreamWriter* writer) const
       writer->writeAttribute("bootHillCharactersFlag",        bootHillCharactersFlag ? "true" : "false");
       
       writer->writeAttribute("twentyCharactersFlag",        twentyCharactersFlag ? "true" : "false");
+      
+      writer->writeAttribute("thirtythreeCharactersFlag",        thirtythreeCharactersFlag ? "true" : "false");
       
      if (!playerPassword.isNull())
          writer->writeAttribute("playerPassword",        playerPassword);

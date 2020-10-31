@@ -362,8 +362,42 @@ void Card::loadDefaultRuleset()
     new Card("Stonewall Jackson",         CHARACTER_STONEWALL_JACKSON,       "gfx/characters/20/stonewall-jackson.jpg");
     new Card("Tony Armed",             CHARACTER_TONY_ARMED,           "gfx/characters/20/tony-armed.jpg");
     new Card("William Longley",             CHARACTER_WILLIAM_LONGLEY,           "gfx/characters/20/william-longley.jpg");
-    
-    
+
+     // 33
+    new Card("Alfonso Duelo",         CHARACTER_ALFONSO_DUELO,         "gfx/characters/33/Alfonso_Duelo_GB.jpg");
+    new Card("Ambidexter Bo",        CHARACTER_AMBIDEXTER_BO,        "gfx/characters/33/Bo_Ambidextre_GB.jpg");
+    new Card("Bart Barber",           CHARACTER_BART_BARBER,           "gfx/characters/33/Bart_Barber_GB.jpg");
+    new Card("Big Fat Joe",           CHARACTER_BIG_FAT_JOE,          "gfx/characters/33/Big_Fat_Joe_GB.jpg");
+    new Card("Bruce Ling",            CHARACTER_BRUCE_LING,           "gfx/characters/33/Bruce_Ling_GB.jpg");
+    new Card("Burt Longcatcher",           CHARACTER_BURT_LONGCATCHER,         "gfx/characters/33/Burt_Longcatcher_GB.jpg");
+    new Card("Colin Barrel",          CHARACTER_COLIN_BARREL,        "gfx/characters/33/Colin_Barrel_GB.jpg");
+    new Card("Crazy Horse",         CHARACTER_CRAZY_HORSE,       "gfx/characters/33/Crazy_Horse_GB.jpg");
+    new Card("Dunkan Drunkman",             CHARACTER_DUNKAN_DRUNKMAN,           "gfx/characters/33/Dunkan_Drunkman_GBb.jpg");
+    new Card("Dynamite Joe",             CHARACTER_DYNAMITE_JOE,           "gfx/characters/33/Dynamite_Joe_GB.jpg");
+    new Card("Freddy Street-Sweeper",         CHARACTER_FREDDY_STREET_SWEEPER,         "gfx/characters/33/Freddy_Sreet-sweeper_GB.jpg");
+    new Card("George Weelchair",        CHARACTER_GEORGE_WEELCHAIR,        "gfx/characters/33/George_Weelchair_GB.jpg");
+    new Card("Hank the Bank",           CHARACTER_HANK_THE_BANK,           "gfx/characters/33/Hank_Bank_GB.jpg");
+    new Card("James Stoneheart",           CHARACTER_JAMES_STONEHEART,          "gfx/characters/33/James_Stoneheart_GB.jpg");
+    new Card("Jennifer Big-Heart",            CHARACTER_JENNIFER_BIG_HEART,           "gfx/characters/33/Jennifer_big-heart_GB.jpg");
+    new Card("Jeremiah Amish",          CHARACTER_JEREMIAH_AMISH,         "gfx/characters/33/Jeremiah_Amish_GB");
+    new Card("Jimmy Squint",          CHARACTER_JIMMY_SQUINT,        "gfx/characters/33/Jimmy_Squint_GB.jpg");
+    new Card("Linus Yale",         CHARACTER_LINUS_YALE,       "gfx/characters/33/Linus_Yale_GB.jpg");
+    new Card("Max Painless",             CHARACTER_MAX_PAINLESS,           "gfx/characters/33/Max_Painless_GB.jpg");
+    new Card("Moe The Barman",             CHARACTER_MOE_THE_BARMAN,           "gfx/characters/33/Moe_Barman_GB.jpg");
+    new Card("Myke Myope",         CHARACTER_MYKE_MYOPE,         "gfx/characters/33/Myke_Myope_GB.jpg");
+    new Card("Nelly Chose-Chair",        CHARACTER_NELLY_CHOSE_CHAIR,        "gfx/characters/33/Nelly_Chose_Chair_GB.jpg");
+    new Card("Nina Nine lives",           CHARACTER_NINA_NINE_LIVES,           "gfx/characters/33/nina_9_lives_GB.jpg");
+    new Card("One-Eyed Jack",           CHARACTER_ONE_EYED_JACK,          "gfx/characters/33/One-Eyed_Jack_GB.jpg");
+    new Card("Phil Thinwire",            CHARACTER_PHIL_THINWIRE,           "gfx/characters/33/Phil_Thinwire_GB.jpg");
+    new Card("Preston Presbyope",           CHARACTER_PRESTON_PRESBYOPE,         "gfx/characters/33/Preston_Presbyope_GB.jpg");
+    new Card("Richard Gatling",          CHARACTER_RICHARD_GATLING,        "gfx/characters/33/Richard_Gatling_GB.jpg");
+    new Card("Sam Hypnotik",         CHARACTER_SAM_HYPNOTIK,       "gfx/characters/33/Sam_Hypnotik_GB.jpg");
+    new Card("Scalping Bull",             CHARACTER_SCALPING_BULL,           "gfx/characters/33/Scalping_Bull_GB.jpg");
+    new Card("Ted Revenge",             CHARACTER_TED_REVENGE,           "gfx/characters/33/Ted_Revenge_GB.jpg");
+    new Card("Tim Croupier",         CHARACTER_TIM_CROUPIER,         "gfx/characters/33/Tim_Croupier_GB.jpg");
+    new Card("Tobias The Mole",        CHARACTER_TOBIAS_THE_MOLE,        "gfx/characters/33/Tobias_Mole_GB.jpg");
+    new Card("Tom Gun-Seller",           CHARACTER_TOM_GUN_SELLER,           "gfx/characters/33/Tom_Gun-Seller_GB.jpg");
+   
     new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/back-character2.png");
     new Card("Five Life Point Back", CHARACTER_UNKNOWN5,          "gfx/cards/back-character.png");
     new Card("Cowboy",          CHARACTER_COWBOY,           "gfx/characters/cowboy.png");
