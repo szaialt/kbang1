@@ -27,6 +27,7 @@
 #include "gameeventmanager.h"
 #include "util.h"
 #include "charactercrazybear.h"
+#include "characterambidexterbo.h"
 
 #include <iostream>
 
@@ -187,6 +188,13 @@ void CardBang::play(Player *targetPlayer)
     }
     
 void CardBang::shot(Player *targetPlayer){
+        if (type() == CARD_BANG) {
+            if (owner()->characterType() == CHARACTER_AMBIDEXTER_BO){
+                CharacterAmbidexterBo* bo =  qobject_cast<CharacterAmbidexterBo*>(owner()->character());
+                if (bo->targetedPlayer() == targetPlayer) throw BadTargetPlayerException();
+                bo->setTargetedPlayer(targetPlayer);
+          }
+      }
         if (oneTimeBang()){
             owner()->onBangPlayed(true);
         }

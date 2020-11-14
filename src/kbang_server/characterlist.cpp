@@ -93,6 +93,9 @@
 #include "charactertonyarmed.h"
 #include "characterwilliamlongley.h"
 
+#include "characteralfonsoduelo.h"
+#include "characterambidexterbo.h"
+
 #include "util.h"
 #include "gameinfo.h"
 
@@ -311,6 +314,10 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterTonyArmed(parent); 
     case CHARACTER_WILLIAM_LONGLEY: 
         return new CharacterWilliamLongley(parent); 
+    case CHARACTER_ALFONSO_DUELO: 
+        return new CharacterAlfonsoDuelo(parent); 
+    case CHARACTER_AMBIDEXTER_BO: 
+        return new CharacterAmbidexterBo(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -477,6 +484,134 @@ void CharacterList::initCharacterTypes(Game* game)
     }
     if (game->gameInfo().thirtythreeCharactersFlag()){
         qDebug() << "thirtythreeCharactersFlag.";
+        sm_characterTypes.append(CHARACTER_ALFONSO_DUELO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
+        sm_characterTypes.append(CHARACTER_AMBIDEXTER_BO);
 
     }
     else {
