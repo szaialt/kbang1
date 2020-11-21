@@ -30,6 +30,7 @@ void CharacterTurdFerguson::respondCard(ReactionHandler* reactionHandler, Playin
                         case REACTION_KITCARLSON:
                         case REACTION_DUEL:
                         case REACTION_INDIANS:
+                        case REACTION_CUSTOMS:
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;

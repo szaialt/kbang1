@@ -694,6 +694,7 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "no-hurting--bang")      return CARD_NO_HURTING_BANG;
     if (s == "no hurting bang")      return CARD_NO_HURTING_BANG;
     if (s == "no_hurting_bang")      return CARD_NO_HURTING_BANG;
+    if (s == "customs")  return CARD_CUSTOMS;
     return CARD_UNKNOWN; 
 } 
 
@@ -824,6 +825,9 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_DOUBLE_PANIC:    return "double panic";
         case CARD_DOUBLE_CATBALOU: return "double catbalou";
         case CARD_NO_HURTING_BANG: return "no hurting bang" ;
+        //33
+        case CARD_CUSTOMS:  return  "customs";
+        
         //Unknown
         case CARD_UNKNOWN:        return "";
     }
@@ -878,29 +882,31 @@ ReactionType stringToReactionType(const QString& s)
     if (s == "bang")            return REACTION_BANG;
     if (s == "gatling")         return REACTION_GATLING;
     if (s == "indians")         return REACTION_INDIANS;
-    if (s == "duel")            return REACTION_DUEL;
+    if (s == "duel")              return REACTION_DUEL;
     if (s == "general-store")   return REACTION_GENERALSTORE;
-    if (s == "last-save")       return REACTION_LASTSAVE;
-    if (s == "lucky-duke")      return REACTION_LUCKYDUKE;
-    if (s == "kit-carlson")     return REACTION_KITCARLSON;
+    if (s == "last-save")      return REACTION_LASTSAVE;
+    if (s == "lucky-duke")   return REACTION_LUCKYDUKE;
+    if (s == "kit-carlson")    return REACTION_KITCARLSON;
     if (s == "healing-bang")    return REACTION_HEALING_BANG;
-    if (s == "taker-bang")      return REACTION_TAKER_BANG;
+    if (s == "taker-bang")   return REACTION_TAKER_BANG;
+    if (s == "customs")       return REACTION_CUSTOMS;
     return REACTION_NONE;
 }
 
 QString reactionTypeToString(const ReactionType& r)
 {
     switch(r) {
-    case REACTION_BANG:         return "bang";
-    case REACTION_GATLING:      return "gatling";
-    case REACTION_INDIANS:      return "indians";
-    case REACTION_DUEL:         return "duel";
+    case REACTION_BANG:              return "bang";
+    case REACTION_GATLING:         return "gatling";
+    case REACTION_INDIANS:          return "indians";
+    case REACTION_DUEL:               return "duel";
     case REACTION_GENERALSTORE: return "general-store";
-    case REACTION_LASTSAVE:     return "last-save";
+    case REACTION_LASTSAVE:       return "last-save";
     case REACTION_LUCKYDUKE:    return "lucky-duke";
     case REACTION_KITCARLSON:   return "kit-carlson";
     case REACTION_HEALING_BANG: return "healing-bang";
     case REACTION_TAKER_BANG:   return "taker-bang";
+    case REACTION_CUSTOMS:        return "customs";
     case REACTION_NONE:         return "";
     }
     return "";

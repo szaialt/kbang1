@@ -39,6 +39,7 @@ void CharacterEngineer::respondCard(ReactionHandler* reactionHandler, PlayingCar
         case REACTION_LASTSAVE:
         case REACTION_LUCKYDUKE:
         case REACTION_KITCARLSON:
+        case REACTION_CUSTOMS:
         case REACTION_NONE:
             CharacterBase::respondCard(reactionHandler, targetCard);
             break;

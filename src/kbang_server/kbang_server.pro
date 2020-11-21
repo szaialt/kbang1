@@ -85,6 +85,7 @@ HEADERS += \
     cardtakerbang.h \
     cardlelabang.h \
     cardghost.h \
+    cardcustoms.h \
     gameeventmanager.h \
     gamelogger.h \
     characterbase.h \
@@ -174,7 +175,8 @@ HEADERS += \
     charactertonyarmed.h \
     characterwilliamlongley.h \
     characteralfonsoduelo.h \
-    characterambidexterbo.h
+    characterambidexterbo.h \
+    characterbartbarber.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -249,6 +251,7 @@ SOURCES += \
     cardtakerbang.cpp \
     cardlelabang.cpp \
     cardghost.cpp \
+    cardcustoms.cpp \
     gameeventmanager.cpp \
     gamelogger.cpp \
     characterbase.cpp \
@@ -337,7 +340,8 @@ SOURCES += \
     charactertonyarmed.cpp \
     characterwilliamlongley.cpp \
     characteralfonsoduelo.cpp \
-    characterambidexterbo.cpp
+    characterambidexterbo.cpp \
+    characterbartbarber.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

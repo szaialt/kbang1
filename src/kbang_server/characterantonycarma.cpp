@@ -26,6 +26,7 @@ void CharacterAntonyCarma::respondCard(ReactionHandler* reactionHandler, Playing
                     case REACTION_DUEL:
                     case REACTION_GATLING:
                     case REACTION_INDIANS:
+                    case REACTION_CUSTOMS:
                     case REACTION_NONE:
                         CharacterBase::respondCard(reactionHandler, targetCard);
                     break;

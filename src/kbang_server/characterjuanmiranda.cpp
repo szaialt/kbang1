@@ -25,6 +25,7 @@ void CharacterJuanMiranda::respondPass(ReactionHandler* reactionHandler){
                         case REACTION_LUCKYDUKE:
                         case REACTION_KITCARLSON:
                         case REACTION_TAKER_BANG:
+                        case REACTION_CUSTOMS:
                         case REACTION_NONE:
                             CharacterBase::respondPass(reactionHandler);
                         break;

@@ -28,6 +28,7 @@ void CharacterCharlesBoggen::respondCard(ReactionHandler* reactionHandler, Playi
                         case REACTION_NONE:
                         case REACTION_GATLING:
                         case REACTION_INDIANS:
+                        case REACTION_CUSTOMS:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;
                         case REACTION_BANG:

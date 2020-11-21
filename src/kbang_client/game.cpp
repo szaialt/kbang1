@@ -162,6 +162,9 @@ void Game::setGameContext(const GameContextData& gameContextData)
         case REACTION_LUCKYDUKE:
             message = tr("Feelin' lucky? Pick a card to respond with.");
             break;
+        case REACTION_CUSTOMS:
+            message = tr("<i>%1</i> played Customs. Do you have something to declare?").arg(causedByName);
+            break;
         case REACTION_NONE:
             NOT_REACHED();
         }

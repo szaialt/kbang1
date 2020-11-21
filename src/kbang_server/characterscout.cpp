@@ -31,6 +31,7 @@ void CharacterScout::respondCard(ReactionHandler* reactionHandler, PlayingCard* 
                         case REACTION_LUCKYDUKE:
                         case REACTION_KITCARLSON:
                         case REACTION_TAKER_BANG:
+                        case REACTION_CUSTOMS:
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;

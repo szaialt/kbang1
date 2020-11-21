@@ -47,6 +47,7 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                         case REACTION_LUCKYDUKE:
                         case REACTION_KITCARLSON:
                         case REACTION_GENERALSTORE:
+                        case REACTION_CUSTOMS:
                         case REACTION_NONE:
                         {
                             CharacterBase::respondCard(reactionHandler, targetCard);
