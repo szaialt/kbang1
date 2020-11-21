@@ -493,6 +493,9 @@ struct CardFactory::CardFactoryImp
             qDebug() << "No robberRoostFlag";
         }
         
+        
+        
+        
         foreach(PlayingCard* card, list) {
             res[card->id()] = card;
         }

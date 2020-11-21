@@ -323,6 +323,9 @@ void Player::setRoleAndCharacter(CharacterBase* character, const PlayerRole& rol
     m_role = role;
     if (m_role == ROLE_SHERIFF) {
         m_maxLifePoints++;
+        //Give a plus lifePoint to CHARACTER_BIG_FAT_JOE, he is weak
+        if (characterType() == CHARACTER_BIG_FAT_JOE)
+            m_maxLifePoints++;
     }
     // Paul Regret is too weak character to have only 3 HP-s
     if ((game()->gameInfo().ourFlag()) && (character->characterType() == CHARACTER_PAUL_REGRET)) {

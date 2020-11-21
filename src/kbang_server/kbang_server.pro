@@ -176,7 +176,8 @@ HEADERS += \
     characterwilliamlongley.h \
     characteralfonsoduelo.h \
     characterambidexterbo.h \
-    characterbartbarber.h
+    characterbartbarber.h \
+    characterbigfatjoe.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -341,7 +342,8 @@ SOURCES += \
     characterwilliamlongley.cpp \
     characteralfonsoduelo.cpp \
     characterambidexterbo.cpp \
-    characterbartbarber.cpp
+    characterbartbarber.cpp \
+    characterbigfatjoe.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \
