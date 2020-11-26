@@ -28,6 +28,7 @@
 #include "util.h"
 #include "charactercrazybear.h"
 #include "characterambidexterbo.h"
+#include "charactercolinbarrel.h"
 
 #include <iostream>
 
@@ -268,6 +269,14 @@ void CardBang::respondPass()
         }
         else if (type() == CARD_QUAD_BANG){
              mp_attackedPlayer->modifyLifePoints(-4, mp_attackingPlayer);
+        }
+        else if ((type() == CARD_BANG) && (mp_attackingPlayer->characterType() == CHARACTER_COLIN_BARREL)){
+           gameTable()->playerDrawFromGraveyard(mp_attackingPlayer);
+           mp_attackedPlayer->modifyLifePoints(-1, mp_attackingPlayer);
+        }
+        else if ((type() == CARD_BANG) && (mp_attackedPlayer->characterType() == CHARACTER_BURT_LONGCATCHER)){
+            gameTable()->playerDrawFromGraveyard(mp_attackedPlayer);
+            mp_attackedPlayer->modifyLifePoints(-1, mp_attackingPlayer);
         }
         else {
            mp_attackedPlayer->modifyLifePoints(-1, mp_attackingPlayer);

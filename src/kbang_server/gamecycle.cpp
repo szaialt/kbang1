@@ -768,6 +768,7 @@ void GameCycle::resetAbility(Player* player){
         CharacterFelipeDelgado* felipe =  qobject_cast<CharacterFelipeDelgado*>(player->character());
         felipe->resetAbility();
     }
+
 }
 
 int GameCycle::needDiscard(Player* player)

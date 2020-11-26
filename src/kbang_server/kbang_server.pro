@@ -178,6 +178,8 @@ HEADERS += \
     characterambidexterbo.h \
     characterbartbarber.h \
     characterbigfatjoe.h \
+    characterburtlongcatcher.h \
+    charactercolinbarrel.h \
     charactercrazyhorse.h
 
 #    characterroostercogburn.h
@@ -345,6 +347,8 @@ SOURCES += \
     characterambidexterbo.cpp \
     characterbartbarber.cpp \
     characterbigfatjoe.cpp \
+    characterburtlongcatcher.cpp \
+    charactercolinbarrel.cpp \
     charactercrazyhorse.cpp
 
 #    characterroostercogburn.cpp
