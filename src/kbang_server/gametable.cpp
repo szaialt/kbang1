@@ -56,7 +56,7 @@ void GameTable::playerDrawFromGraveyard(Player* player)
 
 }
 
-void GameTable::playerDrawDynamiteFromGraveyard(Player* player)
+PlayingCard* GameTable::playerDrawDynamiteFromGraveyard(Player* player)
 {
     if (m_graveyard.size() == 0)
         throw BadGameStateException();
@@ -70,7 +70,7 @@ void GameTable::playerDrawDynamiteFromGraveyard(Player* player)
            PlayingCard* nextCard = m_graveyard.isEmpty() ? 0 : m_graveyard.first();
            mp_game->gameEventManager().onPlayerDrawFromGraveyard(player, card, nextCard);
            mp_game->gameEventManager().onPlayerUpdated(player);
-           return;
+           return card;
         }
     }
     throw BadGameStateException();

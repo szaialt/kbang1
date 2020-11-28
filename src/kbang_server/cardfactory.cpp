@@ -493,9 +493,26 @@ struct CardFactory::CardFactoryImp
             qDebug() << "No robberRoostFlag";
         }
         
-        
-        
-        
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
+       list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
+        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
+        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
         foreach(PlayingCard* card, list) {
             res[card->id()] = card;
         }

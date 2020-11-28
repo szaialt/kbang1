@@ -204,7 +204,6 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
         if (targetCard->owner() != owner()) throw BadCardException();
         if (targetPlayer->hand().isEmpty()) throw BadTargetPlayerException();
         Player* o = owner();
-        Player* targetPlayer = targetCard->owner();
         if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
             o->modifyLifePoints(-1, 0);
         }

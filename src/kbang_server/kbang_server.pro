@@ -180,7 +180,8 @@ HEADERS += \
     characterbigfatjoe.h \
     characterburtlongcatcher.h \
     charactercolinbarrel.h \
-    charactercrazyhorse.h
+    charactercrazyhorse.h \
+    characterdynamitejoe.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -349,7 +350,8 @@ SOURCES += \
     characterbigfatjoe.cpp \
     characterburtlongcatcher.cpp \
     charactercolinbarrel.cpp \
-    charactercrazyhorse.cpp
+    charactercrazyhorse.cpp \
+    characterdynamitejoe.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

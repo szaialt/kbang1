@@ -31,9 +31,7 @@ void CharacterLuckyDuke::checkDeck(PlayingCard* causedBy,
 void CharacterLuckyDuke::respondCard(PlayingCard* checkedCard)
 {
     if (checkedCard->pocket() != POCKET_SELECTION){
-        qDebug() << "Pocket of the checked card is not POCKET_SELECTION.";
-        qDebug() << "The pocket is " << pocketTypeToString(checkedCard->pocket());
-    //    throw BadCardException();
+        throw BadCardException();
     }
     gameCycle().unsetResponseMode();
     
