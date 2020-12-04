@@ -103,6 +103,7 @@
 #include "charactercrazyhorse.h"
 #include "characterdynamitejoe.h"
 #include "characterjamesstoneheart.h"
+#include "characterjenniferbigheart.h"
 
 #include "util.h"
 #include "gameinfo.h"
@@ -340,6 +341,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterDynamiteJoe(parent); 
     case CHARACTER_JAMES_STONEHEART: 
         return new CharacterJamesStoneheart(parent); 
+    case CHARACTER_JENNIFER_BIG_HEART: 
+        return new CharacterJenniferBigHeart(parent); 
      case CHARACTER_UNKNOWN:
          NOT_REACHED();
      
@@ -513,89 +516,88 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_BURT_LONGCATCHER);
         sm_characterTypes.append(CHARACTER_COLIN_BARREL);
         sm_characterTypes.append(CHARACTER_CRAZY_HORSE);
-       
         sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
 
 
     }
