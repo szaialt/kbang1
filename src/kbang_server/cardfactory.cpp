@@ -301,7 +301,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardDuel(game, id(), CardDuel::Showdown, SUIT_DIAMONDS,    14));
             
-            list.append(new CardBeer(game, id(), CardBeer::BrownMolotovCocktail, SUIT_HEARTS, 7));
+            //list.append(new CardBeer(game, id(), CardBeer::BrownMolotovCocktail, SUIT_HEARTS, 7));
             
             list.append(new CardDrawCards(game, id(), CardDrawCards::BrownInvestment,  SUIT_SPADES,  13));
             
@@ -454,7 +454,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardDuel(game, id(), CardDuel::Showdown, SUIT_DIAMONDS,    14));
             
-            list.append(new CardBeer(game, id(), CardBeer::BrownMolotovCocktail, SUIT_HEARTS, 7));
+            //list.append(new CardBeer(game, id(), CardBeer::BrownMolotovCocktail, SUIT_HEARTS, 7));
             
             list.append(new CardDrawCards(game, id(), CardDrawCards::BrownInvestment,  SUIT_SPADES,  13));
             
@@ -493,26 +493,7 @@ struct CardFactory::CardFactoryImp
             qDebug() << "No robberRoostFlag";
         }
         
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
-       list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_CLUBS, 13));
-        list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-        list.append(new CardTaker(game, id(), CardTaker::BarFight, SUIT_DIAMONDS, 13));
+       
         foreach(PlayingCard* card, list) {
             res[card->id()] = card;
         }

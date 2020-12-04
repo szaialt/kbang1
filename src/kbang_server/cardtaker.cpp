@@ -151,6 +151,7 @@ void CardTaker::play(PlayingCard* targetCard)
         o->modifyLifePoints(-1, 0);
     }
     if (m_type == CatBalou) {
+        if (targetCard->owner()->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 1";
         //qDebug() << "CatBalou play(PlayingCard* targetCard) 2";
         gameCycle()->setCardEffect(1);
@@ -228,11 +229,16 @@ void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){
     
 void CardTaker::play(QList<PlayingCard*> targetCards){
     if (targetCards.size() < 2)  throw BadCardException();
+    Player* targetPlayer1 = targetCards.at(0)->owner();
+    Player* targetPlayer2 = targetCards.at(1)->owner();
+    if (m_type == DoubleCatBalou){
+        if (targetPlayer1->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
+        if (targetPlayer2->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
+    }
     if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
     gameCycle()->assertTurn();
     Player* o = owner();
-    Player* targetPlayer1 = targetCards.at(0)->owner();
-    Player* targetPlayer2 = targetCards.at(1)->owner();
+    
     PlayingCard* targetCard1 = targetCards.at(0);
     PlayingCard* targetCard2 = targetCards.at(1);
     if ((targetPlayer1 != o) && targetCard1->pocket() == POCKET_HAND){
