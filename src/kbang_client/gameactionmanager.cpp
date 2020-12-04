@@ -299,6 +299,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_ALFONSO_DUELO:
     case CHARACTER_CRAZY_HORSE:
     case CHARACTER_JENNIFER_BIG_HEART:
+    case CHARACTER_JEREMIAH_AMISH:
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:

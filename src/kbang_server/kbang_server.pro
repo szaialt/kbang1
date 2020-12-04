@@ -183,7 +183,8 @@ HEADERS += \
     charactercrazyhorse.h \
     characterdynamitejoe.h \
     characterjamesstoneheart.h \
-    characterjenniferbigheart.h
+    characterjenniferbigheart.h \
+    characterjeremiahamish.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -355,7 +356,8 @@ SOURCES += \
     charactercrazyhorse.cpp \
     characterdynamitejoe.cpp \
     characterjamesstoneheart.cpp \
-    characterjenniferbigheart.cpp
+    characterjenniferbigheart.cpp \
+    characterjeremiahamish.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \
