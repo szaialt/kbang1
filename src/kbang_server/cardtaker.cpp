@@ -66,6 +66,12 @@ void CardTaker::play(Player* targetPlayer)
      if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
         throw BadUsageException();
     }
+    if (m_type == Panic){
+        if (targetPlayer->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
+    }
+    if (m_type == DoubleCatBalou){
+        if (targetPlayer->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
+    }
     if (color() == COLOR_BROWN) {
         //qDebug() << "CardTaker play(Player* targetPlayer) 1";
       //qDebug() << "CardTaker play(Player* targetPlayer) 2";
@@ -149,6 +155,9 @@ void CardTaker::play(PlayingCard* targetCard)
     Player* targetPlayer = targetCard->owner();
     if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
         o->modifyLifePoints(-1, 0);
+    }
+    if (m_type == Panic){
+        if (targetPlayer->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
     }
     if (m_type == CatBalou) {
         if (targetCard->owner()->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
@@ -234,6 +243,10 @@ void CardTaker::play(QList<PlayingCard*> targetCards){
     if (m_type == DoubleCatBalou){
         if (targetPlayer1->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
         if (targetPlayer2->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
+    }
+    if (m_type == DoublePanic){
+        if (targetPlayer1->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
+        if (targetPlayer2->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
     }
     if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
     gameCycle()->assertTurn();
