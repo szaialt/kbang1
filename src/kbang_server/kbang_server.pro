@@ -185,6 +185,7 @@ HEADERS += \
     characterjamesstoneheart.h \
     characterjenniferbigheart.h \
     characterjeremiahamish.h \
+    characterjimmysquint.h \
     characterlinusyale.h
 
 #    characterroostercogburn.h
@@ -359,6 +360,7 @@ SOURCES += \
     characterjamesstoneheart.cpp \
     characterjenniferbigheart.cpp \
     characterjeremiahamish.cpp \
+    characterjimmysquint.cpp \
     characterlinusyale.cpp
 
 #    characterroostercogburn.cpp
