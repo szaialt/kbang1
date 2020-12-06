@@ -10,9 +10,11 @@ class CharacterCardKeeper : public CharacterBase
 Q_OBJECT
 public:
     enum Type {
-        BillyLonglife
+        BillyLonglife,
+        MaxPainless
     };
     CharacterCardKeeper(QObject* parent, Type);
+    virtual int maxLifePoints() const;
     virtual int cardKeeping() const; 
 private:
     Type m_type;

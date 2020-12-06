@@ -789,6 +789,10 @@ int GameCycle::needDiscard(Player* player)
         CharacterCardKeeper* billy =  qobject_cast<CharacterCardKeeper*>(player->character());
         limit = billy->cardKeeping();
     }
+    if (player->characterType() == CHARACTER_MAX_PAINLESS){
+        CharacterCardKeeper* max =  qobject_cast<CharacterCardKeeper*>(player->character());
+        limit = max->cardKeeping();
+    }
     if (player->characterType() == CHARACTER_DALTON_GANG){
         limit = player->lifePoints() * 2;
     }
