@@ -156,6 +156,8 @@ int Game::getDistance(Player *fromPlayer, Player *toPlayer) const
     if (!fromPlayer->isAlive() || !toPlayer->isAlive())
         return infiniteDistance;
 
+    
+    
     int fromIndex = m_playerList.indexOf(fromPlayer);
     int toIndex   = m_playerList.indexOf(toPlayer);
     if (fromIndex == -1 || toIndex == -1)
@@ -164,6 +166,21 @@ int Game::getDistance(Player *fromPlayer, Player *toPlayer) const
     // A player is always at distance 1 from himself
     if (fromIndex == toIndex)
         return 1;
+    
+    int numberOfLivingPlayers = 0;
+    Player* player;
+    foreach (player, m_playerList){
+        if (player->isAlive()) numberOfLivingPlayers++;
+    }
+    
+    if (fromPlayer->characterType() == CHARACTER_ONE_EYED_JACK){
+        if (toIndex < fromIndex) toIndex = toIndex + numberOfLivingPlayers;
+        return toIndex - fromIndex;
+    }
+    if (toPlayer->characterType() == CHARACTER_ONE_EYED_JACK){
+        if (fromIndex  < toIndex) fromIndex = fromIndex + numberOfLivingPlayers;
+        return fromIndex - toIndex;
+    }
     
     int upIndex   = fromIndex;
     int downIndex = fromIndex;
@@ -179,6 +196,7 @@ int Game::getDistance(Player *fromPlayer, Player *toPlayer) const
         } while (!m_playerList[downIndex]->isAlive());
         baseDistance++;
     }
+    
    if (fromPlayer->characterType() == CHARACTER_MYKE_MYOPE){
         if (baseDistance < 2) 
             baseDistance++;

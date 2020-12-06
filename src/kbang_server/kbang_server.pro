@@ -187,7 +187,8 @@ HEADERS += \
     characterjeremiahamish.h \
     characterjimmysquint.h \
     characterlinusyale.h \
-    charactermykemyope.h
+    charactermykemyope.h \
+    characteroneeyedjack.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -363,7 +364,8 @@ SOURCES += \
     characterjeremiahamish.cpp \
     characterjimmysquint.cpp \
     characterlinusyale.cpp \
-    charactermykemyope.cpp
+    charactermykemyope.cpp \
+    characteroneeyedjack.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \
