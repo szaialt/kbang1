@@ -384,7 +384,7 @@ void Card::loadDefaultRuleset()
     new Card("Linus Yale",         CHARACTER_LINUS_YALE,       "gfx/characters/33/linus-yale.jpg");
     new Card("Max Painless",             CHARACTER_MAX_PAINLESS,           "gfx/characters/33/max-painless.jpg");
     new Card("Moe The Barman",             CHARACTER_MOE_THE_BARMAN,           "gfx/characters/33/moe-barman.jpg");
-    new Card("Myke Myope",         CHARACTER_MYKE_MYOPE,         "gfx/characters/33/myke_myope.jpg");
+    new Card("Myke Myope",         CHARACTER_MYKE_MYOPE,         "gfx/characters/33/myke-myope.jpg");
     new Card("Nelly Chose-Chair",        CHARACTER_NELLY_CHOSE_CHAIR,        "gfx/characters/33/nelly-chose-chair.jpg");
     new Card("Nina Nine lives",           CHARACTER_NINA_NINE_LIVES,           "gfx/characters/33/nina-9-lives.jpg");
     new Card("One-Eyed Jack",           CHARACTER_ONE_EYED_JACK,          "gfx/characters/33/one-eyed-jack.jpg");

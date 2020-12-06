@@ -179,7 +179,11 @@ int Game::getDistance(Player *fromPlayer, Player *toPlayer) const
         } while (!m_playerList[downIndex]->isAlive());
         baseDistance++;
     }
-
+   if (fromPlayer->characterType() == CHARACTER_MYKE_MYOPE){
+        if (baseDistance < 2) 
+            baseDistance++;
+         else return infiniteDistance;
+   }
     baseDistance -= fromPlayer->distanceOut();
     baseDistance += toPlayer->distanceIn();
     return baseDistance;
