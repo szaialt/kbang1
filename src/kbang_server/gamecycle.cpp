@@ -26,6 +26,7 @@
 #include "characterjuliebulette.h"
 #include "characterchosingthomas.h"
 #include "characterfelipedelgado.h"
+#include "characterrichardgatling.h"
 
 #include "cardweakness.h"
 #include "carddrawcards.h"
@@ -768,7 +769,10 @@ void GameCycle::resetAbility(Player* player){
         CharacterFelipeDelgado* felipe =  qobject_cast<CharacterFelipeDelgado*>(player->character());
         felipe->resetAbility();
     }
-
+  else if (player->characterType() == CHARACTER_RICHARD_GATLING){
+        CharacterRichardGatling* richard =  qobject_cast<CharacterRichardGatling*>(player->character());
+        richard->resetAbility();
+    }
 }
 
 int GameCycle::needDiscard(Player* player)
