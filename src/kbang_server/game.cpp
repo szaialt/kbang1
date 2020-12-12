@@ -369,7 +369,7 @@ void Game::buryPlayer(Player* player, Player* causedBy)
             }
         } else if (m_outlawsCount == 0 && m_renegadesCount == 0) {
             winningSituation(ROLE_SHERIFF);
-        } else if ((player->role() == ROLE_OUTLAW && causedBy != 0 && causedBy != 0 && causedBy != player) || (causedBy != 0 && !(causedBy->isCharmed()) && causedBy->characterType() == CHARACTER_LOCO)) {
+        } else if ((player->role() == ROLE_OUTLAW && causedBy != 0 && causedBy != 0 && causedBy != player) || (causedBy != 0 && !(causedBy->isCharmed()) && ((causedBy->characterType() == CHARACTER_LOCO) || (causedBy->characterType() == CHARACTER_SCALPING_BULL)))) {
             /// killer draws 3 cards for killing an outlaw
             mp_gameTable->playerDrawFromDeck(causedBy, 3);
          } 
