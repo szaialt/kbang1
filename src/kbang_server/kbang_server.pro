@@ -191,7 +191,8 @@ HEADERS += \
     characteroneeyedjack.h \
     characterprestonpresbyope.h \
     characterrichardgatling.h \
-    characterscalpingbull.h
+    characterscalpingbull.h \
+    charactertobiasthemole.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -371,7 +372,8 @@ SOURCES += \
     characteroneeyedjack.cpp \
     characterprestonpresbyope.cpp \
     characterrichardgatling.cpp \
-    characterscalpingbull.cpp
+    characterscalpingbull.cpp \
+    charactertobiasthemole.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \
