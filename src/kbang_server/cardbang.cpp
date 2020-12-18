@@ -32,6 +32,8 @@
 
 #include <iostream>
 
+class CharacterTedRevenge;
+
 CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_BANG, cardSuit, cardRank),
         mp_attackedPlayer(0)
@@ -81,6 +83,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
        break;
      case NoHurtingBang:
         setType(CARD_NO_HURTING_BANG);
+        break;
+    case Revenge:
+        setType(CARD_REVENGE);
         break;
     default:
             NOT_REACHED();
@@ -134,7 +139,7 @@ void CardBang::play(Player *targetPlayer)
         shot(targetPlayer);
         return;
     }
-    else if (type() == CARD_BACKFIRE){
+    else if ((type() == CARD_BACKFIRE) || (type() == CARD_REVENGE)) {
         shot(targetPlayer);
         return;
     }
@@ -351,6 +356,15 @@ void CardBang::respondCard(PlayingCard* targetCard)
         player->checkEmptyHand();
         game()->gameEventManager().onPlayerUpdated(player);
         return;
+    case CARD_REVENGE: 
+        targetCard->play(mp_attackingPlayer);
+        gameTable()->playerRespondWithCard(targetCard);
+        if (targetCard->pocket() != POCKET_GRAVEYARD){ 
+            gameTable()->moveCardToGraveyard(targetCard);
+        }
+        player->checkEmptyHand();
+        game()->gameEventManager().onPlayerUpdated(player);
+        return;
     case CARD_DEAD_RINGER:
         if (type() == CARD_INDIAN_BANG){
             throw BadCardException();
@@ -467,5 +481,3 @@ void CardBang::missed()
     }
 
 }
-
-

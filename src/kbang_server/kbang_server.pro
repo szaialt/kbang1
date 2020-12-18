@@ -192,6 +192,7 @@ HEADERS += \
     characterprestonpresbyope.h \
     characterrichardgatling.h \
     characterscalpingbull.h \
+    charactertedrevenge.h \
     charactertobiasthemole.h
 
 #    characterroostercogburn.h
@@ -373,6 +374,7 @@ SOURCES += \
     characterprestonpresbyope.cpp \
     characterrichardgatling.cpp \
     characterscalpingbull.cpp \
+    charactertedrevenge.cpp \
     charactertobiasthemole.cpp
 
 #    characterroostercogburn.cpp

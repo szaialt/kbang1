@@ -202,7 +202,8 @@ enum PlayingCardType {
     CARD_DOUBLE_CATBALOU,
     CARD_NO_HURTING_BANG,
     //33
-    CARD_CUSTOMS
+    CARD_CUSTOMS,
+    CARD_REVENGE
 
 };
 

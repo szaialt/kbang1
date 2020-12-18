@@ -29,7 +29,7 @@ class Player;
  * This class represents the Bang! cards.
  * @author MacJariel <MacJariel@gmail.com>
  */
-class CardBang: public ReactionCard, public CheckDeckResultHandler
+class CardBang: public ReactionCard, public CheckDeckResultHandler 
 {
 Q_OBJECT
 public:
@@ -51,7 +51,8 @@ public:
         Backfire,
         Extra,
         DoubleExtra,
-        NoHurtingBang
+        NoHurtingBang,
+        Revenge
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

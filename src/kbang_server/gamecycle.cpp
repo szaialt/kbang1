@@ -27,6 +27,7 @@
 #include "characterchosingthomas.h"
 #include "characterfelipedelgado.h"
 #include "characterrichardgatling.h"
+#include "charactertedrevenge.h"
 
 #include "cardweakness.h"
 #include "carddrawcards.h"
@@ -551,6 +552,11 @@ void GameCycle::pass(Player* player)
         }
         else throw ex;
     }
+  if (player->characterType() == CHARACTER_TED_REVENGE){
+        CharacterTedRevenge* ted =  qobject_cast<CharacterTedRevenge*>(player->character());
+        ted->resetAbility();
+    
+}
     sendRequest();
 }
 
@@ -622,6 +628,13 @@ void GameCycle::unsetResponseMode()
         m_state = m_lastState;
     }
     m_contextDirty = 1;
+    
+     if (mp_requestedPlayer->characterType() == CHARACTER_TED_REVENGE){
+        CharacterTedRevenge* ted =  qobject_cast<CharacterTedRevenge*>(mp_requestedPlayer->character());
+        ted->resetAbility();
+    
+   }
+
 }
 
 void GameCycle::setCardEffect(bool isCardEffect)

@@ -695,6 +695,7 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "no hurting bang")      return CARD_NO_HURTING_BANG;
     if (s == "no_hurting_bang")      return CARD_NO_HURTING_BANG;
     if (s == "customs")  return CARD_CUSTOMS;
+    if (s == "revenge")  return CARD_REVENGE;
     return CARD_UNKNOWN; 
 } 
 
@@ -826,8 +827,8 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_DOUBLE_CATBALOU: return "double catbalou";
         case CARD_NO_HURTING_BANG: return "no hurting bang" ;
         //33
-        case CARD_CUSTOMS:  return  "customs";
-        
+        case CARD_CUSTOMS:         return  "customs";
+        case CARD_REVENGE:          return "revenge";
         //Unknown
         case CARD_UNKNOWN:        return "";
     }
