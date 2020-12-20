@@ -189,6 +189,7 @@ HEADERS += \
     characterlinusyale.h \
     charactermykemyope.h \
     characterninaninelives.h \
+    characternellychosechair.h \
     characteroneeyedjack.h \
     characterprestonpresbyope.h \
     characterrichardgatling.h \
@@ -372,6 +373,7 @@ SOURCES += \
     characterlinusyale.cpp \
     charactermykemyope.cpp \
     characterninaninelives.cpp \
+    characternellychosechair.cpp \
     characteroneeyedjack.cpp \
     characterprestonpresbyope.cpp \
     characterrichardgatling.cpp \
