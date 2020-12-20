@@ -7,6 +7,7 @@
 CharacterNinaNineLives::CharacterNinaNineLives(QObject* parent):
         CharacterBase(parent, CHARACTER_NINA_NINE_LIVES)
 {
+    m_times = 0;
 }
 
 int CharacterNinaNineLives::maxLifePoints() const
@@ -16,5 +17,10 @@ int CharacterNinaNineLives::maxLifePoints() const
 
 bool CharacterNinaNineLives::check(PlayingCard* card)
 {
-    return  (card->suit() == SUIT_SPADES);
+    m_times++;
+    return  (card->suit() == SUIT_CLUBS);
+}
+
+bool CharacterNinaNineLives::canUseAbility(){
+    return m_times < 9;
 }

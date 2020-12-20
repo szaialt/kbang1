@@ -10,6 +10,9 @@ public:
     CharacterNinaNineLives(QObject *parent);
     virtual int maxLifePoints() const;
     bool check(PlayingCard* card);
+    bool canUseAbility();
+protected:
+    int m_times;
 };
 
 #endif // CHARACTERNINANINELIVES_H

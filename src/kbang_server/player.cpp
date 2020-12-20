@@ -26,6 +26,7 @@
 #include "characterbase.h"
 #include "charactercassidygringo.h"
 #include "characterfastfranz.h"
+#include "characterninaninelives.h"
 
 #include "gameinfo.h"
 #include "gamecycle.h"
@@ -198,6 +199,17 @@ void Player::lastSaveFailure(int hitPoints, Player* causedBy)
         bool checkResult = franz->check(checkedCard);
         if (checkResult){
             m_lifePoints = 1;
+            return;
+        }
+    }
+        //Teren Kill 
+    if (character()->characterType() == CHARACTER_NINA_NINE_LIVES){
+        CharacterNinaNineLives* nina =  qobject_cast<CharacterNinaNineLives*>(character());
+        PlayingCard* checkedCard = game()->gameTable().checkDeck();
+        bool checkResult = nina->check(checkedCard);
+        if (checkResult){
+            m_lifePoints = 1;
+            game()->gameTable().playerDrawFromDeck(this, 1, 0);
             return;
         }
     }
