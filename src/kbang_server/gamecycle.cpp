@@ -28,6 +28,7 @@
 #include "characterfelipedelgado.h"
 #include "characterrichardgatling.h"
 #include "charactertedrevenge.h"
+#include "characterphilthinwire.h"
 
 #include "cardweakness.h"
 #include "carddrawcards.h"
@@ -383,6 +384,13 @@ void GameCycle::playCard(Player* player, PlayingCard* card, Player* targetPlayer
 
     if (isResponse() && (card->type() != CARD_DEFLECTION) && (card->type() != CARD_RICOCHET) && (card->type() != CARD_BACKFIRE)){
         throw BadGameStateException();
+    }
+    if ((card->type() == CARD_BANG) && (targetPlayer->characterType() == CHARACTER_PHIL_THINWIRE)){
+        CharacterPhilThinwire* phil =  qobject_cast<CharacterPhilThinwire*>(targetPlayer->character());
+        if (phil->isDefended()){
+            throw BadTargetPlayerException();
+        }
+        phil->setDefense();
     }
     Player::CardList table = player->table();
     foreach(PlayingCard* c, table){
@@ -785,6 +793,10 @@ void GameCycle::resetAbility(Player* player){
   else if (player->characterType() == CHARACTER_RICHARD_GATLING){
         CharacterRichardGatling* richard =  qobject_cast<CharacterRichardGatling*>(player->character());
         richard->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_PHIL_THINWIRE){
+        CharacterPhilThinwire* phil =  qobject_cast<CharacterPhilThinwire*>(player->character());
+        phil->unsetDefense();
     }
 }
 

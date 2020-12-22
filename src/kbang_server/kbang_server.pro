@@ -191,10 +191,12 @@ HEADERS += \
     characterninaninelives.h \
     characternellychosechair.h \
     characteroneeyedjack.h \
+    characterphilthinwire.h \
     characterprestonpresbyope.h \
     characterrichardgatling.h \
     characterscalpingbull.h \
     charactertedrevenge.h \
+    charactertimcroupier.h \
     charactertobiasthemole.h
 
 #    characterroostercogburn.h
@@ -375,10 +377,12 @@ SOURCES += \
     characterninaninelives.cpp \
     characternellychosechair.cpp \
     characteroneeyedjack.cpp \
+    characterphilthinwire.cpp \
     characterprestonpresbyope.cpp \
     characterrichardgatling.cpp \
     characterscalpingbull.cpp \
     charactertedrevenge.cpp \
+    charactertimcroupier.cpp \
     charactertobiasthemole.cpp
 
 #    characterroostercogburn.cpp

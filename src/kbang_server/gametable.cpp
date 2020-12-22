@@ -491,6 +491,15 @@ void GameTable::regenerateDeck()
     m_graveyard.clear();
     m_graveyard << m_deck.takeLast();
     shuffleDeck();
+    foreach(Player* p, mp_game->playerList())
+    {
+        if (p->characterType() == CHARACTER_TIM_CROUPIER){
+            foreach(Player* p1, mp_game->playerList()){
+                PlayingCard* card = p1->getRandomCardFromHand();
+                playerStealCard(p, card);
+            }
+        }
+    }
     mp_game->gameEventManager().onDeckRegenerate();
 }
 
