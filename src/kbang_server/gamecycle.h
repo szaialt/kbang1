@@ -116,7 +116,7 @@ private:
     void    checkPlayerAndState(Player* player, GamePlayState state);
     void    startTurn(Player* player);
     void    resetAbility(Player* player);
-    int     needDiscard(Player* player);
+    int      needDiscard(Player* player);
     void    announceContextChange();
 };
 

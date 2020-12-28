@@ -29,6 +29,7 @@
 #include "characterrichardgatling.h"
 #include "charactertedrevenge.h"
 #include "characterphilthinwire.h"
+#include "characterbruceling.h"
 
 #include "cardweakness.h"
 #include "carddrawcards.h"
@@ -797,7 +798,11 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_PHIL_THINWIRE){
         CharacterPhilThinwire* phil =  qobject_cast<CharacterPhilThinwire*>(player->character());
         phil->unsetDefense();
-    }
+    }/*
+    else if (player->characterType() == CHARACTER_BRUCE_LING){
+        CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(mp_currentPlayer->character());
+        bruce->resetAbility(2);
+    }*/
 }
 
 int GameCycle::needDiscard(Player* player)
@@ -853,3 +858,5 @@ void GameCycle::announceContextChange()
 void GameCycle::deflectionPlayed(){
     m_deflectionFlag = true;
 }
+
+

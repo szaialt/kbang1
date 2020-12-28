@@ -18,9 +18,9 @@ public:
     virtual ReactionType reactionType() const { return REACTION_GENERALSTORE; }
     virtual Player* causedBy() const { return mp_firstPlayer; }
     void requestNext();
-
 private:
-    
+    bool isLastCard();
+    int calculateBruceLings();
     Player* mp_firstPlayer;
     Player* mp_currentPlayer;
     Type m_type;

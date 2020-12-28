@@ -179,6 +179,7 @@ HEADERS += \
     characterbartbarber.h \
     characterbigfatjoe.h \
     characterburtlongcatcher.h \
+    characterbruceling.h \
     charactercolinbarrel.h \
     charactercrazyhorse.h \
     characterdynamitejoe.h \
@@ -365,6 +366,7 @@ SOURCES += \
     characterbartbarber.cpp \
     characterbigfatjoe.cpp \
     characterburtlongcatcher.cpp \
+    characterbruceling.cpp \
     charactercolinbarrel.cpp \
     charactercrazyhorse.cpp \
     characterdynamitejoe.cpp \

@@ -4,6 +4,7 @@
 #include "game.h"
 #include "gameexceptions.h"
 #include "characterchosingthomas.h"
+#include "characterbruceling.h"
 
 CardGeneralStore::CardGeneralStore(Game* game, int id, Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_GENERALSTORE, cardSuit, cardRank),
@@ -27,18 +28,27 @@ CardGeneralStore::~CardGeneralStore()
 void CardGeneralStore::play()
 {
     gameCycle()->assertTurn();
+    
     mp_firstPlayer = owner();
     gameCycle()->setCardEffect(1);
     mp_currentPlayer = 0;
+    m_remained = game()->alivePlayersCount();
+    m_remained = m_remained + calculateBruceLings();
     if (type() == CARD_GENERALSTORE){
+        Player* player = owner();
+        foreach (player, game()->playerList()){
+            if (player->characterType() == CHARACTER_BRUCE_LING){
+              CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(player->character());
+              bruce->resetAbility();
+            }
+        }
         gameTable()->playerPlayCard(this);
-        gameTable()->drawIntoSelection(game()->alivePlayersCount());
+        gameTable()->drawIntoSelection(m_remained);
     }
     else if (type() == CARD_ROB_GRAVE){
      gameTable()->drawGraveyardIntoSelection(game()->alivePlayersCount());
      gameTable()->playerPlayCard(this);
     }
-    m_remained = game()->alivePlayersCount();
     requestNext();
 }
 
@@ -73,10 +83,21 @@ void CardGeneralStore::requestNext()
     if (mp_currentPlayer == 0) {
         mp_currentPlayer = mp_firstPlayer;
     } else {
-        mp_currentPlayer = game()->nextPlayer(mp_currentPlayer);
-        if ((game()->nextPlayer(mp_currentPlayer) == mp_firstPlayer)
-            ||((m_remained == 1) && (mp_currentPlayer == mp_firstPlayer))
-        ) {
+         if  ((type() == CARD_GENERALSTORE) && (mp_currentPlayer->characterType() == CHARACTER_BRUCE_LING)){
+           CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(mp_currentPlayer->character());
+           if (bruce->items() == bruce->itemNumber){
+              bruce->itemToken();
+          }
+          else {
+              bruce->itemToken();
+             mp_currentPlayer = game()->nextPlayer(mp_currentPlayer);
+            }
+         }
+        else {
+           mp_currentPlayer = game()->nextPlayer(mp_currentPlayer);
+        }
+        if (isLastCard())
+         {
             qDebug() << "Size of the selection is " << gameTable()->selection().size();
             if (gameTable()->selection().size() == 0){
                 gameCycle()->setCardEffect(0);
@@ -90,4 +111,31 @@ void CardGeneralStore::requestNext()
         }
     }
     game()->gameCycle().setResponseMode(this, mp_currentPlayer);
+}
+
+bool CardGeneralStore::isLastCard(){
+    if (mp_currentPlayer->characterType() == CHARACTER_BRUCE_LING){
+        if (m_remained == 0) return true;
+        CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(mp_currentPlayer->character());
+        if (bruce->items() == 0){
+            if ((m_remained == 1) && (mp_currentPlayer == mp_firstPlayer)) {return true;}
+        }
+        {return false;}
+    }
+    if (game()->nextPlayer(mp_currentPlayer) == mp_firstPlayer) {return true;}
+    if ((m_remained == 1) && (gameTable()->selection().size() == 1) && (mp_currentPlayer == mp_firstPlayer)) {return true;}
+    return false;
+}
+
+int CardGeneralStore::calculateBruceLings(){
+    int bruces = 0;
+    Player* player;
+    foreach (player, game()->playerList()){
+        if (player->isAlive()) {
+          if (player->characterType() == CHARACTER_BRUCE_LING){
+            bruces++;
+          }
+        }
+    }
+    return bruces;
 }
