@@ -488,6 +488,16 @@ struct CardFactory::CardFactoryImp
             
             
             
+            
+            list.append(new CardDynamite(game, id(), SUIT_HEARTS, 2, 20));
+            list.append(new CardDynamite(game, id(), SUIT_SPADES, 2, 21));
+            list.append(new CardDynamite(game, id(), SUIT_DIAMONDS, 2, 22));
+            list.append(new CardDynamite(game, id(), SUIT_CLUBS, 2, 23));
+            list.append(new CardDynamite(game, id(), SUIT_DIAMONDS, 2, 24));
+            list.append(new CardDynamite(game, id(), SUIT_CLUBS, 2, 25));
+            
+            
+            
         }
         else {
             qDebug() << "No robberRoostFlag";

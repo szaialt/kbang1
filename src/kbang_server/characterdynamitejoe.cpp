@@ -12,19 +12,12 @@ int CharacterDynamiteJoe::maxLifePoints() const
   return 5;
 }
 
-void CharacterDynamiteJoe::useAbility() 
+void CharacterDynamiteJoe::useAbility(Player* targetPlayer) 
 {
     try {
-        //if (gameTable().graveyardTop()->type() == CARD_DYNAMITE){
             PlayingCard* dynamite = mp_player->game()->gameTable().playerDrawDynamiteFromGraveyard(mp_player);
-//             if (!(mp_player->game()->gameInfo().stackingDynamiteFlag())){
-//                 if (player->hasIdenticalCardOnTable(dynamite)) {
-//                      throw TwoSameOnTableException();
-//                 }
-//             }
-//             gameTable().playerPlayCardOnTable(dynamite, player);
+            dynamite->play(targetPlayer);
         }
-    //}
     catch (BadGameStateException ex){
         throw BadUsageException();
     }

@@ -11,7 +11,7 @@ Q_OBJECT
 public:
     CharacterDynamiteJoe(QObject* parent);
     virtual int maxLifePoints() const;
-    virtual void useAbility();
+    virtual void useAbility(Player* targetPlayer);
     
 };
 

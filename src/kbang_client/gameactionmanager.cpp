@@ -264,6 +264,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_JESSE_JONES:
     case CHARACTER_WILLIAM_HARMAN:
     case CHARACTER_OSCAR_RODRIGUEZ:
+    case CHARACTER_DYNAMITE_JOE:
     case CHARACTER_NELLY_CHOSE_CHAIR:
         selectPlayer(cardWidget);
         break;
