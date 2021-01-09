@@ -198,7 +198,8 @@ HEADERS += \
     characterscalpingbull.h \
     charactertedrevenge.h \
     charactertimcroupier.h \
-    charactertobiasthemole.h
+    charactertobiasthemole.h \
+    charactertomgunseller.h
 
 #    characterroostercogburn.h
 #     common/config.h \
@@ -385,7 +386,8 @@ SOURCES += \
     characterscalpingbull.cpp \
     charactertedrevenge.cpp \
     charactertimcroupier.cpp \
-    charactertobiasthemole.cpp
+    charactertobiasthemole.cpp \
+    charactertomgunseller.cpp
 
 #    characterroostercogburn.cpp
 #     common/config.cpp \

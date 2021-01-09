@@ -203,7 +203,8 @@ enum PlayingCardType {
     CARD_NO_HURTING_BANG,
     //33
     CARD_CUSTOMS,
-    CARD_REVENGE
+    CARD_REVENGE,
+    CARD_GARBAGE_TRUCK
 
 };
 

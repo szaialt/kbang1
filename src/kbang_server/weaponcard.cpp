@@ -230,7 +230,6 @@ void WeaponCard::registerPlayer(Player* player)
 {
     player->setWeaponRange(m_range);
     int infinityDistance = 99;
-    player->setWeaponRange(m_range);
     if (!(owner()->isCharmed()) && (owner()->character()->characterType() == CHARACTER_SNIPER)){
         player->setWeaponRange(infinityDistance);
     }

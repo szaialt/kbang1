@@ -696,6 +696,9 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "no_hurting_bang")      return CARD_NO_HURTING_BANG;
     if (s == "customs")  return CARD_CUSTOMS;
     if (s == "revenge")  return CARD_REVENGE;
+    if (s == "garbage-truck")        return CARD_GARBAGE_TRUCK;
+    if (s == "garbage truck")        return CARD_GARBAGE_TRUCK;
+    if (s == "garbage_truck")        return CARD_GARBAGE_TRUCK;
     return CARD_UNKNOWN; 
 } 
 
@@ -821,16 +824,17 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_EXTRA_BANG:      return "extra bang";
         case CARD_DOUBLE_EXTRA_BANG: return "double extra bang";
         case CARD_LELA_BANG:       return "lela bang";
-        case CARD_LELA_GATLING:    return "lela gatling";
+        case CARD_LELA_GATLING:  return "lela gatling";
         // 20
-        case CARD_DOUBLE_PANIC:    return "double panic";
+        case CARD_DOUBLE_PANIC:  return "double panic";
         case CARD_DOUBLE_CATBALOU: return "double catbalou";
         case CARD_NO_HURTING_BANG: return "no hurting bang" ;
         //33
-        case CARD_CUSTOMS:         return  "customs";
-        case CARD_REVENGE:          return "revenge";
+        case CARD_CUSTOMS:        return  "customs";
+        case CARD_REVENGE:         return "revenge";
+        case CARD_GARBAGE_TRUCK: return "garbage truck" ;
         //Unknown
-        case CARD_UNKNOWN:        return "";
+        case CARD_UNKNOWN:       return "";
     }
     return "";
 }

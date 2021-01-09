@@ -18,7 +18,8 @@ public:
         Adrenaline,
         GoldWatch,
         BrownInvestment,
-        BrownLoan
+        BrownLoan,
+        GarbageTruck
     };
     CardDrawCards(Game* game, int id, Type, CardSuit, CardRank);
     ~CardDrawCards();

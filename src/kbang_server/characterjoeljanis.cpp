@@ -47,7 +47,6 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                                     CharacterBase::respondCard(reactionHandler, missed);
                                 }
                                 else {
-                                    qDebug() << "CardMissed is NULL.";
                                     CharacterBase::respondCard(reactionHandler, targetCard);
                                 }
                             }
@@ -67,7 +66,6 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                                   CharacterBase::respondCard(reactionHandler, bang);
                                 }
                                 else {
-                                    qDebug() << "CardBang is NULL.";
                                     CharacterBase::respondCard(reactionHandler, targetCard);
                                 }  
                             }
@@ -81,11 +79,9 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                     notifyAbilityUse();
                }
                 catch (BadUsageException ex){
-                    qDebug() << "Ms Abigail using her ability. 3";
                     ex.debug();
                 }
                 catch (BadPlayerException ex){
-                    qDebug() << "Ms Abigail using her ability. 4";
                     ex.debug();
                 }
                 

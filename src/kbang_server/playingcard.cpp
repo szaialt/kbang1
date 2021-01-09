@@ -57,6 +57,28 @@ bool PlayingCard::isWeapon(){
     return false;
 }
 
+bool PlayingCard::hasBangSymbol(){
+    switch(m_type) {
+        case CARD_BANG:
+        case CARD_DOUBLE_BANG:
+        case CARD_DIRECT_HIT:
+        case CARD_HEAVY_BANG:
+        case CARD_TRIPLE_BANG:
+        case CARD_QUAD_BANG:
+        case CARD_INDIAN_BANG:
+        case CARD_UNDEFENSABLE:
+        case CARD_STUNNING_BANG:
+        case CARD_EXTRA_BANG:
+        case CARD_DOUBLE_EXTRA_BANG:
+            return true;
+        default:
+            return false;
+            
+    }
+    return false;
+}
+
+
 /**
 * This method is called (by GameTable) when the card is
 * put on the player's table.

@@ -309,6 +309,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_PYRO:
     case CHARACTER_LIL_SURE_SHOT:
     case CHARACTER_QUEEN_ANNE:
+    case CHARACTER_TOM_GUN_SELLER:
         selectCards(cardWidget, 3);
         break;
     case CHARACTER_BUCKSHOT_ROBERTS:
@@ -413,6 +414,17 @@ void GameActionManager::useAbilityWithCards()
              mp_game->serverConnection()->useAbility(cards, id);
              break;
          }
+         case CHARACTER_TOM_GUN_SELLER:
+         {
+             CardWidget* card = m_cardSelection.at(0); 
+             cards.append(card->cardData().id);
+             CardWidget* card2 = m_cardSelection.at(1); 
+             cards.append(card2->cardData().id);
+             CardWidget* card3 = m_cardSelection.at(2); 
+             int id = card3->ownerId();
+             mp_game->serverConnection()->useAbility(cards, id);
+             break;
+        }
          default: {
              mp_game->serverConnection()->useAbility(cards);
          }

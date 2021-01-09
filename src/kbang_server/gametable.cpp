@@ -79,6 +79,8 @@ PlayingCard* GameTable::playerDrawDynamiteFromGraveyard(Player* player)
 
 void GameTable::playerDiscardCard(PlayingCard* card)
 {
+    //It sends a sign to Freddy Street-Sweeper, so he can use his ability
+    //It can bee that he needs a new GAMEACTION
     Q_ASSERT(!card->isVirtual());
     if (card == 0) return;
     Player*     owner  = card->owner();

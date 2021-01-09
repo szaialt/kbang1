@@ -83,6 +83,7 @@ public:
     inline void             setAct(bool b) { m_act = b; }    
 
     bool isWeapon();
+    bool hasBangSymbol();
     CardData cardData() const; 
 
     virtual void play();

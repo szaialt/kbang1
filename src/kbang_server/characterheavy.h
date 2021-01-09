@@ -12,9 +12,7 @@ Q_OBJECT
 public:
     CharacterHeavy(QObject* parent);
     virtual int maxLifePoints() const;
-    virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);
-protected:
-    bool hasBangSymbol(PlayingCard* card);
+    virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);    
     
 };
 

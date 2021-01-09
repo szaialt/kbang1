@@ -18,7 +18,7 @@ void CharacterHeavy::CharacterHeavy::useAbility(QList<PlayingCard*> cards, Playe
     else {
         PlayingCard* targetCard = cards.at(0);
         if (targetCard->owner() != mp_player) throw BadCardException();
-        if (!hasBangSymbol(targetCard)) throw BadCardException();
+        if (!targetCard->hasBangSymbol()) throw BadCardException();
         if ((targetPlayer == mp_player->game()->nextPlayer(mp_player)) ||
             (targetPlayer == mp_player->game()->previousPlayer(mp_player))
         ){
@@ -29,15 +29,3 @@ void CharacterHeavy::CharacterHeavy::useAbility(QList<PlayingCard*> cards, Playe
     }
 }
 
-bool CharacterHeavy::hasBangSymbol(PlayingCard* card){
-    switch(card->type()) {
-        case CARD_BANG:
-        case CARD_DOUBLE_BANG:
-        case CARD_DIRECT_HIT:
-            return true;
-        default:
-            return false;
-            
-    }
-    return false;
-}

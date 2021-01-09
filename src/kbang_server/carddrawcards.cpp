@@ -43,6 +43,10 @@ CardDrawCards::CardDrawCards(Game* game, int id, CardDrawCards::Type type, CardS
         setType(CARD_BROWN_LOAN);
         m_cardCount = 2;
         break;
+     case GarbageTruck:
+        setType(CARD_GARBAGE_TRUCK);
+        m_cardCount = 1;
+        break;   
     m_used = false;
     }
 }
@@ -55,6 +59,7 @@ CardDrawCards::~CardDrawCards()
 CardColor CardDrawCards::color() const {
     if (type() == CARD_ADRENALINE) return COLOR_POSITIVE_GREY;
     if (type() == CARD_GOLD_WATCH) return COLOR_BLUE;
+    if (type() == CARD_GARBAGE_TRUCK) return COLOR_BLUE;
     return COLOR_BROWN;
 }
 
@@ -112,6 +117,18 @@ void CardDrawCards::play(PlayingCard* targetCard){
       if (targetCard->pocket() != POCKET_GRAVEYARD)
         gameTable()->playerDiscardCard(targetCard);
     }
+    else if (type() == CARD_GARBAGE_TRUCK){
+        if (targetCard->owner() != owner())
+            throw BadUsageException();  
+        if (targetCard->pocket() != POCKET_HAND)
+            throw BadUsageException();
+        Player* player = owner();
+        gameCycle()->setCardEffect(1);
+        gameTable()->playerDrawFromGraveyard(player);
+        gameCycle()->setCardEffect(0); 
+        if (targetCard->pocket() != POCKET_GRAVEYARD)
+          gameTable()->playerDiscardCard(targetCard);
+      }
     else throw BadUsageException();
 }
 

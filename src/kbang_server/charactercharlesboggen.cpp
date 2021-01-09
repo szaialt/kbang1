@@ -57,11 +57,9 @@ void CharacterCharlesBoggen::respondCard(ReactionHandler* reactionHandler, Playi
                     
                }
                 catch (BadUsageException ex){
-                    qDebug() << "Ms Abigail using her ability. 3";
                     ex.debug();
                 }
                 catch (BadPlayerException ex){
-                    qDebug() << "Ms Abigail using her ability. 4";
                     ex.debug();
                 }
                 
