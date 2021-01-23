@@ -44,6 +44,7 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *mp_labelPlayerName;
+    client::CardListWidget *mp_bank;
     QSpacerItem *verticalSpacer;
     client::CardListWidget *mp_table;
     client::CardListWidget *mp_hand;
@@ -52,7 +53,7 @@ public:
     {
         if (LocalPlayerWidget->objectName().isEmpty())
             LocalPlayerWidget->setObjectName(QStringLiteral("LocalPlayerWidget"));
-        LocalPlayerWidget->resize(354, 209);
+        LocalPlayerWidget->resize(371, 287);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -195,6 +196,14 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout);
+
+        mp_bank = new client::CardListWidget(LocalPlayerWidget);
+        mp_bank->setObjectName(QStringLiteral("mp_bank"));
+        sizePolicy2.setHeightForWidth(mp_bank->sizePolicy().hasHeightForWidth());
+        mp_bank->setSizePolicy(sizePolicy2);
+        mp_bank->setMinimumSize(QSize(0, 75));
+
+        verticalLayout->addWidget(mp_bank);
 
         verticalSpacer = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 

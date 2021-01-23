@@ -95,6 +95,7 @@ public:
     inline int                  handSize()         const { return m_hand.size();       }
     inline CardList             hand()             const { return m_hand;              }
     inline CardList             table()            const { return m_table;             }
+    inline CardList             bank()            const { return m_bank;             }
     inline CardList             selection()        const { return m_selection;         }
     inline PlayerRole           role()             const { return m_role;              }
     inline CharacterBase*       character()        const { return mp_character;        }
@@ -196,6 +197,7 @@ public:
     void setWinner(bool isWinner);
     void appendCardToHand(PlayingCard* card);
     void appendCardToTable(PlayingCard* card);
+    void appendCardToBank(PlayingCard* card);
     void appendCardToSelection(PlayingCard* card);
 
     void setPassword(const QString&);
@@ -275,6 +277,7 @@ private:
     int                       m_maxLifePoints;
     QList<PlayingCard*>       m_hand;
     QList<PlayingCard*>       m_table;
+    QList<PlayingCard*>       m_bank;
     QList<PlayingCard*>       m_selection;
     QString                   m_name;
     QString                   m_password;

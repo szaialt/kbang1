@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -123,6 +123,17 @@ void CardMovementEvent::setCardAndPocket()
         }
         mp_card = srcPlayer->table()->take(m_cardMovementData.card.id);
         break;
+    case POCKET_BANK:
+        if (!srcPlayer) {
+            qCritical("Invalid card movement from POCKET_BANK (unknown player).");
+            break;
+        }
+        if (m_cardMovementData.card.id == 0) {
+            qCritical("Invalid card movement from POCKET_BANK (unknown card).");
+            break;
+        }
+        mp_card = srcPlayer->bank()->take(m_cardMovementData.card.id);
+        break;
     case POCKET_SELECTION:
         mp_card = mp_game->selection()->take(m_cardMovementData.card.id);
         break;
@@ -143,6 +154,9 @@ void CardMovementEvent::setCardAndPocket()
         break;
     case POCKET_TABLE:
         mp_destPocket = destPlayer != 0 ? destPlayer->table() : 0;
+        break;
+    case POCKET_BANK:
+        mp_destPocket = destPlayer != 0 ? destPlayer->bank() : 0;
         break;
     case POCKET_SELECTION:
         mp_destPocket = mp_game->selection();

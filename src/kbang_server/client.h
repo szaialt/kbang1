@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -130,6 +130,8 @@ public: /* The GameEventListener interface */
     virtual void onPlayerStealCard(PublicPlayerView&, PublicPlayerView& targetPlayer, PocketType pocketFrom, const PlayingCard* card);
     virtual void onCancelCard(PocketType pocketFrom, const PlayingCard* card, PublicPlayerView* targetPlayer, PublicPlayerView* p);
     virtual void onCancelCard(PocketType pocketFrom, const PlayingCard* card);
+    virtual void onPlayerDrawFromBank(PublicPlayerView& player, PlayingCard* card, bool revealCards);
+    virtual void onPlayerPlayCardOnBank(PublicPlayerView& player, const PlayingCard* card);
     virtual void onGameContextChange(const GameContextData&);
     virtual void onLifePointsChange(PublicPlayerView&, int lifePoints, PublicPlayerView* causedBy);
     virtual void onDeckRegenerate();

@@ -221,6 +221,20 @@ void GameLogger::onCancelCard(PocketType, const PlayingCard* c)
     m_logFile << msg.toStdString() << endl;
 }
 
+void GameLogger::onPlayerDrawFromBank(PublicPlayerView& p, PlayingCard* card, bool revealCards){
+    QString msg = QString("onPlayerDrawFromBank(player=%1, card=%2)").
+                  arg(p.id()).
+                  arg(cardToString(card));
+    m_logFile << msg.toStdString() << endl;
+}
+    
+void GameLogger::onPlayerPlayCardOnBank(PublicPlayerView& p, const PlayingCard* card){
+    QString msg = QString("onPlayerPlayCardOnTable(player=%1, card=%2)").
+                  arg(p.id()).
+                  arg(cardToString(card));
+    m_logFile << msg.toStdString() << endl;
+}
+
 void GameLogger::onGameContextChange(const GameContextData&)
 {
     m_logFile << "onGameContextChange()" << endl;

@@ -109,6 +109,10 @@ public:
 
     void cancelSelection();
 
+    PlayingCard* playerDrawFromBank(Player*);
+
+    void playerPlayCardOnBank(PlayingCard*);
+    
     bool isEmptyGraveyard() const;
 
     PlayingCard* graveyardTop() const;

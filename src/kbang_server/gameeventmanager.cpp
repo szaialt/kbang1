@@ -288,6 +288,25 @@ void GameEventManager::onCancelCard(Player* targetPlayer, PocketType pocketFrom,
     }
 }
 
+void GameEventManager::onPlayerDrawFromBank(Player* p, PlayingCard* card, bool revealCards)
+{
+    foreach(Handler* h, m_handlers) {
+        if (h->player == p || revealCards || h->isSupervisor){
+            h->handler->onPlayerDrawFromBank(p->publicView(), card, revealCards);
+        }
+        else {
+            h->handler->onPlayerDrawFromBank(p->publicView(), card, revealCards);
+        }
+    }
+}
+
+void GameEventManager::onPlayerPlayCardOnBank(Player* p, PlayingCard* card)
+{
+    foreach(Handler* h, m_handlers) {
+        h->handler->onPlayerPlayCardOnBank(p->publicView(), card);
+    }
+}
+
 void GameEventManager::onGameContextChange(const GameContextData& gameContextData)
 {
     foreach(Handler* h, m_handlers) {

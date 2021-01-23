@@ -36,12 +36,13 @@ public:
     QSpacerItem *verticalSpacer_2;
     client::CardListWidget *mp_hand;
     client::CardListWidget *mp_table;
+    client::CardListWidget *mp_bank;
 
     void setupUi(QWidget *OpponentWidget)
     {
         if (OpponentWidget->objectName().isEmpty())
             OpponentWidget->setObjectName(QStringLiteral("OpponentWidget"));
-        OpponentWidget->resize(211, 192);
+        OpponentWidget->resize(224, 269);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -49,15 +50,13 @@ public:
         OpponentWidget->setSizePolicy(sizePolicy);
         gridLayout = new QGridLayout(OpponentWidget);
         gridLayout->setSpacing(0);
-        gridLayout->setContentsMargins(4, 4, 4, 4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetFixedSize);
+        gridLayout->setContentsMargins(4, 4, 4, 4);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(2);
-#ifndef Q_OS_MAC
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-#endif
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(2);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
@@ -126,6 +125,12 @@ public:
         sizePolicy2.setHeightForWidth(mp_table->sizePolicy().hasHeightForWidth());
         mp_table->setSizePolicy(sizePolicy2);
         mp_table->setMinimumSize(QSize(0, 75));
+        mp_bank = new client::CardListWidget(mp_table);
+        mp_bank->setObjectName(QStringLiteral("mp_bank"));
+        mp_bank->setGeometry(QRect(0, 0, 161, 75));
+        sizePolicy1.setHeightForWidth(mp_bank->sizePolicy().hasHeightForWidth());
+        mp_bank->setSizePolicy(sizePolicy1);
+        mp_bank->setMinimumSize(QSize(0, 75));
 
         verticalLayout->addWidget(mp_table);
 

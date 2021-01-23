@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -50,6 +50,9 @@ OpponentWidget::OpponentWidget(QWidget *parent):
     mp_table->setPocketType(POCKET_TABLE);
     mp_table->setOwnerId(id());
 
+    mp_bank->setCardSize(CardWidget::SIZE_SMALL);
+    mp_bank->setPocketType(POCKET_BANK);
+    mp_bank->setOwnerId(id());
     clear();
 }
 

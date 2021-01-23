@@ -262,6 +262,11 @@ void Player::appendCardToHand(PlayingCard * card)
     //qDebug() << "Handsize: " << handSize();
 }
 
+void Player::appendCardToBank(PlayingCard* card)
+{
+    m_bank.append(card);
+}
+
 void Player::appendCardToTable(PlayingCard* card)
 {
     m_table.append(card);

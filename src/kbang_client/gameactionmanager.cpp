@@ -276,7 +276,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_JULIE_BULETTE:
     case CHARACTER_FELIPE_DELGADO:
     case CHARACTER_JACK_BROWN:
-    
+    case CHARACTER_HANK_THE_BANK:
          selectCards(cardWidget, 1);
          break;
     case CHARACTER_SID_KETCHUM:

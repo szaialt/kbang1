@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -82,6 +82,7 @@ public:
 
     virtual CardListWidget* hand() = 0;
     virtual CardListWidget* table() = 0;
+    virtual CardListWidget* bank() = 0;
     virtual CharacterWidget* characterWidget() = 0;
     virtual QLabel* avatarLabel() = 0;
     virtual QLabel* playerNameLabel() = 0;

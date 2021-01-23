@@ -1,3 +1,4 @@
+// POCKET_BANK
 #ifndef GAMELOGGER_H
 #define GAMELOGGER_H
 
@@ -45,6 +46,10 @@ public:
     virtual void onPlayerStealCard(PublicPlayerView&, PublicPlayerView&, PocketType, const PlayingCard*);
     virtual void onCancelCard(PocketType, const PlayingCard*, PublicPlayerView*,  PublicPlayerView*);
     virtual void onCancelCard(PocketType, const PlayingCard*);
+    virtual void onPlayerDrawFromBank(PublicPlayerView&, PlayingCard* card, bool revealCards);
+    
+    virtual void onPlayerPlayCardOnBank(PublicPlayerView&, const PlayingCard* card);
+    
     virtual void onGameContextChange(const GameContextData&);
     virtual void onLifePointsChange(PublicPlayerView&, int, PublicPlayerView*);
     virtual void onDeckRegenerate();

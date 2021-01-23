@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -1076,6 +1076,49 @@ void Client::onCancelCard(PocketType pocketFrom, const PlayingCard* card){
     x.playerTo       = 0;
     x.card           = card->cardData();
     mp_parser->eventCardMovement(x);
+}
+
+void Client::onPlayerDrawFromBank(PublicPlayerView& player, PlayingCard* card, bool revealCards)
+{
+    if (mp_parser == 0) return;
+    Q_UNUSED(revealCards);
+    GameMessage message = GameMessage();
+    message.type = GAMEMESSAGE_PLAYERDRAWFROMDECK;
+    message.player = player.id();
+    message.cards.append(card->cardData()); //segfault
+   
+    mp_parser->eventGameMessage(message);
+    CardMovementData x;
+    x.pocketTypeFrom = POCKET_BANK;
+    x.pocketTypeTo   = POCKET_HAND;
+    x.playerTo       = player.id();
+    if (card != 0){
+        x.card = card->cardData();
+    }
+    mp_parser->eventCardMovement(x);
+    getPlayer(playerId())->player()->game()->gameEventManager().onPlayerUpdated(getPlayer(playerId())->player());
+
+}
+
+void Client::onPlayerPlayCardOnBank(PublicPlayerView& player, const PlayingCard* card)
+{
+    if (mp_parser == 0) return;
+
+    GameMessage message;
+    message.type = GAMEMESSAGE_PLAYERPLAYCARD;
+    message.player = player.id();
+    message.card = card->cardData();
+    mp_parser->eventGameMessage(message);
+
+    CardMovementData x;
+    x.pocketTypeFrom = POCKET_HAND;
+    x.pocketTypeTo   = POCKET_BANK;
+    x.playerFrom     = player.id();
+    x.playerTo       = player.id();
+    x.card           = card->cardData();
+    mp_parser->eventCardMovement(x);
+    getPlayer(playerId())->player()->game()->gameEventManager().onPlayerUpdated(getPlayer(playerId())->player());
+
 }
 
 void Client::onGameContextChange(const GameContextData& gameContextData)

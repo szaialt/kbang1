@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -118,6 +118,10 @@ public:
     virtual void onCancelCard(PocketType pocketFrom, const PlayingCard* card, PublicPlayerView* targetPlayer, PublicPlayerView* causedBy) = 0;
 
     virtual void onCancelCard(PocketType, const PlayingCard*) = 0;
+    
+    virtual void onPlayerDrawFromBank(PublicPlayerView&, PlayingCard* card, bool revealCards) = 0;
+    
+    virtual void onPlayerPlayCardOnBank(PublicPlayerView&, const PlayingCard* card) = 0;
     
     virtual void onGameContextChange(const GameContextData&) = 0;
 

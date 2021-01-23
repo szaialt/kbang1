@@ -94,6 +94,9 @@ void CardTaker::play(Player* targetPlayer)
         throw BadTargetPlayerException();
         //qDebug() << "CardTaker play(Player* targetPlayer) 10";
       }
+      if (targetCard->pocket() == POCKET_BANK){
+        throw BadCardException();
+     }
       //qDebug() << "CardTaker play(Player* targetPlayer) 11";
       
       //qDebug() << "CardTaker play(Player* targetPlayer) 12";
@@ -141,6 +144,7 @@ void CardTaker::play(Player* targetPlayer)
         setPocket(POCKET_TABLE);
         setOwner(t_owner);          
       }
+
     }
     
 }
@@ -151,6 +155,9 @@ void CardTaker::play(PlayingCard* targetCard)
     if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
         throw BadUsageException();
     }
+    if (targetCard->pocket() == POCKET_BANK){
+        throw BadCardException();
+     }
     Player* o = owner();
     Player* targetPlayer = targetCard->owner();
     if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
@@ -211,6 +218,9 @@ void CardTaker::play(PlayingCard* targetCard)
 void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){           
     if ( ((type() == CARD_PLUNDER) && (pocket() == POCKET_TABLE))
        || ((type() == CARD_BAR_FIGHT) && (pocket() == POCKET_TABLE)) ) {
+        if (targetCard->pocket() == POCKET_BANK){
+            throw BadCardException();
+        }
         if (targetCard->owner() != owner()) throw BadCardException();
         if (targetPlayer->hand().isEmpty()) throw BadTargetPlayerException();
         Player* o = owner();
@@ -240,6 +250,12 @@ void CardTaker::play(QList<PlayingCard*> targetCards){
     if (targetCards.size() < 2)  throw BadCardException();
     Player* targetPlayer1 = targetCards.at(0)->owner();
     Player* targetPlayer2 = targetCards.at(1)->owner();
+    if (targetCards.at(0)->pocket() == POCKET_BANK){
+        throw BadCardException();
+     }
+     if (targetCards.at(1)->pocket() == POCKET_BANK){
+        throw BadCardException();
+     }
     if (m_type == DoubleCatBalou){
         if (targetPlayer1->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();
         if (targetPlayer2->characterType() == CHARACTER_JAMES_STONEHEART) throw BadUsageException();

@@ -50,7 +50,8 @@ enum PocketType {
     POCKET_GRAVEYARD,
     POCKET_HAND,
     POCKET_TABLE,
-    POCKET_SELECTION
+    POCKET_SELECTION,
+    POCKET_BANK
 };
 
 enum SuitColor {

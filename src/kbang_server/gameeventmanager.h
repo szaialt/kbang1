@@ -77,6 +77,10 @@ public:
 
     void onCancelCard(Player* targetPlayer, PocketType pocketFrom, PlayingCard*, Player*);
 
+    void onPlayerDrawFromBank(Player* player, PlayingCard* card, bool revealCards);
+    
+    void onPlayerPlayCardOnBank(Player* p, PlayingCard* card);
+    
     void onGameContextChange(const GameContextData&);
 
     void onLifePointsChange(Player*, int lifePoints, Player* causedBy);

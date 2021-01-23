@@ -442,6 +442,37 @@ void GameTable::cancelSelection()
     }
 }
 
+PlayingCard* GameTable::playerDrawFromBank(Player* player){
+    PlayingCard* drawedCard;
+    if (player->bank().isEmpty()) throw BadUsageException();
+    PlayingCard* card = player->bank().takeFirst();
+    Q_ASSERT(!card->isVirtual());
+    player->appendCardToHand(card);
+    card->setOwner(player);
+    card->setPocket(POCKET_HAND);    
+    mp_game->gameEventManager().onPlayerDrawFromBank(player, card, false);
+    mp_game->gameEventManager().onPlayerUpdated(player);
+    return card;
+}
+
+void GameTable::playerPlayCardOnBank(PlayingCard* card){
+if (card->isVirtual())
+        card = qobject_cast<PlayingCard*>(card->master());
+    Q_ASSERT(card != 0);
+    Q_ASSERT(card->pocket() == POCKET_HAND);
+    Player* owner = card->owner();
+
+    owner->removeCardFromHand(card);
+
+    owner->appendCardToBank(card);
+    card->setOwner(owner);
+    card->setPocket(POCKET_BANK);
+
+    mp_game->gameEventManager().onPlayerPlayCardOnBank(owner, card);
+    owner->checkEmptyHand();
+    mp_game->gameEventManager().onPlayerUpdated(owner);
+}
+
 bool GameTable::isEmptyGraveyard() const
 {
     return m_graveyard.isEmpty();

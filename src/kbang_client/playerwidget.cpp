@@ -1,4 +1,4 @@
-/***************************************************************************
+/*************************************************************************** POCKET_BANK
  *   Copyright (C) 2008 by MacJariel                                       *
  *   echo "badmailet@gbalt.dob" | tr "edibmlt" "ecrmjil"                   *
  *                                                                         *
@@ -80,7 +80,8 @@ void PlayerWidget::clear()
     characterWidget()->setCharacter(CHARACTER_UNKNOWN);
     hand()->clear();
     table()->clear();
-
+    bank()->clear();
+    
     clearWidgets();
 }
 

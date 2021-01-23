@@ -183,6 +183,7 @@ HEADERS += \
     charactercolinbarrel.h \
     charactercrazyhorse.h \
     characterdynamitejoe.h \
+    characterhankthebank.h \
     characterjamesstoneheart.h \
     characterjenniferbigheart.h \
     characterjeremiahamish.h \
@@ -371,6 +372,7 @@ SOURCES += \
     charactercolinbarrel.cpp \
     charactercrazyhorse.cpp \
     characterdynamitejoe.cpp \
+    characterhankthebank.cpp \
     characterjamesstoneheart.cpp \
     characterjenniferbigheart.cpp \
     characterjeremiahamish.cpp \

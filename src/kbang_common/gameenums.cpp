@@ -924,6 +924,7 @@ PocketType stringToPocketType(const QString& s)
     if (s == "hand")      return POCKET_HAND;
     if (s == "table")     return POCKET_TABLE;
     if (s == "selection") return POCKET_SELECTION;
+    if (s == "bank") return POCKET_BANK;
     return POCKET_INVALID;
 }
 
@@ -934,6 +935,7 @@ QString pocketTypeToString(const PocketType& p)
     if (p == POCKET_HAND)       return "hand";
     if (p == POCKET_TABLE)      return "table";
     if (p == POCKET_SELECTION)  return "selection";
+    if (p == POCKET_BANK)  return "bank";
     return "";
 }
 

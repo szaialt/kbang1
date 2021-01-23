@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>354</width>
-    <height>209</height>
+    <width>371</width>
+    <height>287</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -247,6 +247,22 @@ font: oblique 7pt &quot;DejaVu Sans&quot;;</string>
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="client::CardListWidget" name="mp_bank" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="verticalSpacer">
