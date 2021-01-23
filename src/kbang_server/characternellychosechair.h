@@ -10,9 +10,15 @@ class CharacterNellyChoseChair : public CharacterBase
 {
 Q_OBJECT
 public:
-    CharacterNellyChoseChair(QObject* parent);
+        enum Type {
+        NellyChoseChair,
+        Spy
+    };
+    CharacterNellyChoseChair(QObject* parent, Type);
     virtual void useAbility(Player* targetPlayer);
-
+    virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);
+private:
+    Type m_type;
     
 };
 

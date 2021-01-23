@@ -283,6 +283,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_ENGINEER:
     case CHARACTER_HEAVY:
     case CHARACTER_MEDIC:
+    case CHARACTER_SPY:
     case CHARACTER_DJANGO:
     case CHARACTER_JOHN_FORD:
     case CHARACTER_PAT_GARRETT:
@@ -383,16 +384,9 @@ void GameActionManager::useAbilityWithCards()
     foreach (CardWidget* card, m_cardSelection)
         cards.append(card->cardData().id);
      switch(mp_game->character()) {
-         case CHARACTER_SPY: {
-             CardWidget* card = m_cardSelection.at(0);   
-             int id = card->ownerId();
-             int cardId = card->cardData().id;
-             qDebug() << "Client: cardId" << cardId;
-             mp_game->serverConnection()->useAbility(id);
-             break;
-         }
          case CHARACTER_ENGINEER:
          case CHARACTER_MEDIC:
+         case CHARACTER_SPY:
          case CHARACTER_JOHN_FORD:
          case CHARACTER_PAT_GARRETT:
          case CHARACTER_VIENNA:

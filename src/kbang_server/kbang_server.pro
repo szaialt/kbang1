@@ -109,6 +109,7 @@ HEADERS += \
     characterengineer.h \
     characterheavy.h \
     charactermedic.h \
+    characterpyro.h \
     characterscout.h \
     charactersniper.h \
     charactersoldier.h \
@@ -298,6 +299,7 @@ SOURCES += \
     characterengineer.cpp \
     characterheavy.cpp \
     charactermedic.cpp \
+    characterpyro.cpp \
     characterscout.cpp \
     charactersniper.cpp \
     charactersoldier.cpp \
