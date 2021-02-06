@@ -168,6 +168,7 @@ void GameActionManager::onMainCardClicked(CardWidget* cardWidget)
         case CARD_DOUBLE_BANG:
         case CARD_TRIPLE_BANG:
         case CARD_QUAD_BANG:
+        case CARD_HAWKS:
         case CARD_DIRTY_JOB:
         case CARD_BLEEDING_INJURY:
         case CARD_INFLAMMATORY_BOTTLE:
@@ -285,6 +286,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_MEDIC:
     case CHARACTER_SPY:
     case CHARACTER_DJANGO:
+    case CHARACTER_HOWARD_HAWKS:
     case CHARACTER_JOHN_FORD:
     case CHARACTER_PAT_GARRETT:
     case CHARACTER_VIENNA:
@@ -387,6 +389,7 @@ void GameActionManager::useAbilityWithCards()
          case CHARACTER_ENGINEER:
          case CHARACTER_MEDIC:
          case CHARACTER_SPY:
+         case CHARACTER_HOWARD_HAWKS:
          case CHARACTER_JOHN_FORD:
          case CHARACTER_PAT_GARRETT:
          case CHARACTER_VIENNA:

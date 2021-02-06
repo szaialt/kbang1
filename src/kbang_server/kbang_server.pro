@@ -116,9 +116,11 @@ HEADERS += \
     charactercoronelmortimer.h \
     characterdjango.h \
     characteremma.h \
+    characterhowardhawks.h \
     characterjohnford.h \
     characterloco.h \
     charactersartana.h \
+    charactertucoelfeo.h \
     charactervienna.h \
     characterwyattearp.h \
     characterernestsaliven.h \
@@ -180,7 +182,6 @@ HEADERS += \
     characterbartbarber.h \
     characterbigfatjoe.h \
     characterburtlongcatcher.h \
-    characterbruceling.h \
     charactercolinbarrel.h \
     charactercrazyhorse.h \
     characterdynamitejoe.h \
@@ -306,9 +307,11 @@ SOURCES += \
     charactercoronelmortimer.cpp \
     characterdjango.cpp \
     characteremma.cpp \
+    characterhowardhawks.cpp \
     characterjohnford.cpp \
     characterloco.cpp \
     charactersartana.cpp \
+    charactertucoelfeo.cpp \
     charactervienna.cpp \
     characterwyattearp.cpp \
     characterernestsaliven.cpp \
@@ -370,7 +373,6 @@ SOURCES += \
     characterbartbarber.cpp \
     characterbigfatjoe.cpp \
     characterburtlongcatcher.cpp \
-    characterbruceling.cpp \
     charactercolinbarrel.cpp \
     charactercrazyhorse.cpp \
     characterdynamitejoe.cpp \

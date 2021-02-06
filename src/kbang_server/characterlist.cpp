@@ -27,10 +27,12 @@
 #include "charactercoronelmortimer.h" 
 #include "characterdjango.h" 
 #include "characteremma.h" 
+#include "characterhowardhawks.h"
 #include "characterjohnford.h" 
 #include "characterloco.h" 
 //#include "characterpatgarrett.h"
 #include "charactersartana.h"
+#include "charactertucoelfeo.h"
 #include "charactervienna.h"
 #include "characterwyattearp.h"
 
@@ -99,7 +101,6 @@
 #include "characterbartbarber.h"
 #include "characterbigfatjoe.h"
 #include "characterburtlongcatcher.h"
-#include "characterbruceling.h"
 #include "charactercolinbarrel.h"
 #include "charactercrazyhorse.h"
 #include "characterdynamitejoe.h"
@@ -202,6 +203,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterDjango(parent); 
     case CHARACTER_EMMA: 
         return new CharacterEmma(parent);
+    case CHARACTER_HOWARD_HAWKS: 
+        return new CharacterHowardHawks(parent);
     case CHARACTER_JOHN_FORD: 
         return new CharacterJohnFord(parent);
     case CHARACTER_LLANERO_SOLITARIO: 
@@ -214,6 +217,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterPropertyChange(parent, CharacterPropertyChange::RoosterCogburn);
     case CHARACTER_SARTANA: 
         return new CharacterSartana(parent);
+    case CHARACTER_TUCO_EL_FEO: 
+        return new CharacterTucoElFeo(parent); 
     case CHARACTER_VIEJO_SIKES:
         return new CharacterCassidyGringo(parent, CharacterCassidyGringo::ViejoSikes);
     case CHARACTER_VIENNA: 
@@ -352,8 +357,6 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterBigFatJoe(parent); 
     case CHARACTER_BURT_LONGCATCHER: 
         return new CharacterBurtLongcatcher(parent); 
-    case CHARACTER_BRUCE_LING: 
-        return new CharacterBruceLing(parent); 
     case CHARACTER_COLIN_BARREL: 
         return new CharacterColinBarrel(parent); 
     case CHARACTER_CRAZY_HORSE: 
@@ -439,152 +442,6 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_SOLDIER);
         sm_characterTypes.append(CHARACTER_SPY);
         sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
-        sm_characterTypes.append(CHARACTER_PYRO);
     }
     else {
         qDebug() << "No teamFortressCharactersFlag.";
@@ -594,17 +451,165 @@ void CharacterList::initCharacterTypes(Game* game)
         
         sm_characterTypes.append(CHARACTER_CORONEL_MORTIMER);
         sm_characterTypes.append(CHARACTER_EMMA);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
         sm_characterTypes.append(CHARACTER_JOHN_FORD);
         sm_characterTypes.append(CHARACTER_LLANERO_SOLITARIO);
         sm_characterTypes.append(CHARACTER_LOCO);
         sm_characterTypes.append(CHARACTER_REV_JONATHAN_RUDD);
         sm_characterTypes.append(CHARACTER_ROOSTER_COGBURN);
         sm_characterTypes.append(CHARACTER_SARTANA);
+        sm_characterTypes.append(CHARACTER_TUCO_EL_FEO);
         sm_characterTypes.append(CHARACTER_VIEJO_SIKES);
         sm_characterTypes.append(CHARACTER_VIENNA);
         sm_characterTypes.append(CHARACTER_WYATT_EARP);
 
         //sm_characterTypes.append(CHARACTER_DJANGO);
+
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
+        sm_characterTypes.append(CHARACTER_HOWARD_HAWKS);
 
     }
     else {
@@ -718,7 +723,6 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_BART_BARBER);
         sm_characterTypes.append(CHARACTER_BIG_FAT_JOE);
         sm_characterTypes.append(CHARACTER_BURT_LONGCATCHER);
-        sm_characterTypes.append(CHARACTER_BRUCE_LING);
         sm_characterTypes.append(CHARACTER_COLIN_BARREL);
         sm_characterTypes.append(CHARACTER_CRAZY_HORSE);
         sm_characterTypes.append(CHARACTER_DYNAMITE_JOE);

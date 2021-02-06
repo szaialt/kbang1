@@ -129,6 +129,7 @@ enum PlayingCardType {
     CARD_PEACE_PIPE,
     CARD_SHOTGUN,
     CARD_SUN_GLARE,
+    CARD_HAWKS,
     //Martin City
     CARD_ELIXIR,
     CARD_EXPLOSION,

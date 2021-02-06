@@ -547,7 +547,7 @@ PlayingCardType stringToPlayingCardType(const QString& s)
      if (s == "sun_glare")          return CARD_SUN_GLARE;
      if (s == "sun glare")          return CARD_SUN_GLARE;
      if (s == "sun-glare")          return CARD_SUN_GLARE;
-     
+     if (s == "hawks")            return CARD_HAWKS;
      //Martin City
     if (s == "elixir")              return CARD_ELIXIR;
     if (s == "explosion")           return CARD_EXPLOSION;
@@ -755,7 +755,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_PEACE_PIPE:      return "peace pipe";
         case CARD_SHOTGUN:         return "shotgun";
         case CARD_SUN_GLARE:       return "sun glare";
-    
+        case CARD_HAWKS:              return "hawks";
         //Martin City
         case CARD_ELIXIR:          return "elixir";
         case CARD_EXPLOSION:       return "explosion";

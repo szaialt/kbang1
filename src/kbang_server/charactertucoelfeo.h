@@ -1,16 +1,16 @@
-#ifndef CHARACTERBRUCELING_H
-#define CHARACTERBRUCELING_H
+#ifndef CHARACTERTUCOELFEO_H
+#define CHARACTERTUCOELFEO_H
 
 #include "characterbase.h"
 #include "gametable.h"
 #include "player.h"
 #include "reactionhandler.h"
 
-class CharacterBruceLing : public CharacterBase
+class CharacterTucoElFeo : public CharacterBase
 {
 Q_OBJECT
 public:
-    CharacterBruceLing(QObject* parent);
+    CharacterTucoElFeo(QObject* parent);
     int items();
     void resetAbility();
     void itemToken();
@@ -19,4 +19,4 @@ protected:
     int m_items;
 };
 
-#endif // CHARACTERBRUCELING_H
+#endif // CHARACTERTUCOELFEO_H

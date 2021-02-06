@@ -4,7 +4,7 @@
 #include "game.h"
 #include "gameexceptions.h"
 #include "characterchosingthomas.h"
-#include "characterbruceling.h"
+#include "charactertucoelfeo.h"
 
 CardGeneralStore::CardGeneralStore(Game* game, int id, Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_GENERALSTORE, cardSuit, cardRank),
@@ -38,7 +38,7 @@ void CardGeneralStore::play()
         Player* player = owner();
         foreach (player, game()->playerList()){
             if (player->characterType() == CHARACTER_BRUCE_LING){
-              CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(player->character());
+              CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(player->character());
               bruce->resetAbility();
             }
         }
@@ -84,7 +84,7 @@ void CardGeneralStore::requestNext()
         mp_currentPlayer = mp_firstPlayer;
     } else {
          if  ((type() == CARD_GENERALSTORE) && (mp_currentPlayer->characterType() == CHARACTER_BRUCE_LING)){
-           CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(mp_currentPlayer->character());
+           CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
            if (bruce->items() == bruce->itemNumber){
               bruce->itemToken();
           }
@@ -114,9 +114,9 @@ void CardGeneralStore::requestNext()
 }
 
 bool CardGeneralStore::isLastCard(){
-    if (mp_currentPlayer->characterType() == CHARACTER_BRUCE_LING){
+    if (mp_currentPlayer->characterType() == CHARACTER_TUCO_EL_FEO){
         if (m_remained == 0) return true;
-        CharacterBruceLing* bruce =  qobject_cast<CharacterBruceLing*>(mp_currentPlayer->character());
+        CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
         if (bruce->items() == 0){
             if ((m_remained == 1) && (mp_currentPlayer == mp_firstPlayer)) {return true;}
         }

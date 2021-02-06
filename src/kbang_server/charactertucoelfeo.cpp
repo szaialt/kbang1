@@ -1,4 +1,4 @@
-#include "characterbruceling.h"
+#include "charactertucoelfeo.h"
 #include "playingcard.h"
 #include "reactioncard.h"
 #include "cardteamfortressbang.h"
@@ -6,21 +6,21 @@
 #include "weaponcard.h"
 #include <iostream>
 
-CharacterBruceLing::CharacterBruceLing(QObject* parent):
+CharacterTucoElFeo::CharacterTucoElFeo(QObject* parent):
     CharacterBase(parent, CHARACTER_UNKNOWN){
-            setCharacterType(CHARACTER_BRUCE_LING);
+            setCharacterType(CHARACTER_TUCO_EL_FEO);
             m_items = itemNumber;
         
 }
 
-int CharacterBruceLing::items(){
+int CharacterTucoElFeo::items(){
     return m_items;
 }
 
-void CharacterBruceLing::resetAbility(){
+void CharacterTucoElFeo::resetAbility(){
     m_items = itemNumber;
 }
 
-void CharacterBruceLing::itemToken(){
+void CharacterTucoElFeo::itemToken(){
     m_items = m_items - 1;
 }

@@ -10,6 +10,8 @@
 #include "cardpersuasion.h"
 #include "characterbase.h"
 #include "characterdjango.h"
+#include "characterhowardhawks.h"
+#include "charactertucoelfeo.h"
 #include "charactervienna.h"
 #include "characterernestsaliven.h"
 #include "characterernestsaliven2.h"
@@ -29,7 +31,6 @@
 #include "characterrichardgatling.h"
 #include "charactertedrevenge.h"
 #include "characterphilthinwire.h"
-#include "characterbruceling.h"
 
 #include "cardweakness.h"
 #include "carddrawcards.h"
@@ -738,6 +739,10 @@ void GameCycle::resetAbility(Player* player){
     if (player->characterType() == CHARACTER_DJANGO){
         CharacterDjango* dj =  qobject_cast<CharacterDjango*>(player->character());
         dj->resetAbility();
+    }
+    if (player->characterType() == CHARACTER_HOWARD_HAWKS){
+        CharacterHowardHawks* hawks =  qobject_cast<CharacterHowardHawks*>(player->character());
+        hawks->resetAbility();
     }
     else if (player->characterType() == CHARACTER_VIENNA){
         CharacterVienna* vienna =  qobject_cast<CharacterVienna*>(player->character());

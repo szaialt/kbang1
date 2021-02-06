@@ -42,6 +42,7 @@ public:
         Deflection,
         TripleBang,
         QuadBang,
+        Hawks,
         IndianBang,
         Undefensable,
         Stunning,

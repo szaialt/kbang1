@@ -57,6 +57,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case QuadBang:
         setType(CARD_QUAD_BANG);
         break;
+    case Hawks:
+        setType(CARD_HAWKS);
+        break;
     case IndianBang:
         setType(CARD_INDIAN_BANG);
         break;
@@ -161,7 +164,7 @@ void CardBang::play(Player *targetPlayer)
             assertOnTable();
         }
         /* one-bang-per-turn check */
-        if ((!owner()->canPlayBang())){
+        if ((type() != CARD_HAWKS) && (!owner()->canPlayBang())){
             throw OneBangPerTurnException();
         }
     
@@ -180,6 +183,11 @@ void CardBang::play(Player *targetPlayer)
         if (type() == CARD_DEFLECTION){
             int deflectionDistance = 1;
             if (game()->getDistance(owner(), targetPlayer) > deflectionDistance)
+                throw PlayerOutOfRangeException();
+        }
+        if (type() == CARD_HAWKS){
+            int hawksDistance = 1;
+            if (game()->getDistance(owner(), targetPlayer) > hawksDistance)
                 throw PlayerOutOfRangeException();
         }
         else if (type() == CARD_HATCHET){
