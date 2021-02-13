@@ -2,6 +2,8 @@
 #include "player.h"
 #include "gamecycle.h"
 #include "cardjail.h"
+#include "gameeventmanager.h"
+#include "gametable.h"
 
 CharacterPatGarrett::CharacterPatGarrett(QObject* parent):
         CharacterBase(parent, CHARACTER_PAT_GARRETT)
@@ -17,10 +19,19 @@ void CharacterPatGarrett::useAbility(QList<PlayingCard*> cards, Player* targetPl
     else {
         PlayingCard* targetCard = cards.at(0);
         if (targetCard->isWeapon()){
+            
+            gameTable().playerDiscardCard(targetCard);
+            
             CardJail* jail = new CardJail(mp_player->game(), 0, CardJail::Jail, targetCard->suit(), targetCard->rank(), 8);
-            jail->setVirtual(targetCard);
-            jail->play(targetPlayer);
-            m_canUseAbility = false;
+            targetPlayer->appendCardToTable(jail);
+            jail->setOwner(targetPlayer);
+            jail->setPocket(POCKET_TABLE);
+            jail->registerPlayer(targetPlayer);
+            
+            mp_player->game()->gameEventManager().onPlayerPlayCardOnTable(mp_player, jail, targetPlayer);
+            mp_player->checkEmptyHand();
+            mp_player->game()->gameEventManager().onPlayerUpdated(mp_player);
+
             notifyAbilityUse();
         }
         else throw BadUsageException();
