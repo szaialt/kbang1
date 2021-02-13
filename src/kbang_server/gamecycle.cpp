@@ -11,6 +11,7 @@
 #include "characterbase.h"
 #include "characterdjango.h"
 #include "characterhowardhawks.h"
+#include "characterpatgarret.h"
 #include "charactertucoelfeo.h"
 #include "charactervienna.h"
 #include "characterernestsaliven.h"
@@ -740,9 +741,13 @@ void GameCycle::resetAbility(Player* player){
         CharacterDjango* dj =  qobject_cast<CharacterDjango*>(player->character());
         dj->resetAbility();
     }
-    if (player->characterType() == CHARACTER_HOWARD_HAWKS){
+    else if (player->characterType() == CHARACTER_HOWARD_HAWKS){
         CharacterHowardHawks* hawks =  qobject_cast<CharacterHowardHawks*>(player->character());
         hawks->resetAbility();
+    }
+    else if (player->characterType() == CHARACTER_PAT_GARRETT){
+        CharacterPatGarrett* pat =  qobject_cast<CharacterPatGarrett*>(player->character());
+        pat->resetAbility();
     }
     else if (player->characterType() == CHARACTER_VIENNA){
         CharacterVienna* vienna =  qobject_cast<CharacterVienna*>(player->character());

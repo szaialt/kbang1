@@ -119,6 +119,7 @@ HEADERS += \
     characterhowardhawks.h \
     characterjohnford.h \
     characterloco.h \
+    characterpatgarret.h \
     charactersartana.h \
     charactertucoelfeo.h \
     charactervienna.h \
@@ -310,6 +311,7 @@ SOURCES += \
     characterhowardhawks.cpp \
     characterjohnford.cpp \
     characterloco.cpp \
+    characterpatgarret.cpp \
     charactersartana.cpp \
     charactertucoelfeo.cpp \
     charactervienna.cpp \
