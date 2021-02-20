@@ -310,6 +310,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_PYRO:
+    case CHARACTER_PORTER_ROCKWALL:
     case CHARACTER_LIL_SURE_SHOT:
     case CHARACTER_QUEEN_ANNE:
     case CHARACTER_TOM_GUN_SELLER:
@@ -412,6 +413,7 @@ void GameActionManager::useAbilityWithCards()
              break;
          }
          case CHARACTER_TOM_GUN_SELLER:
+         case CHARACTER_PORTER_ROCKWALL:
          {
              CardWidget* card = m_cardSelection.at(0); 
              cards.append(card->cardData().id);

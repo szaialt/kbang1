@@ -52,6 +52,7 @@ public:
         Backfire,
         Extra,
         DoubleExtra,
+        Unlimited,
         NoHurtingBang,
         Revenge
     };

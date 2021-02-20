@@ -1,20 +1,19 @@
-#ifndef CHARACTERTURDFERGUSON_H
-#define CHARACTERTURDFERGUSON_H
+#ifndef CHARACTERPORTERROCKWALL_H
+#define CHARACTERPORTERROCKWALL_H
 
 #include "characterbase.h"
-#include "gametable.h"
-#include "player.h"
-#include "reactionhandler.h"
 
-class CharacterTurdFerguson : public CharacterBase
+class Player;
+
+class CharacterPorterRockwall : public CharacterBase
 {
 Q_OBJECT
 public:
-    CharacterTurdFerguson(QObject* parent);
-    virtual void respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard);
+    CharacterPorterRockwall(QObject *parent);
+    virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);
     void resetAbility();
 protected:
-    bool m_used;
+    PlayingCard* mp_bang;
 };
 
-#endif // CHARACTERTURDFERGUSON_H
+#endif // CHARACTERPORTERROCKWALL_H

@@ -150,6 +150,7 @@ HEADERS += \
     characterturdferguson.h \
     characterlilsureshot.h \
     charactercheckingroyal.h \
+    characterporterrockwall.h \
     characterqueenanne.h \
     characterjosebasset.h \
     characterannerogers.h \
@@ -342,6 +343,7 @@ SOURCES += \
     characterturdferguson.cpp \
     characterlilsureshot.cpp \
     charactercheckingroyal.cpp \
+    characterporterrockwall.cpp \
     characterqueenanne.cpp \
     characterjosebasset.cpp \
     characterannerogers.cpp \

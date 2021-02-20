@@ -84,6 +84,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case DoubleExtra:
        setType(CARD_DOUBLE_EXTRA_BANG);
        break;
+    case Unlimited:
+        setType(CARD_UNLIMITED_BANG);
+        break;
      case NoHurtingBang:
         setType(CARD_NO_HURTING_BANG);
         break;
@@ -142,7 +145,7 @@ void CardBang::play(Player *targetPlayer)
         shot(targetPlayer);
         return;
     }
-    else if ((type() == CARD_BACKFIRE) || (type() == CARD_REVENGE)) {
+    else if ((type() == CARD_BACKFIRE) || (type() == CARD_REVENGE) || (CARD_UNLIMITED_BANG)) {
         shot(targetPlayer);
         return;
     }
@@ -465,6 +468,7 @@ bool CardBang::oneTimeBang(){
         case CARD_DOUBLE_BANG:
         case CARD_TRIPLE_BANG:
         case CARD_QUAD_BANG:
+        case CARD_UNLIMITED_BANG:
         case CARD_INDIAN_BANG:
         case CARD_UNDEFENSABLE:
             return true;

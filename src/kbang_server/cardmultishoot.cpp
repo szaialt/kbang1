@@ -127,6 +127,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
     }
     switch(targetCard->type()) {
         case CARD_BANG:
+        case CARD_UNLIMITED_BANG:
              if ((type() != CARD_INDIANS) && (type() != CARD_MANN_VS_MACHINE) && (type() != CARD_WAR_PARTY))
                  break;
              gameTable()->playerRespondWithCard(targetCard);

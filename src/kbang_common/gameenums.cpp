@@ -679,6 +679,9 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "double-extra-bang")   return CARD_DOUBLE_EXTRA_BANG;
     if (s == "double extra bang")   return CARD_DOUBLE_EXTRA_BANG;
     if (s == "double_extra_bang")   return CARD_DOUBLE_EXTRA_BANG;
+    if (s == "unlimited-bang") return CARD_UNLIMITED_BANG;
+    if (s == "unlimited bang") return CARD_UNLIMITED_BANG;
+    if (s == "unlimited_bang") return CARD_UNLIMITED_BANG;
     if (s == "lela-bang")           return CARD_LELA_BANG;
     if (s == "lela bang")           return CARD_LELA_BANG;
     if (s == "lela_bang")           return CARD_LELA_BANG;
@@ -823,6 +826,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_BACKFIRE:        return "backfire";
         case CARD_EXTRA_BANG:      return "extra bang";
         case CARD_DOUBLE_EXTRA_BANG: return "double extra bang";
+        case CARD_UNLIMITED_BANG:   return "unlimited bang";
         case CARD_LELA_BANG:       return "lela bang";
         case CARD_LELA_GATLING:  return "lela gatling";
         // 20

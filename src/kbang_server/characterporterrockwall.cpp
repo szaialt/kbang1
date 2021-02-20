@@ -1,79 +1,31 @@
 #include "characterporterrockwall.h"
-#include "playingcard.h"
-#include "reactioncard.h"
-#include "cardteamfortressbang.h"
-#include "cardmissed.h"
-#include "weaponcard.h"
-#include <iostream>
+#include "gametable.h"
+#include "gamecycle.h"
+#include "player.h"
+#include "cardbang.h"
+#include "gameexceptions.h"
 
-CharacterTurdFerguson::CharacterTurdFerguson(QObject* parent):
-    CharacterBase(parent, CHARACTER_UNKNOWN){
-            setCharacterType(CHARACTER_TURD_FERGUSON);
-            m_used = false;
-        
+CharacterPorterRockwall::CharacterPorterRockwall(QObject *parent):
+        CharacterBase(parent, CHARACTER_PORTER_ROCKWALL)
+{
+    
 }
 
-void CharacterTurdFerguson::respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard){
-    if (reactionHandler == 0) return;
-    ReactionCard* reactionCard = static_cast<ReactionCard*>(reactionHandler);
-    if (reactionCard == 0){
-        CharacterBase::respondPass(reactionHandler);
-    }
-    else {
-            if (mp_player->game()->gameCycle().currentPlayer() != mp_player){
-                try {
-                    switch(reactionHandler->reactionType()) {
-                        case REACTION_GENERALSTORE:
-                        case REACTION_HEALING_BANG:
-                        case REACTION_LASTSAVE:
-                        case REACTION_LUCKYDUKE:
-                        case REACTION_KITCARLSON:
-                        case REACTION_DUEL:
-                        case REACTION_INDIANS:
-                        case REACTION_CUSTOMS:
-                        case REACTION_NONE:
-                            CharacterBase::respondCard(reactionHandler, targetCard);
-                        break;
-                        case REACTION_BANG:
-                        case REACTION_TAKER_BANG:
-                        case REACTION_GATLING:
-                         {
-                             if (reactionCard->type() == CARD_BROWN_SHOW_TIME){
-                                CharacterBase::respondCard(reactionHandler, targetCard);
-                             }
-                             else {
-                               
-                                 if (!m_used){
-                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
-                                     missed->setVirtual(mp_player, POCKET_HAND);
-                                     CharacterBase::respondCard(reactionHandler, missed);
-                                     m_used = true;
-                                 }
-                                 else {
-                                     CharacterBase::respondCard(reactionHandler, targetCard);
-                                }
-                             }
-                         }
-                        notifyAbilityUse();                   
-                    
-                    break;
-                    default:
-                    break;
-                    }
-               }
-                catch (BadUsageException ex){
-                    ex.debug();
-                }
-                catch (BadPlayerException ex){
-                    ex.debug();
-                }
-            }
-        else {
-            CharacterBase::respondCard(reactionHandler, targetCard);
-        }
-    }
+void CharacterPorterRockwall::useAbility(QList<PlayingCard*> cards, Player* targetPlayer)
+{
+    if (cards.empty()) throw BadUsageException();
+    if (cards.size() == 1) throw BadUsageException();
+    PlayingCard* targetCard = cards.at(0);
+    if (targetCard->owner() != mp_player) throw BadUsageException();
+    if (targetCard->pocket() != POCKET_HAND) throw BadUsageException();
+    PlayingCard* targetCard2 = cards.at(1);
+    if (targetCard2->owner() != mp_player) throw BadUsageException();
+    if (targetCard2->pocket() != POCKET_HAND) throw BadUsageException();
+     mp_bang = new CardBang(mp_player->game(), -1, CardBang::Unlimited, SUIT_INVALID, 5);
+     mp_bang->setVirtual(targetCard);
+     mp_bang->play(targetPlayer);
+     gameTable().cancelCard(targetCard2);
+    notifyAbilityUse();
+     
 }
 
-void CharacterTurdFerguson::resetAbility(){
-    m_used = false;
-}
