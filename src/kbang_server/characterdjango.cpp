@@ -19,9 +19,11 @@ void CharacterDjango::useAbility(QList<PlayingCard*> cards)
     PlayingCard* targetCard = cards.at(0);
     if (targetCard->owner() != mp_player) throw BadUsageException();
     if (targetCard->pocket() != POCKET_HAND) throw BadUsageException();
+    if (targetCard->type() != CARD_BANG) throw BadUsageException();
     PlayingCard* targetCard2 = cards.at(1);
     if (targetCard2->owner() != mp_player) throw BadUsageException();
     if (targetCard2->pocket() != POCKET_HAND) throw BadUsageException();
+    if (targetCard2->type() != CARD_BANG) throw BadUsageException();
      mp_gatling = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::Gatling, SUIT_INVALID, 5);
      mp_gatling->setVirtual(targetCard);
      mp_gatling->play();
