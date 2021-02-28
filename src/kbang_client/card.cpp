@@ -261,18 +261,14 @@ void Card::loadDefaultRuleset()
     new Card("Coronel Mortimer", CHARACTER_CORONEL_MORTIMER, "gfx/characters/directorscuts/coronel-mortimer.jpg");
     new Card("Django",           CHARACTER_DJANGO,           "gfx/characters/directorscuts/django.jpg");
     new Card("Emma",             CHARACTER_EMMA,             "gfx/characters/directorscuts/emma.jpg");
-    new Card("Hermanos Elder",   CHARACTER_HERMANOS_ELDER,   "gfx/characters/directorscuts/hermanos-elder.jpg");
     new Card("Howard Hawks",     CHARACTER_HOWARD_HAWKS,     "gfx/characters/directorscuts/howard-hawks.jpg");
-    new Card("Joe",              CHARACTER_JOE,              "gfx/characters/directorscuts/joe.jpg");
     new Card("John Ford",        CHARACTER_JOHN_FORD,        "gfx/characters/directorscuts/john-ford.jpg");
     new Card("Llanero Solitario", CHARACTER_LLANERO_SOLITARIO, "gfx/characters/directorscuts/llanero-solitario.jpg");
     new Card("Loco",            CHARACTER_LOCO,             "gfx/characters/directorscuts/loco.jpg");
-    new Card("Max Sand",        CHARACTER_MAX_SAND,         "gfx/characters/directorscuts/max-sand.jpg");
     new Card("Pat Garrett",     CHARACTER_PAT_GARRETT,      "gfx/characters/directorscuts/pat-garrett.jpg");
     new Card("Rev Jonathan Rudd", CHARACTER_REV_JONATHAN_RUDD, "gfx/characters/directorscuts/rev-jonathan-rudd.jpg");
     new Card("Rooster Cogburn", CHARACTER_ROOSTER_COGBURN,  "gfx/characters/directorscuts/rooster-cogburn.jpg");
     new Card("Sartana",        CHARACTER_SARTANA,           "gfx/characters/directorscuts/sartana.jpg");
-    new Card("Sergio Leone",   CHARACTER_SERGIO_LEONE,      "gfx/characters/directorscuts/sergio-leone.jpg");
     new Card("Tuco El Feo",    CHARACTER_TUCO_EL_FEO,       "gfx/characters/directorscuts/tuco-el-feo.jpg");
     new Card("Viejo Sikes",    CHARACTER_VIEJO_SIKES,       "gfx/characters/directorscuts/viejo-sikes.jpg");
     new Card("Vienna",         CHARACTER_VIENNA,            "gfx/characters/directorscuts/vienna.jpg");
@@ -293,7 +289,6 @@ void Card::loadDefaultRuleset()
     new Card("Ron Robber",     CHARACTER_RON_ROBBER,        "gfx/characters/martincity/ron-robber.png");
     new Card("Samuel Diehard", CHARACTER_SAMUEL_DIEHARD,    "gfx/characters/martincity/samuel-diehard.png");
    //Cusp of Carabelli 
-    new Card("James Donahoo",    CHARACTER_JAMES_DONAHOO,     "gfx/characters/cuspofcarabelli/james-donahoo.png");
     new Card("Gordon Christensen",      CHARACTER_GORDON_CHRISTENSEN,       "gfx/characters/cuspofcarabelli/gordon-christensen.png");
     new Card("Joel Janis",  CHARACTER_JOEL_JANIS,   "gfx/characters/cuspofcarabelli/joel-janis.png");
     new Card("capt W Caroll",       CHARACTER_CAPT_W_CAROLL,        "gfx/characters/cuspofcarabelli/capt-w-caroll.png");
@@ -301,11 +296,9 @@ void Card::loadDefaultRuleset()
     new Card("Auntie Angelici",     CHARACTER_AUNTIE_ANGELICI,      "gfx/characters/cuspofcarabelli/auntie-angelici.png");
     new Card("G V Black",     CHARACTER_G_V_BLACK,      "gfx/characters/cuspofcarabelli/g-v-black.png");
     new Card("Bushido Bill",      CHARACTER_BUSHIDO_BILL,       "gfx/characters/cuspofcarabelli/bushido-bill.png");
-    new Card("Crazy Skull",     CHARACTER_CRAZY_SKULL,      "gfx/characters/cuspofcarabelli/crazy-skull.png");
     new Card("William Harman",   CHARACTER_WILLIAM_HARMAN,    "gfx/characters/cuspofcarabelli/william-harman.png");
     new Card("Clockwork",     CHARACTER_CLOCKWORK,      "gfx/characters/cuspofcarabelli/clockwork.png");
     new Card("El Fantasma",     CHARACTER_EL_FANTASMA,      "gfx/characters/cuspofcarabelli/el-fantasma.png");
-    new Card("Adam Mc Cormick", CHARACTER_ADAM_MC_CORMICK,  "gfx/characters/cuspofcarabelli/adam-mc-cormick.png");
     //Robbers Roost 
     new Card("Crazy Wolf",  CHARACTER_CRAZY_WOLF,   "gfx/characters/robbersroost/crazy-wolf.png");
     new Card("Turd Ferguson",     CHARACTER_TURD_FERGUSON,      "gfx/characters/robbersroost/turd-ferguson.png");
@@ -313,12 +306,8 @@ void Card::loadDefaultRuleset()
     new Card("Flint Dixon",    CHARACTER_FLINT_DIXON,     "gfx/characters/robbersroost/flint-dixon.png");
     new Card("Job Mushgrove",      CHARACTER_JOB_MUSHGROVE,       "gfx/characters/robbersroost/job-mushgrove.png");
     new Card("Porter Rockwall",  CHARACTER_PORTER_ROCKWALL,   "gfx/characters/robbersroost/porter-rockwall.png");
-    new Card("Pat Barrett",       CHARACTER_PAT_BARRETT,        "gfx/characters/robbersroost/pat-barrett.png");
-    new Card("Johnny Pope",     CHARACTER_JOHNNY_POPE,      "gfx/characters/robbersroost/johnny-pope.png");
     new Card("Queen Anne",     CHARACTER_QUEEN_ANNE,      "gfx/characters/robbersroost/queen-anne.png");
     new Card("Josey Basset",     CHARACTER_JOSEY_BASSET,      "gfx/characters/robbersroost/josey-basset.png");
-    new Card("Eva Place",      CHARACTER_EVA_PLACE,       "gfx/characters/robbersroost/eva-place.png");
-    new Card("Laura Billion",     CHARACTER_LAURA_BILLION,      "gfx/characters/robbersroost/laura-billion.png");
     new Card("Maggie Mae",   CHARACTER_MAGGIE_MAE,    "gfx/characters/robbersroost/maggie-mae.png");
     new Card("Anne Rogers",     CHARACTER_ANNE_ROGERS,      "gfx/characters/robbersroost/anne-rogers.png");
     new Card("Lela Devere",     CHARACTER_LELA_DEVERE,      "gfx/characters/robbersroost/lela-devere.png");
@@ -332,17 +321,12 @@ void Card::loadDefaultRuleset()
     new Card("Juan Miranda",            CHARACTER_JUAN_MIRANDA,           "gfx/characters/boothill/juan-miranda.png");
     new Card("Jugde Dread",           CHARACTER_JUGDE_DREAD,         "gfx/characters/boothill/jugde-dread.png");
     new Card("July Ann Winslow",          CHARACTER_JULY_ANN_WINSLOW,        "gfx/characters/boothill/july-ann-winslow.png");
-    new Card("Matthew Hazard",         CHARACTER_MATTHEW_HAZARD,       "gfx/characters/boothill/matthew-hazard.png");
-    new Card("Tharley Callum",             CHARACTER_THARLEY_CALLUM,           "gfx/characters/boothill/tharley-callum.png");
-    new Card("Will Penny",             CHARACTER_WILL_PENNY,           "gfx/characters/boothill/will-penny.png");
     // 20
     new Card("Buckshot Roberts",         CHARACTER_BUCKSHOT_ROBERTS,         "gfx/characters/20/buckshot-roberts.jpg");
     new Card("Chosing Thomas",        CHARACTER_CHOSING_THOMAS,        "gfx/characters/20/chosing-thomas.jpg");
-    new Card("Dafne Star",           CHARACTER_DAFNE_STAR,           "gfx/characters/20/dafne-star.jpg");
     new Card("Drosera Alba",           CHARACTER_DROSERA_ALBA,          "gfx/characters/20/drosera-alba.jpg");
     new Card("Fast Franz",            CHARACTER_FAST_FRANZ,           "gfx/characters/20/fast-franz.jpg");
     new Card("Felipe Delgado",           CHARACTER_FELIPE_DELGADO,         "gfx/characters/20/felipe-delgado.jpg");
-    new Card("Ginger Star",          CHARACTER_GINGER_STAR,        "gfx/characters/20/ginger-star.jpg");
     new Card("Green Kate Janet",         CHARACTER_GREEN_KATE_JANET,       "gfx/characters/20/green-kate-janet.jpg");
     new Card("Hurting Bob",             CHARACTER_HURTING_BOB,           "gfx/characters/20/hurting-bob.jpg");
     new Card("Jack Brown",             CHARACTER_JACK_BROWN,           "gfx/characters/20/jack-brown.jpg");
@@ -352,7 +336,6 @@ void Card::loadDefaultRuleset()
     new Card("Pepita Duelita",           CHARACTER_PEPITA_DUELITA,          "gfx/characters/20/pepita-duelita.jpg");
     new Card("Riding Horse",            CHARACTER_RIDING_HORSE,           "gfx/characters/20/riding-horse.jpg");
     new Card("Slobodan The Killer",          CHARACTER_SLOBODAN_THE_KILLER,         "gfx/characters/20/slobodan-the-killer");
-    new Card("Steve Hypnotic",          CHARACTER_STEVE_HYPNOTIC,        "gfx/characters/20/steve-hypnotic.jpg");
     new Card("Stonewall Jackson",         CHARACTER_STONEWALL_JACKSON,       "gfx/characters/20/stonewall-jackson.jpg");
     new Card("Tony Armed",             CHARACTER_TONY_ARMED,           "gfx/characters/20/tony-armed.jpg");
     new Card("William Longley",             CHARACTER_WILLIAM_LONGLEY,           "gfx/characters/20/william-longley.jpg");
@@ -366,10 +349,7 @@ void Card::loadDefaultRuleset()
     new Card("Burt Longcatcher",           CHARACTER_BURT_LONGCATCHER,         "gfx/characters/33/burt-longcatcher.jpg");
     new Card("Colin Barrel",          CHARACTER_COLIN_BARREL,        "gfx/characters/33/colin-barrel.jpg");
     new Card("Crazy Horse",         CHARACTER_CRAZY_HORSE,       "gfx/characters/33/crazy-horse.jpg");
-    new Card("Dunkan Drunkman",             CHARACTER_DUNKAN_DRUNKMAN,           "gfx/characters/33/dunkan-drunkman.jpg");
     new Card("Dynamite Joe",             CHARACTER_DYNAMITE_JOE,           "gfx/characters/33/dynamite-joe.jpg");
-    new Card("Freddy Street-Sweeper",         CHARACTER_FREDDY_STREET_SWEEPER,         "gfx/characters/33/freddy-street-sweeper.jpg");
-    new Card("George Weelchair",        CHARACTER_GEORGE_WEELCHAIR,        "gfx/characters/33/george-weelchair.jpg");
     new Card("Hank the Bank",           CHARACTER_HANK_THE_BANK,           "gfx/characters/33/hank-bank.jpg");
     new Card("James Stoneheart",           CHARACTER_JAMES_STONEHEART,          "gfx/characters/33/james-stoneheart.jpg");
     new Card("Jennifer Big-Heart",            CHARACTER_JENNIFER_BIG_HEART,           "gfx/characters/33/jennifer-big-heart.jpg");
@@ -377,7 +357,6 @@ void Card::loadDefaultRuleset()
     new Card("Jimmy Squint",          CHARACTER_JIMMY_SQUINT,        "gfx/characters/33/jimmy-squint.jpg");
     new Card("Linus Yale",         CHARACTER_LINUS_YALE,       "gfx/characters/33/linus-yale.jpg");
     new Card("Max Painless",             CHARACTER_MAX_PAINLESS,           "gfx/characters/33/max-painless.jpg");
-    new Card("Moe The Barman",             CHARACTER_MOE_THE_BARMAN,           "gfx/characters/33/moe-barman.jpg");
     new Card("Myke Myope",         CHARACTER_MYKE_MYOPE,         "gfx/characters/33/myke-myope.jpg");
     new Card("Nelly Chose-Chair",        CHARACTER_NELLY_CHOSE_CHAIR,        "gfx/characters/33/nelly-chose-chair.jpg");
     new Card("Nina Nine lives",           CHARACTER_NINA_NINE_LIVES,           "gfx/characters/33/nina-9-lives.jpg");
@@ -385,7 +364,6 @@ void Card::loadDefaultRuleset()
     new Card("Phil Thinwire",            CHARACTER_PHIL_THINWIRE,           "gfx/characters/33/phil-thinwire.jpg");
     new Card("Preston Presbyope",           CHARACTER_PRESTON_PRESBYOPE,         "gfx/characters/33/preston-presbyope.jpg");
     new Card("Richard Gatling",          CHARACTER_RICHARD_GATLING,        "gfx/characters/33/richard-gatling.jpg");
-    new Card("Sam Hypnotik",         CHARACTER_SAM_HYPNOTIK,       "gfx/characters/33/sam-hypnotik.jpg");
     new Card("Scalping Bull",             CHARACTER_SCALPING_BULL,           "gfx/characters/33/scalping-bull.jpg");
     new Card("Ted Revenge",             CHARACTER_TED_REVENGE,           "gfx/characters/33/ted-revenge.jpg");
     new Card("Tim Croupier",         CHARACTER_TIM_CROUPIER,         "gfx/characters/33/tim-croupier.jpg");

@@ -78,18 +78,14 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "coronel mortimer") return CHARACTER_CORONEL_MORTIMER;
     if (s == "django")         return CHARACTER_DJANGO;
     if (s == "emma")           return CHARACTER_EMMA;
-    if (s == "hermanos elder") return CHARACTER_HERMANOS_ELDER;
     if (s == "howard hawks")   return CHARACTER_HOWARD_HAWKS;
-    if (s == "joe")            return CHARACTER_JOE;
     if (s == "john ford")      return CHARACTER_JOHN_FORD;
     if (s == "llanero solitario") return CHARACTER_LLANERO_SOLITARIO;
     if (s == "loco")           return CHARACTER_LOCO;
-    if (s == "max sand")       return CHARACTER_MAX_SAND;
     if (s == "pat garrett")    return CHARACTER_PAT_GARRETT;
     if (s == "rev jonathan rudd") return CHARACTER_REV_JONATHAN_RUDD;
     if (s == "rooster cogburn") return CHARACTER_ROOSTER_COGBURN;
     if (s == "sartana")        return CHARACTER_SARTANA;
-    if (s == "sergio leone")   return CHARACTER_SERGIO_LEONE;
     if (s == "tuco el feo")    return CHARACTER_TUCO_EL_FEO;
     if (s == "viejo sikes")    return CHARACTER_VIEJO_SIKES;
     if (s == "vienna")         return CHARACTER_VIENNA;
@@ -111,7 +107,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "ron robber")     return CHARACTER_RON_ROBBER;
     if (s == "samuel diehard") return CHARACTER_SAMUEL_DIEHARD;
     //Cusp of Carabelli 
-    if (s == "james donahoo")  return CHARACTER_JAMES_DONAHOO;
     if (s == "gordon christensen") return CHARACTER_GORDON_CHRISTENSEN;
     if (s == "joel janis")     return CHARACTER_JOEL_JANIS;
     if (s == "capt w caroll")  return CHARACTER_CAPT_W_CAROLL;
@@ -119,11 +114,9 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "auntie angelici") return CHARACTER_AUNTIE_ANGELICI;
     if (s == "g v black")      return CHARACTER_G_V_BLACK;
     if (s == "bushido bill")   return CHARACTER_BUSHIDO_BILL;
-    if (s == "crazy skull")    return CHARACTER_CRAZY_SKULL;
     if (s == "william harman") return CHARACTER_WILLIAM_HARMAN;
     if (s == "clockwork")      return CHARACTER_CLOCKWORK;
     if (s == "el fantasma")    return CHARACTER_EL_FANTASMA;
-    if (s == "adam mc cormick") return CHARACTER_ADAM_MC_CORMICK;
     //Robbers Roost
     if (s == "crazy wolf")     return CHARACTER_CRAZY_WOLF;
     if (s == "turd ferguson")  return CHARACTER_TURD_FERGUSON;
@@ -131,12 +124,8 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "flint dixon")    return CHARACTER_FLINT_DIXON;
     if (s == "job mushgrove")  return CHARACTER_JOB_MUSHGROVE;
     if (s == "porter rockwall") return CHARACTER_PORTER_ROCKWALL;
-    if (s == "pat barrett")    return CHARACTER_PAT_BARRETT;
-    if (s == "johnny pope")    return CHARACTER_JOHNNY_POPE;
     if (s == "queen anne")     return CHARACTER_QUEEN_ANNE;
     if (s == "josey basset")   return CHARACTER_JOSEY_BASSET;
-    if (s == "eva place")      return CHARACTER_EVA_PLACE;
-    if (s == "laura billion")  return CHARACTER_LAURA_BILLION;
     if (s == "maggie mae")     return CHARACTER_MAGGIE_MAE;
     if (s == "anne rogers")    return CHARACTER_ANNE_ROGERS;
     if (s == "lela devere")    return CHARACTER_LELA_DEVERE;
@@ -149,17 +138,12 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "juan miranda")   return CHARACTER_JUAN_MIRANDA;
     if (s == "jugde dread")    return CHARACTER_JUGDE_DREAD;
     if (s == "july ann winslow") return CHARACTER_JULY_ANN_WINSLOW;
-    if (s == "matthew hazard") return CHARACTER_MATTHEW_HAZARD;
-    if (s == "tharley callum") return CHARACTER_THARLEY_CALLUM;
-    if (s == "will penny")     return CHARACTER_WILL_PENNY;
     // 20 
     if (s == "buckshot roberts") return CHARACTER_BUCKSHOT_ROBERTS;
     if (s == "chosing thomas") return CHARACTER_CHOSING_THOMAS;
-    if (s == "dafne star")     return CHARACTER_DAFNE_STAR;
     if (s == "drosera alba")   return CHARACTER_DROSERA_ALBA;
     if (s == "fast franz")     return CHARACTER_FAST_FRANZ;
     if (s == "felipe delgado") return CHARACTER_FELIPE_DELGADO;
-    if (s == "ginger star")    return CHARACTER_GINGER_STAR;
     if (s == "green kate janet") return CHARACTER_GREEN_KATE_JANET;
     if (s == "hurting bob")    return CHARACTER_HURTING_BOB;
     if (s == "jack brown")     return CHARACTER_JACK_BROWN;
@@ -169,7 +153,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "pepita duelita") return CHARACTER_PEPITA_DUELITA;
     if (s == "riding horse")   return CHARACTER_RIDING_HORSE;
     if (s == "slobodan the killer") return CHARACTER_SLOBODAN_THE_KILLER;
-    if (s == "steve hypnotic") return CHARACTER_STEVE_HYPNOTIC;
     if (s == "stonewall jackson") return CHARACTER_STONEWALL_JACKSON;
     if (s == "tony armed")     return CHARACTER_TONY_ARMED;
     if (s == "william longley") return CHARACTER_WILLIAM_LONGLEY;
@@ -182,10 +165,7 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "burt longcatcher") return CHARACTER_BURT_LONGCATCHER;
     if (s == "colin barrel")    return CHARACTER_COLIN_BARREL;
     if (s == "crazy horse") return CHARACTER_CRAZY_HORSE;
-    if (s == "dunkan drunkman")    return CHARACTER_DUNKAN_DRUNKMAN;
     if (s == "dynamite joe")     return CHARACTER_DYNAMITE_JOE;
-    if (s == "freddy street-sweeper")    return CHARACTER_FREDDY_STREET_SWEEPER;
-    if (s == "george weelchair")  return CHARACTER_GEORGE_WEELCHAIR;
     if (s == "hank the bank") return CHARACTER_HANK_THE_BANK;
     if (s == "james stoneheart") return CHARACTER_JAMES_STONEHEART;
     if (s == "jennifer big-heart")   return CHARACTER_JENNIFER_BIG_HEART;
@@ -193,7 +173,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "jimmy squint") return CHARACTER_JIMMY_SQUINT;
     if (s == "linus yale") return CHARACTER_LINUS_YALE;
     if (s == "max painless")     return CHARACTER_MAX_PAINLESS;
-    if (s == "moe the barman") return CHARACTER_MOE_THE_BARMAN;
     if (s == "myke myope") return CHARACTER_MYKE_MYOPE;
     if (s == "nelly chose-chair") return CHARACTER_NELLY_CHOSE_CHAIR;
     if (s == "nina nine lives")   return CHARACTER_NINA_NINE_LIVES;
@@ -201,7 +180,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "phil thinwire")    return CHARACTER_PHIL_THINWIRE;
     if (s == "preston presbyope") return CHARACTER_PRESTON_PRESBYOPE;
     if (s == "richard gatling")    return CHARACTER_RICHARD_GATLING;
-    if (s == "sam hypnotik")     return CHARACTER_SAM_HYPNOTIK;
     if (s == "scalping bull")    return CHARACTER_SCALPING_BULL;
     if (s == "ted revenge")  return CHARACTER_TED_REVENGE;
     if (s == "tim croupier") return CHARACTER_TIM_CROUPIER;
@@ -246,18 +224,14 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_CORONEL_MORTIMER: return "coronel mortimer";
     case CHARACTER_DJANGO:          return "django";
     case CHARACTER_EMMA:            return "emma";
-    case CHARACTER_HERMANOS_ELDER:  return "hermanos elder";
     case CHARACTER_HOWARD_HAWKS:    return "howard hawks";
-    case CHARACTER_JOE:             return "joe";
     case CHARACTER_JOHN_FORD:       return "john ford";
     case CHARACTER_LLANERO_SOLITARIO:  return "llanero solitario";
     case CHARACTER_LOCO:            return "loco";
-    case CHARACTER_MAX_SAND:        return "max sand";
     case CHARACTER_PAT_GARRETT:     return "pat garrett";
     case CHARACTER_REV_JONATHAN_RUDD:  return "rev jonathan rudd";
     case CHARACTER_ROOSTER_COGBURN:  return "rooster cogburn";
     case CHARACTER_SARTANA:         return "sartana";
-    case CHARACTER_SERGIO_LEONE:    return "sergio leone";
     case CHARACTER_TUCO_EL_FEO:     return "tuco el feo";
     case CHARACTER_VIEJO_SIKES:     return "viejo sikes";
     case CHARACTER_VIENNA:          return "vienna";
@@ -278,7 +252,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_RON_ROBBER:      return "ron robber";
     case CHARACTER_SAMUEL_DIEHARD:  return "samuel diehard";
     //Cusp of Carabelli
-    case CHARACTER_JAMES_DONAHOO:   return "james donahoo";
     case CHARACTER_GORDON_CHRISTENSEN: return "gordon christensen";
     case CHARACTER_JOEL_JANIS:      return "joel janis";
     case CHARACTER_CAPT_W_CAROLL:   return "capt w caroll";
@@ -286,11 +259,9 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_AUNTIE_ANGELICI: return "auntie angelici";
     case CHARACTER_G_V_BLACK:       return "g v black";
     case CHARACTER_BUSHIDO_BILL:    return "bushido bill";
-    case CHARACTER_CRAZY_SKULL:     return "crazy skull";
     case CHARACTER_WILLIAM_HARMAN:  return  "william harman";
     case CHARACTER_CLOCKWORK:       return "clockwork";
     case CHARACTER_EL_FANTASMA:     return "el fantasma";
-    case CHARACTER_ADAM_MC_CORMICK: return "adam mc cormick";
     //Robbers Roost
     case CHARACTER_CRAZY_WOLF:      return "crazy wolf";
     case CHARACTER_TURD_FERGUSON:   return "turd ferguson";
@@ -298,12 +269,8 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_FLINT_DIXON:     return "flint dixon";
     case CHARACTER_JOB_MUSHGROVE:   return "job mushgrove";
     case CHARACTER_PORTER_ROCKWALL: return "porter rockwall";
-    case CHARACTER_PAT_BARRETT:     return "pat barrett";
-    case CHARACTER_JOHNNY_POPE:     return "johnny pope";
     case CHARACTER_QUEEN_ANNE:      return "queen anne";
     case CHARACTER_JOSEY_BASSET:    return "josey basset";
-    case CHARACTER_EVA_PLACE:         return "eva place";
-    case CHARACTER_LAURA_BILLION:   return "laura billion";
     case CHARACTER_MAGGIE_MAE:       return "maggie mae";
     case CHARACTER_ANNE_ROGERS:    return "anne rogers";
     case CHARACTER_LELA_DEVERE:      return "lela devere";
@@ -317,18 +284,13 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_JUAN_MIRANDA:    return "juan miranda";
     case CHARACTER_JUGDE_DREAD:     return "jugde dread";
     case CHARACTER_JULY_ANN_WINSLOW: return "july ann winslow";
-    case CHARACTER_MATTHEW_HAZARD: return "matthew hazard";
-    case CHARACTER_THARLEY_CALLUM:  return "tharley callum";
-    case CHARACTER_WILL_PENNY:      return "will penny";
     
     // 20 
     case CHARACTER_BUCKSHOT_ROBERTS: return "buckshot roberts";
     case CHARACTER_CHOSING_THOMAS:  return "chosing thomas";
-    case CHARACTER_DAFNE_STAR:      return "dafne star";
     case CHARACTER_DROSERA_ALBA:  return "drosera alba";
     case CHARACTER_FAST_FRANZ:      return "fast franz";
     case CHARACTER_FELIPE_DELGADO:  return "felipe delgado";
-    case CHARACTER_GINGER_STAR:     return "ginger star";
     case CHARACTER_GREEN_KATE_JANET: return "green kate janet";
     case CHARACTER_HURTING_BOB:     return "hurting bob";
     case CHARACTER_JACK_BROWN:      return "jack brown";
@@ -338,7 +300,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_PEPITA_DUELITA:  return "pepita duelita";
     case CHARACTER_RIDING_HORSE:    return "riding horse";
     case CHARACTER_SLOBODAN_THE_KILLER: return "slobodan the killer";
-    case CHARACTER_STEVE_HYPNOTIC:  return "steve hypnotic";
     case CHARACTER_STONEWALL_JACKSON: return "stonewall jackson";
     case CHARACTER_TONY_ARMED:      return "tony armed";
     case CHARACTER_WILLIAM_LONGLEY: return "william longley";
@@ -353,10 +314,7 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_BURT_LONGCATCHER:  return "burt longcatcher" ;
     case CHARACTER_COLIN_BARREL:     return "colin barrel" ;
     case CHARACTER_CRAZY_HORSE:     return "crazy horse" ;
-    case CHARACTER_DUNKAN_DRUNKMAN:     return "dunkan drunkman" ;
     case CHARACTER_DYNAMITE_JOE:     return "dynamite joe" ;
-    case CHARACTER_FREDDY_STREET_SWEEPER:   return "freddy street-sweeper" ;
-    case CHARACTER_GEORGE_WEELCHAIR:  return "george weelchair" ;
     case CHARACTER_HANK_THE_BANK: return "hank the bank" ;
     case CHARACTER_JAMES_STONEHEART: return "james stoneheart" ;
     case CHARACTER_JENNIFER_BIG_HEART:  return "jennifer big-heart" ;
@@ -364,7 +322,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_JIMMY_SQUINT:     return "jimmy squint" ;
     case CHARACTER_LINUS_YALE:         return "linus yale" ;
     case CHARACTER_MAX_PAINLESS:    return "max painless" ;
-    case CHARACTER_MOE_THE_BARMAN:  return "moe the barman" ;
     case CHARACTER_MYKE_MYOPE:      return "myke myope" ;
     case CHARACTER_NELLY_CHOSE_CHAIR: return "nelly chose-chair" ;
     case CHARACTER_NINA_NINE_LIVES: return "nina nine lives" ;
@@ -372,7 +329,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_PHIL_THINWIRE:    return "phil thinwire" ;
     case CHARACTER_PRESTON_PRESBYOPE: return "preston presbyope" ;
     case CHARACTER_RICHARD_GATLING:  return  "richard gatling" ;
-    case CHARACTER_SAM_HYPNOTIK:    return "sam hypnotik" ;
     case CHARACTER_SCALPING_BULL:   return "scalping bull" ;
     case CHARACTER_TED_REVENGE:     return "ted revenge" ;
     case CHARACTER_TIM_CROUPIER:     return "tim croupier" ;
