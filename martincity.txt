@@ -116,8 +116,6 @@ Ernest Saliven (4 life points): Once per round, he can replace the card with a b
 
 Ernest Saliven (4 life points): Once per round in his turn, he may trade his blue border card in hand with top card on the deck.
 
-Lady Burboun (4 life points): In her turn, she can play a BEER card to any player making him drunk to end of next turn. Drunken player lose his ability until end his next turn. Not fully implemented.
-
 Crazy Bear (4 life points): Against his BANG! it is necessary to use as many VEDLE !, how many injuries it has, at least 1.
 
 Tomy Lee Ghost (4 life points): He remains in game as ghost after losing his all life points for two rounds, but he can save his life during this time by drinking Beer.
@@ -127,8 +125,6 @@ White Wolf (4 life points): Once during his turn, he can send his wolf against a
 Charles Boggen (4 life points): Cards with BANG effect! other than BANG! don't have any effect against him.
 
 Sergeant O Reilly (4 life points): He is immune to cards and abilities with a negative effect on several players, except of Brawl. (Gatling, Howitzer,  ...).
-
-Jim Scarecrow (4 life poins): In turn, he may play PANIC! or CAT BALOU to any player. This player loses his ability to end of his next turn. Not fully implemented.
 
 Billy Longlife (4 life points): No limit to the maximum number of life points. His card limit is always a maximum of 5.
 

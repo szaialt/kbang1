@@ -293,8 +293,6 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
     case CHARACTER_WYATT_EARP:
     case CHARACTER_WHITE_WOLF:
     case CHARACTER_RON_ROBBER:
-    case CHARACTER_JIM_SCARECROW:
-    case CHARACTER_LADY_BURBOUN:
     case CHARACTER_JONATH_HEXX:
     case CHARACTER_G_V_BLACK:
     case CHARACTER_MAGGIE_MAE:
@@ -397,8 +395,6 @@ void GameActionManager::useAbilityWithCards()
          case CHARACTER_WYATT_EARP:
          case CHARACTER_WHITE_WOLF:
          case CHARACTER_RON_ROBBER:
-         case CHARACTER_JIM_SCARECROW:
-         case CHARACTER_LADY_BURBOUN:
          case CHARACTER_JONATH_HEXX:
          case CHARACTER_GREEN_KATE_JANET:
          case CHARACTER_TONY_ARMED:

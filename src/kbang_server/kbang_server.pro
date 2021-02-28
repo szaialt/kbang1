@@ -133,7 +133,6 @@ HEADERS += \
     characterjonathhexx.h \
     characterantonycarma.h \
     charactermatthewhell.h \
-    characterabilitythief.h \
     charactercardkeeper.h \
     characterdanquake.h \
     charactersamueldiehard.h \
@@ -326,7 +325,6 @@ SOURCES += \
     characterjonathhexx.cpp \
     characterantonycarma.cpp \
     charactermatthewhell.cpp \
-    characterabilitythief.cpp \
     charactercardkeeper.cpp \
     characterdanquake.cpp \
     charactersamueldiehard.cpp \

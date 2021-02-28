@@ -44,7 +44,6 @@
 #include "characterjonathhexx.h"
 #include "charactercardkeeper.h"
 #include "charactermatthewhell.h"
-#include "characterabilitythief.h"
 #include "characterdanquake.h"
 #include "charactersamueldiehard.h"
 #include "charactertomyleeghost.h"
@@ -232,8 +231,6 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterErnestSaliven(parent);
     case CHARACTER_ERNEST_SALIVEN2: 
         return new CharacterErnestSaliven2(parent);
-    case CHARACTER_LADY_BURBOUN: 
-        return new CharacterAbilityThief(parent, CharacterAbilityThief::LadyBourbon);
     case CHARACTER_SERGEANT_O_REILLY: 
         return new CharacterSoldier(parent, CharacterSoldier::SergeantOReilly);
     case CHARACTER_RON_ROBBER: 
@@ -250,8 +247,6 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterJonathHexx(parent);
     case CHARACTER_ANTONY_CARMA: 
         return new CharacterAntonyCarma(parent);
-    case CHARACTER_JIM_SCARECROW: 
-        return new CharacterAbilityThief(parent, CharacterAbilityThief::JimScarecrow);
     case CHARACTER_BILLY_LONGLIFE:
         return new CharacterCardKeeper(parent, CharacterCardKeeper::BillyLonglife);
     case CHARACTER_MATTHEW_HELL: 
@@ -488,8 +483,6 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_SAMUEL_DIEHARD);
         sm_characterTypes.append(CHARACTER_ERNEST_SALIVEN2);
         sm_characterTypes.append(CHARACTER_MATTHEW_HELL);
-        sm_characterTypes.append(CHARACTER_JIM_SCARECROW);
-        sm_characterTypes.append(CHARACTER_LADY_BURBOUN); 
         sm_characterTypes.append(CHARACTER_TOMY_LEE_GHOST);
         sm_characterTypes.append(CHARACTER_ANTONY_CARMA);
         sm_characterTypes.append(CHARACTER_JONATH_HEXX);

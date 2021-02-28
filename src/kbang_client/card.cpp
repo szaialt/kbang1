@@ -280,19 +280,13 @@ void Card::loadDefaultRuleset()
     
     //Martin City
     new Card("Ernest Saliven", CHARACTER_ERNEST_SALIVEN,    "gfx/characters/martincity/ernest-saliven.png");
-    new Card("Ernest Saliven2", CHARACTER_ERNEST_SALIVEN2,   "gfx/characters/martincity/ernest-saliven.png");
-    new Card("Emil Docaine",   CHARACTER_EMIL_DOCAINE,      "gfx/characters/martincity/emil-docaine.png");
-    new Card("Lady Burboun",   CHARACTER_LADY_BURBOUN,      "gfx/characters/martincity/lady-burboun.png");
-    new Card("Sam Scalphunter", CHARACTER_SAM_SCALPHUNTER,  "gfx/characters/martincity/sam-scalphunter.png");
+    new Card("Ernest Saliven2", CHARACTER_ERNEST_SALIVEN2,   "gfx/characters/martincity/ernest-saliven2.png");
     new Card("Crazy Bear",     CHARACTER_CRAZY_BEAR,        "gfx/characters/martincity/crazy-bear.png");
     new Card("Tomy Lee Ghost", CHARACTER_TOMY_LEE_GHOST,    "gfx/characters/martincity/tomy-lee-ghost.png");
     new Card("White Wolf",     CHARACTER_WHITE_WOLF,        "gfx/characters/martincity/white-wolf.png");
-    new Card("Charles Boggen",     CHARACTER_CHARLES_BOGGEN,        "gfx/characters/martincity/charles-boggen.png");
     new Card("Jonath Hexx",  CHARACTER_JONATH_HEXX,     "gfx/characters/martincity/jonath-hexx.png");
-    new Card("Samuel Mcgreggor", CHARACTER_SAMUEL_MCGREGGOR, "gfx/characters/martincity/samuel-mcgreggor.png");
     new Card("Matthew Hell",   CHARACTER_MATTHEW_HELL,      "gfx/characters/martincity/matthew-hell.png");
     new Card("Sergeant O Reilly", CHARACTER_SERGEANT_O_REILLY, "gfx/characters/martincity/sergeant-o-reilly.png");
-    new Card("Jim Scarecrow",   CHARACTER_JIM_SCARECROW,      "gfx/characters/martincity/jim-scarecrow.png");
     new Card("Billy Longlife", CHARACTER_BILLY_LONGLIFE,    "gfx/characters/martincity/billy-longlife.png");
     new Card("Antony Carma",   CHARACTER_ANTONY_CARMA,      "gfx/characters/martincity/antony-carma.png");
     new Card("Dan Quake",      CHARACTER_DAN_QUAKE,         "gfx/characters/martincity/dan-quake.png");
