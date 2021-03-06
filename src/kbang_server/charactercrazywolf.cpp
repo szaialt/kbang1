@@ -42,17 +42,17 @@ void CharacterCrazyWolf::respondCard(ReactionHandler* reactionHandler, PlayingCa
                              else {
                                  int defensiveValue = reactionCard->rank() + targetCard->rank();
                                  if (defensiveValue >= 20){
-                                     PlayingCard* missed = new CardBang(mp_player->game(), -1, CardBang::Backfire, SUIT_INVALID, 5);
+                                     PlayingCard* missed = new CardBang(mp_player->game(), -1, CardBang::Backfire, targetCard->suit(), targetCard->rank());
                                      missed->setVirtual(targetCard);
                                      CharacterBase::respondCard(reactionHandler, missed);
                                 }
                                  else if (defensiveValue >= 17){
-                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Dodge, SUIT_INVALID, 5);
+                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Dodge, targetCard->suit(), targetCard->rank());
                                      missed->setVirtual(targetCard);
                                      CharacterBase::respondCard(reactionHandler, missed);
                                 }
                                  else if (defensiveValue >= 13){
-                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                      missed->setVirtual(targetCard);
                                      CharacterBase::respondCard(reactionHandler, missed);
                                 }

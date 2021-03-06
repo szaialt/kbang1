@@ -42,10 +42,10 @@ void CharacterBuckshotRoberts::useAbility(QList<PlayingCard*> cards){
     targetCards.append(cards.at(3));
     PlayingCard* taker;
     if (characterType() == CHARACTER_BUCKSHOT_ROBERTS) {
-        taker = new CardTaker(mp_player->game(), -1, CardTaker::DoubleCatBalou, SUIT_INVALID, 5);
+        taker = new CardTaker(mp_player->game(), -1, CardTaker::DoubleCatBalou, card->suit(), card->rank());
     }
     else {
-        taker = new CardTaker(mp_player->game(), -1, CardTaker::DoublePanic, SUIT_INVALID, 5);
+        taker = new CardTaker(mp_player->game(), -1, CardTaker::DoublePanic, card->suit(), card->rank());
     }
     taker->setVirtual(card);
     taker->play(targetCards);

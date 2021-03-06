@@ -21,7 +21,7 @@ void CharacterPorterRockwall::useAbility(QList<PlayingCard*> cards, Player* targ
     PlayingCard* targetCard2 = cards.at(1);
     if (targetCard2->owner() != mp_player) throw BadUsageException();
     if (targetCard2->pocket() != POCKET_HAND) throw BadUsageException();
-     mp_bang = new CardBang(mp_player->game(), -1, CardBang::Unlimited, SUIT_INVALID, 5);
+     mp_bang = new CardBang(mp_player->game(), -1, CardBang::Unlimited, targetCard->suit(), targetCard->rank());
      mp_bang->setVirtual(targetCard);
      mp_bang->play(targetPlayer);
      gameTable().cancelCard(targetCard2);

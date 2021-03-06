@@ -32,7 +32,7 @@ void CharacterLelaDevere::useAbility(QList<PlayingCard*> cards){
         takerBang->play(card2);
     }
     else if (card->type() != CARD_INDIANS){
-        PlayingCard* weakenedBrawl = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::WeakenedBrawl, SUIT_INVALID, 5);
+        PlayingCard* weakenedBrawl = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::WeakenedBrawl, card->suit(), card->rank());
         weakenedBrawl->setVirtual(card);
         weakenedBrawl->play();
     }

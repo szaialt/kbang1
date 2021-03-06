@@ -26,7 +26,7 @@ void CharacterCrazyHorse::useAbility(QList<PlayingCard*> cards){
         if (targetCard2->owner() != mp_player) throw BadCardException();
         if (targetCard2->pocket() != POCKET_HAND) throw BadCardException();
         gameTable().playerDiscardCard(targetCard2);
-        PlayingCard* hit = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::Indians, SUIT_INVALID, 5);
+        PlayingCard* hit = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::Indians, targetCard->suit(), targetCard->rank());
         hit->setVirtual(targetCard);
         hit->play();
         notifyAbilityUse();

@@ -44,7 +44,7 @@ void CharacterTurdFerguson::respondCard(ReactionHandler* reactionHandler, Playin
                              else {
                                
                                  if (!m_used){
-                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                     PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                      missed->setVirtual(mp_player, POCKET_HAND);
                                      CharacterBase::respondCard(reactionHandler, missed);
                                      m_used = true;

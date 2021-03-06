@@ -31,7 +31,7 @@ void CharacterLilSureshot::useAbility(QList<PlayingCard*> cards){
         QList<Player*> targetPlayers;
         targetPlayers.append(targetPlayer1);
         targetPlayers.append(targetPlayer2);
-        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::DoubleExtra, SUIT_INVALID, 5);
+        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::DoubleExtra, targetCard->suit(), targetCard->rank());
         hit->setVirtual(targetCard);
         hit->play(targetPlayers);
         

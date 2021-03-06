@@ -22,7 +22,7 @@ void CharacterHeavy::CharacterHeavy::useAbility(QList<PlayingCard*> cards, Playe
         if ((targetPlayer == mp_player->game()->nextPlayer(mp_player)) ||
             (targetPlayer == mp_player->game()->previousPlayer(mp_player))
         ){
-            PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::Heavy, SUIT_INVALID, 5);
+            PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::Heavy, targetCard->suit(), targetCard->rank());
             hit->setVirtual(targetCard);
             hit->play(targetPlayer);
         }

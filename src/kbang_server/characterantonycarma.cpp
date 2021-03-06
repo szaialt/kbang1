@@ -44,12 +44,12 @@ void CharacterAntonyCarma::respondCard(ReactionHandler* reactionHandler, Playing
                         }
                         else {
                             if (reactionCard->type() == CARD_INDIAN_BANG){
-                                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                                 bang->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, bang);
                             }
                             else {
-                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                 missed->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, missed);
                             }

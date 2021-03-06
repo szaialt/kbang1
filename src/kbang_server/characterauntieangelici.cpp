@@ -22,7 +22,7 @@ void CharacterAuntieAngelici::useAbility(QList<PlayingCard*> cards){
             PlayingCard* targetCard = cards.at(0);
             if (targetCard->owner() != mp_player || targetCard->pocket() != POCKET_HAND)
                 throw BadCardException();
-            PlayingCard* saloon = new CardBeer(mp_player->game(), -1, CardBeer::Saloon, SUIT_INVALID, 5);
+            PlayingCard* saloon = new CardBeer(mp_player->game(), -1, CardBeer::Saloon, targetCard->suit(), targetCard->rank());
             saloon->setVirtual(targetCard);
             saloon->play();
             notifyAbilityUse();

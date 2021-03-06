@@ -35,12 +35,12 @@ void CharacterBushidoBill::respondCard(ReactionHandler* reactionHandler, Playing
                         case REACTION_GATLING:
                          {
                              if (reactionCard->type() == CARD_BROWN_SHOW_TIME){
-                                PlayingCard* weapon = new WeaponCard(mp_player->game(), -1, WeaponCard::Walker, SUIT_INVALID, 10);
+                                PlayingCard* weapon = new WeaponCard(mp_player->game(), -1, WeaponCard::Walker, targetCard->suit(), targetCard->rank());
                                 weapon->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, weapon); 
                              }
                              else {
-                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                 missed->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, missed);
                              }
@@ -49,7 +49,7 @@ void CharacterBushidoBill::respondCard(ReactionHandler* reactionHandler, Playing
                          case REACTION_DUEL:
                          case REACTION_INDIANS:
                           {
-                             PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                             PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                              bang->setVirtual(mp_player, POCKET_HAND);
                              CharacterBase::respondCard(reactionHandler, bang);
                          }

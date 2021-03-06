@@ -42,7 +42,7 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                             if ( (targetCard->color() != COLOR_BROWN)){
                                 CardMissed* missed0 =  qobject_cast<CardMissed*>(targetCard);
                                 if (missed0 != 0){
-                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                     missed->setVirtual(targetCard);
                                     CharacterBase::respondCard(reactionHandler, missed);
                                 }
@@ -61,7 +61,7 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                             if ( (targetCard->color() != COLOR_BROWN)){
                                 CardBang* bang0 =  qobject_cast<CardBang*>(targetCard);
                                 if (bang0 != 0){
-                                  PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                                  PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                                   bang->setVirtual(targetCard);
                                   CharacterBase::respondCard(reactionHandler, bang);
                                 }

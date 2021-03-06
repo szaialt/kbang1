@@ -20,7 +20,7 @@ void CharacterEngineer::useAbility(QList<PlayingCard*> cards, Player* targetPlay
         if (targetCard->owner() != mp_player) throw BadCardException();
         if (targetCard->pocket() != POCKET_HAND) throw BadCardException();
         if (targetCard->color() != COLOR_BLUE) throw BadCardException();
-        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
         hit->setVirtual(targetCard);
         hit->play(targetPlayer);
         notifyAbilityUse();
@@ -45,10 +45,11 @@ void CharacterEngineer::respondCard(ReactionHandler* reactionHandler, PlayingCar
             break;
         case REACTION_GATLING:
         case REACTION_BANG:
+        case REACTION_TAKER_BANG:
         {
             {
             if (targetCard->color() == COLOR_BLUE){
-                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                 missed->setVirtual(targetCard);
                 CharacterBase::respondCard(reactionHandler, missed);
             }
@@ -60,7 +61,7 @@ void CharacterEngineer::respondCard(ReactionHandler* reactionHandler, PlayingCar
         case REACTION_INDIANS:
         case REACTION_DUEL: {
             if (targetCard->color() == COLOR_BLUE){
-                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                 bang->setVirtual(targetCard);
                 CharacterBase::respondCard(reactionHandler, bang);
             }

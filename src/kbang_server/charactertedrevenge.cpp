@@ -36,7 +36,7 @@ void CharacterTedRevenge::respondCard(ReactionHandler* reactionHandler, PlayingC
                         case REACTION_BANG:{
                             CharacterBase::respondCard(reactionHandler, targetCard);
                             if (m_times < 1){
-                                PlayingCard* revenge = new CardBang(mp_player->game(), -1, CardBang::Revenge, SUIT_INVALID, 5);
+                                PlayingCard* revenge = new CardBang(mp_player->game(), -1, CardBang::Revenge, targetCard->suit(), targetCard->rank());
                                      revenge->setVirtual(mp_player, POCKET_HAND);
                                      CharacterBase::respondCard(reactionHandler, revenge);
                                 m_times++;

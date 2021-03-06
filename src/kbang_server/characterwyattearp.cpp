@@ -26,12 +26,12 @@ void CharacterWyattEarp::useAbility(QList<PlayingCard*> cards, Player* targetPla
         if (card->owner() != mp_player) throw BadCardException();
         if (card->pocket() != POCKET_HAND) throw BadCardException();
         if (card->type() == CARD_PANIC) {
-            PlayingCard* catbalou = new CardTaker(mp_player->game(), 0, CardTaker::CatBalou, SUIT_INVALID,    10);
+            PlayingCard* catbalou = new CardTaker(mp_player->game(), 0, CardTaker::CatBalou, card->suit(), card->rank());
             catbalou->setVirtual(card);
             catbalou->play(targetPlayer);
         }
         else if (card->type() == CARD_CATBALOU) {
-            PlayingCard* panic = new CardTaker(mp_player->game(), 0, CardTaker::Panic, SUIT_INVALID,    10);
+            PlayingCard* panic = new CardTaker(mp_player->game(), 0, CardTaker::Panic, card->suit(), card->rank());
             panic->setVirtual(card);
             panic->play(targetPlayer);
         }

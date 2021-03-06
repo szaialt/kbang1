@@ -60,7 +60,7 @@ void CharacterStonewallJackson::respondCard(ReactionHandler* reactionHandler, Pl
                                 PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
                                 bool checkResult = check(checkedCard);
                                 if (checkResult){
-                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                     missed->setVirtual(mp_player, POCKET_HAND);
                                     CharacterBase::respondCard(reactionHandler, missed);
                                 }

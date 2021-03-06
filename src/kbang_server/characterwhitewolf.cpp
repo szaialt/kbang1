@@ -29,7 +29,7 @@ void CharacterWhiteWolf::useAbility(QList<PlayingCard*> cards, Player* targetPla
         if (targetCard->owner() != mp_player) throw BadCardException();
         if (targetCard->pocket() != POCKET_HAND) throw BadCardException();
         if (targetCard->color() != COLOR_BLUE) throw BadCardException();
-        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::IndianBang, SUIT_INVALID, 5);
+        PlayingCard* hit = new CardBang(mp_player->game(), -1, CardBang::IndianBang, targetCard->suit(), targetCard->rank());
         hit->setVirtual(targetCard);
         hit->play(targetPlayer);
         notifyAbilityUse();

@@ -24,7 +24,7 @@ void CharacterDjango::useAbility(QList<PlayingCard*> cards)
     if (targetCard2->owner() != mp_player) throw BadUsageException();
     if (targetCard2->pocket() != POCKET_HAND) throw BadUsageException();
     if (targetCard2->type() != CARD_BANG) throw BadUsageException();
-     mp_gatling = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::Gatling, SUIT_INVALID, 5);
+     mp_gatling = new CardMultiShoot(mp_player->game(), -1, CardMultiShoot::Gatling, targetCard->suit(), targetCard->rank());
      mp_gatling->setVirtual(targetCard);
      mp_gatling->play();
      gameTable().cancelCard(targetCard2);

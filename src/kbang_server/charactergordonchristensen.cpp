@@ -19,7 +19,7 @@ void CharacterGordonChristensen::useAbility(QList<PlayingCard*> cards){
         if (targetCard->pocket() != POCKET_HAND) throw BadCardException();
         if (targetCard->color() != COLOR_GREEN) throw BadCardException();
         if (m_times < 2){
-            PlayingCard* draw = new CardDrawCards(mp_player->game(), -1, CardDrawCards::Diligenza, SUIT_INVALID, 5);
+            PlayingCard* draw = new CardDrawCards(mp_player->game(), -1, CardDrawCards::Diligenza, targetCard->suit(), targetCard->rank());
             draw->setVirtual(targetCard);
             draw->play();
             m_times++;

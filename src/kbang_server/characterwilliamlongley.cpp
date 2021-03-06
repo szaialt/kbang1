@@ -29,7 +29,7 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                         case REACTION_TAKER_BANG:
                         case REACTION_GATLING:
                         {
-                            PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                            PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                             missed->setVirtual(mp_player, POCKET_HAND);
                             CharacterBase::respondCard(reactionHandler, missed);
                         }
@@ -37,7 +37,7 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                         case REACTION_DUEL:
                         case REACTION_INDIANS:
                         {
-                            PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_INVALID, 5);
+                            PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                             bang->setVirtual(mp_player, POCKET_HAND);
                             CharacterBase::respondCard(reactionHandler, bang);
                          }
@@ -59,7 +59,7 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                                 CharacterBase::respondCard(reactionHandler, targetCard);
                             }
                             else {
-                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, SUIT_INVALID, 5);
+                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
                                 missed->setVirtual(mp_player, POCKET_HAND);
                                 CharacterBase::respondCard(reactionHandler, missed);
                             }
