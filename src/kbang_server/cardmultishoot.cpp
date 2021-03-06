@@ -298,7 +298,7 @@ ReactionType CardMultiShoot::reactionType() const
 void CardMultiShoot::requestNext()
 {
     mp_requestedPlayer = game()->nextPlayer(mp_requestedPlayer);
-    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
+    if (mp_requestedPlayer == mp_shootingPlayer) return;
     game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
 }
 
@@ -306,6 +306,6 @@ void CardMultiShoot::requestPrevious()
 {
     qDebug() << game()->previousPlayer(mp_requestedPlayer)->name();
     mp_requestedPlayer = game()->previousPlayer(mp_requestedPlayer);
-    if ((type() != CARD_ROULETTE) && (mp_requestedPlayer == mp_shootingPlayer)) return;
+    if (mp_requestedPlayer == mp_shootingPlayer) return;
     game()->gameCycle().setResponseMode(this, mp_requestedPlayer);
 }
