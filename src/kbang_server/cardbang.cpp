@@ -216,7 +216,9 @@ void CardBang::shot(Player *targetPlayer){
             owner()->onBangPlayed(true);
         }
         mp_attackingPlayer = owner();
-        gameTable()->playerPlayCard(this, targetPlayer);
+        if (type() != CARD_DEFLECTION) {
+            gameTable()->playerPlayCard(this, targetPlayer);
+        }
         m_usedBarrels.clear();
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = mp_attackingPlayer->bangPower();
@@ -414,10 +416,6 @@ void CardBang::respondCard(PlayingCard* targetCard)
                 }
                 break;
             }
-        }
-        if (targetCard->pocket() == POCKET_GRAVEYARD){
-            targetCard->setPocket(POCKET_HAND);
-            targetCard->setOwner(player);
         }
         gameTable()->playerRespondWithCard(targetCard);
         if (targetCard->pocket() != POCKET_GRAVEYARD){ 

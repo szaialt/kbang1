@@ -201,16 +201,7 @@ struct CardFactory::CardFactoryImp
 
             list.append(new CardHiddenWeapon(game, id(), SUIT_SPADES, 5));
         
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7)); //segfault
-           
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
-            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7));
+            list.append(new CardBang(game, id(), CardBang::Deflection, SUIT_HEARTS, 7)); 
             
             
         }
