@@ -353,10 +353,9 @@ void Game::buryPlayer(Player* player, Player* causedBy)
             default:
                 NOT_REACHED();
         }
-        bool reward = false;
         foreach(PlayingCard* card, player->table()){
             if (card->type() == CARD_REWARD){
-                reward = true;
+                mp_gameTable->playerDrawFromDeck(causedBy, 2);
             }
         } 
         /// game winning condition check
@@ -373,9 +372,6 @@ void Game::buryPlayer(Player* player, Player* causedBy)
             /// killer draws 3 cards for killing an outlaw
             mp_gameTable->playerDrawFromDeck(causedBy, 3);
          } 
-         else if (reward){
-             mp_gameTable->playerDrawFromDeck(causedBy, 2);
-         }
          else if (player->role() == ROLE_DEPUTY && causedBy != 0 && causedBy->role() == ROLE_SHERIFF) {
             /// sheriff killed his deputy and has to cancel all his cards
             foreach(PlayingCard* card, causedBy->hand()){
@@ -385,7 +381,6 @@ void Game::buryPlayer(Player* player, Player* causedBy)
                 gameTable().cancelCard(card);
             }
         }
-    
 }
 
 void Game::winningSituation(PlayerRole winners)

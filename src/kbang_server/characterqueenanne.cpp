@@ -29,5 +29,7 @@ void CharacterQueenAnne::useAbility(QList<PlayingCard*> cards){
        PlayingCard* taker = new CardTaker(mp_player->game(), -1, CardTaker::CatBalou, targetCard->suit(), targetCard->rank());
        taker->setVirtual(mp_player, POCKET_HAND);
         taker->play(targetCard2);
+        gameTable().playerDiscardCard(targetCard);
+        gameTable().playerDiscardCard(targetCard1);
     }
 }

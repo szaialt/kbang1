@@ -161,7 +161,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "ambidexter bo") return CHARACTER_AMBIDEXTER_BO;
     if (s == "bart barber")     return CHARACTER_BART_BARBER;
     if (s == "big fat joe")   return CHARACTER_BIG_FAT_JOE;
-    if (s == "bruce ling")     return CHARACTER_BRUCE_LING;
     if (s == "burt longcatcher") return CHARACTER_BURT_LONGCATCHER;
     if (s == "colin barrel")    return CHARACTER_COLIN_BARREL;
     if (s == "crazy horse") return CHARACTER_CRAZY_HORSE;
@@ -310,7 +309,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_AMBIDEXTER_BO:  return "ambidexter bo" ;
     case CHARACTER_BART_BARBER:      return "bart barber" ;
     case CHARACTER_BIG_FAT_JOE:         return "big fat joe" ;
-    case CHARACTER_BRUCE_LING:         return "bruce ling" ;
     case CHARACTER_BURT_LONGCATCHER:  return "burt longcatcher" ;
     case CHARACTER_COLIN_BARREL:     return "colin barrel" ;
     case CHARACTER_CRAZY_HORSE:     return "crazy horse" ;
@@ -648,6 +646,9 @@ PlayingCardType stringToPlayingCardType(const QString& s)
     if (s == "garbage-truck")        return CARD_GARBAGE_TRUCK;
     if (s == "garbage truck")        return CARD_GARBAGE_TRUCK;
     if (s == "garbage_truck")        return CARD_GARBAGE_TRUCK;
+    if (s == "flint-indian-bang")        return CARD_FLINT_INDIAN_BANG;
+    if (s == "flint indian bang")        return CARD_FLINT_INDIAN_BANG;
+    if (s == "flint_indian_bang")        return CARD_FLINT_INDIAN_BANG;
     return CARD_UNKNOWN; 
 } 
 
@@ -775,6 +776,7 @@ QString playingCardTypeToString(const PlayingCardType& c)
         case CARD_UNLIMITED_BANG:   return "unlimited bang";
         case CARD_LELA_BANG:       return "lela bang";
         case CARD_LELA_GATLING:  return "lela gatling";
+        case CARD_FLINT_INDIAN_BANG: return "flint indian bang";
         // 20
         case CARD_DOUBLE_PANIC:  return "double panic";
         case CARD_DOUBLE_CATBALOU: return "double catbalou";

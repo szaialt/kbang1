@@ -37,7 +37,6 @@ public:
     virtual void respondPass();
     virtual void respondCard(PlayingCard* targetCard);
 protected:
-    virtual void missed();
 
     Player* mp_attackingPlayer;
     PlayingCard* mp_attackedCard;

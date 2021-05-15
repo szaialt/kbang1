@@ -88,21 +88,27 @@ void CharacterBase::playerDied()
 void CharacterBase::checkDeck(PlayingCard* causedBy,
                               bool (*checkFunc)(PlayingCard*), CheckDeckResultHandler* resultHandler)
 {
+    
     PlayingCard* checkedCard = gameTable().checkDeck();
-    PlayingCard* checkedCard1 = checkedCard;
+    PlayingCard* checkedCard1;
     
     QList<PlayingCard*> table = mp_player->table();
         foreach (PlayingCard* card, table){
             if (card->type() == CARD_MEMENTO){
-                if (checkedCard1->suit() == SUIT_CLUBS){
+                if (checkedCard->suit() == SUIT_CLUBS){
                     checkedCard1 = new CardBang(mp_player->game(), -1, CardBang::Bang, SUIT_HEARTS, 5);
-                    checkedCard1->setVirtual(checkedCard);
+                    checkedCard1->setVirtual(mp_player, POCKET_TABLE);
+                    bool checkResult = (*checkFunc)(checkedCard1);
+                    mp_player->game()->gameEventManager().onPlayerCheckDeck(mp_player, checkedCard1, causedBy, checkResult);
+                    resultHandler->checkResult(checkResult);
                 }
             }
+            break;
         }
-    bool checkResult = (*checkFunc)(checkedCard1);
-    mp_player->game()->gameEventManager().onPlayerCheckDeck(mp_player, checkedCard1, causedBy, checkResult);
+    bool checkResult = (*checkFunc)(checkedCard);
+    mp_player->game()->gameEventManager().onPlayerCheckDeck(mp_player, checkedCard, causedBy, checkResult);
     resultHandler->checkResult(checkResult);
+    
 }
 
 void CharacterBase::useAbility(Player* targetPlayer)

@@ -53,34 +53,23 @@ void CardTakerBang::respondCard(PlayingCard* targetCard){
     if (targetCard == 0) {
         return;
     }
-    Player* player = targetCard->owner();
-    if (player == 0) {
+    if (targetCard->pocket() == POCKET_GRAVEYARD){
         return;
     }
     if (mp_attackingPlayer == 0) {
         return;
     }
-    Player* targetPlayer = targetCard->owner();
     switch(targetCard->type()) {
         case CARD_MISSED: 
             game()->gameCycle().unsetResponseMode();
             gameTable()->playerRespondWithCard(targetCard);
-            missed();
             return;
         default:{
-            QList<PlayingCard*> table = targetPlayer->table();
-            foreach (PlayingCard* card, table){
-                if (card->type() == CARD_STEROID){
-                    game()->gameCycle().unsetResponseMode();
-                    gameTable()->playerRespondWithCard(targetCard);
-                    missed();
-                    return;
-                }
-            }
+            game()->gameCycle().unsetResponseMode();
+            gameTable()->cancelCard(mp_attackedCard, mp_attackingPlayer);
+            return;
         }
     }
 }
 
-void CardTakerBang::missed(){
-    gameCycle()->unsetResponseMode();
-}
+

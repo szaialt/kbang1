@@ -154,17 +154,17 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             }
             return;
         case CARD_BARREL: {
-            if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
-                 break;
-            if (type() == CARD_BROWN_SHOW_TIME)
-                break;
+            //if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
+            //     break;
+            //if (type() == CARD_BROWN_SHOW_TIME)
+            //    break;
             if (m_usedBarrels.contains(targetCard))
                 break;
             targetCard->assertOnTable();
             m_usedBarrels.append(targetCard);
             CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
             barrel->check(this);
-            return;
+            break;
         }
         case CARD_DEAD_RINGER:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))

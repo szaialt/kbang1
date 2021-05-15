@@ -359,7 +359,6 @@ void GameTable::undrawCard(PlayingCard* card)
     putCardToDeck(card);
     card->setOwner(0);
     card->setPocket(POCKET_DECK);
-    mp_game->gameEventManager().onUndrawFromSelection(card, owner);
     owner->checkEmptyHand();
     mp_game->gameEventManager().onPlayerUpdated(owner);
 }

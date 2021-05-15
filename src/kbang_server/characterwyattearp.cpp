@@ -36,7 +36,7 @@ void CharacterWyattEarp::useAbility(QList<PlayingCard*> cards, Player* targetPla
             panic->play(targetPlayer);
         }
         else {
-            card->play(targetPlayer);
+            throw BadCardException();
         }
     }
 }

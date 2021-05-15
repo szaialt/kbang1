@@ -1,6 +1,7 @@
 #include "characterelfantasma.h"
 #include "player.h"
 #include "gamecycle.h"
+#include "gametable.h"
 
 CharacterElFantasma::CharacterElFantasma(QObject* parent):
         CharacterBase(parent, CHARACTER_EL_FANTASMA)
@@ -14,6 +15,7 @@ void CharacterElFantasma::playerDied()
         mp_player->setAlive(true);
         mp_integratedBeer = new CardBeer(mp_player->game(), -1, CardBeer::Beer, SUIT_INVALID, 5);
         mp_integratedBeer->setVirtual(mp_player, POCKET_HAND);
+        gameTable().playerPlayCard(mp_integratedBeer);
     }
     CharacterBase::playCard(mp_integratedBeer);
     mp_integratedBeer = 0;

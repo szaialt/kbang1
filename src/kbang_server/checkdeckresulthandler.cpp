@@ -1,5 +1,5 @@
 #include "checkdeckresulthandler.h"
 
-// CheckDeckResultHandler::CheckDeckResultHandler()
-// {
-// }
+ CheckDeckResultHandler::CheckDeckResultHandler()
+ {
+ }

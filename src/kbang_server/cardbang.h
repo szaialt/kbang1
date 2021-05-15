@@ -54,7 +54,8 @@ public:
         DoubleExtra,
         Unlimited,
         NoHurtingBang,
-        Revenge
+        Revenge,
+        FlintIndianBang
     };
     CardBang(Game *game, int id, BangType type, CardSuit, CardRank);
     ~CardBang(); 

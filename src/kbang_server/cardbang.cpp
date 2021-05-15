@@ -93,6 +93,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Revenge:
         setType(CARD_REVENGE);
         break;
+    case FlintIndianBang:
+        setType(CARD_FLINT_INDIAN_BANG);
+        break;
     default:
             NOT_REACHED();
     }
@@ -223,7 +226,7 @@ void CardBang::shot(Player *targetPlayer){
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = mp_attackingPlayer->bangPower();
         if (mp_attackingPlayer->characterType() == CHARACTER_CRAZY_BEAR){
-            CharacterCrazyBear* bear = qobject_cast<CharacterCrazyBear*>(mp_attackingPlayer);
+            CharacterCrazyBear* bear = qobject_cast<CharacterCrazyBear*>(mp_attackingPlayer->character());
             if (bear != 0) {
                  int injury = bear->injury();
                  if (injury > 1) m_missedLeft = injury;
@@ -322,7 +325,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
     }
     switch(targetCard->type()) {
         case CARD_BANG:
-            if (type() == CARD_INDIAN_BANG){
+            if ((type() == CARD_INDIAN_BANG) || (type() == CARD_FLINT_INDIAN_BANG)) {
                 game()->gameCycle().unsetResponseMode();
                 gameTable()->playerRespondWithCard(targetCard);
                 missed();
@@ -332,7 +335,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
                 throw BadCardException();
             }
     case CARD_MISSED: 
-        if (type() == CARD_INDIAN_BANG){
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
             throw BadCardException();
         }
         game()->gameCycle().unsetResponseMode();
@@ -359,6 +362,9 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
         }
     case CARD_BACKFIRE: 
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
+            throw BadCardException();
+        }
         game()->gameCycle().unsetResponseMode(); 
         missed();
         targetCard->play(mp_attackingPlayer);
@@ -370,6 +376,9 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameEventManager().onPlayerUpdated(player);
         return;
     case CARD_REVENGE: 
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
+            throw BadCardException();
+        }
         targetCard->play(mp_attackingPlayer);
         gameTable()->playerRespondWithCard(targetCard);
         if (targetCard->pocket() != POCKET_GRAVEYARD){ 
@@ -379,7 +388,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameEventManager().onPlayerUpdated(player);
         return;
     case CARD_DEAD_RINGER:
-        if (type() == CARD_INDIAN_BANG){
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
             throw BadCardException();
         }
         game()->gameCycle().unsetResponseMode();
@@ -389,7 +398,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
     case CARD_RICOCHET:
     case CARD_DEFLECTION: {
-        if (type() == CARD_INDIAN_BANG){
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
             throw BadCardException();
         }
         if (targetCard->color() != COLOR_BROWN){
@@ -427,7 +436,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         break;
     }
     case CARD_VEST: {
-        if (type() == CARD_INDIAN_BANG){
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
             throw BadCardException();
         }
         targetCard->assertOnTable();
@@ -437,7 +446,7 @@ void CardBang::respondCard(PlayingCard* targetCard)
         return;
         }
     default:{
-        if (type() == CARD_INDIAN_BANG){
+        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
             throw BadCardException();
         }
         QList<PlayingCard*> table = mp_attackedPlayer->table();
@@ -468,6 +477,7 @@ bool CardBang::oneTimeBang(){
         case CARD_QUAD_BANG:
         case CARD_UNLIMITED_BANG:
         case CARD_INDIAN_BANG:
+        case CARD_FLINT_INDIAN_BANG:
         case CARD_UNDEFENSABLE:
             return true;
         default:

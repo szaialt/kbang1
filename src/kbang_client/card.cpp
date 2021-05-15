@@ -345,7 +345,6 @@ void Card::loadDefaultRuleset()
     new Card("Ambidexter Bo",        CHARACTER_AMBIDEXTER_BO,        "gfx/characters/33/bo-ambidextre.jpg");
     new Card("Bart Barber",           CHARACTER_BART_BARBER,           "gfx/characters/33/bart-barber.jpg");
     new Card("Big Fat Joe",           CHARACTER_BIG_FAT_JOE,          "gfx/characters/33/big-fat-joe.jpg");
-    new Card("Bruce Ling",            CHARACTER_BRUCE_LING,           "gfx/characters/33/bruce-ling.jpg");
     new Card("Burt Longcatcher",           CHARACTER_BURT_LONGCATCHER,         "gfx/characters/33/burt-longcatcher.jpg");
     new Card("Colin Barrel",          CHARACTER_COLIN_BARREL,        "gfx/characters/33/colin-barrel.jpg");
     new Card("Crazy Horse",         CHARACTER_CRAZY_HORSE,       "gfx/characters/33/crazy-horse.jpg");

@@ -37,9 +37,9 @@ void CardGeneralStore::play()
     if (type() == CARD_GENERALSTORE){
         Player* player = owner();
         foreach (player, game()->playerList()){
-            if (player->characterType() == CHARACTER_BRUCE_LING){
-              CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(player->character());
-              bruce->resetAbility();
+            if (player->characterType() == CHARACTER_TUCO_EL_FEO){
+              CharacterTucoElFeo* tuco =  qobject_cast<CharacterTucoElFeo*>(player->character());
+              tuco->resetAbility();
             }
         }
         gameTable()->playerPlayCard(this);
@@ -83,13 +83,13 @@ void CardGeneralStore::requestNext()
     if (mp_currentPlayer == 0) {
         mp_currentPlayer = mp_firstPlayer;
     } else {
-         if  ((type() == CARD_GENERALSTORE) && (mp_currentPlayer->characterType() == CHARACTER_BRUCE_LING)){
-           CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
-           if (bruce->items() == bruce->itemNumber){
-              bruce->itemToken();
+         if  ((type() == CARD_GENERALSTORE) && (mp_currentPlayer->characterType() == CHARACTER_TUCO_EL_FEO)){
+           CharacterTucoElFeo* tuco =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
+           if (tuco->items() == tuco->itemNumber){
+              tuco->itemToken();
           }
           else {
-              bruce->itemToken();
+              tuco->itemToken();
              mp_currentPlayer = game()->nextPlayer(mp_currentPlayer);
             }
          }
@@ -116,8 +116,8 @@ void CardGeneralStore::requestNext()
 bool CardGeneralStore::isLastCard(){
     if (mp_currentPlayer->characterType() == CHARACTER_TUCO_EL_FEO){
         if (m_remained == 0) return true;
-        CharacterTucoElFeo* bruce =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
-        if (bruce->items() == 0){
+        CharacterTucoElFeo* tuco =  qobject_cast<CharacterTucoElFeo*>(mp_currentPlayer->character());
+        if (tuco->items() == 0){
             if ((m_remained == 1) && (mp_currentPlayer == mp_firstPlayer)) {return true;}
         }
         {return false;}
@@ -128,14 +128,14 @@ bool CardGeneralStore::isLastCard(){
 }
 
 int CardGeneralStore::calculateBruceLings(){
-    int bruces = 0;
+    int tucos = 0;
     Player* player;
     foreach (player, game()->playerList()){
         if (player->isAlive()) {
-          if (player->characterType() == CHARACTER_BRUCE_LING){
-            bruces++;
+          if (player->characterType() == CHARACTER_TUCO_EL_FEO){
+            tucos++;
           }
         }
     }
-    return bruces;
+    return tucos;
 }
