@@ -27,9 +27,11 @@ void CharacterTedRevenge::respondCard(ReactionHandler* reactionHandler, PlayingC
                         case REACTION_KITCARLSON:
                         case REACTION_DUEL:
                         case REACTION_GATLING:
-                         case REACTION_INDIANS:   
+                        case REACTION_INDIANS:   
                         case REACTION_TAKER_BANG:
                         case REACTION_CUSTOMS:
+                        case REACTION_INDIAN_BANG:
+                        case REACTION_INDIAN_BANG_WITH_BARREL: 
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;

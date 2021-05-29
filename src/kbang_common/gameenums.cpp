@@ -847,6 +847,8 @@ ReactionType stringToReactionType(const QString& s)
     if (s == "healing-bang")    return REACTION_HEALING_BANG;
     if (s == "taker-bang")   return REACTION_TAKER_BANG;
     if (s == "customs")       return REACTION_CUSTOMS;
+    if (s == "indian-bang")       return REACTION_INDIAN_BANG;
+    if (s == "indian-bang-with-barrel")       return REACTION_INDIAN_BANG_WITH_BARREL;
     return REACTION_NONE;
 }
 
@@ -864,6 +866,8 @@ QString reactionTypeToString(const ReactionType& r)
     case REACTION_HEALING_BANG: return "healing-bang";
     case REACTION_TAKER_BANG:   return "taker-bang";
     case REACTION_CUSTOMS:        return "customs";
+    case REACTION_INDIAN_BANG: return "indian-bang";
+    case REACTION_INDIAN_BANG_WITH_BARREL: return "indian-bang-with-barrel";
     case REACTION_NONE:         return "";
     }
     return "";

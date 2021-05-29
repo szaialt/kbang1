@@ -3,17 +3,17 @@
 
 #include "characterbase.h"
 
-class CardBarrel;
-
 class CharacterJourdonnais : public CharacterBase
 {
 Q_OBJECT
 public:
     CharacterJourdonnais(QObject *parent);
-    virtual void useAbility();
-
+    virtual void respondCard(ReactionHandler*, PlayingCard* targetCard);
+    void resetAbility();
 private:
-    CardBarrel* mp_integratedBarrel;
+    bool check(PlayingCard* card);
+    bool canCheck;
 };
+
 
 #endif // CHARACTERJOURDONNAIS_H

@@ -57,6 +57,8 @@ void CharacterScout::respondCard(ReactionHandler* reactionHandler, PlayingCard* 
                          break;
                          case REACTION_DUEL:
                          case REACTION_INDIANS:
+                         case REACTION_INDIAN_BANG:
+                         case REACTION_INDIAN_BANG_WITH_BARREL: 
                           {
                             if ((reactionCard->color() == COLOR_BROWN) && (targetCard->color() == COLOR_BROWN)){
                                   PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());

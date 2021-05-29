@@ -33,6 +33,8 @@ void CharacterJuanMiranda::respondPass(ReactionHandler* reactionHandler){
                         case REACTION_GATLING:
                         case REACTION_INDIANS:
                         case REACTION_DUEL:
+                        case REACTION_INDIAN_BANG:
+                        case REACTION_INDIAN_BANG_WITH_BARREL: 
                         {
                             PlayingCard* checkedCard = gameTable().checkDeck();
                             bool checkResult = check(checkedCard);

@@ -48,6 +48,8 @@ void CharacterBushidoBill::respondCard(ReactionHandler* reactionHandler, Playing
                          break;
                          case REACTION_DUEL:
                          case REACTION_INDIANS:
+                         case REACTION_INDIAN_BANG:
+                         case REACTION_INDIAN_BANG_WITH_BARREL: 
                           {
                              PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                              bang->setVirtual(mp_player, POCKET_HAND);

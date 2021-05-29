@@ -1,6 +1,7 @@
 #include "cardarson.h"
 #include "gametable.h"
 #include "game.h"
+#include "characterjourdonnais.h"
 
 CardArson::CardArson(Game* game, int id, CardMultiShoot::Type type, CardSuit cardSuit, CardRank cardRank):
         CardMultiShoot(game, id, CardMultiShoot::Gatling, cardSuit, cardRank)
@@ -45,6 +46,14 @@ void CardArson::play(QList<Player*> targetPlayers){
     if (targetPlayers.size() != 2) throw BadUsageException();
     if (!targetPlayers.at(0)->isAlive()) throw BadUsageException();
     if (!targetPlayers.at(1)->isAlive()) throw BadUsageException();
+    if (targetPlayers.at(0)->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(targetPlayers.at(0)->character());
+        jou->resetAbility();
+     }
+     if (targetPlayers.at(1)->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(targetPlayers.at(1)->character());
+        jou->resetAbility();
+     }
     m_usedBarrels.clear();
     int inNextDirection = numberOfPlayersInNextDirection(targetPlayers.at(0), targetPlayers.at(1));
     int inPreviousDirection = numberOfPlayersInNextDirection(targetPlayers.at(1), targetPlayers.at(0));

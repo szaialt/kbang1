@@ -35,6 +35,8 @@ void CharacterCrazyWolf::respondCard(ReactionHandler* reactionHandler, PlayingCa
                         case REACTION_BANG:
                         case REACTION_TAKER_BANG:
                         case REACTION_GATLING:
+                        case REACTION_INDIAN_BANG:
+                        case REACTION_INDIAN_BANG_WITH_BARREL: 
                          {
                              if (reactionCard->type() == CARD_BROWN_SHOW_TIME){
                                 CharacterBase::respondCard(reactionHandler, targetCard);

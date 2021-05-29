@@ -5,6 +5,7 @@
 #include "gametable.h"
 #include "game.h"
 #include "cardbarrel.h"
+#include "characterjourdonnais.h"
 
 CardDodgeCityBang::CardDodgeCityBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRank cardRank):
         CardBang(game, id, CardBang::Bang, cardSuit, cardRank)
@@ -88,6 +89,10 @@ void CardDodgeCityBang::play(Player *targetPlayer)
         }
         mp_attackingPlayer = owner();
         gameTable()->playerPlayCard(this, targetPlayer);
+        if (targetPlayer->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(targetPlayer->character());
+        jou->resetAbility();
+     }
         m_usedBarrels.clear();
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = 1;

@@ -36,6 +36,9 @@ void CharacterLelaDevere::useAbility(QList<PlayingCard*> cards){
         weakenedBrawl->setVirtual(card);
         weakenedBrawl->play();
     }
+    else {
+        return;
+    }
     
     notifyAbilityUse();
 } 

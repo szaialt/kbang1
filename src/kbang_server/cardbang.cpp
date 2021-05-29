@@ -26,6 +26,7 @@
 #include "cardbarrel.h"
 #include "gameeventmanager.h"
 #include "util.h"
+#include "characterjourdonnais.h"
 #include "charactercrazybear.h"
 #include "characterambidexterbo.h"
 #include "charactercolinbarrel.h"
@@ -222,6 +223,10 @@ void CardBang::shot(Player *targetPlayer){
         if (type() != CARD_DEFLECTION) {
             gameTable()->playerPlayCard(this, targetPlayer);
         }
+        if (targetPlayer->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(targetPlayer->character());
+        jou->resetAbility();
+       }
         m_usedBarrels.clear();
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = mp_attackingPlayer->bangPower();
@@ -491,6 +496,17 @@ void CardBang::checkResult(bool result)
         game()->gameCycle().unsetResponseMode();
         missed();
     }
+}
+
+ReactionType CardBang::reactionType() const { 
+    if (type() == CARD_INDIAN_BANG){
+        return REACTION_INDIAN_BANG;
+    }
+    if (type() == CARD_FLINT_INDIAN_BANG){
+        return REACTION_INDIAN_BANG_WITH_BARREL;
+    }
+    return REACTION_BANG; 
+    
 }
 
 void CardBang::missed()

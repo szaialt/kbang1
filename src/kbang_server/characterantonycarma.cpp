@@ -30,6 +30,13 @@ void CharacterAntonyCarma::respondCard(ReactionHandler* reactionHandler, Playing
                     case REACTION_NONE:
                         CharacterBase::respondCard(reactionHandler, targetCard);
                     break;
+                    case REACTION_INDIAN_BANG:
+                    case REACTION_INDIAN_BANG_WITH_BARREL: 
+                         {
+                                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
+                                bang->setVirtual(mp_player, POCKET_HAND);
+                                CharacterBase::respondCard(reactionHandler, bang);
+                            }
                     case REACTION_BANG: 
                         {
                         if (reactionCard->type() == CARD_BANG){
@@ -43,16 +50,9 @@ void CharacterAntonyCarma::respondCard(ReactionHandler* reactionHandler, Playing
                             return;
                         }
                         else {
-                            if (reactionCard->type() == CARD_INDIAN_BANG){
-                                PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
-                                bang->setVirtual(mp_player, POCKET_HAND);
-                                CharacterBase::respondCard(reactionHandler, bang);
-                            }
-                            else {
-                                PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
-                                missed->setVirtual(mp_player, POCKET_HAND);
-                                CharacterBase::respondCard(reactionHandler, missed);
-                            }
+                            PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
+                            missed->setVirtual(mp_player, POCKET_HAND);
+                            CharacterBase::respondCard(reactionHandler, missed);
                             notifyAbilityUse();
                         }
                     }

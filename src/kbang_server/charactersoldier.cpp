@@ -40,6 +40,8 @@ void CharacterSoldier::respondCard(ReactionHandler* reactionHandler, PlayingCard
                         case REACTION_BANG:
                         case REACTION_TAKER_BANG:
                         case REACTION_CUSTOMS:
+                        case REACTION_INDIAN_BANG:
+                        case REACTION_INDIAN_BANG_WITH_BARREL: 
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;

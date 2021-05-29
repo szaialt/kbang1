@@ -5,6 +5,8 @@
 #include "gametable.h"
 #include "game.h"
 #include "cardbarrel.h"
+#include "characterjourdonnais.h"
+
 #include <iostream>
 
 CardValleyOfShadowsBang::CardValleyOfShadowsBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRank cardRank):
@@ -101,6 +103,10 @@ void CardValleyOfShadowsBang::play(Player *targetPlayer)
                 gameTable()->playerPlayCard(this, targetPlayer);
             }
         }
+        if (targetPlayer->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(targetPlayer->character());
+        jou->resetAbility();
+     }
         m_usedBarrels.clear();
         mp_attackedPlayer = targetPlayer;
         m_missedLeft = 1;

@@ -51,6 +51,7 @@ void CharacterStonewallJackson::respondCard(ReactionHandler* reactionHandler, Pl
                         case REACTION_DUEL:
                         case REACTION_INDIANS:
                         case REACTION_CUSTOMS:
+                        case REACTION_INDIAN_BANG:
                         case REACTION_NONE:
                             CharacterBase::respondCard(reactionHandler, targetCard);
                         break;
@@ -64,15 +65,32 @@ void CharacterStonewallJackson::respondCard(ReactionHandler* reactionHandler, Pl
                                     missed->setVirtual(mp_player, POCKET_HAND);
                                     CharacterBase::respondCard(reactionHandler, missed);
                                 }
+                                else {
+                                    CharacterBase::respondCard(reactionHandler, targetCard);
+                               }
+                            }
                             else {
                                 CharacterBase::respondCard(reactionHandler, targetCard);
                             }
-                         }
+                        }
+                        break;
+                            case REACTION_INDIAN_BANG_WITH_BARREL: {
+                              PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
+                             bool checkResult = check(checkedCard);
+                             if (checkResult){
+                                    PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
+                                    bang->setVirtual(mp_player, POCKET_HAND);
+                                    CharacterBase::respondCard(reactionHandler,  bang);
+                            }
+                            else {
+                                CharacterBase::respondCard(reactionHandler,   targetCard);
+                                }
+                            }                         
                          break;
                     }
                     
                     notifyAbilityUse();
-               }
+            
             }
             catch (BadUsageException ex){
                     ex.debug();

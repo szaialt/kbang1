@@ -1,20 +1,106 @@
 #include "characterjourdonnais.h"
-#include "cardbarrel.h"
 #include "player.h"
 #include "gamecycle.h"
+#include "cardbang.h"
+#include "cardmissed.h"
+#include "gametable.h"
+#include <algorithm>
 
 CharacterJourdonnais::CharacterJourdonnais(QObject* parent):
-        CharacterBase(parent, CHARACTER_JOURDONNAIS),
-        mp_integratedBarrel(0)
+        CharacterBase(parent, CHARACTER_JOURDONNAIS)
 {
+  canCheck = true;
 }
 
-void CharacterJourdonnais::useAbility()
-{
-    if (mp_integratedBarrel == 0) {
-        mp_integratedBarrel = new CardBarrel(mp_player->game(), 0, SUIT_CLUBS, 2);
-        mp_integratedBarrel->setVirtual(mp_player, POCKET_TABLE);
+void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, PlayingCard* targetCard){
+    if (reactionHandler == 0) return;
+    ReactionCard* reactionCard = static_cast<ReactionCard*>(reactionHandler);
+    if (reactionCard == 0){
+        CharacterBase::respondPass(reactionHandler);
     }
-    gameCycle().playCard(mp_player, mp_integratedBarrel);
+    else {
+            if (mp_player->game()->gameCycle().currentPlayer() != mp_player){
+                try {
+                    switch(reactionHandler->reactionType()) {
+                        case REACTION_GENERALSTORE:
+                        case REACTION_HEALING_BANG:
+                        case REACTION_LASTSAVE:
+                        case REACTION_LUCKYDUKE:
+                        case REACTION_KITCARLSON:
+                        case REACTION_TAKER_BANG:
+                        case REACTION_DUEL:
+                        case REACTION_INDIANS:
+                        case REACTION_CUSTOMS:
+                        case REACTION_INDIAN_BANG:
+                        case REACTION_NONE:
+                            CharacterBase::respondCard(reactionHandler, targetCard);
+                        break;
+                        case REACTION_GATLING:
+                        case REACTION_BANG:
+                          {
+                              if  (canCheck){
+                                PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
+                                bool checkResult = check(checkedCard);
+                                if (checkResult){
+                                    PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
+                                    missed->setVirtual(mp_player, POCKET_HAND);
+                                    CharacterBase::respondCard(reactionHandler, missed);
+                                    canCheck = false;
+                                }
+                                else {
+                                    CharacterBase::respondCard(reactionHandler, targetCard);
+                                    canCheck = false;
+                               }
+                              }
+                            else {
+                                CharacterBase::respondCard(reactionHandler, targetCard);
+                            }
+                          }
+                        break;
+                            case REACTION_INDIAN_BANG_WITH_BARREL: {
+                                if  (canCheck){
+                                  PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
+                                 bool checkResult = check(checkedCard);
+                                 if (checkResult){
+                                    PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
+                                    bang->setVirtual(mp_player, POCKET_HAND);
+                                    CharacterBase::respondCard(reactionHandler,  bang);
+                                    canCheck = false;
+                               }
+                                else {
+                                   CharacterBase::respondCard(reactionHandler,   targetCard);
+                                   canCheck = false;
+                                  }
+                               
+                               }
+                            else {
+                                CharacterBase::respondCard(reactionHandler,   targetCard);
+                            }
+                        }
+                         break;
+                    }
+                    
+                    notifyAbilityUse();
+            }
+            catch (BadUsageException ex){
+                    ex.debug();
+                }
+           catch (BadPlayerException ex){
+                    ex.debug();
+                }
+            }
+        else {
+            CharacterBase::respondCard(reactionHandler, targetCard);
+        }
+    }
 }
 
+void CharacterJourdonnais::resetAbility(){
+    canCheck = true;
+}
+
+bool CharacterJourdonnais::check(PlayingCard* card)
+{
+    if (card->suit() == SUIT_HEARTS) return true;
+    return false;
+}

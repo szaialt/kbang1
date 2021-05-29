@@ -4,7 +4,6 @@
 #include "privateplayerview.h"
 #include "cards.h"
 #include "util.h"
-#include "characterjourdonnais.h"
 #include "gametable.h"
 
 #include <QDebug>
@@ -819,32 +818,7 @@ void VoidAI3Level::requestWithAction()
             }
             
             qDebug() << QString("VoidAI (%1): REQUEST_RESPOND").arg(m_id);
-            if (mp_playerCtrl->character() == CHARACTER_JOURDONNAIS){
-                Player* player = mp_playerCtrl->mp_player;
-                CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(player->character());
-                try {
-                    jourdonnais->useAbility();
-                    //return;
-                }
-                catch (BadCardException e) {
-                    qDebug() << QString("VoidAI (%1): Respond: BadCardException").arg(m_id);
-                    //return;
-                }
-                catch (BadPlayerException e) {
-                    qDebug() << QString("VoidAI (%1): Respond: BadPlayerException").arg(m_id);
-                    //return;
-                }
-                catch (BadUsageException e) {
-                    qDebug() << QString("VoidAI (%1): Respond: BadUsageException").arg(m_id);
-                    //return;
-                }
-                catch (GameException& e) {
-                        qDebug("VoidAI");
-                        e.debug(); 
-                        //return;
-                }
- 
-            }
+
             QList<PlayingCard*> table = mp_playerCtrl->privatePlayerView().table();
             playCardForDefense(table, defense);
             QList<PlayingCard*> hand = mp_playerCtrl->privatePlayerView().hand();

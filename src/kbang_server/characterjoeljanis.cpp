@@ -57,6 +57,8 @@ void CharacterJoelJanis::respondCard(ReactionHandler* reactionHandler, PlayingCa
                          break;
                          case REACTION_DUEL:
                          case REACTION_INDIANS:
+                         case REACTION_INDIAN_BANG:
+                         case REACTION_INDIAN_BANG_WITH_BARREL: 
                           {
                             if ( (targetCard->color() != COLOR_BROWN)){
                                 CardBang* bang0 =  qobject_cast<CardBang*>(targetCard);

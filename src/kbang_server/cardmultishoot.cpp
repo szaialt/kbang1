@@ -5,6 +5,7 @@
 #include "player.h"
 #include "gameexceptions.h"
 #include "cardbarrel.h"
+#include "characterjourdonnais.h"
 
 CardMultiShoot::CardMultiShoot(Game* game, int id, CardMultiShoot::Type type, CardSuit cardSuit, CardRank cardRank):
         ReactionCard(game, id, CARD_UNKNOWN, cardSuit, cardRank)
@@ -58,6 +59,10 @@ void CardMultiShoot::play()
       m_playedNextDirection = true;
       mp_shootingPlayer = owner();
       mp_requestedPlayer = owner();
+      if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+        CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+        jou->resetAbility();
+     }
       m_usedBarrels.clear();
       gameTable()->playerPlayCard(this);
       requestNext();

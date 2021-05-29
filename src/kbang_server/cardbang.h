@@ -69,7 +69,7 @@ public:
 
     virtual void checkResult(bool result);
 
-    virtual ReactionType reactionType() const { return REACTION_BANG; }
+    virtual ReactionType reactionType() const;
     virtual Player* causedBy() const { return mp_attackingPlayer; }
     virtual int missedLeft() { return m_missedLeft; }
 protected:

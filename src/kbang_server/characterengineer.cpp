@@ -59,7 +59,10 @@ void CharacterEngineer::respondCard(ReactionHandler* reactionHandler, PlayingCar
             break;
         }
         case REACTION_INDIANS:
-        case REACTION_DUEL: {
+        case REACTION_DUEL: 
+        case REACTION_INDIAN_BANG:
+        case REACTION_INDIAN_BANG_WITH_BARREL: 
+        {
             if (targetCard->color() == COLOR_BLUE){
                 PlayingCard* bang = new CardBang(mp_player->game(), -1, CardBang::Bang, targetCard->suit(), targetCard->rank());
                 bang->setVirtual(targetCard);

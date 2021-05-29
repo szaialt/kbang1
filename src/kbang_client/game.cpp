@@ -165,6 +165,15 @@ void Game::setGameContext(const GameContextData& gameContextData)
         case REACTION_CUSTOMS:
             message = tr("<i>%1</i> played Customs. Do you have something to declare?").arg(causedByName);
             break;
+        case REACTION_HEALING_BANG:
+            message = tr("<i>%1</i> played Healing bang on you.").arg(causedByName);
+            break;
+        case REACTION_INDIAN_BANG:
+            message = tr("<i>%1</i> played Indian bang! on you!").arg(causedByName);
+            break;
+        case REACTION_INDIAN_BANG_WITH_BARREL:
+            message = tr("<i>%1</i> played Indian bang! on you. You can use your barrel.").arg(causedByName);
+            break;
         case REACTION_NONE:
             NOT_REACHED();
         }
