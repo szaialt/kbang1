@@ -714,7 +714,7 @@ void Client::onPlayerDiscardCard(PublicPlayerView& player, const PlayingCard* ca
 
 }
 
-void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card)
+void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card, PocketType pocket)
 {
     if (mp_parser == 0) return;
 
@@ -725,26 +725,17 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card)
     mp_parser->eventGameMessage(message);
 
     CardMovementData x;
-    x.pocketTypeFrom = POCKET_HAND;
+    x.pocketTypeFrom = pocket;
     x.pocketTypeTo   = POCKET_GRAVEYARD;
     x.playerFrom     = player.id();
     x.card           = card->cardData();
-    
-    if (card->color() != COLOR_BROWN){ 
-       if (card->pocket() == POCKET_GRAVEYARD){
-         x.pocketTypeFrom = POCKET_TABLE;
-       }
-      if (card->pocket() == POCKET_TABLE){
-        x.pocketTypeFrom = POCKET_TABLE;
-      }
-    }
     
     mp_parser->eventCardMovement(x);
     getPlayer(playerId())->player()->game()->gameEventManager().onPlayerUpdated(getPlayer(playerId())->player());
 
 }
 
-void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, PlayingCard* card2){
+void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, PlayingCard* card2, PocketType pocket1, PocketType pocket2){
     
     if (mp_parser == 0) return;
 
@@ -758,36 +749,17 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, Play
     mp_parser->eventGameMessage(message);
 
     CardMovementData x;
-    x.pocketTypeFrom = POCKET_HAND;
+    x.pocketTypeFrom = pocket1;
     x.pocketTypeTo   = POCKET_GRAVEYARD;
     x.playerFrom     = player.id();
     x.card           = card1->cardData();
     
     CardMovementData y;
-    y.pocketTypeFrom = POCKET_HAND;
+    y.pocketTypeFrom = pocket2;
     y.pocketTypeTo   = POCKET_GRAVEYARD;
     y.playerFrom     = player.id();
     y.card           = card2->cardData();
     
-    if (card1->color() != COLOR_BROWN){
-       if (card1->pocket() == POCKET_GRAVEYARD){
-         x.pocketTypeFrom = POCKET_TABLE;
-       }
-      if (card1->pocket() == POCKET_TABLE){
-        x.pocketTypeFrom = POCKET_TABLE;
-      }
-    }
-    
-     if (card2->color() != COLOR_BROWN){
-       QList<PlayingCard*> table = mp_playerCtrl->privatePlayerView().table();
-       if (card2->pocket() == POCKET_GRAVEYARD){
-         y.pocketTypeFrom = POCKET_TABLE;
-       }
-       if (card2->pocket() == POCKET_TABLE){
-         y.pocketTypeFrom = POCKET_TABLE;
-       }
-     }
-//     
      if ((card1->type() == CARD_PANIC) || (card1->type() == CARD_CATBALOU)){
          player.player()->addAdversary(&(targetPlayer->publicView()));
      }
@@ -799,7 +771,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, PlayingCard* card1, Play
 
 }
 
-void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card, PublicPlayerView& target)
+void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card, PublicPlayerView& target, PocketType pocket)
 {
     if (mp_parser == 0) return;
 
@@ -811,19 +783,10 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card,
     mp_parser->eventGameMessage(message);
 
     CardMovementData x;
-    x.pocketTypeFrom = POCKET_HAND;
+    x.pocketTypeFrom = pocket;
     x.pocketTypeTo   = POCKET_GRAVEYARD;
     x.playerFrom     = player.id();
     x.card           = card->cardData();
-    
-    if (card->color() != COLOR_BROWN){
-       if (card->pocket() == POCKET_GRAVEYARD){
-         x.pocketTypeFrom = POCKET_TABLE;
-       }
-      if (card->pocket() == POCKET_TABLE){
-        x.pocketTypeFrom = POCKET_TABLE;
-      }
-    }
     
     if ((card->type() == CARD_BANG) || (card->type() == CARD_DUEL) || (card->type() == CARD_JAIL)){
          player.player()->addAdversary(&target);
@@ -834,7 +797,7 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card,
 
 }
 
-void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer)
+void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer, PocketType pocket1, PocketType pocket2)
 {
     if (mp_parser == 0) return;
 
@@ -849,19 +812,10 @@ void Client::onPlayerPlayCard(PublicPlayerView& player, const PlayingCard* card,
     mp_parser->eventGameMessage(message);
 
     CardMovementData x;
-    x.pocketTypeFrom = POCKET_HAND;
+    x.pocketTypeFrom = pocket1;
     x.pocketTypeTo   = POCKET_GRAVEYARD;
     x.playerFrom     = player.id();
     x.card           = card->cardData();
-    
-    if (card->color() != COLOR_BROWN){
-       if (card->pocket() == POCKET_GRAVEYARD){
-         x.pocketTypeFrom = POCKET_TABLE;
-       }
-      if (card->pocket() == POCKET_TABLE){
-        x.pocketTypeFrom = POCKET_TABLE;
-      }
-    }
     
     mp_parser->eventCardMovement(x);
     getPlayer(playerId())->player()->game()->gameEventManager().onPlayerUpdated(getPlayer(playerId())->player());

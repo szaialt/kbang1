@@ -115,10 +115,10 @@ public: /* The GameEventListener interface */
     virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList< PlayingCard*> cards, bool revealCards);
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* nextCard);
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard* card, PocketType pocket);
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card);
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target);
-    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard*,  PlayingCard*);
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer);
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PocketType pocket);
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target, PocketType pocket);
+    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard*,  PlayingCard*, PocketType pocket1, PocketType pocket2);
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer, PocketType pocket1, PocketType pocket2);
     virtual void onPlayerPlayCardOnTable(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target);
     virtual void onPassTableCard(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& targetPlayer);
     virtual void onPlayerRespondWithCard(PublicPlayerView&, const PlayingCard* card);

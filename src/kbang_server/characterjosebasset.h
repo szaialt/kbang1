@@ -10,8 +10,13 @@ class CharacterJoseBasset : public CharacterBase
 Q_OBJECT
 public:
     CharacterJoseBasset(QObject* parent);
-    virtual void draw(bool specialDraw);
-    virtual void useAbility();
+    virtual void playCard(PlayingCard* card);
+    virtual void playCard(PlayingCard* card, Player* targetPlayer);
+    virtual void playCard(PlayingCard* card, PlayingCard* targetCard);
+    virtual void playCard(PlayingCard* card, PlayingCard* targetCard, Player* targetPlayer);
+    virtual void playCard(PlayingCard* card, QList<PlayingCard*> targetCards);
+
+    virtual bool canGetCards();
     virtual void resetAbility();
 protected: 
     bool m_canUseAbility;

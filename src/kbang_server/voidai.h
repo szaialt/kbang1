@@ -38,10 +38,11 @@ public:
     virtual void onPlayerDrawFromDeck(PublicPlayerView&, QList< PlayingCard*>, bool) {}
     virtual void onPlayerDrawFromGraveyard(PublicPlayerView&, const PlayingCard*, const PlayingCard*) {}
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard*, PocketType) {}
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*) {}
-    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard*,  PlayingCard*) {}
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*, PublicPlayerView&) {}
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*, const PlayingCard*, PublicPlayerView*) {}
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*, PocketType pocket) {}
+    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard*,  PlayingCard*, PocketType pocket) {}
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard*, PublicPlayerView&, PocketType pocket) {}
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer,  PocketType pocket1, PocketType pocket2) {}
+    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard* card1, PlayingCard* card2, PocketType pocket1, PocketType pocket2){}
     virtual void onPlayerPlayCardOnTable(PublicPlayerView&, const PlayingCard*, PublicPlayerView&) {}
     virtual void onPassTableCard(PublicPlayerView&, const PlayingCard*, PublicPlayerView&) {}
     virtual void onPlayerRespondWithCard(PublicPlayerView&, const PlayingCard*) {}

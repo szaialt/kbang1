@@ -97,7 +97,7 @@ void GameLogger::onPlayerDiscardCard(PublicPlayerView& p, const PlayingCard* c, 
     m_logFile << msg.toStdString() << endl;
 }
 
-void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c)
+void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, PocketType pocket)
 {
     QString msg = QString("onPlayerPlayCard(player=%1, card=%2)").
                   arg(p.id()).
@@ -105,7 +105,7 @@ void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c)
     m_logFile << msg.toStdString() << endl;
 }
 
-void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, PublicPlayerView& tp)
+void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, PublicPlayerView& tp, PocketType pocket)
 {
     QString msg = QString("onPlayerPlayCard(player=%1, card=%2, targetPlayer=%3)").
                   arg(p.id()).
@@ -114,7 +114,7 @@ void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, Pub
     m_logFile << msg.toStdString() << endl;
 }
 
-void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, const PlayingCard* tc, PublicPlayerView* tp)
+void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, const PlayingCard* tc, PublicPlayerView* tp, PocketType pocket1, PocketType pocket2)
 {
     QString msg = QString("onPlayerPlayCard(player=%1, card=%2, targetPlayer=%3, targetCard=%4)").
                   arg(p.id()).
@@ -124,7 +124,7 @@ void GameLogger::onPlayerPlayCard(PublicPlayerView& p, const PlayingCard* c, con
     m_logFile << msg.toStdString() << endl;
 }
 
-void GameLogger::onPlayerPlayCard(PublicPlayerView& p, PlayingCard* c1,  PlayingCard* c2)
+void GameLogger::onPlayerPlayCard(PublicPlayerView& p, PlayingCard* c1,  PlayingCard* c2, PocketType pocket1, PocketType pocket2)
 {
     QString msg = QString("onPlayerPlayCard(player=%1, card1=%2, card2=%3)").
                   arg(p.id()).

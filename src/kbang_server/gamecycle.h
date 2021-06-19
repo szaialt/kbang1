@@ -58,7 +58,6 @@ public:
     void skipPlayersTurn();
 
     void finishTurn(Player* player);
-    void joseBassetFinishesHerTurnByAbility(Player* player);
 
     /* Methods accessible from TURN phase */
     // + seznam karet

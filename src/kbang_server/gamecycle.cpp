@@ -136,6 +136,15 @@ void GameCycle::startTurn(Player* player)
 {
     m_contextDirty = 1;
     resetAbility(player);
+    // if previous players character is CHARACTER_JOSE_BASSET and can get chards then give two chards to her
+    // reset her ability
+    if (mp_game->previousPlayer(player)->characterType() == CHARACTER_JOSEY_BASSET){
+        CharacterJoseBasset* basset =  qobject_cast<CharacterJoseBasset*>(mp_game->previousPlayer(player)->character());
+        if ((turnNumber() > 0) && (basset->canGetCards())){
+            mp_game->gameTable().playerDrawFromDeck(mp_game->previousPlayer(player), 2, 0);
+        }
+        basset->resetAbility();
+    }
     Player::CardList table = player->table();
     foreach(PlayingCard* c, table){
         c->setAct(true); 
@@ -261,46 +270,6 @@ void GameCycle::finishTurn(Player* player)
         if (player->handSize() < 2)
         player->game()->gameTable().playerDrawFromDeck(player, 1, 0);
     }
-    if (m_duplicateTurn){
-        m_duplicateTurn = false;
-        startTurn(mp_currentPlayer);
-    }
-    else {
-        startTurn(mp_game->nextPlayer(mp_currentPlayer));
-    }
-    sendRequest();
-}
-
-void GameCycle::joseBassetFinishesHerTurnByAbility(Player* player)
-{
-    m_contextDirty = 0;
-    m_state = GAMEPLAYSTATE_DISCARD;
-    if (player->unlimitedBangs() < 0){
-        player->setUnlimitedBangs(-(player->unlimitedBangs()));
-    }
-    Player::CardList table = player->table();
-     foreach(PlayingCard* c, table){
-         if (c->color() == COLOR_GREEN){
-             c->setAct(true);             
-         }
-         if (c->color() == COLOR_POSITIVE_GREY){
-             if (!c->isAct()){
-                 c->setAct(true); 
-             }
-             else {
-                 mp_game->gameTable().playerDiscardCard(c);
-            }
-         }
-         if (c->type() == CARD_WEAKNESS){
-             CardWeakness* card =  qobject_cast<CardWeakness*>(c);
-             card->vulnerate();
-         }
-         if (c->color() == COLOR_NEGATIVE_GREY){
-             mp_game->gameTable().playerDiscardCard(c);
-        }
-         
-     }
-    player->setHexxZombie(false);
     if (m_duplicateTurn){
         m_duplicateTurn = false;
         startTurn(mp_currentPlayer);
@@ -780,10 +749,6 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_TURD_FERGUSON){
         CharacterTurdFerguson* turd =  qobject_cast<CharacterTurdFerguson*>(player->character());
         turd->resetAbility();
-    }
-    else if (player->characterType() == CHARACTER_JOSEY_BASSET){
-        CharacterJoseBasset* basset =  qobject_cast<CharacterJoseBasset*>(player->character());
-        basset->resetAbility();
     }
     else if (player->characterType() == CHARACTER_ANNE_ROGERS){
         CharacterAnneRogers* anne =  qobject_cast<CharacterAnneRogers*>(player->character());

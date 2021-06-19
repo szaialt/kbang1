@@ -102,9 +102,10 @@ void GameTable::playerPlayCard(PlayingCard* card)
         card = card->master();
     if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
+    PocketType pocket = card->pocket();
     Player* owner = card->owner();
     moveCardToGraveyard(card);
-    mp_game->gameEventManager().onPlayerPlayCard(owner, card);
+    mp_game->gameEventManager().onPlayerPlayCard(owner, card, pocket);
     owner->checkEmptyHand();
     mp_game->gameEventManager().onPlayerUpdated(owner); 
 
@@ -116,9 +117,10 @@ void GameTable::playerPlayCard(PlayingCard* card, Player* targetPlayer)
         card = card->master();
     if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
+    PocketType pocket = card->pocket();
     Player* owner = card->owner();
     moveCardToGraveyard(card);
-    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetPlayer);
+    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetPlayer, pocket);
     owner->checkEmptyHand();
     mp_game->gameEventManager().onPlayerUpdated(owner);
 
@@ -131,9 +133,11 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard)
     if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Q_ASSERT(!targetCard->isVirtual());
+    PocketType pocket1 = card->pocket();
+    PocketType pocket2 = targetCard->pocket();
     Player* owner = card->owner();
     moveCardToGraveyard(card);
-    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetCard);
+    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetCard, pocket1, pocket2);
     owner->checkEmptyHand();
     mp_game->gameEventManager().onPlayerUpdated(owner);
 
@@ -147,9 +151,11 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard, Playe
     if (card == 0) return;
     Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Q_ASSERT(!targetCard->isVirtual());
+    PocketType pocket1 = card->pocket();
+    PocketType pocket2 = targetCard->pocket();
     Player* owner = card->owner();
     moveCardToGraveyard(card);
-    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetCard, targetPlayer);
+    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetCard, targetPlayer, pocket1, pocket2);
     owner->checkEmptyHand();
     mp_game->gameEventManager().onPlayerUpdated(owner);
 }

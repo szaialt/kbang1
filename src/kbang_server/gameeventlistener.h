@@ -89,13 +89,13 @@ public:
 
     virtual void onPlayerDiscardCard(PublicPlayerView&, const PlayingCard* card, PocketType pocket) = 0;
 
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card) = 0;
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PocketType pocket) = 0;
 
-    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard* card1, PlayingCard* card2) = 0;
+    virtual void onPlayerPlayCard(PublicPlayerView&, PlayingCard* card1, PlayingCard* card2, PocketType pocket1, PocketType pocket2) = 0;
     
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target) = 0;
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target, PocketType pocket) = 0;
 
-    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer) = 0;
+    virtual void onPlayerPlayCard(PublicPlayerView&, const PlayingCard* card, const PlayingCard* target, PublicPlayerView* targetPlayer, PocketType pocket1, PocketType pocket2) = 0;
 
     virtual void onPlayerPlayCardOnTable(PublicPlayerView&, const PlayingCard* card, PublicPlayerView& target) = 0;
 

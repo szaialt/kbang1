@@ -328,12 +328,17 @@ void CardBang::respondCard(PlayingCard* targetCard)
     if (type() == CARD_UNDEFENSABLE){
         throw BadCardException();
     }
+
     switch(targetCard->type()) {
         case CARD_BANG:
             if ((type() == CARD_INDIAN_BANG) || (type() == CARD_FLINT_INDIAN_BANG)) {
                 game()->gameCycle().unsetResponseMode();
                 gameTable()->playerRespondWithCard(targetCard);
                 missed();
+                if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
                 return;  
             }
             else {
@@ -346,12 +351,20 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
     case CARD_DODGE: 
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         gameTable()->playerDrawFromDeck(player, 1);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
     case CARD_BARREL: {
         if (type() == CARD_INDIAN_BANG){
@@ -364,6 +377,10 @@ void CardBang::respondCard(PlayingCard* targetCard)
         m_usedBarrels.append(targetCard);
         CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
         barrel->check(this);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
         }
     case CARD_BACKFIRE: 
@@ -379,6 +396,10 @@ void CardBang::respondCard(PlayingCard* targetCard)
         }
         player->checkEmptyHand();
         game()->gameEventManager().onPlayerUpdated(player);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
     case CARD_REVENGE: 
         if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
@@ -391,6 +412,10 @@ void CardBang::respondCard(PlayingCard* targetCard)
         }
         player->checkEmptyHand();
         game()->gameEventManager().onPlayerUpdated(player);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
     case CARD_DEAD_RINGER:
         if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
@@ -400,6 +425,10 @@ void CardBang::respondCard(PlayingCard* targetCard)
         gameTable()->playerRespondWithCard(targetCard);
         missed();
         game()->gameCycle().setNeedsFinishTurn(true);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
     case CARD_RICOCHET:
     case CARD_DEFLECTION: {
@@ -437,6 +466,10 @@ void CardBang::respondCard(PlayingCard* targetCard)
         }
         player->checkEmptyHand();
         game()->gameEventManager().onPlayerUpdated(player);
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
         break;
     }
@@ -448,22 +481,31 @@ void CardBang::respondCard(PlayingCard* targetCard)
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithCard(targetCard);
         missed();
+        if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+        } 
         return;
         }
     default:{
-        if ((type() == CARD_INDIAN_BANG)  || (type() == CARD_FLINT_INDIAN_BANG)){
-            throw BadCardException();
-        }
         QList<PlayingCard*> table = mp_attackedPlayer->table();
         foreach (PlayingCard* card, table){
             if (card->type() == CARD_STEROID){
                 game()->gameCycle().unsetResponseMode();
                 gameTable()->playerRespondWithCard(targetCard);
                 missed();
+                if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
                 return;
             }
         }
-       
+       if (mp_attackedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+            CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_attackedPlayer->character());
+            jourdonnais->inactivate();
+            return;
+        } 
         throw BadCardException();
     }
     

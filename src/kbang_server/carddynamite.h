@@ -12,7 +12,7 @@ public:
 
     virtual CardColor color() const;
     virtual void play();
-    virtual void play(Player* targetPlayer);
+    //virtual void play(Player* targetPlayer);
     virtual void checkResult(bool result);
     virtual void registerPlayer(Player* player);
     virtual void unregisterPlayer(Player* player);

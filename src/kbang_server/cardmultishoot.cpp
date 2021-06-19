@@ -143,6 +143,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
              }
+             if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
              return;
         case CARD_MISSED:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -157,6 +161,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+            } 
             return;
         case CARD_BARREL: {
             //if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -169,6 +177,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             m_usedBarrels.append(targetCard);
             CardBarrel* barrel = qobject_cast<CardBarrel*>(targetCard);
             barrel->check(this);
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
             break;
         }
         case CARD_DEAD_RINGER:
@@ -185,6 +197,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
             return;
         case CARD_DEFLECTION:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -198,6 +214,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
             return;
         case CARD_VEST:
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY))
@@ -212,6 +232,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
             return;
             //You neeed enumerate all weapons there.
         case CARD_VOLCANIC:
@@ -236,6 +260,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             else {
                 requestPrevious();
             }
+            if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
             return;
         default:{
             if ((type() == CARD_INDIANS) || (type() == CARD_MANN_VS_MACHINE) || (type() == CARD_WAR_PARTY)){
@@ -251,6 +279,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
                 else {
                     requestPrevious();
                 }
+                if (mp_requestedPlayer->characterType() == CHARACTER_JOURDONNAIS){
+                  CharacterJourdonnais* jourdonnais =  qobject_cast<CharacterJourdonnais*>(mp_requestedPlayer->character());
+                 jourdonnais->inactivate();
+              } 
                 return;
             }
         }

@@ -91,7 +91,12 @@ public:
     inline Game*                game()             const { return mp_game;             }
     inline int                  lifePoints()       const { return m_lifePoints;        }
     inline int                  maxLifePoints()    const { return m_maxLifePoints;     }
-    inline int                  initialCardCount() const { return m_maxLifePoints;     }
+    inline int                  initialCardCount() const { 
+        if (character()->characterType() == CHARACTER_DALTON_GANG){
+            return 2 * m_maxLifePoints;
+        };
+        return m_maxLifePoints;     
+    }
     inline int                  handSize()         const { return m_hand.size();       }
     inline CardList             hand()             const { return m_hand;              }
     inline CardList             table()            const { return m_table;             }

@@ -10,6 +10,7 @@ public:
     CharacterJourdonnais(QObject *parent);
     virtual void respondCard(ReactionHandler*, PlayingCard* targetCard);
     void resetAbility();
+    void inactivate();
 private:
     bool check(PlayingCard* card);
     bool canCheck;

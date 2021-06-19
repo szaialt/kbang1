@@ -21,7 +21,8 @@ void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, Playing
     else {
             if (mp_player->game()->gameCycle().currentPlayer() != mp_player){
                 try {
-                    switch(reactionHandler->reactionType()) {
+                    if  (canCheck){
+                      switch(reactionHandler->reactionType()) {
                         case REACTION_GENERALSTORE:
                         case REACTION_HEALING_BANG:
                         case REACTION_LASTSAVE:
@@ -38,7 +39,7 @@ void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, Playing
                         case REACTION_GATLING:
                         case REACTION_BANG:
                           {
-                              if  (canCheck){
+                              
                                 PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
                                 bool checkResult = check(checkedCard);
                                 if (checkResult){
@@ -51,14 +52,9 @@ void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, Playing
                                     CharacterBase::respondCard(reactionHandler, targetCard);
                                     canCheck = false;
                                }
-                              }
-                            else {
-                                CharacterBase::respondCard(reactionHandler, targetCard);
-                            }
                           }
                         break;
                             case REACTION_INDIAN_BANG_WITH_BARREL: {
-                                if  (canCheck){
                                   PlayingCard* checkedCard = mp_player->game()->gameTable().checkDeck();
                                  bool checkResult = check(checkedCard);
                                  if (checkResult){
@@ -73,14 +69,15 @@ void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, Playing
                                   }
                                
                                }
-                            else {
-                                CharacterBase::respondCard(reactionHandler,   targetCard);
-                            }
+                               break;
                         }
-                         break;
-                    }
-                    
+                         
+                      
                     notifyAbilityUse();
+                    } 
+                    else {
+                        CharacterBase::respondCard(reactionHandler, targetCard);
+                    }
             }
             catch (BadUsageException ex){
                     ex.debug();
@@ -97,6 +94,10 @@ void CharacterJourdonnais::respondCard(ReactionHandler* reactionHandler, Playing
 
 void CharacterJourdonnais::resetAbility(){
     canCheck = true;
+}
+
+void CharacterJourdonnais::inactivate(){
+    canCheck = false;
 }
 
 bool CharacterJourdonnais::check(PlayingCard* card)

@@ -91,6 +91,10 @@ int CardArson::numberOfPlayersInNextDirection(Player* player0, Player* player1){
     int numberOfPlayers = 1;
     while (currentPlayer != player1){
         currentPlayer = game()->nextPlayer(currentPlayer);
+        if (currentPlayer->characterType() == CHARACTER_JOURDONNAIS){
+          CharacterJourdonnais* jou =  qobject_cast<CharacterJourdonnais*>(currentPlayer->character());
+          jou->resetAbility();
+       }
         if (currentPlayer == players.last()){
             currentPlayer = players.first();
         }

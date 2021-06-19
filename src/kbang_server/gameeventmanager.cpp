@@ -148,39 +148,39 @@ void GameEventManager::onPlayerDiscardCard(Player* p, PlayingCard* card, PocketT
    
 }
 
-void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card)
+void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, PocketType pocket)
 {
     foreach(Handler* h, m_handlers) {
-        h->handler->onPlayerPlayCard(p->publicView(), card);
+        h->handler->onPlayerPlayCard(p->publicView(), card, pocket);
     }
 }
 
-void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, Player* targetPlayer)
+void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, Player* targetPlayer, PocketType pocket)
 {
     foreach(Handler* h, m_handlers) {
-        h->handler->onPlayerPlayCard(p->publicView(), card, targetPlayer->publicView());
+        h->handler->onPlayerPlayCard(p->publicView(), card, targetPlayer->publicView(), pocket);
     }
 }
 
-void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, PlayingCard* targetCard)
+void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, PlayingCard* targetCard, PocketType pocket1, PocketType pocket2)
 {
     PublicPlayerView* owner = targetCard->owner() ? &targetCard->owner()->publicView() : 0;
     foreach(Handler* h, m_handlers) {
         if ((targetCard->pocket() == POCKET_HAND && targetCard->owner() == h->player) || h->isSupervisor) {
-            h->handler->onPlayerPlayCard(p->publicView(), card, targetCard, owner);
+            h->handler->onPlayerPlayCard(p->publicView(), card, targetCard, owner, pocket1, pocket2);
         } else {
-            h->handler->onPlayerPlayCard(p->publicView(), card, 0, owner);
+            h->handler->onPlayerPlayCard(p->publicView(), card, 0, owner, pocket1, pocket2);
         }
     }
 }
 
-void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, PlayingCard* targetCard, Player* targetPlayer)
+void GameEventManager::onPlayerPlayCard(Player* p, PlayingCard* card, PlayingCard* targetCard, Player* targetPlayer, PocketType pocket1, PocketType pocket2)
 {
     foreach(Handler* h, m_handlers) {
         if ((targetCard->pocket() == POCKET_HAND && targetCard->owner() == h->player) || h->isSupervisor) {
-            h->handler->onPlayerPlayCard(p->publicView(), card, targetCard, &(targetPlayer->publicView()));
+            h->handler->onPlayerPlayCard(p->publicView(), card, targetCard, &(targetPlayer->publicView()), pocket1, pocket2);
         } else {
-            h->handler->onPlayerPlayCard(p->publicView(), card, 0,  &(targetPlayer->publicView()));
+            h->handler->onPlayerPlayCard(p->publicView(), card, 0,  &(targetPlayer->publicView()), pocket1, pocket2);
         }
     }
 }

@@ -61,7 +61,7 @@ void CardDynamite::play()
     }
 }
 
-void CardDynamite::play(Player* targetPlayer){
+/*void CardDynamite::play(Player* targetPlayer){
     if (owner()->characterType() == CHARACTER_DYNAMITE_JOE){
         gameCycle()->assertTurn();
         assertInHand();
@@ -74,7 +74,7 @@ void CardDynamite::play(Player* targetPlayer){
         gameTable()->playerPlayCardOnTable(this, targetPlayer);
     }
     else throw BadUsageException();
-}
+}*/
 
 void CardDynamite::checkResult(bool result)
 {

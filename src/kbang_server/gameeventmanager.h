@@ -47,13 +47,13 @@ public:
 
     void onPlayerDiscardCard(Player*, PlayingCard*, PocketType pocketFrom);
 
-    void onPlayerPlayCard(Player*, PlayingCard*);
+    void onPlayerPlayCard(Player*, PlayingCard*, PocketType pocket);
 
-    void onPlayerPlayCard(Player*, PlayingCard*, Player* targetPlayer);
+    void onPlayerPlayCard(Player*, PlayingCard*, Player* targetPlayer, PocketType pocket);
 
-    void onPlayerPlayCard(Player*, PlayingCard*, PlayingCard* targetCard);
+    void onPlayerPlayCard(Player*, PlayingCard*, PlayingCard* targetCard, PocketType pocket1, PocketType pocket2);
 
-    void onPlayerPlayCard(Player*, PlayingCard*, PlayingCard* targetCard, Player* targetPlayer);
+    void onPlayerPlayCard(Player*, PlayingCard*, PlayingCard* targetCard, Player* targetPlayer, PocketType pocket1, PocketType pocket2);
     
     void onPlayerPlayCardOnTable(Player*, PlayingCard*, Player* targetPlayer);
 
