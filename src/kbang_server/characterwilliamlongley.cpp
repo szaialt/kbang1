@@ -3,6 +3,7 @@
 #include "gamecycle.h"
 #include "cardbang.h"
 #include "cardmissed.h"
+#include "weaponcard.h"
 #include "gametable.h"
 #include <algorithm>
 
@@ -29,12 +30,18 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                         case REACTION_TAKER_BANG:
                         case REACTION_GATLING:
                         {
-                            PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
-                            missed->setVirtual(mp_player, POCKET_HAND);
-                            CharacterBase::respondCard(reactionHandler, missed);
+                            if (reactionCard->type() == CARD_BROWN_SHOW_TIME){
+                                PlayingCard* weapon = new WeaponCard(mp_player->game(), -1, WeaponCard::Schofield, targetCard->suit(), targetCard->rank());
+                                weapon->setVirtual(mp_player, POCKET_HAND);
+                                CharacterBase::respondCard(reactionHandler, weapon);
+                            }
+                            else {
+                              PlayingCard* missed = new CardMissed(mp_player->game(), -1, CardMissed::Missed, targetCard->suit(), targetCard->rank());
+                              missed->setVirtual(mp_player, POCKET_HAND);
+                              CharacterBase::respondCard(reactionHandler, missed);
+                            }
                         }
                             break;
-                        case REACTION_DUEL:
                         case REACTION_INDIANS:
                         case REACTION_INDIAN_BANG:
                         case REACTION_INDIAN_BANG_WITH_BARREL: 
@@ -44,6 +51,7 @@ void CharacterWilliamLongley::respondCard(ReactionHandler* reactionHandler, Play
                             CharacterBase::respondCard(reactionHandler, bang);
                          }
                         break;
+                        case REACTION_DUEL:
                         case REACTION_HEALING_BANG:
                         case REACTION_LASTSAVE:
                         case REACTION_LUCKYDUKE:

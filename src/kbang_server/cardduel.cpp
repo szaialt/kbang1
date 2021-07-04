@@ -47,11 +47,13 @@ void CardDuel::respondPass()
 {
     game()->gameCycle().unsetResponseMode();
     gameTable()->playerPass(mp_requestedPlayer);
-    if (type() == CARD_DUEL){
-        mp_requestedPlayer->modifyLifePoints(-1, mp_initialPlayer);
-    }
-    else {
-        mp_requestedPlayer->modifyLifePoints(-2, mp_initialPlayer);
+    if (mp_requestedPlayer->characterType() != CHARACTER_WILLIAM_LONGLEY){
+        if (type() == CARD_DUEL){
+            mp_requestedPlayer->modifyLifePoints(-1, mp_initialPlayer);
+        }
+        else {
+            mp_requestedPlayer->modifyLifePoints(-2, mp_initialPlayer);
+        }
     }
     gameCycle()->setCardEffect(0);
 }

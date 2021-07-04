@@ -43,6 +43,9 @@ CardBang::CardBang(Game* game, int id, BangType type, CardSuit cardSuit, CardRan
     case Bang:
         setType(CARD_BANG);
         break;
+    case DirectHit:
+        setType(CARD_DIRECT_HIT);
+        break;
     case DoubleBang:
         setType(CARD_DOUBLE_BANG);
         break;
