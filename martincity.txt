@@ -92,7 +92,7 @@ You can use it to defend a life point.
 
 2. Stunning
 
-If you have it plaed in front of you, then you can BANG! an another player who you can see to steal his or her ability for a turn. It's not fully implemented.
+If you have it placed in front of you, then you can BANG! an another player who you can see to steal his or her ability for a turn. It's not fully implemented.
 
 3. Cowboy pocket
 

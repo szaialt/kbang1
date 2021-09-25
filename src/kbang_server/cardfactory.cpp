@@ -231,8 +231,7 @@ struct CardFactory::CardFactoryImp
             
             list.append(new CardThunder(game, id(), SUIT_DIAMONDS, 4));
             
-            list.append(new CardStunning(game, id(), SUIT_DIAMONDS, 5));   
-            
+            list.append(new CardJail(game, id(), CardJail::Jail, SUIT_DIAMONDS, 5, 12));
             list.append(new CardMissed(game, id(), CardMissed::Vest, SUIT_SPADES, 4));
             
             list.append(new CardThief(game, id(), SUIT_HEARTS, 6));
@@ -251,7 +250,7 @@ struct CardFactory::CardFactoryImp
            
             list.append(new CardWeakness(game, id(), SUIT_DIAMONDS, 14));
             
-            list.append(new CardStunning(game, id(), SUIT_HEARTS, 5)); 
+            list.append(new CardJail(game, id(), CardJail::Jail, SUIT_HEARTS, 5, 14));
             
             list.append(new CardDrawCards(game, id(), CardDrawCards::GoldWatch,  SUIT_SPADES,  7));
         }
