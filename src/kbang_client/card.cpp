@@ -309,7 +309,6 @@ void Card::loadDefaultRuleset()
     new Card("Queen Anne",     CHARACTER_QUEEN_ANNE,      "gfx/characters/robbersroost/queen-anne.png");
     new Card("Josey Basset",     CHARACTER_JOSEY_BASSET,      "gfx/characters/robbersroost/josey-basset.png");
     new Card("Maggie Mae",   CHARACTER_MAGGIE_MAE,    "gfx/characters/robbersroost/maggie-mae.png");
-    new Card("Anne Rogers",     CHARACTER_ANNE_ROGERS,      "gfx/characters/robbersroost/anne-rogers.png");
     new Card("Lela Devere",     CHARACTER_LELA_DEVERE,      "gfx/characters/robbersroost/lela-devere.png");
     new Card("Julie Bulette", CHARACTER_JULIE_BULETTE,  "gfx/characters/robbersroost/julie-bulette.png");
     
@@ -348,7 +347,6 @@ void Card::loadDefaultRuleset()
     new Card("Burt Longcatcher",           CHARACTER_BURT_LONGCATCHER,         "gfx/characters/33/burt-longcatcher.jpg");
     new Card("Colin Barrel",          CHARACTER_COLIN_BARREL,        "gfx/characters/33/colin-barrel.jpg");
     new Card("Crazy Horse",         CHARACTER_CRAZY_HORSE,       "gfx/characters/33/crazy-horse.jpg");
-    new Card("Dynamite Joe",             CHARACTER_DYNAMITE_JOE,           "gfx/characters/33/dynamite-joe.jpg");
     new Card("Hank the Bank",           CHARACTER_HANK_THE_BANK,           "gfx/characters/33/hank-bank.jpg");
     new Card("James Stoneheart",           CHARACTER_JAMES_STONEHEART,          "gfx/characters/33/james-stoneheart.jpg");
     new Card("Jennifer Big-Heart",            CHARACTER_JENNIFER_BIG_HEART,           "gfx/characters/33/jennifer-big-heart.jpg");

@@ -127,7 +127,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "queen anne")     return CHARACTER_QUEEN_ANNE;
     if (s == "josey basset")   return CHARACTER_JOSEY_BASSET;
     if (s == "maggie mae")     return CHARACTER_MAGGIE_MAE;
-    if (s == "anne rogers")    return CHARACTER_ANNE_ROGERS;
     if (s == "lela devere")    return CHARACTER_LELA_DEVERE;
     if (s == "julie bulette")  return CHARACTER_JULIE_BULETTE;
     //Boot Hill
@@ -164,7 +163,6 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "burt longcatcher") return CHARACTER_BURT_LONGCATCHER;
     if (s == "colin barrel")    return CHARACTER_COLIN_BARREL;
     if (s == "crazy horse") return CHARACTER_CRAZY_HORSE;
-    if (s == "dynamite joe")     return CHARACTER_DYNAMITE_JOE;
     if (s == "hank the bank") return CHARACTER_HANK_THE_BANK;
     if (s == "james stoneheart") return CHARACTER_JAMES_STONEHEART;
     if (s == "jennifer big-heart")   return CHARACTER_JENNIFER_BIG_HEART;
@@ -271,7 +269,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_QUEEN_ANNE:      return "queen anne";
     case CHARACTER_JOSEY_BASSET:    return "josey basset";
     case CHARACTER_MAGGIE_MAE:       return "maggie mae";
-    case CHARACTER_ANNE_ROGERS:    return "anne rogers";
     case CHARACTER_LELA_DEVERE:      return "lela devere";
     case CHARACTER_JULIE_BULETTE:    return "julie bulette";
     
@@ -312,7 +309,6 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_BURT_LONGCATCHER:  return "burt longcatcher" ;
     case CHARACTER_COLIN_BARREL:     return "colin barrel" ;
     case CHARACTER_CRAZY_HORSE:     return "crazy horse" ;
-    case CHARACTER_DYNAMITE_JOE:     return "dynamite joe" ;
     case CHARACTER_HANK_THE_BANK: return "hank the bank" ;
     case CHARACTER_JAMES_STONEHEART: return "james stoneheart" ;
     case CHARACTER_JENNIFER_BIG_HEART:  return "jennifer big-heart" ;
@@ -935,6 +931,8 @@ GameMessageType stringToGameMessageType(const QString& s) {
     if (s == "player-draw-from-graveyard")  return GAMEMESSAGE_PLAYERDRAWFROMGRAVEYARD;
     if (s == "player-discard-card")         return GAMEMESSAGE_PLAYERDISCARDCARD;
     if (s == "player-play-card")            return GAMEMESSAGE_PLAYERPLAYCARD;
+    if (s == "player-play-card-on-bank")            return GAMEMESSAGE_PLAYERPLAYCARDONBANK;
+    if (s == "player-draw-card-from-bank")            return GAMEMESSAGE_PLAYERDRAWFROMBANK;
     if (s == "player-respond-with-card")    return GAMEMESSAGE_PLAYERRESPONDWITHCARD;
     if (s == "player-pass")                 return GAMEMESSAGE_PLAYERPASS;
     if (s == "player-pick-from-selection")  return GAMEMESSAGE_PLAYERPICKFROMSELECTION;
@@ -954,6 +952,8 @@ QString gameMessageTypeToString(const GameMessageType& g) {
     case GAMEMESSAGE_PLAYERDRAWFROMGRAVEYARD:   return "player-draw-from-graveyard";
     case GAMEMESSAGE_PLAYERDISCARDCARD:         return "player-discard-card";
     case GAMEMESSAGE_PLAYERPLAYCARD:            return "player-play-card";
+    case GAMEMESSAGE_PLAYERPLAYCARDONBANK:             return "player-play-card-on-bank";
+    case GAMEMESSAGE_PLAYERDRAWFROMBANK:           return "player-draw-card-from-bank";
     case GAMEMESSAGE_PLAYERRESPONDWITHCARD:     return "player-respond-with-card";
     case GAMEMESSAGE_PLAYERPASS:                return "player-pass";
     case GAMEMESSAGE_PLAYERPICKFROMSELECTION:   return "player-pick-from-selection";

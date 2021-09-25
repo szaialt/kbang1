@@ -10,7 +10,6 @@ class CharacterDynamiteDick : public CharacterBase
 Q_OBJECT
 public:
     CharacterDynamiteDick(QObject* parent);
-    virtual void playCard(PlayingCard* card, Player* targetPlayer);
     virtual int maxLifePoints() const;
     virtual void useAbility();
 };

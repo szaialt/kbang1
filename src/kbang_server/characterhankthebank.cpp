@@ -17,20 +17,24 @@ void CharacterHankTheBank::playCard(PlayingCard* card){
     }
 }
 
+
 void CharacterHankTheBank::useAbility(QList<PlayingCard*> cards){
        if (cards.empty()){
-        throw BadCardException();
+        throw BadUsageException();
     }
     else {
         PlayingCard* targetCard = cards.at(0);
-        if (targetCard->owner() != mp_player) throw BadCardException();
-        if (targetCard->pocket() != POCKET_HAND) throw BadCardException();
+        if (targetCard->owner() != mp_player) throw BadUsageException();
+        if (targetCard->pocket() != POCKET_HAND){
+            BadUsageException();
+        }
         if (mp_player->bank().isEmpty()){
-          gameTable().playerPlayCardOnBank(targetCard);
+          gameTable().playerPlayCardOnBank(targetCard, mp_player);
           notifyAbilityUse();
-        }
+       }
         else {
-             throw BadCardException();
+            throw BadUsageException();
         }
+        
     }
 }

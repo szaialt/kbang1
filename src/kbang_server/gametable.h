@@ -111,7 +111,7 @@ public:
 
     PlayingCard* playerDrawFromBank(Player*);
 
-    void playerPlayCardOnBank(PlayingCard*);
+    void playerPlayCardOnBank(PlayingCard* card, Player* owner);
     
     bool isEmptyGraveyard() const;
 

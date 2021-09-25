@@ -71,6 +71,16 @@ void GameMessageEvent::run()
                         arg(cardToString(m_gameMessage.card));
         }
         break;
+    case GAMEMESSAGE_PLAYERPLAYCARDONBANK:
+        msg = tr("%1 played %2 on bank.").
+                        arg(decoratePlayerName(playerName)).
+                        arg(cardToString(m_gameMessage.card));
+        break;
+    case GAMEMESSAGE_PLAYERDRAWFROMBANK:
+        msg = tr("%1 draw %2 from bank.").
+                        arg(decoratePlayerName(playerName)).
+                        arg(cardToString(m_gameMessage.card));
+        break;
     case GAMEMESSAGE_PLAYERRESPONDWITHCARD:
         msg = tr("&nbsp;&nbsp;&nbsp;&nbsp;%1 responded with %2.").
                     arg(decoratePlayerName(playerName)).

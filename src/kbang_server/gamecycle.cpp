@@ -25,7 +25,6 @@
 #include "characterturdferguson.h"
 #include "characterjosebasset.h"
 #include "characterjosebasset.h"
-#include "characterannerogers.h"
 #include "characterjuliebulette.h"
 #include "characterchosingthomas.h"
 #include "characterfelipedelgado.h"
@@ -749,10 +748,6 @@ void GameCycle::resetAbility(Player* player){
     else if (player->characterType() == CHARACTER_TURD_FERGUSON){
         CharacterTurdFerguson* turd =  qobject_cast<CharacterTurdFerguson*>(player->character());
         turd->resetAbility();
-    }
-    else if (player->characterType() == CHARACTER_ANNE_ROGERS){
-        CharacterAnneRogers* anne =  qobject_cast<CharacterAnneRogers*>(player->character());
-        anne->resetAbility();
     }
     else if (player->characterType() == CHARACTER_JULIE_BULETTE){
         CharacterJulieBulette* julie =  qobject_cast<CharacterJulieBulette*>(player->character());

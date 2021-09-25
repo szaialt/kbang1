@@ -61,21 +61,6 @@ void CardDynamite::play()
     }
 }
 
-/*void CardDynamite::play(Player* targetPlayer){
-    if (owner()->characterType() == CHARACTER_DYNAMITE_JOE){
-        gameCycle()->assertTurn();
-        assertInHand();
-        //Double dynamite
-        if (!(game()->gameInfo().stackingDynamiteFlag())){
-          if (owner()->hasIdenticalCardOnTable(this)) {
-            throw TwoSameOnTableException();
-          }
-        }
-        gameTable()->playerPlayCardOnTable(this, targetPlayer);
-    }
-    else throw BadUsageException();
-}*/
-
 void CardDynamite::checkResult(bool result)
 {
     if (result) { // luck
@@ -103,6 +88,8 @@ void CardDynamite::unregisterPlayer(Player* player)
 
 
 bool CardDynamite::checkDynamite(PlayingCard* card)
-{
+{    
     return  (card->suit() != SUIT_SPADES || card->rank() > 9 || card->rank() < 2);
+    
+    
 }

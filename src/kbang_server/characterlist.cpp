@@ -66,7 +66,6 @@
 #include "characterporterrockwall.h"
 #include "characterqueenanne.h"
 #include "characterjosebasset.h"
-#include "characterannerogers.h"
 #include "charactermaggiemae.h"
 #include "characterleladevere.h"
 #include "characterjuliebulette.h"
@@ -103,7 +102,6 @@
 #include "characterburtlongcatcher.h"
 #include "charactercolinbarrel.h"
 #include "charactercrazyhorse.h"
-#include "characterdynamitejoe.h"
 #include "characterhankthebank.h"
 #include "characterjamesstoneheart.h"
 #include "characterjenniferbigheart.h"
@@ -291,8 +289,6 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterQueenAnne(parent);
     case CHARACTER_JOSEY_BASSET: 
         return new CharacterJoseBasset(parent);
-    case CHARACTER_ANNE_ROGERS: 
-        return new CharacterAnneRogers(parent);
     case CHARACTER_MAGGIE_MAE: 
         return new CharacterMaggieMae(parent);
     case CHARACTER_LELA_DEVERE: 
@@ -361,8 +357,6 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterColinBarrel(parent); 
     case CHARACTER_CRAZY_HORSE: 
         return new CharacterCrazyHorse(parent); 
-    case CHARACTER_DYNAMITE_JOE: 
-        return new CharacterDynamiteJoe(parent); 
     case CHARACTER_HANK_THE_BANK: 
         return new CharacterHankTheBank(parent); 
     case CHARACTER_JAMES_STONEHEART: 
@@ -430,297 +424,6 @@ void CharacterList::initCharacterTypes(Game* game)
     sm_characterTypes.append(CHARACTER_WILLY_THE_KID);
         
     //sm_characterTypes.append(CHARACTER_COWBOY);
-    
-    
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-    
-    
     
     if (game->gameInfo().teamFortressCharactersFlag()){
         qDebug() << "teamFortressCharactersFlag.";
@@ -792,8 +495,8 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_G_V_BLACK);
         sm_characterTypes.append(CHARACTER_BUSHIDO_BILL);
         sm_characterTypes.append(CHARACTER_CLOCKWORK);
-        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); //! character card
-        sm_characterTypes.append(CHARACTER_EL_FANTASMA); //! 15
+        sm_characterTypes.append(CHARACTER_WILLIAM_HARMAN); 
+        sm_characterTypes.append(CHARACTER_EL_FANTASMA); 
         
     }
     else {
@@ -807,11 +510,10 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_LIL_SURE_SHOT);
         sm_characterTypes.append(CHARACTER_FLINT_DIXON); 
         sm_characterTypes.append(CHARACTER_JOB_MUSHGROVE);
-        sm_characterTypes.append(CHARACTER_PORTER_ROCKWALL); //! needs redact the character card
+        sm_characterTypes.append(CHARACTER_PORTER_ROCKWALL); 
         sm_characterTypes.append(CHARACTER_QUEEN_ANNE); 
-        sm_characterTypes.append(CHARACTER_JOSEY_BASSET); // modify character card
-        //sm_characterTypes.append(CHARACTER_ANNE_ROGERS); // please take her out
-        sm_characterTypes.append(CHARACTER_MAGGIE_MAE); //! character card
+        sm_characterTypes.append(CHARACTER_JOSEY_BASSET); 
+        sm_characterTypes.append(CHARACTER_MAGGIE_MAE); 
         sm_characterTypes.append(CHARACTER_LELA_DEVERE);
         sm_characterTypes.append(CHARACTER_JULIE_BULETTE);
         
@@ -821,9 +523,9 @@ void CharacterList::initCharacterTypes(Game* game)
     }
     if (game->gameInfo().bootHillCharactersFlag()){
         qDebug() << "bootHillCharactersFlag.";
-        sm_characterTypes.append(CHARACTER_CAPT_BARRETT); //! character card
+        sm_characterTypes.append(CHARACTER_CAPT_BARRETT); 
         sm_characterTypes.append(CHARACTER_DALTON_GANG); 
-        sm_characterTypes.append(CHARACTER_DYNAMITE_DICK); // character card
+        sm_characterTypes.append(CHARACTER_DYNAMITE_DICK); 
         sm_characterTypes.append(CHARACTER_JAREMY_BAILE);
         sm_characterTypes.append(CHARACTER_JUGDE_DREAD);  
         sm_characterTypes.append(CHARACTER_JULY_ANN_WINSLOW);
@@ -845,8 +547,8 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_JACK_BROWN); 
         sm_characterTypes.append(CHARACTER_JOHNNY_CLEM);
         if (!game->gameInfo().ourFlag()){
-        sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
-        } //48
+          sm_characterTypes.append(CHARACTER_LINDA_VIVENDA);
+        } 
         sm_characterTypes.append(CHARACTER_OSCAR_RODRIGUEZ);
         sm_characterTypes.append(CHARACTER_PEPITA_DUELITA);
         sm_characterTypes.append(CHARACTER_RIDING_HORSE);
@@ -867,11 +569,10 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_BIG_FAT_JOE);
         sm_characterTypes.append(CHARACTER_BURT_LONGCATCHER);
         sm_characterTypes.append(CHARACTER_COLIN_BARREL);
-        sm_characterTypes.append(CHARACTER_CRAZY_HORSE);
-        sm_characterTypes.append(CHARACTER_DYNAMITE_JOE);
-        sm_characterTypes.append(CHARACTER_HANK_THE_BANK);
+        sm_characterTypes.append(CHARACTER_CRAZY_HORSE); 
+        sm_characterTypes.append(CHARACTER_HANK_THE_BANK); 
         sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART);
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART); // can't throw a table card
         sm_characterTypes.append(CHARACTER_JEREMIAH_AMISH);
         sm_characterTypes.append(CHARACTER_JIMMY_SQUINT);
         sm_characterTypes.append(CHARACTER_LINUS_YALE);
@@ -885,9 +586,9 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_RICHARD_GATLING);
         sm_characterTypes.append(CHARACTER_SCALPING_BULL);
         sm_characterTypes.append(CHARACTER_TED_REVENGE);
-        sm_characterTypes.append(CHARACTER_TIM_CROUPIER);
+        sm_characterTypes.append(CHARACTER_TIM_CROUPIER); 
         sm_characterTypes.append(CHARACTER_TOBIAS_THE_MOLE);
-        sm_characterTypes.append(CHARACTER_TOM_GUN_SELLER);
+        sm_characterTypes.append(CHARACTER_TOM_GUN_SELLER); 
         
 
     }

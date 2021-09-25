@@ -60,10 +60,11 @@ PlayingCard* GameTable::playerDrawDynamiteFromGraveyard(Player* player)
 {
     if (m_graveyard.size() == 0)
         throw BadGameStateException();
+    PlayingCard* nextCard = m_graveyard.isEmpty() ? 0 : m_graveyard.first();
     foreach(PlayingCard* card, m_graveyard){
         if (card->type() == CARD_DYNAMITE){
         Q_ASSERT(!card->isVirtual());
-           m_graveyard.removeAll(card);
+           m_graveyard.removeOne(card);
            player->appendCardToHand(card);
            card->setOwner(player);
            card->setPocket(POCKET_HAND);
@@ -448,24 +449,21 @@ void GameTable::cancelSelection()
 }
 
 PlayingCard* GameTable::playerDrawFromBank(Player* player){
-    PlayingCard* drawedCard;
     if (player->bank().isEmpty()) throw BadUsageException();
-    PlayingCard* card = player->bank().takeFirst();
-    Q_ASSERT(!card->isVirtual());
+    PlayingCard* card = player->bank().first();
+    player->removeCardFromBank(card);
     player->appendCardToHand(card);
-    card->setOwner(player);
     card->setPocket(POCKET_HAND);    
     mp_game->gameEventManager().onPlayerDrawFromBank(player, card, false);
     mp_game->gameEventManager().onPlayerUpdated(player);
     return card;
 }
 
-void GameTable::playerPlayCardOnBank(PlayingCard* card){
+void GameTable::playerPlayCardOnBank(PlayingCard* card, Player* owner){
 if (card->isVirtual())
         card = qobject_cast<PlayingCard*>(card->master());
     Q_ASSERT(card != 0);
     Q_ASSERT(card->pocket() == POCKET_HAND);
-    Player* owner = card->owner();
 
     owner->removeCardFromHand(card);
 
@@ -529,15 +527,6 @@ void GameTable::regenerateDeck()
     m_graveyard.clear();
     m_graveyard << m_deck.takeLast();
     shuffleDeck();
-    foreach(Player* p, mp_game->playerList())
-    {
-        if (p->characterType() == CHARACTER_TIM_CROUPIER){
-            foreach(Player* p1, mp_game->playerList()){
-                PlayingCard* card = p1->getRandomCardFromHand();
-                playerStealCard(p, card);
-            }
-        }
-    }
     mp_game->gameEventManager().onDeckRegenerate();
 }
 
@@ -568,7 +557,7 @@ void GameTable::moveCardToGraveyard(PlayingCard* card)
     putCardToGraveyard(card);
     card->setOwner(0);
     card->setPocket(POCKET_GRAVEYARD);
-    //mp_game->gameEventManager().onPlayerUpdated(owner);
+    mp_game->gameEventManager().onPlayerUpdated(owner);
 
 }
 

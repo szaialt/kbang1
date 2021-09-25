@@ -226,6 +226,7 @@ public:
     bool removeCardFromTable(PlayingCard* card);
 
     bool removeCardFromSelection(PlayingCard* card);
+    bool removeCardFromBank(PlayingCard* card);
 
     void setRoleAndCharacter(CharacterBase* character, const PlayerRole& role);
 

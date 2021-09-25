@@ -183,7 +183,6 @@ SOURCES       = main.cpp \
 		characterporterrockwall.cpp \
 		characterqueenanne.cpp \
 		characterjosebasset.cpp \
-		characterannerogers.cpp \
 		charactermaggiemae.cpp \
 		characterleladevere.cpp \
 		characterjuliebulette.cpp \
@@ -216,7 +215,6 @@ SOURCES       = main.cpp \
 		characterburtlongcatcher.cpp \
 		charactercolinbarrel.cpp \
 		charactercrazyhorse.cpp \
-		characterdynamitejoe.cpp \
 		characterhankthebank.cpp \
 		characterjamesstoneheart.cpp \
 		characterjenniferbigheart.cpp \
@@ -325,7 +323,6 @@ SOURCES       = main.cpp \
 		mocs/server/moc_characterporterrockwall.cpp \
 		mocs/server/moc_characterqueenanne.cpp \
 		mocs/server/moc_characterjosebasset.cpp \
-		mocs/server/moc_characterannerogers.cpp \
 		mocs/server/moc_charactermaggiemae.cpp \
 		mocs/server/moc_characterleladevere.cpp \
 		mocs/server/moc_characterjuliebulette.cpp \
@@ -358,7 +355,6 @@ SOURCES       = main.cpp \
 		mocs/server/moc_characterburtlongcatcher.cpp \
 		mocs/server/moc_charactercolinbarrel.cpp \
 		mocs/server/moc_charactercrazyhorse.cpp \
-		mocs/server/moc_characterdynamitejoe.cpp \
 		mocs/server/moc_characterhankthebank.cpp \
 		mocs/server/moc_characterjamesstoneheart.cpp \
 		mocs/server/moc_characterjenniferbigheart.cpp \
@@ -510,7 +506,6 @@ OBJECTS       = obj/server/main.o \
 		obj/server/characterporterrockwall.o \
 		obj/server/characterqueenanne.o \
 		obj/server/characterjosebasset.o \
-		obj/server/characterannerogers.o \
 		obj/server/charactermaggiemae.o \
 		obj/server/characterleladevere.o \
 		obj/server/characterjuliebulette.o \
@@ -543,7 +538,6 @@ OBJECTS       = obj/server/main.o \
 		obj/server/characterburtlongcatcher.o \
 		obj/server/charactercolinbarrel.o \
 		obj/server/charactercrazyhorse.o \
-		obj/server/characterdynamitejoe.o \
 		obj/server/characterhankthebank.o \
 		obj/server/characterjamesstoneheart.o \
 		obj/server/characterjenniferbigheart.o \
@@ -653,7 +647,6 @@ OBJECTS       = obj/server/main.o \
 		obj/server/moc_characterporterrockwall.o \
 		obj/server/moc_characterqueenanne.o \
 		obj/server/moc_characterjosebasset.o \
-		obj/server/moc_characterannerogers.o \
 		obj/server/moc_charactermaggiemae.o \
 		obj/server/moc_characterleladevere.o \
 		obj/server/moc_characterjuliebulette.o \
@@ -686,7 +679,6 @@ OBJECTS       = obj/server/main.o \
 		obj/server/moc_characterburtlongcatcher.o \
 		obj/server/moc_charactercolinbarrel.o \
 		obj/server/moc_charactercrazyhorse.o \
-		obj/server/moc_characterdynamitejoe.o \
 		obj/server/moc_characterhankthebank.o \
 		obj/server/moc_characterjamesstoneheart.o \
 		obj/server/moc_characterjenniferbigheart.o \
@@ -919,7 +911,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		characterporterrockwall.h \
 		characterqueenanne.h \
 		characterjosebasset.h \
-		characterannerogers.h \
 		charactermaggiemae.h \
 		characterleladevere.h \
 		characterjuliebulette.h \
@@ -952,7 +943,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		characterburtlongcatcher.h \
 		charactercolinbarrel.h \
 		charactercrazyhorse.h \
-		characterdynamitejoe.h \
 		characterhankthebank.h \
 		characterjamesstoneheart.h \
 		characterjenniferbigheart.h \
@@ -1103,7 +1093,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		characterporterrockwall.cpp \
 		characterqueenanne.cpp \
 		characterjosebasset.cpp \
-		characterannerogers.cpp \
 		charactermaggiemae.cpp \
 		characterleladevere.cpp \
 		characterjuliebulette.cpp \
@@ -1136,7 +1125,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		characterburtlongcatcher.cpp \
 		charactercolinbarrel.cpp \
 		charactercrazyhorse.cpp \
-		characterdynamitejoe.cpp \
 		characterhankthebank.cpp \
 		characterjamesstoneheart.cpp \
 		characterjenniferbigheart.cpp \
@@ -1352,8 +1340,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardexplosion.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h cardpeacepipe.h cardmemento.h cardhiddenweapon.h cardcharm.h cardthief.h carddirtyjob.h cardcowboypocket.h cardbleedinginjury.h cardflamebottle.h cardthunder.h cardstunning.h cardsteroid.h carddrugs.h cardheadache.h cardmorphine.h cardweakness.h cardshock.h cardreward.h cardpackmule.h cardgamble.h cardtakerbang.h cardlelabang.h cardghost.h cardcustoms.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterpyro.h characterscout.h charactersniper.h charactersoldier.h charactercoronelmortimer.h characterdjango.h characteremma.h characterhowardhawks.h characterjohnford.h characterloco.h characterpatgarret.h charactersartana.h charactertucoelfeo.h charactervienna.h characterwyattearp.h characterernestsaliven.h characterernestsaliven2.h charactercrazybear.h charactertomyleeghost.h characterwhitewolf.h charactercharlesboggen.h characterjonathhexx.h characterantonycarma.h charactermatthewhell.h charactercardkeeper.h characterdanquake.h charactersamueldiehard.h charactergordonchristensen.h characterjoeljanis.h charactercaptwcaroll.h characterauntieangelici.h characteredwardangle.h charactergvblack.h characterbushidobill.h charactercheckingblack.h characterelfantasma.h charactercrazywolf.h characterturdferguson.h characterlilsureshot.h charactercheckingroyal.h characterporterrockwall.h characterqueenanne.h characterjosebasset.h characterannerogers.h charactermaggiemae.h characterleladevere.h characterjuliebulette.h charactercaptbarret.h characterdaltongang.h characterdynamitedick.h characterjaremybaile.h characterjuanmiranda.h characterjudgedread.h characterjulyannwislow.h characterbuckshotroberts.h characterchosingthomas.h characterfastfranz.h characterfelipedelgado.h charactergreenkatejanet.h characterhurtingbob.h characterjackbrown.h characterjohnnyclem.h characterlindavivenda.h characteroscarrodriguez.h characterpepitaduelita.h characterridinghorse.h characterstonewalljackson.h charactertonyarmed.h characterwilliamlongley.h characteralfonsoduelo.h characterambidexterbo.h characterbartbarber.h characterbigfatjoe.h characterburtlongcatcher.h charactercolinbarrel.h charactercrazyhorse.h characterdynamitejoe.h characterhankthebank.h characterjamesstoneheart.h characterjenniferbigheart.h characterjeremiahamish.h characterjimmysquint.h characterlinusyale.h charactermykemyope.h characterninaninelives.h characternellychosechair.h characteroneeyedjack.h characterphilthinwire.h characterprestonpresbyope.h characterrichardgatling.h characterscalpingbull.h charactertedrevenge.h charactertimcroupier.h charactertobiasthemole.h charactertomgunseller.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardexplosion.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp cardpeacepipe.cpp cardmemento.cpp cardhiddenweapon.cpp cardcharm.cpp cardthief.cpp carddirtyjob.cpp cardcowboypocket.cpp cardbleedinginjury.cpp cardflamebottle.cpp cardthunder.cpp cardstunning.cpp cardsteroid.cpp carddrugs.cpp cardmorphine.cpp cardheadache.cpp cardweakness.cpp cardshock.cpp cardreward.cpp cardpackmule.cpp cardgamble.cpp cardtakerbang.cpp cardlelabang.cpp cardghost.cpp cardcustoms.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterpyro.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp charactercoronelmortimer.cpp characterdjango.cpp characteremma.cpp characterhowardhawks.cpp characterjohnford.cpp characterloco.cpp characterpatgarret.cpp charactersartana.cpp charactertucoelfeo.cpp charactervienna.cpp characterwyattearp.cpp characterernestsaliven.cpp characterernestsaliven2.cpp charactercrazybear.cpp charactertomyleeghost.cpp characterwhitewolf.cpp charactercharlesboggen.cpp characterjonathhexx.cpp characterantonycarma.cpp charactermatthewhell.cpp charactercardkeeper.cpp characterdanquake.cpp charactersamueldiehard.cpp charactergordonchristensen.cpp characterjoeljanis.cpp charactercaptwcaroll.cpp characterauntieangelici.cpp characteredwardangle.cpp charactergvblack.cpp characterbushidobill.cpp charactercheckingblack.cpp characterelfantasma.cpp charactercrazywolf.cpp characterturdferguson.cpp characterlilsureshot.cpp charactercheckingroyal.cpp characterporterrockwall.cpp characterqueenanne.cpp characterjosebasset.cpp characterannerogers.cpp charactermaggiemae.cpp characterleladevere.cpp characterjuliebulette.cpp charactercaptbarret.cpp characterdaltongang.cpp characterdynamitedick.cpp characterjaremybaile.cpp characterjuanmiranda.cpp characterjudgedread.cpp characterjulyannwislow.cpp characterbuckshotroberts.cpp characterchosingthomas.cpp characterfastfranz.cpp characterfelipedelgado.cpp charactergreenkatejanet.cpp characterhurtingbob.cpp characterjackbrown.cpp characterjohnnyclem.cpp characterlindavivenda.cpp characteroscarrodriguez.cpp characterpepitaduelita.cpp characterridinghorse.cpp characterstonewalljackson.cpp charactertonyarmed.cpp characterwilliamlongley.cpp characteralfonsoduelo.cpp characterambidexterbo.cpp characterbartbarber.cpp characterbigfatjoe.cpp characterburtlongcatcher.cpp charactercolinbarrel.cpp charactercrazyhorse.cpp characterdynamitejoe.cpp characterhankthebank.cpp characterjamesstoneheart.cpp characterjenniferbigheart.cpp characterjeremiahamish.cpp characterjimmysquint.cpp characterlinusyale.cpp charactermykemyope.cpp characterninaninelives.cpp characternellychosechair.cpp characteroneeyedjack.cpp characterphilthinwire.cpp characterprestonpresbyope.cpp characterrichardgatling.cpp characterscalpingbull.cpp charactertedrevenge.cpp charactertimcroupier.cpp charactertobiasthemole.cpp charactertomgunseller.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents player.h gameserver.h game.h console.h consolecommand.h client.h tcpserver.h common.h publicgameview.h publicplayerview.h privateplayerview.h playingcard.h reactioncard.h weaponcard.h cardbang.h cardteamfortressbang.h cardmissed.h cards.h gamecycle.h gameexceptions.h gameinfo.h gametable.h playerctrl.h gameeventlistener.h voidai.h voidai2level.h voidai3level.h cardbeer.h cardexpansionbeer.h cardhorse.h cardpersuasion.h cardfactory.h carddrawcards.h cardmultishoot.h cardexplosion.h cardarson.h cardduel.h cardgeneralstore.h cardjail.h cardteleport.h cardjarate.h reactionhandler.h carddynamite.h cardtaker.h cardbarrel.h cardpeacepipe.h cardmemento.h cardhiddenweapon.h cardcharm.h cardthief.h carddirtyjob.h cardcowboypocket.h cardbleedinginjury.h cardflamebottle.h cardthunder.h cardstunning.h cardsteroid.h carddrugs.h cardheadache.h cardmorphine.h cardweakness.h cardshock.h cardreward.h cardpackmule.h cardgamble.h cardtakerbang.h cardlelabang.h cardghost.h cardcustoms.h gameeventmanager.h gamelogger.h characterbase.h charactercalamityjanet.h characterblackjack.h characterlist.h charactercassidygringo.h charactersuzylafayette.h characterpropertychange.h characterjourdonnais.h characterpedroramirez.h characterjessejones.h charactersidketchum.h characterkitcarlson.h playerreaper.h charactervulturesam.h checkdeckresulthandler.h characterluckyduke.h charactercowboy.h characterdemoman.h characterengineer.h characterheavy.h charactermedic.h characterpyro.h characterscout.h charactersniper.h charactersoldier.h charactercoronelmortimer.h characterdjango.h characteremma.h characterhowardhawks.h characterjohnford.h characterloco.h characterpatgarret.h charactersartana.h charactertucoelfeo.h charactervienna.h characterwyattearp.h characterernestsaliven.h characterernestsaliven2.h charactercrazybear.h charactertomyleeghost.h characterwhitewolf.h charactercharlesboggen.h characterjonathhexx.h characterantonycarma.h charactermatthewhell.h charactercardkeeper.h characterdanquake.h charactersamueldiehard.h charactergordonchristensen.h characterjoeljanis.h charactercaptwcaroll.h characterauntieangelici.h characteredwardangle.h charactergvblack.h characterbushidobill.h charactercheckingblack.h characterelfantasma.h charactercrazywolf.h characterturdferguson.h characterlilsureshot.h charactercheckingroyal.h characterporterrockwall.h characterqueenanne.h characterjosebasset.h charactermaggiemae.h characterleladevere.h characterjuliebulette.h charactercaptbarret.h characterdaltongang.h characterdynamitedick.h characterjaremybaile.h characterjuanmiranda.h characterjudgedread.h characterjulyannwislow.h characterbuckshotroberts.h characterchosingthomas.h characterfastfranz.h characterfelipedelgado.h charactergreenkatejanet.h characterhurtingbob.h characterjackbrown.h characterjohnnyclem.h characterlindavivenda.h characteroscarrodriguez.h characterpepitaduelita.h characterridinghorse.h characterstonewalljackson.h charactertonyarmed.h characterwilliamlongley.h characteralfonsoduelo.h characterambidexterbo.h characterbartbarber.h characterbigfatjoe.h characterburtlongcatcher.h charactercolinbarrel.h charactercrazyhorse.h characterhankthebank.h characterjamesstoneheart.h characterjenniferbigheart.h characterjeremiahamish.h characterjimmysquint.h characterlinusyale.h charactermykemyope.h characterninaninelives.h characternellychosechair.h characteroneeyedjack.h characterphilthinwire.h characterprestonpresbyope.h characterrichardgatling.h characterscalpingbull.h charactertedrevenge.h charactertimcroupier.h charactertobiasthemole.h charactertomgunseller.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp player.cpp gameserver.cpp game.cpp console.cpp consolecommand.cpp client.cpp tcpserver.cpp common.cpp publicgameview.cpp publicplayerview.cpp privateplayerview.cpp playingcard.cpp reactioncard.cpp weaponcard.cpp cardbang.cpp cardteamfortressbang.cpp cardmissed.cpp gamecycle.cpp gameinfo.cpp gametable.cpp playerctrl.cpp voidai.cpp voidai2level.cpp voidai3level.cpp gameeventlistener.cpp cardbeer.cpp cardexpansionbeer.cpp cardhorse.cpp cardpersuasion.cpp cardfactory.cpp carddrawcards.cpp cardmultishoot.cpp cardexplosion.cpp cardarson.cpp cardduel.cpp cardgeneralstore.cpp cardjail.cpp cardteleport.cpp cardjarate.cpp reactionhandler.cpp carddynamite.cpp cardtaker.cpp cardbarrel.cpp cardpeacepipe.cpp cardmemento.cpp cardhiddenweapon.cpp cardcharm.cpp cardthief.cpp carddirtyjob.cpp cardcowboypocket.cpp cardbleedinginjury.cpp cardflamebottle.cpp cardthunder.cpp cardstunning.cpp cardsteroid.cpp carddrugs.cpp cardmorphine.cpp cardheadache.cpp cardweakness.cpp cardshock.cpp cardreward.cpp cardpackmule.cpp cardgamble.cpp cardtakerbang.cpp cardlelabang.cpp cardghost.cpp cardcustoms.cpp gameeventmanager.cpp gamelogger.cpp characterbase.cpp charactercalamityjanet.cpp characterblackjack.cpp characterlist.cpp charactercassidygringo.cpp charactersuzylafayette.cpp characterpropertychange.cpp characterjourdonnais.cpp characterpedroramirez.cpp characterjessejones.cpp charactersidketchum.cpp characterkitcarlson.cpp playerreaper.cpp charactervulturesam.cpp characterluckyduke.cpp charactercowboy.cpp characterdemoman.cpp characterengineer.cpp characterheavy.cpp charactermedic.cpp characterpyro.cpp characterscout.cpp charactersniper.cpp charactersoldier.cpp charactercoronelmortimer.cpp characterdjango.cpp characteremma.cpp characterhowardhawks.cpp characterjohnford.cpp characterloco.cpp characterpatgarret.cpp charactersartana.cpp charactertucoelfeo.cpp charactervienna.cpp characterwyattearp.cpp characterernestsaliven.cpp characterernestsaliven2.cpp charactercrazybear.cpp charactertomyleeghost.cpp characterwhitewolf.cpp charactercharlesboggen.cpp characterjonathhexx.cpp characterantonycarma.cpp charactermatthewhell.cpp charactercardkeeper.cpp characterdanquake.cpp charactersamueldiehard.cpp charactergordonchristensen.cpp characterjoeljanis.cpp charactercaptwcaroll.cpp characterauntieangelici.cpp characteredwardangle.cpp charactergvblack.cpp characterbushidobill.cpp charactercheckingblack.cpp characterelfantasma.cpp charactercrazywolf.cpp characterturdferguson.cpp characterlilsureshot.cpp charactercheckingroyal.cpp characterporterrockwall.cpp characterqueenanne.cpp characterjosebasset.cpp charactermaggiemae.cpp characterleladevere.cpp characterjuliebulette.cpp charactercaptbarret.cpp characterdaltongang.cpp characterdynamitedick.cpp characterjaremybaile.cpp characterjuanmiranda.cpp characterjudgedread.cpp characterjulyannwislow.cpp characterbuckshotroberts.cpp characterchosingthomas.cpp characterfastfranz.cpp characterfelipedelgado.cpp charactergreenkatejanet.cpp characterhurtingbob.cpp characterjackbrown.cpp characterjohnnyclem.cpp characterlindavivenda.cpp characteroscarrodriguez.cpp characterpepitaduelita.cpp characterridinghorse.cpp characterstonewalljackson.cpp charactertonyarmed.cpp characterwilliamlongley.cpp characteralfonsoduelo.cpp characterambidexterbo.cpp characterbartbarber.cpp characterbigfatjoe.cpp characterburtlongcatcher.cpp charactercolinbarrel.cpp charactercrazyhorse.cpp characterhankthebank.cpp characterjamesstoneheart.cpp characterjenniferbigheart.cpp characterjeremiahamish.cpp characterjimmysquint.cpp characterlinusyale.cpp charactermykemyope.cpp characterninaninelives.cpp characternellychosechair.cpp characteroneeyedjack.cpp characterphilthinwire.cpp characterprestonpresbyope.cpp characterrichardgatling.cpp characterscalpingbull.cpp charactertedrevenge.cpp charactertimcroupier.cpp charactertobiasthemole.cpp charactertomgunseller.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1385,11 +1373,11 @@ compiler_moc_predefs_clean:
 mocs/server/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o mocs/server/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_cardthunder.cpp mocs/server/moc_cardsteroid.cpp mocs/server/moc_cardweakness.cpp mocs/server/moc_cardshock.cpp mocs/server/moc_cardcustoms.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterpyro.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterhowardhawks.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_characterpatgarret.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactertucoelfeo.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp mocs/server/moc_charactergordonchristensen.cpp mocs/server/moc_characterjoeljanis.cpp mocs/server/moc_charactercaptwcaroll.cpp mocs/server/moc_characterauntieangelici.cpp mocs/server/moc_characteredwardangle.cpp mocs/server/moc_charactergvblack.cpp mocs/server/moc_characterbushidobill.cpp mocs/server/moc_charactercheckingblack.cpp mocs/server/moc_characterelfantasma.cpp mocs/server/moc_charactercrazywolf.cpp mocs/server/moc_characterturdferguson.cpp mocs/server/moc_characterlilsureshot.cpp mocs/server/moc_charactercheckingroyal.cpp mocs/server/moc_characterporterrockwall.cpp mocs/server/moc_characterqueenanne.cpp mocs/server/moc_characterjosebasset.cpp mocs/server/moc_characterannerogers.cpp mocs/server/moc_charactermaggiemae.cpp mocs/server/moc_characterleladevere.cpp mocs/server/moc_characterjuliebulette.cpp mocs/server/moc_charactercaptbarret.cpp mocs/server/moc_characterdaltongang.cpp mocs/server/moc_characterdynamitedick.cpp mocs/server/moc_characterjaremybaile.cpp mocs/server/moc_characterjuanmiranda.cpp mocs/server/moc_characterjudgedread.cpp mocs/server/moc_characterjulyannwislow.cpp mocs/server/moc_characterbuckshotroberts.cpp mocs/server/moc_characterchosingthomas.cpp mocs/server/moc_characterfastfranz.cpp mocs/server/moc_characterfelipedelgado.cpp mocs/server/moc_charactergreenkatejanet.cpp mocs/server/moc_characterhurtingbob.cpp mocs/server/moc_characterjackbrown.cpp mocs/server/moc_characterjohnnyclem.cpp mocs/server/moc_characterlindavivenda.cpp mocs/server/moc_characteroscarrodriguez.cpp mocs/server/moc_characterpepitaduelita.cpp mocs/server/moc_characterridinghorse.cpp mocs/server/moc_characterstonewalljackson.cpp mocs/server/moc_charactertonyarmed.cpp mocs/server/moc_characterwilliamlongley.cpp mocs/server/moc_characteralfonsoduelo.cpp mocs/server/moc_characterambidexterbo.cpp mocs/server/moc_characterbartbarber.cpp mocs/server/moc_characterbigfatjoe.cpp mocs/server/moc_characterburtlongcatcher.cpp mocs/server/moc_charactercolinbarrel.cpp mocs/server/moc_charactercrazyhorse.cpp mocs/server/moc_characterdynamitejoe.cpp mocs/server/moc_characterhankthebank.cpp mocs/server/moc_characterjamesstoneheart.cpp mocs/server/moc_characterjenniferbigheart.cpp mocs/server/moc_characterjeremiahamish.cpp mocs/server/moc_characterjimmysquint.cpp mocs/server/moc_characterlinusyale.cpp mocs/server/moc_charactermykemyope.cpp mocs/server/moc_characterninaninelives.cpp mocs/server/moc_characternellychosechair.cpp mocs/server/moc_characteroneeyedjack.cpp mocs/server/moc_characterphilthinwire.cpp mocs/server/moc_characterprestonpresbyope.cpp mocs/server/moc_characterrichardgatling.cpp mocs/server/moc_characterscalpingbull.cpp mocs/server/moc_charactertedrevenge.cpp mocs/server/moc_charactertimcroupier.cpp mocs/server/moc_charactertobiasthemole.cpp mocs/server/moc_charactertomgunseller.cpp
+compiler_moc_header_make_all: mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_cardthunder.cpp mocs/server/moc_cardsteroid.cpp mocs/server/moc_cardweakness.cpp mocs/server/moc_cardshock.cpp mocs/server/moc_cardcustoms.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterpyro.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterhowardhawks.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp mocs/server/moc_characterpatgarret.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactertucoelfeo.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp mocs/server/moc_charactergordonchristensen.cpp mocs/server/moc_characterjoeljanis.cpp mocs/server/moc_charactercaptwcaroll.cpp mocs/server/moc_characterauntieangelici.cpp mocs/server/moc_characteredwardangle.cpp mocs/server/moc_charactergvblack.cpp mocs/server/moc_characterbushidobill.cpp mocs/server/moc_charactercheckingblack.cpp mocs/server/moc_characterelfantasma.cpp mocs/server/moc_charactercrazywolf.cpp mocs/server/moc_characterturdferguson.cpp mocs/server/moc_characterlilsureshot.cpp mocs/server/moc_charactercheckingroyal.cpp mocs/server/moc_characterporterrockwall.cpp mocs/server/moc_characterqueenanne.cpp mocs/server/moc_characterjosebasset.cpp mocs/server/moc_charactermaggiemae.cpp mocs/server/moc_characterleladevere.cpp mocs/server/moc_characterjuliebulette.cpp mocs/server/moc_charactercaptbarret.cpp mocs/server/moc_characterdaltongang.cpp mocs/server/moc_characterdynamitedick.cpp mocs/server/moc_characterjaremybaile.cpp mocs/server/moc_characterjuanmiranda.cpp mocs/server/moc_characterjudgedread.cpp mocs/server/moc_characterjulyannwislow.cpp mocs/server/moc_characterbuckshotroberts.cpp mocs/server/moc_characterchosingthomas.cpp mocs/server/moc_characterfastfranz.cpp mocs/server/moc_characterfelipedelgado.cpp mocs/server/moc_charactergreenkatejanet.cpp mocs/server/moc_characterhurtingbob.cpp mocs/server/moc_characterjackbrown.cpp mocs/server/moc_characterjohnnyclem.cpp mocs/server/moc_characterlindavivenda.cpp mocs/server/moc_characteroscarrodriguez.cpp mocs/server/moc_characterpepitaduelita.cpp mocs/server/moc_characterridinghorse.cpp mocs/server/moc_characterstonewalljackson.cpp mocs/server/moc_charactertonyarmed.cpp mocs/server/moc_characterwilliamlongley.cpp mocs/server/moc_characteralfonsoduelo.cpp mocs/server/moc_characterambidexterbo.cpp mocs/server/moc_characterbartbarber.cpp mocs/server/moc_characterbigfatjoe.cpp mocs/server/moc_characterburtlongcatcher.cpp mocs/server/moc_charactercolinbarrel.cpp mocs/server/moc_charactercrazyhorse.cpp mocs/server/moc_characterhankthebank.cpp mocs/server/moc_characterjamesstoneheart.cpp mocs/server/moc_characterjenniferbigheart.cpp mocs/server/moc_characterjeremiahamish.cpp mocs/server/moc_characterjimmysquint.cpp mocs/server/moc_characterlinusyale.cpp mocs/server/moc_charactermykemyope.cpp mocs/server/moc_characterninaninelives.cpp mocs/server/moc_characternellychosechair.cpp mocs/server/moc_characteroneeyedjack.cpp mocs/server/moc_characterphilthinwire.cpp mocs/server/moc_characterprestonpresbyope.cpp mocs/server/moc_characterrichardgatling.cpp mocs/server/moc_characterscalpingbull.cpp mocs/server/moc_charactertedrevenge.cpp mocs/server/moc_charactertimcroupier.cpp mocs/server/moc_charactertobiasthemole.cpp mocs/server/moc_charactertomgunseller.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) mocs/server/moc_player.cpp mocs/server/moc_gameserver.cpp mocs/server/moc_game.cpp mocs/server/moc_console.cpp mocs/server/moc_client.cpp mocs/server/moc_tcpserver.cpp mocs/server/moc_playingcard.cpp mocs/server/moc_reactioncard.cpp mocs/server/moc_weaponcard.cpp mocs/server/moc_cardbang.cpp mocs/server/moc_cardmissed.cpp mocs/server/moc_gamecycle.cpp mocs/server/moc_playerctrl.cpp mocs/server/moc_voidai.cpp mocs/server/moc_voidai2level.cpp mocs/server/moc_voidai3level.cpp mocs/server/moc_cardbeer.cpp mocs/server/moc_cardexpansionbeer.cpp mocs/server/moc_cardhorse.cpp mocs/server/moc_cardpersuasion.cpp mocs/server/moc_carddrawcards.cpp mocs/server/moc_cardmultishoot.cpp mocs/server/moc_cardduel.cpp mocs/server/moc_cardbarrel.cpp mocs/server/moc_cardmemento.cpp mocs/server/moc_cardhiddenweapon.cpp mocs/server/moc_cardthunder.cpp mocs/server/moc_cardsteroid.cpp mocs/server/moc_cardweakness.cpp mocs/server/moc_cardshock.cpp mocs/server/moc_cardcustoms.cpp mocs/server/moc_charactercalamityjanet.cpp mocs/server/moc_characterblackjack.cpp mocs/server/moc_charactercassidygringo.cpp mocs/server/moc_charactersuzylafayette.cpp mocs/server/moc_characterpropertychange.cpp mocs/server/moc_characterjourdonnais.cpp mocs/server/moc_characterpedroramirez.cpp mocs/server/moc_characterjessejones.cpp mocs/server/moc_charactersidketchum.cpp mocs/server/moc_characterkitcarlson.cpp mocs/server/moc_charactervulturesam.cpp mocs/server/moc_characterluckyduke.cpp mocs/server/moc_charactercowboy.cpp mocs/server/moc_characterdemoman.cpp mocs/server/moc_characterengineer.cpp mocs/server/moc_characterheavy.cpp mocs/server/moc_charactermedic.cpp mocs/server/moc_characterpyro.cpp mocs/server/moc_characterscout.cpp mocs/server/moc_charactersniper.cpp mocs/server/moc_charactersoldier.cpp mocs/server/moc_charactercoronelmortimer.cpp mocs/server/moc_characterdjango.cpp mocs/server/moc_characteremma.cpp mocs/server/moc_characterhowardhawks.cpp mocs/server/moc_characterjohnford.cpp mocs/server/moc_characterloco.cpp
-	-$(DEL_FILE) mocs/server/moc_characterpatgarret.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactertucoelfeo.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp mocs/server/moc_charactergordonchristensen.cpp mocs/server/moc_characterjoeljanis.cpp mocs/server/moc_charactercaptwcaroll.cpp mocs/server/moc_characterauntieangelici.cpp mocs/server/moc_characteredwardangle.cpp mocs/server/moc_charactergvblack.cpp mocs/server/moc_characterbushidobill.cpp mocs/server/moc_charactercheckingblack.cpp mocs/server/moc_characterelfantasma.cpp mocs/server/moc_charactercrazywolf.cpp mocs/server/moc_characterturdferguson.cpp mocs/server/moc_characterlilsureshot.cpp mocs/server/moc_charactercheckingroyal.cpp mocs/server/moc_characterporterrockwall.cpp mocs/server/moc_characterqueenanne.cpp mocs/server/moc_characterjosebasset.cpp mocs/server/moc_characterannerogers.cpp mocs/server/moc_charactermaggiemae.cpp mocs/server/moc_characterleladevere.cpp mocs/server/moc_characterjuliebulette.cpp mocs/server/moc_charactercaptbarret.cpp mocs/server/moc_characterdaltongang.cpp mocs/server/moc_characterdynamitedick.cpp mocs/server/moc_characterjaremybaile.cpp mocs/server/moc_characterjuanmiranda.cpp mocs/server/moc_characterjudgedread.cpp mocs/server/moc_characterjulyannwislow.cpp mocs/server/moc_characterbuckshotroberts.cpp mocs/server/moc_characterchosingthomas.cpp mocs/server/moc_characterfastfranz.cpp mocs/server/moc_characterfelipedelgado.cpp mocs/server/moc_charactergreenkatejanet.cpp
-	-$(DEL_FILE) mocs/server/moc_characterhurtingbob.cpp mocs/server/moc_characterjackbrown.cpp mocs/server/moc_characterjohnnyclem.cpp mocs/server/moc_characterlindavivenda.cpp mocs/server/moc_characteroscarrodriguez.cpp mocs/server/moc_characterpepitaduelita.cpp mocs/server/moc_characterridinghorse.cpp mocs/server/moc_characterstonewalljackson.cpp mocs/server/moc_charactertonyarmed.cpp mocs/server/moc_characterwilliamlongley.cpp mocs/server/moc_characteralfonsoduelo.cpp mocs/server/moc_characterambidexterbo.cpp mocs/server/moc_characterbartbarber.cpp mocs/server/moc_characterbigfatjoe.cpp mocs/server/moc_characterburtlongcatcher.cpp mocs/server/moc_charactercolinbarrel.cpp mocs/server/moc_charactercrazyhorse.cpp mocs/server/moc_characterdynamitejoe.cpp mocs/server/moc_characterhankthebank.cpp mocs/server/moc_characterjamesstoneheart.cpp mocs/server/moc_characterjenniferbigheart.cpp mocs/server/moc_characterjeremiahamish.cpp mocs/server/moc_characterjimmysquint.cpp mocs/server/moc_characterlinusyale.cpp mocs/server/moc_charactermykemyope.cpp mocs/server/moc_characterninaninelives.cpp mocs/server/moc_characternellychosechair.cpp mocs/server/moc_characteroneeyedjack.cpp mocs/server/moc_characterphilthinwire.cpp mocs/server/moc_characterprestonpresbyope.cpp mocs/server/moc_characterrichardgatling.cpp mocs/server/moc_characterscalpingbull.cpp mocs/server/moc_charactertedrevenge.cpp mocs/server/moc_charactertimcroupier.cpp mocs/server/moc_charactertobiasthemole.cpp mocs/server/moc_charactertomgunseller.cpp
+	-$(DEL_FILE) mocs/server/moc_characterpatgarret.cpp mocs/server/moc_charactersartana.cpp mocs/server/moc_charactertucoelfeo.cpp mocs/server/moc_charactervienna.cpp mocs/server/moc_characterwyattearp.cpp mocs/server/moc_characterernestsaliven.cpp mocs/server/moc_characterernestsaliven2.cpp mocs/server/moc_charactercrazybear.cpp mocs/server/moc_charactertomyleeghost.cpp mocs/server/moc_characterwhitewolf.cpp mocs/server/moc_charactercharlesboggen.cpp mocs/server/moc_characterjonathhexx.cpp mocs/server/moc_characterantonycarma.cpp mocs/server/moc_charactermatthewhell.cpp mocs/server/moc_charactercardkeeper.cpp mocs/server/moc_characterdanquake.cpp mocs/server/moc_charactersamueldiehard.cpp mocs/server/moc_charactergordonchristensen.cpp mocs/server/moc_characterjoeljanis.cpp mocs/server/moc_charactercaptwcaroll.cpp mocs/server/moc_characterauntieangelici.cpp mocs/server/moc_characteredwardangle.cpp mocs/server/moc_charactergvblack.cpp mocs/server/moc_characterbushidobill.cpp mocs/server/moc_charactercheckingblack.cpp mocs/server/moc_characterelfantasma.cpp mocs/server/moc_charactercrazywolf.cpp mocs/server/moc_characterturdferguson.cpp mocs/server/moc_characterlilsureshot.cpp mocs/server/moc_charactercheckingroyal.cpp mocs/server/moc_characterporterrockwall.cpp mocs/server/moc_characterqueenanne.cpp mocs/server/moc_characterjosebasset.cpp mocs/server/moc_charactermaggiemae.cpp mocs/server/moc_characterleladevere.cpp mocs/server/moc_characterjuliebulette.cpp mocs/server/moc_charactercaptbarret.cpp mocs/server/moc_characterdaltongang.cpp mocs/server/moc_characterdynamitedick.cpp mocs/server/moc_characterjaremybaile.cpp mocs/server/moc_characterjuanmiranda.cpp mocs/server/moc_characterjudgedread.cpp mocs/server/moc_characterjulyannwislow.cpp mocs/server/moc_characterbuckshotroberts.cpp mocs/server/moc_characterchosingthomas.cpp mocs/server/moc_characterfastfranz.cpp mocs/server/moc_characterfelipedelgado.cpp mocs/server/moc_charactergreenkatejanet.cpp mocs/server/moc_characterhurtingbob.cpp
+	-$(DEL_FILE) mocs/server/moc_characterjackbrown.cpp mocs/server/moc_characterjohnnyclem.cpp mocs/server/moc_characterlindavivenda.cpp mocs/server/moc_characteroscarrodriguez.cpp mocs/server/moc_characterpepitaduelita.cpp mocs/server/moc_characterridinghorse.cpp mocs/server/moc_characterstonewalljackson.cpp mocs/server/moc_charactertonyarmed.cpp mocs/server/moc_characterwilliamlongley.cpp mocs/server/moc_characteralfonsoduelo.cpp mocs/server/moc_characterambidexterbo.cpp mocs/server/moc_characterbartbarber.cpp mocs/server/moc_characterbigfatjoe.cpp mocs/server/moc_characterburtlongcatcher.cpp mocs/server/moc_charactercolinbarrel.cpp mocs/server/moc_charactercrazyhorse.cpp mocs/server/moc_characterhankthebank.cpp mocs/server/moc_characterjamesstoneheart.cpp mocs/server/moc_characterjenniferbigheart.cpp mocs/server/moc_characterjeremiahamish.cpp mocs/server/moc_characterjimmysquint.cpp mocs/server/moc_characterlinusyale.cpp mocs/server/moc_charactermykemyope.cpp mocs/server/moc_characterninaninelives.cpp mocs/server/moc_characternellychosechair.cpp mocs/server/moc_characteroneeyedjack.cpp mocs/server/moc_characterphilthinwire.cpp mocs/server/moc_characterprestonpresbyope.cpp mocs/server/moc_characterrichardgatling.cpp mocs/server/moc_characterscalpingbull.cpp mocs/server/moc_charactertedrevenge.cpp mocs/server/moc_charactertimcroupier.cpp mocs/server/moc_charactertobiasthemole.cpp mocs/server/moc_charactertomgunseller.cpp
 mocs/server/moc_player.cpp: publicplayerview.h \
 		../kbang_common/common.h \
 		../kbang_common/parser/parserstructs.h \
@@ -2691,16 +2679,6 @@ mocs/server/moc_characterjosebasset.cpp: characterbase.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include '/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/mocs/server/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_common' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/lib' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/common' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterjosebasset.h -o mocs/server/moc_characterjosebasset.cpp
 
-mocs/server/moc_characterannerogers.cpp: characterbase.h \
-		../kbang_common/parser/parserstructs.h \
-		../kbang_common/gameenums.h \
-		publicplayerview.h \
-		../kbang_common/common.h \
-		characterannerogers.h \
-		mocs/server/moc_predefs.h \
-		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include '/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/mocs/server/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_common' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/lib' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/common' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterannerogers.h -o mocs/server/moc_characterannerogers.cpp
-
 mocs/server/moc_charactermaggiemae.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
 		../kbang_common/gameenums.h \
@@ -3112,22 +3090,6 @@ mocs/server/moc_charactercrazyhorse.cpp: characterbase.h \
 		mocs/server/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include '/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/mocs/server/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_common' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/lib' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/common' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include charactercrazyhorse.h -o mocs/server/moc_charactercrazyhorse.cpp
-
-mocs/server/moc_characterdynamitejoe.cpp: characterbase.h \
-		../kbang_common/parser/parserstructs.h \
-		../kbang_common/gameenums.h \
-		publicplayerview.h \
-		../kbang_common/common.h \
-		gametable.h \
-		player.h \
-		privateplayerview.h \
-		playerctrl.h \
-		gameexceptions.h \
-		charactertomyleeghost.h \
-		characterdynamitejoe.h \
-		mocs/server/moc_predefs.h \
-		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include '/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/mocs/server/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_common' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server/lib' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/kbang_server' -I'/media/anna/Seagate Expansion Drive/Sajatadatok/Dokumentumok/jegyzetek/Programozas/Bang/kbang5R/src/common' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include characterdynamitejoe.h -o mocs/server/moc_characterdynamitejoe.cpp
 
 mocs/server/moc_characterhankthebank.cpp: characterbase.h \
 		../kbang_common/parser/parserstructs.h \
@@ -3753,6 +3715,7 @@ obj/server/cardbang.o: cardbang.cpp cardbang.h \
 		gameeventmanager.h \
 		gameeventlistener.h \
 		../kbang_common/util.h \
+		characterjourdonnais.h \
 		charactercrazybear.h \
 		characterambidexterbo.h \
 		charactercolinbarrel.h
@@ -4028,7 +3991,6 @@ obj/server/voidai2level.o: voidai2level.cpp voidai2level.h \
 		cardgamble.h \
 		cardtakerbang.h \
 		../kbang_common/util.h \
-		characterjourdonnais.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai2level.o voidai2level.cpp
 
@@ -4096,7 +4058,6 @@ obj/server/voidai3level.o: voidai3level.cpp voidai3level.h \
 		cardgamble.h \
 		cardtakerbang.h \
 		../kbang_common/util.h \
-		characterjourdonnais.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/voidai3level.o voidai3level.cpp
 
@@ -4288,7 +4249,8 @@ obj/server/cardmultishoot.o: cardmultishoot.cpp cardmultishoot.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		gametable.h \
-		cardbarrel.h
+		cardbarrel.h \
+		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardmultishoot.o cardmultishoot.cpp
 
 obj/server/cardexplosion.o: cardexplosion.cpp cardexplosion.h \
@@ -4334,7 +4296,8 @@ obj/server/cardarson.o: cardarson.cpp cardarson.h \
 		charactertomyleeghost.h \
 		reactionhandler.h \
 		checkdeckresulthandler.h \
-		gametable.h
+		gametable.h \
+		characterjourdonnais.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/cardarson.o cardarson.cpp
 
 obj/server/cardduel.o: cardduel.cpp cardduel.h \
@@ -5168,7 +5131,6 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		characterporterrockwall.h \
 		characterqueenanne.h \
 		characterjosebasset.h \
-		characterannerogers.h \
 		charactermaggiemae.h \
 		characterleladevere.h \
 		characterjuliebulette.h \
@@ -5206,7 +5168,6 @@ obj/server/characterlist.o: characterlist.cpp characterlist.h \
 		characterburtlongcatcher.h \
 		charactercolinbarrel.h \
 		charactercrazyhorse.h \
-		characterdynamitejoe.h \
 		characterhankthebank.h \
 		characterjamesstoneheart.h \
 		characterjenniferbigheart.h \
@@ -5287,17 +5248,22 @@ obj/server/characterjourdonnais.o: characterjourdonnais.cpp characterjourdonnais
 		../kbang_common/gameenums.h \
 		publicplayerview.h \
 		../kbang_common/common.h \
-		cardbarrel.h \
-		playingcard.h \
-		game.h \
-		publicgameview.h \
-		gameinfo.h \
-		gamecycle.h \
 		player.h \
 		privateplayerview.h \
 		playerctrl.h \
 		gameexceptions.h \
-		charactertomyleeghost.h
+		charactertomyleeghost.h \
+		gamecycle.h \
+		playingcard.h \
+		game.h \
+		publicgameview.h \
+		gameinfo.h \
+		cardbang.h \
+		reactioncard.h \
+		reactionhandler.h \
+		checkdeckresulthandler.h \
+		cardmissed.h \
+		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjourdonnais.o characterjourdonnais.cpp
 
 obj/server/characterpedroramirez.o: characterpedroramirez.cpp characterpedroramirez.h \
@@ -6347,7 +6313,8 @@ obj/server/characterelfantasma.o: characterelfantasma.cpp characterelfantasma.h 
 		playerctrl.h \
 		gameexceptions.h \
 		charactertomyleeghost.h \
-		reactionhandler.h
+		reactionhandler.h \
+		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterelfantasma.o characterelfantasma.cpp
 
 obj/server/charactercrazywolf.o: charactercrazywolf.cpp charactercrazywolf.h \
@@ -6512,25 +6479,6 @@ obj/server/characterjosebasset.o: characterjosebasset.cpp characterjosebasset.h 
 		gameinfo.h \
 		gamecycle.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterjosebasset.o characterjosebasset.cpp
-
-obj/server/characterannerogers.o: characterannerogers.cpp characterannerogers.h \
-		characterbase.h \
-		../kbang_common/parser/parserstructs.h \
-		../kbang_common/gameenums.h \
-		publicplayerview.h \
-		../kbang_common/common.h \
-		playingcard.h \
-		game.h \
-		publicgameview.h \
-		gameinfo.h \
-		gamecycle.h \
-		player.h \
-		privateplayerview.h \
-		playerctrl.h \
-		gameexceptions.h \
-		charactertomyleeghost.h \
-		gametable.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterannerogers.o characterannerogers.cpp
 
 obj/server/charactermaggiemae.o: charactermaggiemae.cpp charactermaggiemae.h \
 		characterbase.h \
@@ -7003,6 +6951,7 @@ obj/server/characterwilliamlongley.o: characterwilliamlongley.cpp characterwilli
 		reactionhandler.h \
 		checkdeckresulthandler.h \
 		cardmissed.h \
+		weaponcard.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterwilliamlongley.o characterwilliamlongley.cpp
 
@@ -7154,25 +7103,6 @@ obj/server/charactercrazyhorse.o: charactercrazyhorse.cpp charactercrazyhorse.h 
 		checkdeckresulthandler.h \
 		gametable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/charactercrazyhorse.o charactercrazyhorse.cpp
-
-obj/server/characterdynamitejoe.o: characterdynamitejoe.cpp characterdynamitejoe.h \
-		characterbase.h \
-		../kbang_common/parser/parserstructs.h \
-		../kbang_common/gameenums.h \
-		publicplayerview.h \
-		../kbang_common/common.h \
-		gametable.h \
-		player.h \
-		privateplayerview.h \
-		playerctrl.h \
-		gameexceptions.h \
-		charactertomyleeghost.h \
-		game.h \
-		publicgameview.h \
-		playingcard.h \
-		gameinfo.h \
-		gamecycle.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/characterdynamitejoe.o characterdynamitejoe.cpp
 
 obj/server/characterhankthebank.o: characterhankthebank.cpp characterhankthebank.h \
 		characterbase.h \
@@ -7796,9 +7726,6 @@ obj/server/moc_characterqueenanne.o: mocs/server/moc_characterqueenanne.cpp
 obj/server/moc_characterjosebasset.o: mocs/server/moc_characterjosebasset.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterjosebasset.o mocs/server/moc_characterjosebasset.cpp
 
-obj/server/moc_characterannerogers.o: mocs/server/moc_characterannerogers.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterannerogers.o mocs/server/moc_characterannerogers.cpp
-
 obj/server/moc_charactermaggiemae.o: mocs/server/moc_charactermaggiemae.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactermaggiemae.o mocs/server/moc_charactermaggiemae.cpp
 
@@ -7894,9 +7821,6 @@ obj/server/moc_charactercolinbarrel.o: mocs/server/moc_charactercolinbarrel.cpp
 
 obj/server/moc_charactercrazyhorse.o: mocs/server/moc_charactercrazyhorse.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_charactercrazyhorse.o mocs/server/moc_charactercrazyhorse.cpp
-
-obj/server/moc_characterdynamitejoe.o: mocs/server/moc_characterdynamitejoe.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterdynamitejoe.o mocs/server/moc_characterdynamitejoe.cpp
 
 obj/server/moc_characterhankthebank.o: mocs/server/moc_characterhankthebank.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/server/moc_characterhankthebank.o mocs/server/moc_characterhankthebank.cpp

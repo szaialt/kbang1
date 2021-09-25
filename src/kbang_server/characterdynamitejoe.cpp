@@ -16,7 +16,13 @@ void CharacterDynamiteJoe::useAbility(Player* targetPlayer)
 {
     try {
             PlayingCard* dynamite = mp_player->game()->gameTable().playerDrawDynamiteFromGraveyard(mp_player);
-            dynamite->play(targetPlayer);
+            if (!(mp_player->game()->gameInfo().stackingDynamiteFlag())){
+              if (targetPlayer->hasIdenticalCardOnTable(dynamite)) {
+                throw TwoSameOnTableException();
+             }
+          }
+          gameTable().playerPlayCardOnTable(dynamite, targetPlayer);
+            //dynamite->play(targetPlayer);
         }
     catch (BadGameStateException ex){
         throw BadUsageException();

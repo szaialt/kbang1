@@ -152,7 +152,6 @@ HEADERS += \
     characterporterrockwall.h \
     characterqueenanne.h \
     characterjosebasset.h \
-    characterannerogers.h \
     charactermaggiemae.h \
     characterleladevere.h \
     characterjuliebulette.h \
@@ -185,7 +184,6 @@ HEADERS += \
     characterburtlongcatcher.h \
     charactercolinbarrel.h \
     charactercrazyhorse.h \
-    characterdynamitejoe.h \
     characterhankthebank.h \
     characterjamesstoneheart.h \
     characterjenniferbigheart.h \
@@ -344,7 +342,6 @@ SOURCES += \
     characterporterrockwall.cpp \
     characterqueenanne.cpp \
     characterjosebasset.cpp \
-    characterannerogers.cpp \
     charactermaggiemae.cpp \
     characterleladevere.cpp \
     characterjuliebulette.cpp \
@@ -377,7 +374,6 @@ SOURCES += \
     characterburtlongcatcher.cpp \
     charactercolinbarrel.cpp \
     charactercrazyhorse.cpp \
-    characterdynamitejoe.cpp \
     characterhankthebank.cpp \
     characterjamesstoneheart.cpp \
     characterjenniferbigheart.cpp \

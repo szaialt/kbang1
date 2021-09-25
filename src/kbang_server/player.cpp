@@ -329,6 +329,11 @@ bool Player::removeCardFromSelection(PlayingCard* card)
     return m_selection.removeOne(card);
 }
 
+bool Player::removeCardFromBank(PlayingCard* card)
+{
+    return m_bank.removeOne(card);
+}
+
 void Player::setRoleAndCharacter(CharacterBase* character, const PlayerRole& role)
 {
     Q_ASSERT(mp_character == 0);
