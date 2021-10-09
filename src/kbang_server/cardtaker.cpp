@@ -216,31 +216,18 @@ void CardTaker::play(PlayingCard* targetCard)
 }
 
 void CardTaker::play(PlayingCard* targetCard, Player* targetPlayer){           
-    if ( ((type() == CARD_PLUNDER) && (pocket() == POCKET_TABLE))
-       || ((type() == CARD_BAR_FIGHT) && (pocket() == POCKET_TABLE)) ) {
+    if ( ((m_type == Plunder) && (pocket() == POCKET_TABLE))
+       || ((m_type == BarFight) && (pocket() == POCKET_TABLE)) ) {
         if (targetCard->pocket() == POCKET_BANK){
             throw BadCardException();
         }
         if (targetCard->owner() != owner()) throw BadCardException();
         if (targetPlayer->hand().isEmpty()) throw BadTargetPlayerException();
-        Player* o = owner();
-        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
-            o->modifyLifePoints(-1, 0);
-        }
-        gameCycle()->setCardEffect(1);
-        gameTable()->playerPlayCard(this);
-        gameTable()->playerDiscardCard(targetCard);
+        QList<PlayingCard*> targetCards;
         PlayingCard* card = targetPlayer->getRandomCardFromHand();
-        if (type() == CARD_PLUNDER) {
-            gameTable()->playerStealCard(o, card);
-        }
-        else {
-            gameTable()->cancelCard(card, o);
-        }
-        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
-            o->modifyLifePoints(-1, 0);
-        }
-        gameCycle()->setCardEffect(0);
+        targetCards.push_back(targetCard);
+        targetCards.push_back(card);
+        play(targetCards);
         
     }
     else throw BadUsageException();
@@ -264,12 +251,11 @@ void CardTaker::play(QList<PlayingCard*> targetCards){
         if (targetPlayer1->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
         if (targetPlayer2->characterType() == CHARACTER_LINUS_YALE) throw BadUsageException();
     }
-    if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
-    gameCycle()->assertTurn();
     Player* o = owner();
-    
     PlayingCard* targetCard1 = targetCards.at(0);
     PlayingCard* targetCard2 = targetCards.at(1);
+    if ((m_type == DoublePanic) || (m_type == DoubleCatBalou)){
+    gameCycle()->assertTurn();
     if ((targetPlayer1 != o) && targetCard1->pocket() == POCKET_HAND){
         throw BadUsageException();
         //targetCard1 = targetPlayer1->getRandomCardFromHand();
@@ -295,6 +281,30 @@ void CardTaker::play(QList<PlayingCard*> targetCards){
             o->modifyLifePoints(-1, 0);
         }
     gameCycle()->setCardEffect(0);
+    }
+    else if ((m_type == Plunder) || (m_type == BarFight)) {
+        if (targetCard1->pocket() == POCKET_BANK){
+            throw BadCardException();
+        }
+        if (targetCard2->pocket() == POCKET_BANK){
+            throw BadCardException();
+        }
+        if (targetCard1->owner() != owner()) throw BadCardException();
+        Player* targetPlayer = targetCard2->owner();
+        gameCycle()->assertTurn();
+        gameCycle()->setCardEffect(1);
+        gameTable()->playerPlayCard(this);
+        gameTable()->playerDiscardCard(targetCard1);
+        if (m_type == Plunder) {
+            gameTable()->playerStealCard(o, targetCard2);
+        }
+        else {
+            gameTable()->cancelCard(targetCard2, o);
+        }
+        gameCycle()->setCardEffect(0);
+        if (targetPlayer->characterType() == CHARACTER_JAREMY_BAILE){
+            o->modifyLifePoints(-1, 0);
+        }
     }
     else throw BadUsageException();
 }

@@ -49,7 +49,7 @@ private:
     void debug(const QString&);
     bool needsTarget(const CardData card);
     bool needsAnotherCardToUse(const CardData card);
-    
+    bool needsTwoTargetCards();
     
     enum {
         STATE_MAIN,

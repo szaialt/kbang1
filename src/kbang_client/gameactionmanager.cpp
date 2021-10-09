@@ -468,7 +468,8 @@ void GameActionManager::playWithCards()
             playerIds.push_back(targetId2);
             mp_game->serverConnection()->playCardWithPlayers(mp_activeCard->cardData().id, playerIds);
         }
-        else if ((mp_activeCard->cardData().type == CARD_THIEF) || (mp_activeCard->cardData().type == CARD_BULLDOG_2)){
+        else if (needsTwoTargetCards())
+        {
             //Cards that need two target cards
             CardWidget* card = m_cardSelection[0];
             CardWidget* card2 = m_cardSelection[1];
@@ -556,3 +557,15 @@ bool GameActionManager::needsAnotherCardToUse(const CardData card){
         return false;
     }
 }
+
+ bool GameActionManager::needsTwoTargetCards(){
+     if (m_cardSelection.size() < 2) return false;
+     if (mp_activeCard->cardData().type == CARD_THIEF) return true;
+     if (mp_activeCard->cardData().type == CARD_BULLDOG_2) return true;
+     CardWidget* card = m_cardSelection[1];
+     if (card->pocketType() == POCKET_TABLE){
+       if (mp_activeCard->cardData().type == CARD_PLUNDER) return true;
+       if (mp_activeCard->cardData().type == CARD_BAR_FIGHT) return true;
+     }
+     return false;
+ }
