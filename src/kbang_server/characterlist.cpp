@@ -405,6 +405,7 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
 
 void CharacterList::initCharacterTypes(Game* game)
 {
+    
     Q_ASSERT(sm_characterTypes.size() == 0);
     sm_characterTypes.append(CHARACTER_BART_CASSIDY);
     sm_characterTypes.append(CHARACTER_BLACK_JACK);
@@ -572,7 +573,7 @@ void CharacterList::initCharacterTypes(Game* game)
         sm_characterTypes.append(CHARACTER_CRAZY_HORSE); 
         sm_characterTypes.append(CHARACTER_HANK_THE_BANK); 
         sm_characterTypes.append(CHARACTER_JAMES_STONEHEART);
-        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART); // can't throw a table card
+        sm_characterTypes.append(CHARACTER_JENNIFER_BIG_HEART); 
         sm_characterTypes.append(CHARACTER_JEREMIAH_AMISH);
         sm_characterTypes.append(CHARACTER_JIMMY_SQUINT);
         sm_characterTypes.append(CHARACTER_LINUS_YALE);

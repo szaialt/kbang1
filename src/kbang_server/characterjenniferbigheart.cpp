@@ -11,7 +11,7 @@ CharacterJenniferBigHeart::CharacterJenniferBigHeart(QObject* parent):
 
 void CharacterJenniferBigHeart::useAbility(QList<PlayingCard*> cards, Player* targetPlayer){
     if (cards.empty()){
-        throw BadCardException();
+        throw BadUsageException();
     }
     else {
         PlayingCard* targetCard = cards.at(0);

@@ -337,6 +337,11 @@ void Game::buryPlayer(Player* player, Player* causedBy)
     QList<PlayingCard*> table = player->table();
  
         player->setAlive(0);
+        foreach(PlayingCard* card, player->table()){
+            if (card->type() == CARD_REWARD){
+                mp_gameTable->playerDrawFromDeck(causedBy, 2);
+            }
+        } 
         mp_playerReaper->cleanUpCards(player);
         gameEventManager().onPlayerDied(player, causedBy);
         switch(player->role()) {
@@ -353,11 +358,7 @@ void Game::buryPlayer(Player* player, Player* causedBy)
             default:
                 NOT_REACHED();
         }
-        foreach(PlayingCard* card, player->table()){
-            if (card->type() == CARD_REWARD){
-                mp_gameTable->playerDrawFromDeck(causedBy, 2);
-            }
-        } 
+       
         /// game winning condition check
         if (player->role() == ROLE_SHERIFF) {
              if (m_goodGuysCount == 0 && m_outlawsCount == 0 && m_renegadesCount == 1){

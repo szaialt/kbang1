@@ -253,6 +253,8 @@ struct CardFactory::CardFactoryImp
             list.append(new CardJail(game, id(), CardJail::Jail, SUIT_HEARTS, 5, 14));
             
             list.append(new CardDrawCards(game, id(), CardDrawCards::GoldWatch,  SUIT_SPADES,  7));
+            
+            list.append(new CardMultiShoot(game, id(), CardMultiShoot::Indians, SUIT_HEARTS,  14));
         }
         
         if (game->gameInfo().cuspOfCarabelliFlag()){
@@ -477,22 +479,7 @@ struct CardFactory::CardFactoryImp
             list.append(new CardMultiShoot(game, id(), CardMultiShoot::Roulette, SUIT_HEARTS,  8));
         
             
-
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_DIAMONDS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_DIAMONDS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_CLUBS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_CLUBS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_SPADES, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_HEARTS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_DIAMONDS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_DIAMONDS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_CLUBS, 12));
-            list.append(new CardTaker(game, id(), CardTaker::Plunder, SUIT_CLUBS, 12));
+            
             
         }
         else {
